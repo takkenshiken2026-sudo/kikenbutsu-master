@@ -4,7 +4,7 @@ window.SITE_CONFIG = {
   "examName": "危険物取扱者試験（乙種第4類）",
   "siteOrigin": "https://kikenbutsu-master.jp",
   "contactUrl": "https://kikenbutsu-master.jp/",
-  "ga4MeasurementId": "",
+  "ga4MeasurementId": "G-CH3RF5CKLH",
   "theme": {
     "accent": "#c0392b",
     "accentText": "#ffffff",

@@ -20,6 +20,7 @@ if str(ROOT) not in sys.path:
 from tools.html_footer import (  # noqa: E402
     ROBOTS_INDEX_FOLLOW,
     breadcrumb_html,
+    shell_body_class,
     site_page_footer,
     site_page_header,
     site_page_wrap_close,
@@ -418,7 +419,7 @@ def build_article_html(article: dict[str, str], by_slug: dict[str, dict[str, str
 <link rel="stylesheet" href="{html.escape(css_href(rel_path, "site-pages.css"))}">
 <link rel="stylesheet" href="{html.escape(css_href(rel_path, "site-theme.css"))}">
 </head>
-<body>
+<body class="{shell_body_class('guide-article-page')}">
 {site_page_wrap_open()}
 {site_page_header(rel_path, current="articles")}
 <main class="seo-article-main">
@@ -564,7 +565,7 @@ def build_index_html(articles: list[dict[str, str]]) -> str:
 <link rel="stylesheet" href="../site-pages.css">
 <link rel="stylesheet" href="../site-theme.css">
 </head>
-<body>
+<body class="{shell_body_class('articles-index-page')}">
 {site_page_wrap_open()}
 {site_page_header(rel_path, current="articles")}
 <main class="site-page-main">

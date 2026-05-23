@@ -8,7 +8,9 @@ q/index.html・robots.txt を更新する（sitemap は build_sitemap.py）。
   - explanation … 必須。従来の1段落も可（自動で「正解の理由」「他の選択肢」「学習のヒント」に展開）
   - explanation_summary … 任意。冒頭の要約
   - explanation_correct … 任意。正解の詳述
-  - explanation_choices … 任意。「2:理由;3:理由」または「（2）理由」改行区切り
+  - explanation_choices … 任意。「2:理由;3:理由」または「（2）理由」改行区切り。
+    各誤肢は「なぜ正答でないか」「正答肢との対比」を具体的に（「本肢は妥当」だけの1文は不可。
+    薄い記述はビルド時に推論で置き換えます）
   - explanation_point … 任意。学習のヒント（未記入時は分野別の定型文）
 
 関連ページ（related_links、セミコロン区切り。未記入時は一覧・同年問・用語・ガイド等を自動補完）:
@@ -32,9 +34,17 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
+from tools.q_explanation import build_explanation_html
+from tools.q_similar_questions import build_similar_questions_html, load_question_catalog
 from tools.html_footer import (
     ROBOTS_INDEX_FOLLOW,
     breadcrumb_html,
+    q_hub_links_html,
+    q_index_filters_details_html,
+    q_index_stats_line,
+    q_index_tools_close_html,
+    q_index_tools_open_html,
+    shell_body_class,
     site_page_footer,
     site_page_header,
     site_page_wrap_close,
@@ -111,8 +121,14 @@ def stem_preview(text: str, limit: int = 52) -> str:
 
 
 def page_heading(page: dict) -> str:
-    """Visible H1: year + question number + field."""
-    return f"{page['year']}年 第{page['qno']}問（{page['category']}）"
+    from tools.q_page_seo import question_h1
+
+    return question_h1(
+        "past",
+        year=page["year"],
+        qno=page["qno"],
+        category=page["category"],
+    )
 
 
 def page_context_line(page: dict) -> str:
@@ -120,20 +136,30 @@ def page_context_line(page: dict) -> str:
 
 
 def page_title_seo(page: dict) -> str:
-    return f"{page_heading(page)}｜{exam_name()} 過去問｜{brand_name()}"
+    from tools.q_page_seo import question_page_title
+
+    return question_page_title(
+        "past",
+        year=page["year"],
+        qno=page["qno"],
+        category=page["category"],
+    )
 
 
 def page_meta_description(page: dict) -> str:
-    stem = norm(page.get("stem_plain"))
-    lead = (
-        f"{exam_name()}の{page['year']}年過去問 第{page['qno']}問・{page['category']}。"
+    from tools.q_page_seo import question_meta_description, question_meta_headline
+
+    return question_meta_description(
+        "past",
+        headline=question_meta_headline(
+            "past", year=page["year"], qno=page["qno"]
+        ),
+        category=page["category"],
+        body=norm(page.get("stem_plain")),
     )
-    if stem:
-        return meta_description(lead + stem, 155)
-    return meta_description(lead + "選択肢と解説を掲載しています。", 155)
 
 
-Q_INDEX_CSS_VER = "20260521-index-layout"
+Q_INDEX_CSS_VER = "20260526-q-index-mobile"
 
 GLOSSARY_CSV = ROOT / "data" / "glossary_terms.csv"
 
@@ -160,7 +186,22 @@ def q_index_filter_chip_btn(
 
 
 def parse_tags(raw: str) -> list[str]:
-    return [t.strip() for t in re.split(r"[,、/|]", raw) if t.strip()]
+    """CSV tags（; 区切りが多い）。一覧表示用の内部タグは除外。"""
+    skip_prefixes = ("otsu4-sample-", "kikenbutsu_", "p")
+    skip_exact = {"過去問", "乙4", "要確認"}
+    out: list[str] = []
+    for t in re.split(r"[,、/|;]+", raw or ""):
+        t = t.strip()
+        if not t or t in skip_exact:
+            continue
+        if any(t.startswith(p) for p in skip_prefixes if p != "p"):
+            continue
+        if re.fullmatch(r"p\d+", t):
+            continue
+        if t.endswith(".pdf"):
+            continue
+        out.append(t)
+    return out
 
 
 def load_glossary_lookup() -> dict[str, str]:
@@ -175,16 +216,15 @@ def load_glossary_lookup() -> dict[str, str]:
         term = norm(row.get("term"))
         if not term:
             continue
-        reading = norm(row.get("reading"))
         legacy_slug = norm(row.get("slug"))
         if legacy_slug:
             slug_file = f"{legacy_slug}.html"
             if slug_file in used:
                 raise ValueError(f"glossary_terms.csv: slug が重複しています: {legacy_slug}")
-            used[slug_file] = f"{term}|{reading}"
+            used[slug_file] = term
         else:
-            slug_file = f"{term_slug(term, reading, used)}.html"
-        entries.append({"term": term, "reading": reading, "slug_file": slug_file})
+            slug_file = f"{term_slug(term, used)}.html"
+        entries.append({"term": term, "slug_file": slug_file})
     lookup = make_term_lookup(entries)
     return {k: f"../terms/{v}" for k, v in lookup.items()}
 
@@ -231,8 +271,15 @@ def index_item_dict(page: dict) -> dict:
         "invalidated": bool(page.get("is_invalidated")),
         "correct": page.get("correct"),
         "search": " ".join(x for x in search_bits if x),
-        "glossary": page.get("glossary_links") or [],
     }
+
+
+def _append_index_search_keywords(item: dict) -> dict:
+    from tools.q_page_seo import index_search_index_suffix
+
+    item = dict(item)
+    item["search"] = f"{item.get('search', '')} {index_search_index_suffix()}".strip()
+    return item
 
 
 def build_index_table_row(page: dict) -> str:
@@ -244,26 +291,6 @@ def build_index_table_row(page: dict) -> str:
         if preview
         else '<span class="q-year-table-desc--empty">問題文は各ページで確認できます</span>'
     )
-    tag_html = "".join(
-        f'<span class="q-tag-badge">{html.escape(t)}</span>' for t in (page.get("tags") or [])
-    )
-    gloss = page.get("glossary_links") or []
-    gloss_html = (
-        " ".join(
-            f'<a class="q-glossary-link" href="{html.escape(g["href"])}" onclick="event.stopPropagation()">'
-            f"{html.escape(g['label'])}</a>"
-            for g in gloss
-        )
-        if gloss
-        else "—"
-    )
-    badges = []
-    if page.get("is_exempt"):
-        badges.append('<span class="q-year-table-badge">免除</span>')
-    if page.get("is_invalidated"):
-        badges.append('<span class="q-year-table-badge q-year-table-badge-warn">無効</span>')
-    note_cell = "".join(badges) if badges else "—"
-    app_href = html.escape(f"../index.html#past-play-{page['app_id']}")
     return (
         '<tr class="q-year-table-row" tabindex="0"'
         f' data-app-id="{page["app_id"]}"'
@@ -271,14 +298,8 @@ def build_index_table_row(page: dict) -> str:
         f' data-category="{html.escape(page["category"], quote=True)}">'
         f'<td class="q-year-table-no" data-label="問"><a href="{href}">{html.escape(label)}</a></td>'
         f'<td class="q-year-table-cat" data-label="分野">{html.escape(page["category"])}</td>'
-        f'<td class="q-year-table-tags" data-label="タグ">{tag_html or "—"}</td>'
         f'<td class="q-year-table-desc" data-label="問題文">{preview_cell}</td>'
-        f'<td class="q-year-table-gloss" data-label="用語">{gloss_html}</td>'
-        f'<td class="q-year-table-note" data-label="備考">{note_cell}</td>'
-        f'<td class="q-year-table-action" data-label="操作">'
-        f'<a class="q-row-link" href="{href}">解説</a> '
-        f'<a class="q-row-link q-row-link-app" href="{app_href}">演習</a>'
-        "</td></tr>"
+        "</tr>"
     )
 
 
@@ -324,126 +345,8 @@ def text_to_html(text: str) -> str:
     return html.escape(text).replace("\n", "<br>\n")
 
 
-def parse_explanation_choices(raw: str) -> dict[int, str]:
-    """選択肢別解説。形式: 「2:理由;3:理由」または改行区切り「（2）理由」。"""
-    out: dict[int, str] = {}
-    if not raw:
-        return out
-    for chunk in re.split(r"[\n;]+", raw):
-        chunk = norm(chunk)
-        if not chunk:
-            continue
-        m = re.match(r"^[（(]?(\d+)[）)]?\s*[:：]?\s*(.+)$", chunk)
-        if m:
-            out[int(m.group(1))] = m.group(2).strip()
-    return out
-
-
-CATEGORY_STUDY_HINTS: dict[str, str] = {
-    "法令・制度": (
-        "試験制度は年度で見直されることがあります。受験要項や公式発表を定期的に確認し、"
-        "関連用語は用語解説で意味を押さえてから過去問に戻ると定着しやすくなります。"
-    ),
-    "契約・実務": (
-        "実務・学習法の問題は「何が学習として適切か」を問う形式が多いです。"
-        "間違えた問題は復習リストに残し、用語の意味を確認しながら解き直してください。"
-    ),
-    "設備・その他": (
-        "数字・期限・例外は表や比較で整理すると復習効率が上がります。"
-        "分野横断の用語は用語解説の分野別一覧から関連語をたどると理解が深まります。"
-    ),
-}
-
-DEFAULT_WRONG_CHOICE_NOTE = "問題文の趣旨・試験制度の基本に照らすと誤りです。"
-
-
-def split_legacy_explanation(exp: str) -> tuple[str, str]:
-    """「正解は1です。…」形式を (要約, 本文) に分割。"""
-    m = re.match(r"^正解は\s*(\d+)\s*です[。.]?\s*(.*)$", exp, re.DOTALL)
-    if m:
-        body = norm(m.group(2)) or exp
-        summary = f"正答は（{m.group(1)}）です。"
-        return summary, body
-    return "", exp
-
-
-def build_choice_commentary(page: dict, row: dict) -> list[tuple[int, str, str]]:
-    """(番号, 選択肢文, 解説) のリスト。正答以外。"""
-    parsed = parse_explanation_choices(norm(row.get("explanation_choices")))
-    correct = page.get("correct")
-    items: list[tuple[int, str, str]] = []
-    for i, opt in enumerate(page["opts"], start=1):
-        if page.get("is_invalidated") or correct is None:
-            continue
-        if i == correct:
-            continue
-        note = parsed.get(i) or DEFAULT_WRONG_CHOICE_NOTE
-        items.append((i, opt, note))
-    return items
-
-
 def normalize_glossary_href(href: str) -> str:
     return re.sub(r"^(?:\.\./)+", "", href.lstrip("/"))
-
-
-def build_explanation_html(page: dict, row: dict) -> str:
-    base = norm(row.get("explanation")) or "（解説は未入力です。）"
-    if page.get("is_invalidated") or page.get("correct") is None:
-        return f'<div class="q-exp"><p>{text_to_html(base)}</p></div>'
-
-    summary = norm(row.get("explanation_summary"))
-    correct_body = norm(row.get("explanation_correct"))
-    point = norm(row.get("explanation_point"))
-
-    if not summary and not correct_body and not point:
-        leg_summary, leg_body = split_legacy_explanation(base)
-        summary = summary or leg_summary
-        correct_body = correct_body or leg_body
-
-    parts: list[str] = ['<div class="q-exp">']
-    if summary:
-        parts.append(f'<p class="q-exp-lead">{text_to_html(summary)}</p>')
-
-    correct = page.get("correct")
-    if correct and not page.get("is_invalidated"):
-        opt_text = page["opts"][correct - 1] if 1 <= correct <= len(page["opts"]) else ""
-        parts.append(
-            '<section class="q-exp-section" aria-labelledby="q-exp-correct-h">'
-            '<h3 id="q-exp-correct-h" class="q-exp-h3">正解の理由</h3>'
-        )
-        if correct_body:
-            parts.append(f"<p>{text_to_html(correct_body)}</p>")
-        if opt_text:
-            parts.append(
-                f'<p class="q-exp-correct-opt"><strong>（{correct}）</strong> '
-                f"{html.escape(opt_text)}</p>"
-            )
-        parts.append("</section>")
-
-        wrong_items = build_choice_commentary(page, row)
-        if wrong_items:
-            lis = "".join(
-                f'<li><span class="q-exp-choice-num">（{n}）</span> '
-                f"<span class=\"q-exp-choice-text\">{html.escape(opt)}</span> "
-                f'<span class="q-exp-choice-note">{text_to_html(note)}</span></li>'
-                for n, opt, note in wrong_items
-            )
-            parts.append(
-                '<section class="q-exp-section" aria-labelledby="q-exp-wrong-h">'
-                '<h3 id="q-exp-wrong-h" class="q-exp-h3">他の選択肢</h3>'
-                f'<ul class="q-exp-choice-list">{lis}</ul></section>'
-            )
-
-    hint = point or CATEGORY_STUDY_HINTS.get(page.get("category") or "", "")
-    if hint:
-        parts.append(
-            '<section class="q-exp-section" aria-labelledby="q-exp-tip-h">'
-            '<h3 id="q-exp-tip-h" class="q-exp-h3">学習のヒント</h3>'
-            f"<p>{text_to_html(hint)}</p></section>"
-        )
-
-    parts.append("</div>")
-    return "\n    ".join(parts)
 
 
 GUIDE_LINK_FALLBACK_SLUGS = (
@@ -592,9 +495,10 @@ def build_related_links_html(
             continue
         pg = pages_by_key.get((y, other_q))
         if pg:
+            ylabel = pg.get("year_label") or pg.get("wareki") or f"{y}年"
             add_auto(
                 rel_href(rel_path, pg["rel_path"]),
-                f"{y}年 第{other_q}問",
+                f"{ylabel} 第{other_q}問",
             )
 
     for gl in glossary_links_for_tags(page.get("tags") or [], glossary_lookup):
@@ -687,6 +591,7 @@ def build_question_html(
     all_pages: list[dict],
     glossary_lookup: dict[str, str],
     guides: list[dict[str, str]],
+    question_catalog: list[dict],
 ) -> str:
     heading = page_heading(page)
     title = page_title_seo(page)
@@ -723,6 +628,14 @@ def build_question_html(
     badge_html = ("<p class=\"q-badges\">" + " ".join(badges) + "</p>") if badges else ""
 
     exp_html = build_explanation_html(page, row)
+    similar_html = build_similar_questions_html(
+        page,
+        rel_path,
+        question_catalog,
+        mode="past",
+        rel_href=rel_href,
+        publish_root=ROOT,
+    )
     related_html = build_related_links_html(
         page, row, rel_path, all_pages, glossary_lookup, guides
     )
@@ -758,6 +671,9 @@ def build_question_html(
         [("トップ", "index.html"), ("過去問一覧", "q/index.html"), (heading, None)],
     )
     site_footer = site_page_footer(rel_path, current="q")
+    from tools.q_page_seo import study_modes_note_html
+
+    study_modes_note = study_modes_note_html()
 
     return f"""<!DOCTYPE html>
 <html lang="ja">
@@ -780,11 +696,12 @@ def build_question_html(
 {json.dumps(json_ld, ensure_ascii=False, indent=2)}
 </script>
 </head>
-<body>
+<body class="{shell_body_class('q-static-page')}">
 {site_page_wrap_open()}
 {site_header}
 <main class="q-static-main">
   {site_breadcrumb}
+  {study_modes_note}
   <p class="q-meta-line">{html.escape(context_line)}</p>
   {badge_html}
   <h1 class="q-h1">{html.escape(heading)}</h1>
@@ -807,6 +724,7 @@ def build_question_html(
     <h2 id="q-exp-h" class="q-h2">解説</h2>
     {exp_html}
   </section>
+  {similar_html}
   {related_html}
   <p class="q-app-link"><a href="{html.escape(rel_href(rel_path, 'index.html#past'))}">アプリで演習する</a></p>
 </main>
@@ -818,14 +736,12 @@ def build_question_html(
 
 
 def build_q_index(pages: list[dict], base_url: str) -> str:
-    glossary_lookup = load_glossary_lookup()
     index_pages: list[dict] = []
     for page in pages:
         pg = dict(page)
         pg["href_rel"] = (
             page["rel_path"][2:] if page["rel_path"].startswith("q/") else page["rel_path"]
         )
-        pg["glossary_links"] = glossary_links_for_tags(pg.get("tags") or [], glossary_lookup)
         index_pages.append(pg)
 
     by_year = {}
@@ -843,12 +759,19 @@ def build_q_index(pages: list[dict], base_url: str) -> str:
     year_jump_links = []
     for y in sorted_years:
         rows_html = "".join(build_index_table_row(pg) for pg in by_year[y])
-        heading = f"{y}年"
+        sample = by_year[y][0]
+        year_label = norm(sample.get("year_label") or "")
+        heading = year_label or (
+            sample["wareki"]
+            if y > 9999
+            else f"{y}年（{sample['wareki']}）"
+        )
+        jump_label = year_label or (f"{y}年" if y <= 9999 else sample["wareki"])
         expanded = "true" if y in open_years else "false"
         collapsed = "" if y in open_years else " is-collapsed"
         year_jump_links.append(
             f'<a class="q-index-filter-opt q-index-year-link" href="#year-{y}" data-year="{y}">'
-            f'{html.escape(f"{y}年")}<span class="q-index-filter-count">（{len(by_year[y])}）</span></a>'
+            f'{html.escape(jump_label)}<span class="q-index-filter-count">（{len(by_year[y])}）</span></a>'
         )
         year_blocks.append(
             f'<section class="q-index-year-block{collapsed}" id="year-{y}">'
@@ -863,8 +786,8 @@ def build_q_index(pages: list[dict], base_url: str) -> str:
             f'<div class="q-year-table-wrap" id="year-body-{y}">'
             f'<table class="q-year-table" aria-labelledby="year-{y}-heading">'
             "<thead><tr>"
-            '<th scope="col">問</th><th scope="col">分野</th><th scope="col">タグ</th>'
-            '<th scope="col">問題文（抜粋）</th><th scope="col">用語</th><th scope="col">備考</th><th scope="col">操作</th>'
+            '<th scope="col">問</th><th scope="col">分野</th>'
+            '<th scope="col">問題文（抜粋）</th>'
             "</tr></thead>"
             f"<tbody>{rows_html}</tbody>"
             "</table></div></section>"
@@ -881,7 +804,10 @@ def build_q_index(pages: list[dict], base_url: str) -> str:
         q_index_filter_chip_btn("q-index-status-btn", "data-status", "exempt", "免除"),
         q_index_filter_chip_btn("q-index-status-btn", "data-status", "invalid", "無効"),
     ]
-    json_data = json.dumps([index_item_dict(pg) for pg in index_pages], ensure_ascii=False)
+    json_data = json.dumps(
+        [_append_index_search_keywords(index_item_dict(pg)) for pg in index_pages],
+        ensure_ascii=False,
+    )
     status_chips_html = "".join(status_chips)
     category_chips = [
         q_index_filter_chip_btn("q-index-chip-btn", "data-cat", "all", "すべて", on=True)
@@ -902,15 +828,21 @@ def build_q_index(pages: list[dict], base_url: str) -> str:
     q_index_breadcrumb = breadcrumb_html(rel_path, [("トップ", "index.html"), ("過去問一覧", None)])
     q_index_footer = site_page_footer(rel_path, current="q")
 
-    page_title = f"過去問｜{brand_name()}（{exam_name()}）"
-    page_desc = (
-        f"{exam_name()}の過去問{len(pages)}問を年度・分野別に掲載。"
-        "検索と絞り込みのあと、各問題の解説ページへ進めます。"
+    from tools.q_page_seo import (
+        index_h1,
+        index_lead,
+        index_meta_description,
+        index_page_title,
+        index_search_placeholder,
+        study_modes_note_html,
     )
-    page_lead = (
-        f"{exam_name()}の過去問を年度別・分野別にまとめています。"
-        "検索と絞り込みで目的の問題を探し、解説ページで正誤と解説を確認できます。"
-    )
+
+    page_title = index_page_title("past")
+    index_h1_text = index_h1("past")
+    page_desc = index_meta_description("past", count=len(pages))
+    page_lead = index_lead("past")
+    search_placeholder = index_search_placeholder("past")
+    study_modes_note = study_modes_note_html()
 
     return f"""<!DOCTYPE html>
 <html lang="ja">
@@ -927,43 +859,34 @@ def build_q_index(pages: list[dict], base_url: str) -> str:
 <link rel="stylesheet" href="../site-pages.css?v={Q_INDEX_CSS_VER}">
 <link rel="stylesheet" href="../site-theme.css">
 </head>
-<body class="q-index-page">
+<body class="{shell_body_class('q-index-page')}">
 {site_page_wrap_open()}
 {q_index_header}
 <main class="site-page-main">
   {q_index_breadcrumb}
-  <h1>過去問</h1>
+  <h1>{html.escape(index_h1_text)}</h1>
   <p class="site-page-lead">{html.escape(page_lead)}</p>
+  {study_modes_note}
+  {q_hub_links_html(rel_path, current="past")}
   <section class="past-index-panel" aria-labelledby="past-index-heading">
     <div class="past-index-head">
       <div>
         <h2 id="past-index-heading">過去問一覧</h2>
-        <p>全{len(pages)}問・{year_count}年度・{len(by_category)}分野。キーワード検索と絞り込みで探せます。</p>
+        <p>{html.escape(q_index_stats_line(question_count=len(pages), mode="past", year_count=year_count, category_count=len(by_category)))}。キーワード検索と絞り込みで探せます。</p>
       </div>
-      <span id="q-index-hit" class="past-index-hit" aria-live="polite">{len(pages)} / {len(pages)} 問</span>
     </div>
-    <div class="past-index-tools" aria-label="絞り込み">
-      <label class="past-index-search" for="q-index-q">
-        <span>過去問検索</span>
-        <input id="q-index-q" type="search" inputmode="search" autocomplete="off" placeholder="例：第1問、分野名、問題文…">
-      </label>
-      <div class="past-index-tools-actions">
-        <button type="button" class="q-index-reset hide" id="q-index-reset">条件をクリア</button>
-      </div>
-      <div class="q-index-active-filters hide" id="q-index-active-filters" aria-live="polite"></div>
-    <div class="q-index-chips-row q-index-year-row" id="q-index-year-row">
-      <span class="q-index-chips-label">年度</span>
-      <nav class="q-index-chips q-index-year-jump" aria-label="年度で移動">{year_jump_html}</nav>
-    </div>
-    <div class="q-index-chips-row">
-      <span class="q-index-chips-label" id="q-index-chips-label">分野</span>
-      <div class="q-index-chips" aria-labelledby="q-index-chips-label">{category_chips_html}</div>
-    </div>
-    <div class="q-index-chips-row">
-      <span class="q-index-chips-label">学習状況</span>
-      <div class="q-index-chips q-index-status-chips" role="group" aria-label="学習状況（アプリ連携）">{status_chips_html}</div>
-    </div>
-    </div>
+    {q_index_tools_open_html(
+        search_label="過去問検索",
+        search_placeholder=search_placeholder,
+        hit_text=f"{len(pages)} / {len(pages)} 問",
+    )}
+      {q_index_filters_details_html(
+          year_row_label="年度",
+          year_jump_html=year_jump_html,
+          category_chips_html=category_chips_html,
+          status_chips_html=status_chips_html,
+      )}
+    {q_index_tools_close_html()}
     <div class="q-index-empty-panel hide" id="q-index-empty" role="status">
       <p class="q-index-empty-title">条件に一致する過去問がありません</p>
       <p class="q-index-empty-hint">検索語を短くするか、分野・学習状況を「すべて」に戻してお試しください。</p>
@@ -977,8 +900,8 @@ def build_q_index(pages: list[dict], base_url: str) -> str:
           <div class="q-year-table-wrap">
             <table class="q-year-table">
               <thead><tr>
-                <th scope="col">問</th><th scope="col">分野</th><th scope="col">タグ</th>
-                <th scope="col">問題文（抜粋）</th><th scope="col">用語</th><th scope="col">備考</th><th scope="col">操作</th>
+                <th scope="col">問</th><th scope="col">分野</th>
+                <th scope="col">問題文（抜粋）</th>
               </tr></thead>
               <tbody id="q-index-flat-body"></tbody>
             </table>
@@ -992,6 +915,7 @@ def build_q_index(pages: list[dict], base_url: str) -> str:
 {q_index_footer}
 {site_page_wrap_close()}
 <button type="button" class="q-index-top" id="q-index-top" aria-label="ページ上部へ">↑</button>
+<script type="application/json" id="q-index-config">{{"variant":"past"}}</script>
 <script type="application/json" id="q-index-data">{json_data}</script>
 <script defer src="../site-q-index.js"></script>
 </body>
@@ -1011,10 +935,11 @@ def main() -> int:
     pages = [page_dict(r, i) for i, r in enumerate(rows, start=2)]
     glossary_lookup = load_glossary_lookup()
     guides = load_guide_articles()
+    question_catalog = load_question_catalog(ROOT)
 
-    if Q_ROOT.is_dir():
-        shutil.rmtree(Q_ROOT)
     past_root = Q_ROOT / "past"
+    if past_root.is_dir():
+        shutil.rmtree(past_root)
     for p, row in zip(pages, rows):
         rel = Path(p["rel_path"])
         out_file = ROOT / rel
@@ -1027,6 +952,7 @@ def main() -> int:
             all_pages=pages,
             glossary_lookup=glossary_lookup,
             guides=guides,
+            question_catalog=question_catalog,
         )
         out_file.write_text(html_out, encoding="utf-8")
 

@@ -57,17 +57,12 @@ def build_tags(row: dict[str, str]) -> str:
 
 
 def build_explanation(row: dict[str, str]) -> str:
-    parts: list[str] = []
+    from tools.simplify_ichimon_explanation import simplify
+
     main = norm(row.get("explanation"))
-    if main:
-        parts.append(main)
-    exam_point = norm(row.get("exam_point"))
-    if exam_point:
-        parts.append(f"【試験ポイント】{exam_point}")
-    trap = norm(row.get("trap_point"))
-    if trap:
-        parts.append(f"【ひっかけ】{trap}")
-    return "\n\n".join(parts) if parts else "（解説は未入力です。）"
+    if not main:
+        return "（解説は未入力です。）"
+    return simplify(main)
 
 
 def parse_answer(row: dict[str, str]) -> str:

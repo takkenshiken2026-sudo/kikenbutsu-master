@@ -12,6 +12,8 @@
 
 「テンプレを再現する」= マニフェストのファイルを同期し、本番で `build_all.py` を回して生成物を揃える、という意味に統一します。
 
+**過去問ハブ・フッター・用語一覧を同時に直すとき**は、先に [integration-checklist.md](./integration-checklist.md) の契約一覧と検証手順に従ってください（個別修正だけだと再発しやすい項目をまとめています）。
+
 ## ファイル一覧
 
 | ファイル | 役割 |
@@ -76,5 +78,8 @@
 | 症状 | 対処 |
 |------|------|
 | 一覧は直ったが個別過去問だけ古い | 本番で `build_past_question_pages.py` または `build_all.py` 未実行 |
+| 実践・一問一答がサンプル数のまま | CSV 未拡充・[integration-checklist.md §6](./integration-checklist.md) の取り込み → `build_all` |
+| 一問一答が年度順 | テンプレ同期 + `build_all`（`groupBy: category` 必須） |
 | CSS だけ古い | 同期漏れ or ブラウザキャッシュ（`site-pages.css?v=` を確認） |
 | 同期したのにレイアウトが違う | 本番に `template_site_only.paths` 外の独自 HTML/CSS が残っていないか `drift` で確認 |
+| フッター過去問が遷移しない / ハブにタブがない / 用語定義が空 | [integration-checklist.md](./integration-checklist.md) §2・§5 |

@@ -244,7 +244,6 @@ class Validator:
         path = DATA_DIR / "glossary_terms.csv"
         required = {
             "term",
-            "reading",
             "category",
             "tags",
             "short_def",
@@ -262,20 +261,17 @@ class Validator:
                 entries.append(
                     {
                         "term": term,
-                        "reading": self.norm(row.get("reading")),
                         "slug_file": "g-dummy.html",
                     }
                 )
         term_lookup = make_term_lookup(entries)
-        seen: set[tuple[str, str]] = set()
+        seen: set[str] = set()
         for idx, row in enumerate(rows, start=2):
             term = self.require_text(path, row, idx, "term")
-            reading = self.require_text(path, row, idx, "reading")
             if term:
-                key = (term, reading)
-                if key in seen:
-                    self.error(path, idx, f"term + reading が重複しています: {term} / {reading}")
-                seen.add(key)
+                if term in seen:
+                    self.error(path, idx, f"term が重複しています: {term}")
+                seen.add(term)
             self.validate_category(path, row, idx)
             self.require_text(path, row, idx, "short_def")
             self.require_text(path, row, idx, "definition")

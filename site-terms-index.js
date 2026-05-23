@@ -23,6 +23,7 @@
   const toolbar = document.querySelector('.terms-index-tools');
   const topBtn = document.getElementById('terms-idx-top');
   const flatBody = document.getElementById('terms-idx-flat-body');
+  const TERMS_INDEX_BASE = '/terms/';
 
   let activeCat = 'all';
   let urlSyncTimer = null;
@@ -105,33 +106,23 @@
     return [...list].sort((a, b) => {
       const c = a.category.localeCompare(b.category, 'ja');
       if (c) return c;
-      return (a.reading || a.term).localeCompare(b.reading || b.term, 'ja');
+      return a.term.localeCompare(b.term, 'ja');
     });
   }
 
-  /** file:// やサブディレクトリ配置でも動くよう、/terms/... を同一フォルダ相対に正規化 */
   function resolveEntryHref(href) {
     if (!href) return href;
-    const h = String(href);
-    if (/^https?:\/\//i.test(h)) return h;
-    if (h.startsWith('/terms/')) return h.slice('/terms/'.length);
-    if (h.startsWith('/')) {
-      const stripped = h.replace(/^\/+/, '');
-      return stripped.startsWith('terms/') ? stripped.slice('terms/'.length) : stripped;
-    }
-    return h.replace(/^\.\//, '');
+    if (/^https?:\/\//i.test(href) || href.startsWith('/')) return href;
+    return `${TERMS_INDEX_BASE}${String(href).replace(/^\.\//, '')}`;
   }
 
   function rowHtml(item, query) {
     const href = resolveEntryHref(item.href);
     const hrefAttr = ` data-entry-href="${escapeHtml(href)}"`;
-    const reading = item.reading
-      ? `<span class="terms-idx-reading">${highlightText(item.reading, query)}</span>`
-      : '';
     return `<tr class="terms-idx-table-row">
-<td class="terms-idx-td-term" data-label="用語（よみ）"${hrefAttr} tabindex="0"><div class="terms-idx-term-cell"><a href="${escapeHtml(href)}">${highlightText(item.term, query)}</a>${reading}</div></td>
+<td class="terms-idx-td-term" data-label="用語"${hrefAttr} tabindex="0"><div class="terms-idx-term-cell"><a href="${escapeHtml(href)}">${highlightText(item.term, query)}</a></div></td>
 <td class="terms-idx-td-cat" data-label="分野"${hrefAttr}>${escapeHtml(item.category)}</td>
-<td class="terms-idx-td-snippet" data-label="定義（抜粋）"${hrefAttr}>${item.shortDef ? highlightText(item.shortDef, query) : ''}</td>
+<td class="terms-idx-td-snippet" data-label="定義（抜粋）"${hrefAttr}>${(item.shortDef || item.definition) ? highlightText(item.shortDef || item.definition, query) : ''}</td>
 </tr>`;
   }
 

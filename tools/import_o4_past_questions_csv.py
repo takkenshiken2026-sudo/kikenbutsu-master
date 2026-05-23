@@ -87,39 +87,17 @@ def build_tags(row: dict[str, str]) -> str:
 
 
 def build_explanations(row: dict[str, str], correct: int) -> dict[str, str]:
-    answer_text = norm(row.get("answer_text"))
-    section = norm(row.get("section"))
-    stem = norm(row.get("question_text"))
+    from tools.o4_past_explanation_content import build_package
 
-    summary = (
-        f"本問は「{section}」分野の過去問形式（五肢択一）です。"
-        "正解の根拠を確認し、誤り選択肢との違いを整理してください。"
-    )
-    explanation = f"正解は選択肢（{correct}）です。{answer_text}"
-    correct_detail = answer_text or "（正解文の詳細は未入力です。）"
-
-    wrong_bits: list[str] = []
-    for i in range(1, 6):
-        if i == correct:
-            continue
-        text = norm(row.get(f"choice_{i}"))
-        if not text:
-            continue
-        preview = text if len(text) <= 72 else text[:69] + "…"
-        wrong_bits.append(f"{i}:（{i}）は正解ではありません。{preview}")
-
-    point = (
-        f"「{section}」では、条文の言い回しと数値・条件の違いが問われやすいです。"
-        "関連する用語解説と実践演習で定着を確認してください。"
-    )
-
-    return {
-        "explanation": explanation,
-        "explanation_summary": summary,
-        "explanation_correct": correct_detail,
-        "explanation_choices": ";".join(wrong_bits),
-        "explanation_point": point,
+    past_row = {
+        "question_no": norm(row.get("question_number")),
+        "correct": str(correct),
+        "category": SECTION_TO_CATEGORY.get(norm(row.get("section")), ""),
+        "stem": norm(row.get("question_text")),
+        "explanation": f"正解は選択肢（{correct}）です。{norm(row.get('answer_text'))}",
+        **{f"choice_{i}": norm(row.get(f"choice_{i}")) for i in range(1, 6)},
     }
+    return build_package(past_row)
 
 
 def row_to_past(

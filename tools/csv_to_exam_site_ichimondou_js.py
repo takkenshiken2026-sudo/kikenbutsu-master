@@ -2,7 +2,9 @@
 # -*- coding: utf-8 -*-
 """data/ichimon_questions.csv → exam-site-data-ichimondou.js（window.ICHIMONDOU_ROWS）。
 
-CSV 列: id, question, answer, explanation, category, tags, source, note
+CSV 列: id, question, answer, explanation, explanation_summary, explanation_correct,
+explanation_opposite, explanation_point, category, tags, source, note
+（静的 HTML の詳細解説用。SPA 用 JS は従来どおり explanation を要約表示）
 - answer: ○＝記述が正しい / ×＝記述が誤り（index.html の correctAnswer と一致）
 - category: tools/csv_to_exam_site_past_js.py の CATEGORY_TO_FIELD と揃える
 """
@@ -19,6 +21,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
+from tools.ichimon_paths import ichimon_rel_path
 from tools.site_config import category_to_field_map
 
 DATA_CSV = ROOT / "data" / "ichimon_questions.csv"
@@ -26,8 +29,6 @@ OUT_JS = ROOT / "exam-site-data-ichimondou.js"
 
 # site-config.json の fields[].aliases / name に対応
 CATEGORY_TO_FIELD: dict[str, str] = category_to_field_map()
-
-_ID_PATH = re.compile(r"^(\d{4})-(\d+)-(\d+)$")
 
 
 def norm(s: str | None) -> str:
@@ -53,11 +54,7 @@ def parse_marubatsu_answer(raw: str) -> bool:
 
 
 def public_path_from_id(row_id: str) -> str:
-    m = _ID_PATH.match(norm(row_id))
-    if not m:
-        return ""
-    y, qn, _ = m.groups()
-    return f"q/past/y{int(y)}/q{int(qn):02d}/index.html"
+    return ichimon_rel_path(row_id)
 
 
 def normalize_statement(text: str) -> str:

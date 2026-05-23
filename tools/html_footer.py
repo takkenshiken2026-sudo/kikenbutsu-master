@@ -38,12 +38,28 @@ ROBOTS_INDEX_FOLLOW = '<meta name="robots" content="index, follow">'
 
 SITE_FOOTER_NAV = navigation_items("footer")
 
+# 共通フッター shell：復習ページ同型（サイドグレー・中央白カラム）。site-pages.css とセット。
+SHELL_COLUMN_PAGE_CLASS = "site-shell-column-page"
+
+
+def shell_body_class(*parts: str) -> str:
+    """<body class=\"...\"> 用。フッター付き静的ページは必ず SHELL_COLUMN_PAGE_CLASS を含める。"""
+    merged: list[str] = []
+    for part in parts:
+        for token in part.split():
+            if token and token not in merged:
+                merged.append(token)
+    if SHELL_COLUMN_PAGE_CLASS not in merged:
+        merged.append(SHELL_COLUMN_PAGE_CLASS)
+    return " ".join(merged)
+
+
 # index.html topnav と同じ学習ナビ（用語解説のみ静的一覧、他は SPA ハッシュへ）
 LEARNING_NAV_ITEMS: list[tuple[str, str, str, str]] = [
     (
         "tnav-ichimondou",
         "一問一答",
-        "#ichimondou",
+        "q/ichimon/index.html",
         '<svg viewBox="0 0 16 16"><path d="M8 2v12M4 4h8M4 8h8M4 12h8"/></svg>',
     ),
     (
@@ -55,7 +71,7 @@ LEARNING_NAV_ITEMS: list[tuple[str, str, str, str]] = [
     (
         "tnav-orig",
         "実践演習",
-        "#orig",
+        "q/practice/index.html",
         '<svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 1"/></svg>',
     ),
     (
@@ -82,6 +98,9 @@ LEARNING_NAV_ITEMS: list[tuple[str, str, str, str]] = [
 # 過去問一覧（q）はフッター「過去問一覧」と対応。ヘッダー「過去問」は SPA 演習用のため active にしない。
 LEARNING_NAV_ACTIVE_BY_PAGE: dict[str, str] = {
     "terms": "tnav-glossary",
+    "q": "tnav-past",
+    "practice": "tnav-orig",
+    "ichimon": "tnav-ichimondou",
 }
 
 
@@ -114,6 +133,11 @@ def footer_href(rel_path: Path, site_rel: str) -> str:
     ):
         up = len(parts) - 3
         return ("/".join([".."] * up) + "/index.html") if up else "index.html"
+    if parts and parts[0] == "q" and site_rel.startswith("q/"):
+        q_rel = site_rel[2:]
+        depth = len(parts) - 1
+        prefix = "/".join([".."] * depth)
+        return f"{prefix}/{q_rel}" if prefix else q_rel
     up = len(parts)
     if len(parts) >= 3 and parts[0] == "q" and parts[1] == "past" and site_rel.startswith("q/") and site_rel.count("/") == 1:
         up = len(parts) - 1
@@ -168,6 +192,11 @@ def _learning_nav_href(rel_path: Path, dest: str) -> str:
     """学習ナビのリンク先（#hash は index.html 基準、それ以外は site 相対パス）。"""
     if dest.startswith("#"):
         return footer_href(rel_path, "index.html") + dest
+    if dest.startswith("q/") and _in_q_section(rel_path):
+        q_rel = dest[2:]
+        depth = len(rel_path.parent.parts) - 1
+        prefix = "/".join([".."] * depth)
+        return f"{prefix}/{q_rel}" if prefix else q_rel
     return footer_href(rel_path, dest)
 
 
@@ -273,6 +302,117 @@ def site_page_wrap_open() -> str:
 
 def site_page_wrap_close() -> str:
     return "</div>"
+
+
+def q_index_tools_open_html(
+    *,
+    search_label: str,
+    search_placeholder: str,
+    hit_text: str,
+) -> str:
+    """一覧の検索行（ヒット件数を同じ行に）。"""
+    return (
+        '<div class="past-index-tools" aria-label="絞り込み">'
+        '<div class="past-index-tools-primary">'
+        f'<label class="past-index-search" for="q-index-q">'
+        f'<span class="u-visually-hidden">{html.escape(search_label)}</span>'
+        f'<input id="q-index-q" type="search" inputmode="search" autocomplete="off" '
+        f'placeholder="{html.escape(search_placeholder)}" '
+        f'aria-label="{html.escape(search_label)}">'
+        "</label>"
+        f'<span id="q-index-hit" class="past-index-hit" aria-live="polite">'
+        f"{html.escape(hit_text)}</span>"
+        "</div>"
+        '<div class="past-index-tools-actions">'
+        '<button type="button" class="q-index-reset hide" id="q-index-reset">'
+        "条件をクリア</button></div>"
+        '<div class="q-index-active-filters hide" id="q-index-active-filters" '
+        'aria-live="polite"></div>'
+    )
+
+
+def q_index_tools_close_html() -> str:
+    return "</div>"
+
+
+def q_index_stats_line(*, question_count: int, mode: str, year_count: int = 0, category_count: int = 0) -> str:
+    """一覧パネル見出し下の統計（過去問・実践・一問一答で文言を統一）。"""
+    n = question_count
+    if mode == "practice":
+        return f"全{n}問・{category_count}分野"
+    if mode == "ichimon":
+        return f"全{n}問・{year_count}年度・{category_count}分野"
+    return f"全{n}問・{year_count}年度・{category_count}分野"
+
+
+def q_index_filters_details_html(
+    *,
+    year_row_label: str,
+    year_jump_html: str,
+    category_chips_html: str,
+    status_chips_html: str,
+    show_year_row: bool = True,
+    show_category_row: bool = True,
+    filters_hint: str = "年度・分野・学習状況",
+) -> str:
+    """一覧の年度・分野・学習状況チップ（スマホでは details で折りたたみ）。"""
+    year_row = ""
+    if show_year_row and year_jump_html.strip():
+        year_row = (
+            f'<div class="q-index-chips-row q-index-year-row" id="q-index-year-row">'
+            f'<span class="q-index-chips-label">{html.escape(year_row_label)}</span>'
+            f'<nav class="q-index-chips q-index-year-jump" aria-label="{html.escape(year_row_label)}で移動">'
+            f"{year_jump_html}</nav></div>"
+        )
+    category_row = ""
+    if show_category_row:
+        category_row = (
+            '<div class="q-index-chips-row">'
+            '<span class="q-index-chips-label" id="q-index-chips-label">分野</span>'
+            f'<div class="q-index-chips" aria-labelledby="q-index-chips-label">'
+            f"{category_chips_html}</div></div>"
+        )
+    return (
+        '<details class="q-index-filters-more">'
+        '<summary class="q-index-filters-more-summary">'
+        '<span class="q-index-filters-more-title">絞り込み</span>'
+        f'<span class="q-index-filters-more-hint">{html.escape(filters_hint)}</span>'
+        "</summary>"
+        '<div class="q-index-filters-more-body">'
+        f"{year_row}{category_row}"
+        '<div class="q-index-chips-row">'
+        '<span class="q-index-chips-label">学習状況</span>'
+        f'<div class="q-index-chips q-index-status-chips" role="group" aria-label="学習状況（アプリ連携）">'
+        f"{status_chips_html}</div></div></div></details>"
+    )
+
+
+def q_hub_links_html(rel_path: Path, *, current: str) -> str:
+    """過去問・実践演習・一問一答のモード切替タブ（一覧・個別ページ共通）。"""
+    items: list[tuple[str, str, str]] = [
+        ("past", "過去問", "q/index.html"),
+        ("practice", "実践演習", "q/practice/index.html"),
+        ("ichimon", "一問一答", "q/ichimon/index.html"),
+    ]
+    lis: list[str] = []
+    for key, label, target in items:
+        if key == current:
+            lis.append(
+                f'<li class="q-hub-tab is-current">'
+                f'<span class="q-hub-tab-label" aria-current="page">{html.escape(label)}</span>'
+                f"</li>"
+            )
+        else:
+            href = "/" + target.lstrip("/")
+            lis.append(
+                f'<li class="q-hub-tab">'
+                f'<a class="q-hub-tab-label" href="{html.escape(href)}">{html.escape(label)}</a>'
+                f"</li>"
+            )
+    return (
+        '<nav class="q-hub-links q-hub-links--tabs" aria-label="問題タイプ">'
+        f'<ul class="q-hub-tabs-list">{"".join(lis)}</ul></nav>'
+    )
 
 
 def breadcrumb_html(rel_path: Path, items: list[tuple[str, str | None]]) -> str:

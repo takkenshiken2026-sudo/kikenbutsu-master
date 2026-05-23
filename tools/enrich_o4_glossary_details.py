@@ -87,14 +87,56 @@ TERM_SEARCH_ALIASES: dict[str, list[str]] = {
     "消防署長": ["消防署長", "市町村"],
     "消防長": ["消防長"],
     "漏えい防止堤": ["防止堤", "漏えい防止"],
+    "政令": ["危険物の規制に関する政令", "政令"],
+    "別表第三": ["別表第三", "政令別表"],
+    "品名": ["品名", "別表第一"],
+    "性状": ["性状", "別表第二"],
+    "類別": ["類別", "第1類", "第4類"],
+    "保安員": ["危険物施設保安員", "施設保安員"],
+    "動植物油": ["動植物油類"],
+    "屋内貯蔵所": ["屋内貯蔵所", "貯蔵所基準"],
+    "屋外タンク貯蔵所": ["屋外タンク貯蔵所", "タンク貯蔵所"],
+    "給油取扱所": ["給油取扱所", "ガソリンスタンド"],
+    "移送取扱所": ["移送取扱所", "移送"],
+    "一般取扱所": ["一般取扱所", "取扱所"],
+    "販売取扱所": ["販売取扱所", "取扱所"],
+    "倍数計算": ["指定数量倍数", "倍数"],
+    "設置許可": ["設置許可", "製造所等の設置"],
+    "変更許可": ["変更許可", "製造所等の変更"],
+    "選任": ["選任", "危険物施設保安員"],
+    "譲渡": ["譲渡", "引渡し"],
+    "引渡し": ["引渡し", "譲渡"],
+    "混載": ["混載", "混載制限"],
+    "消火剤": ["消火剤", "泡消火剤", "粉末消火剤"],
+    "粉末消火剤": ["粉末消火", "粉末消火剤"],
+    "第1石油類": ["第一石油類", "第1石油類"],
+    "第2石油類": ["第二石油類", "第2石油類"],
+    "第3石油類": ["第三石油類", "第3石油類"],
+    "水溶性液体": ["水溶性", "水溶性液体"],
+    "非水溶性液体": ["非水溶性", "非水溶性液体"],
+    "非水溶性": ["非水溶性液体", "非水溶性"],
+    "冷却": ["冷却消火"],
+    "窒息": ["窒息消火"],
+    "注水": ["注水消火", "注水"],
+    "流出": ["漏えい", "流出"],
+    "火気": ["火気管理", "火気厳禁"],
+    "火気厳禁": ["火気", "裸火"],
+    "可燃性": ["可燃性", "引火性"],
+    "引火性": ["引火性", "可燃性"],
+    "酸化性": ["酸化性固体", "酸化性液体"],
+    "酸化性液体": ["酸化性液体", "第6類"],
+    "酢酸": ["酢酸", "第二石油類"],
+    "一酸化炭素": ["一酸化炭素", "完全燃焼"],
+    "酸素": ["酸素", "燃焼の三要素"],
 }
 
 # 問題DBに紐づかない核心語の手書き詳細（乙4向け）
 CURATED_ARTICLES: dict[str, dict[str, str]] = {
     "移送": {
+        "short_def": "移送は、配管・ポンプ等により貯蔵設備間で危険物を移すことで、運搬（車両による事業所外搬送）と区別する。",
         "definition": "まず「移送」は、貯蔵所等から配管・ポンプ等により危険物を他の設備や場所へ移すことをいう。",
-        "term_detail_body": "移動タンク貯蔵所による移送や移送取扱所など、設備の種類ごとに基準が異なります。漏えい・火気・静電気対策が試験の定番です。",
-        "exam_points": "配管・ポンプ等による危険物の移動;移動タンク貯蔵所・移送取扱所との区別;漏えい・火気・静電気の注意",
+        "term_detail_body": "移動タンク貯蔵所による移送や移送取扱所など、設備の種類ごとに基準が異なります。配管の材質・接続、ポンプの接地、漏えい検知、火気・静電気対策が試験の定番です。\n\n運搬は車両等で事業所の外へ運び送ることであり、表示・混載・容器が主な論点です。移送取扱所と移動タンク貯蔵所の役割も別々に整理してください。",
+        "exam_points": "配管・ポンプ等による設備間の移動;運搬・譲渡との区別;移送取扱所・移動タンク貯蔵所",
         "common_mistakes": "運搬と混同する;移送取扱所と移動タンク貯蔵所を同一視する",
         "legal_basis": "危険物の規制に関する政令",
     },
@@ -106,9 +148,10 @@ CURATED_ARTICLES: dict[str, dict[str, str]] = {
         "legal_basis": "危険物の規制に関する政令",
     },
     "運搬": {
+        "short_def": "運搬は、危険物を車両等で事業所外へ運び送ることで、移送（設備間の移動）や譲渡と区別する。",
         "definition": "まず「運搬」は、危険物を事業所外へ車両等で運び送ることをいう。",
-        "term_detail_body": "運搬では表示・混載制限・容器・積載方法などの基準が問われます。移送（設備間の移動）や譲渡・引渡しとの違いを整理してください。",
-        "exam_points": "車両等による事業所外の運搬;表示・混載・容器・積載の基準;移送・譲渡との区別",
+        "term_detail_body": "運搬では、車両への表示、混載制限、容器の基準、積載方法・立入禁止などが問われます。タンクローリーやドラム缶の取扱いもこの文脈で出題されます。\n\n移送は配管・ポンプによる設備間の移動、譲渡・引渡しは所有権・占有の移転が中心です。三つを表で対比すると試験で迷いにくくなります。",
+        "exam_points": "車両等による事業所外の運搬;表示・混載・容器・積載;移送・譲渡との区別",
         "common_mistakes": "移送と混同する;表示と標識を同一視する",
         "legal_basis": "危険物の規制に関する政令",
     },
@@ -127,16 +170,18 @@ CURATED_ARTICLES: dict[str, dict[str, str]] = {
         "legal_basis": "消防法",
     },
     "丙種危険物取扱者": {
+        "short_def": "丙種危険物取扱者は、丙種の危険物を取り扱える資格者で、乙種第4類とは対象範囲・試験内容が異なる。",
         "definition": "まず「丙種危険物取扱者」は、丙種の危険物を取り扱う資格者で、乙種・甲種とは対象となる危険物の範囲と試験内容が異なる。",
-        "term_detail_body": "乙種第4類の学習では、甲種・乙種・丙種の違いを混同しないことが重要です。丙種は比較的範囲が限定された危険物取扱資格として位置づけられます。",
-        "exam_points": "乙種・丙種・甲種の対象範囲の違い;免状の種類と取扱可能な危険物;試験の受験資格の違い",
+        "term_detail_body": "危険物取扱者免状は甲種・乙種・丙種に区分され、取扱可能な危険物の範囲が異なります。乙種第4類は第4類を中心とした乙種試験であり、丙種とは出題範囲・難易度が別です。\n\n試験では「丙種で扱える危険物」「乙種との違い」が正誤問題になりやすいです。受験資格・実務経験年数の要件も条文とあわせて整理してください。",
+        "exam_points": "甲種・乙種・丙種の対象範囲;乙種第4類との出題範囲の違い;免状・受験資格",
         "common_mistakes": "乙種第4類と丙種の出題範囲を同一視する;全類を扱えると誤解する",
         "legal_basis": "消防法",
     },
     "消防法別表第二": {
+        "short_def": "消防法別表第二は、危険物の性状区分を定める表で、別表第一の品名と組み合わせて該当性を判断する。",
         "definition": "まず「消防法別表第二」は、危険物の品名と性状を定める表で、別表第一と組み合わせて危険物かどうかを判断する。",
-        "term_detail_body": "別表第一の品名に該当し、かつ別表第二の区分に応じた性状を有する物品が危険物となります。試験では品名と性状の対応を問う設問が出ます。",
-        "exam_points": "別表第一の品名＋別表第二の性状;危険物該当性の二段階判断",
+        "term_detail_body": "危険物は、別表第一の品名に該当し、かつ別表第二の区分に応じた性状を有する物品です。例えば引火性液体・可燃性固体・酸化性液体など、性状ごとに取扱い基準が異なります。\n\n試験では品名だけで危険物と決めつける誤答が多いです。別表第三（指定数量）と役割が異なることも混同しないでください。",
+        "exam_points": "別表第一の品名＋別表第二の性状;危険物該当性の二段階判断;別表第三との区別",
         "common_mistakes": "別表第一だけで危険物と決めつける;性状区分を品名と混同する",
         "legal_basis": "消防法",
     },
@@ -154,7 +199,191 @@ CURATED_ARTICLES: dict[str, dict[str, str]] = {
         "common_mistakes": "消防署長と同一とみなす;都道府県知事の権限と混同する",
         "legal_basis": "消防法",
     },
+    "政令": {
+        "short_def": "政令は、国会の委任に基づく内閣命令で、危険物分野では危険物の規制に関する政令が指定数量・貯蔵基準などの具体規定を定める。",
+        "article_lead": "法令・制度の根拠となる政令と、危険物の規制に関する政令の役割を整理します。",
+        "definition": "まず「政令」は、国会の委任に基づき内閣が制定する命令であり、危険物分野では主に危険物の規制に関する政令が指定数量・貯蔵方法などの具体基準を定める。",
+        "term_detail_body": "乙4でいう政令は、ほぼ「危険物の規制に関する政令」を指します。消防法が大枠、政令が品名ごとの指定数量や貯蔵・取扱いの技術基準、別表第三が品名一覧という役割分担を押さえてください。\n\n指定数量の数値や石油類の区分は政令・別表第三で確認します。試験では「政令で定める」「政令の別表第三に掲げる品名」といった表現の正誤が問われます。",
+        "exam_points": "危険物の規制に関する政令が具体基準;指定数量・別表第三は政令で規定;消防法と政令の役割分担",
+        "common_mistakes": "政令と消防法本則を混同する;指定数量を消防法だけで定めると誤解する;政令と施行令を取り違える",
+        "legal_basis": "危険物の規制に関する政令;消防法",
+    },
+    "別表第三": {
+        "short_def": "別表第三は、危険物の規制に関する政令の別表で、危険物の品名と指定数量などを定める一覧表である。",
+        "article_lead": "政令別表第三の意味と、別表第一・第二との違いを整理します。",
+        "definition": "まず「別表第三」は、危険物の規制に関する政令に付される表で、危険物の品名を列挙し、指定数量の算定に用いる。",
+        "term_detail_body": "危険物かどうかの判断は、消防法別表第一（品名）と別表第二（性状）の組み合わせで行います。別表第三は、すでに危険物とされる物品について、品名ごとの指定数量などを示す表です。\n\n試験では「別表第三に掲げる品名」「指定数量は別表第三に定める」などの文言と、ガソリン・灯油などの具体品名の対応が問われます。",
+        "exam_points": "政令別表第三は品名の一覧;指定数量算定に用いる;別表第一・第二との役割の違い",
+        "common_mistakes": "別表第三を危険物該当性の判断表と誤解する;別表第一・第二と混同する",
+        "legal_basis": "危険物の規制に関する政令",
+    },
+    "品名": {
+        "definition": "まず「品名」は、危険物の規制に関する政令別表第三などに掲げられる物質の名称で、指定数量や区分を品目ごとに定める単位となる。",
+        "term_detail_body": "法令上は「ガソリン」「アセトン」などの品名単位で指定数量が定められます。第4類（引火性液体）の中でも、第一石油類・第二石油類などの類と品名の組み合わせで数値が変わります。\n\n製造所等で貯蔵・取扱う危険物の品名を変更する場合は、届出や許可が必要となる場面もあります。品名の変更と数量変更・倍数計算は別の論点として整理してください。",
+        "exam_points": "指定数量は品名・性状ごと;石油類は品名で第一〜第三・特殊引火物を区別;品名変更時の手続",
+        "common_mistakes": "類名だけで品名を特定する;品名変更と数量変更の手続を混同する",
+        "legal_basis": "危険物の規制に関する政令",
+    },
+    "性状": {
+        "definition": "まず「性状」は、危険物が有する化学的・物理的性質の区分であり、消防法別表第二に酸化性固体・引火性液体などとして定められる。",
+        "term_detail_body": "危険物該当性は、別表第一の品名に加え、別表第二の性状区分を満たすかで判断します。同じ品名でも性状が異なれば危険物に該当しない場合があります。\n\n乙4では引火性液体（第4類）が中心ですが、他類の性状名（酸化性固体・可燃性固体など）を混同しないよう、類・性状・品名の三層で整理するとよいです。",
+        "exam_points": "別表第二が性状区分;品名＋性状で危険物判断;第4類は引火性液体の性状",
+        "common_mistakes": "品名だけで危険物と決めつける;類と性状を同一視する",
+        "legal_basis": "消防法",
+    },
+    "類別": {
+        "definition": "まず「類別」は、危険物を第1類から第6類までの6区分に分けることで、乙種第4類は第4類（引火性液体）を主に扱う。",
+        "term_detail_body": "第1類は酸化性固体、第2類は可燃性固体、第3類は自然発火性・禁水性、第4類は引火性液体、第5類は自己反応性、第6類は酸化性液体です。試験では「第○類に属するものはどれか」「誤っている組合せはどれか」が頻出します。\n\n乙4受験者は第4類の性質と消火・漏えい対策を重点的に学びつつ、他類の代表例を誤り選択肢で排除できる程度に押さえます。",
+        "exam_points": "危険物は第1〜6類;乙4は第4類（引火性液体）;各類の代表例を区別",
+        "common_mistakes": "第4類を可燃性固体と混同する;第6類と第1類を取り違える",
+        "legal_basis": "消防法",
+    },
+    "一般取扱所": {
+        "definition": "まず「一般取扱所」は、危険物の販売・授与・引渡しなどを行う取扱所の一種で、給油取扱所や移送取扱所とは目的・基準が異なる。",
+        "term_detail_body": "製造所等は製造所・貯蔵所・取扱所に大別されます。取扱所には一般取扱所・給油取扱所・移送取扱所・販売取扱所などがあり、それぞれ構造設備や保安の基準が異なります。\n\n試験では施設の分類（貯蔵所か取扱所か）と、一般取扱所に該当する行為（販売・授与など）を問う設問が出ます。給油取扱所は自動車等への給油が目的である点が区別の目安です。",
+        "exam_points": "取扱所の一種;給油・移送・販売取扱所と区別;貯蔵所ではない",
+        "common_mistakes": "一般取扱所を貯蔵所と混同する;給油取扱所と同一視する",
+        "legal_basis": "危険物の規制に関する政令;消防法",
+    },
+    "販売取扱所": {
+        "definition": "まず「販売取扱所」は、危険物を販売する取扱所であり、一般取扱所のうち販売を主目的とする施設として整理される。",
+        "term_detail_body": "取扱所は危険物の製造以外の授受・取扱いを行う施設です。販売取扱所は名称どおり販売に重点があり、給油取扱所（給油）・移送取扱所（配管移送）とは異なります。\n\n選択肢では「販売取扱所は取扱所である」「屋外タンク貯蔵所は貯蔵所である」といった施設区分の正誤が問われやすいです。",
+        "exam_points": "販売を行う取扱所;貯蔵所・製造所と区別;取扱所のサブタイプ",
+        "common_mistakes": "販売取扱所を貯蔵所とみなす;一般取扱所と完全同一と考える",
+        "legal_basis": "危険物の規制に関する政令",
+    },
+    "タンク貯蔵所": {
+        "short_def": "タンク貯蔵所は、タンクで危険物を貯蔵する貯蔵所の総称で、屋内・屋外・移動タンク貯蔵所などに分かれる。",
+        "definition": "まず「タンク貯蔵所」は、タンクにより危険物を貯蔵する貯蔵所の総称で、屋内・屋外・移動タンクなど形態により名称が分かれる。",
+        "term_detail_body": "貯蔵所のうちタンクで貯蔵するものをタンク貯蔵所といい、屋内タンク貯蔵所・屋外タンク貯蔵所・移動タンク貯蔵所に細分されます。屋内貯蔵所（タンク以外の貯蔵方法）や取扱所とは構造基準が異なります。\n\n試験では「移動タンク貯蔵所はタンクローリー等の車両タンク」「屋外タンク貯蔵所は屋外設置のタンク」など、形態ごとの定義の正誤が問われます。",
+        "exam_points": "タンクによる貯蔵所の総称;屋内・屋外・移動の三分;取扱所・屋内貯蔵所と区別",
+        "common_mistakes": "移動タンク貯蔵所だけをタンク貯蔵所とする;屋内貯蔵所と屋内タンク貯蔵所を混同",
+        "legal_basis": "危険物の規制に関する政令",
+    },
+    "屋内貯蔵所": {
+        "definition": "まず「屋内貯蔵所」は、建築物内で危険物を貯蔵する貯蔵所であり、屋内タンク貯蔵所や移動タンク貯蔵所とは設置形態が異なる。",
+        "term_detail_body": "屋内貯蔵所は建物内の貯蔵施設全般を指す概念として問われ、タンクの有無や構造基準で屋内タンク貯蔵所等と区別されます。名称が似る施設は「何を貯蔵するか」「タンクかどうか」で整理するとよいです。\n\n防火区画・換気・火気管理など、屋内特有の基準が試験の焦点になります。",
+        "exam_points": "建築物内の貯蔵所;屋内タンク貯蔵所との違い;取扱所・屋外施設と区別",
+        "common_mistakes": "屋内貯蔵所と屋内タンク貯蔵所を同一視する;給油取扱所を貯蔵所とする",
+        "legal_basis": "危険物の規制に関する政令",
+    },
+    "屋外タンク貯蔵所": {
+        "definition": "まず「屋外タンク貯蔵所」は、屋外に設置したタンクで危険物を貯蔵する貯蔵所である。",
+        "term_detail_body": "屋外タンク貯蔵所は、タンク本体・基礎・囲い・漏えい防止設備など屋外設置ならではの基準が問われます。移動タンク貯蔵所（車両搭載）や屋内タンク貯蔵所と混同しないことが重要です。\n\n保安距離・防火堤・標識表示など、施設ごとの数値・構造要件をセットで覚えると本番で判別しやすくなります。",
+        "exam_points": "屋外設置のタンク貯蔵;移動・屋内タンクとの区別;漏えい防止・防火堤",
+        "common_mistakes": "屋外貯蔵所（非タンク）と同一視する;移動タンク貯蔵所と混同",
+        "legal_basis": "危険物の規制に関する政令",
+    },
+    "移動タンク貯蔵所": {
+        "definition": "まず「移動タンク貯蔵所」は、車両等に固定されたタンクにより危険物を貯蔵・移送する貯蔵所である。",
+        "term_detail_body": "タンクローリーに代表される移動タンク貯蔵所では、移送中の漏えい・転倒・静電気・火気管理が試験の定番です。移送取扱所（配管による移送）や運搬（事業所外への輸送）とは区別してください。\n\n設置・変更時の許可・完成検査、運搬時の表示・混載制限など、移動という性質に紐づく論点を関連用語とあわせて確認します。",
+        "exam_points": "車両固定タンクによる貯蔵・移送;移送取扱所・運搬との区別;漏えい・火気・静電気対策",
+        "common_mistakes": "移送取扱所と同一視する;運搬と混同する",
+        "legal_basis": "危険物の規制に関する政令",
+    },
+    "移送取扱所": {
+        "definition": "まず「移送取扱所」は、配管・ポンプ等により危険物を移送する取扱所であり、移動タンク貯蔵所（車両タンク）とは仕組みが異なる。",
+        "term_detail_body": "移送は設備間の危険物移動をいい、移送取扱所はその取扱いを行う施設です。移動タンク貯蔵所は車両タンクでの移送、運搬は事業所外への輸送という整理が基本です。\n\n漏えい検知・緊急遮断・火気厳禁・接地など、配管移送に特有の安全対策が問われます。",
+        "exam_points": "配管・ポンプによる移送;移動タンク貯蔵所との違い;運搬との区別",
+        "common_mistakes": "移動タンク貯蔵所と混同する;運搬・譲渡と混同する",
+        "legal_basis": "危険物の規制に関する政令",
+    },
+    "保安員": {
+        "definition": "まず「保安員」は試験文脈では主に危険物施設保安員を指し、一定規模の危険物施設で施設保安の業務に従事する者として選任される。",
+        "term_detail_body": "危険物取扱者（免状）、危険物保安監督者・統括管理者（選任 managerial）、危険物施設保安員（施設の保安業務）は役割が異なります。保安員は施設側の保安体制の一部として問われます。\n\n選任要件・業務範囲・取扱者との関係を表にまとめると、主体の取り違えを防げます。",
+        "exam_points": "危険物施設保安員の選任;取扱者・監督者との役割分担;施設保安の業務",
+        "common_mistakes": "危険物取扱者と同一視する;保安監督者と混同する",
+        "legal_basis": "消防法",
+    },
+    "譲渡": {
+        "definition": "まず「譲渡」は、製造所等における危険物施設の権利・義務の承継に関する手続で、施設の引渡しとあわせて届出が必要となる場合がある。",
+        "term_detail_body": "製造所等の譲渡・引渡しでは、施設の権利移転と危険物取扱者免状の更新は別手続きです。試験では「譲渡・引渡しがあったときの届出」など手続の正誤が問われます。\n\n廃止届・品名変更・数量変更など、施設ライフサイクルごとの届出・許可を一覧化すると整理しやすくなります。",
+        "exam_points": "製造所等の権利承継;引渡しとのセット届出;免状手続きとの区別",
+        "common_mistakes": "免状の更新だけで施設届出が不要と誤解する;譲渡と運搬を混同する",
+        "legal_basis": "消防法",
+    },
+    "引渡し": {
+        "definition": "まず「引渡し」は、製造所等の施設を他人に引き渡すことで、譲渡とともに法令上の届出・安全確認が問われる。",
+        "term_detail_body": "引渡しは施設の実務上の移転を伴い、譲渡は権利義務の承継を伴う概念として整理されます。試験では両者をまとめて「譲渡または引渡しの届出」として問う場合が多いです。\n\n引渡し後も危険物の残存・安全措置・新たな占有者の義務が問題になるため、手続だけでなく保安の継続に注意してください。",
+        "exam_points": "施設の引渡し;譲渡・届出との関係;残存危険物の安全",
+        "common_mistakes": "譲渡と同義とみなして細部を省略する;運搬・移送と混同する",
+        "legal_basis": "消防法",
+    },
+    "選任": {
+        "definition": "まず「選任」は、危険物施設保安員や危険物保安監督者など、法令上必要な者を施設・事業所に就けさせること。",
+        "term_detail_body": "選任は「誰を・どの施設に・どの要件で」就けるかが試験の焦点です。危険物取扱者免状の交付・更新とは別の制度として整理してください。\n\n監督者・統括管理者・施設保安員・取扱者の四層を混同しないよう、主体と要件を表にまとめるとよいです。",
+        "exam_points": "施設保安員・監督者の選任;免状交付との区別;選任要件の有無",
+        "common_mistakes": "選任と免状交付を混同する;施設保安員と取扱者を同一視する",
+        "legal_basis": "消防法",
+    },
+    "混載": {
+        "definition": "まず「混載」は、危険物の運搬において性質の異なる危険物や指定の物質を同一車両等に積載することで、制限がある場合が多い。",
+        "term_detail_body": "運搬では表示・容器・積載方法に加え、混載制限が重要です。混載が禁止または条件付きとなる組み合わせは、品名・類・性状ごとに整理して覚えます。\n\n表示だけ整えれば任意に混載できるわけではなく、容器基準を満たさない積載は誤りとなります。",
+        "exam_points": "運搬時の混載制限;品名・類による組合せ;表示・容器基準とのセット",
+        "common_mistakes": "表示があれば混載自由と誤解する;運搬と移送を混同する",
+        "legal_basis": "危険物の規制に関する政令",
+    },
+    "設置許可": {
+        "definition": "まず「設置許可」は、指定数量以上の危険物を扱う製造所等を新設するときに、消防法上必要となる許可手続である。",
+        "term_detail_body": "製造所等の設置許可は、位置・構造・設備が基準に適合するかを審査する手続です。危険物取扱者免状があっても施設許可が不要になるわけではありません。\n\n設置後の完成検査、変更許可・廃止届との流れを時系列で整理すると、手続問題の得点源になります。",
+        "exam_points": "指定数量以上で新設時に必要;免状では代替不可;完成検査との関係",
+        "common_mistakes": "免状があれば許可不要と誤解する;変更許可と混同する",
+        "legal_basis": "消防法",
+    },
+    "変更許可": {
+        "definition": "まず「変更許可」は、製造所等の位置・構造・設備を変更するときに、法令上必要となる許可手続である。",
+        "term_detail_body": "変更許可は新設の設置許可と区別し、既存施設の改築・設備変更・品名・数量の変更が許可・届出の対象かを条文ごとに整理します。取扱者の立会いや標識設置だけでは変更許可が不要になるわけではありません。\n\n品名変更・数量変更は届出で足りる場合と許可が必要な場合があり、試験ではその境界が問われます。",
+        "exam_points": "位置・構造・設備の変更;設置許可との違い;品名・数量変更との区別",
+        "common_mistakes": "届出で済む変更と許可必要な変更を混同する;標識だけで足りると誤解する",
+        "legal_basis": "消防法",
+    },
+    "濃度": {
+        "short_def": "濃度は、溶液中の溶質の相対的な量を表す指標で、試験では質量パーセント濃度の計算が中心となる。",
+        "definition": "まず「濃度」は、溶液中の溶質の量を表す指標で、質量パーセント濃度などが物性・化学分野で用いられる。",
+        "term_detail_body": "危険物試験では質量パーセント濃度の計算や、濃度と引火点・危険性の関係が問われます。単位（％）と分母（溶液全体か溶媒か）を読み違えると誤答になりやすいです。\n\n関連する用語（質量パーセント濃度・モル濃度など）とあわせて、公式と単位をセットで覚えてください。",
+        "exam_points": "質量パーセント濃度の意味;計算と単位;引火点・物性との関係",
+        "common_mistakes": "濃度の定義域を取り違える;質量と体積の％を混同する",
+        "legal_basis": "",
+    },
 }
+
+from tools.o4_curated_batch50_rest import CURATED_BATCH50_REST  # noqa: E402
+from tools.o4_curated_batch_next import CURATED_BATCH_NEXT  # noqa: E402
+
+CURATED_ARTICLES.update(CURATED_BATCH50_REST)
+CURATED_ARTICLES.update(CURATED_BATCH_NEXT)
+
+# 問題文の部分一致だけでは別論点の解説が混ざりやすい短語
+STRICT_MATCH_TERMS = frozenset(
+    {
+        "政令",
+        "別表第三",
+        "品名",
+        "性状",
+        "類別",
+        "選任",
+        "譲渡",
+        "引渡し",
+        "混載",
+        "保安員",
+        "濃度",
+        "対流",
+        "酸素",
+        "冷却",
+        "窒息",
+        "火気",
+        "非水溶性",
+        "倍数計算",
+        "酢酸",
+        "換気",
+        "給油",
+        "引火点",
+        "ガソリン",
+        "水溶性",
+        "灯油",
+        "漏えい",
+    }
+)
 
 # --add-terms で追記する用語（問題DB・既存CSVにない短語）
 EXTRA_TERMS: list[tuple[str, str]] = [
@@ -168,6 +397,65 @@ EXTRA_TERMS: list[tuple[str, str]] = [
     ("アセトアルデヒド", "火災・消火・漏えい"),
     ("第4石油類", "火災・消火・漏えい"),
     ("譲渡・引渡し", "法令・制度"),
+]
+
+# 頻出・重要キーワード50件（実践演習・一問一答の出現頻度と乙4出題範囲で選定）
+BATCH_50_EXAM_TERMS: list[tuple[str, str]] = [
+    ("政令", "法令・制度"),
+    ("別表第三", "法令・制度"),
+    ("品名", "法令・制度"),
+    ("性状", "法令・制度"),
+    ("類別", "法令・制度"),
+    ("倍数計算", "法令・制度"),
+    ("設置許可", "法令・制度"),
+    ("変更許可", "法令・制度"),
+    ("選任", "法令・制度"),
+    ("譲渡", "法令・制度"),
+    ("引渡し", "法令・制度"),
+    ("混載", "法令・制度"),
+    ("屋内貯蔵所", "法令・制度"),
+    ("屋外タンク貯蔵所", "法令・制度"),
+    ("タンク貯蔵所", "法令・制度"),
+    ("移動タンク貯蔵所", "法令・制度"),
+    ("給油取扱所", "法令・制度"),
+    ("移送取扱所", "法令・制度"),
+    ("一般取扱所", "法令・制度"),
+    ("販売取扱所", "法令・制度"),
+    ("保安員", "法令・制度"),
+    ("可燃性", "物性・化学"),
+    ("引火性", "物性・化学"),
+    ("非水溶性", "物性・化学"),
+    ("水溶性液体", "物性・化学"),
+    ("非水溶性液体", "物性・化学"),
+    ("濃度", "物性・化学"),
+    ("蒸発", "物性・化学"),
+    ("沸騰", "物性・化学"),
+    ("揮発性", "物性・化学"),
+    ("中和", "物性・化学"),
+    ("対流", "物性・化学"),
+    ("酸化性", "物性・化学"),
+    ("酸化性液体", "物性・化学"),
+    ("酸素", "物性・化学"),
+    ("一酸化炭素", "物性・化学"),
+    ("火気", "火災・消火・漏えい"),
+    ("火気厳禁", "火災・消火・漏えい"),
+    ("換気", "火災・消火・漏えい"),
+    ("消火剤", "火災・消火・漏えい"),
+    ("粉末消火剤", "火災・消火・漏えい"),
+    ("冷却", "火災・消火・漏えい"),
+    ("窒息", "火災・消火・漏えい"),
+    ("注水", "火災・消火・漏えい"),
+    ("流出", "火災・消火・漏えい"),
+    ("給油", "火災・消火・漏えい"),
+    ("第1石油類", "火災・消火・漏えい"),
+    ("第2石油類", "火災・消火・漏えい"),
+    ("酢酸", "火災・消火・漏えい"),
+    ("動植物油", "火災・消火・漏えい"),
+]
+
+ADD_TERMS_LIST: list[tuple[str, str]] = [
+    *EXTRA_TERMS,
+    *BATCH_50_EXAM_TERMS,
 ]
 
 BLOB_FIELDS = (
@@ -685,7 +973,7 @@ def find_question_rows(
         for row in exact_idx.get(key, []):
             add_row(row, 20)
 
-    if len(scored) < 4:
+    if len(scored) < 4 and term not in STRICT_MATCH_TERMS:
         for row in all_rows:
             blob = row_blob(row)
             for key in keys:
@@ -693,6 +981,10 @@ def find_question_rows(
                 if len(nk) >= 2 and nk in blob:
                     add_row(row, 5)
                     break
+    elif len(scored) < 4 and term in STRICT_MATCH_TERMS:
+        for row in all_rows:
+            if row_score(term, term, row) >= 12:
+                add_row(row, 8)
 
     scored.sort(key=lambda x: x[0], reverse=True)
     picked = [row for _, row in scored[:max_rows]]
@@ -759,6 +1051,30 @@ def apply_curated(row: dict[str, str], curated: dict[str, str]) -> None:
             row[key] = value
 
 
+def apply_curated_overrides(row: dict[str, str], curated: dict[str, str] | None) -> None:
+    """手書きテンプレを最終反映（自動生成フィールドの上書きを防ぐ）。"""
+    if not curated:
+        return
+    for key in (
+        "short_def",
+        "definition",
+        "term_detail_body",
+        "article_lead",
+        "exam_points",
+        "common_mistakes",
+        "legal_basis",
+    ):
+        if norm(curated.get(key)):
+            row[key] = norm(curated[key])
+    if norm(curated.get("faq_1_answer")):
+        row["faq_1_answer"] = norm(curated["faq_1_answer"])
+    elif norm(row.get("short_def")):
+        row["faq_1_answer"] = norm(row["short_def"])
+    mistakes_curated = split_sentences(curated.get("common_mistakes", ""), 3)
+    if mistakes_curated:
+        row["faq_2_answer"] = mistakes_curated[0]
+
+
 def enrich_row(
     row: dict[str, str],
     practice_rows: list[dict[str, str]],
@@ -778,8 +1094,15 @@ def enrich_row(
     unit = most_common_unit(all_rows)
     topic = norm(all_rows[0].get("topic")) if all_rows else ""
 
+    expl_sources = practice_rows + ichimon_rows
+    if term in STRICT_MATCH_TERMS:
+        expl_sources = [
+            r
+            for r in expl_sources
+            if row_score(term, term, r) >= 8 or row_score(term, norm_term(term), r) >= 12
+        ] or expl_sources[:6]
     explanations = unique_lines(
-        [norm(r.get("explanation")) for r in practice_rows + ichimon_rows],
+        [norm(r.get("explanation")) for r in expl_sources],
         limit=5,
     )
     if not explanations and curated:
@@ -787,21 +1110,25 @@ def enrich_row(
             [curated.get("definition", ""), curated.get("term_detail_body", "")],
             limit=3,
         )
-    exam_points = unique_lines(
-        [norm(r.get("exam_point")) for r in practice_rows + ichimon_rows],
-        limit=8,
-    )
-    if not exam_points and curated:
+    if curated and norm(curated.get("exam_points")):
         exam_points = [p.strip() for p in curated.get("exam_points", "").split(";") if p.strip()]
-    traps = unique_lines(
-        [norm(r.get("trap_point")) for r in practice_rows + ichimon_rows],
-        limit=5,
-    )
-    if not traps and curated:
-        traps = split_sentences(curated.get("common_mistakes", ""), 3)
+    else:
+        exam_points = unique_lines(
+            [norm(r.get("exam_point")) for r in practice_rows + ichimon_rows],
+            limit=8,
+        )
+    if curated and norm(curated.get("common_mistakes")):
+        traps = split_sentences(curated.get("common_mistakes", ""), 5)
+    else:
+        traps = unique_lines(
+            [norm(r.get("trap_point")) for r in practice_rows + ichimon_rows],
+            limit=5,
+        )
+
+    curated_lead_locked = bool(curated and norm(curated.get("definition")))
 
     lead_sentence = ""
-    if curated and norm(curated.get("definition")):
+    if curated_lead_locked:
         curated_def = split_sentences(curated.get("definition", ""), 1)
         if curated_def:
             lead_sentence = trim_lead_sentence(term, curated_def[0])
@@ -810,7 +1137,11 @@ def enrich_row(
     if not lead_sentence:
         lead_sentence = trim_lead_sentence(term, norm(row.get("short_def")))
 
-    if lead_sentence and _definition_sentence_score(term, lead_sentence) < 8:
+    if (
+        not curated_lead_locked
+        and lead_sentence
+        and _definition_sentence_score(term, lead_sentence) < 8
+    ):
         best_alt: tuple[int, str] | None = None
         for alt in unique_sentences(
             [trim_lead_sentence(term, e) for e in explanations if e],
@@ -824,17 +1155,24 @@ def enrich_row(
         if best_alt and best_alt[0] >= 8:
             lead_sentence = best_alt[1]
 
-    short_def = build_short_def(term, lead_sentence, category)
+    if curated and norm(curated.get("short_def")):
+        short_def = norm(curated["short_def"])
+        if not short_def.endswith("。"):
+            short_def += "。"
+    else:
+        short_def = build_short_def(term, lead_sentence, category)
 
-    if lead_sentence:
+    if curated_lead_locked:
+        definition = norm(curated.get("definition"))
+    elif lead_sentence:
         definition = f"まず「{term}」は、{lead_sentence.rstrip('。')}。"
     else:
         definition = norm(row.get("definition"))
-    if len(explanations) > 1:
+    if not curated_lead_locked and len(explanations) > 1:
         second = trim_lead_sentence(term, explanations[1])
         if second and second != lead_sentence:
             definition += f" {second}" + ("" if second.endswith("。") else "。")
-    if unit:
+    if unit and not curated_lead_locked:
         definition += f" {category}では「{unit}」の文脈で繰り返し問われます。"
 
     q_count = len(practice_rows) + len(ichimon_rows)
@@ -844,25 +1182,11 @@ def enrich_row(
 
     if curated and norm(curated.get("term_detail_body")):
         term_detail_body = norm(curated["term_detail_body"])
-        supplement = build_term_detail_body(
-            term,
-            category,
-            lead_sentence,
-            explanations,
-            exam_points,
-            traps,
-            unit,
-            topic,
-            q_count,
-            peers,
-            legal,
-            practice_rows,
-            skip_definition=True,
-        )
-        for para in supplement.split("\n\n"):
-            p = norm(para)
-            if p and p not in term_detail_body:
-                term_detail_body = f"{term_detail_body}\n\n{p}"
+        if q_count >= 2 and BRAND not in term_detail_body:
+            term_detail_body += (
+                f"\n\n{BRAND}では実践演習・一問一答に合わせた復習問題を"
+                f"{q_count}問前後掲載しています。演習で誤った選択肢から本記事へ戻って確認してください。"
+            )
     else:
         term_detail_body = build_term_detail_body(
             term,
@@ -908,7 +1232,11 @@ def enrich_row(
             "definition": definition,
             "explanation": explanation,
             "article_title": f"{term}とは？{EXAM}で押さえる意味・試験ポイント",
-            "article_lead": build_article_lead(term, category, unit),
+            "article_lead": (
+                norm(curated.get("article_lead"))
+                if curated and norm(curated.get("article_lead"))
+                else build_article_lead(term, category, "" if curated_lead_locked else unit)
+            ),
             "term_detail_body": term_detail_body,
             "exam_points": ";".join(exam_points) if exam_points else norm(row.get("exam_points")),
             "common_mistakes": mistakes,
@@ -920,7 +1248,15 @@ def enrich_row(
             "faq_1_answer": (
                 short_def
                 if short_def
-                else (explanations[0] if explanations else norm(row.get("faq_1_answer")))
+                else (
+                    (lead_sentence.rstrip("。") + "。")
+                    if lead_sentence
+                    else (
+                        explanations[0]
+                        if explanations
+                        else norm(row.get("faq_1_answer"))
+                    )
+                )
             ),
             "faq_2_question": f"{term}でよくある誤りは？",
             "faq_2_answer": (
@@ -936,6 +1272,7 @@ def enrich_row(
     )
     if peers:
         row["related_terms"] = ";".join(peers)
+
     return True
 
 
@@ -948,7 +1285,7 @@ def append_extra_terms(rows: list[dict[str, str]], fieldnames: list[str]) -> int
 
     existing = {norm(r.get("term")) for r in rows}
     added = 0
-    for term, category in EXTRA_TERMS:
+    for term, category in ADD_TERMS_LIST:
         if term in existing:
             continue
         row = build_row(term, category)
@@ -966,7 +1303,7 @@ def main() -> int:
     ap.add_argument(
         "--add-terms",
         action="store_true",
-        help="頻出の短語用語を glossary_terms.csv に追記してから充実する",
+        help="頻出の試験用語（BATCH_50 含む）を glossary_terms.csv に追記してから充実する",
     )
     args = ap.parse_args()
 
@@ -991,7 +1328,7 @@ def main() -> int:
             print(f"新規用語を {added_terms} 件追加しました")
     elif args.add_terms and args.dry_run:
         existing = {norm(r.get("term")) for r in rows}
-        added_terms = sum(1 for t, _ in EXTRA_TERMS if t not in existing)
+        added_terms = sum(1 for t, _ in ADD_TERMS_LIST if t not in existing)
         if added_terms:
             print(f"（dry-run）新規用語を {added_terms} 件追加予定")
 
@@ -1029,6 +1366,11 @@ def main() -> int:
             enriched += 1
             if curated and not practice_rows and not ichimon_rows:
                 curated_only += 1
+        elif curated:
+            enriched += 1
+            curated_only += 1
+        if curated:
+            apply_curated_overrides(row, curated)
 
     print(
         f"用語 {len(rows)} 件 — 詳細充実 {enriched} 件"

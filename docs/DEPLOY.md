@@ -18,16 +18,25 @@ python3 tools/build_all.py
 
 リモート: https://github.com/takkenshiken2026-sudo/kikenbutsu-master
 
-## 公開を有効にする（初回のみ・要操作）
+## 公開設定（2026-05-21 反映済み）
 
-GitHub で **Settings → Pages** を開き、次を設定してください。
+| 項目 | 値 |
+|------|-----|
+| Source | **Deploy from a branch** |
+| Branch | `gh-pages` / `/ (root)` |
+| Custom domain | `kikenbutsu-master.jp`（HTTPS 証明書済み） |
 
-1. **Build and deployment → Source:** `Deploy from a branch`
-2. **Branch:** `gh-pages` / **Folder:** `/ (root)`
-3. **Custom domain:** `kikenbutsu-master.jp`（未設定なら入力し、DNS の CNAME を GitHub 向けに設定）
-4. 保存後、数分待って https://kikenbutsu-master.jp/ を確認
+初回や **Source が GitHub Actions のまま**で 404 になる場合は、上記ブランチ公開に切り替えたうえで Pages ビルドをキューしてください（認証済み環境）:
 
-直接 URL: https://takkenshiken2026-sudo.github.io/kikenbutsu-master/
+```bash
+# gh-pages を push したあと（任意・API）
+curl -sS -X POST -H "Authorization: Bearer $GITHUB_TOKEN" \
+  -H "Accept: application/vnd.github+json" \
+  https://api.github.com/repos/takkenshiken2026-sudo/kikenbutsu-master/pages/builds
+```
+
+本番: https://kikenbutsu-master.jp/  
+GitHub 既定 URL（カスタムドメインへリダイレクト）: https://takkenshiken2026-sudo.github.io/kikenbutsu-master/
 
 ## GitHub Actions で自動デプロイする場合（任意）
 
