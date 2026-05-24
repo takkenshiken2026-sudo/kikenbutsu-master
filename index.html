@@ -4128,6 +4128,7 @@ function renderDash(){
 }
 function renderTrendChart(svgId,sessions){
   const svg=document.getElementById(svgId); if(!svg)return;
+  requestAnimationFrame(function(){
   const W=svg.parentElement.offsetWidth||700,H=220;
   svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
   svg.setAttribute('preserveAspectRatio','none');
@@ -4164,6 +4165,7 @@ function renderTrendChart(svgId,sessions){
   ${pts.map(p=>`<circle cx="${p.x}" cy="${p.y}" r="4" fill="#fff" stroke="#333" stroke-width="2"/>`).join('')}
   ${dataLabels}
   ${dateLabels}`;
+  });
 }
 
 // ===== QUIZ START =====
@@ -4633,8 +4635,9 @@ function showNextBtn(show, cb, label){
     const isMobile = window.matchMedia && window.matchMedia('(max-width: 700px)').matches;
     el.textContent = isMobile ? (label || '次へ →') : `${label || '次へ →'}  Enter`;
     el.classList.add('show');
-    // re-trigger animation
-    el.style.animation='none'; el.offsetHeight; el.style.animation='';
+    // re-trigger animation（layout read を避ける）
+    el.style.animation='none';
+    requestAnimationFrame(function(){ el.style.animation=''; });
   } else {
     el.classList.remove('show');
     _nextFloatCallback = null;
@@ -6522,16 +6525,21 @@ loadDB();
     el.textContent=box.textContent;
     el.style.display='block';
   });
+  let _tipMoveRaf=0;
   document.addEventListener('mousemove',function(e){
     if(el.style.display==='none') return;
     const x=e.clientX, y=e.clientY;
-    const w=el.offsetWidth, h=el.offsetHeight;
-    const vw=window.innerWidth, vh=window.innerHeight;
-    let left=x+12, top=y-h-10;
-    if(left+w>vw-8) left=x-w-12;
-    if(top<8) top=y+16;
-    el.style.left=left+'px';
-    el.style.top=top+'px';
+    if(_tipMoveRaf) cancelAnimationFrame(_tipMoveRaf);
+    _tipMoveRaf=requestAnimationFrame(function(){
+      _tipMoveRaf=0;
+      const w=el.offsetWidth, h=el.offsetHeight;
+      const vw=window.innerWidth, vh=window.innerHeight;
+      let left=x+12, top=y-h-10;
+      if(left+w>vw-8) left=x-w-12;
+      if(top<8) top=y+16;
+      el.style.left=left+'px';
+      el.style.top=top+'px';
+    });
   });
   document.addEventListener('mouseout',function(e){
     if(e.target.closest('.tip-icon')) el.style.display='none';
