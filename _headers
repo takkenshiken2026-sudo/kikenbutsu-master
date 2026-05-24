@@ -1,0 +1,27 @@
+# Cloudflare Pages / Netlify 向け（GitHub Pages 単体では未使用）。
+# kikenbutsu-master.jp を Cloudflare プロキシ経由で配信する場合は、
+# docs/DEPLOY.md の Cache Rule 設定もあわせて行ってください。
+
+/exam-site-data-*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/site-config.js
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/site-analytics.js
+  Cache-Control: public, max-age=86400, must-revalidate
+
+/site-theme.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/site-pages.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/site-q-index.js
+  Cache-Control: public, max-age=86400, must-revalidate
+
+/site-terms-index.js
+  Cache-Control: public, max-age=86400, must-revalidate
+
+/*.html
+  Cache-Control: public, max-age=600, must-revalidate

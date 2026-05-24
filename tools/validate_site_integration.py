@@ -64,7 +64,8 @@ def _index_footer(index_path: Path) -> list[Issue]:
         return [Issue(f"{index_path.name} がありません（SPA フッター未検証）")]
     text = index_path.read_text(encoding="utf-8")
     issues: list[Issue] = []
-    if "site-pages.css" not in text and "site-theme.css" not in text:
+    has_theme = "site-theme.css" in text or 'id="site-theme-vars"' in text
+    if "site-pages.css" not in text and not has_theme:
         issues.append(
             Issue(f"{index_path.name}: site-pages.css / site-theme.css が未リンク（apply_site_config を実行）")
         )

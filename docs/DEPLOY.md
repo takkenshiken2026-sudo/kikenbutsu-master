@@ -53,6 +53,24 @@ git push origin main
 
 Pages の Source を **GitHub Actions** に切り替えると、`main` への push で `build_all.py` が走ります。
 
+## PageSpeed / キャッシュ（GitHub Pages + カスタムドメイン）
+
+GitHub Pages 単体では静的ファイルの `Cache-Control` は **max-age=600（10分）固定**で、リポジトリから変更できません。PageSpeed Insights の「効率的なキャッシュ保存期間」は、次のいずれかで解消します。
+
+### Cloudflare プロキシ（kikenbutsu-master.jp で推奨）
+
+1. Cloudflare ダッシュボード → **Caching** → **Cache Rules**
+2. ルール例:
+   - **If** URI Path contains `exam-site-data-` **Then** Edge TTL = 1 year
+   - **If** URI Path ends with `.js` or `.css`（`index.html` を除く） **Then** Edge TTL = 1 month
+3. `index.html` は短め（10分〜1時間）のままにし、JS/CSS は `?v=` 付き URL（`build_all` が index に付与）で更新時にキャッシュ bust
+
+ビルド時に `exam-site-data-*.js` 等へ内容ハッシュ付き `?v=` が付きます。Cloudflare で長期キャッシュを有効にしても、CSV 再生成後は URL が変わるため stale 配信を避けられます。
+
+### Cloudflare Pages / Netlify へ移行する場合
+
+リポジトリ直下の `_headers` が `public_site/` にコピーされます（`prepare_public_site.sh`）。
+
 ## 再デプロイ（日常）
 
 ```bash

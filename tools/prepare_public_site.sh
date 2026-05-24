@@ -47,6 +47,9 @@ done
 if [[ -f "$ROOT/privacy-terms.html" ]]; then
   cp "$ROOT/privacy-terms.html" "$OUT/"
 fi
+if [[ -f "$ROOT/_headers" ]]; then
+  cp "$ROOT/_headers" "$OUT/"
+fi
 if [[ -f "$ROOT/docs/glossary-article-slugs.json" ]]; then
   mkdir -p "$OUT/docs"
   cp "$ROOT/docs/glossary-article-slugs.json" "$OUT/docs/"
