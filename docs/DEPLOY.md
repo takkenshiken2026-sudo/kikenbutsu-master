@@ -18,15 +18,17 @@ python3 tools/build_all.py
 
 リモート: https://github.com/takkenshiken2026-sudo/kikenbutsu-master
 
-## 公開設定（2026-05-21 反映済み）
+## 公開設定
 
 | 項目 | 値 |
 |------|-----|
-| Source | **Deploy from a branch** |
-| Branch | `gh-pages` / `/ (root)` |
+| Source（推奨） | **GitHub Actions**（`.github/workflows/deploy-pages.yml`） |
+| Source（従来） | Deploy from a branch → `gh-pages` / `/ (root)` |
 | Custom domain | `kikenbutsu-master.jp`（HTTPS 証明書済み） |
 
-初回や **Source が GitHub Actions のまま**で 404 になる場合は、上記ブランチ公開に切り替えたうえで Pages ビルドをキューしてください（認証済み環境）:
+**Actions 運用:** `main` へ push すると CI が `python3 tools/build_all.py` を実行し、`public_site/` を Pages にデプロイします。ワークフローファイルの push には Git 認証の **`workflow` スコープ**が必要です（下記）。
+
+**ブランチ運用（手動）:** 初回や Actions 未設定時は、上記ブランチ公開に切り替えたうえで Pages ビルドをキューしてください（認証済み環境）:
 
 ```bash
 # gh-pages を push したあと（任意・API）

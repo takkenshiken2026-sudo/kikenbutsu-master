@@ -30,6 +30,7 @@ from tools.o4_guide_content import (  # noqa: E402
     GENRE_BODIES,
     SLUG_PATCHES,
 )
+from tools.guide_expert_quality import apply_guide_expert_quality  # noqa: E402
 from tools.o4_guide_slug_sections import (  # noqa: E402
     SLUG_SECTION_EXTRA,
     slug_faq_pairs,
@@ -159,7 +160,7 @@ def enrich_faqs(row: dict[str, str], slug: str) -> None:
                 "過去問で本番形式に慣れ、実践演習500問で分野別の量と弱点補強を行ってください。",
             ),
         ]
-    for i, (q, a) in enumerate(faqs[:2], start=1):
+    for i, (q, a) in enumerate(faqs[:4], start=1):
         a = a.replace("◯◯試験", EXAM)
         row[f"faq_{i}_question"] = q
         row[f"faq_{i}_answer"] = a
@@ -244,8 +245,7 @@ def enrich_row(row: dict[str, str], *, force: bool) -> bool:
         row["revision_note"] = note
         changed = True
 
-    row["author_profile"] = f"{exam_name()}向けの学習コンテンツ（演習・用語・試験ガイド）を整理する編集チーム"
-    row["reviewer_profile"] = "消防試験研究センター・消防庁の公開情報と照合し、サイト内リンクの整合を確認"
+    apply_guide_expert_quality(row)
 
     return changed
 
@@ -254,7 +254,14 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--force", action="store_true", help="定型文以外も上書き")
+    ap.add_argument(
+        "--expert",
+        action="store_true",
+        help="全件に専門家品質レイヤー（guide_expert_quality）を適用して上書き",
+    )
     args = ap.parse_args()
+    if args.expert:
+        args.force = True
 
     with CSV_PATH.open(encoding="utf-8-sig", newline="") as f:
         reader = csv.DictReader(f)
@@ -270,7 +277,10 @@ def main() -> int:
         for i in range(1, 8):
             if is_boilerplate(norm(row.get(f"section_{i}_body", ""))):
                 n_boiler += 1
-        if enrich_row(row, force=args.force):
+        if enrich_row(row, force=args.force or args.expert):
+            n_changed += 1
+        elif args.expert:
+            apply_guide_expert_quality(row)
             n_changed += 1
 
     print(f"articles: {len(rows)}, boilerplate sections before: {n_boiler}, rows updated: {n_changed}")

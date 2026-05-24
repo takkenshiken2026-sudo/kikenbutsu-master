@@ -389,6 +389,7 @@ CURATED_ARTICLES: dict[str, dict[str, str]] = {
     },
 }
 
+from tools.glossary_expert_quality import apply_glossary_expert_quality  # noqa: E402
 from tools.glossary_reader_quality import (  # noqa: E402
     apply_reader_quality,
     build_reader_lead,
@@ -1183,6 +1184,7 @@ def apply_study_keep_full(row: dict[str, str], curated: dict[str, str]) -> None:
         traps=mistakes,
         peers=split_semicolon_field(norm(row.get("related_terms"))),
     )
+    apply_glossary_expert_quality(row)
     tags = [t for t in parse_tags(norm(row.get("tags"))) if t != "詳細記事"]
     if "学習法" not in tags:
         tags.append("学習法")
@@ -1230,6 +1232,7 @@ def apply_meta_study_term(row: dict[str, str]) -> None:
             traps=split_semicolon_field(norm(curated.get("common_mistakes"))),
             peers=split_semicolon_field(norm(curated.get("related_terms"))),
         )
+        apply_glossary_expert_quality(row)
     tags = [t for t in parse_tags(norm(row.get("tags"))) if t != "詳細記事"]
     for drop in ("実践演習連動", "一問一答連動"):
         if drop in tags:
@@ -1647,6 +1650,7 @@ def enrich_row(
         peers=peers,
         unit=unit,
     )
+    apply_glossary_expert_quality(row)
     return True
 
 
@@ -1765,6 +1769,7 @@ def main() -> int:
             continue
         if term not in KEEP_TERMS and term not in META_STUDY_TERMS:
             apply_reader_quality(row)
+            apply_glossary_expert_quality(row)
 
     for row in rows:
         if norm(row.get("term")):
