@@ -2741,7 +2741,7 @@ html:not(.js) .terms-idx-seo-fallback .terms-idx-seo-list a {
 .terms-idx-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: var(--fs-caption);
+  font-size: 14px;
   table-layout: fixed;
   border: none;
   background: var(--bg);
@@ -2766,7 +2766,7 @@ html:not(.js) .terms-idx-seo-fallback .terms-idx-seo-list a {
   color: #fff !important;
   padding: 10px 14px;
   text-align: left;
-  font-size: var(--fs-small);
+  font-size: 14px;
   font-weight: 700;
   white-space: nowrap;
 }
@@ -2957,7 +2957,7 @@ html:not(.js) .terms-idx-seo-fallback .terms-idx-seo-list a {
     position: static;
     white-space: normal;
     padding: 8px 10px;
-    font-size: var(--fs-caption);
+    font-size: 14px;
   }
   .terms-idx-table-duo thead .terms-idx-slot-b {
     display: none;
@@ -3836,6 +3836,21 @@ html:not(.js) .terms-idx-seo-fallback .terms-idx-seo-list a {
 .article-body strong {
   color: var(--accent-emphasis);
   font-weight: 700;
+}
+.term-subheading {
+  font-size: var(--fs-sub);
+  font-weight: 700;
+  margin: 1.35em 0 0.65em;
+  color: var(--text);
+}
+.term-compare-note {
+  font-size: var(--fs-caption);
+  color: var(--text2);
+  margin: 0.35em 0 0;
+  line-height: 1.6;
+}
+.term-compare-table {
+  margin-top: 0.75em;
 }
 .article-body table {
   width: 100%;

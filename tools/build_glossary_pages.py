@@ -198,7 +198,7 @@ def split_semicolon(s: str) -> list[str]:
     return [x.strip() for x in (s or "").split(";") if x.strip()]
 
 
-TERMS_INDEX_CSS_VER = "20260525-responsive-h1"
+TERMS_INDEX_CSS_VER = "20260524-terms-table-14px"
 TERMS_INDEX_JS_VER = "20260521-terms-snippet"
 TERMS_INDEX_SEARCH_PLACEHOLDER = "例：ストレスチェック、ラインケア、うつ病…"
 
@@ -537,14 +537,29 @@ def legal_basis_html(legal: str) -> str:
 def faq_items_for_term(term: str, short_def: str, definition: str, explanation: str) -> list[dict[str, str]]:
     first_points = study_points(explanation, limit=2)
     exam_answer = " ".join(first_points) if first_points else explanation
+    summary = short_def.replace("\n\n", " ").replace("\n", " ")
     return [
         {
             "question": f"{term}とは何ですか？",
-            "answer": f"{term}とは、{short_def.rstrip('。')}。{definition}",
+            "answer": summary or f"{term}とは、{definition}",
         },
         {
-            "question": f"{term}は試験でどう押さえればよいですか？",
+            "question": f"{term}は試験でどんなふうに問われますか？",
             "answer": exam_answer,
+        },
+        {
+            "question": f"{term}で間違えやすい点は？",
+            "answer": (
+                "似た用語や数値と混同しやすいです。"
+                "演習で×になった理由をメモし、関連用語と対比して復習してください。"
+            ),
+        },
+        {
+            "question": f"{term}はどう復習するとよいですか？",
+            "answer": (
+                "意味を一言で言えるようにしたあと、実践演習の正誤解説を読み返し、"
+                "関連用語へ1つだけ進むと定着しやすくなります。"
+            ),
         },
     ]
 
@@ -565,11 +580,11 @@ def faq_section_html(items: list[dict[str, str]]) -> str:
 
 def custom_faq_items(entry: dict, fallback: list[dict[str, str]]) -> list[dict[str, str]]:
     items: list[dict[str, str]] = []
-    for idx in range(1, 4):
+    for idx in range(1, 5):
         q = norm(entry.get(f"faq_{idx}_question"))
         a = norm(entry.get(f"faq_{idx}_answer"))
         if q and a:
-            items.append({"question": q, "answer": a})
+            items.append({"question": q, "answer": a.replace("\n\n", " ").replace("\n", " ")})
     return items or fallback
 
 
@@ -580,6 +595,43 @@ def semicolon_list_html(value: str) -> str:
     return '<ol class="term-point-list">' + "".join(f"<li>{html.escape(item)}</li>" for item in items) + "</ol>"
 
 
+def semicolon_field_html(value: str) -> str:
+    """セミコロン区切りの学習メモを箇条書き化（改行のみの場合は段落のまま）。"""
+    if ";" in value:
+        listed = semicolon_list_html(value)
+        if listed:
+            return listed
+    return ""
+
+
+def peer_comparison_table_html(
+    term: str,
+    related: str,
+    by_term: dict[str, dict],
+) -> str:
+    peer_names = [x for x in split_semicolon(related) if x and x != term][:4]
+    if len(peer_names) < 2:
+        return ""
+    rows: list[tuple[str, str]] = [(term, by_term.get(term, {}).get("short_def") or "—")]
+    for name in peer_names:
+        snippet = by_term.get(name, {}).get("short_def") or "関連用語ページで定義を確認"
+        rows.append((name, snippet))
+    body = "".join(
+        "<tr>"
+        f"<th>{html.escape(label)}</th>"
+        f"<td>{html.escape(snippet.rstrip('。'))}</td>"
+        "</tr>"
+        for label, snippet in rows
+    )
+    return (
+        '<h3 class="term-subheading">混同しやすい用語との違い（一覧）</h3>'
+        '<table class="seo-info-table term-compare-table"><thead><tr>'
+        "<th>用語</th><th>押さえる要点</th>"
+        "</tr></thead><tbody>"
+        f"{body}</tbody></table>"
+        '<p class="term-compare-note">数値・手続の正誤は演習と公式テキストで必ず確認してください。</p>'
+    )
+
 
 def build_term_html(
     entry: dict,
@@ -588,6 +640,8 @@ def build_term_html(
     term_lookup: dict[str, str],
     entries: list[dict],
     guides: list[dict[str, str]],
+    *,
+    by_term: dict[str, dict] | None = None,
 ) -> str:
     term = entry["term"]
     category = entry["category"]
@@ -685,9 +739,17 @@ def build_term_html(
         points_html = semicolon_list_html(exam_points)
     elif points:
         points_html = '<ol class="term-point-list">' + "".join(f"<li>{html.escape(p)}</li>" for p in points) + "</ol>"
+    entries_by_term = by_term or {e["term"]: e for e in entries}
+    compare_html = peer_comparison_table_html(term, related, entries_by_term)
     detail_html = text_paragraphs(term_detail_body or definition)
-    mistakes_html = text_paragraphs(common_mistakes)
-    memory_html = f"<blockquote><p>{html.escape(memory_tip)}</p></blockquote>" if memory_tip else ""
+    if compare_html:
+        detail_html = (detail_html + compare_html) if detail_html else compare_html
+    mistakes_html = semicolon_field_html(common_mistakes) or text_paragraphs(common_mistakes)
+    if memory_tip:
+        listed = semicolon_field_html(memory_tip)
+        memory_html = listed if listed else text_paragraphs(memory_tip)
+    else:
+        memory_html = ""
     example_html = ""
     if example_question or example_answer:
         example_html = (
@@ -751,22 +813,30 @@ def build_term_html(
         "</p></blockquote></section>"
     )
 
+    action_points = split_semicolon(exam_points)[:3]
+    action_items = "".join(f"<li>{html.escape(p)}</li>" for p in action_points if p)
+    if not action_items:
+        action_items = (
+            f"<li>{html.escape(term)}の定義と位置づけを確認する</li>"
+            "<li>試験で問われやすい条件や表現を整理する</li>"
+            "<li>頻出の誤り選択肢や混同しやすい点を復習する</li>"
+        )
+    action_items += "<li>関連する用語解説や過去問へ進む</li>"
     can_do_html = (
         '<section class="seo-action-box" aria-labelledby="action-box-title">'
         '<h2 id="action-box-title">この記事でできること</h2>'
-        f"<p>この記事では、{html.escape(term)}の基本的な意味を確認し、頻出ポイントや注意点を使って試験で迷いやすい部分を整理できます。読み終えたら、関連用語と過去問を合わせて確認し、知識を選択肢で使える状態に近づけてください。</p>"
-        '<ul>'
-        f"<li>{html.escape(term)}の定義と位置づけを確認する</li>"
-        "<li>試験で問われやすい条件や表現を整理する</li>"
-        "<li>頻出の誤り選択肢や混同しやすい点を復習する</li>"
-        "<li>関連する用語解説や過去問へ進む</li>"
-        "</ul></section>"
+        f"<p>この記事では、{html.escape(term)}の意味と試験での見方を、問題の解説に沿って整理します。</p>"
+        f"<ul>{action_items}</ul></section>"
     )
 
     content_sections: list[str] = []
     body_toc_items: list[tuple[str, str]] = []
     for sec_id, label, body_html in [
-        ("summary", "まず押さえる要点", text_paragraphs(short_def)),
+        (
+            "summary",
+            "まず押さえる要点",
+            text_paragraphs(short_def) or text_paragraphs(definition),
+        ),
         ("points", "試験で押さえるポイント", points_html),
         ("definition", "定義と基本理解", detail_html),
         ("legal", "法令・根拠", legal_basis_html(legal)),
@@ -1267,12 +1337,15 @@ def main() -> int:
                 "faq_2_answer": norm(row.get("faq_2_answer")),
                 "faq_3_question": norm(row.get("faq_3_question")),
                 "faq_3_answer": norm(row.get("faq_3_answer")),
+                "faq_4_question": norm(row.get("faq_4_question")),
+                "faq_4_answer": norm(row.get("faq_4_answer")),
                 "slug_file": slug_file,
                 "field_hub": field_hub_slug(norm(row.get("category"))),
             }
         )
 
     term_lookup = make_term_lookup(entries)
+    entries_by_term = {e["term"]: e for e in entries}
     guides = load_guide_slugs()
 
     TERMS_DIR.mkdir(parents=True, exist_ok=True)
@@ -1287,7 +1360,12 @@ def main() -> int:
         out_file = TERMS_DIR / e["slug_file"]
         rel_path = out_file.relative_to(ROOT)
         out_file.parent.mkdir(parents=True, exist_ok=True)
-        out_file.write_text(build_term_html(e, rel_path, base, term_lookup, entries, guides), encoding="utf-8")
+        out_file.write_text(
+            build_term_html(
+                e, rel_path, base, term_lookup, entries, guides, by_term=entries_by_term
+            ),
+            encoding="utf-8",
+        )
 
     by_cat: dict[str, list[dict]] = {}
     for e in entries:

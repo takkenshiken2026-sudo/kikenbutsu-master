@@ -157,7 +157,7 @@ CURATED_ARTICLES: dict[str, dict[str, str]] = {
     },
     "バックドラフト": {
         "definition": "まず「バックドラフト」は、密閉空間で発生した火災に大量の酸素が一気に供給されたとき、可燃性ガスが急激に燃焼・爆発的に燃え上がる現象をいう。",
-        "term_detail_body": "バックドラフトは室内火災の急激な延焼現象です。閉鎖空間では燃焼が不完全になり可燃性ガスが蓄積し、開口部から酸素が流入すると一気に燃焼が進む。\n\n消火活動では、開放前の内部状況確認、換気の段階的実施、自衛消防組織との連携が重要です。",
+        "term_detail_body": "バックドラフトは室内火災の急激な延焼現象です。閉鎖空間では燃焼が不完全になり可燃性ガスが蓄積し、開口部から酸素が流入すると一気に燃焼が進みます。\n\n正しい。「密閉空間火災で酸素が一気に供給され可燃性ガスが急燃する」はバックドラフトの説明です。誤り。「天井付近の高温ガス層が下方へ伝播して室内一斉着火する」はフラッシュオーバーの説明です。消火活動では開放前の内部確認と段階的換気が重要です。",
         "exam_points": "密閉空間＋酸素流入で急燃;開放前の内部確認;換気は段階的に行う",
         "common_mistakes": "通常の延焼と混同する;開口部を一気に全開にする;内部状況未確認で進入する",
         "legal_basis": "消防法",
@@ -186,16 +186,30 @@ CURATED_ARTICLES: dict[str, dict[str, str]] = {
         "legal_basis": "消防法",
     },
     "消防法施行令": {
+        "short_def": "消防法施行令は、消防法の委任に基づき施設の構造設備など技術基準を定める命令である。",
+        "article_lead": "消防法・政令・施行令の役割分担と、試験で問われる条文の言い換えを整理します。",
         "definition": "まず「消防法施行令」は、消防法の委任に基づき、製造所等の構造設備や技術上の基準などを定める命令である。",
-        "term_detail_body": "危険物の規制に関する政令とあわせて、施設基準・保安距離・貯蔵方法などの具体基準を確認する場面で登場します。",
-        "exam_points": "消防法・政令・施行令の役割分担;施設の構造設備基準",
-        "common_mistakes": "政令と施行令の内容を取り違える;消防法本則と施行令を混同する",
+        "term_detail_body": (
+            "法令の階層では、消防法が基本法、危険物の規制に関する政令が危険物の品名・指定数量など、"
+            "消防法施行令が施設の構造・設備の技術基準を担います。試験では「政令で定める」と「施行令で定める」の"
+            "条文文言の正誤が問われます。\n\n"
+            "危険物の規制に関する政令と役割が異なるため、数値・手続・施設基準がどの法令に書かれているかを"
+            "表で整理しておくと混同しにくくなります。"
+        ),
+        "exam_points": "消防法・政令・施行令の三層;施設の構造設備基準;条文文言の正誤",
+        "common_mistakes": "政令と施行令の内容を取り違える;指定数量を施行令で定めると誤解する",
         "legal_basis": "消防法;消防法施行令",
     },
     "消防長": {
+        "short_def": "消防長は消防本部を置く市町村の消防委員会が選任する消防職員で、消防法上の権限主体の一つである。",
         "definition": "まず「消防長」は、消防本部を置く市町村の消防委員会が選任する消防職員で、消防法上の権限・職務の主体の一つである。",
-        "term_detail_body": "消防署長（消防署を置く市町村）との違い、命令権・監督権の主体としての整理が試験で問われます。",
-        "exam_points": "消防長と消防署長の設置主体の違い;消防組織と権限の主体",
+        "term_detail_body": (
+            "消防署長は消防署を置く市町村の長が任命する職員であり、設置主体が消防長と異なります。"
+            "命令・監督・検査などの権限が誰に属するかは、条文ごとに確認が必要です。\n\n"
+            "都道府県知事の権限（広域の消防行政）と市町村の消防長・消防署長の権限を混同しないよう、"
+            "主体（知事／消防長／消防署長／事業者）を表にまとめてください。"
+        ),
+        "exam_points": "消防長と消防署長の任命主体;知事の権限との区別;命令・監督の主体",
         "common_mistakes": "消防署長と同一とみなす;都道府県知事の権限と混同する",
         "legal_basis": "消防法",
     },
@@ -203,7 +217,7 @@ CURATED_ARTICLES: dict[str, dict[str, str]] = {
         "short_def": "政令は、国会の委任に基づく内閣命令で、危険物分野では危険物の規制に関する政令が指定数量・貯蔵基準などの具体規定を定める。",
         "article_lead": "法令・制度の根拠となる政令と、危険物の規制に関する政令の役割を整理します。",
         "definition": "まず「政令」は、国会の委任に基づき内閣が制定する命令であり、危険物分野では主に危険物の規制に関する政令が指定数量・貯蔵方法などの具体基準を定める。",
-        "term_detail_body": "乙4でいう政令は、ほぼ「危険物の規制に関する政令」を指します。消防法が大枠、政令が品名ごとの指定数量や貯蔵・取扱いの技術基準、別表第三が品名一覧という役割分担を押さえてください。\n\n指定数量の数値や石油類の区分は政令・別表第三で確認します。試験では「政令で定める」「政令の別表第三に掲げる品名」といった表現の正誤が問われます。",
+        "term_detail_body": "乙4でいう政令は、ほぼ「危険物の規制に関する政令」を指します。消防法が大枠、政令が品名ごとの指定数量や貯蔵・取扱いの技術基準、別表第三が品名一覧という役割分担を押さえてください。\n\n正しい。「指定数量は政令で定める」は政令の役割です。誤り。「製造所の構造設備はすべて政令で定める」は誤答で、構造設備の技術基準は消防法施行令が担います。政令と施行令・消防法本則の条文文言を表で整理してください。",
         "exam_points": "危険物の規制に関する政令が具体基準;指定数量・別表第三は政令で規定;消防法と政令の役割分担",
         "common_mistakes": "政令と消防法本則を混同する;指定数量を消防法だけで定めると誤解する;政令と施行令を取り違える",
         "legal_basis": "危険物の規制に関する政令;消防法",
@@ -212,7 +226,7 @@ CURATED_ARTICLES: dict[str, dict[str, str]] = {
         "short_def": "別表第三は、危険物の規制に関する政令の別表で、危険物の品名と指定数量などを定める一覧表である。",
         "article_lead": "政令別表第三の意味と、別表第一・第二との違いを整理します。",
         "definition": "まず「別表第三」は、危険物の規制に関する政令に付される表で、危険物の品名を列挙し、指定数量の算定に用いる。",
-        "term_detail_body": "危険物かどうかの判断は、消防法別表第一（品名）と別表第二（性状）の組み合わせで行います。別表第三は、すでに危険物とされる物品について、品名ごとの指定数量などを示す表です。\n\n試験では「別表第三に掲げる品名」「指定数量は別表第三に定める」などの文言と、ガソリン・灯油などの具体品名の対応が問われます。",
+        "term_detail_body": "危険物かどうかの判断は、消防法別表第一（品名）と別表第二（性状）の組み合わせで行います。別表第三は、すでに危険物とされる物品について、品名ごとの指定数量などを示す表です。\n\n正しい。「ガソリンは別表第三に掲げる品名である」といった記述は政令上の整理です。誤り。「別表第三だけで危険物かどうかを判断する」は誤答で、別表第一・第二との役割分担を問われます。",
         "exam_points": "政令別表第三は品名の一覧;指定数量算定に用いる;別表第一・第二との役割の違い",
         "common_mistakes": "別表第三を危険物該当性の判断表と誤解する;別表第一・第二と混同する",
         "legal_basis": "危険物の規制に関する政令",
@@ -233,7 +247,7 @@ CURATED_ARTICLES: dict[str, dict[str, str]] = {
     },
     "類別": {
         "definition": "まず「類別」は、危険物を第1類から第6類までの6区分に分けることで、乙種第4類は第4類（引火性液体）を主に扱う。",
-        "term_detail_body": "第1類は酸化性固体、第2類は可燃性固体、第3類は自然発火性・禁水性、第4類は引火性液体、第5類は自己反応性、第6類は酸化性液体です。試験では「第○類に属するものはどれか」「誤っている組合せはどれか」が頻出します。\n\n乙4受験者は第4類の性質と消火・漏えい対策を重点的に学びつつ、他類の代表例を誤り選択肢で排除できる程度に押さえます。",
+        "term_detail_body": "第1類は酸化性固体、第2類は可燃性固体、第3類は自然発火性・禁水性、第4類は引火性液体、第5類は自己反応性、第6類は酸化性液体です。試験では「第○類に属するものはどれか」「誤っている組合せはどれか」が頻出します。\n\n正しい。「第4類危険物は引火性液体である」は乙4の核心です。誤り。「第4類は可燃性固体である」は第2類の説明であり、類別の取り違えとして出題されます。",
         "exam_points": "危険物は第1〜6類;乙4は第4類（引火性液体）;各類の代表例を区別",
         "common_mistakes": "第4類を可燃性固体と混同する;第6類と第1類を取り違える",
         "legal_basis": "消防法",
@@ -345,13 +359,48 @@ CURATED_ARTICLES: dict[str, dict[str, str]] = {
         "common_mistakes": "濃度の定義域を取り違える;質量と体積の％を混同する",
         "legal_basis": "",
     },
+    "第1類危険物": {
+        "short_def": "第1類危険物は酸化性固体に属し、可燃物を燃焼させやすい性質を持つ危険物類である。",
+        "definition": "まず「第1類危険物」とは、酸化性固体に属する危険物類で、他の可燃物の燃焼を助長する性質がある。",
+        "term_detail_body": (
+            "第1類は酸化性固体、第2類は可燃性固体、第3類は自然発火性・禁水性、第4類は引火性液体、"
+            "第5類は自己反応性、第6類は酸化性液体です。乙4は第4類が中心ですが、"
+            "「第○類に属するものはどれか」の問題で他類の代表例を区別できる必要があります。\n\n"
+            "塩素酸カリなど酸化性固体が代表例です。第6類の酸化性液体（過酸化水素など）と混同しないよう、"
+            "固体か液体か、類別名をセットで覚えてください。"
+        ),
+        "exam_points": "酸化性固体;他類の燃焼を助長;第6類酸化性液体との区別",
+        "common_mistakes": "第4類引火性液体と混同する;第6類と第1類を取り違える;可燃性固体（第2類）と混同する",
+        "legal_basis": "消防法",
+    },
+    "燃焼の三要素": {
+        "short_def": "燃焼の三要素は可燃物・酸素（酸化剤）・着火源で、いずれかを除けば燃焼は成立しない。",
+        "definition": "まず「燃焼の三要素」とは、可燃物・酸素などの酸化剤・着火源の三つが揃って初めて燃焼が成立するという考え方を指す。",
+        "term_detail_body": (
+            "消火は、三要素のいずれかを除去・抑制することで行います。"
+            "除去（可燃物の撤去）、冷却（温度低下）、窒息（酸素濃度の低下）、抑制（連鎖反応の抑制）の四方式と対応づけて覚えると、"
+            "消火方法の選択肢問題が解きやすくなります。\n\n"
+            "酸素は助燃性ガスであり、空気中の酸素濃度低下（窒息消火）や不活性ガスによる置換が関連します。"
+            "着火源には明火のほか、静電気放電・摩擦熱なども含まれます。"
+        ),
+        "exam_points": "可燃物・酸素・着火源;消火四方式との対応;酸素は助燃性",
+        "common_mistakes": "水がすべての着火源になると誤解する;窒息と冷却を混同する;三要素のうち一つだけ除けば必ず消火と決めつける",
+        "legal_basis": "",
+    },
 }
 
+from tools.glossary_reader_quality import (  # noqa: E402
+    apply_reader_quality,
+    build_reader_lead,
+    ensure_glossary_csv_columns,
+)
 from tools.o4_curated_batch50_rest import CURATED_BATCH50_REST  # noqa: E402
 from tools.o4_curated_batch_next import CURATED_BATCH_NEXT  # noqa: E402
+from tools.o4_curated_study_keep import STUDY_KEEP_ARTICLES  # noqa: E402
 
 CURATED_ARTICLES.update(CURATED_BATCH50_REST)
 CURATED_ARTICLES.update(CURATED_BATCH_NEXT)
+CURATED_ARTICLES.update(STUDY_KEEP_ARTICLES)
 
 # 問題文の部分一致だけでは別論点の解説が混ざりやすい短語
 STRICT_MATCH_TERMS = frozenset(
@@ -479,6 +528,26 @@ GENERIC_PHRASES = (
     "混同を防げます",
 )
 
+# テンプレート埋め・文字数稼ぎに使わない定型文（品質監査でも利用）
+BOILERPLATE_PHRASES = GENERIC_PHRASES + (
+    "条文の言い換えと数値・主体の区別",
+    "定義を選択肢に落とし込める",
+    "「誤っているものはどれか」形式",
+    "本記事では定義・試験ポイント",
+    "関連演習へつなげます",
+    "一問一答では○×形式",
+    "問われやすいです",
+    "押さえると理解しやすく",
+    "乙種第4類の法令分野では、条文の言い換え",
+    "物性・化学分野では、性質の数値",
+    "火災・消火分野では、第4類の性質",
+    "下の比較の目安として覚え",
+    "出題文脈は主に",
+    "想定される出題形式の例",
+    "試験では特に次の観点が繰り返し",
+    "定着を確認してください",
+)
+
 
 def norm(s: str | None) -> str:
     return (s or "").strip()
@@ -499,7 +568,11 @@ def split_sentences(text: str, limit: int = 6) -> list[str]:
 def is_generic_sentence(s: str) -> bool:
     if len(s) < 18:
         return True
-    return any(p in s for p in GENERIC_PHRASES)
+    return any(p in s for p in BOILERPLATE_PHRASES)
+
+
+def is_boilerplate_sentence(s: str) -> bool:
+    return is_generic_sentence(s)
 
 
 def trim_lead_sentence(term: str, sentence: str) -> str:
@@ -609,6 +682,217 @@ def ends_sentence(s: str) -> str:
     return t if t.endswith("。") else f"{t}。"
 
 
+def ensure_sentence(s: str) -> str:
+    t = norm(s)
+    if not t:
+        return ""
+    if t.endswith(("。", "！", "？")):
+        return t
+    return f"{t}。"
+
+
+def split_semicolon_field(s: str) -> list[str]:
+    return [x.strip() for x in (s or "").split(";") if x.strip()]
+
+
+def format_field_items(items: list[str], *, limit: int = 5) -> str:
+    """CSV のセミコロン区切りフィールド向けに、読みやすい短文へ整形する。"""
+    out: list[str] = []
+    seen: set[str] = set()
+    for raw in items:
+        chunk = norm(raw)
+        if not chunk:
+            continue
+        parts = [chunk]
+        if ";" in chunk and not chunk.endswith("。"):
+            parts = [p.strip() for p in chunk.split(";") if p.strip()]
+        for part in parts:
+            sent = ensure_sentence(part)
+            key = sentence_key(sent)
+            if key in seen:
+                continue
+            seen.add(key)
+            out.append(sent)
+            if len(out) >= limit:
+                break
+        if len(out) >= limit:
+            break
+    return ";".join(out)
+
+
+def filter_rows_for_term(
+    term: str,
+    rows: list[dict[str, str]],
+    *,
+    min_score: int = 10,
+) -> list[dict[str, str]]:
+    """用語と無関係な弱いマッチ行を本文生成から除外する。"""
+    if not rows:
+        return rows
+    keys = search_keys_for(term)
+    scored: list[tuple[int, dict[str, str]]] = []
+    for row in rows:
+        best = max((row_score(term, k, row) for k in keys), default=0)
+        if best >= min_score:
+            scored.append((best, row))
+    if scored:
+        scored.sort(key=lambda x: x[0], reverse=True)
+        return [row for _, row in scored]
+    return []
+
+
+def append_db_excerpts(
+    body: str,
+    term: str,
+    practice_rows: list[dict[str, str]],
+    ichimon_rows: list[dict[str, str]],
+) -> str:
+    """手書き本文に、問題DB固有の解説だけを重複なく追記する。"""
+    seen = {sentence_key(p) for p in re.split(r"\n{2,}", body) if p.strip()}
+    extras: list[str] = []
+    for insight in extract_choice_insights(
+        practice_rows, ichimon_rows, limit=4
+    ):
+        if insight in body or sentence_key(insight) in seen:
+            continue
+        seen.add(sentence_key(insight))
+        extras.append(insight)
+    for line in extract_exam_trap_lines(practice_rows, ichimon_rows, limit=2):
+        if line in body or sentence_key(line) in seen:
+            continue
+        seen.add(sentence_key(line))
+        extras.append(line)
+    if not extras:
+        return body
+    return body + "\n\n" + "\n\n".join(extras)
+
+
+def merge_unique_detail_sentences(
+    body: str,
+    term: str,
+    explanations: list[str],
+) -> str:
+    """既存本文に、問題DB由来の重複しない一文だけを追記する（文字数パディングはしない）。"""
+    seen = {sentence_key(p) for p in re.split(r"\n{2,}", body) if p.strip()}
+    extras: list[str] = []
+    expl_sents: list[str] = []
+    for expl in explanations:
+        chunk = norm(expl)
+        if chunk.startswith(("誤り", "正しい", "誤答", "×", "○")):
+            expl_sents.append(chunk)
+            continue
+        expl_sents.extend(split_sentences(expl, 8))
+    for sent in unique_sentences(
+        [trim_lead_sentence(term, e) for e in expl_sents if e],
+        limit=5,
+    ):
+        if sent in body:
+            continue
+        key = sentence_key(sent)
+        if key in seen or is_boilerplate_sentence(sent):
+            continue
+        seen.add(key)
+        extras.append(ends_sentence(sent.rstrip("。")))
+    if not extras:
+        return body
+    return body + ("\n\n" if body else "") + "\n\n".join(extras)
+
+
+def _is_choice_insight_line(ex: str) -> bool:
+    if not ex:
+        return False
+    head = ex[:16]
+    return (
+        ex.startswith(("誤", "正", "×", "○"))
+        or "誤り" in head
+        or "正しい" in head
+        or "誤答" in head
+    )
+
+
+def extract_choice_insights(
+    practice_rows: list[dict[str, str]],
+    ichimon_rows: list[dict[str, str]] | None = None,
+    *,
+    limit: int = 4,
+) -> list[str]:
+    """五肢択一・一問一答の正誤解説から、試験で実際に問われる論点を抜き出す。"""
+    ichimon_rows = ichimon_rows or []
+    wrong: list[str] = []
+    correct: list[str] = []
+    seen: set[str] = set()
+
+    def add_line(ex: str, *, is_correct: bool) -> None:
+        if len(ex) < 8:
+            return
+        if any(p in ex for p in BOILERPLATE_PHRASES):
+            return
+        if not _is_choice_insight_line(ex):
+            return
+        key = sentence_key(ex)
+        if key in seen:
+            return
+        seen.add(key)
+        line = ex if ex.endswith("。") else f"{ex}。"
+        (correct if is_correct else wrong).append(line)
+
+    for row in (practice_rows + ichimon_rows)[:10]:
+        ans = norm(row.get("answer"))
+        for i in range(1, 6):
+            ex = norm(row.get(f"choice_{i}_explanation"))
+            is_corr = bool(ans and str(i) == ans)
+            if is_corr and not ex.startswith(("正", "○")):
+                continue
+            if not is_corr and ex.startswith(("正", "○")):
+                continue
+            add_line(ex, is_correct=is_corr)
+
+    out = wrong + correct
+    return out[:limit]
+
+
+def extract_explanation_insights(
+    rows: list[dict[str, str]],
+    *,
+    limit: int = 2,
+) -> list[str]:
+    """問題全体の解説文から、正誤判断の根拠文だけを抜き出す。"""
+    out: list[str] = []
+    seen: set[str] = set()
+    for row in rows[:6]:
+        for sent in split_sentences(norm(row.get("explanation")), 12):
+            if len(sent) < 12:
+                continue
+            if any(p in sent for p in BOILERPLATE_PHRASES):
+                continue
+            if not _is_choice_insight_line(sent) and "誤り。" not in sent:
+                continue
+            key = sentence_key(sent)
+            if key in seen:
+                continue
+            seen.add(key)
+            out.append(ends_sentence(sent.rstrip("。")))
+            if len(out) >= limit:
+                return out
+    return out
+
+
+def extract_exam_trap_lines(
+    practice_rows: list[dict[str, str]],
+    ichimon_rows: list[dict[str, str]],
+    *,
+    limit: int = 3,
+) -> list[str]:
+    lines: list[str] = []
+    for row in practice_rows + ichimon_rows:
+        for field in ("exam_point", "trap_point"):
+            val = norm(row.get(field))
+            if len(val) < 12 or is_boilerplate_sentence(val):
+                continue
+            lines.append(ensure_sentence(val.rstrip("。")))
+    return unique_lines(lines, limit=limit)
+
+
 def unique_sentences(sentences: list[str], *, limit: int = 5) -> list[str]:
     seen: set[str] = set()
     out: list[str] = []
@@ -628,20 +912,29 @@ def unique_sentences(sentences: list[str], *, limit: int = 5) -> list[str]:
     return out
 
 
-CATEGORY_STUDY_NOTES: dict[str, str] = {
-    "法令・制度": (
-        "乙種第4類の法令分野では、条文の言い換えと「誤っているものはどれか」の問いが多く、"
-        "数値・義務の主体・手続の区別が試験の焦点になります。"
-    ),
-    "物性・化学": (
-        "物性・化学分野では、性質の数値（沸点・引火点・濃度など）と危険物分類の対応が問われます。"
-        "似た物質名は表で比較すると整理しやすくなります。"
-    ),
-    "火災・消火・漏えい": (
-        "火災・消火分野では、第4類の性質・消火方法・漏えい対策の組み合わせが頻出です。"
-        "水溶性・非水溶性の違いをセットで押さえてください。"
-    ),
-}
+def build_exam_points_paragraph(term: str, exam_points: list[str]) -> str:
+    points = [
+        ensure_sentence(p.rstrip("。"))
+        for p in exam_points
+        if norm(p) and not is_boilerplate_sentence(p)
+    ][:4]
+    if not points:
+        return ""
+    if len(points) == 1:
+        return f"試験では、{points[0].rstrip('。')}点が問われます。"
+    joined = "。".join(p.rstrip("。") for p in points[:-1])
+    return f"試験では、{joined}。また、{points[-1].rstrip('。')}点も押さえます。"
+
+
+def build_peer_contrast_sentence(term: str, peers: list[str], category: str) -> str:
+    others = [p for p in peers if p != term][:3]
+    if len(others) < 2:
+        return ""
+    a, b = others[0], others[1]
+    return (
+        f"{category}では「{a}」「{b}」など近い用語とセットで出題されます。"
+        f"定義・数値・主体の違いを表で対比し、{term}だけの特徴を一言で言えるようにしてください。"
+    )
 
 
 def build_term_detail_body(
@@ -657,10 +950,26 @@ def build_term_detail_body(
     peers: list[str],
     legal: str,
     practice_rows: list[dict[str, str]],
+    ichimon_rows: list[dict[str, str]] | None = None,
     *,
     skip_definition: bool = False,
 ) -> str:
+    ichimon_rows = ichimon_rows or []
+    all_rows = practice_rows + ichimon_rows
     parts: list[str] = []
+    part_keys: set[str] = set()
+
+    def add_part(text: str, *, force: bool = False) -> None:
+        t = norm(text)
+        if not t:
+            return
+        if not force and is_boilerplate_sentence(t) and not _is_choice_insight_line(t):
+            return
+        key = sentence_key(t)
+        if key in part_keys:
+            return
+        part_keys.add(key)
+        parts.append(t if t.endswith("。") else f"{t}。")
 
     def_sents: list[str] = []
     if lead_sentence:
@@ -671,60 +980,58 @@ def build_term_detail_body(
             def_sents.append(ends_sentence(f"{term}は、{lead}"))
     for sent in unique_sentences(
         [trim_lead_sentence(term, e) for e in explanations if e],
-        limit=4,
+        limit=2,
     ):
         if sentence_key(sent) == sentence_key(lead_sentence):
             continue
-        if sent.startswith(f"{term}は"):
-            def_sents.append(ends_sentence(sent.rstrip("。")))
-        elif re.match(rf"^{re.escape(term)}", sent):
-            def_sents.append(ends_sentence(sent.rstrip("。")))
-        else:
-            def_sents.append(ends_sentence(sent.rstrip("。")))
+        def_sents.append(ends_sentence(sent.rstrip("。")))
     if def_sents and not skip_definition:
-        for sent in def_sents[:4]:
-            parts.append(sent)
+        add_part(" ".join(def_sents[:2]))
 
-    cat_note = CATEGORY_STUDY_NOTES.get(category)
-    if cat_note:
-        parts.append(cat_note)
-    elif unit:
-        parts.append(
-            f"単元「{unit}」では、{term}の定義に加え、条件の言い換えや数値のひっかけが問われます。"
+    exam_para = build_exam_points_paragraph(term, exam_points)
+    if exam_para:
+        add_part(exam_para)
+
+    for insight in extract_choice_insights(
+        practice_rows, ichimon_rows, limit=4
+    ):
+        add_part(insight, force=True)
+    for insight in extract_explanation_insights(all_rows, limit=2):
+        add_part(insight, force=True)
+
+    for line in extract_exam_trap_lines(practice_rows, ichimon_rows, limit=3):
+        add_part(line)
+
+    if traps:
+        trap_para = "よくある誤りは、" + "。".join(
+            ensure_sentence(t.rstrip("。")).rstrip("。") for t in traps[:3]
+        ) + "。"
+        add_part(trap_para)
+
+    peer_line = build_peer_contrast_sentence(term, peers, category)
+    if peer_line:
+        add_part(peer_line)
+
+    if unit and topic and len(parts) < 3:
+        add_part(
+            f"単元「{unit}」の「{topic}」では、{term}が条文・数値・主体のいずれかと組み合わされて問われます。"
+        )
+    elif unit and len(parts) < 3 and not exam_para:
+        add_part(
+            f"単元「{unit}」では、{term}の定義と適用場面がセットで問われます。"
         )
 
-    if q_count or practice_rows:
-        ctx: list[str] = []
-        if unit or topic:
-            label = unit or topic
-            sub = f"（{topic}）" if topic and topic != unit else ""
-            ctx.append(f"出題文脈は主に「{label}」{sub}で、{term}がキーワードとして繰り返し登場します。")
-        if q_count >= 2:
-            ctx.append(
-                f"{BRAND}では実践演習・一問一答に合わせた復習問題を{q_count}問前後掲載しています。"
-            )
-        qtypes = unique_lines(
-            [norm(r.get("question_type")) for r in practice_rows if norm(r.get("question_type"))],
-            limit=2,
-        )
-        if qtypes:
-            ctx.append(f"想定される出題形式の例: {'・'.join(qtypes)}。")
-        if ctx:
-            parts.append(" ".join(ctx))
-
-    if peers:
-        parts.append(
-            f"理解を深めるには、「{'」「'.join(peers[:3])}」との違いを並べて覚えると、"
-            f"本番で{term}を含む選択肢を判別しやすくなります。"
-        )
-
-    if legal:
+    if legal and len(parts) < 5:
         basis = legal.replace(";", "・")
-        parts.append(
-            f"根拠法令は主に{basis}です。改正や数値の更新は、消防試験研究センターの公式テキストで確認してください。"
+        add_part(
+            f"根拠は主に{basis}です。数値・手続の最新版は消防試験研究センターのテキストで確認してください。"
         )
 
-    return "\n\n".join(p for p in parts if p)
+    body = "\n\n".join(parts)
+    extra_expl = list(explanations) + extract_choice_insights(
+        practice_rows, ichimon_rows, limit=3
+    )
+    return merge_unique_detail_sentences(body, term, extra_expl)
 
 
 def build_explanation_text(
@@ -732,53 +1039,61 @@ def build_explanation_text(
     category: str,
     traps: list[str],
     exam_questions: list[str],
+    practice_rows: list[dict[str, str]],
     ichimon_rows: list[dict[str, str]],
 ) -> str:
     parts: list[str] = []
-    if category == "法令・制度":
-        parts.append(
-            f"法令分野の{term}は、正しい説明・誤っている説明の判別と、数値・主体・手続の区別が問われやすいです。"
-        )
-    elif category == "物性・化学":
-        parts.append(
-            f"{term}は物性・化学の文脈で、数値や性質の組み合わせ（引火点・沸点・濃度など）とセットで問われます。"
-        )
-    else:
-        parts.append(
-            f"{term}は火災・消火・漏えいの文脈で、性質と対策（消火方法・漏えい防止）の対応が問われやすいです。"
-        )
+
+    for line in extract_exam_trap_lines(practice_rows, ichimon_rows, limit=3):
+        if line not in parts:
+            parts.append(line)
+
+    for insight in extract_choice_insights(practice_rows, ichimon_rows, limit=3):
+        if insight not in parts:
+            parts.append(insight)
+
+    for insight in extract_explanation_insights(
+        practice_rows + ichimon_rows, limit=2
+    ):
+        if insight not in parts:
+            parts.append(insight)
 
     if traps:
-        parts.append(f"誤答の典型は「{traps[0][:72]}{'…' if len(traps[0]) > 72 else ''}」のように、似た制度や数値と混同することです。")
-    if exam_questions:
-        preview = exam_questions[0][:88]
-        parts.append(f"実践演習では「{preview}…」のように、一文で正誤を判断する設問もあります。")
-    if ichimon_rows:
-        parts.append("一問一答では○×形式で素早く定着を確認できます。")
-    return " ".join(parts)
-
-
-def build_article_lead(term: str, category: str, unit: str) -> str:
-    if unit:
-        return (
-            f"{category}分野の「{unit}」でよく出る用語です。"
-            f"下の目次から定義・試験ポイント・例題の順に確認し、演習と往復してください。"
+        trap_line = "また、".join(
+            ensure_sentence(t.rstrip("。"))
+            for t in traps[:2]
+            if norm(t) and not is_boilerplate_sentence(t)
         )
-    return (
-        f"{category}分野で押さえる用語です。"
-        f"定義と試験ポイントを確認したら、関連用語と演習で定着を確認してください。"
-    )
+        if trap_line:
+            parts.append(f"誤答では{trap_line}といった取り違えが選ばれやすいです。")
+
+    if exam_questions:
+        preview = exam_questions[0][:100].strip()
+        if preview and not is_exam_stem(preview[:40]):
+            parts.append(f"実践演習の設問例: 「{preview}…」")
+
+    if ichimon_rows and not practice_rows:
+        row = ichimon_rows[0]
+        expl = split_sentences(norm(row.get("explanation")), 2)
+        for sent in expl:
+            if len(sent) >= 20 and not is_boilerplate_sentence(sent):
+                parts.append(ends_sentence(trim_lead_sentence(term, sent).rstrip("。")))
+                break
+
+    if not parts:
+        parts.append(
+            f"{term}は{category}分野の用語として、定義と数値・条件の組み合わせで正誤が問われます。"
+        )
+    return " ".join(parts[:4])
 
 
-def build_memory_tip(term: str, peers: list[str]) -> str:
-    tips: list[str] = []
-    if peers:
-        tips.append(f"「{peers[0]}」と違いを比較表にまとめる。")
-    tips.append(
-        f"演習で{term}を含む問題を解き、間違えたら"
-        "試験ポイント→関連用語→定義の順に見直す。"
-    )
-    return " ".join(tips)[:300]
+def build_article_lead(
+    term: str,
+    category: str,
+    unit: str,
+    lead_sentence: str = "",
+) -> str:
+    return build_reader_lead(term, category, unit, lead_sentence)
 
 
 def filter_related_peers(
@@ -846,11 +1161,75 @@ META_STUDY_ARTICLES: dict[str, dict[str, str]] = {
 }
 
 
+def apply_study_keep_full(row: dict[str, str], curated: dict[str, str]) -> None:
+    """学習メタ用語：手書きテンプレを一括反映（演習DBの上書きなし）。"""
+    apply_curated(row, curated)
+    apply_curated_overrides(row, curated)
+    term = norm(row.get("term"))
+    category = norm(row.get("category"))
+    if norm(curated.get("explanation")):
+        row["explanation"] = norm(curated["explanation"])
+    row["article_title"] = (
+        norm(curated.get("article_title"))
+        or f"{term}とは？{EXAM}の学習で押さえるポイント"
+    )
+    if norm(curated.get("related_terms")):
+        row["related_terms"] = norm(curated["related_terms"])
+    mistakes = split_semicolon_field(norm(curated.get("common_mistakes")))
+    apply_reader_quality(
+        row,
+        lead_sentence=norm(curated.get("definition")) or norm(row.get("short_def")),
+        exam_points=split_semicolon_field(norm(curated.get("exam_points"))),
+        traps=mistakes,
+        peers=split_semicolon_field(norm(row.get("related_terms"))),
+    )
+    tags = [t for t in parse_tags(norm(row.get("tags"))) if t != "詳細記事"]
+    if "学習法" not in tags:
+        tags.append("学習法")
+    row["tags"] = ";".join(dict.fromkeys(tags))
+
+
+def finalize_glossary_row(row: dict[str, str]) -> None:
+    """全用語に共通の整形（句読点・重複除去のみ。文字数の水増しはしない）。"""
+    term = norm(row.get("term"))
+    for field in ("common_mistakes", "exam_points"):
+        raw = norm(row.get(field))
+        if raw:
+            row[field] = format_field_items(split_semicolon_field(raw), limit=8)
+    if term in KEEP_TERMS | META_STUDY_TERMS:
+        faq2 = norm(row.get("faq_2_answer"))
+        if faq2 and ";" in faq2:
+            parts = split_semicolon_field(format_field_items(split_semicolon_field(faq2), limit=3))
+            row["faq_2_answer"] = "また、".join(parts) if parts else ensure_sentence(faq2)
+        return
+    body = norm(row.get("term_detail_body"))
+    if len(body) < 80:
+        body = body or norm(row.get("definition")) or norm(row.get("explanation"))
+        expl = [norm(row.get("definition")), norm(row.get("explanation"))]
+        row["term_detail_body"] = merge_unique_detail_sentences(
+            body, term, [x for x in expl if x]
+        )
+    faq2 = norm(row.get("faq_2_answer"))
+    if faq2:
+        if ";" in faq2:
+            parts = split_semicolon_field(format_field_items(split_semicolon_field(faq2), limit=3))
+            row["faq_2_answer"] = "また、".join(parts) if parts else ensure_sentence(faq2)
+        elif not faq2.endswith(("。", "！", "？")):
+            row["faq_2_answer"] = ensure_sentence(faq2)
+
+
 def apply_meta_study_term(row: dict[str, str]) -> None:
     term = norm(row.get("term"))
     curated = META_STUDY_ARTICLES.get(term, {})
     if curated:
         apply_curated(row, curated)
+        apply_reader_quality(
+            row,
+            lead_sentence=norm(curated.get("definition")),
+            exam_points=split_semicolon_field(norm(curated.get("exam_points"))),
+            traps=split_semicolon_field(norm(curated.get("common_mistakes"))),
+            peers=split_semicolon_field(norm(curated.get("related_terms"))),
+        )
     tags = [t for t in parse_tags(norm(row.get("tags"))) if t != "詳細記事"]
     for drop in ("実践演習連動", "一問一答連動"):
         if drop in tags:
@@ -1066,14 +1445,6 @@ def apply_curated_overrides(row: dict[str, str], curated: dict[str, str] | None)
     ):
         if norm(curated.get(key)):
             row[key] = norm(curated[key])
-    if norm(curated.get("faq_1_answer")):
-        row["faq_1_answer"] = norm(curated["faq_1_answer"])
-    elif norm(row.get("short_def")):
-        row["faq_1_answer"] = norm(row["short_def"])
-    mistakes_curated = split_sentences(curated.get("common_mistakes", ""), 3)
-    if mistakes_curated:
-        row["faq_2_answer"] = mistakes_curated[0]
-
 
 def enrich_row(
     row: dict[str, str],
@@ -1087,6 +1458,8 @@ def enrich_row(
     category = norm(row.get("category"))
     if curated:
         apply_curated(row, curated)
+    practice_rows = filter_rows_for_term(term, practice_rows)
+    ichimon_rows = filter_rows_for_term(term, ichimon_rows)
     if not practice_rows and not ichimon_rows:
         return bool(curated)
 
@@ -1118,7 +1491,7 @@ def enrich_row(
             limit=8,
         )
     if curated and norm(curated.get("common_mistakes")):
-        traps = split_sentences(curated.get("common_mistakes", ""), 5)
+        traps = split_semicolon_field(curated.get("common_mistakes", ""))
     else:
         traps = unique_lines(
             [norm(r.get("trap_point")) for r in practice_rows + ichimon_rows],
@@ -1182,11 +1555,6 @@ def enrich_row(
 
     if curated and norm(curated.get("term_detail_body")):
         term_detail_body = norm(curated["term_detail_body"])
-        if q_count >= 2 and BRAND not in term_detail_body:
-            term_detail_body += (
-                f"\n\n{BRAND}では実践演習・一問一答に合わせた復習問題を"
-                f"{q_count}問前後掲載しています。演習で誤った選択肢から本記事へ戻って確認してください。"
-            )
     else:
         term_detail_body = build_term_detail_body(
             term,
@@ -1201,6 +1569,14 @@ def enrich_row(
             peers,
             legal,
             practice_rows,
+            ichimon_rows,
+        )
+    term_detail_body = append_db_excerpts(
+        term_detail_body, term, practice_rows, ichimon_rows
+    )
+    if not practice_rows and not ichimon_rows:
+        term_detail_body = merge_unique_detail_sentences(
+            term_detail_body, term, explanations
         )
 
     exam_section = unique_lines(
@@ -1208,17 +1584,24 @@ def enrich_row(
         limit=2,
     )
     explanation = build_explanation_text(
-        term, category, traps, exam_section, ichimon_rows
+        term,
+        category,
+        traps,
+        exam_section,
+        practice_rows,
+        ichimon_rows,
     )
 
-    mistakes = (
-        ";".join(traps[:5])
-        if traps
-        else norm(row.get("common_mistakes"))
-    )
-    memory = build_memory_tip(term, peers)
+    if traps:
+        mistakes = format_field_items(traps, limit=5)
+    else:
+        mistakes = format_field_items(
+            split_semicolon_field(norm(row.get("common_mistakes"))),
+            limit=5,
+        )
 
     tags = parse_tags(norm(row.get("tags")))
+    tags = [t for t in tags if t not in ("実践演習連動", "一問一答連動")]
     if "詳細記事" not in tags:
         tags.append("詳細記事")
     if practice_rows:
@@ -1235,44 +1618,35 @@ def enrich_row(
             "article_lead": (
                 norm(curated.get("article_lead"))
                 if curated and norm(curated.get("article_lead"))
-                else build_article_lead(term, category, "" if curated_lead_locked else unit)
+                else build_article_lead(
+                    term,
+                    category,
+                    "" if curated_lead_locked else unit,
+                    lead_sentence,
+                )
             ),
             "term_detail_body": term_detail_body,
-            "exam_points": ";".join(exam_points) if exam_points else norm(row.get("exam_points")),
+            "exam_points": format_field_items(exam_points, limit=8)
+            if exam_points
+            else norm(row.get("exam_points")),
             "common_mistakes": mistakes,
-            "memory_tip": memory[:300],
             "example_question": ex_q,
             "example_answer": ex_a,
             "legal_basis": legal,
-            "faq_1_question": f"{term}の試験での意味は？",
-            "faq_1_answer": (
-                short_def
-                if short_def
-                else (
-                    (lead_sentence.rstrip("。") + "。")
-                    if lead_sentence
-                    else (
-                        explanations[0]
-                        if explanations
-                        else norm(row.get("faq_1_answer"))
-                    )
-                )
-            ),
-            "faq_2_question": f"{term}でよくある誤りは？",
-            "faq_2_answer": (
-                traps[0]
-                if traps
-                else (
-                    f"{category}分野では似た用語や数値と混同しやすいです。"
-                    "演習で誤った選択肢をメモし、関連用語と対比して復習してください。"
-                )
-            ),
             "tags": ";".join(dict.fromkeys(tags)),
         }
     )
     if peers:
         row["related_terms"] = ";".join(peers)
 
+    apply_reader_quality(
+        row,
+        lead_sentence=lead_sentence,
+        exam_points=exam_points,
+        traps=traps,
+        peers=peers,
+        unit=unit,
+    )
     return True
 
 
@@ -1318,8 +1692,11 @@ def main() -> int:
 
     with CSV_PATH.open(encoding="utf-8-sig", newline="") as f:
         reader = csv.DictReader(f)
-        fieldnames = list(reader.fieldnames or [])
+        fieldnames = ensure_glossary_csv_columns(list(reader.fieldnames or []))
         rows = list(reader)
+    for row in rows:
+        for col in fieldnames:
+            row.setdefault(col, "")
 
     added_terms = 0
     if args.add_terms and not args.dry_run:
@@ -1349,6 +1726,9 @@ def main() -> int:
         if not term:
             continue
         if term in KEEP_TERMS:
+            curated_keep = STUDY_KEEP_ARTICLES.get(term) or CURATED_ARTICLES.get(term)
+            if curated_keep:
+                apply_study_keep_full(row, curated_keep)
             skipped_keep += 1
             continue
         if term in META_STUDY_TERMS:
@@ -1371,6 +1751,24 @@ def main() -> int:
             curated_only += 1
         if curated:
             apply_curated_overrides(row, curated)
+        if practice_rows or ichimon_rows:
+            row["term_detail_body"] = append_db_excerpts(
+                norm(row.get("term_detail_body")),
+                term,
+                practice_rows,
+                ichimon_rows,
+            )
+
+    for row in rows:
+        term = norm(row.get("term"))
+        if not term:
+            continue
+        if term not in KEEP_TERMS and term not in META_STUDY_TERMS:
+            apply_reader_quality(row)
+
+    for row in rows:
+        if norm(row.get("term")):
+            finalize_glossary_row(row)
 
     print(
         f"用語 {len(rows)} 件 — 詳細充実 {enriched} 件"

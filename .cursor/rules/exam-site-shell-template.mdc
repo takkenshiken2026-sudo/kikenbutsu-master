@@ -14,8 +14,10 @@ alwaysApply: true
 ## Documentation & rules
 
 - **Index:** `docs/README.md` — where to find all rules and tools.
+- **Integration:** `docs/integration-checklist.md` + `tools/validate_site_integration.py` (in `build_all`) — footer via `site-config` + `apply_site_config`; Cursor: `.cursor/rules/site-integration.mdc`, `.cursor/rules/practice-ichimon-static.mdc`
 - **Multi-site:** `docs/multi-site-workflow.md` — manifest sync, `sites/` notes, `data/README.md`.
 - **Primary guide:** `docs/seo-article-guidelines.md` (structure, colors, public/operator boundary, internal links, checklists).
+- **Question static pages:** `docs/question-static-pages.md` — `q/past/`, `q/practice/`, `q/ichimon/` CSV・ビルド・一覧 UI（`site-q-index.js`）
 - **Guide genres (MECE):** `docs/guide-article-genres.md` + `site-config.json` → `guideArticleGenres` (CSV `genre` whitelist).
 - **Cursor (SEO/UI/CSV):** `.cursor/rules/seo-article-template.mdc`
 - **This file:** template-wide defaults and build requirements.
@@ -44,7 +46,7 @@ alwaysApply: true
 python3 tools/build_all.py
 ```
 
-Runs in order: `validate_csv.py` → generators → `validate_generated_seo.py` → `validate_internal_links.py` → `public_site/` sync.
+Runs in order: `validate_csv.py` → generators → `validate_generated_seo.py` → `validate_site_integration.py` → `validate_internal_links.py` → `public_site/` sync.
 
 Optional audits: `validate_csv.py` alone, `audit_article_freshness.py`.
 
@@ -57,6 +59,8 @@ Optional audits: `validate_csv.py` alone, `audit_article_freshness.py`.
 | `tools/build_glossary_pages.py` | Term pages, field hubs, related links |
 | `tools/validate_csv.py` | CSV + `related_links` slug / `related_terms` checks |
 | `tools/validate_generated_seo.py` | Section order, forbidden table rows |
+| `tools/validate_site_integration.py` | フッター・q タブ・用語・**実践/一問一答件数・分野順** |
 | `tools/validate_internal_links.py` | Post-build href integrity |
+| `tools/import_orig_questions_to_practice_csv.py` / `import_base_questions_to_ichimon_csv.py` | SPA バンク → CSV |
 | `tools/sync_from_template.py` | Copy shared engine to `--target` (required) |
 | `tools/check_template_drift.py` | Diff template vs production before sync |
