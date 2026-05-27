@@ -18,12 +18,41 @@ JOHO_A8 = (
     "%3Futm_source%3DAffi%26utm_medium%3Dlist%26utm_campaign%3D01"
 )
 
+# 各講座LP掲載の画像（公式サイトのURL）
+ONSUKU_IMAGE = "https://s3.ap-northeast-1.amazonaws.com/onsuku.jp/img/parts/training/top/thumb_otu4_top.jpg"
+JOHO_IMAGE = "https://www.joho-gakushu.or.jp/kikenbutu-otu4/img/newtop_img_009.jpg"
+
 
 def _cta(href: str, label: str) -> str:
     return (
         f'<p class="affiliate-course-cta">'
         f'<a class="related-link affiliate-course-link" href="{html.escape(href)}" target="_blank" '
         f'rel="{AFFILIATE_REL}">{html.escape(label)}</a></p>'
+    )
+
+
+def _card(
+    *,
+    rank: str,
+    href: str,
+    image_src: str,
+    image_alt: str,
+    title_html: str,
+    summary: str,
+    cta_label: str,
+) -> str:
+    return (
+        '<article class="affiliate-course-card" role="listitem">'
+        f'<a class="affiliate-course-thumb" href="{html.escape(href)}" target="_blank" rel="{AFFILIATE_REL}">'
+        f'<img src="{html.escape(image_src)}" alt="{html.escape(image_alt)}" width="640" height="360" '
+        'loading="lazy" decoding="async">'
+        "</a>"
+        f'<div class="affiliate-course-card-body">'
+        f'<p class="affiliate-course-rank">{html.escape(rank)}</p>'
+        f"<h3>{title_html}</h3>"
+        f"<p>{html.escape(summary)}</p>"
+        + _cta(href, cta_label)
+        + "</div></article>"
     )
 
 
@@ -44,26 +73,34 @@ def build_extra_html() -> str:
         "</tr>"
         for k, a, b in rows
     )
+    card_a = _card(
+        rank="講座A",
+        href=ONSUKU_A8,
+        image_src=ONSUKU_IMAGE,
+        image_alt="オンスク.JP 危険物乙4オンライン通信講座のイメージ",
+        title_html="オンスク.JP<br>危険物乙4オンライン通信講座",
+        summary="動画・演習・進捗管理をスマホ中心に回したい方向け。",
+        cta_label="公式サイトで詳細を見る（無料体験）",
+    )
+    card_b = _card(
+        rank="講座B",
+        href=JOHO_A8,
+        image_src=JOHO_IMAGE,
+        image_alt="情報学習院 危険物取扱者(乙種4類) SMART合格講座のイメージ",
+        title_html="情報学習院<br>SMART合格講座（乙種4類）",
+        summary="一括7,700円・3年視聴でコストを抑えたい方向け。",
+        cta_label="公式サイトで詳細を見る",
+    )
     return (
         '<section class="seo-article-section affiliate-course-block" '
         'aria-labelledby="affiliate-course-compare-title">'
         '<h2 id="affiliate-course-compare-title">乙4オンライン講座2社の比較</h2>'
         '<p class="affiliate-course-note">'
         "価格・プラン・返品条件は各公式サイトの最新表示を優先してください。"
-        "本表は2026年5月時点の公開情報に基づく整理です。</p>"
+        "本表は2026年5月時点の公開情報に基づく整理です。"
+        "カード画像は各講座公式ページの掲載素材です。</p>"
         '<div class="affiliate-course-hero" role="list">'
-        '<article class="affiliate-course-card" role="listitem">'
-        '<p class="affiliate-course-rank">講座A</p>'
-        "<h3>オンスク.JP<br>危険物乙4オンライン通信講座</h3>"
-        "<p>動画・演習・進捗管理をスマホ中心に回したい方向け。</p>"
-        + _cta(ONSUKU_A8, "公式サイトで詳細を見る（無料体験）")
-        + "</article>"
-        '<article class="affiliate-course-card" role="listitem">'
-        '<p class="affiliate-course-rank">講座B</p>'
-        "<h3>情報学習院<br>SMART合格講座（乙種4類）</h3>"
-        "<p>一括7,700円・3年視聴でコストを抑えたい方向け。</p>"
-        + _cta(JOHO_A8, "公式サイトで詳細を見る")
-        + "</article>"
+        f"{card_a}{card_b}"
         "</div>"
         '<div class="affiliate-course-table-wrap">'
         '<table class="seo-compare-table">'
