@@ -22,7 +22,7 @@ JOHO_A8 = (
 def _cta(href: str, label: str) -> str:
     return (
         f'<p class="affiliate-course-cta">'
-        f'<a class="affiliate-course-btn" href="{html.escape(href)}" target="_blank" '
+        f'<a class="related-link affiliate-course-link" href="{html.escape(href)}" target="_blank" '
         f'rel="{AFFILIATE_REL}">{html.escape(label)}</a></p>'
     )
 

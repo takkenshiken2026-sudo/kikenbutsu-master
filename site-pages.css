@@ -5362,19 +5362,12 @@ html:not(.js) .terms-idx-seo-fallback .terms-idx-seo-list a {
 .affiliate-course-cta {
   margin: 0;
 }
-.affiliate-course-btn {
-  display: inline-block;
-  padding: 10px 16px;
-  border-radius: var(--r1);
-  background: var(--accent);
-  color: #fff;
-  font-weight: 700;
-  font-size: var(--fs-sub);
-  text-decoration: none;
-}
-.affiliate-course-btn:hover {
-  filter: brightness(0.95);
-  color: #fff;
+.affiliate-course-link {
+  width: 100%;
+  box-sizing: border-box;
+  justify-content: center;
+  text-align: center;
+  font-weight: 600;
 }
 .affiliate-course-table-wrap {
   overflow-x: auto;
