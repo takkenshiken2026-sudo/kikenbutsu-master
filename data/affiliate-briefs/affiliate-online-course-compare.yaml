@@ -1,0 +1,29 @@
+# Affiliate brief: 乙4 online course comparison (A8)
+slug: affiliate-online-course-compare
+theme_key: online-course-compare
+search_intent: 危険物乙4のオンライン講座を、価格・内容・学習スタイルで比較して選びたい
+title: 危険物乙4オンライン講座おすすめ2選｜オンスク.JPとSMART合格講座を比較
+genre: 独学対策
+layout: product-comparison
+asp_primary: a8
+products:
+  - rank: A
+    name: オンスク.JP 危険物乙4オンライン通信講座
+    official_url: https://onsuku.jp/training/otu4
+    a8_url: https://px.a8.net/svt/ejp?a8mat=4B3TF0+DUXECI+408S+BW0YB&a8ejpredirect=https%3A%2F%2Fonsuku.jp%2Ftraining%2Fotu4
+    for_who: 演習量を確保したい・無料体験から始めたい・他資格も受け放題で検討している
+  - rank: B
+    name: 情報学習院 危険物取扱者(乙種4類) SMART合格講座
+    official_url: https://www.joho-gakushu.or.jp/kikenbutu-otu4/
+    a8_url: https://px.a8.net/svt/ejp?a8mat=4B3TF0+DUBYQQ+4LOQ+BW0YB&a8ejpredirect=https%3A%2F%2Fwww.joho-gakushu.or.jp%2Fkikenbutu-otu4%2F%3Futm_source%3DAffi%26utm_medium%3Dlist%26utm_campaign%3D01
+    for_who: 一括7,700円で始めたい・3年間見直したい・初学者向けの丁寧な講義を重視
+related_links:
+  - self-study-roadmap:独学の進め方
+  - study-plan:学習計画
+  - affiliate-free-vs-paid-study:無料と有料教材の使い分け
+  - past-question-strategy:過去問の使い方
+operator_note: |
+  ASP: A8.net
+  オンスク: a8mat=4B3TF0+DUXECI+408S+BW0YB
+  情報学習院: a8mat=4B3TF0+DUBYQQ+4LOQ+BW0YB
+  公開前に各LPの価格・返品・無料体験を再確認
