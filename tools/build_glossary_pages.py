@@ -145,6 +145,19 @@ def term_slug(term: str, used: dict[str, str]) -> str:
             used[cand] = base
             return cand
         n += 1
+def slug_file_for_glossary_row(row: dict, used_slugs: dict[str, str]) -> str:
+    """build_glossary_pages とハブ lookup で同一 slug を使う。"""
+    term = norm(row.get("term"))
+    if not term:
+        raise ValueError("term が空です")
+    legacy_slug = norm(row.get("slug")) or norm(row.get("url_slug"))
+    if legacy_slug:
+        slug_file = f"{legacy_slug}.html"
+    else:
+        slug_file = term_slug(term, used_slugs) + ".html"
+    used_slugs[slug_file] = term
+    return slug_file
+
 
 
 def public_url(base: str, rel_path: str) -> str:

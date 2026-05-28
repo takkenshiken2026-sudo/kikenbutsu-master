@@ -4,7 +4,6 @@
 
 from __future__ import annotations
 
-import hashlib
 import re
 import sys
 import csv
@@ -152,116 +151,22 @@ def replace_static_chrome(text: str, path: Path) -> str:
 
 
 def ensure_index_theme(text: str) -> str:
-    """index.html は optimize_index_asset_loading で theme を head にインライン化する。"""
-    return text
-
-
-def _asset_version(path: Path) -> str:
-    if not path.is_file():
-        return "0"
-    return hashlib.sha256(path.read_bytes()).hexdigest()[:12]
-
-
-def _versioned_href(filename: str, version: str) -> str:
-    return f"{filename}?v={version}"
-
-
-def optimize_index_asset_loading(text: str) -> str:
-    """LCP/FCP 向け: theme/config を head インライン化し、演習データ JS は defer + preload。"""
-    theme_path = ROOT / "site-theme.css"
-    config_path = ROOT / "site-config.js"
-    data_files = (
-        "exam-site-data-practice.js",
-        "exam-site-data-past.js",
-        "exam-site-data-ichimondou.js",
-    )
-
-    theme_block = ""
-    if theme_path.is_file():
-        css = theme_path.read_text(encoding="utf-8").strip()
-        theme_block = f'<style id="site-theme-vars">\n{css}\n</style>'
-
-    config_block = ""
-    if config_path.is_file():
-        js = config_path.read_text(encoding="utf-8").strip()
-        config_block = f"<script>\n{js}\n</script>"
-
-    if "<!--SITE_THEME_INLINE-->" in text:
-        text = text.replace("<!--SITE_THEME_INLINE-->", theme_block, 1)
-    elif theme_block and 'id="site-theme-vars"' not in text:
-        text = text.replace("</head>", f"  {theme_block}\n</head>", 1)
-
-    if "<!--SITE_CONFIG_INLINE-->" in text:
-        text = text.replace("<!--SITE_CONFIG_INLINE-->", config_block, 1)
-    elif config_block and "window.SITE_CONFIG" not in text.split("</head>", 1)[0]:
-        text = text.replace("</head>", f"  {config_block}\n</head>", 1)
-
-    for filename in data_files:
-        version = _asset_version(ROOT / filename)
-        href = _versioned_href(filename, version)
-        text = re.sub(
-            rf'(<link rel="preload" href="){re.escape(filename)}(?:\?v=[^"]*)?(" as="script">)',
-            rf"\1{href}\2",
-            text,
-        )
-        text = re.sub(
-            rf'(<script defer src="){re.escape(filename)}(?:\?v=[^"]*)?("></script>)',
-            rf"\1{href}\2",
-            text,
-        )
-
-    analytics_version = _asset_version(ROOT / "site-analytics.js")
-    text = re.sub(
-        r'(<script defer src=")site-analytics\.js(?:\?v=[^"]*)?("></script>)',
-        rf"\1{_versioned_href('site-analytics.js', analytics_version)}\2",
-        text,
-    )
-
-    # 旧来の同期読み込み（レンダーブロック）を除去
-    text = re.sub(r'\n<link rel="stylesheet" href="site-theme\.css">', "", text)
-    text = re.sub(r'\n<script src="site-config\.js"></script>', "", text)
-    text = re.sub(
-        r'\n<script src="exam-site-data-(?:practice|past|ichimondou)\.js(?:\?v=[^"]*)?"></script>',
-        "",
-        text,
-    )
-
-    defer_block = "\n".join(
-        f'<script defer src="{_versioned_href(name, _asset_version(ROOT / name))}"></script>'
-        for name in data_files
-    )
-    marker = "<!-- 演習データ（defer:"
-    if marker not in text and defer_block:
-        text = text.replace(
-            "<!-- GA4: tools/html_footer.analytics_snippet と同内容（トップ SPA） -->",
-            defer_block + "\n<!-- GA4: tools/html_footer.analytics_snippet と同内容（トップ SPA） -->",
-            1,
-        )
-
-    # preload 行が無ければ fonts の直後に追加
-    if 'rel="preload" href="exam-site-data-practice.js' not in text:
-        preload_lines = "\n".join(
-            f'<link rel="preload" href="{_versioned_href(name, _asset_version(ROOT / name))}" as="script">'
-            for name in data_files
-        )
-        text = text.replace(
-            '<link rel="preload" as="style" href="https://fonts.googleapis.com/css2',
-            preload_lines + '\n<link rel="preload" as="style" href="https://fonts.googleapis.com/css2',
-            1,
-        )
-
-    if "years:[...YEARS]" in text:
-        text = text.replace(
-            "years:[...YEARS]",
-            "years:[]",
-        )
-    if "quizState.years = YEARS.slice();" not in text:
-        text = text.replace(
-            "  YEARS = Array.from(yset).sort(function (a, b) { return b - a; });\n}",
-            "  YEARS = Array.from(yset).sort(function (a, b) { return b - a; });\n"
-            "  if (typeof quizState !== 'undefined' && quizState) quizState.years = YEARS.slice();\n}",
-        )
-
+    if "site-theme.css" in text:
+        return text
+    theme_link = '<link rel="stylesheet" href="site-theme.css">'
+    for needle, repl in (
+        ('<script src="site-config.js"></script>', theme_link + '\n<script src="site-config.js"></script>'),
+        ('<script src="./site-config.js"></script>', theme_link + '\n  <script src="./site-config.js"></script>'),
+        ('<script defer src="site-analytics.js"></script>', theme_link + '\n<script defer src="site-analytics.js"></script>'),
+        (
+            '<script defer src="./site-analytics.js"></script>',
+            theme_link + '\n<script defer src="./site-analytics.js"></script>',
+        ),
+    ):
+        if needle in text:
+            return text.replace(needle, repl, 1)
+    if "</head>" in text:
+        return text.replace("</head>", f"  {theme_link}\n</head>", 1)
     return text
 
 
@@ -359,7 +264,6 @@ def main() -> int:
         new = replace_static_chrome(replace_all(old), path)
         if path == ROOT / "index.html":
             new = ensure_index_theme(new)
-            new = optimize_index_asset_loading(new)
             new = update_index_shell_footer(new)
             new = update_index_brand_mark(new)
             new = update_index_glossary_excerpt(new)

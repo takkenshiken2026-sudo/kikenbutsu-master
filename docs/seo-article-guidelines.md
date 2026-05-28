@@ -71,10 +71,13 @@
 
 用語詳細記事を作るときは、次の記事型を基準にします。
 
+- **執筆テンプレ・必須列:** [glossary-term-template.md](./glossary-term-template.md)（**全用語を詳細記事として公開**。`tools/glossary_term_rules.py` + `validate_csv.py` が ERROR で検証）
+- **雛形生成:** `python3 tools/scaffold_glossary_term.py --term 用語名 --category 分野名`
 - 参考URL: `https://YOUR-DOMAIN.example/terms/g-example.html`（用語ページの URL 例）
 - 参考にするもの: 構成、見出し順、情報量、表で比較する説明、FAQ、関連ページへの導線
 - そのまま写さないもの: 文章、試験名、固有の制度説明、公式URL、数値、日付
 - コンテンツ本文幅: PC表示では約860pxを上限の目安にする
+- **用語・問題への HTML 図解:** 色・レイアウト・コンポーネントは [term-diagrams.md](./term-diagrams.md) **§6 デザイン仕様** に従う（`site-pages.css` の `.term-diagram-*`、CSS 変数のみ）
 
 再現時は、次の順番を基本にします。
 
@@ -383,7 +386,7 @@ exam-overview:試験概要;study-plan:学習計画;past-question-strategy:過去
 ### CSV で守ること
 
 - `guide_articles.csv` の `related_links` に書く slug は、**同じ CSV に存在する slug のみ**（存在しない slug はビルド前に `validate_csv.py` がエラー）。
-- `glossary_terms.csv` の `related_terms` は、**同じ CSV に存在する用語名**を推奨（表記ゆれは `lookup_key` で解決）。未登録語はリンクにならず警告になるため、公開前に登録済み用語へ直す。
+- `glossary_terms.csv` の `related_terms` は、**同じ CSV に存在する用語名を2件以上**（未登録語は **ERROR**、リンク化されない）。
 - 外部URLは `http://` / `https://` のみ。内部向け slug を URL 列に混ぜない。
 
 ### 生成時のフォールバック
@@ -473,7 +476,9 @@ python3 tools/build_all.py
 - 試験ガイド一覧にテンプレ運用のセクションがない。
 - アフィリエイト記事は `tags` に `アフィリエイト` があり、リード等に広告・PR表記がある（本番は10本目安）。
 - `related_links` の slug がすべて CSV に存在する。
-- `related_terms` は可能な限り登録済み用語名にし、未登録語の警告を解消した。
+- `related_terms` は登録済み用語を2件以上にし、未登録語の ERROR を解消した。
+- 全用語で `article_title`・`term_detail_body`（120字以上）・`exam_points`（2項目以上）・**FAQ 4組**・例題が埋まっている。
+- 用語記事の文体はです・ます調・短文・専門語の補足（[glossary-term-template.md](./glossary-term-template.md) の文体ルール）。
 - `revision_note` に更新内容が残っている。
 - 次がすべて成功すること:
 

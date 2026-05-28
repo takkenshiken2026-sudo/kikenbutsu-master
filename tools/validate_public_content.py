@@ -49,6 +49,30 @@ PUBLIC_HTML_GLOBS = [
     "q/past/**/index.html",
 ]
 
+SCRIPT_STYLE_RE = re.compile(
+    r"<script\b[^>]*>.*?</script>|<style\b[^>]*>.*?</style>",
+    re.IGNORECASE | re.DOTALL,
+)
+TAG_RE = re.compile(r"<[^>]+>")
+# 同一文字が3回以上連続（句読点・装飾記号は除外）
+DUPLICATE_CHAR_RE = re.compile(r"([^\s\d\u3000])\1{2,}")
+DUPLICATE_CHAR_ALLOWED = frozenset("…・ー-_=*~.☆★•―")
+
+# 生成物に混入しやすい重複語・誤字パターン（CSV/生成元で直す）
+KNOWN_TYPO_PATTERNS: list[tuple[str, str]] = [
+    ("ことこと", "重複語「ことこと」"),
+    ("するする", "重複語「するする」"),
+    ("についてについて", "重複句「についてについて」"),
+    ("ですです", "重複語「ですです」"),
+    ("的な的な", "重複句「的な的な」"),
+    ("場合場合", "重複語「場合場合」"),
+    ("必要必要", "重複語「必要必要」"),
+    ("行行行", "誤字の可能性（「行」が3連続）"),
+    ("精神保健福社士", "誤字（精神保健福祉士）"),
+    ("ストレスチェックック", "誤字（ストレスチェック）"),
+    ("メンタルヘルスス", "誤字（メンタルヘルス）"),
+]
+
 
 @dataclass
 class Issue:
@@ -75,6 +99,11 @@ def collect_html_files() -> list[Path]:
     return unique
 
 
+def visible_text(html: str) -> str:
+    text = SCRIPT_STYLE_RE.sub(" ", html)
+    return TAG_RE.sub(" ", text)
+
+
 class PublicContentValidator:
     def __init__(self) -> None:
         self.issues: list[Issue] = []
@@ -82,8 +111,37 @@ class PublicContentValidator:
     def error(self, path: Path, message: str) -> None:
         self.issues.append(Issue("ERROR", path, message))
 
+    def check_duplicate_characters(self, path: Path, plain: str) -> None:
+        for match in DUPLICATE_CHAR_RE.finditer(plain):
+            ch = match.group(1)
+            if ch in DUPLICATE_CHAR_ALLOWED:
+                continue
+            snippet = match.group(0)
+            if ch == "I" and re.fullmatch(r"I+", snippet) and len(snippet) <= 4:
+                continue
+            if re.fullmatch(r"[A-D]{3,4}", snippet):
+                continue
+            start = max(0, match.start() - 12)
+            end = min(len(plain), match.end() + 12)
+            context = plain[start:end].replace("\n", " ")
+            if "http://" in context or "https://" in context:
+                continue
+            self.error(
+                path,
+                f"同一文字の連続「{snippet}」: 誤入力の可能性（…{context}…）",
+            )
+            return
+
+    def check_known_typos(self, path: Path, plain: str) -> None:
+        for typo, reason in KNOWN_TYPO_PATTERNS:
+            if typo in plain:
+                self.error(path, f"誤字・重複の疑い「{typo}」: {reason}")
+                return
+
     def scan_file(self, path: Path) -> None:
         text = path.read_text(encoding="utf-8")
+        if 'name="robots"' in text and "noindex" in text.lower():
+            return
         rel = str(path.relative_to(ROOT))
         for snippet, reason in FORBIDDEN_SNIPPETS:
             if snippet in text:
@@ -92,6 +150,9 @@ class PublicContentValidator:
             for snippet in ARTICLE_INDEX_FORBIDDEN:
                 if snippet in text:
                     self.error(path, f"試験ガイド一覧に禁止語「{snippet}」")
+        plain = visible_text(text)
+        self.check_duplicate_characters(path, plain)
+        self.check_known_typos(path, plain)
 
     def run(self) -> int:
         files = collect_html_files()

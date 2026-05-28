@@ -4,6 +4,8 @@ CSV を編集し `python3 tools/build_all.py` で、SPA 用 JS と SEO 向け静
 
 フッター・3モードタブ・用語一覧を**まとめて**直すときは [integration-checklist.md](./integration-checklist.md) を先に読んでください（本ドキュメントは CSV・ビルド詳細に特化）。
 
+一覧・SPA の読み込みが重くなる場合は [performance-loading.md](./performance-loading.md)（データの載せ方・フェーズ分割）を参照してください。
+
 ## 一覧 URL と個別ページ
 
 | 種別 | 一覧 | 個別ページ URL | データ CSV |
@@ -130,6 +132,17 @@ python3 tools/build_all.py
 | `note` | — | 内部メモ（静的 HTML には出さない想定） |
 
 静的ページの解説ブロックは **要約 → 正解の理由 → もう一方の記号 / 他の選択肢 → 学習のヒント** の順で、過去問・実践演習・一問一答で同じ見出し粒度に揃えます（`tools/q_explanation.py`）。
+
+### HTML 図解（`diagram_id`・任意）
+
+| 列 | 必須 | 説明 |
+|----|------|------|
+| `diagram_id` | — | `data/term_diagrams/{id}.json` を参照（拡張子なし）。用語記事と **同じ JSON を共用可** |
+
+- **契約・新規/既存サイト手順:** [term-diagrams.md](./term-diagrams.md)
+- **用語ページ:** ✅ 実装済（定義の直後に「図解で理解する」）
+- **問題ページ:** 📋 未実装。実装時は解説内「正解の理由」の後に **図解で整理** を挿入（`diagram_body_html()` を共用）
+- `validate_csv.py` は 3 種 CSV とも `diagram_id` があれば JSON 存在を検証（ERROR）
 
 `id` の年部分は個別ページ URL の `y{年}` に使われます。**一覧のグループは分野（category）** です（`groupBy: category`）。
 

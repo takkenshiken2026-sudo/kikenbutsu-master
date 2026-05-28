@@ -10,7 +10,6 @@ import json
 import re
 import shutil
 import sys
-from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -26,6 +25,7 @@ from tools.html_footer import (  # noqa: E402
     site_page_wrap_close,
     site_page_wrap_open,
 )
+from tools.seo_utils import content_date_from_row, json_ld_date_modified, meta_updated_html  # noqa: E402
 from tools.site_config import (  # noqa: E402
     brand_name,
     clean_origin,
@@ -119,26 +119,10 @@ def sections_html(article: dict[str, str]) -> str:
     return "\n".join(sections)
 
 
-def article_supplement_html(slug: str) -> str:
-    if slug == "affiliate-online-course-compare":
-        from tools.articles_affiliate_online_course_compare import build_extra_html
-
-        return build_extra_html()
-    return ""
-
-
-def supplement_toc_items(slug: str) -> list[tuple[str, str]]:
-    if slug == "affiliate-online-course-compare":
-        return [("affiliate-course-compare-title", "乙4オンライン講座2社の比較")]
-    return []
-
-
 def toc_html(article: dict[str, str], has_faq: bool) -> str:
-    slug = article.get("slug", "")
     items: list[tuple[str, str]] = []
     items.append(("quality-panel-title", "この記事の信頼性について"))
     items.append(("action-box-title", "この記事でできること"))
-    items.extend(supplement_toc_items(slug))
     for idx in range(1, 9):
         heading = apply_vars(article.get(f"section_{idx}_heading", ""))
         body = norm(article.get(f"section_{idx}_body", ""))
@@ -160,7 +144,7 @@ def toc_html(article: dict[str, str], has_faq: bool) -> str:
 
 def faq_items(article: dict[str, str]) -> list[dict[str, str]]:
     items: list[dict[str, str]] = []
-    for idx in range(1, 5):
+    for idx in range(1, 4):
         q = apply_vars(article.get(f"faq_{idx}_question", ""))
         a = apply_vars(article.get(f"faq_{idx}_answer", ""))
         if q and a:
@@ -201,12 +185,8 @@ def parse_related_links(
             links.append(f'<a class="related-link" href="{href}">{html.escape(apply_vars(text_label))}</a>')
         elif target.startswith(("http://", "https://")):
             text_label = label or target
-            rel = "noopener noreferrer"
-            if "a8.net" in target.lower() or "amzn.to" in target.lower() or "amazon." in target.lower():
-                rel = "nofollow sponsored noopener noreferrer"
             links.append(
-                f'<a class="related-link" href="{html.escape(target)}" target="_blank" rel="{rel}">'
-                f"{html.escape(apply_vars(text_label))}</a>"
+                f'<a class="related-link" href="{html.escape(target)}" target="_blank" rel="noopener noreferrer">{html.escape(apply_vars(text_label))}</a>'
             )
     if len(links) < 2 and article:
         genre = apply_vars(article.get("genre", ""))
@@ -350,7 +330,7 @@ def build_article_html(article: dict[str, str], by_slug: dict[str, dict[str, str
     title = apply_vars(article["title"])
     desc = meta_description(apply_vars(article.get("meta_description") or article.get("lead") or title))
     canonical = public_url(f"articles/{slug}/")
-    updated = date.today().isoformat()
+    updated = content_date_from_row(article)
     genre = apply_vars(article.get("genre", "試験ガイド"))
     tags = split_semicolon(apply_vars(article.get("tags", "")))
     sections = sections_html(article)
@@ -360,7 +340,6 @@ def build_article_html(article: dict[str, str], by_slug: dict[str, dict[str, str
     related = parse_related_links(article.get("related_links", ""), by_slug, article)
     quality_panel = quality_panel_html(article)
     action_box = action_box_html(article)
-    supplement = article_supplement_html(slug)
     author = apply_vars(article.get("author_name", ""))
     reviewer = apply_vars(article.get("reviewer_name", ""))
     sources = parse_source_links(article.get("primary_sources", ""))
@@ -384,7 +363,7 @@ def build_article_html(article: dict[str, str], by_slug: dict[str, dict[str, str
         "inLanguage": "ja-JP",
         "about": [genre, *tags],
         "isPartOf": public_url("articles/index.html"),
-        "dateModified": updated,
+        **json_ld_date_modified(updated),
     }
     if author:
         article_schema["author"] = {"@type": "Person", "name": author}
@@ -448,14 +427,13 @@ def build_article_html(article: dict[str, str], by_slug: dict[str, dict[str, str
   <article class="seo-article-card article-body">
     <div class="article-meta">
       <span class="meta-category">{html.escape(genre)}</span>
-      <span class="meta-updated">更新日：{html.escape(updated)}</span>
+      {meta_updated_html(updated)}
     </div>
     <h1 class="article-title">{html.escape(title)}</h1>
     <p class="article-lead">{html.escape(apply_vars(article.get("lead", "")))}</p>
     {toc}
     {quality_panel}
     {action_box}
-    {supplement}
     {sections}
     {faq_section}
     {info_table}

@@ -5,6 +5,7 @@
 - ジャンル一覧（21区分）: [guide-article-genres.md](./guide-article-genres.md)
 - 100本以上の slug 例: [guide-article-catalog.md](./guide-article-catalog.md)
 - SEO・公開境界の正本: [seo-article-guidelines.md](./seo-article-guidelines.md)
+- **編集品質（専門家×プロライター）:** [editorial-quality.md](./editorial-quality.md)
 
 ## 記事の作り方（3通り）
 
@@ -84,7 +85,8 @@ python3 tools/scaffold_guide_article.py --write-template-csv
 
 ## 本文の書き方
 
-- 見出しは **5〜7個**（`section_1` 〜 `section_7`）。各 `section_*_body` は **180〜300文字** 程度を目安に厚くする。
+- 見出しは **5〜7個**（`section_1` 〜 `section_7`）。各 `section_*_body` は **180文字以上**（推奨 180〜300文字）。`published` では未満は **ERROR**。
+- FAQ 回答は **100文字以上**（`published` では ERROR）。詳細は [editorial-quality.md](./editorial-quality.md)。
 - 段落は空行で区切る（`\n\n`）。2つ以上の短文リストにしたいときは、本文中で **セミコロン区切り**（`項目1;項目2;項目3`）にすると HTML の `<ul>` になる。
 - プレースホルダー `◯◯試験` はビルド時に `site-config.json` の `examName` に置換される。
 - 本文に「CSVの増やし方」「テンプレ運用」など **運用者向けの説明を書かない**。
@@ -109,6 +111,7 @@ python3 tools/scaffold_guide_article.py --write-template-csv
 
 ```bash
 python3 tools/validate_csv.py
+python3 tools/audit_editorial_quality.py
 python3 tools/build_all.py
 ```
 

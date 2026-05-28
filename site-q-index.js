@@ -6,6 +6,7 @@
   'use strict';
 
   const PAGE_SIZE = 50;
+  const DEBOUNCE_MS = 150;
 
   const DEFAULT_CONFIG = {
     variant: 'past',
@@ -582,9 +583,14 @@ ${items.map((it) => rowHtml(it, query)).join('')}
     blocks.forEach((b) => obs.observe(b));
   }
 
+  let inputDebounceTimer = null;
   q?.addEventListener('input', () => {
     page = 1;
-    apply();
+    if (inputDebounceTimer) clearTimeout(inputDebounceTimer);
+    inputDebounceTimer = setTimeout(() => {
+      inputDebounceTimer = null;
+      apply();
+    }, DEBOUNCE_MS);
   });
   toolbarReset?.addEventListener('click', resetAll);
   document.getElementById('q-index-empty-reset')?.addEventListener('click', resetAll);

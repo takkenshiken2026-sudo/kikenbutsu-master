@@ -27,6 +27,8 @@
 
   let activeCat = 'all';
   let urlSyncTimer = null;
+  const DEBOUNCE_MS = 150;
+  let inputDebounceTimer = null;
 
   const norm = (s) => (s || '').toString().trim().toLowerCase();
 
@@ -268,7 +270,11 @@
 
   q?.addEventListener('input', () => {
     syncClear();
-    apply();
+    if (inputDebounceTimer) clearTimeout(inputDebounceTimer);
+    inputDebounceTimer = setTimeout(() => {
+      inputDebounceTimer = null;
+      apply();
+    }, DEBOUNCE_MS);
   });
   clearBtn?.addEventListener('click', () => {
     if (!q) return;
