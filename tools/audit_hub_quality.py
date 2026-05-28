@@ -22,6 +22,7 @@ from tools.knowledge_hub_rules import HUB_MIN_LENGTHS  # noqa: E402
 
 DATA = ROOT / "data"
 OUT = ROOT / "reports" / "hub_audit"
+REGISTRY = Path("/Users/otedaiki/Projects/docs/hub_numbers_verified.json")
 HUB_FILES = ("comparisons.csv", "numbers.csv", "mistakes.csv")
 DIGIT_RE = re.compile(r"\d")
 _BATCH_SUFFIX = re.compile(r"（S\d+）$")
@@ -47,7 +48,26 @@ def _write_csv(path: Path, header: list[str], rows: list[dict[str, str]]) -> Non
         w.writerows(rows)
 
 
-def audit_numbers(rows: list[dict[str, str]], hub_file: str) -> list[dict[str, str]]:
+def _load_verified_registry() -> dict[str, dict[str, str]]:
+    if not REGISTRY.is_file():
+        return {}
+    try:
+        raw = json.loads(REGISTRY.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return {}
+    site_key = ROOT.name
+    site = raw.get(site_key) or {}
+    out: dict[str, dict[str, str]] = {}
+    if isinstance(site, dict):
+        for slug, meta in site.items():
+            if isinstance(meta, dict):
+                out[str(slug)] = meta
+    return out
+
+
+def audit_numbers(
+    rows: list[dict[str, str]], hub_file: str, verified_registry: dict[str, dict[str, str]]
+) -> list[dict[str, str]]:
     out: list[dict[str, str]] = []
     for row in rows:
         slug = (row.get("slug") or "").strip()
@@ -78,6 +98,10 @@ def audit_numbers(rows: list[dict[str, str]], hub_file: str) -> list[dict[str, s
             flags.append("verify_official")
         elif not DIGIT_RE.search(highlight):
             flags.append("concept_page")
+        verified = ""
+        meta = verified_registry.get(slug)
+        if meta:
+            verified = str(meta.get("status") or "OK")
         out.append(
             {
                 "hub_file": hub_file,
@@ -86,7 +110,7 @@ def audit_numbers(rows: list[dict[str, str]], hub_file: str) -> list[dict[str, s
                 "highlight": highlight,
                 "values": " | ".join(values[:6]),
                 "flags": ";".join(sorted(set(flags))),
-                "verified": "",
+                "verified": verified,
             }
         )
     return out
@@ -200,13 +224,14 @@ def audit_title_similar(rows_by_file: dict[str, list[dict[str, str]]]) -> list[d
 
 def main() -> int:
     rows_by_file = {name: _read_rows(name) for name in HUB_FILES}
+    verified_registry = _load_verified_registry()
     numbers_rows: list[dict[str, str]] = []
     faq_rows: list[dict[str, str]] = []
     thin_rows: list[dict[str, str]] = []
 
     for name, rows in rows_by_file.items():
         if name == "numbers.csv":
-            numbers_rows.extend(audit_numbers(rows, name))
+            numbers_rows.extend(audit_numbers(rows, name, verified_registry))
         faq_rows.extend(audit_faq_generic(rows, name))
         thin_rows.extend(audit_thin_body(rows, name))
 
@@ -238,6 +263,15 @@ def main() -> int:
             if r.get("flags")
             and "concept_page" not in r.get("flags", "")
             and r.get("flags") != "concept_page"
+        ),
+        "numbers_verified_ok": sum(
+            1 for r in numbers_rows if r.get("verified", "").startswith("OK")
+        ),
+        "numbers_verify_pending": sum(
+            1
+            for r in numbers_rows
+            if "verify_official" in (r.get("flags") or "")
+            and not r.get("verified", "").startswith("OK")
         ),
         "faq_issues": len(faq_rows),
         "thin_body": len(thin_rows),
