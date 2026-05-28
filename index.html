@@ -7220,7 +7220,7 @@ function injectPaidMockExamCard(modeList){
     <a class="mode-card-v2 mode-card-v2--paid" href="${escapeAttr(m.url)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeAttr(label)}">
       <div class="mode-num-v2 mode-num-v2--paid">05</div>
       <div class="mode-body-v2">
-        <div class="mode-purpose-v2 mode-purpose-v2--paid">${escapeAttr(m.modePurpose)} <span class="mode-paid-tag">有料</span></div>
+        <div class="mode-purpose-v2 mode-purpose-v2--paid">${escapeAttr(m.modePurpose)} <span class="mode-paid-tag">有料 ${escapeAttr(m.priceLabel)}</span></div>
         <div class="mode-title-v2">${escapeAttr(m.modeTitle)}</div>
       </div>
       <div class="mode-arrow-v2 mode-arrow-v2--ext" aria-hidden="true">↗</div>
