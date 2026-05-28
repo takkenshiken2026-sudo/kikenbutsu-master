@@ -86,7 +86,7 @@ def paid_mock_exam() -> dict[str, str]:
         "modeTitle": "予想模試（PDF・2回分）",
         "modePurpose": "本番と同じ35問・2時間で実力確認したい",
         "priceLabel": "¥590",
-        "footnote": "※ note で販売する有料コンテンツです。無料演習とは別商品。",
+        "footnote": "※ note で販売する有料コンテンツ（¥590）です。サイト内の無料演習とは別商品です。",
     }
     out = {k: str(raw.get(k) or v).strip() for k, v in defaults.items()}
     return out
