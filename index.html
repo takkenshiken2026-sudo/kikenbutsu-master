@@ -277,7 +277,14 @@ window.SITE_CONFIG = {
       ],
       "legacyGlossaryCat": "limit"
     }
-  ]
+  ],
+  "paidMockExam": {
+    "url": "https://note.com/shikaku_master/n/naae31abe01ed",
+    "modeTitle": "予想模試（PDF・2回分）",
+    "modePurpose": "本番と同じ35問・2時間で実力確認したい",
+    "priceLabel": "¥590",
+    "footnote": "※ note で販売する有料コンテンツ（¥590）です。サイト内の無料演習とは別商品。"
+  }
 };
 </script>
 <style>
@@ -548,6 +555,13 @@ h2.section-label .tip-icon{width:13px;height:13px;font-size:9px}
 .mode-purpose-v2{font-size:12px;color:var(--text2);font-weight:500;margin-bottom:3px}
 .mode-title-v2{font-size:16px;font-weight:700;color:var(--text);line-height:1.3}
 .mode-arrow-v2{color:var(--text3);font-size:16px;flex-shrink:0}
+.mode-card-v2--paid{text-decoration:none;color:inherit;border-color:var(--accent-border);background:linear-gradient(135deg,#fff 70%,var(--accent-soft) 100%)}
+.mode-card-v2--paid:hover{border-color:var(--accent);box-shadow:var(--sh2),0 2px 8px var(--accent-shadow);background:linear-gradient(135deg,#fff 65%,var(--accent-soft-mid) 100%)}
+.mode-num-v2--paid{color:var(--accent);font-weight:700}
+.mode-purpose-v2--paid{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.mode-paid-tag{font-size:10px;font-weight:700;background:var(--accent);color:var(--accent-text);padding:1px 7px;border-radius:999px;letter-spacing:.04em;line-height:1.5;flex-shrink:0}
+.mode-arrow-v2--ext{color:var(--accent);font-weight:700}
+.mode-paid-footnote{font-size:12px;color:var(--text2);margin:6px 0 0 2px;line-height:1.5}
 .mode-card{background:#fff;border:1.5px solid var(--border2);border-radius:var(--r2);padding:18px;cursor:pointer;transition:all .18s;box-shadow:var(--sh);position:relative;display:flex;flex-direction:column}
 .mode-card:hover{box-shadow:var(--sh2);border-color:var(--text2);transform:translateY(-1px)}
 .mode-card.selected{border-color:var(--ink);box-shadow:0 0 0 3px rgba(0,0,0,0.06)}
@@ -7140,10 +7154,11 @@ function getWeakUnlocked(){
 function injectQuizStartEnhancements(){
   if(typeof window.updateQuizStartModeStats==='function') window.updateQuizStartModeStats();
   const startEl=document.getElementById('page-quiz-start');
-  if(!startEl||startEl.querySelector('#weak-mode-inject')) return;
+  if(!startEl) return;
   const modeList=startEl.querySelector('.mode-list-v2');
   if(!modeList) return;
 
+  if(!startEl.querySelector('#weak-mode-inject')){
   const unlocked=getWeakUnlocked();
   const u=typeof getUserData==='function'?getUserData():null;
   const total=Object.keys(u?.answers||{}).length;
@@ -7177,6 +7192,41 @@ function injectQuizStartEnhancements(){
     </div>`;
   }
   modeList.appendChild(weakCard);
+  }
+
+  if(!startEl.querySelector('#paid-mock-inject')){
+    injectPaidMockExamCard(modeList);
+  }
+}
+
+function getPaidMockExamConfig(){
+  const cfg=(window.SITE_CONFIG&&window.SITE_CONFIG.paidMockExam)||{};
+  return {
+    url: String(cfg.url||'https://note.com/shikaku_master/n/naae31abe01ed').trim(),
+    modeTitle: String(cfg.modeTitle||'予想模試（PDF・2回分）').trim(),
+    modePurpose: String(cfg.modePurpose||'本番と同じ35問・2時間で実力確認したい').trim(),
+    priceLabel: String(cfg.priceLabel||'¥590').trim(),
+    footnote: String(cfg.footnote||'※ note で販売する有料コンテンツです。無料演習とは別商品。').trim(),
+  };
+}
+
+function injectPaidMockExamCard(modeList){
+  const m=getPaidMockExamConfig();
+  if(!m.url) return;
+  const wrapper=document.createElement('div');
+  wrapper.id='paid-mock-inject';
+  const label=`${m.modeTitle}（有料・note・${m.priceLabel}）`;
+  wrapper.innerHTML=`
+    <a class="mode-card-v2 mode-card-v2--paid" href="${escapeAttr(m.url)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeAttr(label)}">
+      <div class="mode-num-v2 mode-num-v2--paid">05</div>
+      <div class="mode-body-v2">
+        <div class="mode-purpose-v2 mode-purpose-v2--paid">${escapeAttr(m.modePurpose)} <span class="mode-paid-tag">有料</span></div>
+        <div class="mode-title-v2">${escapeAttr(m.modeTitle)}</div>
+      </div>
+      <div class="mode-arrow-v2 mode-arrow-v2--ext" aria-hidden="true">↗</div>
+    </a>
+    <p class="mode-paid-footnote">${escapeAttr(m.footnote)}</p>`;
+  modeList.appendChild(wrapper);
 }
 
 // 復習ページ：旧レイアウトで #review-list の外にあった SRS ノードを除去
@@ -7212,8 +7262,10 @@ window.gotoPage=function(id){
       if(typeof window.renderDailyStatus==='function') window.renderDailyStatus();
       if(typeof window.updateQuizStartModeStats==='function') window.updateQuizStartModeStats();
       // 弱点カードが既にある場合は解放状態が変わっていれば再描画
-      const existing=document.getElementById('weak-mode-inject');
-      if(existing) existing.remove();
+      const existingWeak=document.getElementById('weak-mode-inject');
+      if(existingWeak) existingWeak.remove();
+      const existingPaid=document.getElementById('paid-mock-inject');
+      if(existingPaid) existingPaid.remove();
       injectQuizStartEnhancements();
     }
     if(id==='review'){
