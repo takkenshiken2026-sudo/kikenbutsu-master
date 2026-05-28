@@ -19,6 +19,7 @@ def run(cmd: list[str]) -> None:
 def main() -> int:
     py = sys.executable
     run([py, "tools/validate_csv.py"])
+    run([py, "tools/generate_og_image.py"])
     run([py, "tools/apply_site_config.py"])
     run([py, "tools/csv_to_exam_site_past_js.py"])
     run([py, "tools/csv_to_exam_site_ichimondou_js.py"])
@@ -33,6 +34,7 @@ def main() -> int:
     run([py, "tools/validate_site_integration.py"])
     run([py, "tools/validate_internal_links.py"])
     run([py, "tools/validate_public_content.py"])
+    run([py, "tools/ensure_social_meta_all.py"])
     run(["bash", "tools/prepare_public_site.sh"])
     run(["bash", "tools/sync_gh_pages_branch.sh"])
     return 0

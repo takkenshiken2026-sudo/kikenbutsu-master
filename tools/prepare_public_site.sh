@@ -24,6 +24,7 @@ for f in \
   CNAME \
   robots.txt \
   sitemap.xml \
+  og-image.png \
   .nojekyll \
   exam-site-data-past.js \
   exam-site-data-practice.js \
