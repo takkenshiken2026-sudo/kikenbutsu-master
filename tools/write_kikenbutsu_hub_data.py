@@ -11,8 +11,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from tools.hub_faq_expand import expand_all as expand_short_faqs  # noqa: E402
-from tools.hub_merge_data import merge  # noqa: E402
+from tools.hub_merge_data import finalize_hub_rows, merge  # noqa: E402
 from tools.write_kikenbutsu_hub_s30 import DATA, HEADER_COMPARE, HEADER_MISTAKES, HEADER_NUMBERS  # noqa: E402
 from tools.write_kikenbutsu_hub_s30_content import COMPARISONS as C30, MISTAKES as M30, NUMBERS as N30  # noqa: E402
 from tools.write_kikenbutsu_hub_s31_content import (  # noqa: E402
@@ -96,68 +95,65 @@ def write_csv(path: Path, header: list[str], rows: list[dict]) -> None:
 
 
 def main() -> None:
-    comparisons = expand_short_faqs(
-        apply_premium_faqs(
-            merge(
-                C30,
-                COMPARISONS_S31,
-                COMPARISONS_S32,
-                COMPARISONS_S33,
-                COMPARISONS_S34,
-                COMPARISONS_S35,
-                COMPARISONS_S36,
-                COMPARISONS_S37,
-                COMPARISONS_S38,
-                COMPARISONS_S39,
-                COMPARISONS_S40,
-                COMPARISONS_S41,
-                COMPARISONS_S42,
-                COMPARISONS_S43,
-                COMPARISONS_S44,
-            )
-        )
+    comparisons = finalize_hub_rows(
+        merge(
+            C30,
+            COMPARISONS_S31,
+            COMPARISONS_S32,
+            COMPARISONS_S33,
+            COMPARISONS_S34,
+            COMPARISONS_S35,
+            COMPARISONS_S36,
+            COMPARISONS_S37,
+            COMPARISONS_S38,
+            COMPARISONS_S39,
+            COMPARISONS_S40,
+            COMPARISONS_S41,
+            COMPARISONS_S42,
+            COMPARISONS_S43,
+            COMPARISONS_S44,
+        ),
+        apply_premium=apply_premium_faqs,
     )
-    numbers = expand_short_faqs(
-        apply_premium_faqs(
-            merge(
-                N30,
-                NUMBERS_S31,
-                NUMBERS_S32,
-                NUMBERS_S33,
-                NUMBERS_S34,
-                NUMBERS_S35,
-                NUMBERS_S36,
-                NUMBERS_S37,
-                NUMBERS_S38,
-                NUMBERS_S39,
-                NUMBERS_S40,
-                NUMBERS_S41,
-                NUMBERS_S42,
-                NUMBERS_S43,
-                NUMBERS_S44,
-            )
-        )
+    numbers = finalize_hub_rows(
+        merge(
+            N30,
+            NUMBERS_S31,
+            NUMBERS_S32,
+            NUMBERS_S33,
+            NUMBERS_S34,
+            NUMBERS_S35,
+            NUMBERS_S36,
+            NUMBERS_S37,
+            NUMBERS_S38,
+            NUMBERS_S39,
+            NUMBERS_S40,
+            NUMBERS_S41,
+            NUMBERS_S42,
+            NUMBERS_S43,
+            NUMBERS_S44,
+        ),
+        apply_premium=apply_premium_faqs,
     )
-    mistakes = expand_short_faqs(
-        apply_premium_faqs(
-            merge(
-                M30,
-                MISTAKES_S31,
-                MISTAKES_S32,
-                MISTAKES_S33,
-                MISTAKES_S34,
-                MISTAKES_S35,
-                MISTAKES_S36,
-                MISTAKES_S37,
-                MISTAKES_S38,
-                MISTAKES_S39,
-                MISTAKES_S40,
-                MISTAKES_S41,
-                MISTAKES_S42,
-                MISTAKES_S43,
-                MISTAKES_S44,
-            )
-        )
+    mistakes = finalize_hub_rows(
+        merge(
+            M30,
+            MISTAKES_S31,
+            MISTAKES_S32,
+            MISTAKES_S33,
+            MISTAKES_S34,
+            MISTAKES_S35,
+            MISTAKES_S36,
+            MISTAKES_S37,
+            MISTAKES_S38,
+            MISTAKES_S39,
+            MISTAKES_S40,
+            MISTAKES_S41,
+            MISTAKES_S42,
+            MISTAKES_S43,
+            MISTAKES_S44,
+        ),
+        apply_premium=apply_premium_faqs,
     )
     write_csv(DATA / "comparisons.csv", HEADER_COMPARE, comparisons)
     write_csv(DATA / "numbers.csv", HEADER_NUMBERS, numbers)
