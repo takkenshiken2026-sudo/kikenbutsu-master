@@ -5761,7 +5761,6 @@ function showScore(){
   } else if(sessionNewBadges.length){
     setTimeout(tryOpenNextBadgeEarnPopup, 450);
   }
-  renderScorePaidMockPromo();
 }
 
 // ===== REVIEW（自動おすすめ） =====
@@ -7263,6 +7262,7 @@ function renderScorePaidMockPromo(){
     </a>
     <p class="score-paid-mock-footnote">${escapeAttr(m.footnote)}</p>`;
 }
+window.renderScorePaidMockPromo=renderScorePaidMockPromo;
 
 // 復習ページ：旧レイアウトで #review-list の外にあった SRS ノードを除去
 function injectReviewEnhancements(){
@@ -7320,7 +7320,7 @@ window.gotoPage=function(id){
 const _origShowScore2=window.showScore;
 window.showScore=function(){
   if(_origShowScore2) _origShowScore2.apply(this,arguments);
-  // スコア表示後に弱点カードを再評価（次のquiz-start遷移時に反映済みのため不要だが念のため）
+  renderScorePaidMockPromo();
 };
 
 // =====================================================================
