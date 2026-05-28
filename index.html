@@ -555,12 +555,12 @@ h2.section-label .tip-icon{width:13px;height:13px;font-size:9px}
 .mode-purpose-v2{font-size:12px;color:var(--text2);font-weight:500;margin-bottom:3px}
 .mode-title-v2{font-size:16px;font-weight:700;color:var(--text);line-height:1.3}
 .mode-arrow-v2{color:var(--text3);font-size:16px;flex-shrink:0}
-.mode-card-v2--paid{text-decoration:none;color:inherit;border-color:var(--accent-border);background:linear-gradient(135deg,#fff 70%,var(--accent-soft) 100%)}
-.mode-card-v2--paid:hover{border-color:var(--accent);box-shadow:var(--sh2),0 2px 8px var(--accent-shadow);background:linear-gradient(135deg,#fff 65%,var(--accent-soft-mid) 100%)}
-.mode-num-v2--paid{color:var(--accent);font-weight:700}
+.mode-card-v2--paid{text-decoration:none;color:inherit;border-color:var(--border2);background:#fff}
+.mode-card-v2--paid:hover{border-color:var(--text2);box-shadow:var(--sh2);transform:translateY(-1px);background:var(--bg3)}
+.mode-num-v2--paid{color:var(--text3);font-weight:400}
 .mode-purpose-v2--paid{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
 .mode-paid-tag{font-size:10px;font-weight:700;background:var(--accent);color:var(--accent-text);padding:1px 7px;border-radius:999px;letter-spacing:.04em;line-height:1.5;flex-shrink:0}
-.mode-arrow-v2--ext{color:var(--accent);font-weight:700}
+.mode-arrow-v2--ext{color:var(--text3);font-weight:400}
 .mode-paid-footnote{font-size:12px;color:var(--text2);margin:6px 0 0 2px;line-height:1.5}
 .mode-card{background:#fff;border:1.5px solid var(--border2);border-radius:var(--r2);padding:18px;cursor:pointer;transition:all .18s;box-shadow:var(--sh);position:relative;display:flex;flex-direction:column}
 .mode-card:hover{box-shadow:var(--sh2);border-color:var(--text2);transform:translateY(-1px)}
@@ -777,6 +777,15 @@ details.rich-detail summary{display:none}
 .score-q-text{flex:1;color:var(--text2)}
 .score-q-time{font-family:var(--mono);font-size:14px;color:var(--text3)}
 .score-btns{display:flex;gap:9px;flex-wrap:wrap}
+.score-paid-mock-wrap{margin-top:20px;padding-top:4px}
+.score-paid-mock-lead{font-size:14px;color:var(--text2);margin-bottom:12px;line-height:1.65}
+.score-paid-mock-lead strong{color:var(--text);font-weight:600}
+.score-paid-mock-cta{display:flex;align-items:center;gap:12px;padding:14px 16px;border:1.5px solid var(--border2);border-radius:var(--r2);background:#fff;text-decoration:none;color:inherit;box-shadow:var(--sh);transition:all .18s}
+.score-paid-mock-cta:hover{border-color:var(--text2);box-shadow:var(--sh2);transform:translateY(-1px);background:var(--bg3)}
+.score-paid-mock-cta-body{flex:1;min-width:0;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.score-paid-mock-cta-title{font-size:15px;font-weight:700;color:var(--text);line-height:1.35}
+.score-paid-mock-cta-meta{font-size:12px;color:var(--text2);width:100%;margin-top:2px}
+.score-paid-mock-footnote{font-size:12px;color:var(--text2);margin-top:8px;line-height:1.5}
 
 /* ===== DASHBOARD ===== */
 .stat-row{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:18px}
@@ -1797,6 +1806,7 @@ body.is-solving .site-footer{display:none!important}
           <button class="btn-ghost"   onclick="gotoPage('quiz-start')">他の問題を解く</button>
           <button class="btn-primary" onclick="beginQuiz()">もう1セット</button>
         </div>
+        <div id="score-paid-mock-wrap" class="score-paid-mock-wrap" hidden></div>
       </div>
     </div>
 
@@ -5751,6 +5761,7 @@ function showScore(){
   } else if(sessionNewBadges.length){
     setTimeout(tryOpenNextBadgeEarnPopup, 450);
   }
+  renderScorePaidMockPromo();
 }
 
 // ===== REVIEW（自動おすすめ） =====
@@ -7227,6 +7238,30 @@ function injectPaidMockExamCard(modeList){
     </a>
     <p class="mode-paid-footnote">${escapeAttr(m.footnote)}</p>`;
   modeList.appendChild(wrapper);
+}
+
+function renderScorePaidMockPromo(){
+  const wrap=document.getElementById('score-paid-mock-wrap');
+  if(!wrap) return;
+  const m=getPaidMockExamConfig();
+  if(!m.url){
+    wrap.hidden=true;
+    wrap.innerHTML='';
+    return;
+  }
+  const label=`${m.modeTitle}（有料・note・${m.priceLabel}）`;
+  wrap.hidden=false;
+  wrap.innerHTML=`
+    <p class="score-paid-mock-lead">セット演習の次は、<strong>本番同形式の35問</strong>で時間配分を確認しませんか？</p>
+    <a class="score-paid-mock-cta" href="${escapeAttr(m.url)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeAttr(label)}">
+      <span class="score-paid-mock-cta-body">
+        <span class="mode-paid-tag">有料 ${escapeAttr(m.priceLabel)}</span>
+        <span class="score-paid-mock-cta-title">${escapeAttr(m.modeTitle)}</span>
+        <span class="score-paid-mock-cta-meta">35問×2 · 解説付きPDF · note</span>
+      </span>
+      <span class="mode-arrow-v2 mode-arrow-v2--ext" aria-hidden="true">↗</span>
+    </a>
+    <p class="score-paid-mock-footnote">${escapeAttr(m.footnote)}</p>`;
 }
 
 // 復習ページ：旧レイアウトで #review-list の外にあった SRS ノードを除去
