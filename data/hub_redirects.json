@@ -71,7 +71,16 @@
     "ot4-chokuzen-cmp-s41": "ot4-chokuzen-cmp-s40",
     "ot4-chokuzen-cmp-s42": "ot4-chokuzen-cmp-s40",
     "ot4-chokuzen-cmp-s43": "ot4-chokuzen-cmp-s40",
-    "ot4-chokuzen-cmp-s44": "ot4-chokuzen-cmp-s40"
+    "ot4-chokuzen-cmp-s44": "ot4-chokuzen-cmp-s40",
+    "dai2-shitei-s33": "shitei-suryo-beisu-s32",
+    "tensou-kiroku-cmp-s36": "tensou-kiroku-cmp-s35",
+    "tensou-kiroku-cmp-s37": "tensou-kiroku-cmp-s35",
+    "tensou-kiroku-cmp-s38": "tensou-kiroku-cmp-s35",
+    "tensou-kiroku-cmp-s39": "tensou-kiroku-cmp-s35",
+    "tensou-kiroku-cmp-s41": "tensou-kiroku-cmp-s40",
+    "tensou-kiroku-cmp-s42": "tensou-kiroku-cmp-s40",
+    "tensou-kiroku-cmp-s43": "tensou-kiroku-cmp-s40",
+    "tensou-kiroku-cmp-s44": "tensou-kiroku-cmp-s40"
   },
   "numbers": {
     "kiken-toriatsukai-num-s36": "kiken-toriatsukai-num-s35",
@@ -145,7 +154,15 @@
     "ot4-chokuzen-num-s41": "ot4-chokuzen-num-s40",
     "ot4-chokuzen-num-s42": "ot4-chokuzen-num-s40",
     "ot4-chokuzen-num-s43": "ot4-chokuzen-num-s40",
-    "ot4-chokuzen-num-s44": "ot4-chokuzen-num-s40"
+    "ot4-chokuzen-num-s44": "ot4-chokuzen-num-s40",
+    "tensou-kiroku-num-s36": "tensou-kiroku-num-s35",
+    "tensou-kiroku-num-s37": "tensou-kiroku-num-s35",
+    "tensou-kiroku-num-s38": "tensou-kiroku-num-s35",
+    "tensou-kiroku-num-s39": "tensou-kiroku-num-s35",
+    "tensou-kiroku-num-s41": "tensou-kiroku-num-s40",
+    "tensou-kiroku-num-s42": "tensou-kiroku-num-s40",
+    "tensou-kiroku-num-s43": "tensou-kiroku-num-s40",
+    "tensou-kiroku-num-s44": "tensou-kiroku-num-s40"
   },
   "mistakes": {
     "kiken-toriatsukai-mis-s36": "kiken-toriatsukai-mis-s35",
@@ -219,6 +236,15 @@
     "ot4-chokuzen-mis-s41": "ot4-chokuzen-mis-s40",
     "ot4-chokuzen-mis-s42": "ot4-chokuzen-mis-s40",
     "ot4-chokuzen-mis-s43": "ot4-chokuzen-mis-s40",
-    "ot4-chokuzen-mis-s44": "ot4-chokuzen-mis-s40"
+    "ot4-chokuzen-mis-s44": "ot4-chokuzen-mis-s40",
+    "ido-hiki-same-s33": "iso-hikiwatashi-s32",
+    "tensou-kiroku-mis-s36": "tensou-kiroku-mis-s35",
+    "tensou-kiroku-mis-s37": "tensou-kiroku-mis-s35",
+    "tensou-kiroku-mis-s38": "tensou-kiroku-mis-s35",
+    "tensou-kiroku-mis-s39": "tensou-kiroku-mis-s35",
+    "tensou-kiroku-mis-s41": "tensou-kiroku-mis-s40",
+    "tensou-kiroku-mis-s42": "tensou-kiroku-mis-s40",
+    "tensou-kiroku-mis-s43": "tensou-kiroku-mis-s40",
+    "tensou-kiroku-mis-s44": "tensou-kiroku-mis-s40"
   }
 }
