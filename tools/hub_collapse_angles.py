@@ -248,13 +248,20 @@ def collapse_finalized_hubs(
     numbers: list[dict[str, str]],
     mistakes: list[dict[str, str]],
 ) -> tuple[list[dict[str, str]], list[dict[str, str]], list[dict[str, str]], dict[str, dict[str, str]]]:
-    comparisons, compare_redir = collapse_hub_rows(comparisons, hub_kind="compare")
-    numbers, numbers_redir = collapse_hub_rows(numbers, hub_kind="numbers")
-    mistakes, mistakes_redir = collapse_hub_rows(mistakes, hub_kind="mistakes")
+    from tools.hub_collapse_series import collapse_series_rows, merge_redirect_maps
+
+    comparisons, compare_series = collapse_series_rows(comparisons, hub_kind="compare")
+    numbers, numbers_series = collapse_series_rows(numbers, hub_kind="numbers")
+    mistakes, mistakes_series = collapse_series_rows(mistakes, hub_kind="mistakes")
+
+    comparisons, compare_angle = collapse_hub_rows(comparisons, hub_kind="compare")
+    numbers, numbers_angle = collapse_hub_rows(numbers, hub_kind="numbers")
+    mistakes, mistakes_angle = collapse_hub_rows(mistakes, hub_kind="mistakes")
+
     redirects = {
-        "compare": compare_redir,
-        "numbers": numbers_redir,
-        "mistakes": mistakes_redir,
+        "compare": merge_redirect_maps(compare_series, compare_angle),
+        "numbers": merge_redirect_maps(numbers_series, numbers_angle),
+        "mistakes": merge_redirect_maps(mistakes_series, mistakes_angle),
     }
     return comparisons, numbers, mistakes, redirects
 

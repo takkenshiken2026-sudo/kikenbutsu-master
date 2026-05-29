@@ -16,9 +16,11 @@ DATA = ROOT / "data"
 
 try:
     from tools.hub_collapse_angles import topic_group_key, is_template_summary
+    from tools.hub_collapse_series import series_group_key
 except ImportError:
     topic_group_key = None  # type: ignore[assignment]
     is_template_summary = None  # type: ignore[assignment]
+    series_group_key = None  # type: ignore[assignment]
 
 BATCH_SUFFIX_RE = re.compile(r"（S\d+）|\(S\d+\)")
 TRAILING_BATCH_RE = re.compile(r"\s+S\d+$")
@@ -233,6 +235,22 @@ def run_gate() -> tuple[int, dict[str, int]]:
             metrics[f"{csv_name}_uncollapsed_angle_groups"] = uncollapsed
             if uncollapsed:
                 errors.append(f"{csv_name}: {uncollapsed} uncollapsed angle-variant groups remain")
+
+    if series_group_key is not None:
+        for csv_name, rows in (
+            ("comparisons", comparisons),
+            ("numbers", numbers),
+            ("mistakes", mistakes),
+        ):
+            series_groups: dict[str, list[dict[str, str]]] = defaultdict(list)
+            for row in rows:
+                key = series_group_key(row)
+                if key:
+                    series_groups[key].append(row)
+            uncollapsed_series = sum(1 for group in series_groups.values() if len(group) >= 2)
+            metrics[f"{csv_name}_uncollapsed_series_groups"] = uncollapsed_series
+            if uncollapsed_series:
+                errors.append(f"{csv_name}: {uncollapsed_series} uncollapsed nuance-variant groups remain")
 
     if is_template_summary is not None:
         template_summaries = sum(

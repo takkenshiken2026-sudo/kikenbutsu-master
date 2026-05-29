@@ -152,7 +152,15 @@ def parse_numbers_rows(raw: str, *, line: int) -> list[dict]:
         note = norm(row.get("note"))
         if not item or not value:
             raise ValueError(f"line {line}: item_rows[{i - 1}] に item/value が必要です")
-        out.append({"item": item, "value": value, "note": note, "angle": norm(row.get("angle") or "")})
+        out.append(
+            {
+                "item": item,
+                "value": value,
+                "note": note,
+                "angle": norm(row.get("angle") or ""),
+                "nuance": norm(row.get("nuance") or ""),
+            }
+        )
     return out
 
 
@@ -168,7 +176,16 @@ def parse_mistakes_rows(raw: str, *, line: int) -> list[dict]:
         trap = norm(row.get("trap"))
         if not topic or not wrong or not correct:
             raise ValueError(f"line {line}: pattern_rows[{i - 1}] に topic/wrong/correct が必要です")
-        out.append({"topic": topic, "wrong": wrong, "correct": correct, "trap": trap, "angle": norm(row.get("angle") or "")})
+        out.append(
+            {
+                "topic": topic,
+                "wrong": wrong,
+                "correct": correct,
+                "trap": trap,
+                "angle": norm(row.get("angle") or ""),
+                "nuance": norm(row.get("nuance") or ""),
+            }
+        )
     return out
 
 
@@ -255,33 +272,67 @@ def _numbers_table_body(rows: list[dict]) -> str:
     )
 
 
-def numbers_matrix_table_html(rows: list[dict], *, note_html: str) -> str:
-    angles = [a for a in dict.fromkeys(r.get("angle") or "" for r in rows if r.get("angle"))]
-    unlabeled = [r for r in rows if not r.get("angle")]
+def _grouped_matrix_html(
+    rows: list[dict],
+    *,
+    note_html: str,
+    table_head: str,
+    table_body_fn: Callable[[list[dict]], str],
+    group_field: str,
+    heading_class: str,
+) -> str:
+    groups = [g for g in dict.fromkeys(r.get(group_field) or "" for r in rows if r.get(group_field))]
+    unlabeled = [r for r in rows if not r.get(group_field)]
     parts: list[str] = []
     if unlabeled:
         parts.append(
-            '<table class="seo-info-table numbers-matrix-table">'
-            '<thead><tr><th scope="col">項目</th><th scope="col">数値・期限</th><th scope="col">補足</th></tr></thead>'
-            f"<tbody>{_numbers_table_body(unlabeled)}</tbody></table>"
+            f'<table class="seo-info-table {heading_class.replace("hub-", "")}-matrix-table">'
+            f"{table_head}{table_body_fn(unlabeled)}</tbody></table>"
         )
-    for angle in angles:
-        subset = [r for r in rows if r.get("angle") == angle]
+    for label in groups:
+        subset = [r for r in rows if r.get(group_field) == label]
         if not subset:
             continue
-        parts.append(f'<h3 class="hub-angle-heading">{html.escape(angle)}</h3>')
+        parts.append(f'<h3 class="{heading_class}">{html.escape(label)}</h3>')
         parts.append(
-            '<table class="seo-info-table numbers-matrix-table">'
-            '<thead><tr><th scope="col">項目</th><th scope="col">数値・期限</th><th scope="col">補足</th></tr></thead>'
-            f"<tbody>{_numbers_table_body(subset)}</tbody></table>"
+            f'<table class="seo-info-table {heading_class.replace("hub-", "")}-matrix-table">'
+            f"{table_head}{table_body_fn(subset)}</tbody></table>"
         )
     if not parts:
         parts.append(
-            '<table class="seo-info-table numbers-matrix-table">'
-            '<thead><tr><th scope="col">項目</th><th scope="col">数値・期限</th><th scope="col">補足</th></tr></thead>'
-            f"<tbody>{_numbers_table_body(rows)}</tbody></table>"
+            f'<table class="seo-info-table {heading_class.replace("hub-", "")}-matrix-table">'
+            f"{table_head}{table_body_fn(rows)}</tbody></table>"
         )
     return "".join(parts) + note_html
+
+
+def numbers_matrix_table_html(rows: list[dict], *, note_html: str) -> str:
+    table_head = (
+        '<thead><tr><th scope="col">項目</th><th scope="col">数値・期限</th>'
+        '<th scope="col">補足</th></tr></thead><tbody>'
+    )
+    if any(r.get("angle") for r in rows):
+        return _grouped_matrix_html(
+            rows,
+            note_html=note_html,
+            table_head=table_head,
+            table_body_fn=_numbers_table_body,
+            group_field="angle",
+            heading_class="hub-angle-heading",
+        )
+    if any(r.get("nuance") for r in rows):
+        return _grouped_matrix_html(
+            rows,
+            note_html=note_html,
+            table_head=table_head,
+            table_body_fn=_numbers_table_body,
+            group_field="nuance",
+            heading_class="hub-nuance-heading",
+        )
+    return (
+        '<table class="seo-info-table numbers-matrix-table">'
+        f"{table_head}{_numbers_table_body(rows)}</tbody></table>{note_html}"
+    )
 
 
 def _mistakes_table_body(rows: list[dict]) -> str:
@@ -297,35 +348,32 @@ def _mistakes_table_body(rows: list[dict]) -> str:
 
 
 def mistakes_matrix_table_html(rows: list[dict], *, note_html: str) -> str:
-    angles = [a for a in dict.fromkeys(r.get("angle") or "" for r in rows if r.get("angle"))]
-    unlabeled = [r for r in rows if not r.get("angle")]
-    parts: list[str] = []
-    if unlabeled:
-        parts.append(
-            '<table class="seo-info-table mistakes-matrix-table">'
-            '<thead><tr><th scope="col">論点</th><th scope="col">誤答例</th><th scope="col">正解</th>'
-            '<th scope="col">引っかけポイント</th></tr></thead>'
-            f"<tbody>{_mistakes_table_body(unlabeled)}</tbody></table>"
+    table_head = (
+        '<thead><tr><th scope="col">論点</th><th scope="col">誤答例</th><th scope="col">正解</th>'
+        '<th scope="col">引っかけポイント</th></tr></thead><tbody>'
+    )
+    if any(r.get("angle") for r in rows):
+        return _grouped_matrix_html(
+            rows,
+            note_html=note_html,
+            table_head=table_head,
+            table_body_fn=_mistakes_table_body,
+            group_field="angle",
+            heading_class="hub-angle-heading",
         )
-    for angle in angles:
-        subset = [r for r in rows if r.get("angle") == angle]
-        if not subset:
-            continue
-        parts.append(f'<h3 class="hub-angle-heading">{html.escape(angle)}</h3>')
-        parts.append(
-            '<table class="seo-info-table mistakes-matrix-table">'
-            '<thead><tr><th scope="col">論点</th><th scope="col">誤答例</th><th scope="col">正解</th>'
-            '<th scope="col">引っかけポイント</th></tr></thead>'
-            f"<tbody>{_mistakes_table_body(subset)}</tbody></table>"
+    if any(r.get("nuance") for r in rows):
+        return _grouped_matrix_html(
+            rows,
+            note_html=note_html,
+            table_head=table_head,
+            table_body_fn=_mistakes_table_body,
+            group_field="nuance",
+            heading_class="hub-nuance-heading",
         )
-    if not parts:
-        parts.append(
-            '<table class="seo-info-table mistakes-matrix-table">'
-            '<thead><tr><th scope="col">論点</th><th scope="col">誤答例</th><th scope="col">正解</th>'
-            '<th scope="col">引っかけポイント</th></tr></thead>'
-            f"<tbody>{_mistakes_table_body(rows)}</tbody></table>"
-        )
-    return "".join(parts) + note_html
+    return (
+        '<table class="seo-info-table mistakes-matrix-table">'
+        f"{table_head}{_mistakes_table_body(rows)}</tbody></table>{note_html}"
+    )
 
 
 def related_terms_links_html(related: str, term_lookup: dict[str, str]) -> str:
