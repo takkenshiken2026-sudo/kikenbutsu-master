@@ -303,7 +303,7 @@ def render_terms_index_tbody(entries: list[dict]) -> str:
             f"</div></td>"
             f'<td class="terms-idx-td-cat" data-label="分野"{href_attr}>'
             f'{html.escape(item.get("category") or "")}</td>'
-            f'<td class="terms-idx-td-snippet" data-label="定義（抜粋）"{href_attr}>'
+            f'<td class="terms-idx-td-snippet" data-label="定義"{href_attr}>'
             f"{short_def}</td>"
             "</tr>"
         )
@@ -1263,7 +1263,7 @@ def build_terms_index(entries: list[dict], base_url: str) -> str:
           <thead><tr>
             <th scope="col" class="terms-idx-th-term">用語</th>
             <th scope="col" class="terms-idx-th-cat">分野</th>
-            <th scope="col" class="terms-idx-th-def">定義（抜粋）</th>
+            <th scope="col" class="terms-idx-th-def">定義</th>
           </tr></thead>
           <tbody id="terms-idx-flat-body">
 {tbody_html}
