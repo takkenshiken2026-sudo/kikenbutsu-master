@@ -6,7 +6,7 @@ from __future__ import annotations
 
 import re
 
-BATCH_SUFFIX_RE = re.compile(r"（S\d+）")
+BATCH_SUFFIX_RE = re.compile(r"（S\d+）|\(S\d+\)")
 
 # slug は内部識別子として -s35 等を残す
 _SKIP_KEYS = frozenset({"slug"})
