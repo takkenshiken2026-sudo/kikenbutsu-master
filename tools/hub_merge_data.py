@@ -23,13 +23,13 @@ def finalize_hub_rows(
 ) -> list[dict]:
     if apply_premium:
         rows = apply_premium(rows)
+    rows = strip_hub_rows(rows)
+    rows = diversify_hub_rows(rows)
     suffix = official_suffix if official_suffix is not None else discover_official_suffix(
         Path(__file__).resolve().parents[1]
     )
     rows = apply_auto_premium(rows, official_suffix=suffix)
-    rows = expand_short_faqs(rows)
-    rows = strip_hub_rows(rows)
-    return diversify_hub_rows(rows)
+    return expand_short_faqs(rows)
 
 
 def merge_rows(*groups: list[dict]) -> list[dict]:
@@ -70,13 +70,19 @@ def write_hub_csvs(
         comparisons = apply_premium(comparisons)
         numbers = apply_premium(numbers)
         mistakes = apply_premium(mistakes)
+    comparisons = strip_hub_rows(comparisons)
+    numbers = strip_hub_rows(numbers)
+    mistakes = strip_hub_rows(mistakes)
+    comparisons = diversify_hub_rows(comparisons)
+    numbers = diversify_hub_rows(numbers)
+    mistakes = diversify_hub_rows(mistakes)
     suffix = discover_official_suffix(data_dir.parent)
     comparisons = apply_auto_premium(comparisons, official_suffix=suffix)
     numbers = apply_auto_premium(numbers, official_suffix=suffix)
     mistakes = apply_auto_premium(mistakes, official_suffix=suffix)
-    comparisons = diversify_hub_rows(strip_hub_rows(expand_short_faqs(comparisons)))
-    numbers = diversify_hub_rows(strip_hub_rows(expand_short_faqs(numbers)))
-    mistakes = diversify_hub_rows(strip_hub_rows(expand_short_faqs(mistakes)))
+    comparisons = expand_short_faqs(comparisons)
+    numbers = expand_short_faqs(numbers)
+    mistakes = expand_short_faqs(mistakes)
     write_csv(data_dir / "comparisons.csv", header_compare, comparisons)
     write_csv(data_dir / "numbers.csv", header_numbers, numbers)
     write_csv(data_dir / "mistakes.csv", header_mistakes, mistakes)

@@ -156,7 +156,7 @@ def _is_generic_mistake(row: dict[str, str]) -> bool:
         return True
     if any(p.get("wrong") == "名称だけで判断" for p in patterns):
         return True
-    for p, (axis, wrong, _correct, trap) in zip(patterns, GENERIC_MISTAKE_PATTERNS):
+    for p, (axis, wrong, trap) in zip(patterns, GENERIC_MISTAKE_PATTERNS):
         if p.get("topic") != axis or p.get("wrong") != wrong or p.get("trap") != trap:
             break
     else:
@@ -178,9 +178,11 @@ def _mistake_patterns(topic: str, terms: list[str], angle: str, slug: str) -> li
         "判例・ガイド": "条文照合",
         "横断総合": "類似制度と区別",
     }.get(angle, "要点確認")
+    shift = _variant_index(slug, len(axes))
+    rotated = axes[shift:] + axes[:shift]
     out: list[dict[str, str]] = []
-    for i, (axis, wrong, correct_base, trap) in enumerate(axes):
-        term = terms[i % len(terms)] if terms else topic
+    for i, (axis, wrong, correct_base, trap) in enumerate(rotated):
+        term = terms[(i + shift) % len(terms)] if terms else topic
         out.append(
             {
                 "topic": axis,
@@ -297,6 +299,11 @@ def _diversify_mistake(row: dict[str, str]) -> None:
 
 
 def _is_generic_compare(row: dict[str, str]) -> bool:
+    lead = (row.get("article_lead") or "").strip()
+    if "義務主体・実施手順・記録保存" in lead:
+        return True
+    if lead.startswith("比較表で") and "整理" in lead and len(lead) < 80:
+        return True
     try:
         axes = json.loads(row.get("compare_rows") or "[]")
     except json.JSONDecodeError:
@@ -308,6 +315,31 @@ def _is_generic_compare(row: dict[str, str]) -> bool:
         if (generic[0], tuple(generic[1])) in labels:
             return True
     return "観点A" in (row.get("col_labels") or "")
+
+
+def _faq_compare(row: dict[str, str], topic: str, angle: str) -> None:
+    terms = _topic_terms(row)
+    t1, t2 = (terms + [topic])[:2]
+    row["faq_1_question"] = f"「{t1}」と「{t2}」の違いは何ですか？"
+    row["faq_1_answer"] = (
+        f"{topic}（{angle}）では、比較表の5軸（目的・主体・手続・数値・試験論点）で"
+        f"{t1}と{t2}を並べ、主語と条件文の差を確認してください。"
+    )
+    row["faq_2_question"] = f"「{topic}」の比較表の使い方は？"
+    row["faq_2_answer"] = (
+        LEAD_BY_ANGLE.get(angle, LEAD_BY_ANGLE["試験頻出"]).format(topic=topic)
+        + " 過去問で入れ替わった肢は、表のどの行が逆転したかをメモしてください。"
+    )
+    row["faq_3_question"] = f"「{topic}」で試験に出やすい混同は？"
+    row["faq_3_answer"] = (
+        f"{row.get('common_mistakes', '')} "
+        f"名称だけで判断せず、{t1}と{t2}それぞれの義務主体を条文で確認してください。"
+    )
+    row["faq_4_question"] = f"「{topic}」の直前復習（{angle}）は？"
+    row["faq_4_answer"] = (
+        f"比較表を見ずに{t1}と{t2}の違いを口述し、"
+        " 誤答した設問は逆転した軸（主体・手順・数値）をタグ付けして再演習してください。"
+    )
 
 
 def _compare_rows(topic: str, terms: list[str], angle: str) -> list[dict[str, Any]]:
@@ -339,14 +371,14 @@ def _compare_rows(topic: str, terms: list[str], angle: str) -> list[dict[str, An
             ("ガイド", [f"{t1}の指針", f"{t2}の指針"]),
             ("運用", [f"{t1}の実務解釈", f"{t2}の実務解釈"]),
             ("更新", [f"{t1}の改定点", f"{t2}の改定点"]),
-            ("試験", [f"条文×ガイド", "旧通知の流用"],
+            ("試験", [f"条文×ガイド", "旧通知の流用"]),
         ],
         "横断総合": [
             ("制度", [f"{t1}の位置づけ", f"{t2}の位置づけ"]),
             ("関係", [f"{t1}との連携", f"{t2}との連携"]),
             ("リスク", [f"{t1}の違反リスク", f"{t2}の違反リスク"]),
-            ("総合", [f"横断マップ上の{t1}", f"横断マップ上の{t2}"],
-            ("直前", [f"弱点チェック", "同型誤答の再確認"],
+            ("総合", [f"横断マップ上の{t1}", f"横断マップ上の{t2}"]),
+            ("直前", [f"弱点チェック", "同型誤答の再確認"]),
         ],
     }
     return [{"axis": a, "cols": c} for a, c in pools.get(angle, pools["試験頻出"])]
@@ -369,11 +401,15 @@ def _diversify_compare(row: dict[str, str]) -> None:
     row["exam_points"] = _mistake_exam_points(topic, angle, row.get("slug", ""))
     row["common_mistakes"] = _mistake_common(topic, terms, row.get("slug", ""))
     row["memory_tip"] = _memory_tip(topic, angle)
+    _faq_compare(row, topic, angle)
 
 
 def _is_generic_numbers(row: dict[str, str]) -> bool:
     hl = (row.get("highlight") or "").strip()
     if hl in ("代表値は要項・法令で確認", "要項・法令で確認"):
+        return True
+    cm = (row.get("common_mistakes") or "").strip()
+    if cm == "数値だけ暗記;手順省略;主体混同":
         return True
     try:
         items = json.loads(row.get("item_rows") or "[]")
@@ -387,6 +423,31 @@ def _is_generic_numbers(row: dict[str, str]) -> bool:
     if notes.count("試験頻出") >= 3 and len(set(i.get("item") for i in items)) <= 2:
         return True
     return False
+
+
+def _faq_numbers(row: dict[str, str], topic: str, angle: str) -> None:
+    terms = _topic_terms(row)
+    t0 = terms[0] if terms else topic
+    row["faq_1_question"] = f"「{topic}」で確認すべき数値・条件は？"
+    row["faq_1_answer"] = (
+        f"{topic}（{angle}）では{t0}に関する数値だけでなく、"
+        "義務主体・実施条件・記録保存までセットで確認してください。"
+    )
+    row["faq_2_question"] = f"「{topic}」の数値暗記のコツは？"
+    row["faq_2_answer"] = (
+        f"{row.get('memory_tip', '')} "
+        "数値は条文・試験要項の表と照合し、旧要項との差分は更新日付で管理してください。"
+    )
+    row["faq_3_question"] = f"「{topic}」の典型誤答は？"
+    row["faq_3_answer"] = (
+        f"{row.get('common_mistakes', '')} "
+        f"{angle}では条件文の主語と数値が入れ替わる肢に注意してください。"
+    )
+    row["faq_4_question"] = f"「{topic}」の関連資料は？"
+    row["faq_4_answer"] = (
+        f"用語集の「{t0}」、関連法令・試験要項、直近の通知・ガイドラインを照合してください。"
+        " 直前は本ページの確認表と過去問を往復してください。"
+    )
 
 
 def _number_items(topic: str, terms: list[str], angle: str) -> list[dict[str, str]]:
@@ -430,6 +491,7 @@ def _diversify_numbers(row: dict[str, str]) -> None:
     row["exam_points"] = _mistake_exam_points(topic, angle, row.get("slug", ""))
     row["common_mistakes"] = _mistake_common(topic, terms, row.get("slug", ""))
     row["memory_tip"] = _memory_tip(topic, angle)
+    _faq_numbers(row, topic, angle)
 
 
 def diversify_hub_row(row: dict[str, str]) -> dict[str, str]:
@@ -442,7 +504,50 @@ def diversify_hub_row(row: dict[str, str]) -> dict[str, str]:
     return row
 
 
+def _differentiate_duplicate_patterns(row: dict[str, str]) -> None:
+    try:
+        patterns = json.loads(row.get("pattern_rows") or "[]")
+    except json.JSONDecodeError:
+        return
+    if not patterns:
+        return
+    title = (row.get("title") or "").strip()
+    topic = _core_topic(title)
+    label = title.split("：")[0].strip() if "：" in title else topic
+    terms = _topic_terms(row)
+    shift = _variant_index(row.get("slug", ""), max(len(patterns), 1))
+    for j, p in enumerate(patterns):
+        term = terms[(j + shift) % len(terms)] if terms else topic
+        anchor = label if label not in (term, topic) else term
+        wrong = (p.get("wrong") or "").strip()
+        correct = (p.get("correct") or "").strip()
+        if anchor not in wrong:
+            p["wrong"] = f"【{anchor}】{wrong}" if wrong else anchor
+        if anchor not in correct:
+            p["correct"] = f"【{anchor}】→{correct}" if correct else anchor
+    row["pattern_rows"] = json.dumps(patterns, ensure_ascii=False)
+
+
+def _dedupe_mistake_patterns(rows: list[dict[str, str]]) -> None:
+    by_batch: dict[int, dict[str, list[dict[str, str]]]] = {}
+    for row in rows:
+        if "confusion_point" not in row:
+            continue
+        batch = _batch_num(row.get("slug", ""))
+        if batch is None or batch < 35:
+            continue
+        pat = row.get("pattern_rows", "")
+        by_batch.setdefault(batch, {}).setdefault(pat, []).append(row)
+    for batch_rows in by_batch.values():
+        for group in batch_rows.values():
+            if len(group) < 2:
+                continue
+            for row in group:
+                _differentiate_duplicate_patterns(row)
+
+
 def diversify_hub_rows(rows: list[dict[str, str]]) -> list[dict[str, str]]:
     for row in rows:
         diversify_hub_row(row)
+    _dedupe_mistake_patterns(rows)
     return rows
