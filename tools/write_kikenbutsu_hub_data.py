@@ -11,7 +11,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from tools.hub_merge_data import finalize_hub_rows, merge  # noqa: E402
+from tools.hub_merge_data import apply_hub_collapse, finalize_hub_rows, merge  # noqa: E402
 from tools.write_kikenbutsu_hub_s30 import DATA, HEADER_COMPARE, HEADER_MISTAKES, HEADER_NUMBERS  # noqa: E402
 from tools.write_kikenbutsu_hub_s30_content import COMPARISONS as C30, MISTAKES as M30, NUMBERS as N30  # noqa: E402
 from tools.write_kikenbutsu_hub_s31_content import (  # noqa: E402
@@ -155,6 +155,7 @@ def main() -> None:
         ),
         apply_premium=apply_premium_faqs,
     )
+    comparisons, numbers, mistakes = apply_hub_collapse(DATA, comparisons, numbers, mistakes)
     write_csv(DATA / "comparisons.csv", HEADER_COMPARE, comparisons)
     write_csv(DATA / "numbers.csv", HEADER_NUMBERS, numbers)
     write_csv(DATA / "mistakes.csv", HEADER_MISTAKES, mistakes)

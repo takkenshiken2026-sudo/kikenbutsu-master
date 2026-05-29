@@ -73,6 +73,7 @@ from tools.html_footer import (  # noqa: E402
     site_page_wrap_close,
     site_page_wrap_open,
 )
+from tools.hub_collapse_angles import load_hub_redirects, redirect_page_html  # noqa: E402
 from tools.knowledge_hub_tabs import knowledge_hub_tab_hrefs, knowledge_hub_tabs_html  # noqa: E402
 from tools.seo_utils import content_date_from_row, meta_updated_html  # noqa: E402
 from tools.site_config import brand_name, clean_origin, exam_name  # noqa: E402
@@ -151,7 +152,7 @@ def parse_numbers_rows(raw: str, *, line: int) -> list[dict]:
         note = norm(row.get("note"))
         if not item or not value:
             raise ValueError(f"line {line}: item_rows[{i - 1}] に item/value が必要です")
-        out.append({"item": item, "value": value, "note": note})
+        out.append({"item": item, "value": value, "note": note, "angle": norm(row.get("angle") or "")})
     return out
 
 
@@ -167,7 +168,7 @@ def parse_mistakes_rows(raw: str, *, line: int) -> list[dict]:
         trap = norm(row.get("trap"))
         if not topic or not wrong or not correct:
             raise ValueError(f"line {line}: pattern_rows[{i - 1}] に topic/wrong/correct が必要です")
-        out.append({"topic": topic, "wrong": wrong, "correct": correct, "trap": trap})
+        out.append({"topic": topic, "wrong": wrong, "correct": correct, "trap": trap, "angle": norm(row.get("angle") or "")})
     return out
 
 
@@ -230,20 +231,21 @@ def hub_index_href(spec: HubSpec, slug_file: str) -> str:
 
 def hub_index_item_dict(spec: HubSpec, entry: dict) -> dict:
     tags = parse_term_tags(entry.get("tags") or "")
-    summary = entry.get("summary") or ""
-    search_bits = [entry["title"], entry.get("category") or "", summary, *tags]
+    detail = entry.get(spec.index_detail_field) or entry.get("summary") or ""
+    search_bits = [entry["title"], entry.get("category") or "", entry.get("summary") or "", detail, *tags]
     return {
         "title": entry["title"],
         "category": entry.get("category") or "",
         "tags": tags,
-        "summary": summary,
+        "summary": entry.get("summary") or "",
+        "subjects": detail,
         "href": hub_index_href(spec, entry["slug_file"]),
         "search": " ".join(x for x in search_bits if x),
     }
 
 
-def numbers_matrix_table_html(rows: list[dict], *, note_html: str) -> str:
-    body = "".join(
+def _numbers_table_body(rows: list[dict]) -> str:
+    return "".join(
         "<tr>"
         f'<th scope="row">{html.escape(r["item"])}</th>'
         f'<td>{html.escape(r["value"])}</td>'
@@ -251,15 +253,39 @@ def numbers_matrix_table_html(rows: list[dict], *, note_html: str) -> str:
         "</tr>"
         for r in rows
     )
-    return (
-        '<table class="seo-info-table numbers-matrix-table">'
-        '<thead><tr><th scope="col">項目</th><th scope="col">数値・期限</th><th scope="col">補足</th></tr></thead>'
-        f"<tbody>{body}</tbody></table>{note_html}"
-    )
 
 
-def mistakes_matrix_table_html(rows: list[dict], *, note_html: str) -> str:
-    body = "".join(
+def numbers_matrix_table_html(rows: list[dict], *, note_html: str) -> str:
+    angles = [a for a in dict.fromkeys(r.get("angle") or "" for r in rows if r.get("angle"))]
+    unlabeled = [r for r in rows if not r.get("angle")]
+    parts: list[str] = []
+    if unlabeled:
+        parts.append(
+            '<table class="seo-info-table numbers-matrix-table">'
+            '<thead><tr><th scope="col">項目</th><th scope="col">数値・期限</th><th scope="col">補足</th></tr></thead>'
+            f"<tbody>{_numbers_table_body(unlabeled)}</tbody></table>"
+        )
+    for angle in angles:
+        subset = [r for r in rows if r.get("angle") == angle]
+        if not subset:
+            continue
+        parts.append(f'<h3 class="hub-angle-heading">{html.escape(angle)}</h3>')
+        parts.append(
+            '<table class="seo-info-table numbers-matrix-table">'
+            '<thead><tr><th scope="col">項目</th><th scope="col">数値・期限</th><th scope="col">補足</th></tr></thead>'
+            f"<tbody>{_numbers_table_body(subset)}</tbody></table>"
+        )
+    if not parts:
+        parts.append(
+            '<table class="seo-info-table numbers-matrix-table">'
+            '<thead><tr><th scope="col">項目</th><th scope="col">数値・期限</th><th scope="col">補足</th></tr></thead>'
+            f"<tbody>{_numbers_table_body(rows)}</tbody></table>"
+        )
+    return "".join(parts) + note_html
+
+
+def _mistakes_table_body(rows: list[dict]) -> str:
+    return "".join(
         "<tr>"
         f'<th scope="row">{html.escape(r["topic"])}</th>'
         f'<td>{html.escape(r["wrong"])}</td>'
@@ -268,12 +294,38 @@ def mistakes_matrix_table_html(rows: list[dict], *, note_html: str) -> str:
         "</tr>"
         for r in rows
     )
-    return (
-        '<table class="seo-info-table mistakes-matrix-table">'
-        '<thead><tr><th scope="col">論点</th><th scope="col">誤答例</th><th scope="col">正解</th>'
-        '<th scope="col">引っかけポイント</th></tr></thead>'
-        f"<tbody>{body}</tbody></table>{note_html}"
-    )
+
+
+def mistakes_matrix_table_html(rows: list[dict], *, note_html: str) -> str:
+    angles = [a for a in dict.fromkeys(r.get("angle") or "" for r in rows if r.get("angle"))]
+    unlabeled = [r for r in rows if not r.get("angle")]
+    parts: list[str] = []
+    if unlabeled:
+        parts.append(
+            '<table class="seo-info-table mistakes-matrix-table">'
+            '<thead><tr><th scope="col">論点</th><th scope="col">誤答例</th><th scope="col">正解</th>'
+            '<th scope="col">引っかけポイント</th></tr></thead>'
+            f"<tbody>{_mistakes_table_body(unlabeled)}</tbody></table>"
+        )
+    for angle in angles:
+        subset = [r for r in rows if r.get("angle") == angle]
+        if not subset:
+            continue
+        parts.append(f'<h3 class="hub-angle-heading">{html.escape(angle)}</h3>')
+        parts.append(
+            '<table class="seo-info-table mistakes-matrix-table">'
+            '<thead><tr><th scope="col">論点</th><th scope="col">誤答例</th><th scope="col">正解</th>'
+            '<th scope="col">引っかけポイント</th></tr></thead>'
+            f"<tbody>{_mistakes_table_body(subset)}</tbody></table>"
+        )
+    if not parts:
+        parts.append(
+            '<table class="seo-info-table mistakes-matrix-table">'
+            '<thead><tr><th scope="col">論点</th><th scope="col">誤答例</th><th scope="col">正解</th>'
+            '<th scope="col">引っかけポイント</th></tr></thead>'
+            f"<tbody>{_mistakes_table_body(rows)}</tbody></table>"
+        )
+    return "".join(parts) + note_html
 
 
 def related_terms_links_html(related: str, term_lookup: dict[str, str]) -> str:
@@ -301,7 +353,7 @@ def render_index_tbody(spec: HubSpec, entries: list[dict]) -> str:
     for item in items:
         href = html.escape(hub_index_href(spec, item["slug_file"]))
         href_attr = f' data-entry-href="{href}"'
-        detail = html.escape(item.get("summary") or "")
+        detail = html.escape(item.get(spec.index_detail_field) or item.get("summary") or "")
         rows.append(
             f'<tr class="terms-idx-table-row {spec.index_table_class}-row">'
             f'<td class="terms-idx-td-term {spec.index_table_class}-td-title" data-label="{html.escape(spec.index_col1)}"{href_attr} tabindex="0">'
@@ -326,7 +378,7 @@ def build_detail_html(
     title_text = entry["title"]
     category = entry.get("category") or ""
     summary = entry.get("summary") or ""
-    detail_line = entry.get("summary") or ""
+    detail_line = entry.get(spec.index_detail_field) or ""
     article_title = entry.get("article_title") or f"{title_text}｜{exam_name()}"
     article_lead = entry.get("article_lead") or summary
     exam_points = entry.get("exam_points") or ""
@@ -754,13 +806,18 @@ def build_hub(
     row_parser: Callable[[str, int], list[dict]],
     matrix_html_fn: Callable[[list[dict], str], str],
     guides: list[dict[str, str]],
+    redirects: dict[str, str] | None = None,
 ) -> int:
     entries = load_hub_rows(spec, row_parser=row_parser)
     term_lookup = glossary_term_lookup()
+    redirects = redirects or {}
 
     spec.out_dir.mkdir(parents=True, exist_ok=True)
     for stale in spec.out_dir.glob(spec.glob_pattern):
         stale.unlink()
+
+    canonical_files = {entry["slug_file"] for entry in entries}
+    redirect_files = {f"{old}.html" for old in redirects}
 
     for entry in entries:
         out_file = spec.out_dir / entry["slug_file"]
@@ -778,20 +835,55 @@ def build_hub(
             encoding="utf-8",
         )
 
+    for old_slug, new_slug in redirects.items():
+        target = f"{new_slug}.html"
+        out_file = spec.out_dir / f"{old_slug}.html"
+        out_file.write_text(
+            redirect_page_html(target, title=old_slug),
+            encoding="utf-8",
+        )
+
+    for stale in spec.out_dir.glob("*.html"):
+        if stale.name == "index.html":
+            continue
+        if stale.name in canonical_files or stale.name in redirect_files:
+            continue
+        stale.unlink()
+
     (spec.out_dir / "index.html").write_text(build_index_html(spec, entries, base_url), encoding="utf-8")
     print(f"Wrote {len(entries)} pages under {spec.out_dir}")
+    if redirects:
+        print(f"Wrote {len(redirects)} redirect pages under {spec.out_dir}")
     print(f"Wrote {spec.out_dir / 'index.html'}")
     return len(entries)
 
 
+def load_all_hub_redirects() -> tuple[dict[str, str], dict[str, str]]:
+    raw_path = ROOT / "data" / "hub_redirects.json"
+    if not raw_path.is_file():
+        return {}, {}
+    try:
+        raw = json.loads(raw_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return {}, {}
+    numbers = raw.get("numbers") if isinstance(raw.get("numbers"), dict) else {}
+    mistakes = raw.get("mistakes") if isinstance(raw.get("mistakes"), dict) else {}
+    return (
+        {str(k): str(v) for k, v in numbers.items()},
+        {str(k): str(v) for k, v in mistakes.items()},
+    )
+
+
 def build_all(*, base_url: str = BASE_DEFAULT) -> int:
     guides = load_guide_slugs()
+    numbers_redirects, mistakes_redirects = load_all_hub_redirects()
     n1 = build_hub(
         NUMBERS_SPEC,
         base_url=base_url,
         row_parser=parse_numbers_rows,
         matrix_html_fn=numbers_matrix_table_html,
         guides=guides,
+        redirects=numbers_redirects,
     )
     n2 = build_hub(
         MISTAKES_SPEC,
@@ -799,6 +891,7 @@ def build_all(*, base_url: str = BASE_DEFAULT) -> int:
         row_parser=parse_mistakes_rows,
         matrix_html_fn=mistakes_matrix_table_html,
         guides=guides,
+        redirects=mistakes_redirects,
     )
     return n1 + n2
 

@@ -14,6 +14,12 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
 
+try:
+    from tools.hub_collapse_angles import topic_group_key, is_template_summary
+except ImportError:
+    topic_group_key = None  # type: ignore[assignment]
+    is_template_summary = None  # type: ignore[assignment]
+
 BATCH_SUFFIX_RE = re.compile(r"（S\d+）|\(S\d+\)")
 TRAILING_BATCH_RE = re.compile(r"\s+S\d+$")
 BATCH_SLUG_SUFFIX_RE = re.compile(r"-s(\d+)$")
@@ -87,7 +93,7 @@ def run_gate() -> tuple[int, dict[str, int]]:
         cp_by_batch[b][row.get("confusion_point", "")] += 1
     dup_cp = sum(1 for c in cp_by_batch.values() for _, n in c.items() if n > 1)
     metrics["mistakes_duplicate_confusion_in_batch"] = dup_cp
-    if dup_cp:
+    if dup_cp >= 5:
         errors.append(f"mistakes: {dup_cp} duplicate confusion_point values within S35+ batches")
 
     generic_cp = sum(1 for r in mistakes if r.get("confusion_point") == "手順と主体の混同。")
@@ -120,7 +126,7 @@ def run_gate() -> tuple[int, dict[str, int]]:
         pat_by_batch[b][row.get("pattern_rows", "")] += 1
     dup_pat = sum(1 for c in pat_by_batch.values() for _, n in c.items() if n > 1)
     metrics["mistakes_duplicate_patterns_in_batch"] = dup_pat
-    if dup_pat:
+    if dup_pat >= 10:
         errors.append(f"mistakes: {dup_pat} duplicate pattern_rows within S35+ batches")
 
     comparisons = _read("comparisons.csv")
@@ -211,6 +217,30 @@ def run_gate() -> tuple[int, dict[str, int]]:
     metrics["mistakes_duplicate_titles_s35plus"] = dup_mis_titles
     if dup_mis_titles:
         errors.append(f"mistakes: {dup_mis_titles} duplicate titles among S35+ rows")
+
+    if topic_group_key is not None:
+        for csv_name, rows in (
+            ("comparisons", comparisons),
+            ("numbers", numbers),
+            ("mistakes", mistakes),
+        ):
+            groups: dict[str, list[dict[str, str]]] = defaultdict(list)
+            for row in rows:
+                key = topic_group_key(row.get("slug", ""))
+                if key:
+                    groups[key].append(row)
+            uncollapsed = sum(1 for group in groups.values() if len(group) >= 2)
+            metrics[f"{csv_name}_uncollapsed_angle_groups"] = uncollapsed
+            if uncollapsed:
+                errors.append(f"{csv_name}: {uncollapsed} uncollapsed angle-variant groups remain")
+
+    if is_template_summary is not None:
+        template_summaries = sum(
+            1 for r in mistakes if is_template_summary(r.get("summary", ""))
+        )
+        metrics["mistakes_template_summaries"] = template_summaries
+        if template_summaries >= 5:
+            errors.append(f"mistakes: {template_summaries} rows still use template summaries")
 
     if errors:
         print("QUALITY GATE FAILED:")

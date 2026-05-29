@@ -12,7 +12,21 @@ from tools.hub_faq_expand import expand_all as expand_short_faqs  # noqa: E402
 from tools.hub_premium_faq_auto import apply_all as apply_auto_premium  # noqa: E402
 from tools.hub_premium_faq_auto import discover_official_suffix  # noqa: E402
 from tools.hub_strip_batch_suffix import strip_hub_rows  # noqa: E402
+from tools.hub_collapse_angles import collapse_finalized_hubs, write_hub_redirects  # noqa: E402
 from tools.hub_diversify_content import diversify_hub_rows  # noqa: E402
+
+
+def apply_hub_collapse(
+    data_dir: Path,
+    comparisons: list[dict],
+    numbers: list[dict],
+    mistakes: list[dict],
+) -> tuple[list[dict], list[dict], list[dict]]:
+    comparisons, numbers, mistakes, redirects = collapse_finalized_hubs(
+        comparisons, numbers, mistakes
+    )
+    write_hub_redirects(data_dir, redirects)
+    return comparisons, numbers, mistakes
 
 
 def finalize_hub_rows(
@@ -83,6 +97,10 @@ def write_hub_csvs(
     comparisons = expand_short_faqs(comparisons)
     numbers = expand_short_faqs(numbers)
     mistakes = expand_short_faqs(mistakes)
+    comparisons, numbers, mistakes, redirects = collapse_finalized_hubs(
+        comparisons, numbers, mistakes
+    )
+    write_hub_redirects(data_dir, redirects)
     write_csv(data_dir / "comparisons.csv", header_compare, comparisons)
     write_csv(data_dir / "numbers.csv", header_numbers, numbers)
     write_csv(data_dir / "mistakes.csv", header_mistakes, mistakes)

@@ -7,6 +7,7 @@ from __future__ import annotations
 import hashlib
 import json
 import re
+from collections import defaultdict
 from typing import Any
 
 from tools.hub_strip_batch_suffix import BATCH_SUFFIX_RE
@@ -323,9 +324,93 @@ def _variant_index(slug: str, n: int) -> int:
     return h % n
 
 
+CONFUSION_TEMPLATE_MARKERS = (
+    "の目的・対象・主体の定義を取り違えやすい",
+    "の実施主体と手続順序（誰が・いつ・何を）を混同しやすい",
+    "の過去問で主語・数値・条件文が入れ替わる肢に注意",
+    "のガイドライン・通知と法令条文の関係を誤解しやすい",
+    "と類似制度の境界が曖昧になり、総合問題で誤答しやすい",
+)
+PATTERN_TEMPLATE_MARKERS = (
+    "義務主体の取り違え",
+    "実施順序の逆転",
+    "数値・条件の単独暗記",
+    "記録・報告の省略",
+    "定義確認）",
+    "フロー確認）",
+    "逆転肢対策）",
+)
+
+
+def _mistake_pair_terms(row: dict[str, str]) -> tuple[str, str]:
+    title = _strip_angle_suffix(row.get("title", ""))
+    terms = _topic_terms(row)
+    if "：" in title:
+        _, tail = title.split("：", 1)
+        for suffix in ("の混同誤り", "の典型誤答", "の混同", "の誤り", "の誤認"):
+            tail = tail.replace(suffix, "")
+        tail = tail.strip()
+        if "と" in tail:
+            left, right = tail.split("と", 1)
+            left, right = left.strip(), right.strip()
+            if left and right and left != right:
+                return left, right
+    if len(terms) >= 2 and terms[0] != terms[1]:
+        return terms[0], terms[1]
+    core = _core_topic(title)
+    alt = terms[0] if terms and terms[0] != core else f"{core}の関連制度"
+    return core, alt
+
+
+def _is_template_confusion(cp: str) -> bool:
+    text = (cp or "").strip()
+    if not text:
+        return True
+    if text in GENERIC_CONFUSION:
+        return True
+    return any(marker in text for marker in CONFUSION_TEMPLATE_MARKERS)
+
+
+def _is_template_mistake_patterns(row: dict[str, str]) -> bool:
+    try:
+        patterns = json.loads(row.get("pattern_rows") or "[]")
+    except json.JSONDecodeError:
+        return True
+    if not patterns:
+        return True
+    blob = json.dumps(patterns, ensure_ascii=False)
+    if any(marker in blob for marker in PATTERN_TEMPLATE_MARKERS):
+        return True
+    wrongs = [(p.get("wrong") or "").strip() for p in patterns]
+    if wrongs and all(len(w) > 36 for w in wrongs):
+        return True
+    if wrongs and all(w.startswith("「") for w in wrongs):
+        return True
+    return False
+
+
+def _has_handcrafted_mistake_patterns(row: dict[str, str]) -> bool:
+    try:
+        patterns = json.loads(row.get("pattern_rows") or "[]")
+    except json.JSONDecodeError:
+        return False
+    if len(patterns) != 4:
+        return False
+    for pattern in patterns:
+        wrong = (pattern.get("wrong") or "").strip()
+        correct = (pattern.get("correct") or "").strip()
+        if not wrong or not correct or len(wrong) > 42 or len(correct) > 42:
+            return False
+        if wrong.startswith("「") or correct.startswith("「"):
+            return False
+    return True
+
+
 def _is_generic_mistake(row: dict[str, str]) -> bool:
     cp = (row.get("confusion_point") or "").strip()
     if cp in GENERIC_CONFUSION or "手順と主体" in cp or "主語と時点" in cp:
+        return True
+    if _is_template_mistake_patterns(row):
         return True
     try:
         patterns = json.loads(row.get("pattern_rows") or "[]")
@@ -353,33 +438,45 @@ def _is_generic_mistake(row: dict[str, str]) -> bool:
 
 
 def _mistake_patterns(row: dict[str, str], topic: str, terms: list[str], angle: str, slug: str) -> list[dict[str, str]]:
-    label = _clean_public_title(_strip_angle_suffix(row.get("title", ""))) or topic
-    axes = [
-        ("主体", "義務主体の取り違え", "条文の主語を先に確定", "主体誤り"),
-        ("手順", "実施順序の逆転", "確認→実施→記録の順", "手順誤り"),
-        ("数値", "数値・条件の単独暗記", "数値と条件をセット確認", "数値誤り"),
-        ("記録", "記録・報告の省略", "記録保存まで追跡", "記録誤り"),
-    ]
-    angle_twist = {
-        "基礎整理": "定義確認",
-        "実務連動": "フロー確認",
-        "試験頻出": "逆転肢対策",
-        "判例・ガイド": "条文照合",
-        "横断総合": "類似制度と区別",
-    }.get(angle, "要点確認")
-    shift = _variant_index(slug, len(axes))
-    rotated = axes[shift:] + axes[:shift]
+    t1, t2 = _mistake_pair_terms(row)
+    pools: dict[str, list[tuple[str, str, str, str]]] = {
+        "基礎整理": [
+            ("混同", f"{t1}＝{t2}", f"{t1}と{t2}は別", "名称類似"),
+            ("主体", "管業が決定", "管理組合が決定", "主体誤"),
+            ("機関", "理事会のみ", "総会決議", "機関誤"),
+            ("決議", "過半数", "5分の4", "決議誤"),
+        ],
+        "実務連動": [
+            ("手続", f"{t1}の手続を省略", f"{t1}→{t2}の順で確認", "手続誤"),
+            ("記録", "記録不要", "記録・保存まで追跡", "記録誤"),
+            ("費用", f"{t1}と{t2}を同一費目", "費目・会計を分離", "費用誤"),
+            ("主体", "管理会社が単独決定", "組合の意思決定", "主体誤"),
+        ],
+        "試験頻出": [
+            ("逆転", f"{t2}の主語を{t1}に", "主語・条件を下線", "主語入替"),
+            ("数値", "数値だけ暗記", "数値+条件をセット", "数値誤"),
+            ("決議", "普通決議で足りる", "特別決議・5分の4", "決議誤"),
+            ("混同", f"{t1}の条文を{t2}に適用", "根拠法ごとに整理", "条文混同"),
+        ],
+        "判例・ガイド": [
+            ("根拠", "通知だけで判断", "法令→通知の順で確認", "根拠誤"),
+            ("規約", "規約が法令より優先", "法令優先・規約は補完", "優先誤"),
+            ("判例", "典型例で一律判断", "事案ごとに条文・判例", "判例誤"),
+            ("主体", f"{t1}と{t2}の権限同一", "権限・責任を表で分離", "権限誤"),
+        ],
+        "横断総合": [
+            ("横断", f"{t1}と{t2}を同列処理", "制度ごとに軸を分ける", "横断誤"),
+            ("費用", "修繕費と管理費を混同", "会計区分を固定", "会計誤"),
+            ("時点", "手続完了前に効力発生", "決議→実行の順序固定", "時点誤"),
+            ("選任", "管理会社社員で代替", "法定選任要件を確認", "選任誤"),
+        ],
+    }
+    specs = pools.get(angle, pools["試験頻出"])
+    shift = _variant_index(slug, len(specs))
+    rotated = specs[shift:] + specs[:shift]
     out: list[dict[str, str]] = []
-    for i, (axis, wrong, correct_base, trap) in enumerate(rotated):
-        term = terms[(i + shift) % len(terms)] if terms else topic
-        out.append(
-            {
-                "topic": axis,
-                "wrong": f"「{label}」で{term}の{wrong}",
-                "correct": f"「{label}」では{term}の{correct_base}（{angle_twist}）",
-                "trap": trap,
-            }
-        )
+    for axis, wrong, correct, trap in rotated:
+        out.append({"topic": axis, "wrong": wrong, "correct": correct, "trap": trap})
     return out
 
 
@@ -465,14 +562,18 @@ def _faq_mistake(row: dict[str, str], topic: str, angle: str) -> None:
 
 
 def _confusion_for_row(row: dict[str, str], topic: str, angle: str) -> str:
-    label = _clean_public_title(_strip_angle_suffix(row.get("title", "")))
-    base = CONFUSION_BY_ANGLE.get(angle, CONFUSION_BY_ANGLE["試験頻出"]).format(topic=label or topic)
-    nuance = _title_nuance(row)
-    if nuance and nuance not in base:
-        base = base.rstrip("。") + f"。「{label}」では特に{nuance}の論点で名称だけの判断をしやすい。"
+    t1, t2 = _mistake_pair_terms(row)
+    by_angle = {
+        "基礎整理": f"「{t1}」と「{t2}」の定義・目的を取り違え、同一制度と短絡しやすい。",
+        "実務連動": f"「{t1}」と「{t2}」の実施主体・手続順序（誰が・いつ・何を）を混同しやすい。",
+        "試験頻出": f"「{t1}」と「{t2}」の過去問で、主語・数値・条件文が入れ替わる肢に注意。",
+        "判例・ガイド": f"「{t1}」と「{t2}」について、法令条文と通知・ガイドラインの関係を誤解しやすい。",
+        "横断総合": f"「{t1}」と「{t2}」の境界が曖昧になり、総合問題で誤答しやすい。",
+    }
+    base = by_angle.get(angle, by_angle["試験頻出"])
     related = [x.strip() for x in (row.get("related_terms") or "").split(";") if x.strip()]
-    if related and related[0] not in base:
-        base = base.rstrip("。") + f"。関連する「{related[0]}」との境界もセットで確認してください。"
+    if related and related[0] not in base and related[0] not in (t1, t2):
+        base = base.rstrip("。") + f"。関連する「{related[0]}」との違いもセットで確認してください。"
     return base
 
 
@@ -505,6 +606,9 @@ def _personalize_confusion_point(row: dict[str, str]) -> None:
     batch = _batch_num(row.get("slug", ""))
     if batch is None or batch < 35 or "confusion_point" not in row:
         return
+    cp = (row.get("confusion_point") or "").strip()
+    if cp and not _is_template_confusion(cp):
+        return
     topic = _core_topic(_clean_public_title(_strip_angle_suffix(row.get("title", ""))))
     angle = ANGLE_BY_BATCH.get(batch, "試験頻出")
     row["confusion_point"] = _confusion_for_row(row, topic, angle)
@@ -513,15 +617,9 @@ def _personalize_confusion_point(row: dict[str, str]) -> None:
 def _patterns_need_refresh(row: dict[str, str]) -> bool:
     if _is_generic_mistake(row):
         return True
-    label = _clean_public_title(_strip_angle_suffix(row.get("title", "")))
-    try:
-        patterns = json.loads(row.get("pattern_rows") or "[]")
-    except json.JSONDecodeError:
-        return True
-    if not patterns or not label:
-        return True
-    blob = json.dumps(patterns, ensure_ascii=False)
-    return label not in blob
+    if _has_handcrafted_mistake_patterns(row):
+        return False
+    return _is_template_mistake_patterns(row)
 
 
 def _diversify_mistake(row: dict[str, str]) -> None:
@@ -670,6 +768,7 @@ ANGLE_COL_FOCUS: dict[str, tuple[str, str]] = {
 
 def _strip_angle_suffix(title: str) -> str:
     t = BATCH_SUFFIX_RE.sub("", title or "").strip()
+    t = TRAILING_BATCH_TITLE_RE.sub("", t).strip()
     for angle in ANGLE_BY_BATCH.values():
         suffix = f"（{angle}）"
         if t.endswith(suffix):
@@ -1029,11 +1128,11 @@ def _dedupe_mistake_titles(rows: list[dict[str, str]]) -> None:
             if "：" in core:
                 head, tail = core.split("：", 1)
                 if label and label not in tail and label != head:
-                    new_base = f"{head}：{label}・{tail}の典型誤答"
+                    new_base = f"{head}：{label}・{tail}"
                 else:
-                    new_base = f"{core}の典型誤答" if not core.endswith("誤答") else core
+                    new_base = core
             else:
-                new_base = f"{core}：{label}の典型誤答"
+                new_base = f"{core}：{label}"
             row["title"] = f"{new_base}（{angle}）"
 
 
@@ -1168,10 +1267,44 @@ def _dedupe_mistake_patterns(rows: list[dict[str, str]]) -> None:
             if len(group) < 2:
                 continue
             for row in group:
-                _differentiate_duplicate_patterns(row)
+                batch = _batch_num(row.get("slug", "")) or 0
+                angle = ANGLE_BY_BATCH.get(batch, "試験頻出")
+                topic = _core_topic(_strip_angle_suffix(row.get("title", "")))
+                terms = _topic_terms(row)
+                row["pattern_rows"] = json.dumps(
+                    _mistake_patterns(row, topic, terms, angle, row.get("slug", "")),
+                    ensure_ascii=False,
+                )
+
+
+BATCH_EARLY_LABEL: dict[int, str] = {
+    30: "基礎",
+    31: "整理",
+    32: "構造・取扱い",
+    33: "取扱い深掘り",
+    34: "試験頻出",
+}
+
+
+def _resolve_title_collisions(rows: list[dict[str, str]]) -> None:
+    by_title: dict[str, list[dict[str, str]]] = defaultdict(list)
+    for row in rows:
+        batch = _batch_num(row.get("slug", ""))
+        if batch is not None and batch >= 35:
+            continue
+        by_title[(row.get("title") or "").strip()].append(row)
+    for title, group in by_title.items():
+        if len(group) < 2 or not title:
+            continue
+        for row in group:
+            batch = _batch_num(row.get("slug", ""))
+            label = BATCH_EARLY_LABEL.get(batch or 0) or _reader_disambig(row, row.get("slug", ""))
+            if label and f"（{label}）" not in title:
+                row["title"] = f"{title}（{label}）"
 
 
 def diversify_hub_rows(rows: list[dict[str, str]]) -> list[dict[str, str]]:
+    _resolve_title_collisions(rows)
     for row in rows:
         diversify_hub_row(row)
     _dedupe_mistake_patterns(rows)
