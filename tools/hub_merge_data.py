@@ -12,6 +12,7 @@ from tools.hub_faq_expand import expand_all as expand_short_faqs  # noqa: E402
 from tools.hub_premium_faq_auto import apply_all as apply_auto_premium  # noqa: E402
 from tools.hub_premium_faq_auto import discover_official_suffix  # noqa: E402
 from tools.hub_strip_batch_suffix import strip_hub_rows  # noqa: E402
+from tools.hub_diversify_content import diversify_hub_rows  # noqa: E402
 
 
 def finalize_hub_rows(
@@ -27,7 +28,8 @@ def finalize_hub_rows(
     )
     rows = apply_auto_premium(rows, official_suffix=suffix)
     rows = expand_short_faqs(rows)
-    return strip_hub_rows(rows)
+    rows = strip_hub_rows(rows)
+    return diversify_hub_rows(rows)
 
 
 def merge_rows(*groups: list[dict]) -> list[dict]:
@@ -72,9 +74,9 @@ def write_hub_csvs(
     comparisons = apply_auto_premium(comparisons, official_suffix=suffix)
     numbers = apply_auto_premium(numbers, official_suffix=suffix)
     mistakes = apply_auto_premium(mistakes, official_suffix=suffix)
-    comparisons = strip_hub_rows(expand_short_faqs(comparisons))
-    numbers = strip_hub_rows(expand_short_faqs(numbers))
-    mistakes = strip_hub_rows(expand_short_faqs(mistakes))
+    comparisons = diversify_hub_rows(strip_hub_rows(expand_short_faqs(comparisons)))
+    numbers = diversify_hub_rows(strip_hub_rows(expand_short_faqs(numbers)))
+    mistakes = diversify_hub_rows(strip_hub_rows(expand_short_faqs(mistakes)))
     write_csv(data_dir / "comparisons.csv", header_compare, comparisons)
     write_csv(data_dir / "numbers.csv", header_numbers, numbers)
     write_csv(data_dir / "mistakes.csv", header_mistakes, mistakes)
