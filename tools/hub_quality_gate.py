@@ -15,7 +15,10 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
 
 BATCH_SUFFIX_RE = re.compile(r"（S\d+）|\(S\d+\)")
-BATCH_SLUG_RE = re.compile(r"-s(\d+)$")
+TRAILING_BATCH_RE = re.compile(r"\s+S\d+$")
+BATCH_SLUG_SUFFIX_RE = re.compile(r"-s(\d+)$")
+BATCH_SLUG_PREFIX_RE = re.compile(r"^s(\d+)-")
+
 FORBIDDEN_PHRASES = (
     "手順と主体の混同。",
     "（S35）",
@@ -23,7 +26,7 @@ FORBIDDEN_PHRASES = (
 )
 
 GENERIC_FAQ = "試験論点・条文・数値の対応を比較表に整理し、過去問で正誤の型を分類してください。"
-BATCH_SLUG_RE = re.compile(r"-s(\d+)$")
+GENERIC_NUMBER_HIGHLIGHT = "代表値は要項・法令で確認"
 
 
 def _read(name: str) -> list[dict[str, str]]:
@@ -35,8 +38,16 @@ def _read(name: str) -> list[dict[str, str]]:
 
 
 def _batch(slug: str) -> int | None:
-    m = BATCH_SLUG_RE.search(slug or "")
+    s = slug or ""
+    m = BATCH_SLUG_SUFFIX_RE.search(s)
+    if m:
+        return int(m.group(1))
+    m = BATCH_SLUG_PREFIX_RE.search(s)
     return int(m.group(1)) if m else None
+
+
+def _strip_core(label: str) -> str:
+    return re.sub(r"（[^）]*）$", "", (label or "").strip()).strip()
 
 
 def run_gate() -> tuple[int, dict[str, int]]:
@@ -54,6 +65,8 @@ def run_gate() -> tuple[int, dict[str, int]]:
                 if not isinstance(val, str):
                     continue
                 if BATCH_SUFFIX_RE.search(val):
+                    batch_hits += 1
+                if TRAILING_BATCH_RE.search(val):
                     batch_hits += 1
                 for ph in FORBIDDEN_PHRASES:
                     if ph in val:
@@ -135,6 +148,17 @@ def run_gate() -> tuple[int, dict[str, int]]:
     if dup_index:
         errors.append(f"comparisons: {dup_index} identical index rows (title+col_labels) among S35+")
 
+    cmp_self = 0
+    for row in comparisons:
+        if (_batch(row.get("slug", "")) or 0) < 35:
+            continue
+        parts = [_strip_core(p) for p in (row.get("col_labels") or "").split(";") if p.strip()]
+        if len(parts) >= 2 and parts[0] == parts[1]:
+            cmp_self += 1
+    metrics["comparisons_self_compare_col_labels"] = cmp_self
+    if cmp_self:
+        errors.append(f"comparisons: {cmp_self} rows with identical compare subjects in col_labels")
+
     num_titles = Counter(
         r.get("title", "")
         for r in _read("numbers.csv")
@@ -144,6 +168,26 @@ def run_gate() -> tuple[int, dict[str, int]]:
     metrics["numbers_duplicate_titles_s35plus"] = dup_num_titles
     if dup_num_titles:
         errors.append(f"numbers: {dup_num_titles} duplicate titles among S35+ rows")
+
+    numbers = _read("numbers.csv")
+    generic_hl = sum(1 for r in numbers if (r.get("highlight") or "").strip() == GENERIC_NUMBER_HIGHLIGHT)
+    hl_counter = Counter((r.get("highlight") or "").strip() for r in numbers if (r.get("highlight") or "").strip())
+    dup_hl = sum(1 for _, n in hl_counter.items() if n >= 8)
+    metrics["numbers_generic_highlight"] = generic_hl
+    metrics["numbers_duplicate_highlight_values"] = dup_hl
+    if generic_hl:
+        errors.append(f"numbers: {generic_hl} rows still use generic highlight")
+
+    item_by_batch: dict[int, Counter[str]] = defaultdict(Counter)
+    for row in numbers:
+        b = _batch(row.get("slug", ""))
+        if b is None or b < 35:
+            continue
+        item_by_batch[b][row.get("item_rows", "")] += 1
+    num_item_dup = sum(1 for c in item_by_batch.values() for _, n in c.items() if n > 1)
+    metrics["numbers_duplicate_item_rows_in_batch"] = num_item_dup
+    if num_item_dup:
+        errors.append(f"numbers: {num_item_dup} duplicate item_rows within S35+ batches")
 
     reader_noise = 0
     slug_in_label = re.compile(r"[a-z]+-[a-z0-9-]+", re.I)

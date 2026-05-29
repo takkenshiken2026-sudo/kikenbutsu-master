@@ -7,15 +7,19 @@ from __future__ import annotations
 import re
 
 BATCH_SUFFIX_RE = re.compile(r"（S\d+）|\(S\d+\)")
+TRAILING_BATCH_RE = re.compile(r"\s+S\d+$")
 
 # slug は内部識別子として -s35 等を残す
 _SKIP_KEYS = frozenset({"slug"})
 
 
 def strip_batch_suffix(text: str) -> str:
-    if not text or not BATCH_SUFFIX_RE.search(text):
+    if not text:
         return text
     cleaned = BATCH_SUFFIX_RE.sub("", text)
+    cleaned = TRAILING_BATCH_RE.sub("", cleaned)
+    if cleaned == text:
+        return text
     return re.sub(r"\s{2,}", " ", cleaned).strip()
 
 

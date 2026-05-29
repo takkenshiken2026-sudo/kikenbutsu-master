@@ -49,103 +49,103 @@ numbers.csv,toriatsukai-nen-s34,取扱者選任届,選任・解任時届出,選�
 numbers.csv,ido-ukewatashi-num-s34,引渡し届数量,政令・品名表確認,政令・品名表確認 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
 numbers.csv,kiken-exam-time-s34,乙4試験時間,要項で確認,要項で確認 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
 numbers.csv,chozo-kubun-num-s34,貯蔵所区分数量,政令・倍数確認,政令・倍数確認 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,kiken-toriatsukai-num-s35,危険物取扱：選任・解任時届出の数値（基礎整理）,選任・解任時届出,選任・解任時届出 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,shobou-hou-num-s35,消防法：消防法・政令で定めるの数値（基礎整理）,消防法・政令で定める,消防法・政令で定める | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,shitei-suryo-num-s35,指定数量：品名別の数値（基礎整理）,品名別（政令・品名表）,品名別 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,chozo-sho-num-s35,貯蔵所：容量・倍数の数値（基礎整理）,容量・倍数（政令確認）,容量・倍数 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,ido-ukewatashi-num-s35,移動：政令・品名表で確認の数値（基礎整理）,政令・品名表で確認,政令・品名表で確認 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,hoan-kitei-num-s35,保安規程：作成・変更時の数値（基礎整理）,作成・変更時（条文）,作成・変更時 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,shoka-num-s35,消火：規模・用途で変動の数値（基礎整理）,規模・用途で変動,規模・用途で変動 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,tank-num-s35,タンク：政令・品名表で確認の数値（基礎整理）,政令・品名表で確認,政令・品名表で確認 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,tensou-kiroku-num-s35,転送記録：政令・品名表確認の数値（基礎整理）,政令・品名表確認,政令・品名表確認 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,ot4-shiken-num-s35,乙4試験：要項で確認の数値（基礎整理）,要項で確認（年度により変動）,要項で確認 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,kiken-toriatsukai-num-s36,危険物取扱：選任・解任時届出の数値（実務連動）,選任・解任時届出,選任・解任時届出 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,shobou-hou-num-s36,消防法：消防法・政令で定めるの数値（実務連動）,消防法・政令で定める,消防法・政令で定める | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,shitei-suryo-num-s36,指定数量：品名別の数値（実務連動）,品名別（政令・品名表）,品名別 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,chozo-sho-num-s36,貯蔵所：容量・倍数の数値（実務連動）,容量・倍数（政令確認）,容量・倍数 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,ido-ukewatashi-num-s36,移動：政令・品名表で確認の数値（実務連動）,政令・品名表で確認,政令・品名表で確認 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,hoan-kitei-num-s36,保安規程：作成・変更時の数値（実務連動）,作成・変更時（条文）,作成・変更時 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,shoka-num-s36,消火：規模・用途で変動の数値（実務連動）,規模・用途で変動,規模・用途で変動 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,tank-num-s36,タンク：政令・品名表で確認の数値（実務連動）,政令・品名表で確認,政令・品名表で確認 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,tensou-kiroku-num-s36,転送記録：政令・品名表確認の数値（実務連動）,政令・品名表確認,政令・品名表確認 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,ot4-shiken-num-s36,乙4試験：要項で確認の数値（実務連動）,要項で確認（年度により変動）,要項で確認 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,kiken-toriatsukai-num-s37,危険物取扱：選任・解任時届出の数値（試験頻出）,選任・解任時届出,選任・解任時届出 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,shobou-hou-num-s37,消防法：消防法・政令で定めるの数値（試験頻出）,消防法・政令で定める,消防法・政令で定める | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,shitei-suryo-num-s37,指定数量：品名別の数値（試験頻出）,品名別（政令・品名表）,品名別 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,chozo-sho-num-s37,貯蔵所：容量・倍数の数値（試験頻出）,容量・倍数（政令確認）,容量・倍数 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,ido-ukewatashi-num-s37,移動：政令・品名表で確認の数値（試験頻出）,政令・品名表で確認,政令・品名表で確認 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,hoan-kitei-num-s37,保安規程：作成・変更時の数値（試験頻出）,作成・変更時（条文）,作成・変更時 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,shoka-num-s37,消火：規模・用途で変動の数値（試験頻出）,規模・用途で変動,規模・用途で変動 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,tank-num-s37,タンク：政令・品名表で確認の数値（試験頻出）,政令・品名表で確認,政令・品名表で確認 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,tensou-kiroku-num-s37,転送記録：政令・品名表確認の数値（試験頻出）,政令・品名表確認,政令・品名表確認 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,ot4-shiken-num-s37,乙4試験：要項で確認の数値（試験頻出）,要項で確認（年度により変動）,要項で確認 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,kiken-toriatsukai-num-s38,危険物取扱：選任・解任時届出の数値（判例・ガイド）,選任・解任時届出,選任・解任時届出 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,shobou-hou-num-s38,消防法：消防法・政令で定めるの数値（判例・ガイド）,消防法・政令で定める,消防法・政令で定める | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,shitei-suryo-num-s38,指定数量：品名別の数値（判例・ガイド）,品名別（政令・品名表）,品名別 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,chozo-sho-num-s38,貯蔵所：容量・倍数の数値（判例・ガイド）,容量・倍数（政令確認）,容量・倍数 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,ido-ukewatashi-num-s38,移動：政令・品名表で確認の数値（判例・ガイド）,政令・品名表で確認,政令・品名表で確認 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,hoan-kitei-num-s38,保安規程：作成・変更時の数値（判例・ガイド）,作成・変更時（条文）,作成・変更時 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,shoka-num-s38,消火：規模・用途で変動の数値（判例・ガイド）,規模・用途で変動,規模・用途で変動 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,tank-num-s38,タンク：政令・品名表で確認の数値（判例・ガイド）,政令・品名表で確認,政令・品名表で確認 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,tensou-kiroku-num-s38,転送記録：政令・品名表確認の数値（判例・ガイド）,政令・品名表確認,政令・品名表確認 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,ot4-shiken-num-s38,乙4試験：要項で確認の数値（判例・ガイド）,要項で確認（年度により変動）,要項で確認 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,kiken-toriatsukai-num-s39,危険物取扱：選任・解任時届出の数値（横断総合）,選任・解任時届出,選任・解任時届出 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,shobou-hou-num-s39,消防法：消防法・政令で定めるの数値（横断総合）,消防法・政令で定める,消防法・政令で定める | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,shitei-suryo-num-s39,指定数量：品名別の数値（横断総合）,品名別（政令・品名表）,品名別 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,chozo-sho-num-s39,貯蔵所：容量・倍数の数値（横断総合）,容量・倍数（政令確認）,容量・倍数 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,ido-ukewatashi-num-s39,移動：政令・品名表で確認の数値（横断総合）,政令・品名表で確認,政令・品名表で確認 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,hoan-kitei-num-s39,保安規程：作成・変更時の数値（横断総合）,作成・変更時（条文）,作成・変更時 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,shoka-num-s39,消火：規模・用途で変動の数値（横断総合）,規模・用途で変動,規模・用途で変動 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,tank-num-s39,タンク：政令・品名表で確認の数値（横断総合）,政令・品名表で確認,政令・品名表で確認 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,tensou-kiroku-num-s39,転送記録：政令・品名表確認の数値（横断総合）,政令・品名表確認,政令・品名表確認 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,ot4-shiken-num-s39,乙4試験：要項で確認の数値（横断総合）,要項で確認（年度により変動）,要項で確認 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,kiken-hoan-num-s40,危険物保安：選任・解任時届出の数値（基礎整理）,選任・解任時届出,選任・解任時届出 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,shobo-setsubi-num-s40,消防設備点検：定期点検の数値（基礎整理）,定期点検（政令・規模次第）,定期点検 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,maybe_missing_digit;verify_official,OK-practice
-numbers.csv,shitei-suryo-santei-num-s40,指定数量算定：品名別の数値（基礎整理）,品名別（政令・品名表）,品名別 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,chozo-sekkei-num-s40,貯蔵所設計：容量・倍数の数値（基礎整理）,容量・倍数（政令確認）,容量・倍数 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,ido-toriatsukai-num-s40,移動取扱：政令・品名表で確認の数値（基礎整理）,政令・品名表で確認,政令・品名表で確認 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,yobo-kitei-num-s40,予防規程改定：作成・変更時の数値（基礎整理）,作成・変更時（条文）,作成・変更時 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,shoka-kunren-num-s40,消火訓練：規模・用途で変動の数値（基礎整理）,規模・用途で変動,規模・用途で変動 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,tank-kensa-num-s40,タンク検査：政令・品名表で確認の数値（基礎整理）,政令・品名表で確認,政令・品名表で確認 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,tensou-kiroku-num-s40,転送記録保存：政令・品名表確認の数値（基礎整理）,政令・品名表確認,政令・品名表確認 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,ot4-chokuzen-num-s40,乙4直前：要項で確認の数値（基礎整理）,要項で確認（年度により変動）,要項で確認 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,kiken-hoan-num-s41,危険物保安：選任・解任時届出の数値（実務連動）,選任・解任時届出,選任・解任時届出 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,shobo-setsubi-num-s41,消防設備点検：定期点検の数値（実務連動）,定期点検（政令・規模次第）,定期点検 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,maybe_missing_digit;verify_official,OK-practice
-numbers.csv,shitei-suryo-santei-num-s41,指定数量算定：品名別の数値（実務連動）,品名別（政令・品名表）,品名別 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,chozo-sekkei-num-s41,貯蔵所設計：容量・倍数の数値（実務連動）,容量・倍数（政令確認）,容量・倍数 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,ido-toriatsukai-num-s41,移動取扱：政令・品名表で確認の数値（実務連動）,政令・品名表で確認,政令・品名表で確認 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,yobo-kitei-num-s41,予防規程改定：作成・変更時の数値（実務連動）,作成・変更時（条文）,作成・変更時 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,shoka-kunren-num-s41,消火訓練：規模・用途で変動の数値（実務連動）,規模・用途で変動,規模・用途で変動 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,tank-kensa-num-s41,タンク検査：政令・品名表で確認の数値（実務連動）,政令・品名表で確認,政令・品名表で確認 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,tensou-kiroku-num-s41,転送記録保存：政令・品名表確認の数値（実務連動）,政令・品名表確認,政令・品名表確認 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,ot4-chokuzen-num-s41,乙4直前：要項で確認の数値（実務連動）,要項で確認（年度により変動）,要項で確認 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,kiken-hoan-num-s42,危険物保安：選任・解任時届出の数値（試験頻出）,選任・解任時届出,選任・解任時届出 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,shobo-setsubi-num-s42,消防設備点検：定期点検の数値（試験頻出）,定期点検（政令・規模次第）,定期点検 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,maybe_missing_digit;verify_official,OK-practice
-numbers.csv,shitei-suryo-santei-num-s42,指定数量算定：品名別の数値（試験頻出）,品名別（政令・品名表）,品名別 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,chozo-sekkei-num-s42,貯蔵所設計：容量・倍数の数値（試験頻出）,容量・倍数（政令確認）,容量・倍数 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,ido-toriatsukai-num-s42,移動取扱：政令・品名表で確認の数値（試験頻出）,政令・品名表で確認,政令・品名表で確認 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,yobo-kitei-num-s42,予防規程改定：作成・変更時の数値（試験頻出）,作成・変更時（条文）,作成・変更時 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,shoka-kunren-num-s42,消火訓練：規模・用途で変動の数値（試験頻出）,規模・用途で変動,規模・用途で変動 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,tank-kensa-num-s42,タンク検査：政令・品名表で確認の数値（試験頻出）,政令・品名表で確認,政令・品名表で確認 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,tensou-kiroku-num-s42,転送記録保存：政令・品名表確認の数値（試験頻出）,政令・品名表確認,政令・品名表確認 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,ot4-chokuzen-num-s42,乙4直前：要項で確認の数値（試験頻出）,要項で確認（年度により変動）,要項で確認 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,kiken-hoan-num-s43,危険物保安：選任・解任時届出の数値（判例・ガイド）,選任・解任時届出,選任・解任時届出 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,shobo-setsubi-num-s43,消防設備点検：定期点検の数値（判例・ガイド）,定期点検（政令・規模次第）,定期点検 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,maybe_missing_digit;verify_official,OK-practice
-numbers.csv,shitei-suryo-santei-num-s43,指定数量算定：品名別の数値（判例・ガイド）,品名別（政令・品名表）,品名別 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,chozo-sekkei-num-s43,貯蔵所設計：容量・倍数の数値（判例・ガイド）,容量・倍数（政令確認）,容量・倍数 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,ido-toriatsukai-num-s43,移動取扱：政令・品名表で確認の数値（判例・ガイド）,政令・品名表で確認,政令・品名表で確認 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,yobo-kitei-num-s43,予防規程改定：作成・変更時の数値（判例・ガイド）,作成・変更時（条文）,作成・変更時 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,shoka-kunren-num-s43,消火訓練：規模・用途で変動の数値（判例・ガイド）,規模・用途で変動,規模・用途で変動 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,tank-kensa-num-s43,タンク検査：政令・品名表で確認の数値（判例・ガイド）,政令・品名表で確認,政令・品名表で確認 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,tensou-kiroku-num-s43,転送記録保存：政令・品名表確認の数値（判例・ガイド）,政令・品名表確認,政令・品名表確認 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,ot4-chokuzen-num-s43,乙4直前：要項で確認の数値（判例・ガイド）,要項で確認（年度により変動）,要項で確認 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,kiken-hoan-num-s44,危険物保安：選任・解任時届出の数値（横断総合）,選任・解任時届出,選任・解任時届出 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,shobo-setsubi-num-s44,消防設備点検：定期点検の数値（横断総合）,定期点検（政令・規模次第）,定期点検 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,maybe_missing_digit;verify_official,OK-practice
-numbers.csv,shitei-suryo-santei-num-s44,指定数量算定：品名別の数値（横断総合）,品名別（政令・品名表）,品名別 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,chozo-sekkei-num-s44,貯蔵所設計：容量・倍数の数値（横断総合）,容量・倍数（政令確認）,容量・倍数 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,ido-toriatsukai-num-s44,移動取扱：政令・品名表で確認の数値（横断総合）,政令・品名表で確認,政令・品名表で確認 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,yobo-kitei-num-s44,予防規程改定：作成・変更時の数値（横断総合）,作成・変更時（条文）,作成・変更時 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,shoka-kunren-num-s44,消火訓練：規模・用途で変動の数値（横断総合）,規模・用途で変動,規模・用途で変動 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,tank-kensa-num-s44,タンク検査：政令・品名表で確認の数値（横断総合）,政令・品名表で確認,政令・品名表で確認 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,tensou-kiroku-num-s44,転送記録保存：政令・品名表確認の数値（横断総合）,政令・品名表確認,政令・品名表確認 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
-numbers.csv,ot4-chokuzen-num-s44,乙4直前：要項で確認の数値（横断総合）,要項で確認（年度により変動）,要項で確認 | 政令・品名表 | 2倍・4倍等 | 混同肢 | 用語集,verify_official,OK-practice
+numbers.csv,kiken-toriatsukai-num-s35,危険物取扱：選任・解任時届出の数値（基礎整理）,危険物取扱：選任・解任時届出の数値 — 確認テーマ：危険物取扱：選任・解任時届出の数値 / 数値・条件：数値は試験要項・省令で確認,危険物取扱：選任・解任時届出の数値 | 数値は試験要項・省令で確認 | 危険物取扱者 | 定義確認のメモ | 主語→目的→対象,concept_page,OK-practice
+numbers.csv,shobou-hou-num-s35,消防法：消防法・政令で定めるの数値（基礎整理）,消防法：消防法・政令で定めるの数値 — 記録・保存：定義確認のメモ / 試験の確認点：主語→目的→対象,定義確認のメモ | 主語→目的→対象 | 消防法：消防法・政令で定めるの数値 | 数値は試験要項・省令で確認 | 消防法,concept_page,OK-practice
+numbers.csv,shitei-suryo-num-s35,指定数量：品名別の数値（基礎整理）,指定数量：品名別の数値 — 記録・保存：定義確認のメモ / 試験の確認点：主語→目的→対象,定義確認のメモ | 主語→目的→対象 | 指定数量：品名別の数値 | 数値は試験要項・省令で確認 | 指定数量,concept_page,OK-practice
+numbers.csv,chozo-sho-num-s35,貯蔵所：容量・倍数の数値（基礎整理）,貯蔵所：容量・倍数の数値 — 記録・保存：定義確認のメモ / 試験の確認点：主語→目的→対象,定義確認のメモ | 主語→目的→対象 | 貯蔵所：容量・倍数の数値 | 数値は試験要項・省令で確認 | タンク貯蔵所,concept_page,OK-practice
+numbers.csv,ido-ukewatashi-num-s35,移動：政令・品名表で確認の数値（基礎整理）,移動：政令・品名表で確認の数値 — 数値・条件：数値は試験要項・省令で確認 / 関連制度：移送,数値は試験要項・省令で確認 | 移送 | 定義確認のメモ | 主語→目的→対象 | 移動：政令・品名表で確認の数値,concept_page,OK-practice
+numbers.csv,hoan-kitei-num-s35,保安規程：作成・変更時の数値（基礎整理）,保安規程：作成・変更時の数値 — 関連制度：予防規程 / 記録・保存：定義確認のメモ,予防規程 | 定義確認のメモ | 主語→目的→対象 | 保安規程：作成・変更時の数値 | 数値は試験要項・省令で確認,concept_page,OK-practice
+numbers.csv,shoka-num-s35,消火：規模・用途で変動の数値（基礎整理）,消火：規模・用途で変動の数値 — 数値・条件：数値は試験要項・省令で確認 / 関連制度：消火設備,数値は試験要項・省令で確認 | 消火設備 | 定義確認のメモ | 主語→目的→対象 | 消火：規模・用途で変動の数値,concept_page,OK-practice
+numbers.csv,tank-num-s35,タンク：政令・品名表で確認の数値（基礎整理）,タンク：政令・品名表で確認の数値 — 確認テーマ：タンク：政令・品名表で確認の数値 / 数値・条件：数値は試験要項・省令で確認,タンク：政令・品名表で確認の数値 | 数値は試験要項・省令で確認 | タンクローリー | 定義確認のメモ | 主語→目的→対象,concept_page,OK-practice
+numbers.csv,tensou-kiroku-num-s35,転送記録：政令・品名表確認の数値（基礎整理）,転送記録：政令・品名表確認の数値 — 記録・保存：定義確認のメモ / 試験の確認点：主語→目的→対象,定義確認のメモ | 主語→目的→対象 | 転送記録：政令・品名表確認の数値 | 数値は試験要項・省令で確認 | 譲渡・引渡し,concept_page,OK-practice
+numbers.csv,ot4-shiken-num-s35,乙4試験：要項で確認の数値（基礎整理）,乙4試験：要項で確認の数値 — 関連制度：危険物取扱者 / 記録・保存：定義確認のメモ,危険物取扱者 | 定義確認のメモ | 主語→目的→対象 | 乙4試験：要項で確認の数値 | 数値は試験要項・省令で確認,verify_official,OK-practice
+numbers.csv,kiken-toriatsukai-num-s36,危険物取扱：選任・解任時届出の数値（実務連動）,危険物取扱：選任・解任時届出の数値 — 数値・条件：数値は試験要項・省令で確認 / 関連制度：危険物取扱者,数値は試験要項・省令で確認 | 危険物取扱者 | 運転日誌・報告書 | 誰が・いつ・何を | 危険物取扱：選任・解任時届出の数値,concept_page;maybe_missing_digit,OK-practice
+numbers.csv,shobou-hou-num-s36,消防法：消防法・政令で定めるの数値（実務連動）,消防法：消防法・政令で定めるの数値 — 記録・保存：運転日誌・報告書 / 試験の確認点：誰が・いつ・何を,運転日誌・報告書 | 誰が・いつ・何を | 消防法：消防法・政令で定めるの数値 | 数値は試験要項・省令で確認 | 消防法,concept_page;maybe_missing_digit,OK-practice
+numbers.csv,shitei-suryo-num-s36,指定数量：品名別の数値（実務連動）,指定数量：品名別の数値 — 関連制度：指定数量 / 記録・保存：運転日誌・報告書,指定数量 | 運転日誌・報告書 | 誰が・いつ・何を | 指定数量：品名別の数値 | 数値は試験要項・省令で確認,concept_page;maybe_missing_digit,OK-practice
+numbers.csv,chozo-sho-num-s36,貯蔵所：容量・倍数の数値（実務連動）,貯蔵所：容量・倍数の数値 — 関連制度：タンク貯蔵所 / 記録・保存：運転日誌・報告書,タンク貯蔵所 | 運転日誌・報告書 | 誰が・いつ・何を | 貯蔵所：容量・倍数の数値 | 数値は試験要項・省令で確認,concept_page;maybe_missing_digit,OK-practice
+numbers.csv,ido-ukewatashi-num-s36,移動：政令・品名表で確認の数値（実務連動）,移動：政令・品名表で確認の数値 — 記録・保存：運転日誌・報告書 / 試験の確認点：誰が・いつ・何を,運転日誌・報告書 | 誰が・いつ・何を | 移動：政令・品名表で確認の数値 | 数値は試験要項・省令で確認 | 移送,concept_page;maybe_missing_digit,OK-practice
+numbers.csv,hoan-kitei-num-s36,保安規程：作成・変更時の数値（実務連動）,保安規程：作成・変更時の数値 — 確認テーマ：保安規程：作成・変更時の数値 / 数値・条件：数値は試験要項・省令で確認,保安規程：作成・変更時の数値 | 数値は試験要項・省令で確認 | 予防規程 | 運転日誌・報告書 | 誰が・いつ・何を,concept_page;maybe_missing_digit,OK-practice
+numbers.csv,shoka-num-s36,消火：規模・用途で変動の数値（実務連動）,消火：規模・用途で変動の数値 — 記録・保存：運転日誌・報告書 / 試験の確認点：誰が・いつ・何を,運転日誌・報告書 | 誰が・いつ・何を | 消火：規模・用途で変動の数値 | 数値は試験要項・省令で確認 | 消火設備,concept_page;maybe_missing_digit,OK-practice
+numbers.csv,tank-num-s36,タンク：政令・品名表で確認の数値（実務連動）,タンク：政令・品名表で確認の数値 — 確認テーマ：タンク：政令・品名表で確認の数値 / 数値・条件：数値は試験要項・省令で確認,タンク：政令・品名表で確認の数値 | 数値は試験要項・省令で確認 | タンクローリー | 運転日誌・報告書 | 誰が・いつ・何を,concept_page;maybe_missing_digit,OK-practice
+numbers.csv,tensou-kiroku-num-s36,転送記録：政令・品名表確認の数値（実務連動）,転送記録：政令・品名表確認の数値 — 確認テーマ：転送記録：政令・品名表確認の数値 / 数値・条件：数値は試験要項・省令で確認,転送記録：政令・品名表確認の数値 | 数値は試験要項・省令で確認 | 譲渡・引渡し | 運転日誌・報告書 | 誰が・いつ・何を,concept_page;maybe_missing_digit,OK-practice
+numbers.csv,ot4-shiken-num-s36,乙4試験：要項で確認の数値（実務連動）,乙4試験：要項で確認の数値 — 記録・保存：運転日誌・報告書 / 試験の確認点：誰が・いつ・何を,運転日誌・報告書 | 誰が・いつ・何を | 乙4試験：要項で確認の数値 | 数値は試験要項・省令で確認 | 危険物取扱者,maybe_missing_digit;verify_official,OK-practice
+numbers.csv,kiken-toriatsukai-num-s37,危険物取扱：選任・解任時届出の数値（試験頻出）,危険物取扱：選任・解任時届出の数値 — 記録・保存：過去問の条件メモ / 試験の確認点：逆転肢の型分類,過去問の条件メモ | 逆転肢の型分類 | 危険物取扱：選任・解任時届出の数値 | 数値は試験要項・省令で確認 | 危険物取扱者,concept_page,OK-practice
+numbers.csv,shobou-hou-num-s37,消防法：消防法・政令で定めるの数値（試験頻出）,消防法：消防法・政令で定めるの数値 — 記録・保存：過去問の条件メモ / 試験の確認点：逆転肢の型分類,過去問の条件メモ | 逆転肢の型分類 | 消防法：消防法・政令で定めるの数値 | 数値は試験要項・省令で確認 | 消防法,concept_page,OK-practice
+numbers.csv,shitei-suryo-num-s37,指定数量：品名別の数値（試験頻出）,指定数量：品名別の数値 — 記録・保存：過去問の条件メモ / 試験の確認点：逆転肢の型分類,過去問の条件メモ | 逆転肢の型分類 | 指定数量：品名別の数値 | 数値は試験要項・省令で確認 | 指定数量,concept_page,OK-practice
+numbers.csv,chozo-sho-num-s37,貯蔵所：容量・倍数の数値（試験頻出）,貯蔵所：容量・倍数の数値 — 関連制度：タンク貯蔵所 / 記録・保存：過去問の条件メモ,タンク貯蔵所 | 過去問の条件メモ | 逆転肢の型分類 | 貯蔵所：容量・倍数の数値 | 数値は試験要項・省令で確認,concept_page,OK-practice
+numbers.csv,ido-ukewatashi-num-s37,移動：政令・品名表で確認の数値（試験頻出）,移動：政令・品名表で確認の数値 — 数値・条件：数値は試験要項・省令で確認 / 関連制度：移送,数値は試験要項・省令で確認 | 移送 | 過去問の条件メモ | 逆転肢の型分類 | 移動：政令・品名表で確認の数値,concept_page,OK-practice
+numbers.csv,hoan-kitei-num-s37,保安規程：作成・変更時の数値（試験頻出）,保安規程：作成・変更時の数値 — 確認テーマ：保安規程：作成・変更時の数値 / 数値・条件：数値は試験要項・省令で確認,保安規程：作成・変更時の数値 | 数値は試験要項・省令で確認 | 予防規程 | 過去問の条件メモ | 逆転肢の型分類,concept_page,OK-practice
+numbers.csv,shoka-num-s37,消火：規模・用途で変動の数値（試験頻出）,消火：規模・用途で変動の数値 — 確認テーマ：消火：規模・用途で変動の数値 / 数値・条件：数値は試験要項・省令で確認,消火：規模・用途で変動の数値 | 数値は試験要項・省令で確認 | 消火設備 | 過去問の条件メモ | 逆転肢の型分類,concept_page,OK-practice
+numbers.csv,tank-num-s37,タンク：政令・品名表で確認の数値（試験頻出）,タンク：政令・品名表で確認の数値 — 数値・条件：数値は試験要項・省令で確認 / 関連制度：タンクローリー,数値は試験要項・省令で確認 | タンクローリー | 過去問の条件メモ | 逆転肢の型分類 | タンク：政令・品名表で確認の数値,concept_page,OK-practice
+numbers.csv,tensou-kiroku-num-s37,転送記録：政令・品名表確認の数値（試験頻出）,転送記録：政令・品名表確認の数値 — 関連制度：譲渡・引渡し / 記録・保存：過去問の条件メモ,譲渡・引渡し | 過去問の条件メモ | 逆転肢の型分類 | 転送記録：政令・品名表確認の数値 | 数値は試験要項・省令で確認,concept_page,OK-practice
+numbers.csv,ot4-shiken-num-s37,乙4試験：要項で確認の数値（試験頻出）,乙4試験：要項で確認の数値 — 関連制度：危険物取扱者 / 記録・保存：過去問の条件メモ,危険物取扱者 | 過去問の条件メモ | 逆転肢の型分類 | 乙4試験：要項で確認の数値 | 数値は試験要項・省令で確認,verify_official,OK-practice
+numbers.csv,kiken-toriatsukai-num-s38,危険物取扱：選任・解任時届出の数値（判例・ガイド）,危険物取扱：選任・解任時届出の数値 — 関連制度：危険物取扱者 / 記録・保存：条文×通知の対応表,危険物取扱者 | 条文×通知の対応表 | 優先関係の整理 | 危険物取扱：選任・解任時届出の数値 | 数値は試験要項・省令で確認,concept_page,OK-practice
+numbers.csv,shobou-hou-num-s38,消防法：消防法・政令で定めるの数値（判例・ガイド）,消防法：消防法・政令で定めるの数値 — 記録・保存：条文×通知の対応表 / 試験の確認点：優先関係の整理,条文×通知の対応表 | 優先関係の整理 | 消防法：消防法・政令で定めるの数値 | 数値は試験要項・省令で確認 | 消防法,concept_page,OK-practice
+numbers.csv,shitei-suryo-num-s38,指定数量：品名別の数値（判例・ガイド）,指定数量：品名別の数値 — 記録・保存：条文×通知の対応表 / 試験の確認点：優先関係の整理,条文×通知の対応表 | 優先関係の整理 | 指定数量：品名別の数値 | 数値は試験要項・省令で確認 | 指定数量,concept_page,OK-practice
+numbers.csv,chozo-sho-num-s38,貯蔵所：容量・倍数の数値（判例・ガイド）,貯蔵所：容量・倍数の数値 — 関連制度：タンク貯蔵所 / 記録・保存：条文×通知の対応表,タンク貯蔵所 | 条文×通知の対応表 | 優先関係の整理 | 貯蔵所：容量・倍数の数値 | 数値は試験要項・省令で確認,concept_page,OK-practice
+numbers.csv,ido-ukewatashi-num-s38,移動：政令・品名表で確認の数値（判例・ガイド）,移動：政令・品名表で確認の数値 — 確認テーマ：移動：政令・品名表で確認の数値 / 数値・条件：数値は試験要項・省令で確認,移動：政令・品名表で確認の数値 | 数値は試験要項・省令で確認 | 移送 | 条文×通知の対応表 | 優先関係の整理,concept_page,OK-practice
+numbers.csv,hoan-kitei-num-s38,保安規程：作成・変更時の数値（判例・ガイド）,保安規程：作成・変更時の数値 — 数値・条件：数値は試験要項・省令で確認 / 関連制度：予防規程,数値は試験要項・省令で確認 | 予防規程 | 条文×通知の対応表 | 優先関係の整理 | 保安規程：作成・変更時の数値,concept_page,OK-practice
+numbers.csv,shoka-num-s38,消火：規模・用途で変動の数値（判例・ガイド）,消火：規模・用途で変動の数値 — 数値・条件：数値は試験要項・省令で確認 / 関連制度：消火設備,数値は試験要項・省令で確認 | 消火設備 | 条文×通知の対応表 | 優先関係の整理 | 消火：規模・用途で変動の数値,concept_page,OK-practice
+numbers.csv,tank-num-s38,タンク：政令・品名表で確認の数値（判例・ガイド）,タンク：政令・品名表で確認の数値 — 数値・条件：数値は試験要項・省令で確認 / 関連制度：タンクローリー,数値は試験要項・省令で確認 | タンクローリー | 条文×通知の対応表 | 優先関係の整理 | タンク：政令・品名表で確認の数値,concept_page,OK-practice
+numbers.csv,tensou-kiroku-num-s38,転送記録：政令・品名表確認の数値（判例・ガイド）,転送記録：政令・品名表確認の数値 — 数値・条件：数値は試験要項・省令で確認 / 関連制度：譲渡・引渡し,数値は試験要項・省令で確認 | 譲渡・引渡し | 条文×通知の対応表 | 優先関係の整理 | 転送記録：政令・品名表確認の数値,concept_page,OK-practice
+numbers.csv,ot4-shiken-num-s38,乙4試験：要項で確認の数値（判例・ガイド）,乙4試験：要項で確認の数値 — 関連制度：危険物取扱者 / 記録・保存：条文×通知の対応表,危険物取扱者 | 条文×通知の対応表 | 優先関係の整理 | 乙4試験：要項で確認の数値 | 数値は試験要項・省令で確認,verify_official,OK-practice
+numbers.csv,kiken-toriatsukai-num-s39,危険物取扱：選任・解任時届出の数値（横断総合）,危険物取扱：選任・解任時届出の数値 — 数値・条件：数値は試験要項・省令で確認 / 関連制度：危険物取扱者,数値は試験要項・省令で確認 | 危険物取扱者 | 弱点タグ付きノート | 同型誤答の再演習 | 危険物取扱：選任・解任時届出の数値,concept_page;maybe_missing_digit,OK-practice
+numbers.csv,shobou-hou-num-s39,消防法：消防法・政令で定めるの数値（横断総合）,消防法：消防法・政令で定めるの数値 — 数値・条件：数値は試験要項・省令で確認 / 関連制度：消防法,数値は試験要項・省令で確認 | 消防法 | 弱点タグ付きノート | 同型誤答の再演習 | 消防法：消防法・政令で定めるの数値,concept_page;maybe_missing_digit,OK-practice
+numbers.csv,shitei-suryo-num-s39,指定数量：品名別の数値（横断総合）,指定数量：品名別の数値 — 確認テーマ：指定数量：品名別の数値 / 数値・条件：数値は試験要項・省令で確認,指定数量：品名別の数値 | 数値は試験要項・省令で確認 | 指定数量 | 弱点タグ付きノート | 同型誤答の再演習,concept_page;maybe_missing_digit,OK-practice
+numbers.csv,chozo-sho-num-s39,貯蔵所：容量・倍数の数値（横断総合）,貯蔵所：容量・倍数の数値 — 数値・条件：数値は試験要項・省令で確認 / 関連制度：タンク貯蔵所,数値は試験要項・省令で確認 | タンク貯蔵所 | 弱点タグ付きノート | 同型誤答の再演習 | 貯蔵所：容量・倍数の数値,concept_page;maybe_missing_digit,OK-practice
+numbers.csv,ido-ukewatashi-num-s39,移動：政令・品名表で確認の数値（横断総合）,移動：政令・品名表で確認の数値 — 関連制度：移送 / 記録・保存：弱点タグ付きノート,移送 | 弱点タグ付きノート | 同型誤答の再演習 | 移動：政令・品名表で確認の数値 | 数値は試験要項・省令で確認,concept_page;maybe_missing_digit,OK-practice
+numbers.csv,hoan-kitei-num-s39,保安規程：作成・変更時の数値（横断総合）,保安規程：作成・変更時の数値 — 関連制度：予防規程 / 記録・保存：弱点タグ付きノート,予防規程 | 弱点タグ付きノート | 同型誤答の再演習 | 保安規程：作成・変更時の数値 | 数値は試験要項・省令で確認,concept_page;maybe_missing_digit,OK-practice
+numbers.csv,shoka-num-s39,消火：規模・用途で変動の数値（横断総合）,消火：規模・用途で変動の数値 — 関連制度：消火設備 / 記録・保存：弱点タグ付きノート,消火設備 | 弱点タグ付きノート | 同型誤答の再演習 | 消火：規模・用途で変動の数値 | 数値は試験要項・省令で確認,concept_page;maybe_missing_digit,OK-practice
+numbers.csv,tank-num-s39,タンク：政令・品名表で確認の数値（横断総合）,タンク：政令・品名表で確認の数値 — 関連制度：タンクローリー / 記録・保存：弱点タグ付きノート,タンクローリー | 弱点タグ付きノート | 同型誤答の再演習 | タンク：政令・品名表で確認の数値 | 数値は試験要項・省令で確認,concept_page;maybe_missing_digit,OK-practice
+numbers.csv,tensou-kiroku-num-s39,転送記録：政令・品名表確認の数値（横断総合）,転送記録：政令・品名表確認の数値 — 記録・保存：弱点タグ付きノート / 試験の確認点：同型誤答の再演習,弱点タグ付きノート | 同型誤答の再演習 | 転送記録：政令・品名表確認の数値 | 数値は試験要項・省令で確認 | 譲渡・引渡し,concept_page;maybe_missing_digit,OK-practice
+numbers.csv,ot4-shiken-num-s39,乙4試験：要項で確認の数値（横断総合）,乙4試験：要項で確認の数値 — 関連制度：危険物取扱者 / 記録・保存：弱点タグ付きノート,危険物取扱者 | 弱点タグ付きノート | 同型誤答の再演習 | 乙4試験：要項で確認の数値 | 数値は試験要項・省令で確認,maybe_missing_digit;verify_official,OK-practice
+numbers.csv,kiken-hoan-num-s40,危険物保安：選任・解任時届出の数値（基礎整理）,危険物保安：選任・解任時届出の数値 — 関連制度：選任 / 記録・保存：定義確認のメモ,選任 | 定義確認のメモ | 主語→目的→対象 | 危険物保安：選任・解任時届出の数値 | 数値は試験要項・省令で確認,concept_page,OK-practice
+numbers.csv,shobo-setsubi-num-s40,消防設備点検：定期点検の数値（基礎整理）,消防設備点検：定期点検の数値 — 記録・保存：定義確認のメモ / 試験の確認点：主語→目的→対象,定義確認のメモ | 主語→目的→対象 | 消防設備点検：定期点検の数値 | 数値は試験要項・省令で確認 | 消火設備,concept_page;maybe_missing_digit,OK-practice
+numbers.csv,shitei-suryo-santei-num-s40,指定数量算定：品名別の数値（基礎整理）,指定数量算定：品名別の数値 — 数値・条件：数値は試験要項・省令で確認 / 関連制度：第4類危険物,数値は試験要項・省令で確認 | 第4類危険物 | 定義確認のメモ | 主語→目的→対象 | 指定数量算定：品名別の数値,verify_official,OK-practice
+numbers.csv,chozo-sekkei-num-s40,貯蔵所設計：容量・倍数の数値（基礎整理）,貯蔵所設計：容量・倍数の数値 — 記録・保存：定義確認のメモ / 試験の確認点：主語→目的→対象,定義確認のメモ | 主語→目的→対象 | 貯蔵所設計：容量・倍数の数値 | 数値は試験要項・省令で確認 | 指定数量,concept_page,OK-practice
+numbers.csv,ido-toriatsukai-num-s40,移動取扱：政令・品名表で確認の数値（基礎整理）,移動取扱：政令・品名表で確認の数値 — 記録・保存：定義確認のメモ / 試験の確認点：主語→目的→対象,定義確認のメモ | 主語→目的→対象 | 移動取扱：政令・品名表で確認の数値 | 数値は試験要項・省令で確認 | 移送,concept_page,OK-practice
+numbers.csv,yobo-kitei-num-s40,予防規程改定：作成・変更時の数値（基礎整理）,予防規程改定：作成・変更時の数値 — 関連制度：火災予防 / 記録・保存：定義確認のメモ,火災予防 | 定義確認のメモ | 主語→目的→対象 | 予防規程改定：作成・変更時の数値 | 数値は試験要項・省令で確認,concept_page,OK-practice
+numbers.csv,shoka-kunren-num-s40,消火訓練：規模・用途で変動の数値（基礎整理）,消火訓練：規模・用途で変動の数値 — 数値・条件：数値は試験要項・省令で確認 / 関連制度：消火設備,数値は試験要項・省令で確認 | 消火設備 | 定義確認のメモ | 主語→目的→対象 | 消火訓練：規模・用途で変動の数値,concept_page,OK-practice
+numbers.csv,tank-kensa-num-s40,タンク検査：政令・品名表で確認の数値（基礎整理）,タンク検査：政令・品名表で確認の数値 — 記録・保存：定義確認のメモ / 試験の確認点：主語→目的→対象,定義確認のメモ | 主語→目的→対象 | タンク検査：政令・品名表で確認の数値 | 数値は試験要項・省令で確認 | 指定数量,concept_page,OK-practice
+numbers.csv,tensou-kiroku-num-s40,転送記録保存：政令・品名表確認の数値（基礎整理）,転送記録保存：政令・品名表確認の数値 — 確認テーマ：転送記録保存：政令・品名表確認の数値 / 数値・条件：数値は試験要項・省令で確認,転送記録保存：政令・品名表確認の数値 | 数値は試験要項・省令で確認 | 譲渡・引渡し | 定義確認のメモ | 主語→目的→対象,concept_page,OK-practice
+numbers.csv,ot4-chokuzen-num-s40,乙4直前：要項で確認の数値（基礎整理）,乙4直前：要項で確認の数値 — 確認テーマ：乙4直前：要項で確認の数値 / 数値・条件：数値は試験要項・省令で確認,乙4直前：要項で確認の数値 | 数値は試験要項・省令で確認 | 試験要項 | 定義確認のメモ | 主語→目的→対象,verify_official,OK-practice
+numbers.csv,kiken-hoan-num-s41,危険物保安：選任・解任時届出の数値（実務連動）,危険物保安：選任・解任時届出の数値 — 記録・保存：運転日誌・報告書 / 試験の確認点：誰が・いつ・何を,運転日誌・報告書 | 誰が・いつ・何を | 危険物保安：選任・解任時届出の数値 | 数値は試験要項・省令で確認 | 選任,concept_page;maybe_missing_digit,OK-practice
+numbers.csv,shobo-setsubi-num-s41,消防設備点検：定期点検の数値（実務連動）,消防設備点検：定期点検の数値 — 確認テーマ：消防設備点検：定期点検の数値 / 数値・条件：数値は試験要項・省令で確認,消防設備点検：定期点検の数値 | 数値は試験要項・省令で確認 | 消火設備 | 運転日誌・報告書 | 誰が・いつ・何を,concept_page;maybe_missing_digit,OK-practice
+numbers.csv,shitei-suryo-santei-num-s41,指定数量算定：品名別の数値（実務連動）,指定数量算定：品名別の数値 — 記録・保存：運転日誌・報告書 / 試験の確認点：誰が・いつ・何を,運転日誌・報告書 | 誰が・いつ・何を | 指定数量算定：品名別の数値 | 数値は試験要項・省令で確認 | 第4類危険物,maybe_missing_digit;verify_official,OK-practice
+numbers.csv,chozo-sekkei-num-s41,貯蔵所設計：容量・倍数の数値（実務連動）,貯蔵所設計：容量・倍数の数値 — 確認テーマ：貯蔵所設計：容量・倍数の数値 / 数値・条件：数値は試験要項・省令で確認,貯蔵所設計：容量・倍数の数値 | 数値は試験要項・省令で確認 | 指定数量 | 運転日誌・報告書 | 誰が・いつ・何を,concept_page;maybe_missing_digit,OK-practice
+numbers.csv,ido-toriatsukai-num-s41,移動取扱：政令・品名表で確認の数値（実務連動）,移動取扱：政令・品名表で確認の数値 — 数値・条件：数値は試験要項・省令で確認 / 関連制度：移送,数値は試験要項・省令で確認 | 移送 | 運転日誌・報告書 | 誰が・いつ・何を | 移動取扱：政令・品名表で確認の数値,concept_page;maybe_missing_digit,OK-practice
+numbers.csv,yobo-kitei-num-s41,予防規程改定：作成・変更時の数値（実務連動）,予防規程改定：作成・変更時の数値 — 記録・保存：運転日誌・報告書 / 試験の確認点：誰が・いつ・何を,運転日誌・報告書 | 誰が・いつ・何を | 予防規程改定：作成・変更時の数値 | 数値は試験要項・省令で確認 | 火災予防,concept_page;maybe_missing_digit,OK-practice
+numbers.csv,shoka-kunren-num-s41,消火訓練：規模・用途で変動の数値（実務連動）,消火訓練：規模・用途で変動の数値 — 関連制度：消火設備 / 記録・保存：運転日誌・報告書,消火設備 | 運転日誌・報告書 | 誰が・いつ・何を | 消火訓練：規模・用途で変動の数値 | 数値は試験要項・省令で確認,concept_page;maybe_missing_digit,OK-practice
+numbers.csv,tank-kensa-num-s41,タンク検査：政令・品名表で確認の数値（実務連動）,タンク検査：政令・品名表で確認の数値 — 関連制度：指定数量 / 記録・保存：運転日誌・報告書,指定数量 | 運転日誌・報告書 | 誰が・いつ・何を | タンク検査：政令・品名表で確認の数値 | 数値は試験要項・省令で確認,concept_page;maybe_missing_digit,OK-practice
+numbers.csv,tensou-kiroku-num-s41,転送記録保存：政令・品名表確認の数値（実務連動）,転送記録保存：政令・品名表確認の数値 — 数値・条件：数値は試験要項・省令で確認 / 関連制度：譲渡・引渡し,数値は試験要項・省令で確認 | 譲渡・引渡し | 運転日誌・報告書 | 誰が・いつ・何を | 転送記録保存：政令・品名表確認の数値,concept_page;maybe_missing_digit,OK-practice
+numbers.csv,ot4-chokuzen-num-s41,乙4直前：要項で確認の数値（実務連動）,乙4直前：要項で確認の数値 — 確認テーマ：乙4直前：要項で確認の数値 / 数値・条件：数値は試験要項・省令で確認,乙4直前：要項で確認の数値 | 数値は試験要項・省令で確認 | 試験要項 | 運転日誌・報告書 | 誰が・いつ・何を,maybe_missing_digit;verify_official,OK-practice
+numbers.csv,kiken-hoan-num-s42,危険物保安：選任・解任時届出の数値（試験頻出）,危険物保安：選任・解任時届出の数値 — 記録・保存：過去問の条件メモ / 試験の確認点：逆転肢の型分類,過去問の条件メモ | 逆転肢の型分類 | 危険物保安：選任・解任時届出の数値 | 数値は試験要項・省令で確認 | 選任,concept_page,OK-practice
+numbers.csv,shobo-setsubi-num-s42,消防設備点検：定期点検の数値（試験頻出）,消防設備点検：定期点検の数値 — 数値・条件：数値は試験要項・省令で確認 / 関連制度：消火設備,数値は試験要項・省令で確認 | 消火設備 | 過去問の条件メモ | 逆転肢の型分類 | 消防設備点検：定期点検の数値,concept_page;maybe_missing_digit,OK-practice
+numbers.csv,shitei-suryo-santei-num-s42,指定数量算定：品名別の数値（試験頻出）,指定数量算定：品名別の数値 — 記録・保存：過去問の条件メモ / 試験の確認点：逆転肢の型分類,過去問の条件メモ | 逆転肢の型分類 | 指定数量算定：品名別の数値 | 数値は試験要項・省令で確認 | 第4類危険物,verify_official,OK-practice
+numbers.csv,chozo-sekkei-num-s42,貯蔵所設計：容量・倍数の数値（試験頻出）,貯蔵所設計：容量・倍数の数値 — 確認テーマ：貯蔵所設計：容量・倍数の数値 / 数値・条件：数値は試験要項・省令で確認,貯蔵所設計：容量・倍数の数値 | 数値は試験要項・省令で確認 | 指定数量 | 過去問の条件メモ | 逆転肢の型分類,concept_page,OK-practice
+numbers.csv,ido-toriatsukai-num-s42,移動取扱：政令・品名表で確認の数値（試験頻出）,移動取扱：政令・品名表で確認の数値 — 関連制度：移送 / 記録・保存：過去問の条件メモ,移送 | 過去問の条件メモ | 逆転肢の型分類 | 移動取扱：政令・品名表で確認の数値 | 数値は試験要項・省令で確認,concept_page,OK-practice
+numbers.csv,yobo-kitei-num-s42,予防規程改定：作成・変更時の数値（試験頻出）,予防規程改定：作成・変更時の数値 — 確認テーマ：予防規程改定：作成・変更時の数値 / 数値・条件：数値は試験要項・省令で確認,予防規程改定：作成・変更時の数値 | 数値は試験要項・省令で確認 | 火災予防 | 過去問の条件メモ | 逆転肢の型分類,concept_page,OK-practice
+numbers.csv,shoka-kunren-num-s42,消火訓練：規模・用途で変動の数値（試験頻出）,消火訓練：規模・用途で変動の数値 — 確認テーマ：消火訓練：規模・用途で変動の数値 / 数値・条件：数値は試験要項・省令で確認,消火訓練：規模・用途で変動の数値 | 数値は試験要項・省令で確認 | 消火設備 | 過去問の条件メモ | 逆転肢の型分類,concept_page,OK-practice
+numbers.csv,tank-kensa-num-s42,タンク検査：政令・品名表で確認の数値（試験頻出）,タンク検査：政令・品名表で確認の数値 — 数値・条件：数値は試験要項・省令で確認 / 関連制度：指定数量,数値は試験要項・省令で確認 | 指定数量 | 過去問の条件メモ | 逆転肢の型分類 | タンク検査：政令・品名表で確認の数値,concept_page,OK-practice
+numbers.csv,tensou-kiroku-num-s42,転送記録保存：政令・品名表確認の数値（試験頻出）,転送記録保存：政令・品名表確認の数値 — 関連制度：譲渡・引渡し / 記録・保存：過去問の条件メモ,譲渡・引渡し | 過去問の条件メモ | 逆転肢の型分類 | 転送記録保存：政令・品名表確認の数値 | 数値は試験要項・省令で確認,concept_page,OK-practice
+numbers.csv,ot4-chokuzen-num-s42,乙4直前：要項で確認の数値（試験頻出）,乙4直前：要項で確認の数値 — 関連制度：試験要項 / 記録・保存：過去問の条件メモ,試験要項 | 過去問の条件メモ | 逆転肢の型分類 | 乙4直前：要項で確認の数値 | 数値は試験要項・省令で確認,verify_official,OK-practice
+numbers.csv,kiken-hoan-num-s43,危険物保安：選任・解任時届出の数値（判例・ガイド）,危険物保安：選任・解任時届出の数値 — 関連制度：選任 / 記録・保存：条文×通知の対応表,選任 | 条文×通知の対応表 | 優先関係の整理 | 危険物保安：選任・解任時届出の数値 | 数値は試験要項・省令で確認,concept_page,OK-practice
+numbers.csv,shobo-setsubi-num-s43,消防設備点検：定期点検の数値（判例・ガイド）,消防設備点検：定期点検の数値 — 数値・条件：数値は試験要項・省令で確認 / 関連制度：消火設備,数値は試験要項・省令で確認 | 消火設備 | 条文×通知の対応表 | 優先関係の整理 | 消防設備点検：定期点検の数値,concept_page;maybe_missing_digit,OK-practice
+numbers.csv,shitei-suryo-santei-num-s43,指定数量算定：品名別の数値（判例・ガイド）,指定数量算定：品名別の数値 — 数値・条件：数値は試験要項・省令で確認 / 関連制度：第4類危険物,数値は試験要項・省令で確認 | 第4類危険物 | 条文×通知の対応表 | 優先関係の整理 | 指定数量算定：品名別の数値,verify_official,OK-practice
+numbers.csv,chozo-sekkei-num-s43,貯蔵所設計：容量・倍数の数値（判例・ガイド）,貯蔵所設計：容量・倍数の数値 — 確認テーマ：貯蔵所設計：容量・倍数の数値 / 数値・条件：数値は試験要項・省令で確認,貯蔵所設計：容量・倍数の数値 | 数値は試験要項・省令で確認 | 指定数量 | 条文×通知の対応表 | 優先関係の整理,concept_page,OK-practice
+numbers.csv,ido-toriatsukai-num-s43,移動取扱：政令・品名表で確認の数値（判例・ガイド）,移動取扱：政令・品名表で確認の数値 — 関連制度：移送 / 記録・保存：条文×通知の対応表,移送 | 条文×通知の対応表 | 優先関係の整理 | 移動取扱：政令・品名表で確認の数値 | 数値は試験要項・省令で確認,concept_page,OK-practice
+numbers.csv,yobo-kitei-num-s43,予防規程改定：作成・変更時の数値（判例・ガイド）,予防規程改定：作成・変更時の数値 — 数値・条件：数値は試験要項・省令で確認 / 関連制度：火災予防,数値は試験要項・省令で確認 | 火災予防 | 条文×通知の対応表 | 優先関係の整理 | 予防規程改定：作成・変更時の数値,concept_page,OK-practice
+numbers.csv,shoka-kunren-num-s43,消火訓練：規模・用途で変動の数値（判例・ガイド）,消火訓練：規模・用途で変動の数値 — 確認テーマ：消火訓練：規模・用途で変動の数値 / 数値・条件：数値は試験要項・省令で確認,消火訓練：規模・用途で変動の数値 | 数値は試験要項・省令で確認 | 消火設備 | 条文×通知の対応表 | 優先関係の整理,concept_page,OK-practice
+numbers.csv,tank-kensa-num-s43,タンク検査：政令・品名表で確認の数値（判例・ガイド）,タンク検査：政令・品名表で確認の数値 — 数値・条件：数値は試験要項・省令で確認 / 関連制度：指定数量,数値は試験要項・省令で確認 | 指定数量 | 条文×通知の対応表 | 優先関係の整理 | タンク検査：政令・品名表で確認の数値,concept_page,OK-practice
+numbers.csv,tensou-kiroku-num-s43,転送記録保存：政令・品名表確認の数値（判例・ガイド）,転送記録保存：政令・品名表確認の数値 — 関連制度：譲渡・引渡し / 記録・保存：条文×通知の対応表,譲渡・引渡し | 条文×通知の対応表 | 優先関係の整理 | 転送記録保存：政令・品名表確認の数値 | 数値は試験要項・省令で確認,concept_page,OK-practice
+numbers.csv,ot4-chokuzen-num-s43,乙4直前：要項で確認の数値（判例・ガイド）,乙4直前：要項で確認の数値 — 数値・条件：数値は試験要項・省令で確認 / 関連制度：試験要項,数値は試験要項・省令で確認 | 試験要項 | 条文×通知の対応表 | 優先関係の整理 | 乙4直前：要項で確認の数値,verify_official,OK-practice
+numbers.csv,kiken-hoan-num-s44,危険物保安：選任・解任時届出の数値（横断総合）,危険物保安：選任・解任時届出の数値 — 数値・条件：数値は試験要項・省令で確認 / 関連制度：選任,数値は試験要項・省令で確認 | 選任 | 弱点タグ付きノート | 同型誤答の再演習 | 危険物保安：選任・解任時届出の数値,concept_page;maybe_missing_digit,OK-practice
+numbers.csv,shobo-setsubi-num-s44,消防設備点検：定期点検の数値（横断総合）,消防設備点検：定期点検の数値 — 関連制度：消火設備 / 記録・保存：弱点タグ付きノート,消火設備 | 弱点タグ付きノート | 同型誤答の再演習 | 消防設備点検：定期点検の数値 | 数値は試験要項・省令で確認,concept_page;maybe_missing_digit,OK-practice
+numbers.csv,shitei-suryo-santei-num-s44,指定数量算定：品名別の数値（横断総合）,指定数量算定：品名別の数値 — 数値・条件：数値は試験要項・省令で確認 / 関連制度：第4類危険物,数値は試験要項・省令で確認 | 第4類危険物 | 弱点タグ付きノート | 同型誤答の再演習 | 指定数量算定：品名別の数値,maybe_missing_digit;verify_official,OK-practice
+numbers.csv,chozo-sekkei-num-s44,貯蔵所設計：容量・倍数の数値（横断総合）,貯蔵所設計：容量・倍数の数値 — 記録・保存：弱点タグ付きノート / 試験の確認点：同型誤答の再演習,弱点タグ付きノート | 同型誤答の再演習 | 貯蔵所設計：容量・倍数の数値 | 数値は試験要項・省令で確認 | 指定数量,concept_page;maybe_missing_digit,OK-practice
+numbers.csv,ido-toriatsukai-num-s44,移動取扱：政令・品名表で確認の数値（横断総合）,移動取扱：政令・品名表で確認の数値 — 記録・保存：弱点タグ付きノート / 試験の確認点：同型誤答の再演習,弱点タグ付きノート | 同型誤答の再演習 | 移動取扱：政令・品名表で確認の数値 | 数値は試験要項・省令で確認 | 移送,concept_page;maybe_missing_digit,OK-practice
+numbers.csv,yobo-kitei-num-s44,予防規程改定：作成・変更時の数値（横断総合）,予防規程改定：作成・変更時の数値 — 記録・保存：弱点タグ付きノート / 試験の確認点：同型誤答の再演習,弱点タグ付きノート | 同型誤答の再演習 | 予防規程改定：作成・変更時の数値 | 数値は試験要項・省令で確認 | 火災予防,concept_page;maybe_missing_digit,OK-practice
+numbers.csv,shoka-kunren-num-s44,消火訓練：規模・用途で変動の数値（横断総合）,消火訓練：規模・用途で変動の数値 — 確認テーマ：消火訓練：規模・用途で変動の数値 / 数値・条件：数値は試験要項・省令で確認,消火訓練：規模・用途で変動の数値 | 数値は試験要項・省令で確認 | 消火設備 | 弱点タグ付きノート | 同型誤答の再演習,concept_page;maybe_missing_digit,OK-practice
+numbers.csv,tank-kensa-num-s44,タンク検査：政令・品名表で確認の数値（横断総合）,タンク検査：政令・品名表で確認の数値 — 確認テーマ：タンク検査：政令・品名表で確認の数値 / 数値・条件：数値は試験要項・省令で確認,タンク検査：政令・品名表で確認の数値 | 数値は試験要項・省令で確認 | 指定数量 | 弱点タグ付きノート | 同型誤答の再演習,concept_page;maybe_missing_digit,OK-practice
+numbers.csv,tensou-kiroku-num-s44,転送記録保存：政令・品名表確認の数値（横断総合）,転送記録保存：政令・品名表確認の数値 — 数値・条件：数値は試験要項・省令で確認 / 関連制度：譲渡・引渡し,数値は試験要項・省令で確認 | 譲渡・引渡し | 弱点タグ付きノート | 同型誤答の再演習 | 転送記録保存：政令・品名表確認の数値,concept_page;maybe_missing_digit,OK-practice
+numbers.csv,ot4-chokuzen-num-s44,乙4直前：要項で確認の数値（横断総合）,乙4直前：要項で確認の数値 — 記録・保存：弱点タグ付きノート / 試験の確認点：同型誤答の再演習,弱点タグ付きノート | 同型誤答の再演習 | 乙4直前：要項で確認の数値 | 数値は試験要項・省令で確認 | 試験要項,maybe_missing_digit;verify_official,OK-practice

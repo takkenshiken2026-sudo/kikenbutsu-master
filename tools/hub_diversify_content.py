@@ -11,7 +11,34 @@ from typing import Any
 
 from tools.hub_strip_batch_suffix import BATCH_SUFFIX_RE
 
-BATCH_RE = re.compile(r"-s(\d+)$")
+BATCH_SUFFIX_RE_SLUG = re.compile(r"-s(\d+)$")
+BATCH_PREFIX_RE_SLUG = re.compile(r"^s(\d+)-")
+GENERIC_NUMBER_HIGHLIGHTS = frozenset(
+    {
+        "代表値は要項・法令で確認",
+        "要項・法令で確認",
+    }
+)
+GENERIC_NUMBER_VALUE_MARKERS = ("要項", "規則", "法令で確認", "試験要点", "対象・手順")
+GENERIC_EXAM_POINTS = frozenset(
+    {
+        "数値と条件をセット",
+        "単位を確認",
+        "最新法令で照合",
+    }
+)
+HUB_TEMPLATE_ITEM_LABELS = frozenset(
+    {
+        "義務主体",
+        "実施・頻度",
+        "記録・保存",
+        "試験の確認点",
+        "関連制度",
+    }
+)
+TRAILING_BATCH_TITLE_RE = re.compile(r"\s+S\d+$")
+GENERIC_COMPARE_LABELS = frozenset({"観点A", "観点B", "整理", "確認", "用語A", "用語B"})
+GENERIC_FAQ = "試験論点・条文・数値の対応を比較表に整理し、過去問で正誤の型を分類してください。"
 GENERIC_CONFUSION = frozenset(
     {
         "手順と主体の混同。",
@@ -97,8 +124,65 @@ TITLE_SUFFIXES = (
 
 
 def _batch_num(slug: str) -> int | None:
-    m = BATCH_RE.search(slug or "")
+    s = slug or ""
+    m = BATCH_SUFFIX_RE_SLUG.search(s)
+    if m:
+        return int(m.group(1))
+    m = BATCH_PREFIX_RE_SLUG.search(s)
     return int(m.group(1)) if m else None
+
+
+def _clean_public_title(title: str) -> str:
+    t = TRAILING_BATCH_TITLE_RE.sub("", BATCH_SUFFIX_RE.sub(title or "", "")).strip()
+    return re.sub(r"\s{2,}", " ", t).strip() or (title or "").strip()
+
+
+def _items_are_hub_template(row: dict[str, str]) -> bool:
+    try:
+        items = json.loads(row.get("item_rows") or "[]")
+    except json.JSONDecodeError:
+        return True
+    if not items:
+        return True
+    labels = {str(i.get("item") or "").strip() for i in items}
+    return labels.issubset(HUB_TEMPLATE_ITEM_LABELS) and bool(labels & HUB_TEMPLATE_ITEM_LABELS)
+
+
+def _enrich_numbers_highlight(row: dict[str, str]) -> None:
+    hl = (row.get("highlight") or "").strip()
+    if hl not in GENERIC_NUMBER_HIGHLIGHTS:
+        return
+    topic = _clean_public_title(row.get("title", ""))
+    parts: list[str] = []
+    try:
+        items = json.loads(row.get("item_rows") or "[]")
+    except json.JSONDecodeError:
+        items = []
+    for item in items:
+        val = (item.get("value") or "").strip()
+        label = (item.get("item") or "").strip()
+        if not val or any(marker in val for marker in GENERIC_NUMBER_VALUE_MARKERS):
+            continue
+        parts.append(f"{label}：{val}" if label else val)
+        if len(parts) >= 2:
+            break
+    if parts:
+        row["highlight"] = f"{topic} — {' / '.join(parts[:2])}"
+        return
+    exam_points = [
+        p.strip()
+        for p in (row.get("exam_points") or "").split(";")
+        if p.strip() and p.strip() not in GENERIC_EXAM_POINTS
+    ]
+    if exam_points:
+        row["highlight"] = f"{topic}（{' / '.join(exam_points[:2])}）"
+        return
+    memory_tip = (row.get("memory_tip") or "").strip()
+    if memory_tip:
+        short = memory_tip[:40] + ("…" if len(memory_tip) > 40 else "")
+        row["highlight"] = f"{topic} — {short}"
+        return
+    row["highlight"] = f"{topic}（試験要項・省令で数値確認）"
 
 
 def _core_topic(title: str) -> str:
@@ -111,6 +195,20 @@ def _core_topic(title: str) -> str:
 
 
 def _topic_terms(row: dict[str, str]) -> list[str]:
+    seen: set[str] = set()
+    out: list[str] = []
+
+    def add(term: str) -> None:
+        t = _strip_paren_suffix(term.strip())
+        if not t or t in seen:
+            return
+        seen.add(t)
+        out.append(t)
+
+    for part in (row.get("col_labels") or "").split(";"):
+        add(part)
+    for part in (row.get("related_terms") or "").split(";"):
+        add(part)
     tags = [x.strip() for x in (row.get("tags") or "").split(";") if x.strip()]
     generic = {
         "比較",
@@ -123,11 +221,99 @@ def _topic_terms(row: dict[str, str]) -> list[str]:
         "第二種",
         "2級ボイラー技士",
         "試験対策",
+        "賃貸住宅管理業",
+        "管理業務主任者",
+        "衛生管理者",
+        "危険物取扱者",
+        "環境計量士",
     }
-    out = [t for t in tags if t not in generic and not re.fullmatch(r"S\d+", t)]
+    for t in tags:
+        if t not in generic and not re.fullmatch(r"S\d+", t):
+            add(t)
     if not out:
-        out = [_core_topic(row.get("title", ""))]
-    return out[:4]
+        add(_core_topic(row.get("title", "")))
+    return out[:6]
+
+
+def _title_nuance(row: dict[str, str]) -> str:
+    title = _clean_public_title(_strip_angle_suffix(row.get("title", "")))
+    for suffix in TITLE_SUFFIXES:
+        if title.endswith(suffix):
+            return suffix.lstrip("の")
+    return ""
+
+
+def _compare_pair_terms(row: dict[str, str]) -> tuple[str, str]:
+    parts = [_strip_paren_suffix(p.strip()) for p in (row.get("col_labels") or "").split(";") if p.strip()]
+    if (
+        len(parts) >= 2
+        and parts[0] != parts[1]
+        and parts[0] not in GENERIC_COMPARE_LABELS
+        and parts[1] not in GENERIC_COMPARE_LABELS
+    ):
+        return parts[0], parts[1]
+
+    related = [x.strip() for x in (row.get("related_terms") or "").split(";") if x.strip()]
+    title = _clean_public_title(_strip_angle_suffix(row.get("title", "")))
+    topic = _core_topic(title)
+
+    if "：" in title:
+        head, tail = title.split("：", 1)
+        head, tail = head.strip(), tail.strip()
+        for sfx in ("の比較", "の整理", "の違い", "の対比"):
+            tail = tail.replace(sfx, "").strip()
+        if head and tail and head != tail:
+            return head, tail
+
+    if related:
+        slug = row.get("slug", "")
+        start = _variant_index(slug, len(related))
+        for off in range(len(related)):
+            alt = related[(start + off) % len(related)]
+            if alt != topic:
+                return topic, alt
+
+    tags = _topic_terms(row)
+    if len(tags) >= 2:
+        return tags[0], tags[1]
+
+    nuance = _title_nuance(row)
+    if nuance and nuance not in topic:
+        return topic, f"{topic}（{nuance}）"
+
+    disambig = _reader_disambig(row, row.get("slug", ""))
+    if disambig and disambig != topic:
+        return topic, disambig
+
+    return topic, f"{topic}の関連制度"
+
+
+def _has_generic_item_values(row: dict[str, str]) -> bool:
+    try:
+        items = json.loads(row.get("item_rows") or "[]")
+    except json.JSONDecodeError:
+        return False
+    if len(items) < 2:
+        return False
+    bad = sum(
+        1
+        for item in items
+        if any(marker in (item.get("value") or "") for marker in GENERIC_NUMBER_VALUE_MARKERS)
+    )
+    return bad >= 2
+
+
+def _faqs_need_rewrite(row: dict[str, str]) -> bool:
+    answers = [(row.get(f"faq_{i}_answer") or "").strip() for i in range(1, 5)]
+    if not all(answers):
+        return True
+    if any(GENERIC_FAQ in a for a in answers):
+        return True
+    if all(len(a) >= 72 for a in answers):
+        title = _clean_public_title(row.get("title", ""))
+        if title and sum(1 for a in answers if title[: min(8, len(title))] in a) >= 2:
+            return False
+    return True
 
 
 def _variant_index(slug: str, n: int) -> int:
@@ -166,7 +352,8 @@ def _is_generic_mistake(row: dict[str, str]) -> bool:
     return traps.count("典型誤答") >= 3
 
 
-def _mistake_patterns(topic: str, terms: list[str], angle: str, slug: str) -> list[dict[str, str]]:
+def _mistake_patterns(row: dict[str, str], topic: str, terms: list[str], angle: str, slug: str) -> list[dict[str, str]]:
+    label = _clean_public_title(_strip_angle_suffix(row.get("title", ""))) or topic
     axes = [
         ("主体", "義務主体の取り違え", "条文の主語を先に確定", "主体誤り"),
         ("手順", "実施順序の逆転", "確認→実施→記録の順", "手順誤り"),
@@ -188,8 +375,8 @@ def _mistake_patterns(topic: str, terms: list[str], angle: str, slug: str) -> li
         out.append(
             {
                 "topic": axis,
-                "wrong": f"{term}を{wrong}",
-                "correct": f"{term}の{correct_base}（{angle_twist}）",
+                "wrong": f"「{label}」で{term}の{wrong}",
+                "correct": f"「{label}」では{term}の{correct_base}（{angle_twist}）",
                 "trap": trap,
             }
         )
@@ -277,27 +464,103 @@ def _faq_mistake(row: dict[str, str], topic: str, angle: str) -> None:
     )
 
 
+def _confusion_for_row(row: dict[str, str], topic: str, angle: str) -> str:
+    label = _clean_public_title(_strip_angle_suffix(row.get("title", "")))
+    base = CONFUSION_BY_ANGLE.get(angle, CONFUSION_BY_ANGLE["試験頻出"]).format(topic=label or topic)
+    nuance = _title_nuance(row)
+    if nuance and nuance not in base:
+        base = base.rstrip("。") + f"。「{label}」では特に{nuance}の論点で名称だけの判断をしやすい。"
+    related = [x.strip() for x in (row.get("related_terms") or "").split(";") if x.strip()]
+    if related and related[0] not in base:
+        base = base.rstrip("。") + f"。関連する「{related[0]}」との境界もセットで確認してください。"
+    return base
+
+
+def _summary_mistake(row: dict[str, str], topic: str, angle: str) -> str:
+    label = _clean_public_title(_strip_angle_suffix(row.get("title", "")))
+    return (
+        f"「{label}」（{angle}）で出やすい誤答を、"
+        "主体の取り違え・手順の前後逆・数値の単独暗記・記録省略の4型に分けて整理します。"
+    )
+
+
+def _summary_compare(t1: str, t2: str, topic: str, angle: str) -> str:
+    return (
+        f"「{t1}」と「{t2}」（{angle}）について、"
+        "目的・主体・手続・数値・試験論点の5軸で違いを比較します。"
+    )
+
+
+def _summary_numbers(row: dict[str, str], topic: str, angle: str) -> str:
+    label = _clean_public_title(_strip_angle_suffix(row.get("title", "")))
+    nuance = _title_nuance(row)
+    focus = f"{nuance}の" if nuance else ""
+    return (
+        f"「{label}」で押さえる{focus}代表数値・条件・記録要件を、"
+        f"{angle}の観点で表に整理します。"
+    )
+
+
+def _personalize_confusion_point(row: dict[str, str]) -> None:
+    batch = _batch_num(row.get("slug", ""))
+    if batch is None or batch < 35 or "confusion_point" not in row:
+        return
+    topic = _core_topic(_clean_public_title(_strip_angle_suffix(row.get("title", ""))))
+    angle = ANGLE_BY_BATCH.get(batch, "試験頻出")
+    row["confusion_point"] = _confusion_for_row(row, topic, angle)
+
+
+def _patterns_need_refresh(row: dict[str, str]) -> bool:
+    if _is_generic_mistake(row):
+        return True
+    label = _clean_public_title(_strip_angle_suffix(row.get("title", "")))
+    try:
+        patterns = json.loads(row.get("pattern_rows") or "[]")
+    except json.JSONDecodeError:
+        return True
+    if not patterns or not label:
+        return True
+    blob = json.dumps(patterns, ensure_ascii=False)
+    return label not in blob
+
+
 def _diversify_mistake(row: dict[str, str]) -> None:
     batch = _batch_num(row.get("slug", ""))
     if batch is None or batch < 35:
         return
+    topic = _core_topic(_clean_public_title(_strip_angle_suffix(row.get("title", ""))))
+    angle = ANGLE_BY_BATCH.get(batch, "試験頻出")
+    terms = _topic_terms(row)
+    slug = row.get("slug", "")
     if _is_generic_mistake(row):
-        topic = _core_topic(row.get("title", ""))
-        angle = ANGLE_BY_BATCH.get(batch, "試験頻出")
-        terms = _topic_terms(row)
-        slug = row.get("slug", "")
-
-        row["confusion_point"] = CONFUSION_BY_ANGLE[angle].format(topic=topic)
-        row["summary"] = f"{topic}（{angle}）で頻出する誤答パターンを、主体・手順・数値・記録の4型で整理します。"
-        row["pattern_rows"] = json.dumps(_mistake_patterns(topic, terms, angle, slug), ensure_ascii=False)
+        row["confusion_point"] = _confusion_for_row(row, topic, angle)
+        row["summary"] = _summary_mistake(row, topic, angle)
+        row["pattern_rows"] = json.dumps(_mistake_patterns(row, topic, terms, angle, slug), ensure_ascii=False)
         row["article_lead"] = LEAD_BY_ANGLE[angle].format(topic=topic)
         row["exam_points"] = _mistake_exam_points(topic, angle, slug)
         row["common_mistakes"] = _mistake_common(topic, terms, slug)
         row["memory_tip"] = _memory_tip(topic, angle)
         if not row.get("article_title"):
             row["article_title"] = f"{row.get('title', topic)}｜誤答パターン"
-        _faq_mistake(row, topic, angle)
+        if _faqs_need_rewrite(row):
+            _faq_mistake(row, topic, angle)
+    elif _patterns_need_refresh(row):
+        _refresh_mistake_patterns(row)
+    _personalize_confusion_point(row)
     _apply_batch_angle_title(row, batch)
+
+
+def _refresh_mistake_patterns(row: dict[str, str]) -> None:
+    batch = _batch_num(row.get("slug", ""))
+    if batch is None or batch < 35 or "confusion_point" not in row:
+        return
+    topic = _core_topic(_clean_public_title(_strip_angle_suffix(row.get("title", ""))))
+    angle = ANGLE_BY_BATCH.get(batch, "試験頻出")
+    terms = _topic_terms(row)
+    row["pattern_rows"] = json.dumps(
+        _mistake_patterns(row, topic, terms, angle, row.get("slug", "")),
+        ensure_ascii=False,
+    )
 
 
 def _apply_batch_angle_title(row: dict[str, str], batch: int | None) -> None:
@@ -329,8 +592,7 @@ def _is_generic_compare(row: dict[str, str]) -> bool:
 
 
 def _faq_compare(row: dict[str, str], topic: str, angle: str) -> None:
-    terms = _topic_terms(row)
-    t1, t2 = (terms + [topic])[:2]
+    t1, t2 = _compare_pair_terms(row)
     row["faq_1_question"] = f"「{t1}」と「{t2}」の違いは何ですか？"
     row["faq_1_answer"] = (
         f"{topic}（{angle}）では、比較表の5軸（目的・主体・手続・数値・試験論点）で"
@@ -353,8 +615,10 @@ def _faq_compare(row: dict[str, str], topic: str, angle: str) -> None:
     )
 
 
-def _compare_rows(topic: str, terms: list[str], angle: str) -> list[dict[str, Any]]:
-    t1, t2 = (terms + [topic, topic])[:2]
+def _compare_rows(row: dict[str, str], topic: str, terms: list[str], angle: str) -> list[dict[str, Any]]:
+    t1, t2 = _compare_pair_terms(row)
+    if t1 == t2:
+        t2 = f"{t1}の関連制度"
     pools: dict[str, list[tuple[str, list[str]]]] = {
         "基礎整理": [
             ("目的", [f"{t1}の目的", f"{t2}の目的"]),
@@ -430,6 +694,28 @@ def _reader_disambig(row: dict[str, str], slug: str) -> str:
     return "整理"
 
 
+def _ensure_compare_content(row: dict[str, str]) -> None:
+    batch = _batch_num(row.get("slug", ""))
+    if batch is None or batch < 35:
+        return
+    base_title = _strip_angle_suffix(row.get("title", ""))
+    topic = _core_topic(base_title)
+    angle = ANGLE_BY_BATCH.get(batch, "試験頻出")
+    terms = _topic_terms(row)
+    t1, t2 = _compare_pair_terms(row)
+    if t1 == t2:
+        t2 = terms[1] if len(terms) > 1 and terms[1] != t1 else f"{t1}の関連手続"
+
+    row["col_labels"] = f"{t1};{t2}"
+    row["compare_rows"] = json.dumps(_compare_rows(row, topic, terms, angle), ensure_ascii=False)
+    row["summary"] = _summary_compare(t1, t2, topic, angle)
+    if not row.get("article_lead") or len((row.get("article_lead") or "")) < 40:
+        row["article_lead"] = LEAD_BY_ANGLE[angle].format(topic=topic or t1)
+    row["exam_points"] = _mistake_exam_points(topic or t1, angle, row.get("slug", ""))
+    row["common_mistakes"] = _mistake_common(topic or t1, terms, row.get("slug", ""))
+    row["memory_tip"] = _memory_tip(topic or t1, angle)
+
+
 def _apply_compare_batch_angle(row: dict[str, str]) -> None:
     batch = _batch_num(row.get("slug", ""))
     if batch is None or batch < 35:
@@ -444,6 +730,9 @@ def _apply_compare_batch_angle(row: dict[str, str]) -> None:
         f1, f2 = ANGLE_COL_FOCUS.get(angle, ("観点A", "観点B"))
         c1 = _strip_paren_suffix(parts[0])
         c2 = _strip_paren_suffix(parts[1])
+        if c1 == c2:
+            t1, t2 = _compare_pair_terms(row)
+            c1, c2 = t1, t2
         row["col_labels"] = f"{c1}（{f1}）;{c2}（{f2}）"
 
     try:
@@ -465,25 +754,43 @@ def _apply_compare_batch_angle(row: dict[str, str]) -> None:
         row["summary"] = f"{topic}（{angle}）について、比較表で違いを整理します。"
 
 
+def _compare_needs_refresh(row: dict[str, str]) -> bool:
+    if _is_generic_compare(row):
+        return True
+    parts = [_strip_paren_suffix(p.strip()) for p in (row.get("col_labels") or "").split(";") if p.strip()]
+    if any(p in GENERIC_COMPARE_LABELS for p in parts):
+        return True
+    try:
+        axes = json.loads(row.get("compare_rows") or "[]")
+    except json.JSONDecodeError:
+        return False
+    for axis_row in axes:
+        cols = axis_row.get("cols") or []
+        if len(cols) >= 2 and cols[0] == cols[1]:
+            return True
+    return False
+
+
 def _diversify_compare(row: dict[str, str]) -> None:
     batch = _batch_num(row.get("slug", ""))
     if batch is None or batch < 35:
         return
-    if _is_generic_compare(row):
+    if _compare_needs_refresh(row):
         base_title = _strip_angle_suffix(row.get("title", ""))
         topic = _core_topic(base_title)
         angle = ANGLE_BY_BATCH.get(batch, "試験頻出")
         terms = _topic_terms(row)
-        t1, t2 = (terms + [topic])[:2]
+        t1, t2 = _compare_pair_terms(row)
         row["title"] = f"{base_title or topic}（{angle}）"
         row["col_labels"] = f"{t1};{t2}"
-        row["compare_rows"] = json.dumps(_compare_rows(topic, terms, angle), ensure_ascii=False)
-        row["summary"] = f"{topic}（{angle}）について、{t1}と{t2}の違いを5軸で整理します。"
+        row["compare_rows"] = json.dumps(_compare_rows(row, topic, terms, angle), ensure_ascii=False)
+        row["summary"] = _summary_compare(t1, t2, topic, angle)
         row["article_lead"] = LEAD_BY_ANGLE[angle].format(topic=topic)
         row["exam_points"] = _mistake_exam_points(topic, angle, row.get("slug", ""))
         row["common_mistakes"] = _mistake_common(topic, terms, row.get("slug", ""))
         row["memory_tip"] = _memory_tip(topic, angle)
-        _faq_compare(row, topic, angle)
+        if _faqs_need_rewrite(row):
+            _faq_compare(row, topic, angle)
     _apply_compare_batch_angle(row)
 
 
@@ -533,6 +840,69 @@ def _faq_numbers(row: dict[str, str], topic: str, angle: str) -> None:
     )
 
 
+def _rich_number_items(row: dict[str, str], topic: str, terms: list[str], angle: str) -> list[dict[str, str]]:
+    label = _clean_public_title(_strip_angle_suffix(row.get("title", "")))
+    nuance = _title_nuance(row)
+    related = [x.strip() for x in (row.get("related_terms") or "").split(";") if x.strip()]
+    ref = related[0] if related else (terms[0] if terms else topic)
+    slug = row.get("slug", "")
+    shift = _variant_index(slug, 4)
+
+    rows_spec = [
+        (
+            "確認テーマ",
+            label or topic,
+            {
+                "基礎整理": "定義と主体を条文で確認",
+                "実務連動": "現場フロー上の位置づけ",
+                "試験頻出": "条件文の主語を下線",
+                "判例・ガイド": "通知・ガイドとの対応",
+                "横断総合": "関連制度との境界",
+            }.get(angle, "試験要点"),
+        ),
+        (
+            "数値・条件",
+            f"{nuance or '基準値'}は試験要項・省令で確認",
+            {
+                "基礎整理": "単位と適用条件をセット",
+                "実務連動": "記録様式と照合",
+                "試験頻出": "逆転肢の数値混同に注意",
+                "判例・ガイド": "改正差分を更新日で管理",
+                "横断総合": "類似制度の数値流用に注意",
+            }.get(angle, "数値+条件で暗記"),
+        ),
+        (
+            "関連制度",
+            ref,
+            "横串の比較表と併読",
+        ),
+        (
+            "記録・保存",
+            {
+                "基礎整理": "定義確認のメモ",
+                "実務連動": "運転日誌・報告書",
+                "試験頻出": "過去問の条件メモ",
+                "判例・ガイド": "条文×通知の対応表",
+                "横断総合": "弱点タグ付きノート",
+            }.get(angle, "学習記録"),
+            "異常時は原因を併記",
+        ),
+        (
+            "試験の確認点",
+            {
+                "基礎整理": "主語→目的→対象",
+                "実務連動": "誰が・いつ・何を",
+                "試験頻出": "逆転肢の型分類",
+                "判例・ガイド": "優先関係の整理",
+                "横断総合": "同型誤答の再演習",
+            }.get(angle, "過去問で型確認"),
+            f"{angle}の観点で口述",
+        ),
+    ]
+    rotated = rows_spec[shift:] + rows_spec[:shift]
+    return [{"item": a, "value": b, "note": c} for a, b, c in rotated]
+
+
 def _number_items(topic: str, terms: list[str], angle: str) -> list[dict[str, str]]:
     labels = ["義務主体", "実施・頻度", "記録・保存", "試験の確認点", "関連制度"]
     out: list[dict[str, str]] = []
@@ -555,24 +925,45 @@ def _number_items(topic: str, terms: list[str], angle: str) -> list[dict[str, st
     return out
 
 
+def _refresh_numbers_highlight(row: dict[str, str]) -> None:
+    try:
+        items = json.loads(row.get("item_rows") or "[]")
+    except json.JSONDecodeError:
+        items = []
+    label = _clean_public_title(_strip_angle_suffix(row.get("title", "")))
+    parts: list[str] = []
+    for item in items[:3]:
+        val = (item.get("value") or "").strip()
+        name = (item.get("item") or "").strip()
+        if val:
+            parts.append(f"{name}：{val}" if name else val)
+    if parts:
+        row["highlight"] = f"{label} — {' / '.join(parts[:2])}"
+    elif label:
+        row["highlight"] = f"{label}（試験要項・省令で数値確認）"
+
+
 def _diversify_numbers(row: dict[str, str]) -> None:
     batch = _batch_num(row.get("slug", ""))
     if batch is None or batch < 35:
+        if (row.get("highlight") or "").strip() in GENERIC_NUMBER_HIGHLIGHTS:
+            _enrich_numbers_highlight(row)
         return
-    if _is_generic_numbers(row):
-        topic = _core_topic(row.get("title", ""))
-        angle = ANGLE_BY_BATCH.get(batch, "試験頻出")
-        terms = _topic_terms(row)
-        row["item_rows"] = json.dumps(_number_items(topic, terms, angle), ensure_ascii=False)
-        row["highlight"] = f"{terms[0] if terms else topic}（{angle}で確認）"
-        row["summary"] = f"{topic}（{angle}）の数値・手続・記録の確認ポイントを整理します。"
-        row["article_lead"] = (
-            f"{topic}では数値だけでなく、義務主体・実施条件・記録保存まで一体で確認してください。"
-            + LEAD_BY_ANGLE[angle].format(topic=topic)
-        )
-        row["exam_points"] = _mistake_exam_points(topic, angle, row.get("slug", ""))
-        row["common_mistakes"] = _mistake_common(topic, terms, row.get("slug", ""))
-        row["memory_tip"] = _memory_tip(topic, angle)
+    topic = _core_topic(_clean_public_title(row.get("title", "")))
+    angle = ANGLE_BY_BATCH.get(batch, "試験頻出")
+    terms = _topic_terms(row)
+    row["item_rows"] = json.dumps(_rich_number_items(row, topic, terms, angle), ensure_ascii=False)
+    _refresh_numbers_highlight(row)
+    row["summary"] = _summary_numbers(row, topic, angle)
+    row["article_lead"] = (
+        f"「{_clean_public_title(_strip_angle_suffix(row.get('title', '')))}」では、"
+        "数値だけでなく義務主体・実施条件・記録保存まで一体で確認してください。"
+        + LEAD_BY_ANGLE[angle].format(topic=topic)
+    )
+    row["exam_points"] = _mistake_exam_points(topic, angle, row.get("slug", ""))
+    row["common_mistakes"] = _mistake_common(topic, terms, row.get("slug", ""))
+    row["memory_tip"] = _memory_tip(topic, angle)
+    if _faqs_need_rewrite(row):
         _faq_numbers(row, topic, angle)
     _apply_batch_angle_title(row, batch)
 
@@ -674,9 +1065,42 @@ def _dedupe_numbers_titles(rows: list[dict[str, str]]) -> None:
                 row["title"] = f"{base}：{label}（{angle}）"
 
 
+def _dedupe_compare_col_labels(rows: list[dict[str, str]]) -> None:
+    by_batch: dict[int, dict[str, list[dict[str, str]]]] = {}
+    for row in rows:
+        if "compare_rows" not in row:
+            continue
+        batch = _batch_num(row.get("slug", ""))
+        if batch is None or batch < 35:
+            continue
+        key = row.get("col_labels", "")
+        by_batch.setdefault(batch, {}).setdefault(key, []).append(row)
+    for batch_rows in by_batch.values():
+        for group in batch_rows.values():
+            if len(group) < 2:
+                continue
+            for row in group:
+                batch = _batch_num(row.get("slug", ""))
+                angle = ANGLE_BY_BATCH.get(batch or 0, "試験頻出")
+                topic = _core_topic(_strip_angle_suffix(row.get("title", "")))
+                terms = _topic_terms(row)
+                label = _clean_public_title(_strip_angle_suffix(row.get("title", "")))
+                t1, t2 = _compare_pair_terms(row)
+                if label and label not in (t1, t2):
+                    t1 = label
+                row["col_labels"] = f"{t1};{t2}"
+                row["compare_rows"] = json.dumps(
+                    _compare_rows(row, topic, terms, angle), ensure_ascii=False
+                )
+                row["summary"] = _summary_compare(t1, t2, topic, angle)
+                _apply_compare_batch_angle(row)
+
+
 def _apply_row_faqs(row: dict[str, str]) -> None:
     batch = _batch_num(row.get("slug", ""))
     if batch is None or batch < 35:
+        return
+    if not _faqs_need_rewrite(row):
         return
     base = _strip_angle_suffix(row.get("title", ""))
     topic = _core_topic(base)
@@ -699,6 +1123,9 @@ def diversify_hub_row(row: dict[str, str]) -> dict[str, str]:
         elif "highlight" in row and "item_rows" in row:
             _diversify_numbers(row)
         _apply_row_faqs(row)
+    elif "highlight" in row and "item_rows" in row:
+        if (row.get("highlight") or "").strip() in GENERIC_NUMBER_HIGHLIGHTS:
+            _enrich_numbers_highlight(row)
     return row
 
 
@@ -748,6 +1175,7 @@ def diversify_hub_rows(rows: list[dict[str, str]]) -> list[dict[str, str]]:
     for row in rows:
         diversify_hub_row(row)
     _dedupe_mistake_patterns(rows)
+    _dedupe_compare_col_labels(rows)
     _dedupe_compare_titles(rows)
     _dedupe_mistake_titles(rows)
     _dedupe_numbers_titles(rows)

@@ -777,15 +777,17 @@ details.rich-detail summary{display:none}
 .score-q-text{flex:1;color:var(--text2)}
 .score-q-time{font-family:var(--mono);font-size:14px;color:var(--text3)}
 .score-btns{display:flex;gap:9px;flex-wrap:wrap}
-.score-paid-mock-wrap{margin-top:20px;padding-top:4px}
-.score-paid-mock-lead{font-size:14px;color:var(--text2);margin-bottom:12px;line-height:1.65}
-.score-paid-mock-lead strong{color:var(--text);font-weight:600}
-.score-paid-mock-cta{display:flex;align-items:center;gap:12px;padding:14px 16px;border:1.5px solid var(--border2);border-radius:var(--r2);background:#fff;text-decoration:none;color:inherit;box-shadow:var(--sh);transition:all .18s}
-.score-paid-mock-cta:hover{border-color:var(--text2);box-shadow:var(--sh2);transform:translateY(-1px);background:var(--bg3)}
-.score-paid-mock-cta-body{flex:1;min-width:0;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.score-paid-mock-cta-title{font-size:15px;font-weight:700;color:var(--text);line-height:1.35}
-.score-paid-mock-cta-meta{font-size:12px;color:var(--text2);width:100%;margin-top:2px}
-.score-paid-mock-footnote{font-size:12px;color:var(--text2);margin-top:8px;line-height:1.5}
+.score-paid-mock-wrap{margin-top:24px;padding-top:20px;border-top:1px solid var(--border)}
+.score-paid-mock-lead{font-size:14px;color:var(--text);margin-bottom:14px;line-height:1.65;font-weight:500}
+.score-paid-mock-lead strong{color:var(--text);font-weight:700}
+.score-paid-mock-strip{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:14px 18px;border:1px solid var(--accent-border);border-radius:var(--r2);background:var(--accent-soft);text-decoration:none;color:inherit;box-shadow:0 2px 10px var(--accent-shadow);transition:border-color .15s,box-shadow .15s,transform .15s}
+.score-paid-mock-strip:hover{border-color:var(--accent);box-shadow:0 4px 14px var(--accent-shadow);transform:translateY(-1px)}
+.score-paid-mock-strip-tag{font-size:10px;font-weight:700;background:var(--accent);color:var(--accent-text);padding:3px 8px;border-radius:4px;flex-shrink:0;letter-spacing:.04em}
+.score-paid-mock-strip-body{flex:1;min-width:180px}
+.score-paid-mock-strip-title{display:block;font-size:15px;font-weight:700;color:var(--text);margin-bottom:2px;line-height:1.35}
+.score-paid-mock-strip-meta{font-size:12px;color:var(--text2)}
+.score-paid-mock-strip-cta{font-size:13px;font-weight:700;color:var(--accent);flex-shrink:0;white-space:nowrap}
+.score-paid-mock-footnote{font-size:12px;color:var(--text2);margin-top:10px;line-height:1.5}
 
 /* ===== DASHBOARD ===== */
 .stat-row{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:18px}
@@ -7252,13 +7254,13 @@ function renderScorePaidMockPromo(){
   wrap.hidden=false;
   wrap.innerHTML=`
     <p class="score-paid-mock-lead">セット演習の次は、<strong>本番同形式の35問</strong>で時間配分を確認しませんか？</p>
-    <a class="score-paid-mock-cta" href="${escapeAttr(m.url)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeAttr(label)}">
-      <span class="score-paid-mock-cta-body">
-        <span class="mode-paid-tag">有料 ${escapeAttr(m.priceLabel)}</span>
-        <span class="score-paid-mock-cta-title">${escapeAttr(m.modeTitle)}</span>
-        <span class="score-paid-mock-cta-meta">35問×2 · 解説付きPDF · note</span>
+    <a class="score-paid-mock-strip" href="${escapeAttr(m.url)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeAttr(label)}">
+      <span class="score-paid-mock-strip-tag">有料</span>
+      <span class="score-paid-mock-strip-body">
+        <span class="score-paid-mock-strip-title">${escapeAttr(m.modeTitle)}</span>
+        <span class="score-paid-mock-strip-meta">35問×2 · ${escapeAttr(m.priceLabel)} · note</span>
       </span>
-      <span class="mode-arrow-v2 mode-arrow-v2--ext" aria-hidden="true">↗</span>
+      <span class="score-paid-mock-strip-cta">詳細 ↗</span>
     </a>
     <p class="score-paid-mock-footnote">${escapeAttr(m.footnote)}</p>`;
 }
