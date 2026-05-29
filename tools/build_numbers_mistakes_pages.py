@@ -66,6 +66,7 @@ from tools.knowledge_hub_seo import (
 )
 from tools.html_footer import (  # noqa: E402
     ROBOTS_INDEX_FOLLOW,
+    analytics_snippet,
     breadcrumb_html,
     shell_body_class,
     site_page_footer,
@@ -886,8 +887,13 @@ def build_hub(
     for old_slug, new_slug in redirects.items():
         target = f"{new_slug}.html"
         out_file = spec.out_dir / f"{old_slug}.html"
+        rel_path = out_file.relative_to(ROOT)
         out_file.write_text(
-            redirect_page_html(target, title=old_slug),
+            redirect_page_html(
+                target,
+                title=old_slug,
+                analytics_html=analytics_snippet(rel_path),
+            ),
             encoding="utf-8",
         )
 

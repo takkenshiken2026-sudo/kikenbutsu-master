@@ -285,11 +285,12 @@ def load_hub_redirects(data_dir: Path) -> dict[str, str]:
     return {}
 
 
-def redirect_page_html(target_slug_file: str, *, title: str) -> str:
+def redirect_page_html(target_slug_file: str, *, title: str, analytics_html: str = "") -> str:
     import html as html_mod
 
     target = html_mod.escape(target_slug_file)
     safe_title = html_mod.escape(title)
+    analytics_block = f"\n{analytics_html}\n" if analytics_html else ""
     return f"""<!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -302,7 +303,6 @@ def redirect_page_html(target_slug_file: str, *, title: str) -> str:
 <script>location.replace("{target}");</script>
 </head>
 <body>
-<p>ページを移動しています。<a href="{target}">こちら</a>をクリックしてください。</p>
-</body>
+<p>ページを移動しています。<a href="{target}">こちら</a>をクリックしてください。</p>{analytics_block}</body>
 </html>
 """
