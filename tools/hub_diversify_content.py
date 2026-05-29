@@ -674,13 +674,31 @@ def _dedupe_numbers_titles(rows: list[dict[str, str]]) -> None:
                 row["title"] = f"{base}：{label}（{angle}）"
 
 
-def diversify_hub_row(row: dict[str, str]) -> dict[str, str]:
+def _apply_row_faqs(row: dict[str, str]) -> None:
+    batch = _batch_num(row.get("slug", ""))
+    if batch is None or batch < 35:
+        return
+    base = _strip_angle_suffix(row.get("title", ""))
+    topic = _core_topic(base)
+    angle = ANGLE_BY_BATCH.get(batch, "試験頻出")
     if "confusion_point" in row:
-        _diversify_mistake(row)
+        _faq_mistake(row, topic, angle)
     elif "compare_rows" in row:
-        _diversify_compare(row)
+        _faq_compare(row, topic, angle)
     elif "highlight" in row and "item_rows" in row:
-        _diversify_numbers(row)
+        _faq_numbers(row, topic, angle)
+
+
+def diversify_hub_row(row: dict[str, str]) -> dict[str, str]:
+    batch = _batch_num(row.get("slug", ""))
+    if batch is not None and batch >= 35:
+        if "confusion_point" in row:
+            _diversify_mistake(row)
+        elif "compare_rows" in row:
+            _diversify_compare(row)
+        elif "highlight" in row and "item_rows" in row:
+            _diversify_numbers(row)
+        _apply_row_faqs(row)
     return row
 
 

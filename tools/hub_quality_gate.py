@@ -23,6 +23,7 @@ FORBIDDEN_PHRASES = (
 )
 
 GENERIC_FAQ = "試験論点・条文・数値の対応を比較表に整理し、過去問で正誤の型を分類してください。"
+BATCH_SLUG_RE = re.compile(r"-s(\d+)$")
 
 
 def _read(name: str) -> list[dict[str, str]]:
@@ -82,13 +83,20 @@ def run_gate() -> tuple[int, dict[str, int]]:
         errors.append(f"mistakes: {generic_cp} rows still use generic confusion_point")
 
     faq_generic = 0
+    faq_generic_s35 = 0
     for name in ("comparisons.csv", "numbers.csv", "mistakes.csv"):
         for row in _read(name):
             for i in range(1, 5):
                 ans = row.get(f"faq_{i}_answer", "")
                 if GENERIC_FAQ in ans:
                     faq_generic += 1
+                    b = _batch(row.get("slug", ""))
+                    if b is not None and b >= 35:
+                        faq_generic_s35 += 1
     metrics["faq_boilerplate_answers"] = faq_generic
+    metrics["faq_boilerplate_s35plus"] = faq_generic_s35
+    if faq_generic_s35:
+        errors.append(f"FAQ: {faq_generic_s35} boilerplate answers on S35+ rows")
 
     # pattern_rows identical within batch (S35+ mistakes)
     pat_by_batch: dict[int, Counter[str]] = defaultdict(Counter)

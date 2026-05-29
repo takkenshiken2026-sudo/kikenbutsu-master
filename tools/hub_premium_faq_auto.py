@@ -51,9 +51,16 @@ def _strip_generic(text: str) -> str:
     return _norm(out)
 
 
+FAQ_BOILERPLATE = (
+    "試験論点・条文・数値の対応を比較表に整理し、過去問で正誤の型を分類してください。"
+)
+
+
 def _needs_auto(row: dict[str, str]) -> bool:
     answers = [_norm(row.get(f"faq_{i}_answer")) for i in range(1, 5)]
     if not all(answers):
+        return True
+    if any(FAQ_BOILERPLATE in a for a in answers):
         return True
     if any(len(a) < MIN_FAQ_ANSWER for a in answers):
         return True
@@ -72,16 +79,22 @@ def _pad_answer(text: str, *, extra: str = "") -> str:
     return _strip_generic(combined) or combined
 
 
-def _safe_answer(text: str, *, extra: str = "") -> str:
+def _safe_answer(text: str, *, extra: str = "", row: dict[str, str] | None = None) -> str:
     answer = _pad_answer(text, extra=extra)
     if _has_generic_phrase(answer):
         answer = _strip_generic(answer)
-    if len(answer) < MIN_FAQ_ANSWER or _has_generic_phrase(answer):
-        answer = _pad_answer(
-            "試験論点・条文・数値の対応を比較表に整理し、過去問で正誤の型を分類してください。",
-            extra=extra,
-        )
-    return answer
+    if len(answer) >= MIN_FAQ_ANSWER and not _has_generic_phrase(answer):
+        return answer
+    row = row or {}
+    title = _norm(row.get("title") or row.get("article_title"))
+    exam = _first_clause(_norm(row.get("exam_points"))) or "出題論点と条文"
+    mistake = _clip(_norm(row.get("common_mistakes") or row.get("confusion_point")), 80)
+    fallback = (
+        f"「{title}」では{exam}を軸に、条文・数値・主体の取り違えを比較表で整理してください。"
+        f"{(' 典型誤答は' + mistake + '。') if mistake else ''}"
+        " 過去問では条件文の主語入れ替え肢に注意してください。"
+    )
+    return _pad_answer(fallback, extra=extra)
 
 
 def faqs_from_row(row: dict[str, str], *, official_suffix: str = "") -> list[tuple[str, str]]:
@@ -107,6 +120,7 @@ def faqs_from_row(row: dict[str, str], *, official_suffix: str = "") -> list[tup
                 f"{lead or title + 'の論点整理ページです。'} "
                 f"試験では{exam1}を軸に、関連条文・数値・主体の取り違えを照合してください。",
                 extra=suffix,
+                row=row,
             ),
         ),
         (
@@ -115,6 +129,7 @@ def faqs_from_row(row: dict[str, str], *, official_suffix: str = "") -> list[tup
                 f"{mistake or '似た用語・数値・手続の混同が典型です。'} "
                 f"誤答肢では{exam2}の主語や条件が入れ替わることが多いので、比較表で整理してください。",
                 extra=suffix,
+                row=row,
             ),
         ),
         (
@@ -124,6 +139,7 @@ def faqs_from_row(row: dict[str, str], *, official_suffix: str = "") -> list[tup
                 f"{('早見の要点：' + highlight + ' ') if highlight else ''}"
                 "用語集→本ページ→過去問の順で往復し、正誤理由をメモに残してください。",
                 extra=suffix,
+                row=row,
             ),
         ),
         (
@@ -132,6 +148,7 @@ def faqs_from_row(row: dict[str, str], *, official_suffix: str = "") -> list[tup
                 "数値・期限・合格基準・制度改正は年度で変わります。"
                 "学習中も試験要項・施行規則・実施団体の公式サイトで最新情報を照合してください。"
                 + (f" {suffix}" if suffix else ""),
+                row=row,
             ),
         ),
     ]
