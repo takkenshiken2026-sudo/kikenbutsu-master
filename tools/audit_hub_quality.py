@@ -18,18 +18,41 @@ if str(ROOT) not in sys.path:
 
 from tools.editorial_quality import EDITORIAL_GENERIC_PHRASES  # noqa: E402
 from tools.hub_faq_expand import MIN_FAQ_ANSWER, _FALLBACK  # noqa: E402
+from tools.hub_strip_batch_suffix import BATCH_SUFFIX_RE  # noqa: E402
 from tools.knowledge_hub_rules import HUB_MIN_LENGTHS  # noqa: E402
 
 DATA = ROOT / "data"
 OUT = ROOT / "reports" / "hub_audit"
-REGISTRY = Path("/Users/otedaiki/Projects/docs/hub_numbers_verified.json")
+REGISTRY = Path("/Users/otedaiki/Projects/exam-site-shell/docs/hub_numbers_verified.json")
+if not REGISTRY.is_file():
+    REGISTRY = Path("/Users/otedaiki/Projects/docs/hub_numbers_verified.json")
 HUB_FILES = ("comparisons.csv", "numbers.csv", "mistakes.csv")
 DIGIT_RE = re.compile(r"\d")
-_BATCH_SUFFIX = re.compile(r"（S\d+）$")
 
 
 def _title_key(title: str) -> str:
-    return _BATCH_SUFFIX.sub("", title.strip())
+    return BATCH_SUFFIX_RE.sub("", title.strip()).strip()
+
+
+def audit_batch_suffix(rows: list[dict[str, str]], hub_file: str) -> list[dict[str, str]]:
+    out: list[dict[str, str]] = []
+    for row in rows:
+        slug = (row.get("slug") or "").strip()
+        title = (row.get("title") or "").strip()
+        for key, val in row.items():
+            if key == "slug" or not isinstance(val, str):
+                continue
+            if BATCH_SUFFIX_RE.search(val):
+                out.append(
+                    {
+                        "hub_file": hub_file,
+                        "slug": slug,
+                        "title": title,
+                        "field": key,
+                        "snippet": val[:80],
+                    }
+                )
+    return out
 
 
 def _read_rows(name: str) -> list[dict[str, str]]:
@@ -228,12 +251,14 @@ def main() -> int:
     numbers_rows: list[dict[str, str]] = []
     faq_rows: list[dict[str, str]] = []
     thin_rows: list[dict[str, str]] = []
+    batch_rows: list[dict[str, str]] = []
 
     for name, rows in rows_by_file.items():
         if name == "numbers.csv":
             numbers_rows.extend(audit_numbers(rows, name, verified_registry))
         faq_rows.extend(audit_faq_generic(rows, name))
         thin_rows.extend(audit_thin_body(rows, name))
+        batch_rows.extend(audit_batch_suffix(rows, name))
 
     title_rows = audit_title_similar(rows_by_file)
 
@@ -251,6 +276,11 @@ def main() -> int:
         OUT / "audit_thin_body.csv",
         ["hub_file", "slug", "title", "column", "length", "min_recommended"],
         thin_rows,
+    )
+    _write_csv(
+        OUT / "audit_batch_suffix.csv",
+        ["hub_file", "slug", "title", "field", "snippet"],
+        batch_rows,
     )
     title_header = sorted({k for r in title_rows for k in r.keys()})
     _write_csv(OUT / "audit_title_dup.csv", title_header, title_rows)
@@ -274,6 +304,7 @@ def main() -> int:
             and not r.get("verified", "").startswith("OK")
         ),
         "faq_issues": len(faq_rows),
+        "batch_suffix": len(batch_rows),
         "thin_body": len(thin_rows),
         "title_dup_similar": len(title_rows),
     }
