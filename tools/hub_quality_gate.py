@@ -14,7 +14,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
 
-BATCH_SUFFIX_RE = re.compile(r"（S\d+）")
+BATCH_SUFFIX_RE = re.compile(r"（S\d+）|\(S\d+\)")
 BATCH_SLUG_RE = re.compile(r"-s(\d+)$")
 FORBIDDEN_PHRASES = (
     "手順と主体の混同。",
@@ -101,6 +101,34 @@ def run_gate() -> tuple[int, dict[str, int]]:
     metrics["mistakes_duplicate_patterns_in_batch"] = dup_pat
     if dup_pat:
         errors.append(f"mistakes: {dup_pat} duplicate pattern_rows within S35+ batches")
+
+    comparisons = _read("comparisons.csv")
+    cmp_titles = Counter()
+    cmp_labels = Counter()
+    for row in comparisons:
+        b = _batch(row.get("slug", ""))
+        if b is None or b < 35:
+            continue
+        cmp_titles[row.get("title", "")] += 1
+        cmp_labels[row.get("col_labels", "")] += 1
+    dup_cmp_titles = sum(1 for _, n in cmp_titles.items() if n > 1)
+    dup_cmp_labels = sum(1 for _, n in cmp_labels.items() if n > 1)
+    metrics["comparisons_duplicate_titles_s35plus"] = dup_cmp_titles
+    metrics["comparisons_duplicate_col_labels_s35plus"] = dup_cmp_labels
+    if dup_cmp_titles:
+        errors.append(f"comparisons: {dup_cmp_titles} duplicate titles among S35+ rows")
+    if dup_cmp_labels:
+        errors.append(f"comparisons: {dup_cmp_labels} duplicate col_labels among S35+ rows")
+
+    mis_titles = Counter(
+        r.get("title", "")
+        for r in mistakes
+        if (_batch(r.get("slug", "")) or 0) >= 35
+    )
+    dup_mis_titles = sum(1 for _, n in mis_titles.items() if n > 1)
+    metrics["mistakes_duplicate_titles_s35plus"] = dup_mis_titles
+    if dup_mis_titles:
+        errors.append(f"mistakes: {dup_mis_titles} duplicate titles among S35+ rows")
 
     if errors:
         print("QUALITY GATE FAILED:")
