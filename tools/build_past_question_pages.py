@@ -960,6 +960,7 @@ def main() -> int:
             guides=guides,
             question_catalog=question_catalog,
         )
+        out_file.parent.mkdir(parents=True, exist_ok=True)
         out_file.write_text(html_out, encoding="utf-8")
 
     q_index = ROOT / "q" / "index.html"
