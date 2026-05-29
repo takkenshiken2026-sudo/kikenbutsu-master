@@ -261,7 +261,16 @@ def _is_generic_index_snippet(text: str, term: str) -> bool:
 
 
 def terms_index_snippet(entry: dict) -> str:
-    """一覧・検索用の定義抜粋。enrich テンプレ文は definition から実義を拾う。"""
+    """一覧・検索用の定義抜粋。記事リード・定義から固有の1文を優先する。"""
+    try:
+        from tools.index_summary_utils import build_glossary_index_summary
+
+        generated = build_glossary_index_summary(entry)
+        if generated:
+            return generated
+    except ImportError:
+        pass
+
     term = (entry.get("term") or "").strip()
     short = (entry.get("short_def") or "").strip()
     definition = (entry.get("definition") or "").strip()
@@ -277,14 +286,16 @@ def terms_index_snippet(entry: dict) -> str:
                 return f"{term}は、{body}。" if body else short
 
     if short and not _is_generic_index_snippet(short, term):
-        return short
+        first = re.split(r"\n\n+", short, maxsplit=1)[0].strip()
+        if first and not _is_generic_index_snippet(first, term):
+            return first
 
     if definition:
         for part in re.split(r"(?<=[。！？])", definition):
             part = part.strip()
             if part and part != short and not _is_generic_index_snippet(part, term):
                 return part[:200]
-    return short
+    return short.split("\n\n")[0].strip() if short else ""
 
 
 def render_terms_index_tbody(entries: list[dict]) -> str:
