@@ -10,6 +10,7 @@ data/practice_questions.csv / data/ichimon_questions.csv から静的 SEO ペー
 
 過去問ビルド（build_past_question_pages.py）は q/past/ のみ削除する。
 本スクリプトは q/practice/ と q/ichimon/ のみ再生成する。
+build_all.py では本スクリプトを過去問ビルドより先に実行する（類似問題リンクの整合）。
 """
 
 from __future__ import annotations
@@ -984,6 +985,8 @@ def main() -> int:
         target = Q_ROOT / sub
         if target.is_dir():
             shutil.rmtree(target)
+        elif target.exists():
+            target.unlink()
 
     practice_rows = load_practice_rows()
     practice_pages: list[dict] = []
