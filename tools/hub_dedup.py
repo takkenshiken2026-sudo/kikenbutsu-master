@@ -21,6 +21,9 @@ from tools.hub_collapse_angles import (
 from tools.hub_collapse_series import merge_redirect_maps
 
 PAREN_RE = re.compile(r"[（(][^）)]*[）)]")
+OPTIONAL_PARTICLE_RE = re.compile(
+    r"(が|の|を|は|に|で|と|へ|から|より|も|等|について|に関する)"
+)
 
 TEXT_MERGE_FIELDS = (
     "definition",
@@ -60,6 +63,7 @@ def base_term_name(term: str) -> str:
 def normalize_hub_label(title: str) -> str:
     base, _ = strip_angle_title(title or "")
     base = re.sub(r"日間$", "日", base.strip())
+    base = OPTIONAL_PARTICLE_RE.sub("", base)
     return re.sub(r"\s+", "", base)
 
 
