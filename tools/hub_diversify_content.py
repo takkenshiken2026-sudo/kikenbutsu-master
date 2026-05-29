@@ -413,11 +413,21 @@ def _strip_angle_suffix(title: str) -> str:
     return t
 
 
-def _slug_head(slug: str) -> str:
-    base = re.sub(r"-s\d+$", "", slug or "")
-    for token in ("-mgmt-compare", "-compare", "-cmp", "-mis", "-num"):
-        base = base.replace(token, "")
-    return base.strip("-") or slug
+def _strip_paren_suffix(text: str) -> str:
+    return re.sub(r"（[^）]*）$", "", (text or "").strip()).strip() or text
+
+
+def _reader_disambig(row: dict[str, str], slug: str) -> str:
+    """読者向けの短い差別化ラベル（slug英字は使わない）."""
+    if "mgmt-compare" in slug or re.search(r"-mgmt(?:-|$)", slug):
+        return "管理措置"
+    terms = _topic_terms(row)
+    if terms:
+        return terms[0]
+    base = _strip_angle_suffix(row.get("title", ""))
+    if "：" in base:
+        return base.split("：", 1)[0].strip()
+    return "整理"
 
 
 def _apply_compare_batch_angle(row: dict[str, str]) -> None:
@@ -425,7 +435,6 @@ def _apply_compare_batch_angle(row: dict[str, str]) -> None:
     if batch is None or batch < 35:
         return
     angle = ANGLE_BY_BATCH.get(batch, "試験頻出")
-    slug = row.get("slug", "")
     base_title = _strip_angle_suffix(row.get("title", ""))
     if base_title and f"（{angle}）" not in base_title:
         row["title"] = f"{base_title}（{angle}）"
@@ -433,19 +442,9 @@ def _apply_compare_batch_angle(row: dict[str, str]) -> None:
     parts = [p.strip() for p in (row.get("col_labels") or "").split(";") if p.strip()]
     if len(parts) >= 2:
         f1, f2 = ANGLE_COL_FOCUS.get(angle, ("観点A", "観点B"))
-        head = base_title.split("：")[0].strip() if "：" in base_title else _slug_head(slug)
-        series = _slug_series_label(slug)
-        if series:
-            head = f"{head}・{series}" if head else series
-        tag1 = f"{head}・{f1}" if head else f1
-        tag2 = f"{head}・{f2}" if head else f2
-        c1, c2 = parts[0], parts[1]
-        # 既存タグを正規化してから付け直す
-        c1 = re.sub(r"（[^）]*）$", "", c1).strip() or c1
-        c2 = re.sub(r"（[^）]*）$", "", c2).strip() or c2
-        c1 = f"{c1}（{tag1}）"
-        c2 = f"{c2}（{tag2}）"
-        row["col_labels"] = f"{c1};{c2}"
+        c1 = _strip_paren_suffix(parts[0])
+        c2 = _strip_paren_suffix(parts[1])
+        row["col_labels"] = f"{c1}（{f1}）;{c2}（{f2}）"
 
     try:
         axes = json.loads(row.get("compare_rows") or "[]")
@@ -454,13 +453,11 @@ def _apply_compare_batch_angle(row: dict[str, str]) -> None:
     if axes:
         focus = ANGLE_COL_FOCUS.get(angle, ("整理", "確認"))[0]
         for axis_row in axes:
-            axis_name = (axis_row.get("axis") or "").strip()
-            if angle not in axis_name:
+            axis_name = _strip_paren_suffix(axis_row.get("axis") or "")
+            if focus not in axis_name:
                 axis_row["axis"] = f"{axis_name}（{focus}）"
             cols = axis_row.get("cols") or []
-            axis_row["cols"] = [
-                c if angle in c else f"{c}（{angle}）" for c in cols
-            ]
+            axis_row["cols"] = [_strip_paren_suffix(c) for c in cols]
         row["compare_rows"] = json.dumps(axes, ensure_ascii=False)
 
     topic = _core_topic(base_title)
@@ -581,17 +578,10 @@ def _diversify_numbers(row: dict[str, str]) -> None:
 
 
 def _slug_series_label(slug: str) -> str:
-    base = re.sub(r"-s\d+$", "", slug or "")
-    if "mgmt-compare" in base or re.search(r"-mgmt(?:-|$)", base):
+    """タイトル衝突時のみ。読者向け日本語ラベル."""
+    if "mgmt-compare" in slug or re.search(r"-mgmt(?:-|$)", slug):
         return "管理措置"
-    if "-compare" in base or "-cmp" in base:
-        return "制度整理"
-    if "-mis" in base:
-        return "誤答整理"
-    if "-num" in base:
-        return "数値整理"
-    parts = [p for p in base.split("-") if p]
-    return parts[-1] if parts else base
+    return ""
 
 
 def _dedupe_compare_titles(rows: list[dict[str, str]]) -> None:
@@ -609,16 +599,19 @@ def _dedupe_compare_titles(rows: list[dict[str, str]]) -> None:
         for row in group:
             batch = _batch_num(row.get("slug", ""))
             angle = ANGLE_BY_BATCH.get(batch or 0, "試験頻出")
+            slug = row.get("slug", "")
             base = _strip_angle_suffix(row.get("title", ""))
-            series = _slug_series_label(row.get("slug", ""))
+            label = _reader_disambig(row, slug)
             if "：" in base:
                 head, tail = base.split("：", 1)
-                new_base = f"{head}：{series}・{tail.rstrip('の比較')}"
-                if not new_base.endswith("比較"):
-                    new_base += "の比較"
+                tail = tail.replace("の比較", "").strip()
+                if label and label not in tail and label != head:
+                    new_base = f"{head}：{label}と{tail}の比較"
+                else:
+                    new_base = base if base.endswith("比較") else f"{base}の比較"
             else:
                 topic = base.replace("の比較", "").strip() or base
-                new_base = f"{topic}：{series}の比較"
+                new_base = f"{topic}：{label}の比較"
             row["title"] = f"{new_base}（{angle}）"
             _apply_compare_batch_angle(row)
 
@@ -638,15 +631,47 @@ def _dedupe_mistake_titles(rows: list[dict[str, str]]) -> None:
         for row in group:
             batch = _batch_num(row.get("slug", ""))
             angle = ANGLE_BY_BATCH.get(batch or 0, "試験頻出")
+            slug = row.get("slug", "")
             base = _strip_angle_suffix(row.get("title", ""))
-            series = _slug_series_label(row.get("slug", ""))
+            label = _reader_disambig(row, slug)
             core = base.replace("の典型誤答", "").strip()
             if "：" in core:
                 head, tail = core.split("：", 1)
-                new_base = f"{head}：{series}・{tail}の典型誤答"
+                if label and label not in tail and label != head:
+                    new_base = f"{head}：{label}・{tail}の典型誤答"
+                else:
+                    new_base = f"{core}の典型誤答" if not core.endswith("誤答") else core
             else:
-                new_base = f"{core}：{series}の典型誤答"
+                new_base = f"{core}：{label}の典型誤答"
             row["title"] = f"{new_base}（{angle}）"
+
+
+def _dedupe_numbers_titles(rows: list[dict[str, str]]) -> None:
+    num_rows = [
+        r
+        for r in rows
+        if "item_rows" in r and "highlight" in r and (_batch_num(r.get("slug", "")) or 0) >= 35
+    ]
+    by_title: dict[str, list[dict[str, str]]] = {}
+    for row in num_rows:
+        by_title.setdefault(row.get("title", ""), []).append(row)
+    for group in by_title.values():
+        if len(group) < 2:
+            continue
+        for row in group:
+            batch = _batch_num(row.get("slug", ""))
+            angle = ANGLE_BY_BATCH.get(batch or 0, "試験頻出")
+            slug = row.get("slug", "")
+            base = _strip_angle_suffix(row.get("title", ""))
+            label = _reader_disambig(row, slug)
+            if "：" in base:
+                head, tail = base.split("：", 1)
+                if label and label not in tail and label != head:
+                    row["title"] = f"{head}：{label}・{tail}（{angle}）"
+                else:
+                    row["title"] = f"{base}（{angle}）"
+            else:
+                row["title"] = f"{base}：{label}（{angle}）"
 
 
 def diversify_hub_row(row: dict[str, str]) -> dict[str, str]:
@@ -707,4 +732,5 @@ def diversify_hub_rows(rows: list[dict[str, str]]) -> list[dict[str, str]]:
     _dedupe_mistake_patterns(rows)
     _dedupe_compare_titles(rows)
     _dedupe_mistake_titles(rows)
+    _dedupe_numbers_titles(rows)
     return rows

@@ -113,12 +113,42 @@ def run_gate() -> tuple[int, dict[str, int]]:
         cmp_labels[row.get("col_labels", "")] += 1
     dup_cmp_titles = sum(1 for _, n in cmp_titles.items() if n > 1)
     dup_cmp_labels = sum(1 for _, n in cmp_labels.items() if n > 1)
+    index_keys = Counter(
+        (row.get("title", ""), row.get("col_labels", ""))
+        for row in comparisons
+        if (_batch(row.get("slug", "")) or 0) >= 35
+    )
+    dup_index = sum(1 for _, n in index_keys.items() if n > 1)
     metrics["comparisons_duplicate_titles_s35plus"] = dup_cmp_titles
     metrics["comparisons_duplicate_col_labels_s35plus"] = dup_cmp_labels
+    metrics["comparisons_duplicate_index_rows"] = dup_index
     if dup_cmp_titles:
         errors.append(f"comparisons: {dup_cmp_titles} duplicate titles among S35+ rows")
-    if dup_cmp_labels:
-        errors.append(f"comparisons: {dup_cmp_labels} duplicate col_labels among S35+ rows")
+    if dup_index:
+        errors.append(f"comparisons: {dup_index} identical index rows (title+col_labels) among S35+")
+
+    num_titles = Counter(
+        r.get("title", "")
+        for r in _read("numbers.csv")
+        if (_batch(r.get("slug", "")) or 0) >= 35
+    )
+    dup_num_titles = sum(1 for _, n in num_titles.items() if n > 1)
+    metrics["numbers_duplicate_titles_s35plus"] = dup_num_titles
+    if dup_num_titles:
+        errors.append(f"numbers: {dup_num_titles} duplicate titles among S35+ rows")
+
+    reader_noise = 0
+    slug_in_label = re.compile(r"[a-z]+-[a-z0-9-]+", re.I)
+    noise_phrases = ("制度整理", "誤答整理", "数値整理")
+    for row in comparisons:
+        blob = row.get("col_labels", "") + row.get("title", "")
+        if slug_in_label.search(row.get("col_labels", "")):
+            reader_noise += 1
+        elif any(p in blob for p in noise_phrases):
+            reader_noise += 1
+    metrics["comparisons_reader_noise"] = reader_noise
+    if reader_noise:
+        errors.append(f"comparisons: {reader_noise} rows with reader-noise in col_labels/title")
 
     mis_titles = Counter(
         r.get("title", "")
