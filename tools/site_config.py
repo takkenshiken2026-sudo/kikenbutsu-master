@@ -77,21 +77,6 @@ def official_organization() -> str:
     return str(CONFIG.get("officialOrganization") or "試験実施団体")
 
 
-def paid_mock_exam() -> dict[str, str]:
-    raw = CONFIG.get("paidMockExam") or {}
-    if not isinstance(raw, dict):
-        raw = {}
-    defaults = {
-        "url": "",
-        "modeTitle": "予想模試（PDF・2回分）",
-        "modePurpose": "本番と同じ35問・2時間で実力確認したい",
-        "priceLabel": "¥590",
-        "footnote": "※ note で販売する有料コンテンツ（¥590）です。サイト内の無料演習とは別商品です。",
-    }
-    out = {k: str(raw.get(k) or v).strip() for k, v in defaults.items()}
-    return out
-
-
 def external_links() -> list[dict[str, str]]:
     raw = CONFIG.get("externalLinks") or []
     if not isinstance(raw, list):
@@ -354,7 +339,6 @@ def write_site_config_js() -> None:
             }
             for f in fields()
         ],
-        "paidMockExam": paid_mock_exam(),
     }
     (ROOT / "site-config.js").write_text(
         "window.SITE_CONFIG = "

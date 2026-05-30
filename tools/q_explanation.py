@@ -35,29 +35,11 @@ def parse_explanation_choices(raw: str) -> dict[int, str]:
 def question_ask_mode(stem: str) -> str:
     """設問の求め方: most_correct / least_appropriate / unknown。"""
     s = norm(stem)
-    if re.search(
-        r"適切でない|妥当でない|誤っている|誤りである|正しくない|不適切なもの|"
-        r"誤った記述|誤ったもの|妥当でないもの",
-        s,
-    ):
+    if re.search(r"適切でない|誤っている|誤りである|正しくない|不適切なもの", s):
         return "least_appropriate"
-    if re.search(r"正しい|適切である|適切なもの", s):
-        return "most_correct"
-    if re.search(r"妥当", s):
+    if re.search(r"正しい|妥当|適切である|適切なもの", s):
         return "most_correct"
     return "unknown"
-
-
-def is_find_false_question(stem: str) -> bool:
-    """誤っている記述・妥当でない記述を選ぶ設問か。"""
-    s = norm(stem)
-    return bool(
-        re.search(
-            r"誤っている|誤りである|正しくない|妥当でない|不適切なもの|"
-            r"誤った記述|誤ったもの|妥当でないもの",
-            s,
-        )
-    )
 
 
 def _choice_sounds_positive(text: str) -> bool:
@@ -82,32 +64,6 @@ def _snippet(text: str, max_len: int = 36) -> str:
 
 
 _MIN_CHOICE_NOTE_LEN = 72
-_CSV_NOTE_KEEP_RE = re.compile(
-    r"組合せ|不正確|過剰|見落|区別|該当|ため|ので|ではない|ではありません|"
-    r"誤りです|異なり|当たりません|代表|向け|倍数|届|許可|検査|式|"
-    r"誤肢|本問|正答|第[1-6]類|石油類|政令|規則|倍数|引火|消火|"
-    r"計算|kJ|mol|化合物|単体|吸着|酸化|分解|犠牲|腐食",
-)
-
-
-def _is_marker_combo_choice(text: str) -> bool:
-    t = norm(text)
-    if not t:
-        return False
-    return bool(
-        re.match(r"^[Ａ-ＺＡ-Ｃ](、|$)", t)
-        or re.search(r"[Ａ-Ｚ]、", t)
-        or "【" in t
-    )
-
-
-def is_exclude_one_question(stem: str) -> bool:
-    return bool(
-        re.search(
-            r"該当しない|含まれない|当てはまらない|該当しないもの|含まれないもの",
-            norm(stem),
-        )
-    )
 
 
 def _is_thin_choice_note(note: str, mode: str) -> bool:
@@ -115,20 +71,6 @@ def _is_thin_choice_note(note: str, mode: str) -> bool:
     n = norm(note)
     if not n:
         return True
-    if len(n) >= 20 and _CSV_NOTE_KEEP_RE.search(n):
-        return False
-    if re.search(
-        r"正しい|妥当|誤りではない|正答ではありません|誤肢|該当し|法令どおり|"
-        r"一般的に|基準どおり|正しい内容|正しい記述|正しい説明|正しい注意|"
-        r"正しい要件|正しい表示|正しい方向|正しい組合せ|正しい性質|"
-        r"正しい貯蔵|正しい消火|正しい溶解|正しい反応|正しい使用|"
-        r"正しいデータ|正しい項目|正しい手続|正しい対策|正しい整理|"
-        r"正しい定義|正しい用途|正しい比較|正しい分類|正しい例|"
-        r"正しい方向|正しい流れ|正しい説明|正しい記述|正しい内容|"
-        r"誤りでは|本問の正答|正答条件|正答の組合せ",
-        n,
-    ):
-        return False
     if len(n) < _MIN_CHOICE_NOTE_LEN:
         return True
     if mode == "least_appropriate":
@@ -180,33 +122,6 @@ def infer_wrong_choice_note(
             "（4）のような明らかに有害な記述を見落とすことです。"
             "設問文の「最も適切でない」を先に線引きし、四肢を比較して選んでください。"
         )
-    elif mode == "least_appropriate" and is_find_false_question(stem):
-        if _is_marker_combo_choice(opt):
-            parts.append(
-                f"選択肢（{choice_num}）「{opt}」は、"
-                f"誤っている部分の組合せとして不正確です。"
-            )
-            if correct and correct_text:
-                parts.append(
-                    f"正答は（{correct}）「{_snippet(correct_text, 56)}」です。"
-                    "本問で誤りとされる箇所だけを正確に含む組合せを選びます。"
-                )
-        else:
-            parts.append(
-                f"「{opt}」の記述内容は正しい説明です。"
-                "本問は誤っている記述（または妥当でない記述）を選ぶ問題のため、"
-                "この選択肢は正答になりません。"
-            )
-            if correct and correct_text:
-                parts.append(
-                    f"正答は（{correct}）です。こちらの記述「{_snippet(correct_text, 56)}」に"
-                    "誤り（または言い過ぎ・不適切な点）があります。"
-                )
-            parts.append(
-                "「正答番号」と「その肢の記述が誤りかどうか」は別の観点です。"
-                "設問文の「誤っているもの／妥当でないもの」を先に確認し、"
-                "各肢の記述内容の正誤を照合して選んでください。"
-            )
     elif mode == "least_appropriate":
         parts.append(
             f"「{opt}」は、一見もっともらしく見える場合がありますが、"
@@ -219,24 +134,15 @@ def infer_wrong_choice_note(
             "最も不適切な一つだけを選びます。"
         )
     elif mode == "most_correct":
-        if is_exclude_one_question(stem):
+        parts.append(
+            f"この肢は「{opt}」と述べていますが、"
+            f"{category or '本分野'}の基準では正しい記述ではありません。"
+        )
+        if correct and correct_text:
             parts.append(
-                f"「{_snippet(opt, 48)}」は設問条件を満たす正答ではありません。"
+                f"正答（{correct}）「{_snippet(correct_text, 56)}」は、"
+                "制度・手続・学習法のいずれかの観点で適切な内容です。"
             )
-            if correct and correct_text:
-                parts.append(
-                    f"本問の正答は（{correct}）「{_snippet(correct_text, 56)}」です。"
-                )
-        else:
-            parts.append(
-                f"この肢は「{opt}」と述べていますが、"
-                f"{category or '本分野'}の基準では正しい記述ではありません。"
-            )
-            if correct and correct_text:
-                parts.append(
-                    f"正答（{correct}）「{_snippet(correct_text, 56)}」は、"
-                    "制度・手続・学習法のいずれかの観点で適切な内容です。"
-                )
     else:
         parts.append(
             f"この肢「{_snippet(opt, 48)}」は、設問の求め方（正しいもの／誤っているもの／"
@@ -326,11 +232,16 @@ def resolve_wrong_choice_note(
     *,
     csv_note: str = "",
 ) -> str:
-    """CSV 優先。未記入または明らかなプレースホルダーのみ推論で補完。"""
+    """CSV 優先。薄い解説は推論で置き換え、未記入は推論で補完。"""
+    stem = norm(page.get("stem_plain") or page.get("stem") or "")
+    mode = question_ask_mode(stem)
     note = norm(csv_note)
-    if note and not re.match(r"^(本肢|この肢).*妥当\.?$", note):
-        return note
-    return infer_wrong_choice_note(page, choice_num, choice_text, row)
+    inferred = infer_wrong_choice_note(page, choice_num, choice_text, row)
+    if not note:
+        return inferred
+    if _is_thin_choice_note(note, mode):
+        return inferred
+    return note
 
 
 CATEGORY_STUDY_HINTS: dict[str, str] = {
@@ -471,31 +382,6 @@ def split_legacy_explanation(exp: str) -> tuple[str, str]:
     return "", exp
 
 
-def clarify_find_false_correct_body(text: str, correct: int, stem: str) -> str:
-    """誤り選択問題の解説で「（N）は誤り」と正答番号の矛盾に見える表現を整える。"""
-    body = norm(text)
-    if not body or not is_find_false_question(stem):
-        return body
-    body = re.sub(
-        rf"[（(]{correct}[）)]\s*は誤りで正答です[。.]?",
-        f"選択肢（{correct}）の記述内容に誤りがあるため、正答は（{correct}）です。",
-        body,
-    )
-    body = re.sub(
-        rf"[「\(（][^」）)]*[」\)）]\s*という\s*[（(]{correct}[）)]\s*は誤り(?:で正答)?です[。.]?",
-        f"選択肢（{correct}）の記述内容に誤りがあるため、正答は（{correct}）です。",
-        body,
-        count=1,
-    )
-    if re.search(rf"[（(]{correct}[）)]\s*(?:は|も)?誤り", body):
-        if not re.search(r"本問は|正答は[（(]?" + str(correct), body[:100]):
-            body = (
-                f"本問は誤った記述（または妥当でない記述）を選ぶ問題です。"
-                f"{body}"
-            )
-    return body
-
-
 def build_choice_commentary(page: dict, row: dict) -> list[tuple[int, str, str]]:
     parsed = parse_explanation_choices(norm(row.get("explanation_choices")))
     correct = page.get("correct")
@@ -533,21 +419,10 @@ def build_explanation_html(page: dict, row: dict) -> str:
     correct = page.get("correct")
     if correct and not page.get("is_invalidated"):
         opt_text = page["opts"][correct - 1] if 1 <= correct <= len(page["opts"]) else ""
-        stem = norm(page.get("stem_plain") or page.get("stem") or "")
-        if correct_body:
-            correct_body = clarify_find_false_correct_body(correct_body, correct, stem)
         parts.append(
             '<section class="q-exp-section" aria-labelledby="q-exp-correct-h">'
             '<h3 id="q-exp-correct-h" class="q-exp-h3">正解の理由</h3>'
         )
-        if is_find_false_question(stem):
-            parts.append(
-                '<p class="q-exp-mode-note">'
-                "本問は設問文どおり、<strong>誤っている記述</strong>"
-                "（または妥当でない記述）を選ぶ問題です。"
-                "正答番号は、その記述内容に誤りがある選択肢を指します。"
-                "</p>"
-            )
         if correct_body:
             parts.append(f"<p>{text_to_html(correct_body)}</p>")
         if opt_text:
