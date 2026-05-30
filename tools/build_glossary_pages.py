@@ -154,7 +154,9 @@ def term_slug(term: str, reading: str | dict[str, str] = "", used: dict[str, str
         reading = ""
     if used is None:
         used = {}
-    base = f"{term.strip()}|{str(reading).strip()}"
+    reading = str(reading).strip() if not isinstance(reading, dict) else ""
+    # reading なしは term のみでハッシュ（既存公開 URL との互換）
+    base = f"{term.strip()}|{reading}" if reading else term.strip()
     h = hashlib.sha256(base.encode("utf-8")).hexdigest()[:16]
     s = f"g-{h}"
     if s not in used:
@@ -571,7 +573,8 @@ def legal_basis_html(legal: str) -> str:
         return ""
     items = split_semicolon(legal)
     if len(items) <= 1:
-        return html.escape(legal).replace("\n", "<br>\n")
+        inner = html.escape(legal).replace("\n", "<br>\n")
+        return f"<p>{inner}</p>"
     return '<ul class="term-legal-list">' + "".join(f"<li>{html.escape(x)}</li>" for x in items) + "</ul>"
 
 
@@ -1218,7 +1221,7 @@ def build_terms_index(entries: list[dict], base_url: str) -> str:
         "分野別に整理し、検索と絞り込みで目的の語句を探せます。"
     )
     lead = (
-        f"{exam_name()}の試験で押さえたい知識（用語・比較・数値・誤答）を、分野別にまとめています。"
+        f"{exam_name()}の試験で押さえたい用語を、分野別にまとめています。"
         "各ページで意味や試験での論点を確認できます。学習の進め方は試験ガイド（articles/）をご覧ください。"
     )
     return f"""<!DOCTYPE html>
@@ -1461,13 +1464,10 @@ def main() -> int:
 
     (TERMS_DIR / "index.html").write_text(build_terms_index(entries, base), encoding="utf-8")
 
-    from tools.build_compare_pages import build_all as build_compare_pages
-    from tools.build_numbers_mistakes_pages import build_all as build_numbers_mistakes_pages
-
-    build_compare_pages(base_url=base)
-    build_numbers_mistakes_pages(base_url=base)
-
+    from tools.build_hub_retire_redirects import build_all as build_hub_retire_redirects
     from tools.build_priority_pages import build_all as build_priority_redirects
+
+    build_hub_retire_redirects()
 
     build_priority_redirects()
 
