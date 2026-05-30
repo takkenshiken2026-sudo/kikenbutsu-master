@@ -3,7 +3,7 @@
 ## ビルド
 
 ```bash
-cd /Users/otedaiki/Desktop/kikenbutsu-master
+cd /Users/otedaiki/Projects/kikenbutsu-master
 python3 tools/build_all.py
 ```
 
