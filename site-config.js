@@ -123,7 +123,8 @@ window.SITE_CONFIG = {
         "化学反応",
         "爆発・着火",
         "酸化性",
-        "引火点"
+        "引火点",
+        "契約・実務"
       ],
       "legacyGlossaryCat": "rights"
     },
@@ -136,7 +137,8 @@ window.SITE_CONFIG = {
         "消火方法",
         "漏えい対策",
         "避難・通報",
-        "設備・貯蔵"
+        "設備・貯蔵",
+        "設備・その他"
       ],
       "legacyGlossaryCat": "limit"
     }

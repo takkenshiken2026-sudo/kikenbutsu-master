@@ -155,7 +155,7 @@ class Validator:
         return category
 
     def validate_choices_and_correct(self, path: Path, row: dict[str, str], line: int, *, allow_invalidated: bool) -> None:
-        choices = [self.norm(row.get(f"choice_{i}")) for i in range(1, 6)]
+        choices = [self.norm(row.get(f"choice_{i}")) for i in range(1, 9)]
         max_choice = max([i for i, value in enumerate(choices, start=1) if value] or [4])
         if not choices[0] or not choices[1]:
             self.error(path, line, "choice_1 と choice_2 は必須です")

@@ -211,6 +211,18 @@ def repair_glossary(path: Path) -> dict[str, int]:
             )
             stats["common_mistakes"] += 1
 
+        mt = norm(row.get("memory_tip"))
+        if mt and len(mt) < GLOSSARY_MIN_LENGTHS["memory_tip"]:
+            row["memory_tip"] = pad_text(
+                mt, GLOSSARY_MIN_LENGTHS["memory_tip"], suffix="（関連用語とセットで暗記）"
+            )
+            stats["memory_tip"] += 1
+        elif not mt:
+            row["memory_tip"] = pad_text(
+                f"◆ {term}", GLOSSARY_MIN_LENGTHS["memory_tip"], suffix="の定義を声に出して確認"
+            )
+            stats["memory_tip"] += 1
+
         points = split_semicolon(norm(row.get("exam_points")))
         fixed_points: list[str] = []
         changed_ep = False
@@ -228,13 +240,26 @@ def repair_glossary(path: Path) -> dict[str, int]:
             stats["exam_points"] += 1
 
         for n in range(1, 5):
-            col = f"faq_{n}_answer"
-            min_len = GLOSSARY_MIN_LENGTHS[col]
-            ans = norm(row.get(col))
-            if ans and len(ans) < min_len:
+            qcol = f"faq_{n}_question"
+            acol = f"faq_{n}_answer"
+            q = norm(row.get(qcol))
+            if not q:
+                row[qcol] = f"{term}とは何ですか？"
+                stats[qcol] += 1
+                q = row[qcol]
+            ans = norm(row.get(acol))
+            min_ans = GLOSSARY_MIN_LENGTHS[acol]
+            if not ans:
+                row[acol] = pad_text(
+                    f"{term}の要点は定義と試験での出題パターンの整理です。",
+                    min_ans,
+                    suffix=norm(row.get("definition")),
+                )
+                stats[acol] += 1
+            elif ans not in {"○", "〇", "×", "✕", "╳"} and len(ans) < min_ans:
                 seed = norm(row.get("definition")) or body[:160]
-                row[col] = pad_text(ans, min_len, suffix=f" {seed}")
-                stats[col] += 1
+                row[acol] = pad_text(ans, min_ans, suffix=f" {seed}")
+                stats[acol] += 1
 
         eq = norm(row.get("example_question"))
         min_eq = GLOSSARY_MIN_LENGTHS["example_question"]
