@@ -325,11 +325,6 @@ def terms_index_snippet(entry: dict) -> str:
                 return f"{term}は、{body}。" if body else short
 
     if short and not _is_generic_index_snippet(short, term):
-        first_short = re.split(r"(?<=[。！？])", short.replace("\n", " "), maxsplit=1)[0].strip()
-        if first_short:
-            if not first_short.endswith(("。", "！", "？")):
-                first_short = f"{first_short}。"
-            return first_short[:200]
         return short
 
     if definition:
