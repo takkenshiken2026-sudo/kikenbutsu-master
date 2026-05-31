@@ -296,17 +296,40 @@ def terms_index_snippet(entry: dict) -> str:
     short = (entry.get("short_def") or "").strip()
     definition = (entry.get("definition") or "").strip()
 
+    if definition and term:
+        # まず「用語」は、本文…（kikenbutsu 等）— 引用符内の用語名だけを拾わない
+        lead = re.search(
+            rf"まず「{re.escape(term)}」(?:は|とは)?[、,]?\s*(.+)",
+            definition,
+        )
+        if lead:
+            body = lead.group(1).strip()
+            first = re.split(r"(?<=[。！？])", body, maxsplit=1)[0].strip()
+            if first and not _is_generic_index_snippet(first, term):
+                if not first.endswith(("。", "！", "？")):
+                    first = f"{first}。"
+                return first[:200]
+
     if definition:
         m = re.search(r"まず「([^」]+)」", definition)
         if m:
             clause = m.group(1).strip()
-            if clause and not _is_generic_index_snippet(clause, term):
+            if (
+                clause
+                and clause != term
+                and not _is_generic_index_snippet(clause, term)
+            ):
                 if clause.startswith(term):
                     return clause if clause.endswith("。") else f"{clause}。"
                 body = clause.rstrip("。")
                 return f"{term}は、{body}。" if body else short
 
     if short and not _is_generic_index_snippet(short, term):
+        first_short = re.split(r"(?<=[。！？])", short.replace("\n", " "), maxsplit=1)[0].strip()
+        if first_short:
+            if not first_short.endswith(("。", "！", "？")):
+                first_short = f"{first_short}。"
+            return first_short[:200]
         return short
 
     if definition:
