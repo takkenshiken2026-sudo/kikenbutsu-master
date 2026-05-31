@@ -5916,6 +5916,11 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://kikenbutsu-master.jp/terms/compare/index.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
     <loc>https://kikenbutsu-master.jp/terms/field-law/index.html</loc>
     <lastmod>2026-05-31</lastmod>
     <changefreq>monthly</changefreq>
@@ -8042,6 +8047,16 @@
   </url>
   <url>
     <loc>https://kikenbutsu-master.jp/terms/index.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://kikenbutsu-master.jp/terms/mistakes/index.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://kikenbutsu-master.jp/terms/numbers/index.html</loc>
     <lastmod>2026-05-31</lastmod>
     <changefreq>monthly</changefreq>
   </url>
