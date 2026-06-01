@@ -1,7 +1,1 @@
-hub_a,hub_b,kind,similarity,slug_a,slug_b,title_a,title_b
-comparisons.csv,comparisons.csv,similar,0.920,kiken-hoan-cmp-s40,kiken-hoan-cmp-s42,【法令・制度】危険物保安：危険物保安監督者と危険物取扱者の比較（深化整理）｜s40｜cmp-s40｜kiken-hoan-cmp-s40,【法令・制度】危険物保安：危険物保安監督者と危険物取扱者の比較（頻出再整理）｜s42｜cmp-s42｜kiken-hoan-cmp-s42
-comparisons.csv,comparisons.csv,similar,0.917,yobo-kitei-cmp-s40,yobo-kitei-cmp-s42,【法令・制度】予防規程改定：予防規程と予防規程の作成の比較（深化整理）｜s40｜cmp-s40｜yobo-kitei-cmp-s40,【法令・制度】予防規程改定：予防規程と予防規程の作成の比較（頻出再整理）｜s42｜cmp-s42｜yobo-kitei-cmp-s42
-comparisons.csv,comparisons.csv,similar,0.921,tank-kensa-cmp-s40,tank-kensa-cmp-s42,【法令・制度】タンク検査：タンクローリーと移動タンク貯蔵所の比較（深化整理）｜s40｜cmp-s40｜tank-kensa-cmp-s40,【法令・制度】タンク検査：タンクローリーと移動タンク貯蔵所の比較（頻出再整理）｜s42｜cmp-s42｜tank-kensa-cmp-s42
-mistakes.csv,mistakes.csv,similar,0.922,kiken-hoan-mis-s40,kiken-hoan-mis-s42,【法令・制度】危険物保安：危険物取扱者と危険物保安監督者の混同誤り（深化整理）｜s40｜mis-s40｜kiken-hoan-mis-s40,【法令・制度】危険物保安：危険物取扱者と危険物保安監督者の混同誤り（頻出再整理）｜s42｜mis-s42｜kiken-hoan-mis-s42
-mistakes.csv,mistakes.csv,similar,0.916,yobo-kitei-mis-s40,yobo-kitei-mis-s42,【法令・制度】予防規程改定：予防規程と火災予防の混同誤り（深化整理）｜s40｜mis-s40｜yobo-kitei-mis-s40,【法令・制度】予防規程改定：予防規程と火災予防の混同誤り（頻出再整理）｜s42｜mis-s42｜yobo-kitei-mis-s42
-mistakes.csv,mistakes.csv,similar,0.923,tank-kensa-mis-s40,tank-kensa-mis-s42,【法令・制度】タンク検査：タンクローリーと移動タンク貯蔵所の混同誤り（深化整理）｜s40｜mis-s40｜tank-kensa-mis-s40,【法令・制度】タンク検査：タンクローリーと移動タンク貯蔵所の混同誤り（頻出再整理）｜s42｜mis-s42｜tank-kensa-mis-s42
+
