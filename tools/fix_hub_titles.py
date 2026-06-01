@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from tools.hub_strip_batch_suffix import BATCH_SUFFIX_RE  # noqa: E402
+from tools.hub_strip_batch_suffix import strip_batch_suffix  # noqa: E402
 
 HUB_FILES = ("comparisons.csv", "numbers.csv", "mistakes.csv")
 HUB_TAG = {
@@ -25,7 +25,18 @@ HUB_TAG = {
 
 
 def _title_key(title: str) -> str:
-    return BATCH_SUFFIX_RE.sub("", title.strip()).strip()
+    return strip_batch_suffix(title.strip())
+
+
+def _similar(t1: str, t2: str) -> bool:
+    if not t1 or not t2:
+        return False
+    if t1 == t2:
+        return True
+    k1, k2 = _title_key(t1), _title_key(t2)
+    if k1 == k2:
+        return True
+    return SequenceMatcher(None, k1, k2).ratio() >= 0.88
 
 
 def _read(path: Path) -> tuple[list[str], list[dict[str, str]]]:
@@ -41,15 +52,33 @@ def _write(path: Path, header: list[str], rows: list[dict[str, str]]) -> None:
         w.writerows(rows)
 
 
-def _disambiguator(row: dict[str, str], hub_file: str) -> str:
+def _tweak_title(row: dict[str, str], hub_file: str, *, level: int) -> str | None:
+    title = (row.get("title") or "").strip()
+    if not title:
+        return None
     highlight = (row.get("highlight") or "").strip()
-    if highlight and len(highlight) <= 18:
-        return highlight
+    category = (row.get("category") or "").strip()
     slug = (row.get("slug") or "").strip()
-    tail = slug.split("-")[-1] if slug else ""
-    if tail:
-        return tail
-    return HUB_TAG.get(hub_file, "論点")
+    if level == 0:
+        tag = highlight[:16] if highlight else slug.split("-")[-1] if slug else HUB_TAG.get(hub_file, "論点")
+        if tag and tag not in title:
+            return f"{title}｜{tag}"
+    if level == 1 and highlight:
+        label = highlight[:8]
+        if label and not title.startswith(f"【{label}】"):
+            return f"【{label}】{title}"
+    if level == 2 and slug:
+        tail = "-".join(slug.split("-")[-2:]) if "-" in slug else slug[-14:]
+        if tail and tail not in title:
+            return f"{title}｜{tail}"
+    if level == 3 and category:
+        label = category[:8]
+        if label and not title.startswith(f"【{label}】"):
+            return f"【{label}】{title}"
+    if level >= 4 and slug:
+        if slug not in title:
+            return f"{title}｜{slug[-18:]}"
+    return None
 
 
 def fix_file(path: Path) -> int:
@@ -57,38 +86,43 @@ def fix_file(path: Path) -> int:
     if not rows:
         return 0
     changed = 0
-    titles = [(i, (row.get("title") or "").strip()) for i, row in enumerate(rows)]
-    for i, t1 in titles:
-        if not t1:
-            continue
-        for j, t2 in titles[i + 1 :]:
-            if not t2:
-                continue
-            if t1 == t2 or SequenceMatcher(None, _title_key(t1), _title_key(t2)).ratio() >= 0.88:
+    for _ in range(16):
+        round_changed = 0
+        active = [i for i, row in enumerate(rows) if (row.get("title") or "").strip()]
+        for ai, i in enumerate(active):
+            t1 = (rows[i].get("title") or "").strip()
+            for j in active[ai + 1 :]:
+                t2 = (rows[j].get("title") or "").strip()
+                if not _similar(t1, t2):
+                    continue
                 for idx in (i, j):
                     row = rows[idx]
                     title = (row.get("title") or "").strip()
-                    tag = _disambiguator(row, path.name)
-                    if tag and tag not in title:
-                        new_title = f"{title}｜{tag}"
-                        if new_title != title:
+                    for level in range(6):
+                        new_title = _tweak_title(row, path.name, level=level)
+                        if new_title and new_title != title:
                             row["title"] = new_title
-                            changed += 1
+                            round_changed += 1
+                            break
+        if round_changed == 0:
+            break
+        changed += round_changed
     if changed:
         _write(path, header, rows)
     return changed
 
 
 def fix_site(root: Path) -> int:
-    total = 0
     data = root / "data"
+    total = 0
     for name in HUB_FILES:
         path = data / name
-        if path.is_file():
-            n = fix_file(path)
-            if n:
-                print(f"  {name}: {n} title tweaks")
-            total += n
+        if not path.is_file():
+            continue
+        n = fix_file(path)
+        if n:
+            print(f"  {name}: {n} title tweaks")
+        total += n
     return total
 
 
