@@ -21,19 +21,11 @@
 <meta property="og:description" content="過去問演習・実践演習・一問一答・重要用語解説を網羅。年度別・分野別に絞った効率学習で合格を目指す。">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:site_name" content="乙4マスター（危険物取扱者試験（乙種第4類））">
-<meta property="og:image" content="https://kikenbutsu-master.jp/og-image.png">
-<meta property="og:image:secure_url" content="https://kikenbutsu-master.jp/og-image.png">
-<meta property="og:image:type" content="image/png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="乙4マスター｜危険物取扱者試験（乙種第4類）の無料学習サイト">
 
 <!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="乙4マスター｜危険物取扱者試験（乙種第4類） 無料学習プラットフォーム">
 <meta name="twitter:description" content="過去問演習・実践演習・一問一答・重要用語解説を網羅。年度別・分野別に絞った効率学習で合格を目指す。">
-<meta name="twitter:image" content="https://kikenbutsu-master.jp/og-image.png">
-<meta name="twitter:image:alt" content="乙4マスター｜危険物取扱者試験（乙種第4類）の無料学習サイト">
 
 <!-- Schema.org 構造化データ -->
 <script type="application/ld+json">
@@ -93,200 +85,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
-<link rel="preload" href="exam-site-data-practice.js?v=2462eae547a1" as="script">
-<link rel="preload" href="exam-site-data-past.js?v=7c83d4612c36" as="script">
-<link rel="preload" href="exam-site-data-ichimondou.js?v=88a8deffa82e" as="script">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style id="site-theme-vars">
-:root {
-  --sel: #c0392b;
-  --accent: #c0392b;
-  --accent-text: #ffffff;
-  --accent-soft: color-mix(in srgb, #c0392b 11%, #ffffff);
-  --accent-soft-mid: color-mix(in srgb, #c0392b 18%, #ffffff);
-  --accent-border: color-mix(in srgb, #c0392b 26%, #ffffff);
-  --accent-emphasis: color-mix(in srgb, #c0392b 42%, #333333);
-  --accent-hover-surface: color-mix(in srgb, #c0392b 7%, #ffffff);
-  --accent-hover-border: color-mix(in srgb, #c0392b 30%, #e4e4e6);
-  --accent-shadow: color-mix(in srgb, #c0392b 12%, transparent);
-  --bg: #ffffff;
-  --bg2: #f4f4f5;
-  --page-bg: #f4f4f5;
-  --text: #121212;
-  --text2: #555555;
-  --border: rgba(0, 0, 0, 0.09);
-  --r2: 10px;
-  --site-nav-w: 1080px;
-  --site-content-w: 1080px;
-  --site-readable-w: min(860px, 1080px);
-}
-body {
-  background: var(--page-bg);
-}
-.site-page-mark {
-  background: var(--accent);
-  color: var(--accent-text);
-}
-.terms-idx-chip.on,
-.gcat-btn.active {
-  background: var(--accent-soft);
-  border-color: var(--accent-border);
-  color: var(--accent-emphasis);
-}
-</style>
-<script>
-window.SITE_CONFIG = {
-  "brandName": "乙4マスター",
-  "brandMark": "乙4",
-  "examName": "危険物取扱者試験（乙種第4類）",
-  "siteOrigin": "https://kikenbutsu-master.jp",
-  "contactUrl": "https://kikenbutsu-master.jp/",
-  "ga4MeasurementId": "G-CH3RF5CKLH",
-  "theme": {
-    "accent": "#c0392b",
-    "accentText": "#ffffff",
-    "background": "#f4f4f5",
-    "surface": "#ffffff",
-    "surfaceAlt": "#f4f4f5",
-    "text": "#121212",
-    "textMuted": "#555555",
-    "border": "rgba(0, 0, 0, 0.09)",
-    "radius": "10px",
-    "navWidth": "1080px",
-    "contentWidth": "1080px"
-  },
-  "navigation": {
-    "header": [
-      {
-        "label": "トップ",
-        "href": "index.html",
-        "key": "top"
-      },
-      {
-        "label": "このサイトについて",
-        "href": "about.html",
-        "key": "about"
-      },
-      {
-        "label": "過去問一覧",
-        "href": "q/index.html",
-        "key": "q"
-      },
-      {
-        "label": "用語解説",
-        "href": "terms/index.html",
-        "key": "terms"
-      },
-      {
-        "label": "試験ガイド",
-        "href": "articles/index.html",
-        "key": "articles"
-      },
-      {
-        "label": "関連リンク",
-        "href": "related-sites.html",
-        "key": "related"
-      },
-      {
-        "label": "プライバシー",
-        "href": "privacy.html",
-        "key": "privacy"
-      }
-    ],
-    "footer": [
-      {
-        "label": "トップ",
-        "href": "index.html",
-        "key": "top"
-      },
-      {
-        "label": "このサイトについて",
-        "href": "about.html",
-        "key": "about"
-      },
-      {
-        "label": "過去問一覧",
-        "href": "q/index.html",
-        "key": "q"
-      },
-      {
-        "label": "用語解説",
-        "href": "terms/index.html",
-        "key": "terms"
-      },
-      {
-        "label": "試験ガイド",
-        "href": "articles/index.html",
-        "key": "articles"
-      },
-      {
-        "label": "関連リンク",
-        "href": "related-sites.html",
-        "key": "related"
-      },
-      {
-        "label": "プライバシー",
-        "href": "privacy.html",
-        "key": "privacy"
-      },
-      {
-        "label": "お問い合わせ",
-        "href": "https://kikenbutsu-master.jp/",
-        "key": "contact"
-      }
-    ]
-  },
-  "fields": [
-    {
-      "id": "law",
-      "name": "法令・制度",
-      "aliases": [
-        "法令・制度",
-        "危険物に関する法令",
-        "消防法",
-        "危険物の定義等に関する政令",
-        "保安規程",
-        "届出・許可"
-      ],
-      "legacyGlossaryCat": "law"
-    },
-    {
-      "id": "rights",
-      "name": "物性・化学",
-      "aliases": [
-        "物性・化学",
-        "基礎的な物理学及び基礎的な化学",
-        "危険物の性質",
-        "化学反応",
-        "爆発・着火",
-        "酸化性",
-        "引火点"
-      ],
-      "legacyGlossaryCat": "rights"
-    },
-    {
-      "id": "limit",
-      "name": "火災・消火・漏えい",
-      "aliases": [
-        "火災・消火・漏えい",
-        "危険物の性質並びにその火災予防及び消火の方法",
-        "消火方法",
-        "漏えい対策",
-        "避難・通報",
-        "設備・貯蔵"
-      ],
-      "legacyGlossaryCat": "limit"
-    }
-  ],
-  "paidMockExam": {
-    "url": "https://note.com/shikaku_master/n/naae31abe01ed",
-    "modeTitle": "予想模試（PDF・2回分）",
-    "modePurpose": "本番と同じ35問・2時間で実力確認したい",
-    "priceLabel": "¥590",
-    "footnote": "※ note で販売する有料コンテンツ（¥590）です。サイト内の無料演習とは別商品です。"
-  }
-};
-</script>
 <style>
 :root {
   --bg:    #ffffff;
@@ -428,9 +227,6 @@ body{font-family:var(--font);font-size:var(--fs-body);background:#f0f0f1;color:v
 .topnav-logo-mark,.site-footer-logo-mark{min-width:54px;min-height:36px;padding:6px 10px 5px;border-radius:4px;background:var(--ink);display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;flex-shrink:0;font-family:var(--font);color:var(--bg2);box-sizing:border-box}
 .topnav-logo-mark .logo-mark-line,.site-footer-logo-mark .logo-mark-line{display:block;font-size:12px;font-weight:700;line-height:1.05;text-align:center;white-space:nowrap;letter-spacing:.02em}
 .topnav-logo-mark .logo-mark-line--sub,.site-footer-logo-mark .logo-mark-line--sub{font-size:11px;letter-spacing:.04em}
-.site-footer-logo-mark{min-width:46px;min-height:30px;padding:4px 8px 3px;border-radius:3px}
-.site-footer-logo-mark .logo-mark-line{font-size:10px}
-.site-footer-logo-mark .logo-mark-line--sub{font-size:9px}
 .topnav-logo-text{font-size:16px;font-weight:700;letter-spacing:-0.01em;white-space:nowrap}
 .topnav-logo-stack{display:flex;flex-direction:column;align-items:flex-start;gap:1px;line-height:1.15;min-width:0}
 .topnav-logo-sub{font-size:10px;font-weight:600;color:var(--text3);letter-spacing:0;line-height:1.25;white-space:normal;max-width:min(220px,52vw)}
@@ -560,13 +356,6 @@ h2.section-label .tip-icon{width:13px;height:13px;font-size:9px}
 .mode-purpose-v2{font-size:12px;color:var(--text2);font-weight:500;margin-bottom:3px}
 .mode-title-v2{font-size:16px;font-weight:700;color:var(--text);line-height:1.3}
 .mode-arrow-v2{color:var(--text3);font-size:16px;flex-shrink:0}
-.mode-card-v2--paid{text-decoration:none;color:inherit;border-color:var(--border2);background:#fff}
-.mode-card-v2--paid:hover{border-color:var(--text2);box-shadow:var(--sh2);transform:translateY(-1px);background:var(--bg3)}
-.mode-num-v2--paid{color:var(--text3);font-weight:400}
-.mode-purpose-v2--paid{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
-.mode-paid-tag{font-size:10px;font-weight:700;background:var(--accent);color:var(--accent-text);padding:1px 7px;border-radius:999px;letter-spacing:.04em;line-height:1.5;flex-shrink:0}
-.mode-arrow-v2--ext{color:var(--text3);font-weight:400}
-.mode-paid-footnote{font-size:12px;color:var(--text2);margin:6px 0 0 2px;line-height:1.5}
 .mode-card{background:#fff;border:1.5px solid var(--border2);border-radius:var(--r2);padding:18px;cursor:pointer;transition:all .18s;box-shadow:var(--sh);position:relative;display:flex;flex-direction:column}
 .mode-card:hover{box-shadow:var(--sh2);border-color:var(--text2);transform:translateY(-1px)}
 .mode-card.selected{border-color:var(--ink);box-shadow:0 0 0 3px rgba(0,0,0,0.06)}
@@ -782,17 +571,6 @@ details.rich-detail summary{display:none}
 .score-q-text{flex:1;color:var(--text2)}
 .score-q-time{font-family:var(--mono);font-size:14px;color:var(--text3)}
 .score-btns{display:flex;gap:9px;flex-wrap:wrap}
-.score-paid-mock-wrap{margin-top:24px;padding-top:20px;border-top:1px solid var(--border)}
-.score-paid-mock-lead{font-size:14px;color:var(--text);margin-bottom:14px;line-height:1.65;font-weight:500}
-.score-paid-mock-lead strong{color:var(--text);font-weight:700}
-.score-paid-mock-strip{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:14px 18px;border:1px solid var(--accent-border);border-radius:var(--r2);background:var(--accent-soft);text-decoration:none;color:inherit;box-shadow:0 2px 10px var(--accent-shadow);transition:border-color .15s,box-shadow .15s,transform .15s}
-.score-paid-mock-strip:hover{border-color:var(--accent);box-shadow:0 4px 14px var(--accent-shadow);transform:translateY(-1px)}
-.score-paid-mock-strip-tag{font-size:10px;font-weight:700;background:var(--accent);color:var(--accent-text);padding:3px 8px;border-radius:4px;flex-shrink:0;letter-spacing:.04em}
-.score-paid-mock-strip-body{flex:1;min-width:180px}
-.score-paid-mock-strip-title{display:block;font-size:15px;font-weight:700;color:var(--text);margin-bottom:2px;line-height:1.35}
-.score-paid-mock-strip-meta{font-size:12px;color:var(--text2)}
-.score-paid-mock-strip-cta{font-size:13px;font-weight:700;color:var(--accent);flex-shrink:0;white-space:nowrap}
-.score-paid-mock-footnote{font-size:12px;color:var(--text2);margin-top:10px;line-height:1.5}
 
 /* ===== DASHBOARD ===== */
 .stat-row{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:18px}
@@ -1006,7 +784,9 @@ details.rich-detail summary{display:none}
   .topnav-hamburger{display:flex}
   .topnav-inner{padding:0 10px;height:52px}
   .topnav-logo{margin-right:8px}
-  .topnav-logo-mark{min-width:48px;min-height:32px;padding:5px 8px 4px}  .topnav-logo-mark .logo-mark-line{font-size:11px}  .topnav-logo-mark .logo-mark-line--sub{font-size:10px}
+  .topnav-logo-mark{min-width:48px;min-height:32px;padding:5px 8px 4px}
+  .topnav-logo-mark .logo-mark-line{font-size:11px}
+  .topnav-logo-mark .logo-mark-line--sub{font-size:10px}
   .topnav-logo-text{font-size:15px}
   .topnav-logo-sub{font-size:9px;max-width:min(200px,58vw)}
   .focus-btn{margin-left:auto;margin-right:6px;width:34px;height:34px}
@@ -1128,6 +908,7 @@ details.rich-detail summary{display:none}
     gap:8px 10px;
     padding:6px max(12px,env(safe-area-inset-right,0px)) calc(8px + env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px));
   }
+  .site-footer-logo-mark{width:20px;height:20px;font-size:9px;border-radius:5px}
   .site-footer-site-name{font-size:11px}
   .site-footer-legal{gap:8px 10px}
   .site-footer-legal a{font-size:10px}
@@ -1206,6 +987,7 @@ body.is-solving .site-footer{display:none!important}
 }
 .site-footer-brand{display:flex;align-items:center;gap:6px;text-decoration:none;color:var(--text);flex:0 0 auto;transition:opacity .15s}
 .site-footer-brand:hover{opacity:.88}
+.site-footer-logo-mark{width:22px;height:22px;border-radius:6px;background:var(--ink);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:var(--bg2);flex-shrink:0;font-family:var(--font)}
 .site-footer-site-name{font-size:12px;font-weight:700;letter-spacing:-0.02em;color:var(--text);white-space:nowrap}
 .site-footer-sep{width:1px;height:14px;background:var(--border2);flex:0 0 auto;align-self:center;opacity:.85}
 .site-footer-legal{display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;gap:10px 14px;flex:0 0 auto}
@@ -1281,7 +1063,6 @@ body.is-solving .site-footer{display:none!important}
 .lv-streak-label{font-size:12px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.1em}
 /* Mission card */
 .mission-card{background:#fff;border:1.5px solid var(--border2);border-radius:var(--r2);padding:18px 20px;margin-bottom:12px;box-shadow:var(--sh)}
-.mission-card .mode-card-title{color:var(--ink);font-size:15px;font-weight:700}
 .mission-card.spotlight{
   animation: mission-spotlight-enter .5s cubic-bezier(.34,1.56,.64,1) both,
              mission-spotlight-glow 2.2s .4s ease-in-out both;
@@ -1347,6 +1128,10 @@ body.is-solving .site-footer{display:none!important}
 .mission-text.done{color:var(--text);text-decoration:none}
 .mission-prog{font-size:13px;font-family:var(--mono);color:#111111;font-weight:800}
 .mission-prog.done{color:var(--green)}
+.mission-share-row{margin-top:14px;padding-top:14px;border-top:1px solid var(--border)}
+.mission-card-share{display:flex;align-items:center;justify-content:center;gap:7px;width:100%;padding:11px;background:#000;border:none;border-radius:10px;color:#fff;font-size:14px;font-weight:700;cursor:pointer;font-family:var(--font);transition:opacity .15s}
+.mission-card-share:hover{opacity:.82}
+.mission-card-share svg{width:15px;height:15px;fill:currentColor;flex-shrink:0}
 /* Difficulty stars in q-meta */
 .q-meta-item.diff-wrap{flex:0 0 114px}
 .q-meta-item.freq-item{flex:0 0 108px}
@@ -1408,88 +1193,31 @@ body.is-solving .site-footer{display:none!important}
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "法別表第１に掲げる第４類の危険物の品名に該当しないものは、次のうちどれか。",
+      "name": "Sample試験の制度に関する次の記述のうち、正しいものはどれか。",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "法別表第1の第4類品名のうち、類・品名の区分に含まれないものを選ぶ問題です。"
+        "text": "試験制度は年度ごとに見直されるため、最新の公式情報を確認する姿勢が重要です。"
       }
     },
     {
       "@type": "Question",
-      "name": "次の組合せのうち、燃焼が起こらないものはどれか。",
+      "name": "学習計画に関する次の記述のうち、最も適切でないものはどれか。",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "燃焼三要素（着火源・可燃物・酸素）の組合せのうち、燃焼が起こらないものを選ぶ問題です。"
+        "text": "「最も適切でないもの」を選ぶ問題です。学習法として明らかに誤った選択肢を見極めます。"
       }
     },
     {
       "@type": "Question",
-      "name": "危険物の類ごとに共通する一般的な性状について、次のうち妥当でないものはどれか。",
+      "name": "設備・その他分野の学習に関する次の記述のうち、正しいものはどれか。",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "危険物各類の一般的性状のうち、妥当でない記述を選ぶ問題です。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "法令上、予防規程に関する説明として、最も適切なものは、次のうちどれか。",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "予防規程の定義を問う問題です。火災予防のための保安事項を定める規程かどうかが判断ポイントです。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "法令上、品名の異なる危険物Ａ、Ｂ、Ｃを同一場所で貯蔵する場合の指定数量の倍数を求める計算式として、次のうち正しいものはどれか。",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "異品名を同一場所に貯蔵するときの指定数量倍数（加算方式）の計算式を問う問題です。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "法令上、学校、病院等の建築物等から一定の距離（保安距離）を保たなければならない旨の規定が設けられている施設の組合せで、次のうち正しいものはどれか。",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "学校・病院等との保安距離が必要な施設の組合せを問う問題です。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "法令上、第５種の消火設備のうち、すべての種類の危険物の消火に適応するものは、次のうちどれか。",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "第5種消火設備のうち、危険物の種類を問わず適応できるものを選ぶ問題です。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "法令上、製造所の位置、構造及び設備の基準について、次のうち誤っているものはどれか。",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "製造所の位置・構造・設備基準のうち、誤った記述を選ぶ問題です。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "法令上、製造所の設置等について、次のうち誤っているものはどれか。",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "製造所の設置・変更・完成検査の手続に関する誤肢を選ぶ問題です。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "法令上、市町村長等が製造所等の使用停止を命ずることができる事由について、次のＡ～Ｄのうち、該当しないものすべてを掲げているものはどれか。Ａ 予防規程を定めなければならない製造所等において、予防規程を定めていないとき。Ｂ 危険物保安監督者を定めなければならない製造所等において、危険物保安監督者を定めていないとき。Ｃ 自衛消防組織を置かなければならない製造所等において、自衛消防組織を置いていないとき。Ｄ 危険物施設保安員を定めなければならない製造所等において、危険物施設保安員を定めていないとき。",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "使用停止命令の事由のうち、該当しないもの（Ａ〜Ｄ）の組合せを選ぶ問題です。"
+        "text": "数値・期限・例外規定は暗記だけでは混同しやすいため、一覧表や比較表で整理する学習法が有効です。"
       }
     }
   ]
 }
 </script>
-<link rel="stylesheet" href="site-theme.css">
 </head>
 <body>
 
@@ -1543,8 +1271,9 @@ body.is-solving .site-footer{display:none!important}
   <nav class="topnav">
     <div class="topnav-inner">
       <a class="topnav-logo" href="/" onclick="event.preventDefault();gotoPage('quiz-start')" aria-label="乙4マスター、危険物取扱者試験（乙種第4類）対策のトップへ">
-        <div class="topnav-logo-mark" aria-hidden="true"><span class="logo-mark-line">乙4</span><span class="logo-mark-line logo-mark-line--sub">マスター</span></div>
+        <div class="topnav-logo-mark logo-mark--narrow" aria-hidden="true"><span class="logo-mark-line">Sample</span><span class="logo-mark-line logo-mark-line--sub">マスター</span></div>
         <span class="topnav-logo-stack">
+          <span class="topnav-logo-text">乙4マスター</span>
           <span class="topnav-logo-sub">危険物取扱者試験（乙種第4類）</span>
         </span>
       </a>
@@ -1819,7 +1548,6 @@ body.is-solving .site-footer{display:none!important}
           <button class="btn-ghost"   onclick="gotoPage('quiz-start')">他の問題を解く</button>
           <button class="btn-primary" onclick="beginQuiz()">もう1セット</button>
         </div>
-        <div id="score-paid-mock-wrap" class="score-paid-mock-wrap" hidden></div>
       </div>
     </div>
 
@@ -1993,7 +1721,7 @@ body.is-solving .site-footer{display:none!important}
           <li>契約・実務（契約・実務論点・応用論点・重要事項説明など）</li>
           <li>設備・その他（設備・その他・不動産証券化など）</li>
         </ul>
-        <p style="margin-top:24px;font-size:14px;line-height:2"><a href="about.html">このサイトについて</a> ・ <a href="q/index.html">過去問一覧</a> ・ <a href="terms/index.html">用語集</a> ・ <a href="articles/index.html">試験ガイド</a> ・ <a href="related-sites.html">関連リンク</a> ・ <a href="privacy.html">プライバシー</a> ・ <a href="https://kikenbutsu-master.jp/" target="_blank" rel="noopener noreferrer">お問い合わせ</a></p>
+        <p style="margin-top:24px;font-size:14px;line-height:2"><a href="about.html">このサイトについて</a> ・ <a href="q/index.html">過去問一覧</a> ・ <a href="q/practice/index.html">実践演習一覧</a> ・ <a href="q/ichimon/index.html">一問一答一覧</a> ・ <a href="terms/index.html">用語集</a> ・ <a href="articles/index.html">試験ガイド</a> ・ <a href="related-sites.html">関連リンク</a> ・ <a href="privacy.html">プライバシー</a> ・ <a href="https://kikenbutsu-master.jp/" target="_blank" rel="noopener noreferrer">お問い合わせ</a></p>
       </div>
     </noscript>
 
@@ -2067,14 +1795,13 @@ function applyCsvImportedQuestions() {
     if (q.year != null && q.year !== '') yset.add(q.year);
   });
   YEARS = Array.from(yset).sort(function (a, b) { return b - a; });
-  if (typeof quizState !== 'undefined' && quizState) quizState.years = YEARS.slice();
-  if (typeof buildYearGrid === 'function') buildYearGrid();
-  if (typeof updateQuizStartModeStats === 'function') updateQuizStartModeStats();
-  if (typeof renderDailyStatus === 'function' && document.getElementById('page-quiz-start')?.classList.contains('active')) {
-    renderDailyStatus();
-  }
 }
 </script>
+<link rel="stylesheet" href="site-theme.css">
+<script src="site-config.js"></script>
+<script src="exam-site-data-practice.js"></script>
+<script src="exam-site-data-past.js"></script>
+<script src="exam-site-data-ichimondou.js"></script>
 <script>
 
 // ===== GAMIFICATION ENGINE =====
@@ -2520,9 +2247,8 @@ function getMissionProgress(mission, u){
     return {cur:Math.min(best, mission.target), target:mission.target};
   }
   if(mission.type==='field'){
-    const rows=(typeof QUESTIONS!=='undefined'&&Array.isArray(QUESTIONS))?QUESTIONS:[];
     const cur=todayAnswers.filter(([qid])=>{
-      const q=rows.find(qq=>qq.id==qid);
+      const q=QUESTIONS.find(qq=>qq.id==qid);
       return q&&q.field===mission.field;
     }).length;
     return {cur, target:mission.target};
@@ -2601,12 +2327,17 @@ function renderDailyStatus(){
       <div class="mission-prog${done?' done':''}">${prog.cur}/${prog.target}</div>
     </div>`;
   }).join('');
+  const allMissionsDone=missions.every(m=>{
+    const prog=getMissionProgress(m,u);
+    return prog.cur>=prog.target;
+  });
+  const missionShareHTML=allMissionsDone?`<div class="mission-share-row"><button type="button" class="mission-card-share" onclick="shareMissionToX()"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.749l7.73-8.835L1.254 2.25H8.08l4.259 5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>Xに投稿する</button></div>`:'';
 
   const spotlight = window._missionSpotlightPending ? ' spotlight' : '';
   const calloutHTML = window._missionSpotlightPending
     ? `<div class="mission-callout"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v7"/><path d="M5 6l3 3 3-3"/><path d="M3 13h10"/></svg><span>今日のミッションはこれです。まず1つ、解いてみよう！</span></div>`
     : '';
-  wrap.innerHTML=`${statusHTML}<div class="mission-card${spotlight}" id="today-mission-card">${calloutHTML}<div class="mode-card-header"><div class="mode-icon-wrap"><svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="#444" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M8 3l5 5-5 5"/></svg></div><div class="mode-card-title">今日のミッション</div></div>${mHTML}</div>`;
+  wrap.innerHTML=`<div class="mission-card${spotlight}" id="today-mission-card">${calloutHTML}<div class="mode-card-header"><div class="mode-icon-wrap"><svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="#444" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M8 3l5 5-5 5"/></svg></div><div class="mode-card-title">今日のミッション</div></div>${mHTML}${missionShareHTML}</div>`;
   if(window._missionSpotlightPending){
     window._missionSpotlightPending=false;
     setTimeout(()=>{
@@ -2811,7 +2542,7 @@ function buildYearHistoryHTML(q){
 
 // ===== STATE =====
 let currentUser = null, db = {};
-let quizState = {mode:'past',fields:FIELDS.map(f=>f.id),years:[],count:10,order:'seq',queue:[],idx:0,startTime:0,sessionResults:[],scoreReplayMode:false};
+let quizState = {mode:'past',fields:FIELDS.map(f=>f.id),years:[...YEARS],count:10,order:'seq',queue:[],idx:0,startTime:0,sessionResults:[],scoreReplayMode:false};
 
 // Storage: localStorage (works in real browsers / GitHub Pages)
 var _memStore = {};
@@ -4179,7 +3910,6 @@ function renderDash(){
 }
 function renderTrendChart(svgId,sessions){
   const svg=document.getElementById(svgId); if(!svg)return;
-  requestAnimationFrame(function(){
   const W=svg.parentElement.offsetWidth||700,H=220;
   svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
   svg.setAttribute('preserveAspectRatio','none');
@@ -4216,7 +3946,6 @@ function renderTrendChart(svgId,sessions){
   ${pts.map(p=>`<circle cx="${p.x}" cy="${p.y}" r="4" fill="#fff" stroke="#333" stroke-width="2"/>`).join('')}
   ${dataLabels}
   ${dateLabels}`;
-  });
 }
 
 // ===== QUIZ START =====
@@ -4249,8 +3978,7 @@ function buildYearGrid(){
 function getPastOnlyYearsSorted(){
   const origSet=(typeof CSV_IMPORTED_PRACTICE_POOL_YEARS!=='undefined'&&Array.isArray(CSV_IMPORTED_PRACTICE_POOL_YEARS))
     ? new Set(CSV_IMPORTED_PRACTICE_POOL_YEARS):new Set();
-  const rows=(typeof QUESTIONS!=='undefined'&&Array.isArray(QUESTIONS))?QUESTIONS:[];
-  return [...new Set(rows.map(q=>q.year).filter(y=>y!=null&&!origSet.has(y)))].sort((a,b)=>b-a);
+  return [...new Set(QUESTIONS.map(q=>q.year).filter(y=>y!=null&&!origSet.has(y)))].sort((a,b)=>b-a);
 }
 function toggleYear(y){
   const idx=quizState.years.indexOf(y);
@@ -4366,10 +4094,8 @@ function allPracticeQuestions(){
 }
 function findQuestionById(qid){
   const s=String(qid);
-  if(typeof QUESTIONS!=='undefined'&&Array.isArray(QUESTIONS)){
-    const hit=QUESTIONS.find(qq=>String(qq.id)===s);
-    if(hit)return hit;
-  }
+  const hit=QUESTIONS.find(qq=>String(qq.id)===s);
+  if(hit)return hit;
   if(typeof PRACTICE_QUESTIONS==='undefined')return null;
   for(const lv of [1,2,3]){
     const q=(PRACTICE_QUESTIONS[lv]||[]).find(qq=>String(qq.id)===s);
@@ -4689,9 +4415,8 @@ function showNextBtn(show, cb, label){
     const isMobile = window.matchMedia && window.matchMedia('(max-width: 700px)').matches;
     el.textContent = isMobile ? (label || '次へ →') : `${label || '次へ →'}  Enter`;
     el.classList.add('show');
-    // re-trigger animation（layout read を避ける）
-    el.style.animation='none';
-    requestAnimationFrame(function(){ el.style.animation=''; });
+    // re-trigger animation
+    el.style.animation='none'; el.offsetHeight; el.style.animation='';
   } else {
     el.classList.remove('show');
     _nextFloatCallback = null;
@@ -4763,9 +4488,12 @@ function checkMissionAllComplete(){
     const p = getMissionProgress(m, u);
     return p.cur >= p.target;
   });
-  if(allDone && !_missionWasAllDone){
-    showMissionPopup();
-    _missionWasAllDone = true;
+  if(allDone){
+    renderDailyStatus();
+    if(!_missionWasAllDone){
+      showMissionPopup();
+      _missionWasAllDone = true;
+    }
   }
 }
 
@@ -4950,13 +4678,27 @@ function tryOpenNextBadgeEarnPopup(){
 }
 
 const SHARE_URL = (SITE_CONFIG.siteOrigin || 'https://kikenbutsu-master.jp');
-const SHARE_TWITTER_HASHTAGS = [(SITE_CONFIG.examName || '危険物取扱者試験（乙種第4類）').replace(/[\s（）()]/g,''), '資格学習', (SITE_CONFIG.brandName || '乙4マスター').replace(/[\s（）()]/g,'')].join(',');
+function twitterHashtagToken(value){
+  return String(value||'').trim().replace(/#/g,'').replace(/\s+/g,'');
+}
+function getShareTwitterHashtags(){
+  const tags=[
+    twitterHashtagToken(SITE_CONFIG.examShortName||SITE_CONFIG.examAbbrev||SITE_CONFIG.brandMark),
+    twitterHashtagToken(SITE_CONFIG.examName),
+    twitterHashtagToken(SITE_CONFIG.brandName),
+    '資格マスターテンプレ',
+  ].filter(Boolean);
+  return [...new Set(tags)].join(',');
+}
+function getSiteShareLabel(){
+  return `${SITE_CONFIG.brandName||'乙4マスター'}（${SITE_CONFIG.examName||'危険物取扱者試験（乙種第4類）'}）`;
+}
 /** X Web Intent 用：本文・公式URL・ハッシュタグをパラメータで渡す（投稿欄に読み込まれる） */
 function openTwitterShareIntent(bodyCore){
   const params=new URLSearchParams();
   params.set('text', bodyCore.trim());
   params.set('url', SHARE_URL);
-  params.set('hashtags', SHARE_TWITTER_HASHTAGS);
+  params.set('hashtags', getShareTwitterHashtags());
   window.open(`https://twitter.com/intent/tweet?${params.toString()}`,'_blank','noopener,noreferrer');
 }
 let lastSessionShareData = null;
@@ -5486,7 +5228,7 @@ function saveBadgeShareImage(){
 async function shareMissionToX(){
   const now = new Date();
   const dateStr = `${now.getMonth()+1}月${now.getDate()}日`;
-  openTwitterShareIntent(`乙4マスター（危険物取扱者試験（乙種第4類））で今日のミッションをすべてクリアしました。\n${dateStr}も合格を目指して学習を続けています。`);
+  openTwitterShareIntent(`${getSiteShareLabel()}で今日のミッションをすべてクリアしました。\n${dateStr}も合格を目指して学習を続けています。`);
 }
 function buildKaisetsu(k, q){
   if(!k) return '';
@@ -6579,21 +6321,16 @@ loadDB();
     el.textContent=box.textContent;
     el.style.display='block';
   });
-  let _tipMoveRaf=0;
   document.addEventListener('mousemove',function(e){
     if(el.style.display==='none') return;
     const x=e.clientX, y=e.clientY;
-    if(_tipMoveRaf) cancelAnimationFrame(_tipMoveRaf);
-    _tipMoveRaf=requestAnimationFrame(function(){
-      _tipMoveRaf=0;
-      const w=el.offsetWidth, h=el.offsetHeight;
-      const vw=window.innerWidth, vh=window.innerHeight;
-      let left=x+12, top=y-h-10;
-      if(left+w>vw-8) left=x-w-12;
-      if(top<8) top=y+16;
-      el.style.left=left+'px';
-      el.style.top=top+'px';
-    });
+    const w=el.offsetWidth, h=el.offsetHeight;
+    const vw=window.innerWidth, vh=window.innerHeight;
+    let left=x+12, top=y-h-10;
+    if(left+w>vw-8) left=x-w-12;
+    if(top<8) top=y+16;
+    el.style.left=left+'px';
+    el.style.top=top+'px';
   });
   document.addEventListener('mouseout',function(e){
     if(e.target.closest('.tip-icon')) el.style.display='none';
@@ -7176,11 +6913,10 @@ function getWeakUnlocked(){
 function injectQuizStartEnhancements(){
   if(typeof window.updateQuizStartModeStats==='function') window.updateQuizStartModeStats();
   const startEl=document.getElementById('page-quiz-start');
-  if(!startEl) return;
+  if(!startEl||startEl.querySelector('#weak-mode-inject')) return;
   const modeList=startEl.querySelector('.mode-list-v2');
   if(!modeList) return;
 
-  if(!startEl.querySelector('#weak-mode-inject')){
   const unlocked=getWeakUnlocked();
   const u=typeof getUserData==='function'?getUserData():null;
   const total=Object.keys(u?.answers||{}).length;
@@ -7214,67 +6950,7 @@ function injectQuizStartEnhancements(){
     </div>`;
   }
   modeList.appendChild(weakCard);
-  }
-
-  if(!startEl.querySelector('#paid-mock-inject')){
-    injectPaidMockExamCard(modeList);
-  }
 }
-
-function getPaidMockExamConfig(){
-  const cfg=(window.SITE_CONFIG&&window.SITE_CONFIG.paidMockExam)||{};
-  return {
-    url: String(cfg.url||'https://note.com/shikaku_master/n/naae31abe01ed').trim(),
-    modeTitle: String(cfg.modeTitle||'予想模試（PDF・2回分）').trim(),
-    modePurpose: String(cfg.modePurpose||'本番と同じ35問・2時間で実力確認したい').trim(),
-    priceLabel: String(cfg.priceLabel||'¥590').trim(),
-    footnote: String(cfg.footnote||'※ note で販売する有料コンテンツ（¥590）です。サイト内の無料演習とは別商品です。').trim(),
-  };
-}
-
-function injectPaidMockExamCard(modeList){
-  const m=getPaidMockExamConfig();
-  if(!m.url) return;
-  const wrapper=document.createElement('div');
-  wrapper.id='paid-mock-inject';
-  const label=`${m.modeTitle}（有料・note・${m.priceLabel}）`;
-  wrapper.innerHTML=`
-    <a class="mode-card-v2 mode-card-v2--paid" href="${escapeAttr(m.url)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeAttr(label)}">
-      <div class="mode-num-v2 mode-num-v2--paid">05</div>
-      <div class="mode-body-v2">
-        <div class="mode-purpose-v2 mode-purpose-v2--paid">${escapeAttr(m.modePurpose)} <span class="mode-paid-tag">有料 ${escapeAttr(m.priceLabel)}</span></div>
-        <div class="mode-title-v2">${escapeAttr(m.modeTitle)}</div>
-      </div>
-      <div class="mode-arrow-v2 mode-arrow-v2--ext" aria-hidden="true">↗</div>
-    </a>
-    <p class="mode-paid-footnote">${escapeAttr(m.footnote)}</p>`;
-  modeList.appendChild(wrapper);
-}
-
-function renderScorePaidMockPromo(){
-  const wrap=document.getElementById('score-paid-mock-wrap');
-  if(!wrap) return;
-  const m=getPaidMockExamConfig();
-  if(!m.url){
-    wrap.hidden=true;
-    wrap.innerHTML='';
-    return;
-  }
-  const label=`${m.modeTitle}（有料・note・${m.priceLabel}）`;
-  wrap.hidden=false;
-  wrap.innerHTML=`
-    <p class="score-paid-mock-lead">セット演習の次は、<strong>本番同形式の35問</strong>で時間配分を確認しませんか？</p>
-    <a class="score-paid-mock-strip" href="${escapeAttr(m.url)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeAttr(label)}">
-      <span class="score-paid-mock-strip-tag">有料</span>
-      <span class="score-paid-mock-strip-body">
-        <span class="score-paid-mock-strip-title">${escapeAttr(m.modeTitle)}</span>
-        <span class="score-paid-mock-strip-meta">35問×2 · ${escapeAttr(m.priceLabel)} · note</span>
-      </span>
-      <span class="score-paid-mock-strip-cta">詳細 ↗</span>
-    </a>
-    <p class="score-paid-mock-footnote">${escapeAttr(m.footnote)}</p>`;
-}
-window.renderScorePaidMockPromo=renderScorePaidMockPromo;
 
 // 復習ページ：旧レイアウトで #review-list の外にあった SRS ノードを除去
 function injectReviewEnhancements(){
@@ -7306,13 +6982,10 @@ window.gotoPage=function(id){
   if(_origGotoPage) _origGotoPage.apply(this,arguments);
   setTimeout(()=>{
     if(id==='quiz-start'){
-      if(typeof window.renderDailyStatus==='function') window.renderDailyStatus();
       if(typeof window.updateQuizStartModeStats==='function') window.updateQuizStartModeStats();
       // 弱点カードが既にある場合は解放状態が変わっていれば再描画
-      const existingWeak=document.getElementById('weak-mode-inject');
-      if(existingWeak) existingWeak.remove();
-      const existingPaid=document.getElementById('paid-mock-inject');
-      if(existingPaid) existingPaid.remove();
+      const existing=document.getElementById('weak-mode-inject');
+      if(existing) existing.remove();
       injectQuizStartEnhancements();
     }
     if(id==='review'){
@@ -7332,7 +7005,7 @@ window.gotoPage=function(id){
 const _origShowScore2=window.showScore;
 window.showScore=function(){
   if(_origShowScore2) _origShowScore2.apply(this,arguments);
-  renderScorePaidMockPromo();
+  // スコア表示後に弱点カードを再評価（次のquiz-start遷移時に反映済みのため不要だが念のため）
 };
 
 // =====================================================================
@@ -7365,15 +7038,8 @@ if(typeof getUserData==='function'){
 
 })();
 </script>
-<div id="glossary-list">
-<script type="application/json" id="glos-article-slug-map-json">{"pH": "g-2516fdcefd870beb", "ひっかけ問題": "g-a48bc102020892e6", "ひっかけ対策": "g-88aeb49b65acb74c", "よくある混同論点": "g-b4a4e1395de2b93b", "アセトアルデヒド": "g-f81b77b6320c4153", "アセトン": "g-3126b4534db7cde1", "アニリン": "g-6fc8ae2882738a9f", "アルカリの性質": "g-baa1263a70affb9f", "アルコール類": "g-020fe2f694a0518c", "アルコール類の基礎": "g-6a8d15d8b048075e", "アルコール類の性質": "g-9e21ba8cee3bbb23", "イオン": "g-3d6f57af7b121842", "エタノール": "g-c3135c1be0e690f0", "エチレングリコール": "g-be042cb38b189199", "ガソリン": "g-28e033305cab36b7", "キシレン": "g-afbc6ffd23f61fb9", "キシレン・酢酸などの第二石油類": "g-fd1aedc2118562c9", "クレオソート油": "g-a887a63c9e92a0b7", "クレオソート油・アニリン・エチレングリコール": "g-b48f309bfd576db1", "グリセリン": "g-51b38ab61241c8ec", "ジエチルエーテル": "g-ecfab27366fe419e", "セルフ式給油取扱所の基準": "g-2225d01a5462b913", "タンクローリー": "g-1b354eb979f450e6", "タンク貯蔵所": "g-13889194b597ac6c", "トルエン": "g-e309e3c3a8c354bb", "バックドラフト": "g-cce82434a82e3724", "フラッシュオーバー": "g-933ae38f6c3a8c15", "ベンゼン": "g-c44f7a0256502f78", "ベンゼン・トルエン": "g-db6bfd1dfdd93927", "メタノール": "g-eae82610cd09e687", "一問一答": "g-89f8df4eca282486", "一般取扱所": "g-57f96fab6b45b8d1", "一般取扱所の基準": "g-39fceb32ac488f17", "一酸化炭素": "g-7c7723b6e8746d89", "上限界": "g-c9ff983a8adb78fb", "下限界": "g-a884c46c08f9aa9f", "下限界・上限界": "g-6e830edc0b072c8b", "不完全燃焼": "g-eae59e89e6e74338", "不飽和炭化水素": "g-507fe0955d6df859", "丙種の違い": "g-caed0e6d18435f9d", "丙種危険物取扱者": "g-f6fefa16c4eff345", "中和": "g-d87b2cc6d301fcb2", "中和反応": "g-dc7743a5ee6a81ab", "乙種危険物取扱者": "g-4aca822d21e0e779", "乙種第4類": "g-e16f00a6a9faa926", "乾性油": "g-61aa0f0d8da76047", "乾性油・自然発火": "g-508555302bdc5a3b", "乾燥と帯電": "g-ebdeb6d80d854733", "予防規程": "g-28851e22ecbb12aa", "予防規程の作成": "g-c14237da4910852f", "予防規程の作成・認可": "g-ac4d6ef6da5cc6fc", "事故時対応": "g-0bf91cde184cfa3a", "二硫化炭素": "g-ae2269eb1c2a3957", "二酸化炭素": "g-5f6a09685bcbf735", "二酸化炭素消火": "g-ed11c951e9cc0512", "仮使用": "g-a504505c4c253634", "仮使用の承認": "g-ee57a41e89463843", "仮取扱い": "g-4c9f0d48a68c8139", "仮貯蔵": "g-5627c82fbb0666e9", "仮貯蔵・仮取扱い": "g-8904605c10f508f5", "位置の基準": "g-2d2ec001fde83843", "体積の計算": "g-ad6eb78f4e72fef2", "使用停止": "g-cd0e41e275d71892", "保安員": "g-08185bb9f42ecd65", "保安検査": "g-dff91d30bab2b77e", "保安検査の対象": "g-6932116d425c8d4e", "保安講習": "g-b6947476bdcb0459", "保安講習の対象": "g-f1c9278219c4934b", "保安講習の対象・時期": "g-67e533494032db3b", "保安距離": "g-79b5894f2d674643", "保有空地": "g-7901ee8f077e8a53", "倍数計算": "g-6298a7edd2edf7c0", "元素と化合物": "g-a5cea864f4526cb6", "免状": "g-4e43b848d36fbc49", "免状の交付": "g-26cce4627e2c69da", "免状の交付・書換え・再交付": "g-2fe4b5148543f318", "公式情報": "g-2b7a7f9cd852daf4", "再交付": "g-253b2442740ff107", "冷却": "g-01d8aa9cab7abbb7", "冷却消火": "g-2536b59fce636051", "出題範囲": "g-e08605c23ccd3f4e", "分類と代表物質の対応": "g-cd4a27edcb0631e9", "分類比較": "g-ee86ed632bcf10f9", "別表第三": "g-ef66a29b0efa7a1a", "動植物油": "g-a9c52904fdcc2372", "動植物油類": "g-58d66b8d090ff2a8", "動植物油類の性質": "g-71c8331e3d2430ed", "化合物": "g-956dd5bf2e97f5ce", "化学反応": "g-3a01eefa4b07beff", "化学反応式": "g-d5922631a7818c0e", "化学変化と物理変化": "g-79fd34ddfd7d2e45", "単体・化合物・混合物": "g-ecad8b1b211ed7c3", "危険物": "g-d2737df344542542", "危険物の分類": "g-736a3a7a24812554", "危険物の定義": "g-62e43ee9bbbeaf7f", "危険物の規制に関する政令": "g-4ae46759e72ca651", "危険物の貯蔵": "g-7a04111262b21cfc", "危険物の貯蔵・取扱いの共通基準": "g-73c50edd4ccbcbb6", "危険物保安監督者": "g-bd526803d75a767e", "危険物保安監督者の業務": "g-9c34b620b4922d6d", "危険物保安監督者選任": "g-36325c16a18e86a4", "危険物保安監督者選任・解任届出": "g-bf24f34ad76456b2", "危険物保安統括管理者": "g-004f1a84aa2bed0c", "危険物取扱者": "g-ce1ae56115fffc1b", "危険物各類の共通性状と第4類の位置づけ": "g-26c265fffbbbfd8e", "危険物施設保安員": "g-07bf28da511227f4", "原子・分子": "g-53e564b9a8313029", "取扱いの共通基準": "g-9f647fec269cc74a", "取扱い注意点": "g-bcd46d264ee4874d", "取扱所": "g-f7e02d61addcd2b5", "取扱所の種類全体": "g-7da9d442f8e31440", "取扱所基準": "g-d98d0783257587fc", "受験資格": "g-6f2c21704a80c8fe", "可燃性": "g-b3df41edd3850e98", "可燃性固体": "g-b07b19a7ebbe6dd1", "可燃性蒸気": "g-198c5f22e0b9f48d", "可燃性蒸気と空気の混合": "g-32690fe0972f6ae3", "可燃性蒸気と空気の混合危険": "g-5e468b38a82f8fe6", "可燃物": "g-147aee947262440b", "可燃物・酸素供給源・点火源": "g-3082b6dc635784ff", "合格基準": "g-c9ca100b91588187", "吸熱反応": "g-e45402f82f86e599", "命令・許可取消し・使用停止": "g-8d96046d2fa57e4c", "品名": "g-b3441f56a94491f5", "品名・数量・指定数量倍数の変更届出": "g-c7364b5f79aa306b", "固体・液体・気体": "g-3891b2e5565d5b60", "地下タンク貯蔵所の基準": "g-1a786fba9c553b38", "変更許可": "g-df0f688dd42ad2cf", "学習記録": "g-c23fa29c1e65e7b4", "完全燃焼": "g-08df04195987f9e1", "完全燃焼と不完全燃焼": "g-30a9d257194b5e46", "完全燃焼・不完全燃焼": "g-96175f3735af9012", "完成検査": "g-7ed5cf46247b0c14", "完成検査前検査": "g-f91ca6877066db37", "定期点検": "g-7edd707febcad3d5", "定期点検が必要な施設": "g-5940ce910b70bf35", "密度": "g-f2aaf7a217e6c4ea", "密度・比重": "g-979caa925b5a7fe4", "密度・質量・体積の計算": "g-f9b7d8e23247f4eb", "密閉空間火災": "g-ac06aee7b3750cbe", "対流": "g-b26e5c69c6f8803e", "届出": "g-13b2059f251226c8", "屋内タンク貯蔵所の基準": "g-03e3736be388603e", "屋内貯蔵所": "g-d8ecc1af08bc20dc", "屋内貯蔵所の基準": "g-40f80429936da196", "屋外タンク貯蔵所": "g-e5b88f5a3caf0c98", "屋外タンク貯蔵所の基準": "g-42c2c8c42560b27f", "屋外貯蔵所の基準": "g-1a61b296f1994c3b", "廃止届出": "g-27ec54a538131d10", "引渡し": "g-b2e58eb4aae2801f", "引渡しの届出": "g-51bb0c59e2b1ae4e", "引火・発火・自然発火の違い": "g-cf46ef636a3a6fc3", "引火性": "g-cd6c9fe941b222ef", "引火性液体": "g-7de0aa2bef285025", "引火性液体としての基本性質": "g-5b65ba9875ca878f", "引火性蒸気": "g-843eedeeedaefe30", "引火点": "g-549da1d4bdfbd867", "引火点による分類": "g-03a7c1db325f26e6", "引火点による分類・比較": "g-1da3c6a5084b3e3e", "復習": "g-e792dcbfcb208321", "性消分野の複合問題": "g-9fcfde074c7d3604", "性状": "g-3a673e0e71da3c95", "抑制消火": "g-efbf5f30cb73557e", "抑制消火・負触媒効果": "g-648422b904ae399e", "指定数量": "g-f7c26f797be2d65a", "指定数量の倍数": "g-d4dee1842b2a0d3e", "指定数量の倍数計算": "g-dadfba55d792f674", "指定数量の意味": "g-57e0943dabc58073", "指定数量倍数の変更届出": "g-bbdacfb92e5ee7cd", "指定数量未満": "g-92e50374f3ea40b5", "指定数量未満の危険物の扱い": "g-29449577b95fdab5", "接地": "g-cedebe7eb830aeaf", "掲示内容": "g-47f8ee2e4a832c7f", "掲示内容・注意事項": "g-69b1732138ea8cee", "掲示板の設置": "g-c4dd1dbf0c56c090", "換気": "g-e0359154b49eb178", "換気・火気管理": "g-a97c616c8d9dda51", "揮発性": "g-67d55f26b179e1c3", "政令": "g-b946ac9e3771cd83", "書換え": "g-614e551f32bae850", "有機化合物": "g-47a7ce0a312d1473", "有機化合物の特徴": "g-5670648d766d1612", "検査": "g-7771bbfef11aac7b", "標識": "g-02fad48e2cac4a45", "標識・掲示板": "g-62971f68b0d00bdf", "標識・掲示板の設置": "g-f70e2789ec84b762", "模擬試験": "g-b4f7ad8251c77aae", "比熱": "g-4cb2861eb3be84e0", "比較表": "g-723a95de2389f0d7", "比重": "g-c4cb9f9801fa85b9", "比重の計算": "g-e51fa3a0a998d6ac", "水による消火が不適切な場合": "g-467df99a6f34b383", "水による消火の特徴": "g-99815a16f4bba4c7", "水上泡消火": "g-d387621832dc971e", "水溶性": "g-5dcd13f8be0e27a2", "水溶性・非水溶性による指定数量差": "g-fa9c69aeff9a3b35", "水溶性・非水溶性の代表例": "g-131db3ea38b92911", "水溶性・非水溶性の基礎": "g-a536e56ef546f0eb", "水溶性・非水溶性の違い": "g-4838179b8b24577c", "水溶性液体": "g-32e33d7bf196ba4f", "沸点": "g-0edee47089c6bc98", "沸点と圧力の関係": "g-3b3498bfbec00068", "沸騰": "g-576355f78c947446", "法令分野の複合": "g-5c8edaadebdb1ed8", "法令分野の複合・ひっかけ問題": "g-1920350aba76cc00", "泡・二酸化炭素・粉末消火剤の基本作用": "g-05dd0b2e8c16058e", "泡・二酸化炭素・粉末消火剤の適用": "g-db16b20b886f4839", "泡消火": "g-8bfa1605b4752b0a", "泡消火剤": "g-a2c44def1746b230", "注意事項": "g-0a98e91fae9a5736", "注水": "g-adc3975449149cd1", "注水消火": "g-cac256eac50e8786", "流出": "g-7fdef5629202c448", "流出時の危険": "g-65edc50b81825b08", "流速・摩擦・乾燥と帯電": "g-57a6aeeb3323898d", "消火": "g-9d35ec94464fdc2d", "消火剤": "g-afd8862dbdb6d7f0", "消火方法": "g-20d3a0473a0be2d2", "消火活動": "g-39e8feebe983d013", "消火設備": "g-1ac275bb2ba6d6a7", "消火設備の区分": "g-dfe190d1107b3320", "消火設備の区分・設置": "g-b7b414d5baf262b0", "消防法": "g-d0fc30b615ea6f72", "消防法上の危険物の定義": "g-7d4c239d7ee2131c", "消防法別表第一": "g-3ed4049c05a436c2", "消防法別表第二": "g-b60f6e043e31daab", "消防法施行令": "g-d017a9e645de6316", "消防署長": "g-2f2f77e967ff5999", "消防長": "g-cab89db8b6689231", "液体の比重と水への浮沈": "g-b02cb0d1623be2a8", "液比重": "g-41413f662342ecbe", "液比重・蒸気比重": "g-b947cfefd254f91b", "混合物": "g-df0711ecfd0c5617", "混載": "g-27e408e2708618e8", "混載制限": "g-08595f8ff1400c0e", "温度と熱量": "g-caa8c015b0033dcb", "漏えい": "g-8be5e28d23aec292", "漏えい・流出時の危険": "g-27f04e588a781fc4", "漏えい対策": "g-1f4b0142e402ffeb", "漏えい防止": "g-30b274f7d74294b5", "漏えい防止堤": "g-8599e2e70c6154df", "潜熱・顕熱": "g-28c602a5957d86de", "潤滑油類": "g-7c5016f11221b5d4", "濃度": "g-aa52a52bb52f2b21", "濃度の計算": "g-09b0571e890aec7d", "火気": "g-1c3786c99e9a59a2", "火気・静電気・漏えい防止": "g-264a372bdcee7686", "火気厳禁": "g-ad16134bc667d29b", "火気管理": "g-19aad2f85a5ef8e6", "火災予防": "g-0e5030e188d11cfc", "灯油": "g-4f78c25bc03bbf1d", "災害発生時の応急措置": "g-c3d8d2c67bdbf656", "炭化水素": "g-ceac36d01815b48c", "点検記録の保存": "g-d05b4a6fcdd84872", "点火源": "g-f0422b59df567eb2", "熱伝導": "g-672f07c31201948e", "熱伝導・対流・放射": "g-55a5ec9a49068c51", "熱容量": "g-1f653677a281d667", "熱膨張": "g-d92b77d15a8c57d3", "熱量の計算": "g-ef026f816b429d6d", "燃焼": "g-d62905239e09e756", "燃焼と酸化": "g-df9e76ea118c87b9", "燃焼の三要素": "g-e6109622b797b0d3", "燃焼の継続": "g-feb2b23917a0af03", "燃焼の継続・連鎖反応の考え方": "g-ce15eb2d06db2715", "燃焼範囲": "g-ddc61277fe681f5e", "燃焼範囲・爆発範囲": "g-ce9bc4fe70478e56", "爆発範囲": "g-223f1a3146f37316", "物質の構成": "g-120bf43ea71b2b2a", "物質の状態": "g-a8b888a389f77b7e", "物質別の消火方法": "g-fd6b659382ec989c", "物質別の火災予防": "g-4a84b626f794e985", "特殊引火物": "g-7607990bb27509c2", "特殊引火物の性質": "g-fe956797ac71fc0a", "用語解説": "g-0f3e5726f0439880", "甲種・乙種・丙種の違い": "g-907f5acc3624f23f", "甲種危険物取扱者": "g-fd87c041ce83dbd7", "発火点": "g-298cc372ab466ad7", "発火点の比較": "g-e2f787995721c1a9", "発熱反応": "g-cbad8f3a97a9e4c9", "発熱反応・吸熱反応": "g-6e00fcecc9190288", "禁水性物質": "g-345a33cbff24644b", "移動タンク貯蔵所": "g-ec74a8227a8a5cfe", "移動タンク貯蔵所による移送基準": "g-5240a1bbbdd1fc93", "移動タンク貯蔵所の基準": "g-0d81e2595fec3ef0", "移動式貯蔵タンク": "g-aebd78022d826ae1", "移送": "g-54446fa8bf3ac637", "移送取扱所": "g-f6de58d9de125be4", "移送取扱所の基準": "g-6fc51cce00b943f7", "積載方法": "g-56107223caed7ca7", "窒息": "g-78691d31479d0499", "窒息消火": "g-df7ceb2f2090fe8a", "第1石油類": "g-cd675d9a890ec037", "第1類〜第6類の分類概要": "g-d746212059ace7bd", "第1類危険物": "g-87c2cc801e8ed00c", "第2石油類": "g-0a385bf90d24323c", "第2類危険物": "g-37eb8f5899e437b5", "第3類危険物": "g-79a8b5dc155cd0d6", "第4石油類": "g-75dbdc299e35f71d", "第4類共通性質": "g-65027569e5a6b496", "第4類危険物": "g-91d8b90d3a79ff57", "第4類危険物の位置づけ": "g-9b71e44e06b904d2", "第4類危険物の共通性質": "g-debedb9427faf56e", "第4類危険物の指定数量": "g-7fe741849b616e70", "第4類危険物の貯蔵": "g-566c0fe4393abe73", "第4類危険物の貯蔵・取扱い注意点": "g-1d8611f9c4e25f76", "第4類火災の消火方法総論": "g-a646f38719fa277f", "第5類危険物": "g-66353e3a849cc868", "第6類危険物": "g-ef6e2282651725b3", "第一石油類": "g-acb691f94d1b5129", "第一石油類の性質": "g-239594a9f175fc04", "第三石油類": "g-ec25be54f4da51b9", "第三石油類の性質": "g-f33bc0bf01f76eb5", "第二石油類": "g-3720cb504b0dc79a", "第二石油類の性質": "g-ae5c29d9a1e1080c", "第四石油類": "g-2d609e018c28bab6", "第四石油類・潤滑油類": "g-c30f28c98a346ea9", "簡易タンク貯蔵所の基準": "g-7034d48dc6f46bcd", "粉末消火": "g-62a0850f59ff12ac", "粉末消火剤": "g-372ddbaf125b39c2", "粉末消火剤の基本作用": "g-e680258a1668878a", "粉末消火剤の適用": "g-45bd2c573db7bcef", "給油": "g-dbc56cabfeb768f6", "給油取扱所": "g-ca1f2cb80b334d1b", "給油取扱所の基準": "g-e3a35da8ab701551", "総合問題": "g-2b44edf611335d4f", "耐アルコール泡": "g-266553a042f5f231", "自己反応性物質": "g-cd97fb62e547ecc4", "自然発火": "g-2868a686c823ac37", "自然発火の違い": "g-41ea0b9ed6e2d940", "自然発火性物質": "g-ea20372482fca5b0", "自衛消防組織": "g-74e69deb835b05c4", "自衛消防組織の設置対象": "g-33cf2e07fdf13830", "自衛消防組織の設置対象・役割": "g-593073db6b716834", "蒸気が空気より重い性質": "g-849e7261af1175cc", "蒸気の危険性比較": "g-fd858c1d1fd16ffd", "蒸気圧": "g-46b4f34f05b0fa95", "蒸気比重": "g-3c33acdde46643c9", "蒸発": "g-4656badf0532454f", "蒸発・沸騰": "g-599482163e99e550", "融点・沸点": "g-bd9426aca94d6ddb", "行政措置": "g-2978a2b6c580d98d", "表示": "g-5445f30bcfe8e9a5", "製造所": "g-0e897d74d1e5c11c", "製造所の定義": "g-b17bf650b4e1d94e", "製造所の定義・特徴": "g-aaeec98474044728", "製造所等": "g-09d830cc4f2c87ed", "製造所等の基本分類": "g-40f3083197110ae2", "製造所等の変更許可": "g-b4678b610a74c328", "製造所等の設置許可": "g-c3fbeae438340e41", "複数危険物を扱う場合の倍数合算": "g-0baffbd58d85015c", "解任届出": "g-d0debf795f98031f", "計算問題": "g-cce91bcac59bae36", "設置許可": "g-10110528646ed02e", "許可": "g-e31c15d89ca9e44d", "許可取消し": "g-15c88d5df6061b96", "試験要項": "g-82005ca36280ab7c", "警報設備": "g-e8535bd251f4d797", "警報設備・避難設備": "g-6c0fc49b137eeb4a", "警報設備等": "g-4558ad6535a17122", "譲渡": "g-8e7728c6100c583e", "譲渡・引渡し": "g-15ee0452cfce4e66", "譲渡・引渡しの届出": "g-5d185aaf5f45d12d", "負触媒効果": "g-a9b1f2e0fa7bef94", "販売取扱所": "g-7dc518fc2140b601", "販売取扱所の基準": "g-ddc6e948c68e0fea", "貯蔵・取扱い": "g-3c31c1853533757f", "貯蔵・取扱基準": "g-2ddf7f6337435515", "貯蔵所": "g-c2a9c48501ca8c4b", "貯蔵所の種類全体": "g-e89cf5c50ede94c8", "貯蔵所基準": "g-bb57d1692fcafee3", "資格要件": "g-15eeecfeda772871", "質量パーセント濃度": "g-5965f59a50a38ca8", "質量保存の法則": "g-d3fd95be74da80fe", "軽油": "g-520d4b744449361e", "連鎖反応の考え方": "g-a8f2fd4128964ea7", "運搬": "g-cdfd540cd9cd1ef3", "運搬容器": "g-93b7840e7bea70f4", "運搬容器・収納・積載方法": "g-880d164ad51cc720", "運搬時の表示": "g-34aa43503ce1e766", "運搬時の表示・混載制限": "g-82111114da3eae00", "過去問": "g-97e2d65b6537105a", "選任": "g-e5472a39247f1abe", "選任が必要な施設": "g-6ef23cd73dd16e0a", "選任が必要な施設・資格要件": "g-d257d0838cddb623", "選任要件": "g-6410d85fa3a27f26", "選任要件・役割": "g-802d72bb96a48924", "避難設備": "g-93f2649efe7be488", "還元": "g-428e9b22b5280b8f", "酢酸": "g-344b5dacab88af62", "酢酸などの第二石油類": "g-cd965637d1245723", "酢酸エチル": "g-618f5dd0a2018364", "酢酸エチルなどの第一石油類": "g-ace82aa12f7fede4", "酸の性質": "g-98cdcc13ee415820", "酸・アルカリ": "g-76721c5d30da90d7", "酸化": "g-d85c2c211ba597de", "酸化・還元": "g-ea1e9e93871a77d0", "酸化性": "g-961a26c503dcb41d", "酸化性固体": "g-e76a98b23a2bc523", "酸化性液体": "g-f44b92ac5a89b664", "酸素": "g-53874fa387dafdf8", "酸素・水素・電子の授受": "g-030c08013e913726", "酸素供給源": "g-6d3188ab905c023b", "酸素濃度と燃焼": "g-393b522dcfbf16dd", "重油": "g-4402dba9fa8ccd8e", "除去消火": "g-3d7cef447afe85ef", "電子の授受": "g-7430d507e684d931", "静電気": "g-c00f6d08e2d8c10f", "静電気による引火危険": "g-9341d6431264e81b", "静電気の発生": "g-8f5a9521feb3970c", "静電気対策": "g-358be138522b825d", "静電気対策・接地": "g-2d00d14f49675fc5", "非水溶性": "g-c5a921ace21ec148", "非水溶性による指定数量差": "g-9abb4315378f710f", "非水溶性の代表例": "g-a192739e36a47626", "非水溶性の基礎": "g-023410c2a294e643", "非水溶性の違い": "g-29d227fbb737113e", "非水溶性液体": "g-43d497401784c5ce", "類別": "g-3b61c9e6fa27ac0b", "飽和炭化水素": "g-1c734916c2c73c2e", "飽和炭化水素・不飽和炭化水素": "g-05a243e6e378776d", "飽和蒸気圧": "g-1c2f988e057f6935"}</script>
-</div>
-<!-- 演習データ（defer: 初回描画をブロックしない。past.js 末尾で applyCsvImportedQuestions を実行） -->
-<script defer src="exam-site-data-practice.js?v=2462eae547a1"></script>
-<script defer src="exam-site-data-past.js?v=7c83d4612c36"></script>
-<script defer src="exam-site-data-ichimondou.js?v=88a8deffa82e"></script>
 <!-- GA4: tools/html_footer.analytics_snippet と同内容（トップ SPA） -->
 <script>window.__GA4_MEASUREMENT_ID__="G-CH3RF5CKLH";</script>
-<script defer src="site-analytics.js?v=ccea805bb1a9"></script>
+<script defer src="site-analytics.js"></script>
 </body>
 </html>
