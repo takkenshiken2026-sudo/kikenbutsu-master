@@ -319,33 +319,58 @@ def _rel_href(rel_path: Path, to_site_rel: str) -> str:
     return footer_href(rel_path, to_site_rel)
 
 
-def brand_head_markup(rel_path: Path, *, site_root: Path | None = None) -> str:
+def favicons_head_markup(rel_path: Path, *, site_root: Path | None = None) -> str:
     if not assets_ready(site_root):
         return ""
     icon16 = html.escape(_rel_href(rel_path, f"{BRAND_DIR}/favicon-16.png"))
     icon32 = html.escape(_rel_href(rel_path, f"{BRAND_DIR}/favicon-32.png"))
     apple = html.escape(_rel_href(rel_path, f"{BRAND_DIR}/apple-touch-icon.png"))
-    og_img = html.escape(public_url(f"{BRAND_DIR}/og-image.png"))
     theme_color = html.escape(theme_ink())
     return f"""{MARKER}
 <link rel="icon" type="image/png" sizes="32x32" href="{icon32}">
 <link rel="icon" type="image/png" sizes="16x16" href="{icon16}">
 <link rel="apple-touch-icon" sizes="180x180" href="{apple}">
-<meta name="theme-color" content="{theme_color}">
-<meta property="og:image" content="{og_img}">
+<meta name="theme-color" content="{theme_color}">"""
+
+
+def social_image_meta_tags(*, site_root: Path | None = None) -> str:
+    if not assets_ready(site_root):
+        return ""
+    og_img = html.escape(public_url(f"{BRAND_DIR}/og-image.png"))
+    alt = html.escape(f"{brand_name()}｜{exam_name()}")
+    return f"""<meta property="og:image" content="{og_img}">
+<meta property="og:image:secure_url" content="{og_img}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta name="twitter:image" content="{og_img}">"""
+<meta property="og:image:type" content="image/png">
+<meta name="twitter:image" content="{og_img}">
+<meta name="twitter:image:alt" content="{alt}">"""
+
+
+def brand_head_markup(rel_path: Path, *, site_root: Path | None = None, include_social_image: bool = True) -> str:
+    block = favicons_head_markup(rel_path, site_root=site_root)
+    if not block:
+        return ""
+    if include_social_image:
+        social = social_image_meta_tags(site_root=site_root)
+        if social:
+            block += "\n" + social
+    return block
+
+
+def _is_spa_index(rel_path: Path, html_text: str) -> bool:
+    return rel_path.name == "index.html" and 'id="page-score"' in html_text
 
 
 def inject_brand_head(html_text: str, rel_path: Path, *, site_root: Path | None = None) -> str:
-    block = brand_head_markup(rel_path, site_root=site_root)
+    include_social = not _is_spa_index(rel_path, html_text)
+    block = brand_head_markup(rel_path, site_root=site_root, include_social_image=include_social)
     if not block:
         return html_text
     if MARKER in html_text:
         html_text = re.sub(
-            rf"{re.escape(MARKER)}[\s\S]*?<meta name=\"twitter:image\" content=\"[^\"]+\">",
-            block.rstrip(),
+            rf"{re.escape(MARKER)}[\s\S]*?(?=\n<!--SITE_VERIFICATION|\n  <meta name=\"viewport\"|\n<meta name=\"viewport\")",
+            block.rstrip() + "\n",
             html_text,
             count=1,
         )
