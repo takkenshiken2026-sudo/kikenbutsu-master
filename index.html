@@ -365,6 +365,7 @@ h2.section-label .tip-icon{width:13px;height:13px;font-size:9px}
 .ichi-score-summary{display:flex;justify-content:center;gap:28px;margin-bottom:24px;flex-wrap:wrap;font-size:14px;color:var(--text2)}
 .ichi-score-summary strong{font-family:var(--mono);font-size:18px;color:var(--text);margin-left:6px}
 .ichi-score-btns{display:flex;flex-direction:column;gap:10px}
+.ichi-score-paid-mock-wrap{text-align:left;max-width:480px;margin:24px auto 0}
 .mode-card-v2{background:#fff;border:1.5px solid var(--border2);border-radius:var(--r2);padding:16px 20px;cursor:pointer;display:flex;align-items:center;gap:16px;box-shadow:var(--sh);transition:all .18s}
 .mode-card-v2:hover{box-shadow:var(--sh2);border-color:var(--text2);transform:translateY(-1px);background:var(--bg3)}
 .mode-num-v2{font-size:12px;font-family:var(--mono);color:var(--text3);flex-shrink:0;width:20px;text-align:center}
@@ -1558,6 +1559,7 @@ body.is-solving .site-footer{display:none!important}
           <button class="btn-ghost" onclick="shareIchiResultToX()" style="font-size:15px;padding:13px">Xに投稿する</button>
           <button class="btn-ghost" onclick="gotoPage('quiz-start')" style="font-size:15px;padding:13px">他の問題を解く</button>
         </div>
+        <div id="ichi-score-paid-mock-wrap" class="score-paid-mock-wrap ichi-score-paid-mock-wrap" hidden></div>
       </div>
     </div>
 
@@ -3745,6 +3747,7 @@ function showIchiScore() {
   const ratio = att > 0 ? s / att : 0;
   const li = Math.min(Math.floor(ratio * (labels.length - 0.001)), labels.length - 1);
   document.getElementById('ichi-score-label').textContent = labels[Math.max(0, li)];
+  renderScorePaidMockPromo({ wrapId: 'ichi-score-paid-mock-wrap', variant: 'ichi' });
 }
 function shareIchiResultToX(){
   const s = ichiState.score;
@@ -7168,8 +7171,17 @@ function injectPaidMockExamCard(modeList){
   modeList.appendChild(wrapper);
 }
 
-function renderScorePaidMockPromo(){
-  const wrap=document.getElementById('score-paid-mock-wrap');
+function scorePaidMockLeadHtml(m, variant){
+  if(variant==='ichi'){
+    return `一問一答の次は、<strong>${escapeAttr(m.scoreLead)}</strong>で本番形式を試しませんか？`;
+  }
+  return `セット演習の次は、<strong>${escapeAttr(m.scoreLead)}</strong>で時間配分を確認しませんか？`;
+}
+
+function renderScorePaidMockPromo(opts){
+  opts=opts||{};
+  const wrapId=opts.wrapId||'score-paid-mock-wrap';
+  const wrap=document.getElementById(wrapId);
   if(!wrap) return;
   const m=getPaidMockExamConfig();
   if(!m.url){
@@ -7178,9 +7190,10 @@ function renderScorePaidMockPromo(){
     return;
   }
   const label=`${m.modeTitle}（有料・note・${m.priceLabel}）`;
+  const leadHtml=opts.leadHtml!=null?opts.leadHtml:scorePaidMockLeadHtml(m,opts.variant);
   wrap.hidden=false;
   wrap.innerHTML=`
-    <p class="score-paid-mock-lead">セット演習の次は、<strong>${escapeAttr(m.scoreLead)}</strong>で時間配分を確認しませんか？</p>
+    <p class="score-paid-mock-lead">${leadHtml}</p>
     <a class="score-paid-mock-strip" href="${escapeAttr(m.url)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeAttr(label)}">
       <span class="score-paid-mock-strip-tag">有料</span>
       <span class="score-paid-mock-strip-body">
