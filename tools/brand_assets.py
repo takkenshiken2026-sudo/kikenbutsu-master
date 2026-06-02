@@ -78,8 +78,24 @@ def brand_assets_root(site_root: Path | None = None) -> Path:
 
 
 def assets_ready(site_root: Path | None = None) -> bool:
+    root = (site_root or resolve_site_root()).resolve()
     d = brand_assets_root(site_root)
-    return (d / "og-image.png").is_file() and (d / "favicon-32.png").is_file()
+    return (
+        (d / "og-image.png").is_file()
+        and (d / "favicon-32.png").is_file()
+        and (d / "favicon-48.png").is_file()
+        and (root / "favicon.ico").is_file()
+    )
+
+
+def write_favicon_ico(dest: Path) -> None:
+    images = [render_favicon(size).convert("RGBA") for size in (16, 32, 48)]
+    images[0].save(
+        dest,
+        format="ICO",
+        sizes=[(img.width, img.height) for img in images],
+        append_images=images[1:],
+    )
 
 
 def _fit_font(draw, text: str, max_w: int, start_size: int, *, bold: bool = True):
@@ -304,12 +320,15 @@ def render_og_image():
 
 
 def write_brand_assets(site_root: Path | None = None) -> Path:
+    root = (site_root or resolve_site_root()).resolve()
     out = brand_assets_root(site_root)
     out.mkdir(parents=True, exist_ok=True)
     render_favicon(16).save(out / "favicon-16.png", optimize=True)
     render_favicon(32).save(out / "favicon-32.png", optimize=True)
+    render_favicon(48).save(out / "favicon-48.png", optimize=True)
     render_favicon(180).save(out / "apple-touch-icon.png", optimize=True)
     render_og_image().save(out / "og-image.png", optimize=True)
+    write_favicon_ico(root / "favicon.ico")
     return out
 
 
@@ -324,9 +343,12 @@ def favicons_head_markup(rel_path: Path, *, site_root: Path | None = None) -> st
         return ""
     icon16 = html.escape(_rel_href(rel_path, f"{BRAND_DIR}/favicon-16.png"))
     icon32 = html.escape(_rel_href(rel_path, f"{BRAND_DIR}/favicon-32.png"))
+    icon48 = html.escape(_rel_href(rel_path, f"{BRAND_DIR}/favicon-48.png"))
     apple = html.escape(_rel_href(rel_path, f"{BRAND_DIR}/apple-touch-icon.png"))
     theme_color = html.escape(theme_ink())
     return f"""{MARKER}
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="48x48" href="{icon48}">
 <link rel="icon" type="image/png" sizes="32x32" href="{icon32}">
 <link rel="icon" type="image/png" sizes="16x16" href="{icon16}">
 <link rel="apple-touch-icon" sizes="180x180" href="{apple}">
