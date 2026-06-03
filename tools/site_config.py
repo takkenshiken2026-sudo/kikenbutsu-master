@@ -379,6 +379,7 @@ def paid_mock_exam() -> dict[str, str] | None:
         "modeTitle",
         "modePurpose",
         "priceLabel",
+        "footnote",
         "scoreMeta",
         "scoreLead",
     ):
