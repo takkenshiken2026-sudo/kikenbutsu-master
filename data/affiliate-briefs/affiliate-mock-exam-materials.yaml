@@ -1,0 +1,70 @@
+slug: affiliate-mock-exam-materials
+theme_key: mock-exam-materials
+search_intent: 危険物乙4の予想問題・一問一答教材を比較して選びたい
+title: 危険物乙4の予想・一問一答3選【ユーキャン・成美堂2026】
+layout: product-comparison
+asp_primary: amazon
+comparison_kind: books
+comparison_title: 予想・一問一答3選（比較）
+price_disclaimer: 価格は執筆時点（2026-06-04）のAmazon税込参考です。試験日程・出題範囲は消防庁（公式）で必ず確認してください。
+products:
+- rank: 1
+  offer_type: book
+  name: ユーキャンの乙種第4類危険物取扱者 予想問題集 第4版
+  publisher: ユーキャン / 自由国民社
+  edition: 第4版
+  price_yen: 1540
+  price_note: Amazon税込参考・送料別
+  pages: 248
+  format: B5判
+  asin: '4426615275'
+  image_file: kikenbutsu-book-4426615275.webp
+  amazon_url: https://www.amazon.co.jp/dp/4426615275/ref=nosim?tag=ue083093-22
+  for_who: 本試験直前に予想問題で形式慣れをしたい人
+  highlights:
+  - ユーキャン速習レッスンとセットの予想問題集
+  - 直前期の本試験形式演習向け
+  - 時間配分の練習に向く
+- rank: 2
+  offer_type: book
+  name: 乙種第4類 危険物取扱者 一問一答問題集
+  publisher: 成美堂出版
+  edition: ''
+  price_yen: 1320
+  price_note: Amazon税込参考・送料別
+  pages: 272
+  format: B5判
+  asin: '4415236944'
+  image_file: kikenbutsu-book-4415236944.webp
+  amazon_url: https://www.amazon.co.jp/dp/4415236944/ref=nosim?tag=ue083093-22
+  for_who: 一問一答形式で短問演習量を確保したい人
+  highlights:
+  - 成美堂の一問一答定番
+  - テキスト読了後の穴埋め演習に向く
+  - 本試験型問題集（別記事）との併用例が多い
+- rank: 3
+  offer_type: book
+  name: 1回で受かる! 乙種第4類危険物取扱者 テキスト&問題集
+  publisher: 成美堂出版
+  edition: ''
+  price_yen: 1540
+  price_note: Amazon税込参考・送料別
+  pages: 256
+  format: B5判
+  asin: '4415237169'
+  image_file: kikenbutsu-book-4415237169.webp
+  amazon_url: https://www.amazon.co.jp/dp/4415237169/ref=nosim?tag=ue083093-22
+  for_who: 短期でテキストと演習を1冊にまとめたい人
+  highlights:
+  - テキスト＆問題集一体型の総仕上げ向け
+  - 超短期学習・直前総復習に向く
+  - 他社教材との併用でも役割分担しやすい
+related_links:
+- exam-overview:試験概要
+- past-question-strategy:過去問活用法
+- pass-score:合格点
+- affiliate-textbooks-recommend:おすすめテキスト
+- affiliate-problem-books:おすすめ問題集
+- study-plan-beginner:初学者向け学習計画
+operator_note: Amazon tag=ue083093-22。4426615275 / 4415236944 / 4415237169。4407365943
+  実教テキストはFAQ言及。2026-06-04 価格確認。

@@ -1,0 +1,70 @@
+slug: affiliate-problem-books
+theme_key: problem-books
+search_intent: 危険物乙4の問題集・過去問を比較して選びたい
+title: 危険物乙4のおすすめ問題集3選【TAC・公論・成美堂2026】
+layout: product-comparison
+asp_primary: amazon
+comparison_kind: books
+comparison_title: おすすめ問題集3選（比較）
+price_disclaimer: 価格・在庫は執筆時点（2026-06-04）のAmazon税込参考です。購入前に販売ページで最新版を確認してください。
+products:
+- rank: 1
+  offer_type: book
+  name: 乙種第4類 危険物取扱者 スピード問題集 第5版
+  publisher: TAC出版
+  edition: 第5版
+  price_yen: 1100
+  price_note: Amazon税込参考・送料別
+  pages: 164
+  format: B5判
+  asin: '4300112568'
+  image_file: kikenbutsu-book-4300112568.webp
+  amazon_url: https://www.amazon.co.jp/dp/4300112568/ref=nosim?tag=ue083093-22
+  for_who: TACスピードテキストとセットで演習したい人
+  highlights:
+  - TACスピードテキストと縦串の問題集
+  - コンパクトで演習量確保に向く
+  - 初学者の演習メイン1冊候補
+- rank: 2
+  offer_type: book
+  name: 乙種4類危険物取扱者試験
+  publisher: 公論出版
+  edition: ''
+  price_yen: 1430
+  price_note: Amazon税込参考・送料別
+  pages: 264
+  format: B5判
+  asin: '4816357610'
+  image_file: kikenbutsu-book-4816357610.webp
+  amazon_url: https://www.amazon.co.jp/dp/4816357610/ref=nosim?tag=ue083093-22
+  for_who: 公論の過去問形式で演習したい人
+  highlights:
+  - 公論出版の乙4過去問定番
+  - 本試験形式に近い演習がしやすい
+  - 他社テキストと併用しやすい
+- rank: 3
+  offer_type: book
+  name: 本試験型 乙種第4類危険物取扱者資格試験問題集
+  publisher: 成美堂出版
+  edition: ''
+  price_yen: 1540
+  price_note: Amazon税込参考・送料別
+  pages: 280
+  format: B5判
+  asin: '4415233619'
+  image_file: kikenbutsu-book-4415233619.webp
+  amazon_url: https://www.amazon.co.jp/dp/4415233619/ref=nosim?tag=ue083093-22
+  for_who: 本試験型の解説付き問題集で演習したい人
+  highlights:
+  - 本試験形式の問題集で演習量確保
+  - 成美堂一問一答（別記事）との併用例が多い
+  - 公論過去問と役割分担しやすい
+related_links:
+- past-question-strategy:過去問活用法
+- past-questions-by-field:分野別演習
+- self-study-start:独学の始め方
+- affiliate-textbooks-recommend:おすすめテキスト
+- affiliate-mock-exam-materials:予想・一問一答
+- pass-score:合格点
+operator_note: Amazon tag=ue083093-22。4300112568 / 4816357610 / 4415233619。4415237169
+  FAQ。
