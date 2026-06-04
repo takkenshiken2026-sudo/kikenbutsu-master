@@ -9,7 +9,7 @@
 
 **5本 batch の手順:** `docs/guide-hand-rewrite-batch-workflow.md`（`exam-site-shell` から sync）
 
-**運用:** 賃管 149/149 完走後に着手。現状 expert_pass **85/130**（exemplar + batch1–17 適用済み）。
+**運用:** 賃管 149/149 完走後に着手。**expert_pass 130/130 完走**（2026-06-04、exemplar + batch1–25）。アフィリエイト10本は ASP 未設定のため対象外。
 
 ```bash
 cd ~/Projects/kikenbutsu-master
