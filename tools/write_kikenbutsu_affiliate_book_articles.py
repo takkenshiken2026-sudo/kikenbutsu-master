@@ -316,7 +316,7 @@ CSV_ROWS = {
             "独学の最初の1冊に絞りたい。"
         ),
         "action_items": "比較表で3冊の違いを確認する;3分野の出題範囲を公式で確認する;過去問で弱点を把握する",
-        "revision_note": f"{PRICE_CHECKED}: Amazon URL確定・本文全面リライト",
+        "revision_note": f"手書きリライト {PRICE_CHECKED}。Amazon URL確定・本文全面リライト。",
         "sections": [
             (
                 "テキスト選びの3つのポイント",
@@ -384,7 +384,10 @@ CSV_ROWS = {
             "exam-overview:試験概要;"
             "affiliate-problem-books:おすすめ問題集;"
             "affiliate-mock-exam-materials:予想・一問一答;"
-            "pass-score:合格点"
+            "pass-score:合格点;"
+            f"{amazon('4300105979')};"
+            f"{amazon('4426615267')};"
+            f"{amazon('4297150964')}"
         ),
         "key_points": (
             "乙種第4類 危険物取扱者 スピードテキスト 第4版;"
@@ -413,7 +416,7 @@ CSV_ROWS = {
             "演習メイン1冊を決めて、3分野の弱点補強計画を立てたい。"
         ),
         "action_items": "3冊の収録形式を比較する;3分野の得点バランスを確認する;弱点分野をテキストで復習する",
-        "revision_note": f"{PRICE_CHECKED}: Amazon URL確定・本文全面リライト",
+        "revision_note": f"手書きリライト {PRICE_CHECKED}。Amazon URL確定・本文全面リライト。",
         "sections": [
             (
                 "問題集選びの基準",
@@ -474,7 +477,10 @@ CSV_ROWS = {
             "self-study-start:独学の始め方;"
             "affiliate-textbooks-recommend:おすすめテキスト;"
             "affiliate-mock-exam-materials:予想・一問一答;"
-            "pass-score:合格点"
+            "pass-score:合格点;"
+            f"{amazon('4300112568')};"
+            f"{amazon('4816357610')};"
+            f"{amazon('4415233619')}"
         ),
         "key_points": (
             "乙種第4類 危険物取扱者 スピード問題集 第5版;"
@@ -504,7 +510,7 @@ CSV_ROWS = {
             "予想問題・一問一答・短期総仕上げ教材を比較し、直前1〜2冊を決めたい。"
         ),
         "action_items": "3冊の用途を比較する;受験予定回を確認する;テキスト・過去問との役割分担を決める",
-        "revision_note": f"{PRICE_CHECKED}: Amazon URL確定・本文全面リライト",
+        "revision_note": f"手書きリライト {PRICE_CHECKED}。Amazon URL確定・本文全面リライト。",
         "sections": [
             (
                 "予想・一問一答の位置づけ",
@@ -567,7 +573,10 @@ CSV_ROWS = {
             "pass-score:合格点;"
             "affiliate-textbooks-recommend:おすすめテキスト;"
             "affiliate-problem-books:おすすめ問題集;"
-            "study-plan-beginner:初学者向け学習計画"
+            "study-plan-beginner:初学者向け学習計画;"
+            f"{amazon('4426615275')};"
+            f"{amazon('4415236944')};"
+            f"{amazon('4415237169')}"
         ),
         "key_points": (
             "ユーキャンの乙種第4類危険物取扱者 予想問題集 第4版;"
@@ -592,7 +601,7 @@ def write_briefs() -> None:
 
 
 def patch_csv() -> None:
-    with CSV_PATH.open(encoding="utf-8", newline="") as f:
+    with CSV_PATH.open(encoding="utf-8-sig", newline="") as f:
         reader = csv.DictReader(f)
         fieldnames = reader.fieldnames
         rows = list(reader)
@@ -633,7 +642,7 @@ def patch_csv() -> None:
             row[f"faq_{i}_answer"] = ""
         print(f"patched CSV row: {slug}")
 
-    with CSV_PATH.open("w", encoding="utf-8", newline="") as f:
+    with CSV_PATH.open("w", encoding="utf-8-sig", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames, lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
