@@ -16,22 +16,19 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
+from tools.rewrite_guide_boilerplate import _csv_fieldnames  # noqa: E402
+
 TODAY = date.today().isoformat()
-
-
-def _csv_fieldnames(initial: list[str], rows: list[dict[str, str]]) -> list[str]:
-    names = list(initial)
-    for row in rows:
-        for key in row:
-            if key in names:
-                continue
-            if key == "faq_3_question" and "faq_3_answer" in names:
-                names.insert(names.index("faq_3_answer"), key)
-            else:
-                names.append(key)
-    return names
-
 DEFAULT_REVISION = f"{TODAY}: 手書きリライト"
+
+
+def normalize_batch_value(value: object) -> str:
+    """batch REWRITES の section 本文など。tuple/list は連結（カンマ付き () 誤り対策）。"""
+    if value is None:
+        return ""
+    if isinstance(value, (tuple, list)):
+        return "".join(str(part) for part in value)
+    return str(value)
 
 
 def load_rewrites_module(path: Path) -> ModuleType:
@@ -62,8 +59,7 @@ def apply_rewrites(
         if slug not in rewrites:
             continue
         patch = rewrites[slug]
-        if "revision_note" not in patch:
-            row["revision_note"] = revision
+        row["revision_note"] = revision
         row["fact_checked_at"] = TODAY
         row["last_reviewed_at"] = TODAY
         row["source_checked_at"] = TODAY
@@ -71,7 +67,7 @@ def apply_rewrites(
         if "手書きリライト" not in note:
             row["original_note"] = f"手書きリライト {TODAY}。" + (note if note else "")
         for key, value in patch.items():
-            row[key] = value
+            row[key] = normalize_batch_value(value)
         patched += 1
     fieldnames = _csv_fieldnames(fieldnames, rows)
     if patched and not dry_run:

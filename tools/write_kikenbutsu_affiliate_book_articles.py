@@ -407,7 +407,7 @@ CSV_ROWS = {
         "lead": (
             "乙4試験では、問題集・過去問の演習量が得点安定の鍵です。"
             "本記事では2026年度版の問題集3冊を、収録形式・解説量・テキストとの相性で比較します。"
-            "価格は購入前にAmazonで必ずご確認ください。",
+            "価格は購入前にAmazonで必ずご確認ください。"
         ),
         "priority": "365",
         "original_note": "Amazon tag=ue083093-22。4300112568 / 4816357610 / 4415233619。",
@@ -501,7 +501,7 @@ CSV_ROWS = {
             "乙4試験の直前期は、予想問題で時間配分を確認し、"
             "一問一答で頻出論点の穴埋めをするフェーズです。"
             "本記事では予想・一問一答系3冊を比較します。"
-            "試験日程・出題範囲は必ず消防庁（公式）で確認してください。",
+            "試験日程・出題範囲は必ず消防庁（公式）で確認してください。"
         ),
         "priority": "360",
         "original_note": "Amazon tag=ue083093-22。4426615275 / 4415236944 / 4415237169。",
@@ -616,7 +616,7 @@ def patch_csv() -> None:
         cfg = CSV_ROWS[slug]
         row["title"] = cfg["title"]
         row["meta_description"] = cfg["meta_description"]
-        row["lead"] = cfg["lead"]
+        row["lead"] = cfg["lead"] if isinstance(cfg["lead"], str) else "".join(cfg["lead"])
         row["priority"] = cfg["priority"]
         row["original_note"] = cfg["original_note"]
         row["user_intent"] = cfg["user_intent"]
