@@ -52,7 +52,25 @@ def _comma_list_items(chunk: str) -> list[str]:
     return items
 
 
+_EXAMPLE_PROSE_RE = re.compile(
+    r"例えば|たとえば|具体例として|好比|イメージとして|想像すると"
+)
+
+
+def _block_has_subheading(block: str) -> bool:
+    return any(ln.lstrip().startswith("### ") for ln in block.split("\n"))
+
+
+def _block_has_example_prose(block: str) -> bool:
+    """例示・比喩の叙述ブロックは列挙箇条書きへ分解しない。"""
+    if _block_has_subheading(block):
+        return True
+    return bool(_EXAMPLE_PROSE_RE.search(block))
+
+
 def _try_trigger_list(block: str) -> str | None:
+    if _block_has_example_prose(block):
+        return None
     match = _ENUM_TRIGGER.search(block)
     if match:
         items = _comma_list_items(match.group(2))
@@ -62,6 +80,9 @@ def _try_trigger_list(block: str) -> str | None:
             return None
         items = _comma_list_items(match.group(1))
     if not items:
+        return None
+    # 叙述文（述語を含む節）を列挙と誤認しない
+    if any(re.search(r"(?:定める|評価する|確認する|である|してい|なる|について)", item) for item in items):
         return None
     before = block[: match.start()].rstrip()
     after = block[match.end() :].strip().lstrip("。．. ")
@@ -82,12 +103,20 @@ def inject_comma_sentence_list(text: str) -> str:
     blocks = re.split(r"\n{2,}", text.strip())
     out: list[str] = []
     for block in blocks:
-        if block.lstrip().startswith("- "):
+        if block.lstrip().startswith("- ") or _block_has_example_prose(block):
             out.append(block)
             continue
         triggered = _try_trigger_list(block)
         if triggered:
             out.append(triggered)
+            continue
+        # 定義文（「試験は、…とおり、…です」）を箇条書きに分解しない
+        flat = block.replace("\n", "")
+        if re.search(
+            r"(?:試験|制度|資格)は、.+、.{6,}(?:です|ます|でした|である)[。]?$",
+            flat,
+        ):
+            out.append(block)
             continue
 
         sentences = [s for s in re.split(r"(?<=[。！？])", block) if s.strip()]
@@ -99,7 +128,9 @@ def inject_comma_sentence_list(text: str) -> str:
                 continue
             if "とは、" in sent:
                 continue
-            pos = sent.rfind("は、")
+            pos = -1
+            for m in re.finditer(r"(?<![に])は、", sent):
+                pos = m.start()
             chunk = sent[pos + 2 :] if pos >= 0 else sent
             chunk = re.sub(r"(?:です|ます|でした|である|であり)[。]?$", "", chunk.strip())
             chunk = chunk.rstrip("。")
@@ -132,7 +163,7 @@ def inject_enumeration_lists(text: str) -> str:
     blocks = re.split(r"\n{2,}", text.strip())
     out_blocks: list[str] = []
     for block in blocks:
-        if block.lstrip().startswith("- "):
+        if block.lstrip().startswith("- ") or _block_has_example_prose(block):
             out_blocks.append(block)
             continue
         triggered = _try_trigger_list(block)
