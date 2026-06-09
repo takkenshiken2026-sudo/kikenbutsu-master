@@ -18,22 +18,51 @@ def norm(value: object) -> str:
     return (value or "").strip() if value is not None else ""
 
 
-def _correct_choice_index(correct: object) -> int | None:
-    """page['correct'] が int または multi の '1,3' 等のとき、先頭肢番号を返す。"""
+_FW_DIGIT_TRANS = str.maketrans("０１２３４５６７８９", "0123456789")
+
+
+def _parse_choice_num(raw: str) -> int | None:
+    s = norm(raw).translate(_FW_DIGIT_TRANS)
+    return int(s) if s.isdigit() else None
+
+
+def correct_choice_indices(correct: object) -> set[int]:
+    """page['correct'] から正答肢番号の集合（multi は 1,4 → {1,4}）。"""
     if correct is None:
-        return None
+        return set()
     if isinstance(correct, int):
-        return correct
+        return {correct}
     raw = norm(correct)
     if not raw:
-        return None
+        return set()
     if raw.isdigit():
-        return int(raw)
-    if "," in raw:
-        head = raw.split(",", 1)[0].strip()
-        if head.isdigit():
-            return int(head)
-    return None
+        return {int(raw)}
+    if "," in raw and all(part.strip().isdigit() for part in raw.split(",") if part.strip()):
+        return {int(part.strip()) for part in raw.split(",") if part.strip()}
+    return set()
+
+
+def _correct_choice_index(correct: object) -> int | None:
+    """page['correct'] が int または multi の '1,3' 等のとき、先頭肢番号を返す。"""
+    indices = correct_choice_indices(correct)
+    return min(indices) if indices else None
+
+
+def parse_numbered_choice_notes(text: str) -> dict[int, str]:
+    """「１．…２．…」形式（運管過去問解説など）の肢別メモを抽出。"""
+    out: dict[int, str] = {}
+    if not text:
+        return out
+    for m in re.finditer(
+        r"([０-９]|\d+)[．.]\s*(.+?)(?=(?:[０-９]|\d+)[．.]|$)",
+        text,
+        flags=re.DOTALL,
+    ):
+        num = _parse_choice_num(m.group(1))
+        note = norm(m.group(2))
+        if num is not None and note:
+            out[num] = note
+    return out
 
 
 def text_to_html(text: str) -> str:
@@ -133,6 +162,18 @@ def _ensure_correct_body(page: dict, row: dict, summary: str, correct_body: str)
     cor_idx = _correct_choice_index(correct)
     opts = page.get("opts") or []
     opt_text = opts[cor_idx - 1] if cor_idx and 1 <= cor_idx <= len(opts) else ""
+    correct_indices = correct_choice_indices(correct)
+    numbered = parse_numbered_choice_notes(
+        norm(row.get("explanation")) or correct_body
+    )
+    if len(correct_indices) > 1 and numbered:
+        correct_notes = [
+            numbered[i] for i in sorted(correct_indices) if i in numbered
+        ]
+        if correct_notes:
+            correct_body = dedupe_prose(" ".join(correct_notes))
+        return summary, correct_body
+
     if correct_body and not _parrots_stem(stem, correct_body):
         return summary, correct_body
     mode = question_ask_mode(stem)
@@ -164,11 +205,64 @@ def _ensure_correct_body(page: dict, row: dict, summary: str, correct_body: str)
 _MIN_CHOICE_NOTE_LEN = 72
 
 
+def _is_substantive_choice_note(note: str) -> bool:
+    """短くても試験解説として有用（⇒対比・条文・誤り理由など）。"""
+    n = norm(note)
+    if not n:
+        return False
+    if len(n) >= _MIN_CHOICE_NOTE_LEN:
+        return True
+    if re.search(
+        r"⇒|→|第\d+条|誤り|誤っ|正しく|届出|認可|不適|適\.|「.+」",
+        n,
+    ):
+        return True
+    return False
+
+
+def _is_redundant_answer_lead(summary: str, correct: object) -> bool:
+    """ページ上部の正答欄と同文のリードを省く。"""
+    s = norm(summary)
+    if not s or correct is None:
+        return False
+    cor = norm(str(correct))
+    return bool(
+        re.fullmatch(rf"正答は[（(]{re.escape(cor)}[）)]です[。]?", s)
+        or re.fullmatch(rf"正答は\s*[（(]{re.escape(cor)}[）)]\s*です[。]?", s)
+    )
+
+
+def _strip_choice_echo(note: str, choice_text: str, choice_num: int) -> str:
+    """選択肢見出しと重複する引用・肢番号付きリードを除去。"""
+    n = norm(note)
+    if not n:
+        return n
+    snip = _snippet(choice_text, 48)
+    patterns = [
+        rf"^（{choice_num}）「{re.escape(snip)}[^」]*」は、?",
+        rf"^（{choice_num}）「[^」]+」は、?",
+        rf"^（{choice_num}）",
+    ]
+    for pat in patterns:
+        n2 = re.sub(pat, "", n).strip()
+        if n2 != n:
+            n = n2
+            break
+    if snip and snip in n and len(n) < len(note) * 0.85:
+        # 見出しと同じ長文引用が本文に残る場合は、対比以降だけ残す
+        m = re.search(r"(⇒|→).+", n)
+        if m:
+            n = m.group(0).strip()
+    return n.strip(" 。、")
+
+
 def _is_thin_choice_note(note: str, mode: str) -> bool:
     """CSV の選択肢別解説が形式的・短すぎるか（読み手向けの価値が低い）。"""
     n = norm(note)
     if not n:
         return True
+    if _is_substantive_choice_note(n):
+        return False
     if len(n) < _MIN_CHOICE_NOTE_LEN:
         return True
     if mode == "least_appropriate":
@@ -232,6 +326,19 @@ def infer_wrong_choice_note(
     mode = question_ask_mode(stem)
     opt = norm(choice_text)
     correct = page.get("correct")
+    numbered = parse_numbered_choice_notes(norm(row.get("explanation")))
+    if choice_num in numbered and _is_substantive_choice_note(numbered[choice_num]):
+        return dedupe_prose(numbered[choice_num])
+
+    multi_pick = len(correct_choice_indices(correct)) > 1
+    if multi_pick and mode == "most_correct":
+        if numbered.get(choice_num):
+            return dedupe_prose(numbered[choice_num])
+        return dedupe_prose(
+            f"（{choice_num}）は正答（{correct}）に含まれないため、この設問の正解の組合せにはなりません。"
+            "届出・認可・期限・主体など、正答肢と異なる要件がないか確認してください。"
+        )
+
     correct_text = ""
     cor_idx = _correct_choice_index(correct)
     opts = page.get("opts") or []
@@ -272,7 +379,7 @@ def infer_wrong_choice_note(
             "最も不適切な一つだけを選びます。"
         )
     elif mode == "most_correct":
-        if correct and correct_text:
+        if not multi_pick and correct and correct_text:
             parts.append(
                 f"正答（{correct}）「{_snippet(correct_text, 56)}」は、"
                 "制度・手続・学習法のいずれかの観点で適切な内容です。"
@@ -336,7 +443,7 @@ def infer_wrong_choice_note(
                 parts.append(msg)
             break
 
-    if mode == "most_correct" and correct_text and len(parts) < 4:
+    if mode == "most_correct" and correct_text and len(parts) < 4 and not multi_pick:
         parts.append(
             f"特に「{_snippet(opt, 32)}」の部分は、"
             f"正答「{_snippet(correct_text, 32)}」と両立しない限定語・主体・手順がないか確認してください。"
@@ -370,12 +477,14 @@ def resolve_wrong_choice_note(
     stem = norm(page.get("stem_plain") or page.get("stem") or "")
     mode = question_ask_mode(stem)
     note = norm(csv_note)
+    if note and _is_substantive_choice_note(note):
+        return dedupe_prose(_strip_choice_echo(note, choice_text, choice_num))
     inferred = infer_wrong_choice_note(page, choice_num, choice_text, row)
     if not note:
-        return dedupe_prose(inferred)
+        return dedupe_prose(_strip_choice_echo(inferred, choice_text, choice_num))
     if _is_thin_choice_note(note, mode):
-        return dedupe_prose(inferred)
-    return dedupe_prose(note)
+        return dedupe_prose(_strip_choice_echo(inferred, choice_text, choice_num))
+    return dedupe_prose(_strip_choice_echo(note, choice_text, choice_num))
 
 
 CATEGORY_STUDY_HINTS: dict[str, str] = {
@@ -535,7 +644,6 @@ def build_study_hint(page: dict, row: dict) -> str:
         parts.append(f"判断対象は「{_snippet(clause, 40)}」。正答は {ans} です。")
     elif page.get("correct") is not None:
         parts.append(
-            f"正答は（{page['correct']}）です。"
             "誤った肢は、どの条件・主体・数字がずれているかを一行メモしてください。"
         )
 
@@ -569,26 +677,203 @@ def split_legacy_explanation(exp: str) -> tuple[str, str]:
     return "", exp
 
 
+def parse_combination_slots(raw: str) -> dict[str, int]:
+    """A-8;B-3;C-4;D-7 → {'A': 8, 'B': 3, ...}"""
+    out: dict[str, int] = {}
+    for part in norm(raw).split(";"):
+        part = part.strip()
+        if not part:
+            continue
+        m = re.match(r"^([A-Za-zア-オ甲乙①-⑫])-(\d+)$", part)
+        if m:
+            out[m.group(1).upper()] = int(m.group(2))
+    return out
+
+
+def parse_truefalse_group_labels(raw: str) -> dict[str, set[int]]:
+    """適-2,3;不適-1 → {'適': {2,3}, '不適': {1}}"""
+    out: dict[str, set[int]] = {}
+    for part in norm(raw).split(";"):
+        part = part.strip()
+        if not part:
+            continue
+        m = re.match(r"^([^-]+)-(.+)$", part)
+        if not m:
+            continue
+        label = norm(m.group(1))
+        nums: set[int] = set()
+        for chunk in m.group(2).split(","):
+            n = _parse_choice_num(chunk)
+            if n is not None:
+                nums.add(n)
+        if label and nums:
+            out[label] = nums
+    return out
+
+
+def _truefalse_display_label(raw_label: str) -> str:
+    if raw_label in {"適", "正"}:
+        return "適"
+    if raw_label in {"不適", "否", "誤"}:
+        return "否"
+    return raw_label
+
+
+def _extended_question_mode(page: dict, row: dict) -> str:
+    typ = norm(page.get("type"))
+    if typ in {"combination", "truefalse_group", "multi"}:
+        return typ
+    cor = norm(row.get("correct")) or norm(str(page.get("correct") or ""))
+    from tools.correct_answer_format import detect_correct_format
+
+    fmt = detect_correct_format(cor)
+    if fmt in {"combination", "truefalse_group", "multi"}:
+        return fmt
+    return "single"
+
+
+def build_combination_explanation_html(page: dict, row: dict) -> str:
+    """穴埋め組合せ — 語句バンク（１～８）を他肢として並べない。"""
+    base = norm(row.get("explanation")) or "（解説は未入力です。）"
+    correct_raw = norm(str(page.get("correct") or row.get("correct") or ""))
+    slots = parse_combination_slots(correct_raw)
+    opts = page.get("opts") or []
+    parts: list[str] = ['<div class="q-exp">']
+
+    if slots:
+        slot_bits = []
+        for slot in sorted(slots.keys()):
+            num = slots[slot]
+            word = opts[num - 1] if 1 <= num <= len(opts) else ""
+            if word:
+                slot_bits.append(f"{slot}→（{num}）{word}")
+            else:
+                slot_bits.append(f"{slot}→（{num}）")
+        parts.append(
+            f'<p class="q-exp-lead">正答の組合せ：{html.escape("、".join(slot_bits))}</p>'
+        )
+
+    parts.append(
+        '<section class="q-exp-section" aria-labelledby="q-exp-correct-h">'
+        '<h3 id="q-exp-correct-h" class="q-exp-h3">正解の組合せ</h3>'
+    )
+    if slots:
+        lis = []
+        for slot in sorted(slots.keys()):
+            num = slots[slot]
+            word = opts[num - 1] if 1 <= num <= len(opts) else ""
+            lis.append(
+                f'<li class="q-exp-choice-item">'
+                f'<p><strong>{html.escape(slot)}</strong> '
+                f"→ <strong>（{num}）</strong> {html.escape(word)}</p></li>"
+            )
+        parts.append(f'<ul class="q-exp-choice-list">{"".join(lis)}</ul>')
+    summary = norm(row.get("explanation_summary")) or norm(row.get("explanation_correct"))
+    body = summary or base
+    parts.append(f"<p>{text_to_html(body)}</p></section>")
+
+    hint = build_study_hint(page, row)
+    if hint:
+        parts.append(
+            '<section class="q-exp-section" aria-labelledby="q-exp-tip-h">'
+            '<h3 id="q-exp-tip-h" class="q-exp-h3">学習のヒント</h3>'
+            f"<p>{text_to_html(hint)}</p></section>"
+        )
+    parts.append("</div>")
+    return "\n    ".join(parts)
+
+
+def build_truefalse_group_explanation_html(page: dict, row: dict) -> str:
+    """適/否を記入する記述群 — 各肢ごとに判定と解説を示す。"""
+    base = norm(row.get("explanation")) or "（解説は未入力です。）"
+    correct_raw = norm(str(page.get("correct") or row.get("correct") or ""))
+    labels = parse_truefalse_group_labels(correct_raw)
+    numbered = parse_numbered_choice_notes(base)
+    opts = page.get("opts") or []
+
+    idx_to_label: dict[int, str] = {}
+    for raw_label, nums in labels.items():
+        disp = _truefalse_display_label(raw_label)
+        for n in nums:
+            idx_to_label[n] = disp
+
+    lead_bits: list[str] = []
+    for raw_label, nums in labels.items():
+        disp = _truefalse_display_label(raw_label)
+        nums_s = "、".join(str(n) for n in sorted(nums))
+        lead_bits.append(f"{disp}（{nums_s}）")
+    lead = f"正答：{'／'.join(lead_bits)}" if lead_bits else ""
+
+    parts: list[str] = ['<div class="q-exp">']
+    if lead:
+        parts.append(f'<p class="q-exp-lead">{html.escape(lead)}</p>')
+
+    parts.append(
+        '<section class="q-exp-section" aria-labelledby="q-exp-stmts-h">'
+        '<h3 id="q-exp-stmts-h" class="q-exp-h3">各記述の解説</h3>'
+        '<ul class="q-exp-choice-list">'
+    )
+    for i, opt in enumerate(opts, start=1):
+        verdict = idx_to_label.get(i, "")
+        note = numbered.get(i) or ""
+        badge = (
+            f'<span class="q-marubatsu q-tf-verdict">{html.escape(verdict)}</span> '
+            if verdict
+            else ""
+        )
+        parts.append(
+            f'<li class="q-exp-choice-item">'
+            f'<p class="q-exp-choice-head">'
+            f'<span class="q-exp-choice-num">（{i}）</span> {badge}'
+            f'<span class="q-exp-choice-text">{html.escape(opt)}</span></p>'
+        )
+        if note:
+            parts.append(f'<p class="q-exp-choice-note">{text_to_html(note)}</p>')
+        parts.append("</li>")
+    parts.append("</ul></section>")
+
+    hint = build_study_hint(page, row)
+    if hint:
+        parts.append(
+            '<section class="q-exp-section" aria-labelledby="q-exp-tip-h">'
+            '<h3 id="q-exp-tip-h" class="q-exp-h3">学習のヒント</h3>'
+            f"<p>{text_to_html(hint)}</p></section>"
+        )
+    parts.append("</div>")
+    return "\n    ".join(parts)
+
+
 def build_choice_commentary(page: dict, row: dict) -> list[tuple[int, str, str]]:
+    mode = _extended_question_mode(page, row)
+    if mode in {"combination", "truefalse_group"}:
+        return []
     parsed = parse_explanation_choices(norm(row.get("explanation_choices")))
+    numbered = parse_numbered_choice_notes(norm(row.get("explanation")))
     correct = page.get("correct")
+    correct_indices = correct_choice_indices(correct)
     items: list[tuple[int, str, str]] = []
     for i, opt in enumerate(page["opts"], start=1):
         if page.get("is_invalidated") or correct is None:
             continue
-        if i == correct:
+        if i in correct_indices:
             continue
+        csv_note = parsed.get(i) or numbered.get(i) or ""
         note = resolve_wrong_choice_note(
-            page, i, opt, row, csv_note=parsed.get(i) or ""
+            page, i, opt, row, csv_note=csv_note
         )
         items.append((i, opt, note))
     notes = [note for _, _, note in items]
     if len(notes) >= 2 and len(set(notes)) == 1:
         items = []
         for i, opt in enumerate(page["opts"], start=1):
-            if page.get("is_invalidated") or correct is None or i == correct:
+            if page.get("is_invalidated") or correct is None or i in correct_indices:
                 continue
-            note = dedupe_prose(infer_wrong_choice_note(page, i, opt, row))
+            pref = numbered.get(i) or parsed.get(i) or ""
+            note = (
+                dedupe_prose(pref)
+                if pref
+                else dedupe_prose(infer_wrong_choice_note(page, i, opt, row))
+            )
             items.append((i, opt, note))
     return items
 
@@ -597,6 +882,12 @@ def build_explanation_html(page: dict, row: dict) -> str:
     base = norm(row.get("explanation")) or "（解説は未入力です。）"
     if page.get("is_invalidated") or page.get("correct") is None:
         return f'<div class="q-exp"><p>{text_to_html(base)}</p></div>'
+
+    mode = _extended_question_mode(page, row)
+    if mode == "combination":
+        return build_combination_explanation_html(page, row)
+    if mode == "truefalse_group":
+        return build_truefalse_group_explanation_html(page, row)
 
     summary = norm(row.get("explanation_summary"))
     correct_body = norm(row.get("explanation_correct"))
@@ -610,25 +901,44 @@ def build_explanation_html(page: dict, row: dict) -> str:
     summary, correct_body = _ensure_correct_body(page, row, summary, correct_body)
 
     parts: list[str] = ['<div class="q-exp">']
-    if summary:
+    correct = page.get("correct")
+    if summary and not _is_redundant_answer_lead(summary, correct):
         parts.append(f'<p class="q-exp-lead">{text_to_html(summary)}</p>')
 
-    correct = page.get("correct")
     if correct and not page.get("is_invalidated"):
-        cor_idx = _correct_choice_index(correct)
+        correct_indices = correct_choice_indices(correct)
         opts = page.get("opts") or []
-        opt_text = opts[cor_idx - 1] if cor_idx and 1 <= cor_idx <= len(opts) else ""
+        numbered = parse_numbered_choice_notes(norm(row.get("explanation")))
         parts.append(
             '<section class="q-exp-section" aria-labelledby="q-exp-correct-h">'
             '<h3 id="q-exp-correct-h" class="q-exp-h3">正解の理由</h3>'
         )
-        if correct_body:
-            parts.append(f"<p>{text_to_html(correct_body)}</p>")
-        if opt_text:
-            parts.append(
-                f'<p class="q-exp-correct-opt"><strong>（{correct}）</strong> '
-                f"{html.escape(opt_text)}</p>"
-            )
+        if len(correct_indices) > 1:
+            if correct_body and not numbered:
+                parts.append(f"<p>{text_to_html(correct_body)}</p>")
+            for idx in sorted(correct_indices):
+                opt_text = opts[idx - 1] if 1 <= idx <= len(opts) else ""
+                note = numbered.get(idx) or ""
+                if note:
+                    parts.append(
+                        f'<p class="q-exp-correct-opt"><strong>（{idx}）</strong> '
+                        f"{text_to_html(note)}</p>"
+                    )
+                if opt_text and not note:
+                    parts.append(
+                        f'<p class="q-exp-correct-opt"><strong>（{idx}）</strong> '
+                        f"{html.escape(opt_text)}</p>"
+                    )
+        else:
+            cor_idx = _correct_choice_index(correct)
+            opt_text = opts[cor_idx - 1] if cor_idx and 1 <= cor_idx <= len(opts) else ""
+            if correct_body:
+                parts.append(f"<p>{text_to_html(correct_body)}</p>")
+            if opt_text:
+                parts.append(
+                    f'<p class="q-exp-correct-opt"><strong>（{correct}）</strong> '
+                    f"{html.escape(opt_text)}</p>"
+                )
         parts.append("</section>")
 
         wrong_items = build_choice_commentary(page, row)
