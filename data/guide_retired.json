@@ -68,6 +68,7 @@
     "retake-schedule-adjustment": "retake-strategy",
     "review-cycle-spaced": "retake-strategy",
     "scope-revision-history": "syllabus-how-to-read",
-    "scope-vs-past-questions": "syllabus-how-to-read"
+    "scope-vs-past-questions": "syllabus-how-to-read",
+    "exam-schedule-by-region": "../../exam-dates/index.html"
   }
 }

@@ -14,6 +14,8 @@ tools/html_footer.py
 tools/site_config.py
 tools/apply_site_config.py
 tools/build_all.py
+tools/build_exam_schedule_page.py
+tools/exam_schedule_page_content.py
 tools/build_article_pages.py
 tools/exam_schedule_regions.py
 tools/exam_schedule_table.py

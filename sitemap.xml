@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://kikenbutsu-master.jp/</loc>
-    <lastmod>2026-06-14</lastmod>
+    <lastmod>2026-06-16</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   <url>
@@ -78,11 +78,6 @@
   <url>
     <loc>https://kikenbutsu-master.jp/articles/exam-overview/</loc>
     <lastmod>2026-06-12</lastmod>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://kikenbutsu-master.jp/articles/exam-schedule-by-region/</loc>
-    <lastmod>2026-06-16</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   <url>
@@ -348,6 +343,11 @@
   <url>
     <loc>https://kikenbutsu-master.jp/articles/written-essay-section/</loc>
     <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://kikenbutsu-master.jp/exam-dates/index.html</loc>
+    <lastmod>2026-06-16</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   <url>

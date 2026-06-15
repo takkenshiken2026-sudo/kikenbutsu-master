@@ -59,10 +59,16 @@ def load_retired_map() -> dict[str, str]:
     return mapping
 
 
-def write_redirect(articles_dir: Path, slug: str, target_slug: str) -> None:
+def resolve_redirect_target(target: str) -> str:
+    if target.startswith("../") or target.startswith("/") or target.endswith(".html"):
+        return target
+    return f"../{target}/index.html"
+
+
+def write_redirect(articles_dir: Path, slug: str, target: str) -> None:
     out_dir = articles_dir / slug
     out_dir.mkdir(parents=True, exist_ok=True)
-    rel = f"../{target_slug}/index.html"
+    rel = resolve_redirect_target(target)
     esc = html.escape(rel, quote=True)
     (out_dir / "index.html").write_text(
         REDIRECT_HTML.format(url=esc, url_js=repr(rel)),

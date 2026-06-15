@@ -37,6 +37,7 @@ def main() -> int:
     run([py, "tools/build_past_question_pages.py"])
     run([py, "tools/build_practice_ichimon_pages.py"])
     run([py, "tools/fetch_exam_schedule.py"])
+    run([py, "tools/build_exam_schedule_page.py"])
     run([py, "tools/build_article_pages.py"])
     run([py, "tools/build_guide_retire_redirects.py"])
     run([py, "tools/build_glossary_pages.py"])

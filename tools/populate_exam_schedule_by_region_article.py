@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""exam-schedule-by-region ガイド記事を guide_articles.csv に追加する。"""
+"""exam-schedule-by-region は廃止。特設ページは tools/build_exam_schedule_page.py を使用。"""
 
 from __future__ import annotations
 
