@@ -5,25 +5,50 @@ search_intent: 危険物乙4のオンライン講座を、価格・内容・学�
 title: 危険物乙4オンライン講座おすすめ2選｜オンスク.JPとSMART合格講座を比較
 genre: 独学対策
 layout: product-comparison
+comparison_kind: courses
+comparison_title: 乙4オンライン講座2選（比較）
 asp_primary: a8
+price_disclaimer: 料金・受講条件は執筆時点（2026-06-12）の各公式ページ参考です。申込前に必ず最新の料金・キャンペーンを確認してください。
 products:
   - rank: A
+    offer_type: course
     name: オンスク.JP 危険物乙4オンライン通信講座
+    provider: オンスク.JP
+    billing_type: monthly
     official_url: https://onsuku.jp/training/otu4
-    image_url: https://s3.ap-northeast-1.amazonaws.com/onsuku.jp/img/parts/training/top/thumb_otu4_top.jpg
+    image_file: https://s3.ap-northeast-1.amazonaws.com/onsuku.jp/img/parts/training/top/thumb_otu4_top.jpg
     a8_url: https://px.a8.net/svt/ejp?a8mat=4B3TF0+DUXECI+408S+BW0YB&a8ejpredirect=https%3A%2F%2Fonsuku.jp%2Ftraining%2Fotu4
     for_who: 演習量を確保したい・無料体験から始めたい・他資格も受け放題で検討している
+    highlights:
+      - 講義66回・約7.5時間
+      - オリジナル356問（動画連動）
+      - 進捗管理・キーワード検索・復習・教材DL
+    price_label: 単講座＋ウケホーダイ月額も選択可（公式LP要確認）
+    lecture_hours: 全66回・約7.5時間
+    support: 演習356問・進捗管理・無料体験あり
   - rank: B
+    offer_type: course
     name: 情報学習院 危険物取扱者(乙種4類) SMART合格講座
+    provider: 情報学習支援協会
+    billing_type: lump
     official_url: https://www.joho-gakushu.or.jp/kikenbutu-otu4/
-    image_url: https://www.joho-gakushu.or.jp/kikenbutu-otu4/img/newtop_img_009.jpg
+    image_file: https://www.joho-gakushu.or.jp/kikenbutu-otu4/img/newtop_img_009.jpg
     a8_url: https://px.a8.net/svt/ejp?a8mat=4B3TF0+DUBYQQ+4LOQ+BW0YB&a8ejpredirect=https%3A%2F%2Fwww.joho-gakushu.or.jp%2Fkikenbutu-otu4%2F%3Futm_source%3DAffi%26utm_medium%3Dlist%26utm_campaign%3D01
     for_who: 一括7,700円で始めたい・3年間見直したい・初学者向けの丁寧な講義を重視
+    highlights:
+      - 7,700円（税込）一括・視聴3年
+      - SMARTビデオ約7時間
+      - 一問一答答練＋解説（約2時間）
+    price_yen: 7700
+    duration: 申込から3年間視聴
+    lecture_hours: 約7時間
+    support: 進捗・復習チェック・メモ・音声DL
 related_links:
-  - self-study-roadmap:独学の進め方
-  - study-plan:学習計画
-  - affiliate-free-vs-paid-study:無料と有料教材の使い分け
+  - self-study-roadmap:独学ロードマップ
+  - study-plan:学習計画の立て方
   - past-question-strategy:過去問の使い方
+  - affiliate-textbooks-recommend:おすすめテキスト3選
+  - affiliate-problem-books:おすすめ問題集3選
 operator_note: |
   ASP: A8.net
   オンスク: a8mat=4B3TF0+DUXECI+408S+BW0YB

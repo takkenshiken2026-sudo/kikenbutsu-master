@@ -239,6 +239,48 @@
     "priceLabel": "¥590",
     "footnote": "※ note で販売する有料コンテンツ（¥590）です。サイト内の無料演習とは別商品です。"
   },
+  "guideIndexPicks": {
+    "title": "おすすめの講座・テキスト・問題集",
+    "lead": "2026年度版の比較記事から、オンライン講座・テキスト・問題集の選び方へ。",
+    "leadsByHub": {
+      "articles": "2026年度版の比較記事から、オンライン講座・テキスト・問題集の選び方へ。",
+      "terms": "用語暗記と併用するテキスト・問題集・講座の比較記事へ。",
+      "q": "無料演習と併用する問題集・講座の比較記事へ。"
+    },
+    "layout": "grid-3",
+    "items": [
+      {
+        "kind": "course",
+        "kindLabel": "オンライン講座",
+        "title": "オンライン講座2選【オンスク vs SMART】",
+        "description": "オンスク.JPとSMART合格講座を比較。三領域50問60分と独学テキストとの併用設計を解説します。",
+        "href": "affiliate-online-course-compare/",
+        "cta": "2講座を比較する",
+        "image": "images/affiliate/kikenbutsu-course-onsuku-otu4.webp",
+        "imageAlt": "オンスク.JP 危険物乙4オンライン通信講座"
+      },
+      {
+        "kind": "textbook",
+        "kindLabel": "テキスト",
+        "title": "おすすめテキスト3選【2026年度版】",
+        "description": "TACスピード・ユーキャン速習・7日でクリアの3冊を比較。三領域50問60分と35/50を前提に1冊選びを解説します。",
+        "href": "affiliate-textbooks-recommend/",
+        "cta": "3冊を比較する",
+        "image": "images/affiliate/kikenbutsu-book-4300105979.webp",
+        "imageAlt": "乙種第4類 危険物取扱者 スピードテキスト 第4版 表紙"
+      },
+      {
+        "kind": "problem-book",
+        "kindLabel": "問題集",
+        "title": "おすすめ問題集3選【2026年度版】",
+        "description": "TACスピード問題集・ユーキャン過去問・7日でクリア問題集の3冊を比較。テキスト読了後の演習1冊の選び方をまとめます。",
+        "href": "affiliate-problem-books/",
+        "cta": "3冊を比較する",
+        "image": "images/affiliate/kikenbutsu-book-4300112568.webp",
+        "imageAlt": "乙種第4類 危険物取扱者 スピード問題集 第4版 表紙"
+      }
+    ]
+  },
   "externalLinks": [
     {
       "label": "消防庁（公式）",
