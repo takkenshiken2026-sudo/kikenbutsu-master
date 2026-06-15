@@ -6326,3 +6326,37 @@ html:not(.js) .terms-idx-seo-fallback .terms-idx-seo-list a {
   font-size: var(--fs-sub);
   font-weight: 700;
 }
+
+/* === 試験日程一覧（exam-schedule-by-region） === */
+.exam-schedule-table-section .exam-schedule-table-note {
+  margin: 0 0 1rem;
+  color: var(--text2);
+  font-size: var(--fs-sub);
+}
+.exam-schedule-table-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1rem;
+  margin: 0 0 1rem;
+}
+.exam-schedule-table-tools label {
+  font-weight: 700;
+  color: var(--ink);
+}
+.exam-schedule-pref-filter {
+  min-width: 12rem;
+  max-width: 100%;
+  padding: 0.45rem 0.6rem;
+  border: 1px solid var(--border2);
+  border-radius: var(--r2);
+  background: var(--bg);
+  color: var(--ink);
+}
+.exam-schedule-table-count {
+  color: var(--text2);
+  font-size: var(--fs-sub);
+}
+.exam-schedule-table-wrap {
+  overflow-x: auto;
+}

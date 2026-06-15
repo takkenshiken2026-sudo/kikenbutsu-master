@@ -4,6 +4,7 @@
 
 from __future__ import annotations
 
+from collections.abc import Callable
 import csv
 import html
 import json
@@ -316,9 +317,11 @@ def sections_html(
     affiliate_hub: str = "",
     affiliate_hub_after_section: int = 2,
     affiliate_brief: dict | None = None,
+    extra_sections_after: dict[int, str | Callable[[int], str]] | None = None,
 ) -> str:
     sections: list[str] = []
     display_num = 1
+    extras = extra_sections_after or {}
     for idx in range(1, 9):
         html_text = section_html(
             article,
@@ -335,6 +338,13 @@ def sections_html(
             display_num += 1
             if affiliate_hub and idx == affiliate_hub_after_section:
                 sections.append(affiliate_hub)
+            extra = extras.get(idx)
+            if extra:
+                if callable(extra):
+                    sections.append(extra(display_num))
+                else:
+                    sections.append(extra)
+                display_num += 1
     return "\n".join(sections)
 
 
@@ -767,6 +777,15 @@ def build_article_html(
         hub_toc = affiliate_hub_toc_item(brief)
         if hub_toc:
             toc_extra = {hub_after_section: hub_toc}
+    extra_sections_after: dict[int, Callable[[int], str]] | None = None
+    if slug == "exam-schedule-by-region":
+        from tools.exam_schedule_table import exam_schedule_table_html  # noqa: E402
+
+        extra_sections_after = {
+            2: lambda section_num: exam_schedule_table_html(section_num=section_num),
+        }
+        toc_extra = dict(toc_extra or {})
+        toc_extra[2] = ("exam-schedule-table-title", "乙4の試験日一覧")
     sections = sections_html(
         article,
         term_hrefs=term_hrefs,
@@ -776,9 +795,13 @@ def build_article_html(
         affiliate_hub=affiliate_hub,
         affiliate_hub_after_section=hub_after_section,
         affiliate_brief=brief,
+        extra_sections_after=extra_sections_after,
     )
     faqs = faq_items(article, slug_titles=slug_titles, url_labels=url_labels, brief=brief)
-    faq_section = faq_html(faqs, section_num=article_body_section_count(article) + 1) if faqs else ""
+    faq_section_num = article_body_section_count(article) + 1
+    if slug == "exam-schedule-by-region":
+        faq_section_num += 1
+    faq_section = faq_html(faqs, section_num=faq_section_num) if faqs else ""
     toc = toc_html(
         article,
         bool(faqs),

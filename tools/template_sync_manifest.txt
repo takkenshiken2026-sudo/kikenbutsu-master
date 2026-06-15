@@ -15,6 +15,9 @@ tools/site_config.py
 tools/apply_site_config.py
 tools/build_all.py
 tools/build_article_pages.py
+tools/exam_schedule_regions.py
+tools/exam_schedule_table.py
+tools/fetch_exam_schedule.py
 tools/build_glossary_pages.py
 tools/build_past_question_pages.py
 tools/build_sitemap.py
