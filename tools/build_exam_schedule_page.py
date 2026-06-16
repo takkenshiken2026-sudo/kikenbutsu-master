@@ -45,7 +45,7 @@ from tools.site_config import brand_name, exam_name, public_url  # noqa: E402
 
 OUTPUT_DIR = ROOT / PAGE_SLUG
 REL_PATH = Path(PAGE_SLUG) / "index.html"
-EXAM_DATES_CSS_VER = "20260616-exam-schedule-list-fs"
+EXAM_DATES_CSS_VER = "20260616-exam-dates-seo-vars"
 
 AUTHOR_NAME = "乙4マスター編集部"
 AUTHOR_PROFILE = (
@@ -217,7 +217,7 @@ def build_page_html() -> str:
 {header}
 <main class="seo-article-main">
 {crumb}
-<article class="seo-article-card article-body {article_class}">
+<article class="{article_class}">
 <div class="article-meta">
 <span class="meta-category">試験日一覧</span>
 <span class="meta-updated">更新日：{html.escape(fact_checked)}</span>
