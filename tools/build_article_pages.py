@@ -447,9 +447,8 @@ def key_points_box_html(
 
 
 def _toc_html_exam_schedule_by_region(article: dict[str, str], has_faq: bool) -> str:
-    """試験日一覧記事：表の直下に置く目次（ページ上の順序に合わせる）。"""
+    """試験日一覧記事：表見出しは目次に載せず、要点以降のみ列挙する。"""
     items: list[tuple[str, str]] = [
-        ("exam-schedule-table-title", "都道府県別の試験日一覧"),
         ("key-points-title", "この記事の要点"),
         ("quality-panel-title", "この記事の信頼性について"),
         ("article-sec-1", apply_vars(article.get("section_1_heading", "")) or "一覧の使い方"),
@@ -882,9 +881,9 @@ def build_article_html(
         related = merge_related_boxes(article_links, hub_box)
     quality_panel = quality_panel_html(article)
     if is_exam_schedule_region:
-        article_intro = f"""    {exam_schedule_table_block}
+        article_intro = f"""    {toc}
+    {exam_schedule_table_block}
     {key_points_box}
-    {toc}
     {quality_panel}
     {sections}"""
     else:
