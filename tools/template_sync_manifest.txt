@@ -4,6 +4,7 @@
 
 site-pages.css
 site-analytics.js
+site-scroll-top.js
 site-q-index.js
 site-terms-index.js
 about.html

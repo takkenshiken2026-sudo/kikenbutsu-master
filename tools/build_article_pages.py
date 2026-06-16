@@ -25,6 +25,7 @@ from tools.html_footer import (  # noqa: E402
     site_page_header,
     site_page_wrap_close,
     site_page_wrap_open,
+    site_scroll_top_html,
 )
 from tools.guide_index_picks_ui import build_guide_index_picks_html  # noqa: E402
 from tools.seo_utils import content_date_from_row, json_ld_date_modified, meta_updated_html  # noqa: E402
@@ -49,7 +50,7 @@ from tools.seo_editorial_chrome import (  # noqa: E402
 ARTICLES_CSV = ROOT / "data" / "guide_articles.csv"
 ARTICLES_DIR = ROOT / "articles"
 GEN_MARKER = ".generated-by-exam-site"
-GUIDE_PAGES_CSS_VER = "20260616-exam-schedule-filters-trim"
+GUIDE_PAGES_CSS_VER = "20260616-exam-schedule-scroll-top"
 
 
 def norm(value: str | None) -> str:
@@ -446,25 +447,6 @@ def key_points_box_html(
     return seo_key_points_box_html(items, intro=intro)
 
 
-def _toc_html_exam_schedule_by_region(article: dict[str, str], has_faq: bool) -> str:
-    """試験日一覧記事：表は目次外。信頼性パネルと公式確認のみ列挙する。"""
-    del article, has_faq
-    items: list[tuple[str, str]] = [
-        ("quality-panel-title", "この記事の信頼性について"),
-        ("official-info-title", "公式情報の確認"),
-    ]
-    links = "".join(
-        f'<li><a href="#{html.escape(anchor)}">{html.escape(label)}</a></li>'
-        for anchor, label in items
-        if label
-    )
-    return (
-        '<nav class="seo-toc" aria-labelledby="seo-toc-title">'
-        '<h2 id="seo-toc-title">目次</h2>'
-        f"<ol>{links}</ol></nav>"
-    )
-
-
 def toc_html(
     article: dict[str, str],
     has_faq: bool,
@@ -478,7 +460,7 @@ def toc_html(
 
     slug = norm(article.get("slug"))
     if slug == "exam-schedule-by-region":
-        return _toc_html_exam_schedule_by_region(article, has_faq)
+        return ""
     items: list[tuple[str, str]] = []
     if key_points_items(article, affiliate_brief=affiliate_brief) or norm(
         apply_vars(article.get("user_intent", ""))
@@ -876,8 +858,7 @@ def build_article_html(
         related = merge_related_boxes(article_links, hub_box)
     quality_panel = quality_panel_html(article)
     if is_exam_schedule_region:
-        article_intro = f"""    {toc}
-    {exam_schedule_table_block}
+        article_intro = f"""    {exam_schedule_table_block}
     {quality_panel}"""
     else:
         article_intro = f"""    {key_points_box}
@@ -920,16 +901,18 @@ def build_article_html(
                 )
     except ImportError:
         pass
-    official_box = (
-        '<section class="seo-article-section" aria-labelledby="official-info-title">'
-        '<h2 id="official-info-title">公式情報の確認</h2>'
-        '<blockquote><p><strong>公式情報の確認：</strong>'
-        f'{html.escape(exam_name())}の最新情報は、'
-        f'<a href="{html.escape(official["url"])}" target="_blank" rel="noopener noreferrer">{html.escape(official["label"])}</a>'
-        "などの公式情報を必ず確認してください。"
-        f"{venue_links_html}"
-        "本人に割り当てられた試験会場は受験票の表記が正本です。</p></blockquote></section>"
-    )
+    official_box = ""
+    if not is_exam_schedule_region:
+        official_box = (
+            '<section class="seo-article-section" aria-labelledby="official-info-title">'
+            '<h2 id="official-info-title">公式情報の確認</h2>'
+            '<blockquote><p><strong>公式情報の確認：</strong>'
+            f'{html.escape(exam_name())}の最新情報は、'
+            f'<a href="{html.escape(official["url"])}" target="_blank" rel="noopener noreferrer">{html.escape(official["label"])}</a>'
+            "などの公式情報を必ず確認してください。"
+            f"{venue_links_html}"
+            "本人に割り当てられた試験会場は受験票の表記が正本です。</p></blockquote></section>"
+        )
     info_table = "" if is_exam_schedule_region else article_info_table(article)
     crumb_items = [("トップ", "index.html"), ("試験ガイド", "articles/index.html"), (title, None)]
     article_schema = {
@@ -985,6 +968,7 @@ def build_article_html(
                 ],
             }
         )
+    scroll_top = site_scroll_top_html(rel_path) if is_exam_schedule_region else ""
     return f"""<!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -1026,6 +1010,7 @@ def build_article_html(
   </article>
 </main>
 {site_page_footer(rel_path, current="articles")}
+{scroll_top}
 {site_page_wrap_close()}
 </body>
 </html>

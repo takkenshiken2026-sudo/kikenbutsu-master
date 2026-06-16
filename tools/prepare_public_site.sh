@@ -22,6 +22,7 @@ for f in \
   site-knowledge-hub-index.js \
   site-priority-index.js \
   site-analytics.js \
+  site-scroll-top.js \
   CNAME \
   robots.txt \
   sitemap.xml \

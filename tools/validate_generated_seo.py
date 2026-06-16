@@ -60,14 +60,17 @@ class GeneratedSeoValidator:
         for label, marker in {
             "信頼性ブロック": 'id="quality-panel-title"',
             "試験日一覧表": 'id="exam-schedule-table"',
-            "公式情報の確認": 'id="official-info-title"',
         }.items():
             if self.index_of(text, marker) < 0:
                 self.error(path, f"{label} が生成されていません")
+        table_pos = self.index_of(text, 'id="exam-schedule-table"')
         quality_pos = self.index_of(text, 'id="quality-panel-title"')
-        official_pos = self.index_of(text, 'id="official-info-title"')
-        if quality_pos >= 0 and official_pos >= 0 and quality_pos > official_pos:
-            self.error(path, "信頼性ブロック は 公式情報の確認 より前に配置してください")
+        if table_pos >= 0 and quality_pos >= 0 and table_pos > quality_pos:
+            self.error(path, "試験日一覧表 は 信頼性ブロック より前に配置してください")
+        if self.index_of(text, 'id="seo-toc-title"') >= 0:
+            self.error(path, "試験日一覧記事に目次を表示しないでください")
+        if self.index_of(text, 'id="official-info-title"') >= 0:
+            self.error(path, "試験日一覧記事に公式情報の確認ブロックを表示しないでください")
         for row_name in ("執筆", "確認", "主な参照元"):
             if f"<th>{row_name}</th>" not in text:
                 self.error(path, f"信頼性表に {row_name} がありません")
