@@ -38,7 +38,7 @@ do
   fi
   cp "$f" "$OUT/"
 done
-for d in articles q terms; do
+for d in articles q terms exam-dates; do
   if [[ -d "$ROOT/$d" ]]; then
     cp -R "$ROOT/$d" "$OUT/"
   fi
@@ -86,8 +86,12 @@ if grep -q 'site-app.css' "$OUT/index.html" 2>/dev/null && [[ ! -f "$OUT/site-ap
   echo "prepare_public_site.sh: index.html が site-app.css を参照していますが public_site にありません。" >&2
   exit 1
 fi
-if grep -rq 'seo-editorial.css' "$OUT/terms" "$OUT/articles" 2>/dev/null && [[ ! -f "$OUT/seo-editorial.css" ]]; then
+if grep -rq 'seo-editorial.css' "$OUT/terms" "$OUT/articles" "$OUT/exam-dates" 2>/dev/null && [[ ! -f "$OUT/seo-editorial.css" ]]; then
   echo "prepare_public_site.sh: 用語・ガイドが seo-editorial.css を参照していますが public_site にありません。" >&2
+  exit 1
+fi
+if [[ -f "$ROOT/exam-dates/index.html" ]] && [[ ! -f "$OUT/exam-dates/index.html" ]]; then
+  echo "prepare_public_site.sh: exam-dates/index.html が public_site にありません。" >&2
   exit 1
 fi
 echo "prepare_public_site.sh: $OUT に $n ファイルを配置しました。"
