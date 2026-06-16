@@ -69,8 +69,10 @@ class GeneratedSeoValidator:
             self.error(path, "試験日一覧表 は 信頼性ブロック より前に配置してください")
         if self.index_of(text, 'id="seo-toc-title"') >= 0:
             self.error(path, "試験日一覧記事に目次を表示しないでください")
+        if self.index_of(text, 'id="exam-dates-faq"') < 0:
+            self.error(path, "FAQ が生成されていません")
         if self.index_of(text, 'id="official-info-title"') >= 0:
-            self.error(path, "試験日一覧記事に公式情報の確認ブロックを表示しないでください")
+            self.error(path, "試験日一覧ページに公式情報の確認ブロックは不要です")
         for row_name in ("執筆", "確認", "主な参照元"):
             if f"<th>{row_name}</th>" not in text:
                 self.error(path, f"信頼性表に {row_name} がありません")
@@ -156,9 +158,9 @@ class GeneratedSeoValidator:
         if is_sitemap_excluded_rel(rel) or is_noindex_html(path):
             return None
         if path.match("articles/*/index.html") and path.parent.name != "chapters":
-            if path.parent.name == "exam-schedule-by-region":
-                return "exam_schedule"
             return "full"
+        if path.as_posix() == "exam-dates/index.html":
+            return "exam_schedule"
         if path.match("terms/g-*.html"):
             return "term"
         if path.match("terms/compare/c-*.html"):
@@ -169,6 +171,7 @@ class GeneratedSeoValidator:
 
     def pages(self) -> list[Path]:
         patterns = (
+            "exam-dates/index.html",
             "articles/*/index.html",
             "terms/g-*.html",
             "terms/compare/c-*.html",

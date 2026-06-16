@@ -25,7 +25,6 @@ from tools.html_footer import (  # noqa: E402
     site_page_header,
     site_page_wrap_close,
     site_page_wrap_open,
-    site_scroll_top_html,
 )
 from tools.guide_index_picks_ui import build_guide_index_picks_html  # noqa: E402
 from tools.seo_utils import content_date_from_row, json_ld_date_modified, meta_updated_html  # noqa: E402
@@ -459,8 +458,6 @@ def toc_html(
     from tools.affiliate_links import is_affiliate_skip_section
 
     slug = norm(article.get("slug"))
-    if slug == "exam-schedule-by-region":
-        return ""
     items: list[tuple[str, str]] = []
     if key_points_items(article, affiliate_brief=affiliate_brief) or norm(
         apply_vars(article.get("user_intent", ""))
@@ -780,15 +777,7 @@ def build_article_html(
         hub_toc = affiliate_hub_toc_item(brief)
         if hub_toc:
             toc_extra = {hub_after_section: hub_toc}
-    is_exam_schedule_region = slug == "exam-schedule-by-region"
-    exam_schedule_table_block = ""
     extra_sections_after: dict[int, Callable[[int], str]] | None = None
-    if is_exam_schedule_region:
-        from tools.exam_schedule_table import exam_schedule_table_html  # noqa: E402
-
-        exam_schedule_table_block = exam_schedule_table_html(
-            section_num=None, show_heading=False, show_note=False
-        )
     sections = sections_html(
         article,
         term_hrefs=term_hrefs,
@@ -802,8 +791,6 @@ def build_article_html(
     )
     faqs = faq_items(article, slug_titles=slug_titles, url_labels=url_labels, brief=brief)
     faq_section_num = article_body_section_count(article) + 1
-    if is_exam_schedule_region:
-        faqs = []
     faq_section = faq_html(faqs, section_num=faq_section_num) if faqs else ""
     toc = toc_html(
         article,
@@ -857,11 +844,7 @@ def build_article_html(
         )
         related = merge_related_boxes(article_links, hub_box)
     quality_panel = quality_panel_html(article)
-    if is_exam_schedule_region:
-        article_intro = f"""    {exam_schedule_table_block}
-    {quality_panel}"""
-    else:
-        article_intro = f"""    {key_points_box}
+    article_intro = f"""    {key_points_box}
     {toc}
     {quality_panel}
     {sections}"""
@@ -901,19 +884,17 @@ def build_article_html(
                 )
     except ImportError:
         pass
-    official_box = ""
-    if not is_exam_schedule_region:
-        official_box = (
-            '<section class="seo-article-section" aria-labelledby="official-info-title">'
-            '<h2 id="official-info-title">公式情報の確認</h2>'
-            '<blockquote><p><strong>公式情報の確認：</strong>'
-            f'{html.escape(exam_name())}の最新情報は、'
-            f'<a href="{html.escape(official["url"])}" target="_blank" rel="noopener noreferrer">{html.escape(official["label"])}</a>'
-            "などの公式情報を必ず確認してください。"
-            f"{venue_links_html}"
-            "本人に割り当てられた試験会場は受験票の表記が正本です。</p></blockquote></section>"
-        )
-    info_table = "" if is_exam_schedule_region else article_info_table(article)
+    official_box = (
+        '<section class="seo-article-section" aria-labelledby="official-info-title">'
+        '<h2 id="official-info-title">公式情報の確認</h2>'
+        '<blockquote><p><strong>公式情報の確認：</strong>'
+        f'{html.escape(exam_name())}の最新情報は、'
+        f'<a href="{html.escape(official["url"])}" target="_blank" rel="noopener noreferrer">{html.escape(official["label"])}</a>'
+        "などの公式情報を必ず確認してください。"
+        f"{venue_links_html}"
+        "本人に割り当てられた試験会場は受験票の表記が正本です。</p></blockquote></section>"
+    )
+    info_table = article_info_table(article)
     crumb_items = [("トップ", "index.html"), ("試験ガイド", "articles/index.html"), (title, None)]
     article_schema = {
         "@type": "Article",
@@ -968,7 +949,6 @@ def build_article_html(
                 ],
             }
         )
-    scroll_top = site_scroll_top_html(rel_path) if is_exam_schedule_region else ""
     return f"""<!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -1010,7 +990,6 @@ def build_article_html(
   </article>
 </main>
 {site_page_footer(rel_path, current="articles")}
-{scroll_top}
 {site_page_wrap_close()}
 </body>
 </html>

@@ -6332,6 +6332,8 @@ html:not(.js) .terms-idx-seo-fallback .terms-idx-seo-list a {
   --exam-schedule-tool-fs: var(--fs-sub);
   --exam-schedule-tool-lh: 1.35;
   --exam-schedule-control-h: 2.25rem;
+  --exam-schedule-list-fs: 12px;
+  --exam-schedule-list-lh: 1.2;
 }
 .exam-schedule-table-section .exam-schedule-table-note {
   margin: 0 0 1rem;
@@ -6503,11 +6505,11 @@ html:not(.js) .terms-idx-seo-fallback .terms-idx-seo-list a {
 }
 .exam-schedule-pref-option {
   margin: 0;
-  padding: 0.18rem 0.5rem;
+  padding: 0.22rem 0.5rem;
   color: var(--ink);
-  font-size: 11px;
+  font-size: var(--exam-schedule-list-fs, 12px);
   font-weight: 600;
-  line-height: 1.15;
+  line-height: var(--exam-schedule-list-lh, 1.2);
   cursor: pointer;
   list-style: none;
 }

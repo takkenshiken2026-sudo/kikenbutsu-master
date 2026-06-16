@@ -1,6 +1,7 @@
 {
   "updated": "2026-06-12",
   "redirects": {
+    "exam-schedule-by-region": "../../exam-dates/",
     "field-law-calculation": "field-law-basics",
     "field-law-case-study": "field-law-basics",
     "field-law-frequent-topics": "field-law-basics",
