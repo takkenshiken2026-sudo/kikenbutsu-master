@@ -9,7 +9,6 @@
  * 正本ドキュメント: docs/seo-editorial-typography.md
  */
 
-body.exam-dates-page,
 body.guide-article-page,
 body.term-article-page,
 body.compare-article-page,
@@ -101,7 +100,6 @@ body.mistakes-article-page {
 }
 
 /* 目次・ページ内リンクの着地位置 */
-body.exam-dates-page .seo-article-card :is(h2, h3)[id],
 body.guide-article-page .seo-article-card :is(h2, h3)[id],
 body.term-article-page .seo-article-card :is(h2, h3)[id],
 body.compare-article-page .seo-article-card :is(h2, h3)[id],
@@ -112,7 +110,6 @@ body.seo-editorial-preview-page .seo-article-card :is(h2, h3)[id] {
 }
 
 /* 記事カード */
-body.exam-dates-page .seo-editorial.seo-article-card,
 body.guide-article-page .seo-editorial.seo-article-card,
 body.term-article-page .seo-editorial.seo-article-card,
 body.compare-article-page .seo-editorial.seo-article-card,
@@ -129,7 +126,7 @@ body.seo-editorial-preview-page .seo-editorial.seo-article-card {
 /* 太字指定の上書き（本文系は Medium、見出しは Bold） */
 .seo-editorial.seo-article-card .article-lead,
 .seo-editorial.seo-article-card p,
-.seo-editorial.seo-article-card li:not(.exam-schedule-pref-option),
+.seo-editorial.seo-article-card li,
 .seo-editorial.seo-article-card td,
 .seo-editorial.seo-article-card th,
 .seo-editorial.seo-article-card a,
@@ -183,25 +180,19 @@ body.seo-editorial-preview-page .seo-editorial.seo-article-card {
 }
 
 .seo-editorial p,
-.seo-editorial li:not(.exam-schedule-pref-option) {
+.seo-editorial li {
   color: var(--seo-text-body);
   line-height: var(--seo-line-body);
   font-size: var(--seo-fs-body);
 }
 
-.seo-editorial .exam-schedule-pref-listbox .exam-schedule-pref-option {
-  font-size: 12px;
-  line-height: 1.2;
-  font-weight: 600;
-}
-
-.seo-editorial .seo-article-section ul:not(.term-past-list):not(.exam-schedule-pref-listbox) {
+.seo-editorial .seo-article-section ul:not(.term-past-list) {
   margin: 0.75em 0 1em;
   padding-left: 1.35em;
   list-style: disc;
 }
 
-.seo-editorial .seo-article-section ul:not(.term-past-list):not(.exam-schedule-pref-listbox) li + li {
+.seo-editorial .seo-article-section ul:not(.term-past-list) li + li {
   margin-top: 0.35em;
 }
 
@@ -297,7 +288,6 @@ body.seo-editorial-preview-page .seo-editorial.seo-article-card {
 }
 
 /* site-pages.css の .guide-article-page タイポ上書きより詳細度を上げる */
-body.exam-dates-page .seo-editorial .seo-article-section h2 .section-heading-num,
 body.guide-article-page .seo-editorial .seo-article-section h2 .section-heading-num,
 body.term-article-page .seo-editorial .seo-article-section h2 .section-heading-num,
 body.compare-article-page .seo-editorial .seo-article-section h2 .section-heading-num,
@@ -753,19 +743,16 @@ body.seo-editorial-preview-page .seo-editorial .seo-article-section h2 .section-
   border-bottom: 1px solid var(--seo-table-border);
 }
 
-body.exam-dates-page .seo-editorial.seo-article-card .seo-article-section table.seo-info-table td {
 body.guide-article-page .seo-editorial.seo-article-card .seo-article-section table.seo-info-table td {
   background: var(--seo-table-cell-bg);
   color: var(--seo-table-cell-text);
 }
 
-body.exam-dates-page .seo-editorial.seo-article-card .seo-article-section table.seo-info-table thead th {
 body.guide-article-page .seo-editorial.seo-article-card .seo-article-section table.seo-info-table thead th {
   background: var(--seo-table-head-bg);
   color: var(--seo-table-head-text);
 }
 
-body.exam-dates-page .seo-editorial.seo-article-card .seo-article-section table.seo-info-table tr:nth-child(even) td {
 body.guide-article-page .seo-editorial.seo-article-card .seo-article-section table.seo-info-table tr:nth-child(even) td {
   background: var(--seo-table-cell-bg);
 }
@@ -798,7 +785,6 @@ body.guide-article-page .seo-editorial.seo-article-card .seo-article-section tab
 }
 
 /* site-pages.css の .article-body th / モバイル seo-info-table より優先 */
-body.exam-dates-page .seo-editorial.seo-article-card table th,
 body.guide-article-page .seo-editorial.seo-article-card table th,
 body.term-article-page .seo-editorial.seo-article-card table th,
 body.compare-article-page .seo-editorial.seo-article-card table th,
@@ -809,7 +795,6 @@ body.seo-editorial-preview-page .seo-editorial.seo-article-card table th {
   color: var(--seo-table-head-text);
 }
 
-body.exam-dates-page .seo-editorial.seo-article-card .compare-matrix-table tbody th[scope="row"],
 body.guide-article-page .seo-editorial.seo-article-card .compare-matrix-table tbody th[scope="row"],
 body.term-article-page .seo-editorial.seo-article-card .compare-matrix-table tbody th[scope="row"],
 body.compare-article-page .seo-editorial.seo-article-card .compare-matrix-table tbody th[scope="row"],
@@ -820,7 +805,6 @@ body.seo-editorial-preview-page .seo-editorial.seo-article-card .numbers-matrix-
   color: var(--seo-table-cell-text);
 }
 
-body.exam-dates-page .seo-editorial.seo-article-card table td,
 body.guide-article-page .seo-editorial.seo-article-card table td,
 body.term-article-page .seo-editorial.seo-article-card table td,
 body.compare-article-page .seo-editorial.seo-article-card table td,
@@ -831,7 +815,6 @@ body.seo-editorial-preview-page .seo-editorial.seo-article-card table td {
   color: var(--seo-table-cell-text);
 }
 
-body.exam-dates-page .seo-editorial.seo-article-card tr:nth-child(even) td,
 body.guide-article-page .seo-editorial.seo-article-card tr:nth-child(even) td,
 body.term-article-page .seo-editorial.seo-article-card tr:nth-child(even) td,
 body.compare-article-page .seo-editorial.seo-article-card tr:nth-child(even) td,
@@ -841,7 +824,6 @@ body.seo-editorial-preview-page .seo-editorial.seo-article-card tr:nth-child(eve
   background: var(--seo-table-cell-alt-bg);
 }
 
-body.exam-dates-page .seo-editorial.seo-article-card .seo-info-table tr:nth-child(even) td,
 body.guide-article-page .seo-editorial.seo-article-card .seo-info-table tr:nth-child(even) td,
 body.term-article-page .seo-editorial.seo-article-card .seo-info-table tr:nth-child(even) td,
 body.compare-article-page .seo-editorial.seo-article-card .seo-info-table tr:nth-child(even) td,
@@ -852,7 +834,6 @@ body.seo-editorial-preview-page .seo-editorial.seo-article-card .seo-info-table 
 }
 
 /* 要点・関連記事見出し（site-pages.css の fs-sub / fs-small より優先） */
-body.exam-dates-page .seo-editorial.seo-article-card .seo-key-points-box h2,
 body.guide-article-page .seo-editorial.seo-article-card .seo-key-points-box h2,
 body.term-article-page .seo-editorial.seo-article-card .seo-key-points-box h2,
 body.compare-article-page .seo-editorial.seo-article-card .seo-key-points-box h2,
@@ -862,7 +843,6 @@ body.seo-editorial-preview-page .seo-editorial.seo-article-card .seo-key-points-
   font-size: 19px;
 }
 
-body.exam-dates-page .seo-editorial.seo-article-card .related-box-title,
 body.guide-article-page .seo-editorial.seo-article-card .related-box-title,
 body.term-article-page .seo-editorial.seo-article-card .related-box-title,
 body.compare-article-page .seo-editorial.seo-article-card .related-box-title,
@@ -874,8 +854,7 @@ body.seo-editorial-preview-page .seo-editorial.seo-article-card .related-box-tit
 }
 
 @media (max-width: 760px) {
-  body.exam-dates-page,
-body.guide-article-page,
+  body.guide-article-page,
   body.term-article-page,
   body.compare-article-page,
   body.numbers-article-page,
@@ -895,8 +874,7 @@ body.guide-article-page,
     --seo-hub-tabs-sticky-h: 98px;
   }
 
-  body.exam-dates-page .seo-editorial.seo-article-card table.seo-info-table,
-body.guide-article-page .seo-editorial.seo-article-card table.seo-info-table,
+  body.guide-article-page .seo-editorial.seo-article-card table.seo-info-table,
   body.term-article-page .seo-editorial.seo-article-card table.seo-info-table,
   body.compare-article-page .seo-editorial.seo-article-card table.seo-info-table,
   body.numbers-article-page .seo-editorial.seo-article-card table.seo-info-table,
@@ -909,8 +887,7 @@ body.guide-article-page .seo-editorial.seo-article-card table.seo-info-table,
     overflow: hidden;
   }
 
-  body.exam-dates-page .seo-editorial.seo-article-card table.seo-info-table tbody,
-body.guide-article-page .seo-editorial.seo-article-card table.seo-info-table tbody,
+  body.guide-article-page .seo-editorial.seo-article-card table.seo-info-table tbody,
   body.term-article-page .seo-editorial.seo-article-card table.seo-info-table tbody,
   body.compare-article-page .seo-editorial.seo-article-card table.seo-info-table tbody,
   body.numbers-article-page .seo-editorial.seo-article-card table.seo-info-table tbody,
@@ -919,8 +896,7 @@ body.guide-article-page .seo-editorial.seo-article-card table.seo-info-table tbo
     display: table-row-group;
   }
 
-  body.exam-dates-page .seo-editorial.seo-article-card table.seo-info-table tr,
-body.guide-article-page .seo-editorial.seo-article-card table.seo-info-table tr,
+  body.guide-article-page .seo-editorial.seo-article-card table.seo-info-table tr,
   body.term-article-page .seo-editorial.seo-article-card table.seo-info-table tr,
   body.compare-article-page .seo-editorial.seo-article-card table.seo-info-table tr,
   body.numbers-article-page .seo-editorial.seo-article-card table.seo-info-table tr,
@@ -934,8 +910,7 @@ body.guide-article-page .seo-editorial.seo-article-card table.seo-info-table tr,
     background: transparent;
   }
 
-  body.exam-dates-page .seo-editorial.seo-article-card table.seo-info-table th,
-body.guide-article-page .seo-editorial.seo-article-card table.seo-info-table th,
+  body.guide-article-page .seo-editorial.seo-article-card table.seo-info-table th,
   body.term-article-page .seo-editorial.seo-article-card table.seo-info-table th,
   body.compare-article-page .seo-editorial.seo-article-card table.seo-info-table th,
   body.numbers-article-page .seo-editorial.seo-article-card table.seo-info-table th,
@@ -949,8 +924,7 @@ body.guide-article-page .seo-editorial.seo-article-card table.seo-info-table th,
     white-space: normal;
   }
 
-  body.exam-dates-page .seo-editorial.seo-article-card table.seo-info-table td,
-body.guide-article-page .seo-editorial.seo-article-card table.seo-info-table td,
+  body.guide-article-page .seo-editorial.seo-article-card table.seo-info-table td,
   body.term-article-page .seo-editorial.seo-article-card table.seo-info-table td,
   body.compare-article-page .seo-editorial.seo-article-card table.seo-info-table td,
   body.numbers-article-page .seo-editorial.seo-article-card table.seo-info-table td,
@@ -963,15 +937,13 @@ body.guide-article-page .seo-editorial.seo-article-card table.seo-info-table td,
     font-size: var(--seo-fs-table);
   }
 
-  body.exam-dates-page .seo-editorial.seo-article-card .seo-article-section table.seo-info-table th,
-body.guide-article-page .seo-editorial.seo-article-card .seo-article-section table.seo-info-table th,
+  body.guide-article-page .seo-editorial.seo-article-card .seo-article-section table.seo-info-table th,
   body.term-article-page .seo-editorial.seo-article-card .seo-article-section table.seo-info-table th,
   body.compare-article-page .seo-editorial.seo-article-card .seo-article-section table.seo-info-table th,
   body.numbers-article-page .seo-editorial.seo-article-card .seo-article-section table.seo-info-table th,
   body.mistakes-article-page .seo-editorial.seo-article-card .seo-article-section table.seo-info-table th,
   body.seo-editorial-preview-page .seo-editorial.seo-article-card .seo-article-section table.seo-info-table th,
-  body.exam-dates-page .seo-editorial.seo-article-card .seo-article-section table.seo-info-table td,
-body.guide-article-page .seo-editorial.seo-article-card .seo-article-section table.seo-info-table td,
+  body.guide-article-page .seo-editorial.seo-article-card .seo-article-section table.seo-info-table td,
   body.term-article-page .seo-editorial.seo-article-card .seo-article-section table.seo-info-table td,
   body.compare-article-page .seo-editorial.seo-article-card .seo-article-section table.seo-info-table td,
   body.numbers-article-page .seo-editorial.seo-article-card .seo-article-section table.seo-info-table td,
@@ -980,12 +952,9 @@ body.guide-article-page .seo-editorial.seo-article-card .seo-article-section tab
     border: 1px solid var(--seo-table-border);
   }
 
-  body.exam-dates-page .seo-editorial.seo-article-card .numbers-matrix-table tbody th[scope="row"],
-body.guide-article-page .seo-editorial.seo-article-card .numbers-matrix-table tbody th[scope="row"],
-  body.exam-dates-page .seo-editorial.seo-article-card .compare-matrix-table tbody th[scope="row"],
-body.guide-article-page .seo-editorial.seo-article-card .compare-matrix-table tbody th[scope="row"],
-  body.exam-dates-page .seo-editorial.seo-article-card .mistakes-matrix-table tbody th[scope="row"],
-body.guide-article-page .seo-editorial.seo-article-card .mistakes-matrix-table tbody th[scope="row"],
+  body.guide-article-page .seo-editorial.seo-article-card .numbers-matrix-table tbody th[scope="row"],
+  body.guide-article-page .seo-editorial.seo-article-card .compare-matrix-table tbody th[scope="row"],
+  body.guide-article-page .seo-editorial.seo-article-card .mistakes-matrix-table tbody th[scope="row"],
   body.term-article-page .seo-editorial.seo-article-card .numbers-matrix-table tbody th[scope="row"],
   body.term-article-page .seo-editorial.seo-article-card .compare-matrix-table tbody th[scope="row"],
   body.term-article-page .seo-editorial.seo-article-card .mistakes-matrix-table tbody th[scope="row"],
@@ -1005,8 +974,7 @@ body.guide-article-page .seo-editorial.seo-article-card .mistakes-matrix-table t
 }
 
 @media (max-width: 480px) {
-  body.exam-dates-page,
-body.guide-article-page,
+  body.guide-article-page,
   body.term-article-page,
   body.compare-article-page,
   body.numbers-article-page,
@@ -1186,6 +1154,7 @@ body.guide-article-page,
 @media (max-width: 480px) {
   .seo-editorial.seo-article-card .affiliate-product-hub[data-comparison-kind="courses"] .affiliate-product-card-hit {
     flex-direction: column;
+    flex-wrap: nowrap;
   }
 
   .seo-editorial.seo-article-card .affiliate-product-hub[data-comparison-kind="courses"] .affiliate-product-cover {
@@ -1254,6 +1223,7 @@ body.guide-article-page,
 @media (max-width: 480px) {
   .seo-editorial.seo-article-card .affiliate-product-hub[data-comparison-kind="books"] .affiliate-product-card-hit {
     flex-direction: column;
+    flex-wrap: nowrap;
   }
 
   .seo-editorial.seo-article-card .affiliate-product-hub[data-comparison-kind="books"] .affiliate-product-cover {
