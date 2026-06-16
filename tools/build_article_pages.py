@@ -813,7 +813,9 @@ def build_article_html(
     if is_exam_schedule_region:
         from tools.exam_schedule_table import exam_schedule_table_html  # noqa: E402
 
-        exam_schedule_table_block = exam_schedule_table_html(section_num=None)
+        exam_schedule_table_block = exam_schedule_table_html(
+            section_num=None, show_heading=False, show_note=False
+        )
     sections = sections_html(
         article,
         term_hrefs=term_hrefs,

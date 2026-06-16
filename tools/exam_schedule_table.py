@@ -57,6 +57,7 @@ def exam_schedule_table_html(
     *,
     section_num: int | None = None,
     show_heading: bool = True,
+    show_note: bool = True,
     heading_title: str = "都道府県別の試験日一覧",
 ) -> str:
     rows = rows if rows is not None else load_schedule_rows()
@@ -108,12 +109,18 @@ def exam_schedule_table_html(
             "</tr>"
         )
 
+    note_html = ""
+    if show_note:
+        note_html = (
+            f'<p class="exam-schedule-table-note">データ取得日：{html.escape(fetched_label)}。'
+            "申込期間・試験日・合格発表は支部・受験地ごとに異なります。"
+            "申込前には必ず各行の公式リンクで最新情報を確認してください（要項で再確認）。</p>"
+        )
+
     return (
         f'<section class="seo-article-section exam-schedule-table-section" {aria}>'
         f"{heading_html}"
-        f'<p class="exam-schedule-table-note">データ取得日：{html.escape(fetched_label)}。'
-        "申込期間・試験日・合格発表は支部・受験地ごとに異なります。"
-        "申込前には必ず各行の公式リンクで最新情報を確認してください（要項で再確認）。</p>"
+        f"{note_html}"
         '<div class="exam-schedule-table-tools">'
         '<label for="exam-schedule-pref-filter">都道府県で絞り込み</label>'
         f'<select id="exam-schedule-pref-filter" class="exam-schedule-pref-filter">{option_html}</select>'
