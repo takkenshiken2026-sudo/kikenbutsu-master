@@ -6354,28 +6354,6 @@ html:not(.js) .terms-idx-seo-fallback .terms-idx-seo-list a {
   white-space: nowrap;
   margin: 0;
 }
-.exam-schedule-text-search {
-  flex: 1 1 12rem;
-  min-width: 10rem;
-  margin: 0;
-}
-.exam-schedule-text-search input {
-  width: 100%;
-  min-height: 2.5rem;
-  padding: 0.45rem 0.75rem;
-  border: 2px solid var(--accent);
-  border-radius: var(--r2);
-  background: var(--bg);
-  color: var(--ink);
-  font-family: var(--font);
-  font-size: var(--fs-sub);
-  font-weight: 600;
-  box-shadow: 0 1px 2px color-mix(in srgb, var(--ink) 10%, transparent);
-}
-.exam-schedule-text-search input:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
-}
 .exam-schedule-sort-select {
   flex: 0 1 11rem;
   min-width: 9.5rem;
@@ -6599,7 +6577,6 @@ html:not(.js) .terms-idx-seo-fallback .terms-idx-seo-list a {
     width: 100%;
     text-align: center;
   }
-  .exam-schedule-text-search,
   .exam-schedule-pref-combobox {
     flex: 1 1 100%;
     min-width: 0;

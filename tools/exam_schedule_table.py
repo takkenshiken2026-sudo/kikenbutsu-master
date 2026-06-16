@@ -36,18 +36,6 @@ def region_chips_html() -> str:
     )
 
 
-def row_search_text(row: dict[str, str]) -> str:
-    parts = [
-        row.get("prefecture", ""),
-        row.get("region_block", ""),
-        row.get("venue", ""),
-        row.get("exam_date_raw", ""),
-        row.get("application_period", ""),
-        row.get("result_date_raw", ""),
-    ]
-    return " ".join(p.strip() for p in parts if p.strip())
-
-
 def prefecture_combobox_html(options: list[str]) -> str:
     items = [
         '<li role="option" class="exam-schedule-pref-option on" data-value="" tabindex="-1">'
@@ -90,13 +78,12 @@ def exam_schedule_filter_script() -> str:
   var prefCombo=document.getElementById("exam-schedule-pref-combobox");
   var prefClear=document.getElementById("exam-schedule-pref-clear");
   var prefToggle=document.getElementById("exam-schedule-pref-toggle");
-  var search=document.getElementById("exam-schedule-text-filter");
   var sortSel=document.getElementById("exam-schedule-sort");
   var table=document.getElementById("exam-schedule-table");
   var count=document.getElementById("exam-schedule-table-count");
   var empty=document.getElementById("exam-schedule-table-empty");
   var chips=section.querySelectorAll(".exam-schedule-region-chip");
-  if(!prefValue||!prefInput||!prefList||!search||!sortSel||!table||!count){return;}
+  if(!prefValue||!prefInput||!prefList||!sortSel||!table||!count){return;}
   var prefOptions=Array.prototype.slice.call(prefList.querySelectorAll(".exam-schedule-pref-option"));
   var tbody=table.tBodies[0];
   var allRows=Array.prototype.slice.call(tbody.rows);
@@ -157,39 +144,24 @@ def exam_schedule_filter_script() -> str:
   }
   function rowMatches(row){
     var pref=getPref();
-    var q=search.value.trim();
     if(pref&&row.getAttribute("data-prefecture")!==pref){return false;}
     if(activeRegion&&row.getAttribute("data-region-block")!==activeRegion){return false;}
-    if(q){
-      var hay=row.getAttribute("data-search-text")||"";
-      if(hay.indexOf(q)===-1&&norm(hay).indexOf(norm(q))===-1){return false;}
-    }
     return true;
   }
   function sortRows(rows){
     var mode=sortSel.value;
     var sorted=rows.slice();
-    if(mode==="exam-asc"){
-      sorted.sort(function(a,b){
-        var ai=a.getAttribute("data-exam-iso")||"9999-99-99";
-        var bi=b.getAttribute("data-exam-iso")||"9999-99-99";
-        return ai.localeCompare(bi);
-      });
-    }else if(mode==="exam-desc"){
+    if(mode==="exam-desc"){
       sorted.sort(function(a,b){
         var ai=a.getAttribute("data-exam-iso")||"";
         var bi=b.getAttribute("data-exam-iso")||"";
         return bi.localeCompare(ai);
       });
-    }else if(mode==="prefecture"){
-      sorted.sort(function(a,b){
-        var ap=a.getAttribute("data-prefecture")||"";
-        var bp=b.getAttribute("data-prefecture")||"";
-        return ap.localeCompare(bp,"ja");
-      });
     }else{
       sorted.sort(function(a,b){
-        return Number(a.getAttribute("data-original-index"))-Number(b.getAttribute("data-original-index"));
+        var ai=a.getAttribute("data-exam-iso")||"9999-99-99";
+        var bi=b.getAttribute("data-exam-iso")||"9999-99-99";
+        return ai.localeCompare(bi);
       });
     }
     return sorted;
@@ -256,7 +228,6 @@ def exam_schedule_filter_script() -> str:
     }
     closePrefList();
   });
-  search.addEventListener("input",apply);
   sortSel.addEventListener("change",apply);
   for(var k=0;k<chips.length;k++){
     chips[k].addEventListener("click",function(){
@@ -359,17 +330,14 @@ def exam_schedule_table_html(
     options = prefecture_options(display_rows)
 
     body_rows = []
-    for idx, row in enumerate(display_rows):
+    for row in display_rows:
         pref = row.get("prefecture", "")
         region_block = row.get("region_block", "").strip()
-        search_text = html.escape(row_search_text(row), quote=True)
         body_rows.append(
             "<tr"
-            f' data-original-index="{idx}"'
             f' data-prefecture="{html.escape(pref, quote=True)}"'
             f' data-region-block="{html.escape(region_block, quote=True)}"'
             f' data-exam-iso="{html.escape(row.get("exam_date_iso", ""), quote=True)}"'
-            f' data-search-text="{search_text}"'
             ">"
             f"<td>{html.escape(pref)}</td>"
             f"<td>{html.escape(row.get('venue', ''))}</td>"
@@ -394,24 +362,17 @@ def exam_schedule_table_html(
         f"{heading_html}"
         f"{note_html}"
         '<div class="exam-schedule-table-tools">'
-        '<label class="exam-schedule-text-search" for="exam-schedule-text-filter">'
-        '<span class="u-visually-hidden">キーワード検索</span>'
-        '<input id="exam-schedule-text-filter" type="search" inputmode="search" '
-        'autocomplete="off" placeholder="都道府県・受験地・試験日…" aria-label="試験日一覧を検索">'
-        "</label>"
         '<label class="exam-schedule-sort-label" for="exam-schedule-sort">並び替え</label>'
         '<select id="exam-schedule-sort" class="exam-schedule-sort-select" aria-label="並び替え">'
         '<option value="exam-asc" selected>試験日が近い順</option>'
         '<option value="exam-desc">試験日が遠い順</option>'
-        '<option value="prefecture">都道府県順</option>'
-        '<option value="default">取得順</option>'
         "</select>"
         f"{prefecture_combobox_html(options)}"
         f'<span class="exam-schedule-table-count" id="exam-schedule-table-count">{len(display_rows)}件</span>'
         "</div>"
         f"{region_chips_html()}"
         '<p class="exam-schedule-table-empty hide" id="exam-schedule-table-empty" role="status">'
-        "条件に一致する日程がありません。キーワードや地方を変えるか、都道府県を「すべて」に戻してください。</p>"
+        "条件に一致する日程がありません。地方や都道府県の絞り込みを変えてください。</p>"
         '<div class="exam-schedule-table-wrap">'
         '<table class="seo-info-table exam-schedule-table" id="exam-schedule-table">'
         "<thead><tr>"
