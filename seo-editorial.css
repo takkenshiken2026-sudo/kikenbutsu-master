@@ -126,7 +126,7 @@ body.seo-editorial-preview-page .seo-editorial.seo-article-card {
 /* 太字指定の上書き（本文系は Medium、見出しは Bold） */
 .seo-editorial.seo-article-card .article-lead,
 .seo-editorial.seo-article-card p,
-.seo-editorial.seo-article-card li,
+.seo-editorial.seo-article-card li:not(.exam-schedule-pref-option),
 .seo-editorial.seo-article-card td,
 .seo-editorial.seo-article-card th,
 .seo-editorial.seo-article-card a,
@@ -180,10 +180,16 @@ body.seo-editorial-preview-page .seo-editorial.seo-article-card {
 }
 
 .seo-editorial p,
-.seo-editorial li {
+.seo-editorial li:not(.exam-schedule-pref-option) {
   color: var(--seo-text-body);
   line-height: var(--seo-line-body);
   font-size: var(--seo-fs-body);
+}
+
+.seo-editorial .exam-schedule-pref-listbox .exam-schedule-pref-option {
+  font-size: 11px;
+  line-height: 1.15;
+  font-weight: 600;
 }
 
 .seo-editorial .seo-article-section ul:not(.term-past-list):not(.exam-schedule-pref-listbox) {

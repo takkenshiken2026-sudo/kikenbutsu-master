@@ -6328,6 +6328,11 @@ html:not(.js) .terms-idx-seo-fallback .terms-idx-seo-list a {
 }
 
 /* === 試験日程一覧（exam-schedule-by-region） === */
+.exam-schedule-table-section {
+  --exam-schedule-tool-fs: var(--fs-sub);
+  --exam-schedule-tool-lh: 1.35;
+  --exam-schedule-control-h: 2.25rem;
+}
 .exam-schedule-table-section .exam-schedule-table-note {
   margin: 0 0 1rem;
   color: var(--text2);
@@ -6350,7 +6355,8 @@ html:not(.js) .terms-idx-seo-fallback .terms-idx-seo-list a {
 .exam-schedule-pref-label {
   font-weight: 700;
   color: var(--ink);
-  font-size: var(--fs-sub);
+  font-size: var(--exam-schedule-tool-fs);
+  line-height: var(--exam-schedule-tool-lh);
   white-space: nowrap;
   margin: 0;
 }
@@ -6358,8 +6364,8 @@ html:not(.js) .terms-idx-seo-fallback .terms-idx-seo-list a {
   flex: 0 1 11rem;
   min-width: 9.5rem;
   max-width: 100%;
-  min-height: 2.5rem;
-  padding: 0.45rem 2.25rem 0.45rem 0.75rem;
+  min-height: var(--exam-schedule-control-h);
+  padding: 0.35rem 2.25rem 0.35rem 0.75rem;
   border: 2px solid var(--accent);
   border-radius: var(--r2);
   background-color: var(--bg);
@@ -6368,8 +6374,10 @@ html:not(.js) .terms-idx-seo-fallback .terms-idx-seo-list a {
   background-position: right 0.85rem center;
   background-size: 0.75rem;
   color: var(--ink);
-  font-size: var(--fs-sub);
-  font-weight: 700;
+  font-family: var(--font);
+  font-size: var(--exam-schedule-tool-fs);
+  line-height: var(--exam-schedule-tool-lh);
+  font-weight: 600;
   cursor: pointer;
   box-shadow: 0 1px 2px color-mix(in srgb, var(--ink) 10%, transparent);
   appearance: none;
@@ -6400,15 +6408,16 @@ html:not(.js) .terms-idx-seo-fallback .terms-idx-seo-list a {
 }
 .exam-schedule-pref-input {
   width: 100%;
-  min-height: 2.15rem;
-  padding: 0.3rem 4rem 0.3rem 0.65rem;
+  min-height: var(--exam-schedule-control-h);
+  padding: 0.35rem 4rem 0.35rem 0.75rem;
   border: 2px solid var(--accent);
   border-radius: var(--r2);
   background: var(--bg);
   color: var(--ink);
   font-family: var(--font);
-  font-size: 12px;
-  font-weight: 700;
+  font-size: var(--exam-schedule-tool-fs);
+  line-height: var(--exam-schedule-tool-lh);
+  font-weight: 600;
   box-shadow: 0 1px 2px color-mix(in srgb, var(--ink) 10%, transparent);
 }
 .exam-schedule-pref-input:focus-visible {
@@ -6475,16 +6484,17 @@ html:not(.js) .terms-idx-seo-fallback .terms-idx-seo-list a {
   left: 0;
   right: 0;
   top: calc(100% - 2px);
-  max-height: min(22rem, 58vh);
+  max-height: min(28rem, 72vh);
   overflow-y: auto;
   margin: 0;
-  padding: 0.2rem 0;
+  padding: 0.1rem 0;
   list-style: none;
   border: 2px solid var(--accent);
   border-top: 1px solid var(--accent-border);
   border-radius: 0 0 var(--r2) var(--r2);
   background: var(--bg);
   box-shadow: 0 8px 20px var(--accent-shadow);
+  -webkit-overflow-scrolling: touch;
 }
 .exam-schedule-table-section .exam-schedule-pref-listbox {
   margin: 0;
@@ -6493,11 +6503,11 @@ html:not(.js) .terms-idx-seo-fallback .terms-idx-seo-list a {
 }
 .exam-schedule-pref-option {
   margin: 0;
-  padding: 0.28rem 0.65rem;
+  padding: 0.18rem 0.5rem;
   color: var(--ink);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
-  line-height: 1.25;
+  line-height: 1.15;
   cursor: pointer;
   list-style: none;
 }
@@ -6523,8 +6533,9 @@ html:not(.js) .terms-idx-seo-fallback .terms-idx-seo-list a {
   background: var(--bg);
   border: 1px solid var(--accent-border);
   color: var(--ink);
-  font-size: var(--fs-sub);
-  font-weight: 700;
+  font-size: var(--exam-schedule-tool-fs);
+  line-height: var(--exam-schedule-tool-lh);
+  font-weight: 600;
   white-space: nowrap;
 }
 .exam-schedule-region-chips {
@@ -6539,10 +6550,11 @@ html:not(.js) .terms-idx-seo-fallback .terms-idx-seo-list a {
   background: var(--bg);
   color: var(--text2);
   border-radius: 999px;
-  padding: 0.45rem 0.85rem;
+  padding: 0.4rem 0.85rem;
   font: inherit;
-  font-size: var(--fs-small);
-  font-weight: 700;
+  font-size: var(--exam-schedule-tool-fs);
+  line-height: var(--exam-schedule-tool-lh);
+  font-weight: 600;
   cursor: pointer;
   box-shadow: var(--sh);
 }
@@ -6580,6 +6592,9 @@ html:not(.js) .terms-idx-seo-fallback .terms-idx-seo-list a {
   .exam-schedule-pref-combobox {
     flex: 1 1 100%;
     min-width: 0;
+  }
+  .exam-schedule-pref-listbox {
+    max-height: min(34rem, 78vh);
   }
   .exam-schedule-region-chips {
     overflow-x: auto;

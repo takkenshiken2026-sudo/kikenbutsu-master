@@ -50,7 +50,7 @@ from tools.seo_editorial_chrome import (  # noqa: E402
 ARTICLES_CSV = ROOT / "data" / "guide_articles.csv"
 ARTICLES_DIR = ROOT / "articles"
 GEN_MARKER = ".generated-by-exam-site"
-GUIDE_PAGES_CSS_VER = "20260616-exam-schedule-scroll-top"
+GUIDE_PAGES_CSS_VER = "20260616-exam-schedule-toolbar-type"
 
 
 def norm(value: str | None) -> str:
