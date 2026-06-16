@@ -33,7 +33,12 @@ from tools.html_footer import (  # noqa: E402
     site_page_wrap_open,
 )
 from tools.seo_body_markup import seo_section_body_html  # noqa: E402
-from tools.seo_editorial_chrome import seo_editorial_article_class, seo_editorial_head_fonts, seo_editorial_stylesheet_links, seo_brand_asset_tags  # noqa: E402
+from tools.seo_editorial_chrome import (  # noqa: E402
+    seo_brand_asset_tags,
+    seo_editorial_article_class,
+    seo_editorial_head_fonts,
+    seo_editorial_stylesheet_links,
+)
 from tools.site_config import brand_name, exam_name, public_url  # noqa: E402
 
 OUTPUT_DIR = ROOT / PAGE_SLUG
@@ -81,21 +86,6 @@ def related_links_html() -> str:
     )
 
 
-def quality_panel_html(fact_checked: str) -> str:
-    return (
-        '<section class="seo-quality-panel" aria-labelledby="quality-panel-title">'
-        '<h2 id="quality-panel-title">このページの信頼性について</h2>'
-        '<table class="seo-info-table"><tbody>'
-        "<tr><th>執筆</th><td>乙4マスター編集部</td></tr>"
-        "<tr><th>確認</th><td>公式情報確認担当</td></tr>"
-        f"<tr><th>事実確認日</th><td>{html.escape(fact_checked)}</td></tr>"
-        "<tr><th>主な参照元</th><td><ul class=\"quality-source-list\">"
-        '<li><a href="https://www.shoubo-shiken.or.jp/kikenbutsu/" target="_blank" rel="noopener noreferrer">'
-        "消防試験研究センター 危険物取扱者</a></li></ul></td></tr>"
-        "</tbody></table></section>"
-    )
-
-
 def build_page_html() -> str:
     schedule_rows = load_schedule_rows()
     fact_checked = (latest_fetched_at(schedule_rows) or date.today().isoformat())[:10]
@@ -103,36 +93,15 @@ def build_page_html() -> str:
     title = f"{PAGE_TITLE}｜{brand_name()}"
     desc = META_DESCRIPTION
 
-    sections = page_sections()
-    body_parts: list[str] = []
+    body_parts: list[str] = [
+        exam_schedule_table_html(schedule_rows, show_heading=False),
+    ]
     section_num = 1
-    for idx, (heading, body) in enumerate(sections):
+    for idx, (heading, body) in enumerate(page_sections()):
         body_parts.append(section_html(heading, body, section_num, f"exam-dates-sec-{idx + 1}"))
         section_num += 1
-        if idx == 1:
-            body_parts.append(exam_schedule_table_html(schedule_rows, section_num=section_num))
-            section_num += 1
-
     body_parts.append(faq_html(faq_items(), section_num))
     body_parts.append(related_links_html())
-
-    toc_items = [
-        ("exam-dates-lead", "概要"),
-        ("quality-panel-title", "信頼性について"),
-    ]
-    for idx, (heading, _) in enumerate(sections):
-        toc_items.append((f"exam-dates-sec-{idx + 1}", heading))
-    toc_items.append(("exam-schedule-table-title", "乙4の試験日一覧"))
-    toc_items.append(("exam-dates-faq", "よくある質問"))
-    toc_links = "".join(
-        f'<li><a href="#{html.escape(anchor)}">{html.escape(label)}</a></li>'
-        for anchor, label in toc_items
-    )
-    toc = (
-        '<nav class="seo-toc" aria-labelledby="exam-dates-toc-title">'
-        '<h2 id="exam-dates-toc-title">目次</h2>'
-        f"<ol>{toc_links}</ol></nav>"
-    )
 
     json_ld = {
         "@context": "https://schema.org",
@@ -189,16 +158,7 @@ def build_page_html() -> str:
 </div>
 <h1 class="article-title">{html.escape(PAGE_TITLE)}</h1>
 <p class="article-lead" id="exam-dates-lead">{html.escape(PAGE_LEAD)}</p>
-{toc}
-{quality_panel_html(fact_checked)}
 {"".join(body_parts)}
-<section class="seo-article-section" aria-labelledby="official-info-title">
-<h2 id="official-info-title">公式情報の確認</h2>
-<blockquote><p><strong>公式情報の確認：</strong>
-危険物取扱者試験（乙種第4類）の最新情報は、
-<a href="https://www.shoubo-shiken.or.jp/kikenbutsu/" target="_blank" rel="noopener noreferrer">消防試験研究センター</a>
-などの公式情報を必ず確認してください。本人に割り当てられた試験会場は受験票の表記が正本です。</p></blockquote>
-</section>
 </article>
 </main>
 {footer}

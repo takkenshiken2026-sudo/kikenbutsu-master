@@ -56,6 +56,7 @@ def exam_schedule_table_html(
     rows: list[dict[str, str]] | None = None,
     *,
     section_num: int | None = None,
+    show_heading: bool = True,
 ) -> str:
     rows = rows if rows is not None else load_schedule_rows()
     display_rows = upcoming_rows(rows)
@@ -67,13 +68,18 @@ def exam_schedule_table_html(
         if section_num is not None
         else ""
     )
-    if not display_rows:
-        return (
-            '<section class="seo-article-section exam-schedule-table-section" '
-            'aria-labelledby="exam-schedule-table-title">'
+    heading_html = ""
+    if show_heading:
+        heading_html = (
             '<h2 id="exam-schedule-table-title">'
             f"{num_markup}"
             "乙4の試験日一覧（公式データから自動集計）</h2>"
+        )
+    aria = 'aria-labelledby="exam-schedule-table-title"' if show_heading else 'aria-label="乙4の試験日一覧"'
+    if not display_rows:
+        return (
+            f'<section class="seo-article-section exam-schedule-table-section" {aria}>'
+            f"{heading_html}"
             "<p>公式ページからの日程データはまだ取得されていません。"
             "`python3 tools/fetch_exam_schedule.py` を実行してから "
             "`python3 tools/build_all.py` を再実行してください。</p></section>"
@@ -103,11 +109,8 @@ def exam_schedule_table_html(
         )
 
     return (
-        '<section class="seo-article-section exam-schedule-table-section" '
-        'aria-labelledby="exam-schedule-table-title">'
-        '<h2 id="exam-schedule-table-title">'
-        f"{num_markup}"
-        "乙4の試験日一覧（公式データから自動集計）</h2>"
+        f'<section class="seo-article-section exam-schedule-table-section" {aria}>'
+        f"{heading_html}"
         f'<p class="exam-schedule-table-note">データ取得日：{html.escape(fetched_label)}。'
         "申込期間・試験日・合格発表は支部・受験地ごとに異なります。"
         "申込前には必ず各行の公式リンクで最新情報を確認してください（要項で再確認）。</p>"
