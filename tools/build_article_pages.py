@@ -446,6 +446,35 @@ def key_points_box_html(
     return seo_key_points_box_html(items, intro=intro)
 
 
+def _toc_html_exam_schedule_by_region(article: dict[str, str], has_faq: bool) -> str:
+    """試験日一覧記事：表の直下に置く目次（ページ上の順序に合わせる）。"""
+    items: list[tuple[str, str]] = [
+        ("exam-schedule-table-title", "都道府県別の試験日一覧"),
+        ("key-points-title", "この記事の要点"),
+        ("quality-panel-title", "この記事の信頼性について"),
+        ("article-sec-1", apply_vars(article.get("section_1_heading", "")) or "一覧の使い方"),
+        ("article-sec-2", apply_vars(article.get("section_2_heading", "")) or "試験日程記事との使い分け"),
+    ]
+    if has_faq:
+        items.append(("article-sec-faq", "よくある質問"))
+    items.extend(
+        [
+            ("article-info-title", "記事の基本情報"),
+            ("official-info-title", "公式情報の確認"),
+        ]
+    )
+    links = "".join(
+        f'<li><a href="#{html.escape(anchor)}">{html.escape(label)}</a></li>'
+        for anchor, label in items
+        if label
+    )
+    return (
+        '<nav class="seo-toc" aria-labelledby="seo-toc-title">'
+        '<h2 id="seo-toc-title">目次</h2>'
+        f"<ol>{links}</ol></nav>"
+    )
+
+
 def toc_html(
     article: dict[str, str],
     has_faq: bool,
@@ -458,6 +487,8 @@ def toc_html(
     from tools.affiliate_links import is_affiliate_skip_section
 
     slug = norm(article.get("slug"))
+    if slug == "exam-schedule-by-region":
+        return _toc_html_exam_schedule_by_region(article, has_faq)
     items: list[tuple[str, str]] = []
     if key_points_items(article, affiliate_brief=affiliate_brief) or norm(
         apply_vars(article.get("user_intent", ""))
@@ -777,15 +808,13 @@ def build_article_html(
         hub_toc = affiliate_hub_toc_item(brief)
         if hub_toc:
             toc_extra = {hub_after_section: hub_toc}
+    is_exam_schedule_region = slug == "exam-schedule-by-region"
+    exam_schedule_table_block = ""
     extra_sections_after: dict[int, Callable[[int], str]] | None = None
-    if slug == "exam-schedule-by-region":
+    if is_exam_schedule_region:
         from tools.exam_schedule_table import exam_schedule_table_html  # noqa: E402
 
-        extra_sections_after = {
-            1: lambda section_num: exam_schedule_table_html(section_num=section_num),
-        }
-        toc_extra = dict(toc_extra or {})
-        toc_extra[1] = ("exam-schedule-table-title", "都道府県別の試験日一覧")
+        exam_schedule_table_block = exam_schedule_table_html(section_num=None)
     sections = sections_html(
         article,
         term_hrefs=term_hrefs,
@@ -799,8 +828,6 @@ def build_article_html(
     )
     faqs = faq_items(article, slug_titles=slug_titles, url_labels=url_labels, brief=brief)
     faq_section_num = article_body_section_count(article) + 1
-    if slug == "exam-schedule-by-region":
-        faq_section_num += 1
     faq_section = faq_html(faqs, section_num=faq_section_num) if faqs else ""
     toc = toc_html(
         article,
@@ -854,6 +881,17 @@ def build_article_html(
         )
         related = merge_related_boxes(article_links, hub_box)
     quality_panel = quality_panel_html(article)
+    if is_exam_schedule_region:
+        article_intro = f"""    {exam_schedule_table_block}
+    {key_points_box}
+    {toc}
+    {quality_panel}
+    {sections}"""
+    else:
+        article_intro = f"""    {key_points_box}
+    {toc}
+    {quality_panel}
+    {sections}"""
     author = apply_vars(article.get("author_name", ""))
     reviewer = apply_vars(article.get("reviewer_name", ""))
     sources = parse_source_links(article.get("primary_sources", ""))
@@ -988,10 +1026,7 @@ def build_article_html(
     </div>
     <h1 class="article-title">{html.escape(title)}</h1>
     <p class="article-lead">{lead_html}</p>
-    {key_points_box}
-    {toc}
-    {quality_panel}
-    {sections}
+{article_intro}
     {faq_section}
     {info_table}
     {official_box}
