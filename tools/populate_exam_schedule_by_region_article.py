@@ -50,45 +50,19 @@ def article_row() -> dict[str, str]:
             "試験情報検索|https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=38&menjo_kbn=1"
         ),
         "original_note": "exam-schedule-by-region — 試験ガイド配置·日程表は build_article_pages で注入。",
-        "user_intent": (
-            "本記事を読むと、受験したい都道府県の乙4試験日・申込期間を一覧で比較でき、"
-            "公式ページで最新日程を確認する手順が分かります。"
-        ),
-        "action_items": (
-            "都道府県フィルタで受験地を絞り込む;"
-            "試験日・申込期間をメモする;"
-            "各行の公式リンクで最新情報を確認する;"
-            "支部決定後は試験日程記事で4点カレンダーを登録する"
-        ),
-        "key_points": (
-            "都道府県で絞り込み可能;"
-            "申込前は公式リンクで再確認;"
-            "支部決定後は試験日程記事へ"
-        ),
+        "user_intent": "",
+        "action_items": "",
+        "key_points": "",
         "update_policy": "試験要項・支部日程の更新時に本文と日程CSVを見直します。",
         "last_reviewed_at": TODAY,
         "next_review_at": TODAY,
         "source_checked_at": TODAY,
         "content_status": "published",
-        "revision_note": f"{TODAY}: 試験ガイド配置に変更（一覧中心）",
-        "section_1_heading": "一覧の使い方",
-        "section_1_body": (
-            "上の表は消防試験研究センター公式データをもとに、乙4の試験日を都道府県別に表示しています。"
-            "都道府県フィルタで絞り込み、試験日・申込期間・合格発表予定日を確認してください。"
-            "表の数値は取得時点の情報です。申込前には必ず「公式」列のリンク先で上書き確認してください（要項で再確認）。"
-            "複数の受験地がある都道府県では、同じ試験日でも会場が分かれる場合があります。"
-            "申込時に受験地を選べる支部は、要項・申込画面の案内どおりに確認してください。"
-        ),
-        "section_2_heading": "試験日程記事との使い分け",
-        "section_2_body": (
-            "都道府県の比較と、決定後の学習逆算は記事を分けます。\n\n"
-            "| 論点 | 本記事（試験日一覧） | 試験日程記事 |\n"
-            "| --- | --- | --- |\n"
-            "| 焦点 | どの支部・いつ受験できるか | 4点カレンダー・12週逆算 |\n"
-            "| 使うタイミング | 申込前の支部比較 | 支部決定後の学習計画 |\n"
-            "| 出口 | 申込の流れへ | 学習計画へ |\n\n"
-            "支部日程を決めたら、exam-schedule記事で申込締切・合格発表を4点カレンダー登録してください。"
-        ),
+        "revision_note": f"{TODAY}: 一覧中心レイアウト（要点·本文セクション非表示）",
+        "section_1_heading": "（一覧ページ）",
+        "section_1_body": "本文セクションは非表示。日程表は build_article_pages で注入。",
+        "section_2_heading": "",
+        "section_2_body": "",
         "section_3_heading": "",
         "section_3_body": "",
         "section_4_heading": "",
@@ -99,19 +73,10 @@ def article_row() -> dict[str, str]:
         "section_6_body": "",
         "section_7_heading": "",
         "section_7_body": "",
-        "faq_1_question": "乙4はどの都道府県で受験できますか？",
-        "faq_1_answer": (
-            "全国47都道府県の支部で受験できます。"
-            "一覧の都道府県フィルタで絞り込み、各行の公式リンクから最新日程を確認してください。"
-            "現住所・勤務地にかかわらず希望する都道府県を選べます。"
-            "東京都は中央試験センター含む日程も支部ページに掲載されます（要項で再確認）。"
-        ),
-        "faq_2_question": "一覧と公式で日程が違う場合は？",
-        "faq_2_answer": (
-            "必ず公式ページを正本としてください。"
-            "本記事の表は取得時点のキャッシュです。支部独自の注意事項や直前の変更は反映されない場合があります。"
-            "申込前に各行の公式リンクを開き直し、試験日・申込期間・受験地を再確認してください（要項で再確認）。"
-        ),
+        "faq_1_question": "",
+        "faq_1_answer": "",
+        "faq_2_question": "",
+        "faq_2_answer": "",
         "related_links": (
             "exam-schedule:試験日程·逆算12週;"
             "exam-application-flow:申込みの流れ;"

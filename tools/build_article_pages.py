@@ -447,21 +447,12 @@ def key_points_box_html(
 
 
 def _toc_html_exam_schedule_by_region(article: dict[str, str], has_faq: bool) -> str:
-    """試験日一覧記事：表見出しは目次に載せず、要点以降のみ列挙する。"""
+    """試験日一覧記事：表は目次外。信頼性パネルと公式確認のみ列挙する。"""
+    del article, has_faq
     items: list[tuple[str, str]] = [
-        ("key-points-title", "この記事の要点"),
         ("quality-panel-title", "この記事の信頼性について"),
-        ("article-sec-1", apply_vars(article.get("section_1_heading", "")) or "一覧の使い方"),
-        ("article-sec-2", apply_vars(article.get("section_2_heading", "")) or "試験日程記事との使い分け"),
+        ("official-info-title", "公式情報の確認"),
     ]
-    if has_faq:
-        items.append(("article-sec-faq", "よくある質問"))
-    items.extend(
-        [
-            ("article-info-title", "記事の基本情報"),
-            ("official-info-title", "公式情報の確認"),
-        ]
-    )
     links = "".join(
         f'<li><a href="#{html.escape(anchor)}">{html.escape(label)}</a></li>'
         for anchor, label in items
@@ -829,6 +820,8 @@ def build_article_html(
     )
     faqs = faq_items(article, slug_titles=slug_titles, url_labels=url_labels, brief=brief)
     faq_section_num = article_body_section_count(article) + 1
+    if is_exam_schedule_region:
+        faqs = []
     faq_section = faq_html(faqs, section_num=faq_section_num) if faqs else ""
     toc = toc_html(
         article,
@@ -885,9 +878,7 @@ def build_article_html(
     if is_exam_schedule_region:
         article_intro = f"""    {toc}
     {exam_schedule_table_block}
-    {key_points_box}
-    {quality_panel}
-    {sections}"""
+    {quality_panel}"""
     else:
         article_intro = f"""    {key_points_box}
     {toc}
@@ -939,7 +930,7 @@ def build_article_html(
         f"{venue_links_html}"
         "本人に割り当てられた試験会場は受験票の表記が正本です。</p></blockquote></section>"
     )
-    info_table = article_info_table(article)
+    info_table = "" if is_exam_schedule_region else article_info_table(article)
     crumb_items = [("トップ", "index.html"), ("試験ガイド", "articles/index.html"), (title, None)]
     article_schema = {
         "@type": "Article",

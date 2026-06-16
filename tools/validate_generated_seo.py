@@ -55,6 +55,28 @@ class GeneratedSeoValidator:
         if re.search(r'href="https://example\.com/?', text):
             self.warn(path, "本番サイトでは example.com の公式リンクを実URLに差し替えてください")
 
+    def validate_exam_schedule_page(self, path: Path, *, require_fact_checked: bool) -> None:
+        text = self.text(path)
+        for label, marker in {
+            "信頼性ブロック": 'id="quality-panel-title"',
+            "試験日一覧表": 'id="exam-schedule-table"',
+            "公式情報の確認": 'id="official-info-title"',
+        }.items():
+            if self.index_of(text, marker) < 0:
+                self.error(path, f"{label} が生成されていません")
+        quality_pos = self.index_of(text, 'id="quality-panel-title"')
+        official_pos = self.index_of(text, 'id="official-info-title"')
+        if quality_pos >= 0 and official_pos >= 0 and quality_pos > official_pos:
+            self.error(path, "信頼性ブロック は 公式情報の確認 より前に配置してください")
+        for row_name in ("執筆", "確認", "主な参照元"):
+            if f"<th>{row_name}</th>" not in text:
+                self.error(path, f"信頼性表に {row_name} がありません")
+        if require_fact_checked and "<th>事実確認日</th>" not in text:
+            self.error(path, "信頼性表に 事実確認日 がありません")
+        if "quality-source-list" not in text:
+            self.error(path, "主な参照元は quality-source-list のリストで表示してください")
+        self.validate_common_leaks(path, text)
+
     def validate_full_seo_page(self, path: Path, *, require_fact_checked: bool) -> None:
         text = self.text(path)
         required_markers = {
@@ -131,6 +153,8 @@ class GeneratedSeoValidator:
         if is_sitemap_excluded_rel(rel) or is_noindex_html(path):
             return None
         if path.match("articles/*/index.html") and path.parent.name != "chapters":
+            if path.parent.name == "exam-schedule-by-region":
+                return "exam_schedule"
             return "full"
         if path.match("terms/g-*.html"):
             return "term"
@@ -163,7 +187,9 @@ class GeneratedSeoValidator:
             if profile is None:
                 continue
             validated += 1
-            if profile == "full":
+            if profile == "exam_schedule":
+                self.validate_exam_schedule_page(path, require_fact_checked=True)
+            elif profile == "full":
                 self.validate_full_seo_page(path, require_fact_checked=True)
             elif profile == "term":
                 self.validate_full_seo_page(path, require_fact_checked=False)
