@@ -4,7 +4,6 @@
 
 from __future__ import annotations
 
-from collections.abc import Callable
 import csv
 import html
 import json
@@ -26,7 +25,6 @@ from tools.html_footer import (  # noqa: E402
     site_page_wrap_close,
     site_page_wrap_open,
 )
-from tools.guide_article_rules import EXAM_SCHEDULE_TABLE_SLUG  # noqa: E402
 from tools.guide_index_picks_ui import build_guide_index_picks_html  # noqa: E402
 from tools.seo_utils import content_date_from_row, json_ld_date_modified, meta_updated_html  # noqa: E402
 from tools.site_config import (  # noqa: E402
@@ -50,7 +48,7 @@ from tools.seo_editorial_chrome import (  # noqa: E402
 ARTICLES_CSV = ROOT / "data" / "guide_articles.csv"
 ARTICLES_DIR = ROOT / "articles"
 GEN_MARKER = ".generated-by-exam-site"
-GUIDE_PAGES_CSS_VER = "20260616-exam-schedule-toolbar-type"
+GUIDE_PAGES_CSS_VER = "20260527-guide"
 
 
 def norm(value: str | None) -> str:
@@ -169,6 +167,23 @@ def article_url_labels(article: dict[str, str]) -> dict[str, str]:
     return url_label_map_from_sources(parse_source_links(article.get("primary_sources", "")))
 
 
+def site_url_labels_from_articles(by_slug: dict[str, dict[str, str]]) -> dict[str, str]:
+    """全ガイド記事の primary_sources から URL ラベル辞書を集約（記事横断の裸 URL 解決用）。"""
+    merged: dict[str, str] = {}
+    for row in by_slug.values():
+        for key, label in article_url_labels(row).items():
+            merged.setdefault(key, label)
+    return merged
+
+
+def merged_url_labels(
+    article: dict[str, str],
+    by_slug: dict[str, dict[str, str]],
+) -> dict[str, str]:
+    """サイト共通ラベルに記事固有の primary_sources を上書きマージ。"""
+    return {**site_url_labels_from_articles(by_slug), **article_url_labels(article)}
+
+
 def resolve_reader_prose(
     text: str,
     *,
@@ -200,19 +215,16 @@ def paragraphs(text: str) -> str:
 def body_text_transform(affiliate_brief: dict | None = None, article: dict | None = None):
     """Apply site vars, 「」括り、optional affiliate product name → markdown links."""
     from tools.affiliate_body_links import prepare_affiliate_prose  # noqa: E402
-    from tools.affiliate_brief import brief_has_product_comparison  # noqa: E402
     from tools.affiliate_links import is_affiliate_article  # noqa: E402
-
-    use_brief = brief_has_product_comparison(affiliate_brief) if affiliate_brief else False
 
     def transform(text: str) -> str:
         out = apply_vars(text)
         if article and is_affiliate_article(article):
             out = prepare_affiliate_prose(
                 out,
-                brief=affiliate_brief if use_brief else None,
+                brief=affiliate_brief,
                 article=article,
-                apply_links=bool(use_brief and affiliate_brief),
+                apply_links=bool(affiliate_brief),
             )
         return out
 
@@ -318,11 +330,9 @@ def sections_html(
     affiliate_hub: str = "",
     affiliate_hub_after_section: int = 2,
     affiliate_brief: dict | None = None,
-    extra_sections_after: dict[int, str | Callable[[int], str]] | None = None,
 ) -> str:
     sections: list[str] = []
     display_num = 1
-    extras = extra_sections_after or {}
     for idx in range(1, 9):
         html_text = section_html(
             article,
@@ -339,13 +349,6 @@ def sections_html(
             display_num += 1
             if affiliate_hub and idx == affiliate_hub_after_section:
                 sections.append(affiliate_hub)
-            extra = extras.get(idx)
-            if extra:
-                if callable(extra):
-                    sections.append(extra(display_num))
-                else:
-                    sections.append(extra)
-                display_num += 1
     return "\n".join(sections)
 
 
@@ -406,6 +409,12 @@ def key_points_box_html(
             url_labels=url_labels,
             link_external_urls=False,
         )
+    from tools.guide_key_points_prose import (  # noqa: E402
+        normalize_key_points_intro,
+        normalize_key_points_items,
+    )
+
+    intro = normalize_key_points_intro(intro)
     if (
         affiliate_brief
         and brief_has_product_comparison(affiliate_brief)
@@ -426,6 +435,7 @@ def key_points_box_html(
             )
 
     items = key_points_items(article, affiliate_brief=affiliate_brief)
+    items = normalize_key_points_items(items)
     from tools.affiliate_body_links import affiliate_name_labels, wrap_affiliate_names_in_quotes  # noqa: E402
     from tools.affiliate_links import is_affiliate_article  # noqa: E402
 
@@ -716,9 +726,13 @@ def build_article_html(
     from tools.affiliate_product_ui import affiliate_hub_toc_item, affiliate_product_hub_html  # noqa: E402
 
     brief = load_affiliate_brief(slug)
+    from tools.guide_lead_limit import cap_lead_text  # noqa: E402
+    from tools.guide_tatoeba_limit import cap_article_tatoeba_fields  # noqa: E402
+
+    article = cap_article_tatoeba_fields(article)
     slug_titles = slug_title_map(by_slug)
     field_labels = field_prefix_labels(ROOT)
-    url_labels = article_url_labels(article)
+    url_labels = merged_url_labels(article, by_slug)
     title = apply_vars(article["title"])
     title = resolve_reader_prose(
         title,
@@ -746,6 +760,7 @@ def build_article_html(
             prefix_labels=field_labels,
             url_labels=url_labels,
         )
+    lead_text = cap_lead_text(lead_text)
     if lead_text and "[" in lead_text:
         from tools.inline_markup import render_inline_markup  # noqa: E402
 
@@ -778,7 +793,6 @@ def build_article_html(
         hub_toc = affiliate_hub_toc_item(brief)
         if hub_toc:
             toc_extra = {hub_after_section: hub_toc}
-    extra_sections_after: dict[int, Callable[[int], str]] | None = None
     sections = sections_html(
         article,
         term_hrefs=term_hrefs,
@@ -788,11 +802,9 @@ def build_article_html(
         affiliate_hub=affiliate_hub,
         affiliate_hub_after_section=hub_after_section,
         affiliate_brief=brief,
-        extra_sections_after=extra_sections_after,
     )
     faqs = faq_items(article, slug_titles=slug_titles, url_labels=url_labels, brief=brief)
-    faq_section_num = article_body_section_count(article) + 1
-    faq_section = faq_html(faqs, section_num=faq_section_num) if faqs else ""
+    faq_section = faq_html(faqs, section_num=article_body_section_count(article) + 1) if faqs else ""
     toc = toc_html(
         article,
         bool(faqs),
@@ -845,10 +857,6 @@ def build_article_html(
         )
         related = merge_related_boxes(article_links, hub_box)
     quality_panel = quality_panel_html(article)
-    article_intro = f"""    {key_points_box}
-    {toc}
-    {quality_panel}
-    {sections}"""
     author = apply_vars(article.get("author_name", ""))
     reviewer = apply_vars(article.get("reviewer_name", ""))
     sources = parse_source_links(article.get("primary_sources", ""))
@@ -983,7 +991,10 @@ def build_article_html(
     </div>
     <h1 class="article-title">{html.escape(title)}</h1>
     <p class="article-lead">{lead_html}</p>
-{article_intro}
+    {key_points_box}
+    {toc}
+    {quality_panel}
+    {sections}
     {faq_section}
     {info_table}
     {official_box}
@@ -1006,37 +1017,6 @@ def sort_articles_for_index(articles: list[dict[str, str]]) -> list[dict[str, st
             int(a.get("priority") or 9999),
         ),
     )
-
-
-GUIDE_INDEX_EXTERNAL_HREFS: dict[str, str] = {
-    EXAM_SCHEDULE_TABLE_SLUG: "../exam-dates/",
-}
-
-
-def guide_index_public_url(article: dict[str, str]) -> str:
-    slug = norm(article.get("slug"))
-    if slug in GUIDE_INDEX_EXTERNAL_HREFS:
-        return public_url("exam-dates/")
-    return public_url(f"articles/{slug}/")
-
-
-def guide_index_card_href(article: dict[str, str]) -> str:
-    slug = norm(article.get("slug"))
-    return GUIDE_INDEX_EXTERNAL_HREFS.get(slug) or f"{slug}/"
-
-
-def articles_for_guide_index(
-    published: list[dict[str, str]],
-    all_articles: list[dict[str, str]],
-) -> list[dict[str, str]]:
-    """一覧に載せる記事。archived でも外部正本へ誘導する slug は含める。"""
-    rows = list(published)
-    listed = {norm(a.get("slug")) for a in rows}
-    by_slug = {norm(a.get("slug")): a for a in all_articles if norm(a.get("slug"))}
-    for slug in GUIDE_INDEX_EXTERNAL_HREFS:
-        if slug not in listed and slug in by_slug:
-            rows.append(by_slug[slug])
-    return sort_articles_for_index(rows)
 
 
 def build_index_html(articles: list[dict[str, str]]) -> str:
@@ -1074,7 +1054,7 @@ def build_index_html(articles: list[dict[str, str]]) -> str:
             f'data-genre="{html.escape(genre, quote=True)}" '
             f'data-genre-style="{html.escape(style, quote=True)}" '
             f'data-search="{html.escape(search_text, quote=True)}">'
-            f'<a class="article-index-card-link" href="{html.escape(guide_index_card_href(article))}">'
+            f'<a class="article-index-card-link" href="{html.escape(article["slug"])}/">'
             f'<span class="article-index-card-genre">{html.escape(genre)}</span>'
             f"<h2>{html.escape(title_text)}</h2>"
             f"<p>{html.escape(desc_text)}</p>"
@@ -1119,7 +1099,7 @@ def build_index_html(articles: list[dict[str, str]]) -> str:
     title = f"試験ガイド｜{brand_name()}（{exam_name()}）"
     desc = f"{exam_name()}の受験フェーズ別ガイド（制度・学習計画・演習・直前・再受験）一覧です。用語の定義は用語解説（知識ハブ）をご覧ください。"
     item_list = [
-        {"@type": "ListItem", "position": i, "name": apply_vars(a["title"]), "item": guide_index_public_url(a)}
+        {"@type": "ListItem", "position": i, "name": apply_vars(a["title"]), "item": public_url(f"articles/{a['slug']}/")}
         for i, a in enumerate(articles, start=1)
     ]
     ld_json = json.dumps(
@@ -1209,7 +1189,7 @@ def main() -> int:
     buildable = [
         article
         for article in articles
-        if is_published_guide(article) and affiliate_article_is_buildable(article)
+        if is_published_guide(article) and affiliate_article_is_buildable(article, site_root=ROOT)
     ]
     skipped_affiliate = len(articles) - len(buildable)
     by_slug = {norm(a.get("slug")): a for a in buildable if norm(a.get("slug"))}
@@ -1245,10 +1225,7 @@ def main() -> int:
             ),
             encoding="utf-8",
         )
-    (ARTICLES_DIR / "index.html").write_text(
-        build_index_html(articles_for_guide_index(buildable, articles)),
-        encoding="utf-8",
-    )
+    (ARTICLES_DIR / "index.html").write_text(build_index_html(buildable), encoding="utf-8")
     msg = f"Wrote {len(buildable)} guide articles under {ARTICLES_DIR}"
     if skipped_affiliate:
         msg += f" (skipped {skipped_affiliate} affiliate without ASP links)"

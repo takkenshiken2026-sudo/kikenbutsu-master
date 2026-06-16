@@ -13,6 +13,10 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
+from tools.guide_key_points_prose import key_points_prose_issues  # noqa: E402
+from tools.guide_lead_limit import MAX_LEAD_CHARS, lead_char_count_in_reader_html  # noqa: E402
+from tools.guide_slug_prose import bare_urls_in_reader_html  # noqa: E402
+from tools.guide_tatoeba_limit import MAX_TATOEBA_PER_ARTICLE, tatoeba_in_reader_html  # noqa: E402
 from tools.seo_utils import is_noindex_html, is_sitemap_excluded_rel  # noqa: E402
 
 
@@ -55,34 +59,40 @@ class GeneratedSeoValidator:
         if re.search(r'href="https://example\.com/?', text):
             self.warn(path, "本番サイトでは example.com の公式リンクを実URLに差し替えてください")
 
-    def validate_exam_schedule_page(self, path: Path, *, require_fact_checked: bool) -> None:
-        text = self.text(path)
-        for label, marker in {
-            "信頼性ブロック": 'id="quality-panel-title"',
-            "試験日一覧表": 'id="exam-schedule-table"',
-        }.items():
-            if self.index_of(text, marker) < 0:
-                self.error(path, f"{label} が生成されていません")
-        table_pos = self.index_of(text, 'id="exam-schedule-table"')
-        quality_pos = self.index_of(text, 'id="quality-panel-title"')
-        if table_pos >= 0 and quality_pos >= 0 and table_pos > quality_pos:
-            self.error(path, "試験日一覧表 は 信頼性ブロック より前に配置してください")
-        if self.index_of(text, 'id="seo-toc-title"') >= 0:
-            self.error(path, "試験日一覧記事に目次を表示しないでください")
-        if self.index_of(text, 'id="exam-dates-faq"') < 0:
-            self.error(path, "FAQ が生成されていません")
-        if self.index_of(text, 'id="official-info-title"') >= 0:
-            self.error(path, "試験日一覧ページに公式情報の確認ブロックは不要です")
-        for row_name in ("執筆", "確認", "主な参照元"):
-            if f"<th>{row_name}</th>" not in text:
-                self.error(path, f"信頼性表に {row_name} がありません")
-        if require_fact_checked and "<th>事実確認日</th>" not in text:
-            self.error(path, "信頼性表に 事実確認日 がありません")
-        if "quality-source-list" not in text:
-            self.error(path, "主な参照元は quality-source-list のリストで表示してください")
-        self.validate_common_leaks(path, text)
+    def validate_guide_article_prose(self, path: Path, text: str) -> None:
+        bare_urls = bare_urls_in_reader_html(text)
+        if bare_urls:
+            sample = bare_urls[0][:80]
+            extra = f" 他{len(bare_urls) - 1}件" if len(bare_urls) > 1 else ""
+            self.error(
+                path,
+                f"本文に裸 URL が残っています: {sample}{extra}（primary_sources またはビルド時ラベル化を確認）",
+            )
+        tatoeba_hits = tatoeba_in_reader_html(text)
+        if len(tatoeba_hits) > MAX_TATOEBA_PER_ARTICLE:
+            self.error(
+                path,
+                f"本文の「たとえば」が多すぎます: {len(tatoeba_hits)}件（上限 {MAX_TATOEBA_PER_ARTICLE}）",
+            )
+        lead_len = lead_char_count_in_reader_html(text)
+        if lead_len > MAX_LEAD_CHARS:
+            self.error(
+                path,
+                f"冒頭リード文が長すぎます: {lead_len}文字（上限 {MAX_LEAD_CHARS}文字）",
+            )
+        kp_issues = key_points_prose_issues(text)
+        for message in kp_issues[:3]:
+            self.error(path, message)
+        if len(kp_issues) > 3:
+            self.error(path, f"要点ボックスの prose 問題が他 {len(kp_issues) - 3} 件あります")
 
-    def validate_full_seo_page(self, path: Path, *, require_fact_checked: bool) -> None:
+    def validate_full_seo_page(
+        self,
+        path: Path,
+        *,
+        require_fact_checked: bool,
+        check_guide_prose: bool = False,
+    ) -> None:
         text = self.text(path)
         required_markers = {
             "要点ボックス": 'id="key-points-title"',
@@ -136,6 +146,8 @@ class GeneratedSeoValidator:
             self.error(path, "主な参照元は quality-source-list のリストで表示してください")
 
         self.validate_common_leaks(path, text)
+        if check_guide_prose:
+            self.validate_guide_article_prose(path, text)
 
     def validate_hub_detail_page(self, path: Path) -> None:
         text = self.text(path)
@@ -159,8 +171,6 @@ class GeneratedSeoValidator:
             return None
         if path.match("articles/*/index.html") and path.parent.name != "chapters":
             return "full"
-        if path.as_posix() == "exam-dates/index.html":
-            return "exam_schedule"
         if path.match("terms/g-*.html"):
             return "term"
         if path.match("terms/compare/c-*.html"):
@@ -171,7 +181,6 @@ class GeneratedSeoValidator:
 
     def pages(self) -> list[Path]:
         patterns = (
-            "exam-dates/index.html",
             "articles/*/index.html",
             "terms/g-*.html",
             "terms/compare/c-*.html",
@@ -193,10 +202,12 @@ class GeneratedSeoValidator:
             if profile is None:
                 continue
             validated += 1
-            if profile == "exam_schedule":
-                self.validate_exam_schedule_page(path, require_fact_checked=True)
-            elif profile == "full":
-                self.validate_full_seo_page(path, require_fact_checked=True)
+            if profile == "full":
+                self.validate_full_seo_page(
+                    path,
+                    require_fact_checked=True,
+                    check_guide_prose=True,
+                )
             elif profile == "term":
                 self.validate_full_seo_page(path, require_fact_checked=False)
             elif profile == "hub":

@@ -30,7 +30,6 @@ from tools.guide_rewrite_rules import (
 
 GUIDE_MIN_SECTION_BODY = 180  # ERROR（published）: 専門家解説の目安
 GUIDE_MIN_FAQ_ANSWER = 100
-EXAM_SCHEDULE_TABLE_SLUG = "exam-schedule-by-region"
 
 
 def reader_facing_text(
@@ -150,10 +149,7 @@ def check_guide_row(
                         err(col, f"本文に内部 slug が露出しています: {leak}")
 
     sections = [(h, b, body) for h, b, body in section_pairs(row) if body]
-    table_only = slug == EXAM_SCHEDULE_TABLE_SLUG
     for _h, bcol, body in sections:
-        if table_only:
-            continue
         visible = reader_facing_text(row, bcol, body, slug_titles=slug_titles) if published else body
         if published and len(visible) < GUIDE_MIN_SECTION_BODY:
             msg = f"section 本文は {GUIDE_MIN_SECTION_BODY} 文字以上にしてください（現在 {len(visible)} 文字）"
@@ -219,6 +215,11 @@ def check_guide_row(
     lead = norm(row.get("lead"))
     if lead and len(lead) < GUIDE_PRO["lead"]:
         warn("lead", f"リードは {GUIDE_PRO['lead']} 文字以上を推奨（現在 {len(lead)} 文字）")
+    if lead and len(lead) > GUIDE_PRO["lead_max"]:
+        warn(
+            "lead",
+            f"リードは {GUIDE_PRO['lead_max']} 文字以内を推奨（現在 {len(lead)} 文字。ビルド時に自動短縮されます）",
+        )
 
     meta = norm(row.get("meta_description"))
     if meta:
@@ -241,14 +242,12 @@ def check_guide_row(
         if len(item) < GUIDE_PRO["action_item_each"]:
             warn("action_items", f"各 action_items は具体的に（{GUIDE_PRO['action_item_each']} 字以上）")
 
-    if len(sections) < GUIDE_PRO["section_count"] and not table_only:
+    if len(sections) < GUIDE_PRO["section_count"]:
         warn(
             "section_*_body",
             f"本文見出しは {GUIDE_PRO['section_count']} 個以上を推奨（現在 {len(sections)} 個）",
         )
     for _h, bcol, body in sections:
-        if table_only:
-            continue
         issues.extend(long_sentence_issues(body, bcol, max_chars=80))
 
     for n in range(1, 4):

@@ -399,16 +399,6 @@ def site_page_wrap_close() -> str:
     return "</div>"
 
 
-def site_scroll_top_html(rel_path: Path) -> str:
-    """長い一覧ページ用：スクロール後に表示するページ上部へ戻るボタン。"""
-    src = html.escape(footer_href(rel_path, "site-scroll-top.js"))
-    return (
-        '<button type="button" class="site-scroll-top" id="site-scroll-top" '
-        'aria-label="ページ上部へ">↑</button>\n'
-        f'<script defer src="{src}"></script>'
-    )
-
-
 def q_index_tools_open_html(
     *,
     search_label: str,

@@ -59,16 +59,24 @@ def load_retired_map() -> dict[str, str]:
     return mapping
 
 
-def resolve_redirect_target(target: str) -> str:
-    if target.startswith("../") or target.startswith("/") or target.endswith(".html"):
-        return target
-    return f"../{target}/index.html"
+def article_redirect_href(target: str) -> str:
+    """articles/{slug}/index.html からの相対 URL を組み立てる。"""
+    t = norm(target)
+    if t.startswith(("http://", "https://")):
+        return t
+    if t.startswith("../"):
+        base = t.rstrip("/")
+        if base.endswith(".html"):
+            return base
+        return f"{base}/index.html"
+    slug = t.rstrip("/")
+    return f"../{slug}/index.html"
 
 
-def write_redirect(articles_dir: Path, slug: str, target: str) -> None:
+def write_redirect(articles_dir: Path, slug: str, target_slug: str) -> None:
     out_dir = articles_dir / slug
     out_dir.mkdir(parents=True, exist_ok=True)
-    rel = resolve_redirect_target(target)
+    rel = article_redirect_href(target_slug)
     esc = html.escape(rel, quote=True)
     (out_dir / "index.html").write_text(
         REDIRECT_HTML.format(url=esc, url_js=repr(rel)),
