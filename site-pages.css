@@ -6339,23 +6339,51 @@ html:not(.js) .terms-idx-seo-fallback .terms-idx-seo-list a {
   align-items: center;
   gap: 0.75rem 1rem;
   margin: 0 0 1rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--accent-border);
+  border-radius: var(--r2);
+  background: var(--accent-soft);
+  box-shadow: 0 1px 3px var(--accent-shadow);
 }
 .exam-schedule-table-tools label {
   font-weight: 700;
   color: var(--ink);
+  font-size: var(--fs-body);
+  white-space: nowrap;
 }
 .exam-schedule-pref-filter {
-  min-width: 12rem;
+  flex: 1 1 14rem;
+  min-width: 14rem;
   max-width: 100%;
-  padding: 0.45rem 0.6rem;
-  border: 1px solid var(--border2);
+  min-height: 2.75rem;
+  padding: 0.55rem 2.5rem 0.55rem 0.85rem;
+  border: 2px solid var(--accent);
   border-radius: var(--r2);
-  background: var(--bg);
+  background-color: var(--bg);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1.5 1.5L6 6l4.5-4.5' stroke='%23c0392b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.85rem center;
+  background-size: 0.75rem;
   color: var(--ink);
+  font-size: var(--fs-body);
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 1px 2px color-mix(in srgb, var(--ink) 10%, transparent);
+  appearance: none;
+  -webkit-appearance: none;
+}
+.exam-schedule-pref-filter:hover {
+  border-color: var(--accent-emphasis);
+  background-color: var(--accent-hover-surface);
+}
+.exam-schedule-pref-filter:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 .exam-schedule-table-count {
-  color: var(--text2);
+  color: var(--ink);
   font-size: var(--fs-sub);
+  font-weight: 700;
 }
 .exam-schedule-table-wrap {
   overflow-x: auto;
