@@ -36,6 +36,7 @@ from tools.html_footer import (  # noqa: E402
 from tools.knowledge_hub_seo import faq_section_html  # noqa: E402
 from tools.seo_body_markup import seo_section_body_html  # noqa: E402
 from tools.seo_editorial_chrome import (  # noqa: E402
+    SEO_EDITORIAL_CSS_VER,
     seo_brand_asset_tags,
     seo_editorial_article_class,
     seo_editorial_head_fonts,
@@ -45,7 +46,7 @@ from tools.site_config import brand_name, exam_name, public_url  # noqa: E402
 
 OUTPUT_DIR = ROOT / PAGE_SLUG
 REL_PATH = Path(PAGE_SLUG) / "index.html"
-EXAM_DATES_CSS_VER = "20260616-exam-dates-seo-vars"
+EXAM_DATES_CSS_VER = SEO_EDITORIAL_CSS_VER
 
 AUTHOR_NAME = "乙4マスター編集部"
 AUTHOR_PROFILE = (

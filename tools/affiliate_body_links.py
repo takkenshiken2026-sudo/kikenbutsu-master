@@ -12,6 +12,8 @@ from tools.affiliate_brief import brief_products, norm, product_affiliate_url
 from tools.affiliate_links import is_affiliate_url
 
 _MD_LINK = re.compile(r"\[[^\]]+\]\(https?://[^)\s]+\)")
+_A8_NET_URL = re.compile(r"https://px\.a8\.net/svt/ejp\?a8mat=[^\s——]+", re.I)
+_AMAZON_URL = re.compile(r"https://www\.amazon\.co\.jp/[^\s——]+", re.I)
 
 AFFILIATE_COURSE_NAMES: tuple[str, ...] = (
     "オンスク衛生管理者講座",
@@ -77,6 +79,12 @@ def prepare_affiliate_prose(
     out = wrap_affiliate_names_in_quotes(text, labels)
     if apply_links and brief:
         out = inject_affiliate_product_links(out, brief, var_transform=lambda x: x)
+        out = replace_brief_affiliate_urls(out, brief)
+        url_map = affiliate_url_labels(brief)
+        if url_map:
+            from tools.guide_slug_prose import resolve_bare_urls
+
+            out = resolve_bare_urls(out, url_map, link_external=True)
     return out
 
 
@@ -86,6 +94,32 @@ def _product_urls(product: dict[str, Any]) -> tuple[str, str, str, str]:
     workbook = norm(str(product.get("workbook_name") or ""))
     workbook_url = norm(str(product.get("workbook_amazon_url") or ""))
     return name, url, workbook, workbook_url
+
+
+def affiliate_url_label(product: dict[str, Any]) -> str:
+    """裸 URL 置換用の短いリンクラベル。"""
+    provider = norm(str(product.get("provider") or ""))
+    if provider:
+        return f"{provider} 公式"
+    name = norm(str(product.get("name") or ""))
+    if name:
+        return f"{name} 公式"
+    return "公式サイト"
+
+
+def affiliate_url_labels(brief: dict[str, Any]) -> dict[str, str]:
+    """brief 内 ASP URL → リンクラベル（resolve_bare_urls 用）。"""
+    out: dict[str, str] = {}
+    for product in brief_products(brief):
+        url = product_affiliate_url(product)
+        if not is_affiliate_url(url):
+            continue
+        label = affiliate_url_label(product)
+        out[url] = label
+        trimmed = url.rstrip("/")
+        if trimmed:
+            out[trimmed] = label
+    return out
 
 
 def product_link_labels(
@@ -126,6 +160,50 @@ def product_link_labels(
 
     entries.sort(key=lambda item: len(item[0]), reverse=True)
     return entries
+
+
+def replace_brief_affiliate_urls(text: str, brief: dict[str, Any]) -> str:
+    """brief 内 ASP URL（a8mat / Amazon ASIN 一致）を Markdown 外部リンクへ。"""
+    if not text or not brief:
+        return text
+
+    slots: list[str] = []
+
+    def stash_md(match: re.Match[str]) -> str:
+        slots.append(match.group(0))
+        return f"\ue000{len(slots) - 1}\ue001"
+
+    out = _MD_LINK.sub(stash_md, text)
+
+    for product in brief_products(brief):
+        url = product_affiliate_url(product)
+        if not is_affiliate_url(url):
+            continue
+        label = affiliate_url_label(product)
+        md = f"[{label}]({url})"
+
+        a8mat = re.search(r"a8mat=([^&]+)", url, re.I)
+        if a8mat and "px.a8.net" in url.lower():
+            token = re.escape(a8mat.group(1))
+            pattern = re.compile(
+                rf"https://px\.a8\.net/svt/ejp\?a8mat={token}(?:[&][^\s——]*)?",
+                re.I,
+            )
+            out = pattern.sub(md, out)
+            continue
+
+        asin = re.search(r"/dp/([A-Z0-9]{10})", url, re.I)
+        if asin:
+            token = re.escape(asin.group(1))
+            pattern = re.compile(
+                rf"https://www\.amazon\.co\.jp/[^\s——]*{token}[^\s——]*",
+                re.I,
+            )
+            out = pattern.sub(md, out)
+
+    for i, raw in enumerate(slots):
+        out = out.replace(f"\ue000{i}\ue001", raw)
+    return out
 
 
 def inject_affiliate_product_links(

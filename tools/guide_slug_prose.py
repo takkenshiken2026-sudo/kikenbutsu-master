@@ -149,10 +149,11 @@ def _replace_bare_slugs(
 
 
 def plain_text_from_reader_prose(text: str) -> str:
-    """Markdown 内部リンクをラベルだけのプレーンテキストへ。"""
+    """Markdown リンクをラベルだけのプレーンテキストへ。"""
     if not text:
         return text
-    return re.sub(r"\[([^\]]+)\]\(\.\./[^)]+\)", r"\1", text)
+    out = re.sub(r"\[([^\]]+)\]\(\.\./[^)]+\)", r"\1", text)
+    return re.sub(r"\[([^\]]+)\]\(https?://[^)]+\)", r"\1", out)
 
 
 def url_label_map_from_sources(items: list[dict[str, str]]) -> dict[str, str]:

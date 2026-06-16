@@ -189,12 +189,14 @@ def product_card_html(
     brief: dict[str, Any] | None = None,
 ) -> str:
     offer_type = product_offer_type(product, brief)
-    rank = product.get("rank", "")
+    rank_raw = norm(str(product.get("rank") or ""))
     try:
-        rank_num = int(rank)
+        rank_num = int(rank_raw)
+        rank_label = f"{rank_num}位"
+        rank_id = str(rank_num)
     except (TypeError, ValueError):
-        rank_num = 0
-    rank_label = f"{rank_num}位" if rank_num else ""
+        rank_label = rank_raw
+        rank_id = rank_raw.lower().replace(" ", "-") if rank_raw else "0"
     name = norm(str(product.get("name") or ""))
     url = product_affiliate_url(product)
     highlights = product_highlights(product)
@@ -224,7 +226,7 @@ def product_card_html(
         hit = f'<div class="affiliate-product-card-hit affiliate-product-card-hit--static">{body}</div>'
     return (
         f'<article class="affiliate-product-card affiliate-product-card--{offer_type}" '
-        f'id="affiliate-product-r{rank_num}">'
+        f'id="affiliate-product-r{html.escape(rank_id)}">'
         f"{hit}{supplement_html(product)}</article>"
     )
 
