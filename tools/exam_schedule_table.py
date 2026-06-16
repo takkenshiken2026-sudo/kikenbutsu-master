@@ -57,6 +57,7 @@ def exam_schedule_table_html(
     *,
     section_num: int | None = None,
     show_heading: bool = True,
+    heading_title: str = "都道府県別の試験日一覧",
 ) -> str:
     rows = rows if rows is not None else load_schedule_rows()
     display_rows = upcoming_rows(rows)
@@ -72,8 +73,7 @@ def exam_schedule_table_html(
     if show_heading:
         heading_html = (
             '<h2 id="exam-schedule-table-title">'
-            f"{num_markup}"
-            "乙4の試験日一覧（公式データから自動集計）</h2>"
+            f"{num_markup}{html.escape(heading_title)}</h2>"
         )
     aria = 'aria-labelledby="exam-schedule-table-title"' if show_heading else 'aria-label="乙4の試験日一覧"'
     if not display_rows:
