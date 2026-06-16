@@ -61,7 +61,8 @@ def prefecture_combobox_html(options: list[str]) -> str:
         )
     return (
         '<div class="exam-schedule-pref-combobox" id="exam-schedule-pref-combobox">'
-        '<span class="exam-schedule-pref-label" id="exam-schedule-pref-label">都道府県</span>'
+        '<label class="exam-schedule-pref-label" id="exam-schedule-pref-label" for="exam-schedule-pref-input">'
+        "都道府県</label>"
         '<div class="exam-schedule-pref-combobox-field">'
         '<input type="text" id="exam-schedule-pref-input" class="exam-schedule-pref-input" '
         'role="combobox" aria-expanded="false" aria-controls="exam-schedule-pref-listbox" '
@@ -393,7 +394,6 @@ def exam_schedule_table_html(
         f"{heading_html}"
         f"{note_html}"
         '<div class="exam-schedule-table-tools">'
-        '<div class="exam-schedule-table-tools-primary">'
         '<label class="exam-schedule-text-search" for="exam-schedule-text-filter">'
         '<span class="u-visually-hidden">キーワード検索</span>'
         '<input id="exam-schedule-text-filter" type="search" inputmode="search" '
@@ -406,11 +406,8 @@ def exam_schedule_table_html(
         '<option value="prefecture">都道府県順</option>'
         '<option value="default">取得順</option>'
         "</select>"
-        f'<span class="exam-schedule-table-count" id="exam-schedule-table-count">{len(display_rows)}件</span>'
-        "</div>"
-        '<div class="exam-schedule-table-tools-secondary">'
         f"{prefecture_combobox_html(options)}"
-        "</div>"
+        f'<span class="exam-schedule-table-count" id="exam-schedule-table-count">{len(display_rows)}件</span>'
         "</div>"
         f"{region_chips_html()}"
         '<p class="exam-schedule-table-empty hide" id="exam-schedule-table-empty" role="status">'

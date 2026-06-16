@@ -186,13 +186,13 @@ body.seo-editorial-preview-page .seo-editorial.seo-article-card {
   font-size: var(--seo-fs-body);
 }
 
-.seo-editorial .seo-article-section ul:not(.term-past-list) {
+.seo-editorial .seo-article-section ul:not(.term-past-list):not(.exam-schedule-pref-listbox) {
   margin: 0.75em 0 1em;
   padding-left: 1.35em;
   list-style: disc;
 }
 
-.seo-editorial .seo-article-section ul:not(.term-past-list) li + li {
+.seo-editorial .seo-article-section ul:not(.term-past-list):not(.exam-schedule-pref-listbox) li + li {
   margin-top: 0.35em;
 }
 
