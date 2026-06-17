@@ -1,0 +1,296 @@
+{
+  "brandName": "乙4マスター",
+  "brandMark": "乙4",
+  "examName": "危険物取扱者試験（乙種第4類）",
+  "siteOrigin": "https://kikenbutsu-master.jp",
+  "contactUrl": "https://kikenbutsu-master.jp/",
+  "ga4MeasurementId": "G-CH3RF5CKLH",
+  "copyright": "",
+  "footerDisclaimer": "学習用のコンテンツです。出題・法令の正確な内容は消防法・危険物の定義等に関する政令などの公式情報で必ず確認してください。",
+  "officialOrganization": "消防庁・都道府県消防主管部門",
+  "theme": {
+    "accent": "#c0392b",
+    "accentText": "#ffffff",
+    "background": "#f4f4f5",
+    "surface": "#ffffff",
+    "surfaceAlt": "#f4f4f5",
+    "text": "#121212",
+    "textMuted": "#555555",
+    "border": "rgba(0, 0, 0, 0.09)",
+    "radius": "10px",
+    "navWidth": "1080px",
+    "contentWidth": "1080px"
+  },
+  "navigation": {
+    "header": [
+      {
+        "label": "トップ",
+        "href": "index.html",
+        "key": "top"
+      },
+      {
+        "label": "このサイトについて",
+        "href": "about.html",
+        "key": "about"
+      },
+      {
+        "label": "過去問一覧",
+        "href": "q/index.html",
+        "key": "q"
+      },
+      {
+        "label": "用語解説",
+        "href": "terms/index.html",
+        "key": "terms"
+      },
+      {
+        "label": "試験ガイド",
+        "href": "articles/index.html",
+        "key": "articles"
+      },
+      {
+        "label": "関連リンク",
+        "href": "related-sites.html",
+        "key": "related"
+      },
+      {
+        "label": "プライバシー",
+        "href": "privacy.html",
+        "key": "privacy"
+      }
+    ],
+    "footer": [
+      {
+        "label": "トップ",
+        "href": "index.html",
+        "key": "top"
+      },
+      {
+        "label": "このサイトについて",
+        "href": "about.html",
+        "key": "about"
+      },
+      {
+        "label": "過去問一覧",
+        "href": "q/index.html",
+        "key": "q"
+      },
+      {
+        "label": "用語解説",
+        "href": "terms/index.html",
+        "key": "terms"
+      },
+      {
+        "label": "試験ガイド",
+        "href": "articles/index.html",
+        "key": "articles"
+      },
+      {
+        "label": "関連リンク",
+        "href": "related-sites.html",
+        "key": "related"
+      },
+      {
+        "label": "プライバシー",
+        "href": "privacy.html",
+        "key": "privacy"
+      },
+      {
+        "label": "お問い合わせ",
+        "href": "__CONTACT__",
+        "key": "contact"
+      }
+    ]
+  },
+  "guideArticleGenres": [
+    {
+      "id": "overview",
+      "label": "試験概要",
+      "phase": "制度を知る",
+      "style": "overview",
+      "hint": "試験の全体像・公式情報の見方・サイトの使い方"
+    },
+    {
+      "id": "application",
+      "label": "受験・申込",
+      "phase": "制度を知る",
+      "style": "institution",
+      "hint": "受験資格・日程・手数料・申込手続き・免除"
+    },
+    {
+      "id": "pass-stats",
+      "label": "合格・難易度",
+      "phase": "制度を知る",
+      "style": "institution",
+      "hint": "合格率・合格点・難易度・統計の読み方"
+    },
+    {
+      "id": "exam-scope",
+      "label": "出題・形式",
+      "phase": "制度を知る",
+      "style": "institution",
+      "hint": "出題範囲・科目構成・甲種・乙種・丙種・記述"
+    },
+    {
+      "id": "study-plan",
+      "label": "学習計画",
+      "phase": "学習を設計する",
+      "style": "study",
+      "hint": "学習期間・週間表・働きながら・初学者向け"
+    },
+    {
+      "id": "self-study",
+      "label": "独学対策",
+      "phase": "学習を設計する",
+      "style": "study",
+      "hint": "独学の進め方・教材選び・継続"
+    },
+    {
+      "id": "past-questions",
+      "label": "過去問活用",
+      "phase": "演習と定着",
+      "style": "practice",
+      "hint": "過去問・模試・一問一答・解き直し"
+    },
+    {
+      "id": "field-study",
+      "label": "分野別対策",
+      "phase": "演習と定着",
+      "style": "practice",
+      "hint": "法令・物性・火災・消火・漏えい等の分野別"
+    },
+    {
+      "id": "glossary-study",
+      "label": "用語ハブ活用法",
+      "phase": "演習と定着",
+      "style": "practice",
+      "hint": "知識ハブ4タブの使い方・回遊（用語の定義記事は書かない）"
+    },
+    {
+      "id": "review-weak",
+      "label": "復習・苦手克服",
+      "phase": "演習と定着",
+      "style": "practice",
+      "hint": "復習サイクル・間違いノート・苦手分野"
+    },
+    {
+      "id": "final-prep",
+      "label": "直前・当日",
+      "phase": "直前と当日",
+      "style": "final",
+      "hint": "直前1〜2週間・当日の持ち物・会場"
+    },
+    {
+      "id": "cautions",
+      "label": "注意点・更新",
+      "phase": "横断",
+      "style": "meta",
+      "hint": "誤解・制度変更・合格後手続き・再受験"
+    }
+  ],
+  "fields": [
+    {
+      "id": "law",
+      "name": "法令・制度",
+      "aliases": [
+        "法令・制度",
+        "危険物に関する法令",
+        "消防法",
+        "危険物の定義等に関する政令",
+        "保安規程",
+        "届出・許可"
+      ],
+      "legacyGlossaryCat": "law"
+    },
+    {
+      "id": "rights",
+      "name": "物性・化学",
+      "aliases": [
+        "物性・化学",
+        "基礎的な物理学及び基礎的な化学",
+        "危険物の性質",
+        "化学反応",
+        "爆発・着火",
+        "酸化性",
+        "引火点",
+        "契約・実務"
+      ],
+      "legacyGlossaryCat": "rights"
+    },
+    {
+      "id": "limit",
+      "name": "火災・消火・漏えい",
+      "aliases": [
+        "火災・消火・漏えい",
+        "危険物の性質並びにその火災予防及び消火の方法",
+        "消火方法",
+        "漏えい対策",
+        "避難・通報",
+        "設備・貯蔵",
+        "設備・その他"
+      ],
+      "legacyGlossaryCat": "limit"
+    }
+  ],
+  "paidMockExam": {
+    "url": "https://note.com/shikaku_master/n/naae31abe01ed",
+    "modeTitle": "予想模試（PDF・2回分）",
+    "modePurpose": "本番と同じ35問・2時間で実力確認したい",
+    "priceLabel": "¥590",
+    "footnote": "※ note で販売する有料コンテンツ（¥590）です。サイト内の無料演習とは別商品です。"
+  },
+  "guideIndexPicks": {
+    "title": "おすすめの講座・テキスト・問題集",
+    "lead": "2026年度版の比較記事から、オンライン講座・テキスト・問題集の選び方へ。",
+    "leadsByHub": {
+      "articles": "2026年度版の比較記事から、オンライン講座・テキスト・問題集の選び方へ。",
+      "terms": "用語暗記と併用するテキスト・問題集・講座の比較記事へ。",
+      "q": "無料演習と併用する問題集・講座の比較記事へ。"
+    },
+    "layout": "grid-3",
+    "items": [
+      {
+        "kind": "course",
+        "kindLabel": "オンライン講座",
+        "title": "オンライン講座2選【オンスク vs SMART】",
+        "description": "オンスク.JPとSMART合格講座を比較。三領域50問60分と独学テキストとの併用設計を解説します。",
+        "href": "affiliate-online-course-compare/",
+        "cta": "2講座を比較する",
+        "image": "images/affiliate/kikenbutsu-course-onsuku-otu4.webp",
+        "imageAlt": "オンスク.JP 危険物乙4オンライン通信講座"
+      },
+      {
+        "kind": "textbook",
+        "kindLabel": "テキスト",
+        "title": "おすすめテキスト3選【2026年度版】",
+        "description": "TACスピード・ユーキャン速習・7日でクリアの3冊を比較。三領域50問60分と35/50を前提に1冊選びを解説します。",
+        "href": "affiliate-textbooks-recommend/",
+        "cta": "3冊を比較する",
+        "image": "images/affiliate/kikenbutsu-book-4300105979.webp",
+        "imageAlt": "乙種第4類 危険物取扱者 スピードテキスト 第4版 表紙"
+      },
+      {
+        "kind": "problem-book",
+        "kindLabel": "問題集",
+        "title": "おすすめ問題集3選【2026年度版】",
+        "description": "TACスピード問題集・ユーキャン過去問・7日でクリア問題集の3冊を比較。テキスト読了後の演習1冊の選び方をまとめます。",
+        "href": "affiliate-problem-books/",
+        "cta": "3冊を比較する",
+        "image": "images/affiliate/kikenbutsu-book-4300112568.webp",
+        "imageAlt": "乙種第4類 危険物取扱者 スピード問題集 第4版 表紙"
+      }
+    ]
+  },
+  "externalLinks": [
+    {
+      "label": "消防庁（公式）",
+      "url": "https://www.fdma.go.jp/",
+      "description": "危険物関連の法令・行政情報の参照先です。"
+    },
+    {
+      "label": "消防試験研究センター 危険物取扱者",
+      "url": "https://www.shoubo-shiken.or.jp/kikenbutsu/",
+      "description": "試験日程・要項・合格発表などの公式情報です。"
+    }
+  ]
+}
