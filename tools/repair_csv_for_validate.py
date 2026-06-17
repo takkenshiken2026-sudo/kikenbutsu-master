@@ -97,7 +97,7 @@ def strip_boilerplate(text: str) -> str:
 
 def repair_glossary(path: Path) -> dict[str, int]:
     stats = defaultdict(int)
-    with path.open(encoding="utf-8", newline="") as f:
+    with path.open(encoding="utf-8-sig", newline="") as f:
         reader = csv.DictReader(f)
         fieldnames = list(reader.fieldnames or [])
         rows = list(reader)
@@ -291,7 +291,7 @@ def repair_glossary(path: Path) -> dict[str, int]:
             row["example_answer"] = pad_text(ea, 5, suffix="（要確認）")
             stats["example_answer"] += 1
 
-    with path.open("w", encoding="utf-8", newline="") as f:
+    with path.open("w", encoding="utf-8-sig", newline="") as f:
         w = csv.DictWriter(f, fieldnames=fieldnames, lineterminator="\n")
         w.writeheader()
         w.writerows(rows)
@@ -473,7 +473,7 @@ def main() -> int:
     valid_terms: set[str] = set()
     term_pool: list[str] = []
     if glossary.is_file() and not args.skip_glossary:
-        with glossary.open(encoding="utf-8", newline="") as f:
+        with glossary.open(encoding="utf-8-sig", newline="") as f:
             for row in csv.DictReader(f):
                 term = norm(row.get("term"))
                 if term:
