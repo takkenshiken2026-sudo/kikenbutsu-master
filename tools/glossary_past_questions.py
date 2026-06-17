@@ -74,24 +74,12 @@ def load_past_question_index(root_key: str = "") -> list[dict]:
     return index
 
 
-def _term_name_in_hay(term: str, hay: str) -> bool:
-    """用語名そのものが問題文・解説・選択肢に含まれるか。"""
-    text = hay or ""
-    if term in text:
-        return True
-    compact = term.replace("・", "").replace(" ", "")
-    if compact and compact in text.replace("・", "").replace(" ", ""):
-        return True
-    return False
-
-
 def find_past_questions_for_term(
     term: str,
     *,
     limit: int = 3,
     related_terms: str = "",
     legal_basis: str = "",
-    require_term_in_text: bool = True,
 ) -> list[dict]:
     term = (term or "").strip()
     if not term or len(term) < 2:
@@ -102,8 +90,6 @@ def find_past_questions_for_term(
     for page in load_past_question_index(root_key):
         key = (page["year"], page["qno"])
         if key in seen_pages:
-            continue
-        if require_term_in_text and not _term_name_in_hay(term, page["hay"]):
             continue
         if not term_matches_text(term, page["hay"], related_terms, legal_basis):
             continue
@@ -139,7 +125,7 @@ def past_questions_section_html(hits: list[dict], rel_path: Path, *, section_num
     return (
         '<section class="seo-article-section" aria-labelledby="term-past-title">'
         f'<h2 id="term-past-title">{num_html}関連する過去問</h2>'
-        "<p>用語名が問題文・解説・選択肢に登場する過去問です。リンクから問題と解説を確認できます。</p>"
+        "<p>この用語が本文・解説に登場する過去問です。リンクから問題と解説を確認できます。</p>"
         f'<div class="related-links term-past-list">{"".join(links)}</div>'
         "</section>"
     )

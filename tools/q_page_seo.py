@@ -19,9 +19,14 @@ MODE_LABEL: dict[str, str] = {
 def seo_copy() -> dict[str, str]:
     raw = CONFIG.get("seoCopy") if isinstance(CONFIG.get("seoCopy"), dict) else {}
     return {
+        "examShort": str(raw.get("examShort") or exam_name()),
         "mockExam": str(raw.get("mockExam") or "模試・模擬試験"),
         "studyModes": str(raw.get("studyModes") or "過去問・実践演習・一問一答"),
     }
+
+
+def exam_short_name() -> str:
+    return seo_copy()["examShort"]
 
 
 def study_modes_note_html() -> str:
@@ -39,7 +44,7 @@ def index_lead(mode: str) -> str:
     c = seo_copy()
     if mode == "past":
         return (
-            f"{ex}の過去問を年度別・分野別にまとめています。"
+            f"{c['examShort']}（{ex}）の過去問を無料で年度別·分野別にまとめています。"
             f"{c['mockExam']}前の出題傾向の確認や、{c['studyModes']}の中心コンテンツとして使えます。"
             "検索と絞り込みで目的の問題を探し、解説ページで正誤と解説を確認できます。"
         )
@@ -61,7 +66,7 @@ def index_meta_description(mode: str, *, count: int) -> str:
     c = seo_copy()
     if mode == "past":
         base = (
-            f"{ex}の過去問{count}問を年度・分野別に掲載。"
+            f"{c['examShort']}（{ex}）の過去問{count}問を無料掲載·年度·分野別。"
             f"{c['mockExam']}対策・{c['studyModes']}の学習に対応。"
             "検索・絞り込みのあと解説ページへ。"
         )
@@ -134,12 +139,19 @@ def index_search_placeholder(mode: str) -> str:
 def index_search_index_suffix() -> str:
     """一覧 JSON の search 列に足す共通キーワード。"""
     c = seo_copy()
-    return f"{c['mockExam']} {c['studyModes']}"
+    return f"{c['examShort']} 過去問 無料 {c['mockExam']} {c['studyModes']}"
 
 
 def index_h1(mode: str) -> str:
     """一覧ページの H1（試験名＋モード名を先頭に）。"""
+    if mode == "past":
+        return f"{exam_short_name()} {MODE_LABEL[mode]}（無料）"
     return f"{exam_name()} {MODE_LABEL[mode]}"
+
+
+def index_past_hub_h2() -> str:
+    """過去問ハブの H2（検索クエリ向けキーワード）。"""
+    return f"{exam_short_name()} 過去問一覧（無料·解説付き）"
 
 
 def index_page_title(mode: str) -> str:
@@ -147,7 +159,7 @@ def index_page_title(mode: str) -> str:
     c = seo_copy()
     label = MODE_LABEL[mode]
     if mode == "past":
-        sub = f"{c['mockExam']}対策"
+        return f"{c['examShort']} 過去問 無料一覧｜年度別·分野別｜{brand_name()}"
     elif mode == "practice":
         sub = f"{c['mockExam']}前の演習"
     else:

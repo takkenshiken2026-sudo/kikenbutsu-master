@@ -62,10 +62,13 @@ def index_description() -> str:
 def index_description_long() -> str:
     field_names = "・".join(str(f.get("name") or f.get("id") or "") for f in fields()[:4])
     subjects = field_names or "主要分野"
+    from tools.q_page_seo import exam_short_name
+
+    short = exam_short_name()
     return (
-        f"{exam_name()}の合格を目指す無料学習プラットフォーム。"
-        f"過去問演習・実践演習・一問一答・重要用語解説を網羅。"
-        f"年度別・科目別（{subjects}）に絞った効率的な学習が可能です。"
+        f"{short}（{exam_name()}）の合格を目指す無料学習プラットフォーム。"
+        f"過去問演習·実践演習·一問一答·重要用語解説を網羅。"
+        f"年度別·科目別（{subjects}）に絞った効率的な学習が可能です。"
     )
 
 

@@ -890,12 +890,14 @@ def build_q_index(pages: list[dict], base_url: str) -> str:
         index_lead,
         index_meta_description,
         index_page_title,
+        index_past_hub_h2,
         index_search_placeholder,
         study_modes_note_html,
     )
 
     page_title = index_page_title("past")
     index_h1_text = index_h1("past")
+    past_hub_h2 = index_past_hub_h2()
     page_desc = index_meta_description("past", count=len(pages))
     page_lead = index_lead("past")
     search_placeholder = index_search_placeholder("past")
@@ -932,7 +934,7 @@ def build_q_index(pages: list[dict], base_url: str) -> str:
   <section class="past-index-panel" aria-labelledby="past-index-heading">
     <div class="past-index-head">
       <div>
-        <h2 id="past-index-heading">過去問一覧</h2>
+        <h2 id="past-index-heading">{html.escape(past_hub_h2)}</h2>
         <p>{html.escape(q_index_stats_line(question_count=len(pages), mode="past", year_count=year_count, category_count=len(by_category)))}。キーワード検索と絞り込みで探せます。</p>
       </div>
     </div>

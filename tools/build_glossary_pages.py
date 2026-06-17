@@ -298,11 +298,7 @@ def _is_generic_index_snippet(text: str, term: str) -> bool:
 
 
 def terms_index_snippet(entry: dict) -> str:
-    """一覧・検索用の概要。index_summary が正本。未記入時のみレガシー抜粋。"""
-    index_summary = (entry.get("index_summary") or "").strip()
-    if index_summary:
-        return index_summary
-
+    """一覧・検索用の概要抜粋。enrich テンプレ文は definition から実義を拾う。"""
     term = (entry.get("term") or "").strip()
     short = (entry.get("short_def") or "").strip()
     definition = (entry.get("definition") or "").strip()
@@ -658,19 +654,6 @@ def multi_paragraph_html(value: str, css_class: str = "article-lead") -> str:
     return "".join(f'<p class="{css_class}">{html.escape(p)}</p>' for p in paras)
 
 
-def _term_article_lead_html(term: str, article_lead: str) -> str:
-    """カスタムリードが十分な長さなら定型前置きを付けない。"""
-    text = norm(article_lead)
-    if not text:
-        return ""
-    if text.startswith(term) or len(text) >= 72:
-        return f'<p class="article-lead">{html.escape(text)}</p>'
-    return (
-        f'<p class="article-lead"><strong>{html.escape(term)}</strong>について、'
-        f"定義・根拠・試験での押さえ方をまとめます。{html.escape(text)}</p>"
-    )
-
-
 def semicolon_list_html(value: str) -> str:
     items = split_semicolon(value)
     if not items:
@@ -687,19 +670,6 @@ def semicolon_field_html(value: str) -> str:
     return ""
 
 
-def _compare_table_snippet(raw: str) -> str:
-    """比較表用。short_def の先頭1文だけを取り出す（複数段落・他用語混入を避ける）。"""
-    text = norm(raw)
-    if not text:
-        return "—"
-    para = re.split(r"\n{2,}", text)[0].strip().replace("\n", " ")
-    para = re.sub(r"\s+", " ", para)
-    m = re.match(r"^(.+?[。!?？])", para)
-    if m:
-        return m.group(1).rstrip("。")
-    return para[:120].rstrip("、。 ") + ("…" if len(para) > 120 else "")
-
-
 def peer_comparison_table_html(
     term: str,
     related: str,
@@ -708,13 +678,9 @@ def peer_comparison_table_html(
     peer_names = [x for x in split_semicolon(related) if x and x != term][:4]
     if len(peer_names) < 2:
         return ""
-    rows: list[tuple[str, str]] = [
-        (term, _compare_table_snippet(by_term.get(term, {}).get("short_def") or ""))
-    ]
+    rows: list[tuple[str, str]] = [(term, by_term.get(term, {}).get("short_def") or "—")]
     for name in peer_names:
-        snippet = _compare_table_snippet(by_term.get(name, {}).get("short_def") or "")
-        if snippet == "—":
-            snippet = "関連用語ページで定義を確認"
+        snippet = by_term.get(name, {}).get("short_def") or "関連用語ページで定義を確認"
         rows.append((name, snippet))
     body = "".join(
         "<tr>"
@@ -743,6 +709,17 @@ def build_term_html(
     *,
     by_term: dict[str, dict] | None = None,
 ) -> str:
+    from tools.q_page_seo import exam_short_name
+
+    def term_seo_title(term_name: str, custom_title: str) -> str:
+        short = exam_short_name()
+        if custom_title:
+            normalized = custom_title.replace(exam_name(), short)
+            normalized = normalized.replace("で押さえる意味・試験ポイント", "で覚えるポイント")
+            normalized = normalized.replace("意味・根拠・試験ポイント", f"{short}で覚えるポイント")
+            return normalized
+        return f"{term_name}とは？{short}で覚えるポイント"
+
     term = entry["term"]
     category = entry["category"]
     tags = entry["tags"]
@@ -762,9 +739,10 @@ def build_term_html(
     example_question = norm(entry.get("example_question"))
     example_answer = norm(entry.get("example_answer"))
 
-    title = f"{article_title or term + 'とは？意味・根拠・試験ポイント'}｜{brand_name()}"
+    title = f"{term_seo_title(term, article_title)}｜{brand_name()}"
     desc = meta_description(
-        f"{term}の意味、法令・根拠、試験で押さえるポイントを{exam_name()}向けに整理。{short_def or definition}"
+        f"{term}とは？{exam_short_name()}で押さえる意味·試験ポイント。"
+        f"法令·根拠と選択肢の見分け方を{exam_name()}向けに整理。{short_def or definition}"
     )
     canonical = public_url(base_url, f"terms/{slug_file}")
     root_idx = rel_to_root(rel_path)
@@ -845,13 +823,8 @@ def build_term_html(
         points_html = hub_prose_html([p for p in points])
     entries_by_term = by_term or {e["term"]: e for e in entries}
     compare_html = peer_comparison_table_html(term, related, entries_by_term)
-    if term_detail_body and len(term_detail_body) >= 180:
-        detail_html = text_paragraphs(term_detail_body)
-    else:
-        detail_html = text_paragraphs(glossary_definition_body_text(entry))
-    if compare_html and not re.search(
-        r"\|[^\n]+\|[^\n]*\n\|[\s:]*-{2,}", term_detail_body or ""
-    ):
+    detail_html = text_paragraphs(glossary_definition_body_text(entry))
+    if compare_html:
         detail_html = (detail_html + compare_html) if detail_html else compare_html
     diagram_id = norm(entry.get("diagram_id"))
     diagram_html = diagram_body_html(diagram_id) if diagram_id else ""
@@ -1104,7 +1077,7 @@ def build_term_html(
       <span class="meta-updated">{meta_line}</span>
     </div>
     <h1 class="article-title">{html.escape(article_title or term + 'とは？意味・根拠・試験ポイントを整理')}</h1>
-    {_term_article_lead_html(term, article_lead or lead)}
+    <p class="article-lead"><strong>{html.escape(term)}</strong>について、定義・根拠・試験での押さえ方をまとめます。{html.escape(article_lead or lead)}</p>
     {key_points_html}
     {toc_html}
     {quality_html}
@@ -1463,7 +1436,6 @@ def load_glossary_entries(*, strict: bool = True) -> list[dict]:
                 "category": norm(row.get("category")),
                 "tags": norm(row.get("tags")),
                 "short_def": norm(row.get("short_def")),
-                "index_summary": norm(row.get("index_summary")),
                 "definition": norm(row.get("definition")),
                 "related_terms": norm(row.get("related_terms")),
                 "legal_basis": norm(row.get("legal_basis")),

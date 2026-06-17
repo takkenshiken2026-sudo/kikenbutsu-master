@@ -99,6 +99,25 @@ GLOSSARY_PRO = {
     "max_sentence_chars": 72,
 }
 
+# 編集合格（expert_pass）— 用語詳細の SEO・読者価値の正本下限
+GLOSSARY_EXPERT = {
+    "article_lead": 80,
+    "term_detail_body": 350,
+    "definition": 80,
+    "explanation": 120,
+    "common_mistakes": 60,
+    "memory_tip": 40,
+    "faq_answer": 120,
+    "exam_points_min": 3,
+    "exam_points_as": 4,
+    "related_terms": 3,
+    "related_links_min": 2,
+    "paragraphs_in_body": 2,
+    "max_sentence_chars": 72,
+    "min_faq_concrete": 2,
+    "expert_tag": "編集合格",
+}
+
 
 @dataclass(frozen=True)
 class EditorialIssue:

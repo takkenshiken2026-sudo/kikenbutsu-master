@@ -21,6 +21,7 @@ from tools.fix_guide_duplicate_bodies import (  # noqa: E402
     repair_coherence_faqs,
 )
 from tools.guide_rewrite_quality import revision_is_hand  # noqa: E402
+from tools.rewrite_guide_boilerplate import _csv_fieldnames  # noqa: E402
 
 TODAY = date.today().isoformat()
 

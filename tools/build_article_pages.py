@@ -1023,6 +1023,8 @@ def sort_articles_for_index(articles: list[dict[str, str]]) -> list[dict[str, st
 
 
 def build_index_html(articles: list[dict[str, str]]) -> str:
+    from tools.q_page_seo import exam_short_name
+
     rel_path = Path("articles/index.html")
     articles = sort_articles_for_index(articles)
     genre_styles = guide_genre_style_by_label()
@@ -1138,7 +1140,7 @@ def build_index_html(articles: list[dict[str, str]]) -> str:
 <main class="site-page-main">
   {breadcrumb_html(rel_path, [("トップ", "index.html"), ("試験ガイド", None)])}
   <h1>試験ガイド</h1>
-  <p class="site-page-lead">{html.escape(exam_name())}の制度理解から学習計画・演習・直前対策まで、受験フェーズ別の<strong>進め方</strong>をまとめています。用語の意味・比較・数値は<a href="../terms/index.html">用語解説（知識ハブ）</a>、問題演習は<a href="../q/index.html">過去問一覧</a>からどうぞ。</p>
+  <p class="site-page-lead">{html.escape(exam_name())}の制度理解から学習計画・演習・直前対策まで、受験フェーズ別の<strong>進め方</strong>をまとめています。用語の意味・比較・数値は<a href="../terms/index.html">用語解説（知識ハブ）</a>、<a href="../q/index.html">{html.escape(exam_short_name())} 過去問（無料）</a>から演習できます。</p>
   {build_guide_index_picks_html(rel_path)}
   <section class="article-index-panel" aria-labelledby="article-index-heading">
     <div class="article-index-head">
