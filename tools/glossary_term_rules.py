@@ -17,6 +17,7 @@ from tools.editorial_quality import (
     readability_issues,
     split_paragraphs,
 )
+from tools.glossary_index_summary_rules import check_index_summary_row
 
 # 詳細記事として必須の CSV 列（全用語）
 GLOSSARY_DETAIL_COLUMNS: tuple[str, ...] = (
@@ -253,6 +254,12 @@ def check_glossary_row(
     answer = norm(row.get("example_answer"))
     if answer and answer not in {"○", "〇", "×", "✕", "╳"} and len(answer) < 5:
         err("example_answer は ○/× または5文字以上の解説にしてください")
+
+    for issue in check_index_summary_row(row):
+        if issue.level == "ERROR":
+            err(issue.message)
+        else:
+            warn(issue.message)
 
     _ = line
     return issues

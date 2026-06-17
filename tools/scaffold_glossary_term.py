@@ -66,6 +66,7 @@ def build_row(
             "category": category,
             "tags": tags,
             "short_def": f"【短い定義】{term}の要点を1文で。",
+            "index_summary": "",
             "definition": f"【定義】{term}の意味と試験での位置づけを2〜3文で。",
             "related_terms": related_val,
             "legal_basis": "",

@@ -298,7 +298,11 @@ def _is_generic_index_snippet(text: str, term: str) -> bool:
 
 
 def terms_index_snippet(entry: dict) -> str:
-    """一覧・検索用の概要抜粋。enrich テンプレ文は definition から実義を拾う。"""
+    """一覧・検索用の概要。index_summary が正本。未記入時のみレガシー抜粋。"""
+    index_summary = (entry.get("index_summary") or "").strip()
+    if index_summary:
+        return index_summary
+
     term = (entry.get("term") or "").strip()
     short = (entry.get("short_def") or "").strip()
     definition = (entry.get("definition") or "").strip()
@@ -1424,6 +1428,7 @@ def load_glossary_entries(*, strict: bool = True) -> list[dict]:
                 "category": norm(row.get("category")),
                 "tags": norm(row.get("tags")),
                 "short_def": norm(row.get("short_def")),
+                "index_summary": norm(row.get("index_summary")),
                 "definition": norm(row.get("definition")),
                 "related_terms": norm(row.get("related_terms")),
                 "legal_basis": norm(row.get("legal_basis")),

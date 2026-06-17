@@ -13,6 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
+from tools.glossary_index_summary_rules import audit_index_summary_cross_rows
 from tools.build_glossary_pages import make_term_lookup  # noqa: E402
 from tools.glossary_term_rules import check_glossary_row  # noqa: E402
 from tools.guide_article_rules import check_guide_row  # noqa: E402
@@ -109,6 +110,11 @@ def audit_glossary(*, strict: bool) -> tuple[int, int]:
                     print(msg, file=sys.stderr)
                 else:
                     print(msg)
+    for issue in audit_index_summary_cross_rows(rows):
+        term = issue.term or "?"
+        msg = f"glossary_terms.csv [cross] ({term}) [{issue.column}] {issue.message}"
+        errors += 1
+        print(msg, file=sys.stderr)
     return errors, warns
 
 

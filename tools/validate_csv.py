@@ -19,6 +19,7 @@ if str(ROOT) not in sys.path:
 os.environ.setdefault("EXAM_SITE_ROOT", str(ROOT))
 
 from tools.build_glossary_pages import make_term_lookup
+from tools.glossary_index_summary_rules import audit_index_summary_cross_rows
 from tools.glossary_term_rules import (
     GLOSSARY_BASE_REQUIRED,
     GLOSSARY_PRODUCTION_TARGET,
@@ -332,6 +333,14 @@ class Validator:
                 else:
                     self.warn(path, idx, issue.message)
             self._validate_diagram_id(path, row, idx)
+
+        for issue in audit_index_summary_cross_rows(rows):
+            term = issue.term or "?"
+            msg = f"[cross] ({term}) {issue.message}"
+            if issue.level == "ERROR":
+                self.error(path, None, msg)
+            else:
+                self.warn(path, None, msg)
 
     def _validate_diagram_id(self, path: Path, row: dict[str, str], line: int) -> None:
         raw = self.norm(row.get("diagram_id"))
