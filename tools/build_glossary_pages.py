@@ -674,6 +674,19 @@ def semicolon_field_html(value: str) -> str:
     return ""
 
 
+def _compare_table_snippet(raw: str) -> str:
+    """比較表用。short_def の先頭1文だけを取り出す（複数段落・他用語混入を避ける）。"""
+    text = norm(raw)
+    if not text:
+        return "—"
+    para = re.split(r"\n{2,}", text)[0].strip().replace("\n", " ")
+    para = re.sub(r"\s+", " ", para)
+    m = re.match(r"^(.+?[。!?？])", para)
+    if m:
+        return m.group(1).rstrip("。")
+    return para[:120].rstrip("、。 ") + ("…" if len(para) > 120 else "")
+
+
 def peer_comparison_table_html(
     term: str,
     related: str,
@@ -682,9 +695,13 @@ def peer_comparison_table_html(
     peer_names = [x for x in split_semicolon(related) if x and x != term][:4]
     if len(peer_names) < 2:
         return ""
-    rows: list[tuple[str, str]] = [(term, by_term.get(term, {}).get("short_def") or "—")]
+    rows: list[tuple[str, str]] = [
+        (term, _compare_table_snippet(by_term.get(term, {}).get("short_def") or ""))
+    ]
     for name in peer_names:
-        snippet = by_term.get(name, {}).get("short_def") or "関連用語ページで定義を確認"
+        snippet = _compare_table_snippet(by_term.get(name, {}).get("short_def") or "")
+        if snippet == "—":
+            snippet = "関連用語ページで定義を確認"
         rows.append((name, snippet))
     body = "".join(
         "<tr>"

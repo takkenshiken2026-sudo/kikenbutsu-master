@@ -1054,7 +1054,7 @@ _DEFINITION_SKIP_SENTENCE = (
     "手続・判断基準を押さえる論点",
 )
 _DEFINITION_BODY_MAX_CHARS = 600
-_DEFINITION_DETAIL_MAX_PARAS = 2
+_DEFINITION_DETAIL_MAX_PARAS = 3
 _TERM_DETAIL_SECTION_HEADERS = frozenset(
     {
         "定義",
@@ -1329,11 +1329,19 @@ def _legal_explain_sentence(law: str, entry: dict) -> str:
             text += f"。{extras[0]}"
         return text + "。"
 
+    label = term.split("（")[0].strip() if term else "この用語"
+    if "別表" in law and label:
+        return (
+            f"{label}は、{law}に列挙される第4類危険物の品名です。"
+            f"区分の確認や指定数量の判断は、この別表を条文とセットで見ます。"
+        )
+
     core = _definition_core_from_sentence(short_def, term)
     if core and not any(skip in core for skip in _DEFINITION_SKIP_SENTENCE):
+        if label and (len(core) > 72 or core.startswith(label) or core.startswith(f"「{label}」")):
+            return f"{law}は、{label}の区分・取扱いに関する根拠法令です。"
         return f"{law}は、{core}に関する根拠法令です。"
 
-    label = term.split("（")[0].strip() if term else "この用語"
     return f"{law}は、{label}の要件・手続を定める根拠法令です。"
 
 
