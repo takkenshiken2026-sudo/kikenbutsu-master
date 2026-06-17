@@ -658,6 +658,19 @@ def multi_paragraph_html(value: str, css_class: str = "article-lead") -> str:
     return "".join(f'<p class="{css_class}">{html.escape(p)}</p>' for p in paras)
 
 
+def _term_article_lead_html(term: str, article_lead: str) -> str:
+    """カスタムリードが十分な長さなら定型前置きを付けない。"""
+    text = norm(article_lead)
+    if not text:
+        return ""
+    if text.startswith(term) or len(text) >= 72:
+        return f'<p class="article-lead">{html.escape(text)}</p>'
+    return (
+        f'<p class="article-lead"><strong>{html.escape(term)}</strong>について、'
+        f"定義・根拠・試験での押さえ方をまとめます。{html.escape(text)}</p>"
+    )
+
+
 def semicolon_list_html(value: str) -> str:
     items = split_semicolon(value)
     if not items:
@@ -832,8 +845,13 @@ def build_term_html(
         points_html = hub_prose_html([p for p in points])
     entries_by_term = by_term or {e["term"]: e for e in entries}
     compare_html = peer_comparison_table_html(term, related, entries_by_term)
-    detail_html = text_paragraphs(glossary_definition_body_text(entry))
-    if compare_html:
+    if term_detail_body and len(term_detail_body) >= 180:
+        detail_html = text_paragraphs(term_detail_body)
+    else:
+        detail_html = text_paragraphs(glossary_definition_body_text(entry))
+    if compare_html and not re.search(
+        r"\|[^\n]+\|[^\n]*\n\|[\s:]*-{2,}", term_detail_body or ""
+    ):
         detail_html = (detail_html + compare_html) if detail_html else compare_html
     diagram_id = norm(entry.get("diagram_id"))
     diagram_html = diagram_body_html(diagram_id) if diagram_id else ""
@@ -1086,7 +1104,7 @@ def build_term_html(
       <span class="meta-updated">{meta_line}</span>
     </div>
     <h1 class="article-title">{html.escape(article_title or term + 'とは？意味・根拠・試験ポイントを整理')}</h1>
-    <p class="article-lead"><strong>{html.escape(term)}</strong>について、定義・根拠・試験での押さえ方をまとめます。{html.escape(article_lead or lead)}</p>
+    {_term_article_lead_html(term, article_lead or lead)}
     {key_points_html}
     {toc_html}
     {quality_html}

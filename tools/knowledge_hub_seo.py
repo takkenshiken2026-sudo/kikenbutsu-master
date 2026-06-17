@@ -1553,7 +1553,7 @@ def glossary_memory_body_html(entry: dict) -> str:
     elif free_lines:
         parts.append(hub_prose_html(free_lines[:5]))
 
-    if term:
+    if term and len(memory_tip) < 48:
         parts.append(
             f"<p>最後に「{html.escape(term)}」が登場する過去問を1問解き、"
             "選択肢の根拠まで言語化して整理してください。</p>"
