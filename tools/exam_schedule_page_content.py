@@ -21,7 +21,7 @@ def page_sections() -> list[tuple[str, str]]:
         (
             "試験ガイドとの使い分け",
             "支部日程を決めたら、[試験日程記事](../articles/exam-schedule/)で申込締切・合格発表を4点カレンダー登録し、"
-            "[学習計画](../articles/study-plan/)で残り週数から三領域の配分を決めてください。",
+            "[学習計画](../articles/study-plan/)で残り週数から三科目の配分を決めてください。",
         ),
     ]
 
