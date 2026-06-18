@@ -3350,6 +3350,7 @@ function buildIchiSourcePool(fieldFilter) {
         statement: String(r.statement || '').trim(),
         correctAnswer: !!r.correctAnswer,
         exp: r.exp || '',
+        expHtml: r.expHtml || '',
         publicPath: r.publicPath || '',
         level: 1,
       };
@@ -3602,6 +3603,8 @@ function showIchiQuestion() {
   document.getElementById('ichi-btns')?.classList.remove('answered');
   const result = document.getElementById('ichi-result');
   result.className = 'ichi-result';
+  const expReset = document.getElementById('ichi-result-exp');
+  if (expReset) expReset.innerHTML = '';
   document.getElementById('ichi-next-btn').className = 'ichi-next-btn';
   ichiState.answered = false;
   ichiState.qStarted = Date.now();
@@ -3800,7 +3803,11 @@ function answerIchi(userAnswer) {
   badge.className = 'ichi-result-badge ' + (correct ? 'ok' : 'ng');
   badge.textContent = correct ? '✓ 正解' : '✗ 不正解';
   badge.textContent += '　（' + (q.correctAnswer ? '正解は○' : '正解は×') + '）';
-  exp.textContent = adaptExplanationForIchimondou(q.exp || '');
+  if (q.expHtml) {
+    exp.innerHTML = q.expHtml;
+  } else {
+    exp.textContent = adaptExplanationForIchimondou(q.exp || '');
+  }
   const resultBox = document.getElementById('ichi-result');
   resultBox.className = 'ichi-result show ' + (correct ? 'ok' : 'ng');
   document.getElementById('ichi-next-btn').className = 'ichi-next-btn show';

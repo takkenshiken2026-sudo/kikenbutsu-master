@@ -16,6 +16,7 @@ if str(ROOT) not in sys.path:
 
 from tools.correct_answer_format import collect_choice_texts, is_valid_correct, parse_correct_js_index
 from tools.site_config import category_to_field_map, extended_correct_answers
+from tools.build_past_question_pages import page_dict as past_page_dict
 from tools.build_practice_ichimon_pages import practice_page_dict
 from tools.q_explanation import _o4_explanation_lead, build_explanation_html
 
@@ -85,6 +86,8 @@ def row_to_obj(row: dict, line_no: int) -> dict | None:
 
     text = build_plain_text(row)
     exp = norm(row.get("explanation")) or "（解説は未入力です。）"
+    page = past_page_dict(row, line_no)
+    exp_html = build_explanation_html(page, row)
 
     qid = year * 100 + qno
     return {
@@ -96,6 +99,7 @@ def row_to_obj(row: dict, line_no: int) -> dict | None:
         "opts": opts,
         "ans": 0 if cor is None else cor,
         "exp": exp,
+        "expHtml": exp_html,
     }
 
 

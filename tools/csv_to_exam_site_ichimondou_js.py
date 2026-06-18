@@ -22,6 +22,11 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from tools.ichimon_paths import ichimon_rel_path
+from tools.build_practice_ichimon_pages import ichimon_page_dict
+from tools.q_explanation import (
+    _o4_explanation_lead,
+    build_ichimon_explanation_html,
+)
 from tools.site_config import category_to_field_map
 
 DATA_CSV = ROOT / "data" / "ichimon_questions.csv"
@@ -63,17 +68,30 @@ def normalize_statement(text: str) -> str:
     return s
 
 
+def ichimon_exp_fields(row: dict, line_no: int) -> tuple[str, str]:
+    page = ichimon_page_dict(row, line_no)
+    exp_html = build_ichimon_explanation_html(page, row)
+    exp_plain = (
+        norm(row.get("explanation_summary"))
+        or _o4_explanation_lead(norm(row.get("explanation")))
+        or "（解説は未入力です。）"
+    )
+    return exp_plain, exp_html
+
+
 def row_to_obj(row: dict, line_no: int) -> dict:
     rid = norm(row.get("id"))
     if not rid:
         raise ValueError(f"line {line_no}: id が空です")
     cat = norm(row.get("category"))
+    exp, exp_html = ichimon_exp_fields(row, line_no)
     return {
         "id": rid,
         "field": category_to_field(cat),
         "statement": normalize_statement(norm(row.get("question"))),
         "correctAnswer": parse_marubatsu_answer(norm(row.get("answer"))),
-        "exp": norm(row.get("explanation")) or "（解説は未入力です。）",
+        "exp": exp,
+        "expHtml": exp_html,
         "publicPath": public_path_from_id(rid),
     }
 
