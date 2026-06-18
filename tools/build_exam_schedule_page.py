@@ -179,7 +179,7 @@ def build_page_html() -> str:
 
     json_ld = {"@context": "https://schema.org", "@graph": graph}
 
-    header = site_page_header(REL_PATH, current="articles")
+    header = site_page_header(REL_PATH, current="exam-dates")
     footer = site_page_footer(REL_PATH, current=None)
     scroll_top = site_scroll_top_html(REL_PATH)
     crumb = breadcrumb_html(
