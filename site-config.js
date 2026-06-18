@@ -143,6 +143,11 @@ window.SITE_CONFIG = {
       "legacyGlossaryCat": "limit"
     }
   ],
+  "questionModes": {
+    "practiceFormats": [],
+    "practicePreset": {},
+    "practiceTiers": []
+  },
   "paidMockExam": {
     "url": "https://note.com/shikaku_master/n/naae31abe01ed",
     "modeTitle": "予想模試（PDF・2回分）",

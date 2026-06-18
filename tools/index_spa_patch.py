@@ -9,7 +9,7 @@ import json
 import re
 from pathlib import Path
 
-from tools.site_config import brand_name, contact_url, exam_name, fields
+from tools.site_config import brand_name, contact_url, exam_name, fields, ichimon_enabled, past_enabled
 
 INDEX_NOSCRIPT_MARKER_START = "<!--INDEX_NOSCRIPT-->"
 INDEX_NOSCRIPT_MARKER_END = "<!--/INDEX_NOSCRIPT-->"
@@ -286,3 +286,96 @@ def load_patch_region_names(manifest_path: Path) -> list[str]:
         if line:
             names.append(line)
     return names
+
+
+_HTML_CLASS_RE = re.compile(r'<html lang="ja"(?: class="([^"]*)")?>')
+
+
+def inject_question_modes_html_class(text: str) -> str:
+    """hideIchimon / hidePast 時は index.html の <html> にクラスを付与。"""
+    mode_classes: list[str] = []
+    if not ichimon_enabled():
+        mode_classes.append("question-modes--no-ichimon")
+    if not past_enabled():
+        mode_classes.append("question-modes--no-past")
+
+    def _sync_class(m: re.Match[str]) -> str:
+        existing = [c for c in (m.group(1) or "").split() if c]
+        for cls in mode_classes:
+            if cls not in existing:
+                existing.append(cls)
+        for cls in ("question-modes--no-ichimon", "question-modes--no-past"):
+            if cls not in mode_classes and cls in existing:
+                existing.remove(cls)
+        if existing:
+            return f'<html lang="ja" class="{" ".join(existing)}">'
+        return '<html lang="ja">'
+
+    return _HTML_CLASS_RE.sub(_sync_class, text, count=1)
+
+
+_QUESTION_MODES_GUARD_START = "/*QUESTION_MODES_ICHIMON_GUARD*/"
+_QUESTION_MODES_GUARD_END = "/*/QUESTION_MODES_ICHIMON_GUARD*/"
+
+
+def question_modes_spa_guard_js() -> str:
+    return f"""{_QUESTION_MODES_GUARD_START}
+function ichimonModeEnabled(){{
+  var qm=(window.SITE_CONFIG&&window.SITE_CONFIG.questionModes)||{{}};
+  return !qm.hideIchimon;
+}}
+function pastModeEnabled(){{
+  var qm=(window.SITE_CONFIG&&window.SITE_CONFIG.questionModes)||{{}};
+  return !qm.hidePast;
+}}
+function startIchimondou(){{
+  if(!ichimonModeEnabled()){{ gotoPage('quiz-start'); return; }}
+  ichiState.active = false;
+  ichiState.sourcePool = [];
+  ichiState.questions = [];
+  ichiState.idx = 0;
+  ichiState.score = 0;
+  ichiState.attempts = 0;
+  ichiState.answered = false;
+  gotoPage('ichimondou');
+  syncIchiPageVisibility();
+}}
+{_QUESTION_MODES_GUARD_END}"""
+
+
+def inject_question_modes_spa_guard(text: str) -> str:
+    """startIchimondou を site-config 対応版に差し替え（テンプレ index.html 用）。"""
+    block = question_modes_spa_guard_js()
+    if _QUESTION_MODES_GUARD_START in text:
+        text = replace_marker_region(text, _QUESTION_MODES_GUARD_START, _QUESTION_MODES_GUARD_END, block)
+    else:
+        legacy = re.compile(
+            r"function startIchimondou\(\) \{\s*"
+            r"ichiState\.active = false;[\s\S]*?"
+            r"gotoPage\('ichimondou'\);\s*"
+            r"syncIchiPageVisibility\(\);\s*"
+            r"\}",
+            re.M,
+        )
+        if legacy.search(text):
+            text = legacy.sub(block, text, count=1)
+        else:
+            anchor = "// ===== 一問一答 ====="
+            if anchor in text and "function ichimonModeEnabled" not in text:
+                text = text.replace(anchor, block + "\n" + anchor, 1)
+
+    goto_guard = (
+        "function gotoPage(id, opts){\n"
+        "  if(typeof ichimonModeEnabled==='function' && !ichimonModeEnabled() "
+        "&& (id==='ichimondou'||id==='ichimondou-score')){ id='quiz-start'; }\n"
+        "  if(typeof pastModeEnabled==='function' && !pastModeEnabled() "
+        "&& (id==='past-config'||(id==='quiz'&&quizState.mode==='past')||(id==='score'&&quizState.mode==='past'))){ id='orig'; }\n"
+        "  if(id==='ichimondou') syncIchiPageVisibility();"
+    )
+    if goto_guard not in text:
+        text = text.replace(
+            "function gotoPage(id, opts){\n  if(id==='ichimondou') syncIchiPageVisibility();",
+            goto_guard,
+            1,
+        )
+    return text

@@ -67,6 +67,48 @@ def parse_numbered_choice_notes(text: str) -> dict[int, str]:
     return out
 
 
+_KANA_CHOICE_TO_NUM: dict[str, int] = {
+    "ア": 1,
+    "イ": 2,
+    "ウ": 3,
+    "エ": 4,
+    "オ": 5,
+}
+
+
+def parse_kana_bracket_choice_notes(text: str) -> dict[int, str]:
+    """O4 実践演習など: 【選択肢ア】誤り。… / 【選択肢1】… 形式の肢別解説。"""
+    out: dict[int, str] = {}
+    if not text:
+        return out
+    for m in re.finditer(r"【選択肢([アイウエオ])】([^【]+)", text):
+        n = _KANA_CHOICE_TO_NUM.get(m.group(1))
+        note = norm(m.group(2))
+        if n and note:
+            out[n] = note
+    for m in re.finditer(r"【選択肢(\d)】([^【]+)", text):
+        n = _parse_choice_num(m.group(1))
+        note = norm(m.group(2))
+        if n and note:
+            out[n] = note
+    return out
+
+
+def parse_all_inline_choice_notes(text: str) -> dict[int, str]:
+    """番号付き・括弧・カナ括弧の肢別解説を統合（同一肢は長い方を採用）。"""
+    out: dict[int, str] = {}
+    for parser in (
+        parse_numbered_choice_notes,
+        parse_inline_paren_choice_reasons,
+        parse_kana_bracket_choice_notes,
+    ):
+        for n, note in parser(text).items():
+            prev = out.get(n, "")
+            if len(note) > len(prev):
+                out[n] = note
+    return out
+
+
 def text_to_html(text: str) -> str:
     if not text:
         return ""
@@ -243,7 +285,7 @@ def _ensure_correct_body(page: dict, row: dict, summary: str, correct_body: str)
     opts = page.get("opts") or []
     opt_text = opts[cor_idx - 1] if cor_idx and 1 <= cor_idx <= len(opts) else ""
     correct_indices = correct_choice_indices(correct)
-    numbered = parse_numbered_choice_notes(
+    numbered = parse_all_inline_choice_notes(
         norm(row.get("explanation")) or correct_body
     )
     if len(correct_indices) > 1 and numbered:
@@ -298,7 +340,7 @@ def _is_substantive_choice_note(note: str) -> bool:
     if _is_enrich_boilerplate_note(n):
         return False
     if re.search(
-        r"⇒|→|第\d+条|誤り|誤っ|正しく|届出|認可|不適|適\.|「.+」|解説では|効力なし|効力あり|組合せ",
+        r"⇒|→|第\d+条|誤り|誤っ|正しい|正しく|適切|妥当|届出|認可|不適|適\.|「.+」|解説では|効力なし|効力あり|組合せ",
         n,
     ):
         return True
@@ -340,7 +382,7 @@ def _inline_wrong_notes(row: dict) -> dict[int, str]:
         for k in ("explanation", "explanation_correct", "explanation_summary")
         if norm(row.get(k))
     )
-    return parse_inline_paren_choice_reasons(merged)
+    return parse_all_inline_choice_notes(merged)
 
 
 def _is_thin_enrich_summary(text: str) -> bool:
@@ -556,7 +598,7 @@ def infer_wrong_choice_note(
     mode = question_ask_mode(stem)
     opt = norm(choice_text)
     correct = page.get("correct")
-    numbered = parse_numbered_choice_notes(norm(row.get("explanation")))
+    numbered = parse_all_inline_choice_notes(norm(row.get("explanation")))
     if choice_num in numbered and _is_substantive_choice_note(numbered[choice_num]):
         return dedupe_prose(numbered[choice_num])
 
@@ -907,7 +949,7 @@ def _hint_should_skip_explanation_tail(page: dict, row: dict) -> bool:
     if mode in {"truefalse_group", "combination", "multi"}:
         return True
     exp = norm(row.get("explanation"))
-    if exp and parse_numbered_choice_notes(exp):
+    if exp and parse_all_inline_choice_notes(exp):
         return True
     return False
 
@@ -1197,7 +1239,7 @@ def build_choice_commentary(page: dict, row: dict) -> list[tuple[int, str, str]]
     if mode in {"combination", "truefalse_group"}:
         return []
     parsed = parse_explanation_choices(norm(row.get("explanation_choices")))
-    numbered = parse_numbered_choice_notes(norm(row.get("explanation")))
+    numbered = parse_all_inline_choice_notes(norm(row.get("explanation")))
     correct = page.get("correct")
     correct_indices = correct_choice_indices(correct)
     items: list[tuple[int, str, str]] = []
@@ -1264,7 +1306,14 @@ def build_explanation_html(page: dict, row: dict) -> str:
     correct = page.get("correct")
     if correct and not page.get("is_invalidated"):
         correct_indices = correct_choice_indices(correct)
-        numbered = parse_numbered_choice_notes(norm(row.get("explanation")))
+        if not correct_body:
+            exp_notes = parse_all_inline_choice_notes(norm(row.get("explanation")))
+            for idx in sorted(correct_indices):
+                cn = norm(exp_notes.get(idx) or "")
+                if cn and _is_substantive_choice_note(cn):
+                    correct_body = cn
+                    break
+        numbered = parse_all_inline_choice_notes(norm(row.get("explanation")))
         correct_inner: list[str] = []
         if len(correct_indices) > 1:
             if correct_body and not numbered:

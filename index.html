@@ -3552,7 +3552,17 @@ function beginIchimondouSession() {
   showIchiQuestion();
 }
 
-function startIchimondou() {
+/*QUESTION_MODES_ICHIMON_GUARD*/
+function ichimonModeEnabled(){
+  var qm=(window.SITE_CONFIG&&window.SITE_CONFIG.questionModes)||{};
+  return !qm.hideIchimon;
+}
+function pastModeEnabled(){
+  var qm=(window.SITE_CONFIG&&window.SITE_CONFIG.questionModes)||{};
+  return !qm.hidePast;
+}
+function startIchimondou(){
+  if(!ichimonModeEnabled()){ gotoPage('quiz-start'); return; }
   ichiState.active = false;
   ichiState.sourcePool = [];
   ichiState.questions = [];
@@ -3563,6 +3573,7 @@ function startIchimondou() {
   gotoPage('ichimondou');
   syncIchiPageVisibility();
 }
+/*/QUESTION_MODES_ICHIMON_GUARD*/
 
 function formatIchiStatementLead(statement) {
   return (statement || '').trim();
@@ -3843,6 +3854,8 @@ function shareIchiResultToX(){
 }
 
 function gotoPage(id, opts){
+  if(typeof ichimonModeEnabled==='function' && !ichimonModeEnabled() && (id==='ichimondou'||id==='ichimondou-score')){ id='quiz-start'; }
+  if(typeof pastModeEnabled==='function' && !pastModeEnabled() && (id==='past-config'||(id==='quiz'&&quizState.mode==='past')||(id==='score'&&quizState.mode==='past'))){ id='orig'; }
   if(id==='ichimondou') syncIchiPageVisibility();
   if(id!=='quiz') showNextBtn(false, null);
   document.body.classList.toggle('is-solving', id==='quiz' || (id==='ichimondou' && ichiState.active));

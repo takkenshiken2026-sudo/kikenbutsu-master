@@ -1,0 +1,6 @@
+generated: 2026-06-18
+site: kikenbutsu-master
+published: 66
+target: 50
+decisions: {'keep': 36, 'merge': 29, 'retire': 1}
+edit: guide_seo_candidates.csv の manual_decision 列（keep|merge|retire）

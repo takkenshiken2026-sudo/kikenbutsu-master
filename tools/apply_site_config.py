@@ -10,11 +10,12 @@ import csv
 import html
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-if str(ROOT) not in sys.path:
-    sys.path.insert(0, str(ROOT))
+REPO_ROOT = Path(__file__).resolve().parents[1]
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
 
 from tools.site_config import (
+    ROOT,
     base_path,
     brand_logo_lines,
     brand_logo_size_class,
@@ -24,9 +25,12 @@ from tools.site_config import (
     clean_origin,
     contact_url,
     copyright_text,
+    exam_grade,
     exam_name,
     external_links,
     ga4_measurement_id,
+    ichimon_enabled,
+    learning_nav_extras,
     learning_nav_label,
     official_organization,
     primary_external_link,
@@ -34,7 +38,13 @@ from tools.site_config import (
     sync_config_files,
     fields,
 )
-from tools.html_footer import site_page_footer, site_page_header, site_shell_footer
+from tools.html_footer import (
+    index_learning_nav_extra_desktop_html,
+    index_learning_nav_extra_mobile_html,
+    site_page_footer,
+    site_page_header,
+    site_shell_footer,
+)
 from tools.brand_assets import inject_brand_head
 from tools.build_index_faq_ldjson import inject_index_faq_ldjson
 from tools.index_seo_head import (
@@ -51,6 +61,8 @@ from tools.index_spa_patch import (
     inject_index_fields_fallback,
     inject_index_noscript,
     inject_index_spa_ui_leaks,
+    inject_question_modes_html_class,
+    inject_question_modes_spa_guard,
 )
 
 
@@ -303,6 +315,37 @@ def fix_wrong_official_urls(text: str) -> str:
     return text
 
 
+def migrate_wrong_fp_grade_branding(text: str) -> str:
+    """FP 多級サイトで sibling 級のブランド文字列が誤混入した場合に是正する。"""
+    grade = exam_grade()
+    bn = brand_name()
+    en = exam_name()
+    top, _ = brand_logo_lines()
+    if grade == "FP3" and "FP3" in bn:
+        pairs = [
+            ("FP2級マスター", bn),
+            ("ファイナンシャル・プランナー試験（FP2級）", en),
+        ]
+        wrong_logo = "FP2級"
+    elif grade == "FP2" and "FP2" in bn:
+        pairs = [
+            ("FP3級マスター", bn),
+            ("ファイナンシャル・プランナー試験（FP3級）", en),
+        ]
+        wrong_logo = "FP3級"
+    else:
+        return text
+    for src, dst in pairs:
+        if src != dst:
+            text = text.replace(src, dst)
+    if top and wrong_logo != top:
+        text = text.replace(
+            f'<span class="logo-mark-line">{wrong_logo}</span>',
+            f'<span class="logo-mark-line">{html.escape(top)}</span>',
+        )
+    return text
+
+
 def update_related_sites_official_links(text: str) -> str:
     """related-sites.html の公式リンク一覧を externalLinks から再生成。"""
     links = external_links()
@@ -325,6 +368,48 @@ def update_related_sites_official_links(text: str) -> str:
         return match.group(1) + "\n" + new_ul + "\n        " + match.group(3)
 
     return _RELATED_OFFICIAL_SECTION_RE.sub(repl, text, count=1)
+
+
+def sync_index_learning_nav_extras(text: str) -> str:
+    """index.html の SPA 学習ナビに learningNavExtras を差し込む（用語解説の隣）。"""
+    extras = learning_nav_extras()
+    known_ids = {e["id"] for e in extras}
+    for nav_id in known_ids:
+        text = re.sub(
+            rf'\s*<a class="topnav-link" id="{re.escape(nav_id)}"[^>]*>.*?</a>',
+            "",
+            text,
+            flags=re.S,
+        )
+        mnav_id = nav_id.replace("tnav-", "mnav-", 1) if nav_id.startswith("tnav-") else f"mnav-{nav_id}"
+        text = re.sub(
+            rf'\s*<a class="mobile-nav-item" id="{re.escape(mnav_id)}"[^>]*>.*?</a>',
+            "",
+            text,
+            flags=re.S,
+        )
+    if not extras:
+        return text
+    for extra in extras:
+        after = extra.get("after") or "tnav-glossary"
+        desktop = index_learning_nav_extra_desktop_html(extra)
+        text = re.sub(
+            rf'(id="{re.escape(after)}"[^>]*>.*?</a>)',
+            r"\1\n" + desktop,
+            text,
+            count=1,
+            flags=re.S,
+        )
+        mnav_after = after.replace("tnav-", "mnav-", 1)
+        mobile = index_learning_nav_extra_mobile_html(extra)
+        text = re.sub(
+            rf'(id="{re.escape(mnav_after)}"[^>]*>.*?</a>)',
+            r"\1\n" + mobile,
+            text,
+            count=1,
+            flags=re.S,
+        )
+    return text
 
 
 def update_static_page_canonical(text: str, path: Path) -> str:
@@ -602,6 +687,7 @@ def main() -> int:
         if path.suffix == ".html":
             new = fix_legacy_base_path_hrefs(new)
             new = migrate_legacy_takken_leaks(new)
+            new = migrate_wrong_fp_grade_branding(new)
             new = fix_wrong_official_urls(new)
             new = update_static_page_canonical(new, path)
             if path == ROOT / "related-sites.html":
@@ -617,6 +703,8 @@ def main() -> int:
             new = inject_index_noscript(new)
             new = inject_index_fields_fallback(new)
             new = inject_index_spa_ui_leaks(new)
+            new = inject_question_modes_html_class(new)
+            new = inject_question_modes_spa_guard(new)
             new = update_index_spa_seo_js(new)
             new = fix_quiz_start_page_titles(new)
             new = fix_spa_breadcrumb_top(new)
@@ -626,6 +714,7 @@ def main() -> int:
             new = update_index_auth_modal(new)
             new = update_index_logo_styles(new)
             new = update_index_glossary_excerpt(new)
+            new = sync_index_learning_nav_extras(new)
         if new != old:
             path.write_text(new, encoding="utf-8")
             print(f"Updated {path.relative_to(ROOT)}")

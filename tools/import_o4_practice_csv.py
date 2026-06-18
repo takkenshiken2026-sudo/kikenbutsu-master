@@ -11,11 +11,15 @@ from __future__ import annotations
 
 import argparse
 import csv
+import re
 import shutil
 import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
 DEFAULT_SOURCE = Path.home() / "Downloads" / "危険物取扱者乙4_五肢択一_想定問題500問_DB.csv"
 ARCHIVE = ROOT / "data" / "imported" / "o4_practice_500_source.csv"
 OUT = ROOT / "data" / "practice_questions.csv"
@@ -38,6 +42,10 @@ PRACTICE_HEADER = [
     "choice_5",
     "correct",
     "explanation",
+    "explanation_choices",
+    "explanation_correct",
+    "explanation_summary",
+    "explanation_point",
 ]
 
 SUBJECT_TO_CATEGORY = {
@@ -84,6 +92,57 @@ def build_explanation(row: dict[str, str]) -> str:
     return "\n\n".join(parts) if parts else "（解説は未入力です。）"
 
 
+def _first_sentence(text: str, *, max_len: int = 96) -> str:
+    body = norm(text)
+    if not body:
+        return ""
+    m = re.match(r"^[^。！？!?]+[。！？!?]", body)
+    core = m.group(0) if m else body
+    if len(core) > max_len:
+        return core[: max_len - 1] + "…"
+    return core
+
+
+def _choice_notes(row: dict[str, str]) -> dict[int, str]:
+    out: dict[int, str] = {}
+    for i in range(1, 6):
+        note = norm(row.get(f"choice_{i}_explanation"))
+        if note:
+            out[i] = note
+    return out
+
+
+def build_explanation_fields(row: dict[str, str], answer: int) -> dict[str, str]:
+    """O4 原本列から explanation_* 列を分割（enrich スクリプト不要）。"""
+    main = norm(row.get("explanation"))
+    exam_point = norm(row.get("exam_point"))
+    trap = norm(row.get("trap_point"))
+    notes = _choice_notes(row)
+
+    summary = _first_sentence(main) or main
+    correct_note = notes.get(answer, "")
+    correct_body = main
+    if correct_note and correct_note not in main:
+        correct_body = f"{main} {correct_note}".strip() if main else correct_note
+
+    wrong_map = {n: note for n, note in notes.items() if n != answer}
+    choices_field = ";".join(f"{n}:{wrong_map[n]}" for n in sorted(wrong_map))
+
+    point_parts: list[str] = []
+    if exam_point:
+        point_parts.append(exam_point)
+    if trap:
+        point_parts.append(trap)
+
+    return {
+        "explanation": build_explanation(row),
+        "explanation_choices": choices_field,
+        "explanation_correct": correct_body or "（解説は未入力です。）",
+        "explanation_summary": summary or correct_body or "（解説は未入力です。）",
+        "explanation_point": " ".join(point_parts),
+    }
+
+
 def row_to_practice(row: dict[str, str], question_no: int) -> dict[str, str]:
     subject = norm(row.get("subject"))
     category = SUBJECT_TO_CATEGORY.get(subject)
@@ -106,6 +165,8 @@ def row_to_practice(row: dict[str, str], question_no: int) -> dict[str, str]:
     if not stem:
         raise ValueError(f"問題文なし: id={row.get('id')}")
 
+    exp_fields = build_explanation_fields(row, answer)
+
     return {
         "question_no": str(question_no),
         "type": "single",
@@ -123,7 +184,7 @@ def row_to_practice(row: dict[str, str], question_no: int) -> dict[str, str]:
         "choice_4": choices[3],
         "choice_5": choices[4],
         "correct": str(answer),
-        "explanation": build_explanation(row),
+        **exp_fields,
     }
 
 
@@ -134,10 +195,15 @@ def load_source(path: Path) -> list[dict[str, str]]:
 
 def main() -> int:
     ap = argparse.ArgumentParser(description="乙4想定問題CSVを practice_questions.csv に変換")
-    ap.add_argument("--source", type=Path, default=DEFAULT_SOURCE, help="入力CSV")
+    ap.add_argument("--source", type=Path, default=None, help="入力CSV（省略時は ARCHIVE → DEFAULT_SOURCE）")
     ap.add_argument("--no-archive", action="store_true", help="data/imported/ へ原本をコピーしない")
     args = ap.parse_args()
-    src: Path = args.source.expanduser().resolve()
+    if args.source is not None:
+        src = args.source.expanduser().resolve()
+    elif ARCHIVE.is_file():
+        src = ARCHIVE
+    else:
+        src = DEFAULT_SOURCE.expanduser().resolve()
     if not src.is_file():
         print(f"入力がありません: {src}", file=sys.stderr)
         return 1
