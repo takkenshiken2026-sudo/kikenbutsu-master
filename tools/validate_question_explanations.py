@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""過去問・実践・一問一答 CSV の解説品質監査（矛盾・重複・デモ行）。"""
+"""過去問・実践・一問一答 CSV の解説品質監査（矛盾・重複・デモ行・実践HTML）。"""
 
 from __future__ import annotations
 
 import csv
+import html
 import re
 import sys
 from pathlib import Path
@@ -20,6 +21,11 @@ from tools.q_content_quality import (  # noqa: E402
     is_demo_practice_question_row,
 )
 from tools.q_explanation import (  # noqa: E402
+    _CHOICE_NOTE_MAX_LEN,
+    _CHOICE_NOTE_MIN_LEN,
+    _CORRECT_REASON_MAX_LEN,
+    _CORRECT_REASON_MIN_LEN,
+    build_explanation_html,
     norm,
     parse_explanation_choices,
     question_ask_mode,
@@ -28,6 +34,17 @@ from tools.q_explanation import (  # noqa: E402
 from tools.site_config import is_template_site, excluded_past_exam_years  # noqa: E402
 
 DATA = ROOT / "data"
+
+_PRACTICE_EXP_FORBIDDEN = (
+    "他肢では",
+    "本問の正答は",
+    "免状の効力・取扱範囲の説明として誤り",
+    "分類として誤り",
+)
+
+
+def _strip_exp_html(text: str) -> str:
+    return re.sub(r"<[^>]+>", "", html.unescape(text)).replace("\n", "").strip()
 
 
 def _warn(msg: str) -> None:
@@ -81,6 +98,8 @@ def audit_past() -> tuple[int, int]:
 
 
 def audit_practice() -> tuple[int, int]:
+    from tools.build_practice_ichimon_pages import practice_page_dict
+
     path = DATA / "practice_questions.csv"
     if not path.is_file():
         return 0, 0
@@ -91,6 +110,45 @@ def audit_practice() -> tuple[int, int]:
         if is_demo_practice_question_row(row):
             warns += 1
             _warn(f"{path.name}:{idx} デモ・テンプレ実践演習（静的ページ生成対象外）")
+            continue
+        qno = int(row.get("question_no") or idx - 1)
+        page = practice_page_dict(row, qno)
+        exp_html = build_explanation_html({**page, "year": 0}, row)
+        cor_m = re.search(
+            r'id="q-exp-correct-h"[^>]*>.*?</h3>\s*<p>(.*?)</p>',
+            exp_html,
+            re.S,
+        )
+        if not cor_m:
+            errs += 1
+            _error(f"{path.name}:{idx} Q{qno} 正解の理由セクションなし")
+            continue
+        cor = _strip_exp_html(cor_m.group(1))
+        wrongs = [
+            _strip_exp_html(w)
+            for w in re.findall(
+                r'class="q-exp-choice-note"[^>]*>(.*?)</',
+                exp_html,
+                re.S,
+            )
+        ]
+        if not (_CORRECT_REASON_MIN_LEN <= len(cor) <= _CORRECT_REASON_MAX_LEN):
+            errs += 1
+            _error(
+                f"{path.name}:{idx} Q{qno} 正解の理由 {len(cor)}字 "
+                f"（{_CORRECT_REASON_MIN_LEN}〜{_CORRECT_REASON_MAX_LEN}字）"
+            )
+        for wi, note in enumerate(wrongs, start=1):
+            if not (_CHOICE_NOTE_MIN_LEN <= len(note) <= _CHOICE_NOTE_MAX_LEN):
+                errs += 1
+                _error(
+                    f"{path.name}:{idx} Q{qno} 他肢{wi} {len(note)}字 "
+                    f"（{_CHOICE_NOTE_MIN_LEN}〜{_CHOICE_NOTE_MAX_LEN}字）"
+                )
+        for phrase in _PRACTICE_EXP_FORBIDDEN:
+            if phrase in cor or any(phrase in w for w in wrongs):
+                errs += 1
+                _error(f"{path.name}:{idx} Q{qno} 禁止句「{phrase}」")
     return errs, warns
 
 
