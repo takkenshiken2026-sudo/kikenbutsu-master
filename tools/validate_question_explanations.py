@@ -26,6 +26,7 @@ from tools.q_explanation import (  # noqa: E402
     _CORRECT_REASON_MAX_LEN,
     _CORRECT_REASON_MIN_LEN,
     build_explanation_html,
+    build_ichimon_explanation_html,
     norm,
     parse_explanation_choices,
     question_ask_mode,
@@ -193,9 +194,71 @@ def audit_ichimon() -> tuple[int, int]:
     return errs, warns
 
 
+def audit_ichimon_rendered() -> tuple[int, int]:
+    from tools.build_practice_ichimon_pages import ichimon_page_dict
+
+    path = DATA / "ichimon_questions.csv"
+    if not path.is_file():
+        return 0, 0
+    errs = warns = 0
+    with path.open(encoding="utf-8-sig", newline="") as f:
+        rows = list(csv.DictReader(f))
+    for idx, row in enumerate(rows, start=2):
+        rid = norm(row.get("id"))
+        page = ichimon_page_dict(row, idx - 1)
+        exp_html = build_ichimon_explanation_html(page, row)
+        cor_m = re.search(
+            r'id="q-exp-correct-h"[^>]*>.*?</h3>\s*<p>(.*?)</p>',
+            exp_html,
+            re.S,
+        )
+        opp_m = re.search(
+            r'id="q-exp-opposite-h"[^>]*>.*?</section>',
+            exp_html,
+            re.S,
+        )
+        if not cor_m:
+            errs += 1
+            _error(f"{path.name}:{idx} {rid} 正解の理由なし")
+            continue
+        cor = _strip_exp_html(cor_m.group(1))
+        opp = ""
+        if opp_m:
+            opp_p = re.search(r"<p>(.*?)</p>", opp_m.group(0), re.S)
+            if opp_p:
+                opp = _strip_exp_html(opp_p.group(1))
+        if not (_CORRECT_REASON_MIN_LEN <= len(cor) <= _CORRECT_REASON_MAX_LEN):
+            errs += 1
+            _error(
+                f"{path.name}:{idx} {rid} 正解の理由 {len(cor)}字 "
+                f"（{_CORRECT_REASON_MIN_LEN}〜{_CORRECT_REASON_MAX_LEN}字）"
+            )
+        if not opp:
+            errs += 1
+            _error(f"{path.name}:{idx} {rid} 反対側解説なし")
+        elif not (_CHOICE_NOTE_MIN_LEN <= len(opp) <= _CHOICE_NOTE_MAX_LEN):
+            errs += 1
+            _error(
+                f"{path.name}:{idx} {rid} 反対側 {len(opp)}字 "
+                f"（{_CHOICE_NOTE_MIN_LEN}〜{_CHOICE_NOTE_MAX_LEN}字）"
+            )
+        ans = norm(row.get("answer"))
+        if ans in {"×", "x", "X"} and cor.startswith("正しい"):
+            errs += 1
+            _error(f"{path.name}:{idx} {rid} 正答×なのに正解理由が「正しい」始まり")
+        if ans in {"○", "O", "o"} and cor.startswith("誤り"):
+            errs += 1
+            _error(f"{path.name}:{idx} {rid} 正答○なのに正解理由が「誤り」始まり")
+        for phrase in _PRACTICE_EXP_FORBIDDEN:
+            if phrase in cor or phrase in opp:
+                errs += 1
+                _error(f"{path.name}:{idx} {rid} 禁止句「{phrase}」")
+    return errs, warns
+
+
 def main() -> int:
     total_err = total_warn = 0
-    for fn in (audit_past, audit_practice, audit_ichimon):
+    for fn in (audit_past, audit_practice, audit_ichimon, audit_ichimon_rendered):
         e, w = fn()
         total_err += e
         total_warn += w

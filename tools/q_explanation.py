@@ -5051,7 +5051,59 @@ def infer_ichimon_opposite_note(page: dict, row: dict) -> str:
             "同分野の過去問・実践演習で判断基準を固めてください。"
         )
 
-    return dedupe_prose("\n\n".join(parts))
+    text = dedupe_prose("\n\n".join(parts))
+    if len(text) > _CHOICE_NOTE_MAX_LEN:
+        text = _truncate_prose_at_sentence(text, _CHOICE_NOTE_MAX_LEN)
+    return text
+
+
+def _pad_ichimon_correct_body(
+    page: dict,
+    row: dict,
+    body: str,
+    *,
+    is_true: bool,
+) -> str:
+    """一問一答の正解理由が短いとき、O4原文のみで補う。"""
+    if len(body) >= _CORRECT_REASON_MIN_LEN:
+        return body
+
+    exp = strip_four_choice_leak(norm(row.get("explanation")))
+    for sent in _split_explanation_sentences(exp):
+        core = re.sub(r"^(正しい|誤り)[。.]\s*", "", sent).strip()
+        if len(core) < 8:
+            continue
+        body = _append_if_fresh(body, core, max_overlap=0.88)
+        if len(body) >= _CORRECT_REASON_MIN_LEN:
+            return body
+
+    point = norm(row.get("explanation_point"))
+    for sent in _split_explanation_sentences(point):
+        body = _append_if_fresh(body, sent, max_overlap=0.85)
+        if len(body) >= _CORRECT_REASON_MIN_LEN:
+            return body
+
+    category = norm(page.get("category") or "")
+    if category:
+        body = _append_if_fresh(
+            body,
+            f"分野「{category}」の用語定義と制度の前提を確認する。",
+            max_overlap=0.5,
+        )
+        if len(body) >= _CORRECT_REASON_MIN_LEN:
+            return body
+
+    clause = _ichimon_judgment_clause(
+        norm(page.get("statement") or row.get("question"))
+    )
+    if clause:
+        label = "正しい" if is_true else "誤った"
+        body = _append_if_fresh(
+            body,
+            f"「{_snippet(clause, 36)}」が{label}記述か、定義と照合して判断する。",
+            max_overlap=0.55,
+        )
+    return body
 
 
 def build_ichimon_explanation_html(page: dict, row: dict) -> str:
@@ -5080,9 +5132,18 @@ def build_ichimon_explanation_html(page: dict, row: dict) -> str:
         summary=summary,
         is_true=is_true,
     )
+    correct_body = _pad_ichimon_correct_body(
+        page, row, correct_body, is_true=is_true
+    )
+    if len(correct_body) > _CORRECT_REASON_MAX_LEN:
+        correct_body = _truncate_prose_at_sentence(
+            correct_body, _CORRECT_REASON_MAX_LEN
+        )
     opposite = dedupe_prose(opposite)
     if not opposite:
         opposite = infer_ichimon_opposite_note(page, row)
+    elif len(opposite) > _CHOICE_NOTE_MAX_LEN:
+        opposite = _truncate_prose_at_sentence(opposite, _CHOICE_NOTE_MAX_LEN)
 
     parts: list[str] = ['<div class="q-exp">']
 

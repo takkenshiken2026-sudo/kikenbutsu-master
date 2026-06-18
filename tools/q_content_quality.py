@@ -180,6 +180,10 @@ def clean_ichimon_correct_body(
         "",
         body,
     )
+    if not is_true and re.match(r"^正しい[。.]", body):
+        body = re.sub(r"^正しい[。.]\s*", "誤り。", body, count=1)
+    elif is_true and re.match(r"^誤り[。.]", body):
+        body = re.sub(r"^誤り[。.]\s*", "正しい。", body, count=1)
     if ichimon_body_already_states_truth(body, is_true=is_true):
         body = re.sub(r"^[。.]\s*", "", body)
     return body.strip()
