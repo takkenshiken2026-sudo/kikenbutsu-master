@@ -594,10 +594,15 @@ def _elaborate_wrong_classification(stem: str, core: str) -> str:
 
 
 def _wrong_note_opening(choice_num: int, opt_sn: str, core: str) -> str:
-    """O4の誤答メモから1文目を作る。"""
+    """O4の誤答メモから1文目を作る（肢番号は q-exp-choice-head で表示）。"""
+    del choice_num
     core = core.rstrip("。").strip()
-    opt_core = norm(opt_sn).rstrip("。")
-    return f"（{choice_num}）「{opt_sn}」について、{core}。"
+    return f"「{opt_sn}」について、{core}。"
+
+
+def _strip_wrong_note_head_num(note: str) -> str:
+    """他肢リスト見出しと重複する先頭の肢番号を除去。"""
+    return re.sub(r"^（[０-９0-9]+）\s*", "", norm(note)).lstrip()
 
 
 def _wrong_note_context_sentence(page: dict, core: str, choice_text: str = "") -> str:
@@ -3367,7 +3372,7 @@ def _compose_wrong_choice_note(
             else "適切でないもの"
         )
         body = (
-            f"（{choice_num}）「{opt_sn}」について、{reason}。"
+            f"「{opt_sn}」について、{reason}。"
             f"正しい記述であり、本問が求める「{ask_label}」には該当しない。"
         )
     elif mode == "least_appropriate" and re.search(
@@ -3382,7 +3387,7 @@ def _compose_wrong_choice_note(
             else "適切でないもの"
         )
         body = (
-            f"（{choice_num}）「{opt_sn}」について、{core}。"
+            f"「{opt_sn}」について、{core}。"
             f"正しい対策であり、本問が求める「{ask_label}」には該当しない。"
         )
     elif core:
@@ -3406,13 +3411,25 @@ def _compose_wrong_choice_note(
             extras.append(sent)
         body += "".join(extras)
     else:
-        body = f"（{choice_num}）「{opt_sn}」の記述は、正答の内容と一致しない。"
+        body = f"「{opt_sn}」の記述は、正答の内容と一致しない。"
 
     if len(body) < _CHOICE_NOTE_MIN_LEN:
         body = _extend_wrong_note_from_o4(
             body, core, row, correct_body, choice_num=choice_num
         )
     body = _dedupe_wrong_note_sentences(body)
+    if len(body) < _CHOICE_NOTE_MIN_LEN:
+        ctx = _wrong_note_context_sentence(page, core, opt_core)
+        if ctx:
+            sent = ctx if ctx.endswith("。") else ctx + "。"
+            if not _sentence_is_redundant(sent, body):
+                body += sent
+    if len(body) < _CHOICE_NOTE_MIN_LEN:
+        body = _append_if_fresh(
+            body,
+            "正答肢の記述と照合して確認する。",
+            max_overlap=0.35,
+        )
     if len(body) > _CHOICE_NOTE_MAX_LEN:
         body = _truncate_prose_at_sentence(body, _CHOICE_NOTE_MAX_LEN)
     return body
@@ -4957,7 +4974,7 @@ def build_explanation_html(page: dict, row: dict) -> str:
                 f'<li class="q-exp-choice-item">'
                 f'<p class="q-exp-choice-head">'
                 f'<span class="q-exp-choice-num">（{nums}）</span></p>'
-                f'<p class="q-exp-choice-note">{text_to_html(note)}</p></li>'
+                f'<p class="q-exp-choice-note">{text_to_html(_strip_wrong_note_head_num(note))}</p></li>'
                 for nums, note in wrong_items
             )
             parts.append(
