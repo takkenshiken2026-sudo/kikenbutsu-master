@@ -109,8 +109,10 @@ def parse_all_inline_choice_notes(text: str) -> dict[int, str]:
     return out
 
 
-_CORRECT_REASON_MIN_LEN = 100
-_CORRECT_REASON_MAX_LEN = 200
+_CORRECT_REASON_MIN_LEN = 50
+_CORRECT_REASON_MAX_LEN = 220
+_CHOICE_NOTE_MIN_LEN = 40
+_CHOICE_NOTE_MAX_LEN = 220
 
 
 def _o4_explanation_lead(exp: str) -> str:
@@ -135,11 +137,25 @@ def _truncate_prose_at_sentence(text: str, max_len: int) -> str:
 
 def _split_explanation_sentences(text: str) -> list[str]:
     out: list[str] = []
-    for sent in re.split(r"(?<=[。！？!?])\s*", norm(text)):
-        s = sent.strip()
-        if len(s) < 8:
-            continue
-        out.append(s if s.endswith("。") else s + "。")
+    t = norm(text)
+    if not t:
+        return out
+    buf: list[str] = []
+    quote_depth = 0
+    for ch in t:
+        buf.append(ch)
+        if ch in "「『":
+            quote_depth += 1
+        elif ch in "」』" and quote_depth > 0:
+            quote_depth -= 1
+        elif ch in "。！？!?" and quote_depth == 0:
+            sent = "".join(buf).strip()
+            if len(sent) >= 8:
+                out.append(sent if sent.endswith("。") else sent + "。")
+            buf = []
+    tail = "".join(buf).strip()
+    if len(tail) >= 8:
+        out.append(tail if tail.endswith("。") else tail + "。")
     return out
 
 
@@ -150,6 +166,10 @@ def _sentence_is_redundant(sent: str, existing: str) -> bool:
         return False
     if len(sn) >= 12 and (sn in ex or ex in sn):
         return True
+    if len(sn) >= 20 and len(ex) >= 20:
+        shorter, longer = (sn, ex) if len(sn) <= len(ex) else (ex, sn)
+        if shorter in longer:
+            return True
     return _keyword_overlap_ratio(sent, existing) >= 0.72
 
 
@@ -179,6 +199,88 @@ def _normalize_exam_formula_sentence(sent: str) -> str:
         if left and right:
             return f"{left}は{right}で表される。"
     return s if s.endswith("。") else s + "。"
+
+
+def _expand_cor_note_to_sentence(cor_idx: int, opt_text: str, note: str) -> str:
+    """正答肢メモを主語のある1文に整える。"""
+    note = re.sub(r"^正しい[。．]\s*", "", _strip_choice_verdict_prefix(note))
+    note = note.rstrip("。").strip()
+    if not note:
+        return ""
+    opt_sn = _snippet(opt_text.rstrip("。．"), 40).rstrip("。．")
+    if len(note) <= 22 or not re.search(r"[はがをに]", note):
+        return f"選択肢（{cor_idx}）「{opt_sn}」は、{note}。"
+    return note + "。" if not note.endswith("。") else note
+
+
+def _append_if_fresh(body: str, sent: str, *, max_overlap: float = 0.72) -> str:
+    if not sent:
+        return body
+    s = sent if sent.endswith("。") else sent + "。"
+    if _sentence_is_redundant(s, body):
+        return body
+    if _keyword_overlap_ratio(s, body) >= max_overlap:
+        return body
+    return body + s
+
+
+def _dedupe_body_sentences(body: str) -> str:
+    """段落内の重複文を除去する。"""
+    kept: list[str] = []
+    joined = ""
+    for sent in _split_explanation_sentences(body):
+        if kept and _keyword_overlap_ratio(sent, kept[-1]) >= 0.8:
+            continue
+        sn = _normalize_for_compare(sent)
+        pn = _normalize_for_compare(kept[-1]) if kept else ""
+        if kept and len(sn) >= 14 and len(pn) >= 14 and sn[:14] == pn[:14]:
+            continue
+        if _sentence_is_redundant(sent, joined):
+            continue
+        kept.append(sent)
+        joined += sent
+    return joined
+
+
+def _pad_correct_reason_body(
+    page: dict,
+    row: dict,
+    body: str,
+    notes: dict[int, str],
+    cor_idx: int | None,
+) -> str:
+    """正解の理由が短いとき、O4原文（試験ポイント・正答肢メモ等）のみで補う。"""
+    if len(body) >= _CORRECT_REASON_MIN_LEN:
+        return body
+
+    exp = norm(row.get("explanation"))
+    exam = _o4_tagged_block(exp, "試験ポイント")
+    if exam:
+        for sent in _split_explanation_sentences(exam):
+            body = _append_if_fresh(
+                body, _normalize_exam_formula_sentence(sent), max_overlap=0.95
+            )
+            if len(body) >= _CORRECT_REASON_MIN_LEN:
+                return body
+
+    if cor_idx:
+        opts = page.get("opts") or []
+        if 1 <= cor_idx <= len(opts):
+            sent = _expand_cor_note_to_sentence(
+                cor_idx, norm(opts[cor_idx - 1]), notes.get(cor_idx, "")
+            )
+            if sent and _keyword_overlap_ratio(sent, body) < 0.55:
+                body = _append_if_fresh(body, sent, max_overlap=0.85)
+            if len(body) >= _CORRECT_REASON_MIN_LEN:
+                return body
+
+    lead = _o4_explanation_lead(exp)
+    for sent in _split_explanation_sentences(lead)[1:]:
+        body = _append_if_fresh(body, sent)
+        if len(body) >= _CORRECT_REASON_MIN_LEN:
+            return body
+
+    return body
 
 
 def _stem_topic_for_bridge(stem: str) -> str:
@@ -258,10 +360,8 @@ def _pick_wrong_choice_for_padding(
             continue
         ranked.append((i, len(note), note))
     ranked.sort(key=lambda x: x[1], reverse=True)
-    for i, _, note in ranked:
-        if page and not _format_wrong_choice_padding(page, i, note):
-            continue
-        return i, note
+    if ranked:
+        return ranked[0][0], ranked[0][2]
     return None
 
 
@@ -300,54 +400,217 @@ def _expand_correct_reason_if_short(
         if len(joined) >= _CORRECT_REASON_MIN_LEN:
             return joined
 
-    picked = _pick_wrong_choice_for_padding(notes, cor_idx, page)
-    if picked:
-        idx, note = picked
-        sent = _format_wrong_choice_padding(page, idx, note)
-        if sent and not _sentence_is_redundant(sent, joined):
-            parts.append(sent)
-            joined = "".join(parts)
-
-    if len(joined) < _CORRECT_REASON_MIN_LEN:
-        cat = norm(page.get("category"))
-        stem = norm(page.get("stem_plain") or page.get("stem"))
-        topic = _stem_topic_for_bridge(stem)
-        if cat and topic:
-            bridge = f"本問は{cat}分野で、{topic}について理解を確認する問題である。"
-        elif cat:
-            bridge = f"本問は{cat}分野の基本的な理解を問う問題である。"
-        else:
-            bridge = ""
-        if bridge and not _sentence_is_redundant(bridge, joined):
-            parts.append(bridge)
-            joined = "".join(parts)
-
-    if len(joined) < _CORRECT_REASON_MIN_LEN:
-        for fallback in (
-            "試験では、正答の根拠となる定義や区分を正確に押さえることが重要である。",
-            "類題でも同じ考え方で判断できるよう、根拠を言葉にして整理しておくことが大切である。",
-        ):
-            if len(joined) >= _CORRECT_REASON_MIN_LEN:
-                break
-            if not _sentence_is_redundant(fallback, joined):
-                parts.append(fallback)
-                joined = "".join(parts)
+    trap = _o4_tagged_block(norm(row.get("explanation")), "ひっかけ")
+    if trap and not _sentence_is_redundant(trap, joined):
+        parts.append(trap if trap.endswith("。") else trap + "。")
+        joined = "".join(parts)
 
     return joined
 
 
-def _compose_correct_reason(page: dict, row: dict, existing: str = "") -> str:
-    """正解の理由を 100〜200 文字程度の読みやすい段落に整える。"""
-    body = dedupe_prose(existing)
-    if (
-        _CORRECT_REASON_MIN_LEN <= len(body) <= _CORRECT_REASON_MAX_LEN
-        and not _is_thin_enrich_summary(body)
-    ):
-        return body
+def _strip_notes_overlapping_reference(text: str, reference: str) -> str:
+    if not text or not reference:
+        return text
+    parts = _split_explanation_sentences(text)
+    kept = [s for s in parts if not _sentence_is_redundant(s, reference)]
+    return "".join(kept) if kept else text
 
+
+def _wrong_stem_exam_bridge(stem: str, exam: str, core: str) -> str:
+    """試験ポイントと誤答coreをstem文脈でつなぐ1文（O4原文ベース）。"""
+    if not exam or not core:
+        return ""
+    exam = exam.rstrip("。")
+    core = core.rstrip("。")
+    if "代表例" in stem and "代表例" in exam:
+        topic = stem.split("の代表例")[0].split("として")[0]
+        exam_subj = exam.split("は")[0] if "は" in exam else exam
+        if exam_subj and _normalize_for_compare(exam_subj) not in _normalize_for_compare(core):
+            return f"本問が問う{topic}の代表例は{exam_subj}などであり、{core.split('は')[0] if 'は' in core else core}は該当しない。"
+    if "該当" in stem and "は" in exam:
+        exam_subj = exam.split("は")[0]
+        core_subj = core.split("は")[0]
+        if exam_subj != core_subj:
+            return f"{exam}。{core}。"
+    return ""
+
+
+def _elaborate_wrong_classification(stem: str, core: str) -> str:
+    """類別・消火・数量など、coreの内容から追加1文を生成。"""
+    core = core.rstrip("。")
+    m = re.match(r"^(.+?)は(.+?)である$", core)
+    if not m:
+        return ""
+    _subj, cat = m.group(1), m.group(2)
+
+    if re.search(r"第\d類", cat) and ("第4類" in stem or "引火性液体" in stem):
+        return "第4類（引火性液体）とは別の類別である。"
+    if "類別" in stem and "組合せ" in stem and re.search(r"第\d類", cat):
+        return f"{cat}という組合せは、消防法上の類別と一致しない。"
+    if "消火" in stem:
+        if "冷却" in core or "温度" in core:
+            return "温度を下げる冷却消火の説明であり、設問の消火方法とは異なる。"
+        if "除去" in core or "取り除" in core:
+            return "可燃物を取り除く除去消火の説明であり、設問の消火方法とは異なる。"
+    if "指定数量" in stem and ("L" in core or "リットル" in core or "数量" in core):
+        return "政令で定める指定数量の値として誤りである。"
+    if "倍数" in stem:
+        return "指定数量の倍数の算定方法として誤りである。"
+    if "製造所" in stem or "取扱所" in stem:
+        if "分類ではない" in core:
+            return "法令上の製造所等は、製造所・貯蔵所・取扱所を指す。"
+        return "製造所・貯蔵所・取扱所の分類として誤りである。"
+    if ("取扱者" in stem and ("甲種" in core or "乙種" in core or "丙種" in core)):
+        return "危険物取扱者の区分と取扱範囲の説明として誤りである。"
+    return ""
+
+
+def _wrong_note_opening(choice_num: int, opt_sn: str, core: str) -> str:
+    """O4の誤答メモから1文目を作る。"""
+    core = core.rstrip("。").strip()
+    opt_core = norm(opt_sn).rstrip("。")
+    return f"（{choice_num}）「{opt_sn}」について、{core}。"
+
+
+def _wrong_note_context_sentence(page: dict, core: str) -> str:
+    """肢ごとの2文目。stem と core の内容からのみ生成（正答引用なし）。"""
+    stem = norm(page.get("stem_plain") or page.get("stem"))
+    core = core.rstrip("。")
+    if question_ask_mode(stem) == "least_appropriate":
+        return ""
+
+    if re.search(r"第\d類", core) or "類危険物" in core:
+        if "乙種第4" in stem or ("第4類" in stem and "性質" in stem):
+            if "第4類" not in core and "引火性液体" not in core:
+                return "第4類（引火性液体）とは別の区分である。"
+        if "類別" in stem and "組合せ" in stem:
+            return "危険物の類別と性質の組合せとして誤りである。"
+
+    if "消火" in stem:
+        if "冷却" in core or "温度" in core:
+            return "冷却消火の説明であり、設問の消火方法としては該当しない。"
+        if "除去" in core or "取り除" in core:
+            return "除去消火の説明であり、設問の消火方法としては該当しない。"
+        if "窒息" in stem and ("着火" in core or "蒸気" in core):
+            return "窒息消火の説明としては該当しない。"
+
+    if "三要素" in stem or ("燃焼" in stem and "要素" in stem):
+        return "可燃物・酸素供給源・点火源がそろった組合せではない。"
+
+    if "蒸気圧" in stem:
+        if "同じ" in core or "色" in core or "引火しない" in core or "にくい" in core:
+            return "蒸気圧と蒸発の関係として誤った理解である。"
+
+    if "静電気" in stem:
+        if any(k in core for k in ("絶縁", "かき混", "高速", "ためる", "流動")):
+            return "静電気の発生や着火リスクを下げる方法ではない。"
+
+    if "不完全燃焼" in stem:
+        if "存在しない" in core and "可燃物" in core:
+            return "不完全燃焼も燃焼の一種であり、可燃物が存在する状態で起こる。"
+        if "十分" in core and "酸素" in core:
+            return "酸素が十分にある条件では完全燃焼に近くなりやすい。"
+        if "二酸化炭素だけ" in core:
+            return "一酸化炭素やすすを生じる点で不完全燃焼の説明と異なる。"
+
+    if "指定数量" in stem:
+        return ""
+
+    if "危険物" in stem and "消防法" in stem:
+        return "消防法別表第一に基づく危険物の定義とは異なる。"
+
+    if "取扱者" in stem or "乙種危険物取扱者" in stem:
+        return "免状の効力・取扱範囲の説明として誤りである。"
+
+    if "運搬" in stem and "適切でない" not in stem:
+        return "危険物運搬の要件として誤った理解である。"
+
+    return ""
+
+
+def _extend_wrong_note_from_o4(
+    body: str,
+    core: str,
+    row: dict,
+    correct_body: str,
+) -> str:
+    """短い場合のみ、O4原文から追加1文（定型句は使わない）。"""
+    ref = body + correct_body
+    exp = norm(row.get("explanation"))
+    exam = _o4_tagged_block(exp, "試験ポイント")
+    if exam and not _sentence_is_redundant(exam, ref):
+        if _keyword_overlap_ratio(exam, core) >= 0.2:
+            sent = exam if exam.endswith("。") else exam + "。"
+            if not _sentence_is_redundant(sent, ref):
+                return body + sent
+    trap = _o4_tagged_block(exp, "ひっかけ")
+    if trap and not _sentence_is_redundant(trap, ref):
+        return body + (trap if trap.endswith("。") else trap + "。")
+    return body
+
+
+def _compose_wrong_choice_note(
+    page: dict,
+    row: dict,
+    choice_num: int,
+    opt: str,
+    base_note: str,
+    correct_body: str = "",
+) -> str:
+    """他肢解説をO4原文ベースで約200字・非重複の段落に整える。"""
+    stem = norm(page.get("stem_plain") or page.get("stem"))
+    mode = question_ask_mode(stem)
+    note = _strip_choice_verdict_prefix(base_note)
+    note = _strip_notes_overlapping_reference(note, correct_body)
+    note = re.sub(r"^正しい[。．]\s*", "", note).strip()
+
+    opt_core = norm(opt).rstrip("。")
+    opt_sn = _snippet(opt_core, 40)
+    core = note.rstrip("。") if note else ""
+    is_marked_appropriate = bool(re.match(r"^適切", norm(base_note)))
+
+    if mode == "least_appropriate" and is_marked_appropriate:
+        reason = core or "内容として妥当"
+        body = (
+            f"（{choice_num}）「{opt_sn}」は、{reason}。"
+            f"運搬上必要とされる適切な内容であり、"
+            f"本問が求める「適切でないもの」には該当しない。"
+        )
+    elif core:
+        body = _wrong_note_opening(choice_num, opt_sn, core)
+        exp_text = norm(row.get("explanation"))
+        exam = _o4_tagged_block(exp_text, "試験ポイント")
+        elaborate = _elaborate_wrong_classification(stem, core)
+        context = "" if elaborate else _wrong_note_context_sentence(page, core)
+        extras: list[str] = []
+        for extra in (
+            _wrong_stem_exam_bridge(stem, exam, core),
+            elaborate,
+            context,
+        ):
+            if not extra:
+                continue
+            sent = extra if extra.endswith("。") else extra + "。"
+            if _sentence_is_redundant(sent, body + "".join(extras)):
+                continue
+            extras.append(sent)
+        body += "".join(extras)
+    else:
+        body = f"（{choice_num}）「{opt_sn}」の記述は、正答の内容と一致しない。"
+
+    if len(body) < _CHOICE_NOTE_MIN_LEN:
+        body = _extend_wrong_note_from_o4(body, core, row, correct_body)
+    body = _dedupe_body_sentences(body)
+    if len(body) > _CHOICE_NOTE_MAX_LEN:
+        body = _truncate_prose_at_sentence(body, _CHOICE_NOTE_MAX_LEN)
+    return body
+
+
+def _compose_correct_reason(page: dict, row: dict, existing: str = "") -> str:
+    """正解の理由を約200文字の読みやすい段落に整える。"""
     parts: list[str] = []
     exp = norm(row.get("explanation"))
-    lead = _o4_explanation_lead(exp) or _o4_explanation_lead(body)
+    lead = _o4_explanation_lead(exp) or _o4_explanation_lead(dedupe_prose(existing))
     cor_idx = _correct_choice_index(page.get("correct"))
     notes = parse_all_inline_choice_notes(exp)
     opts = page.get("opts") or []
@@ -357,39 +620,106 @@ def _compose_correct_reason(page: dict, row: dict, existing: str = "") -> str:
         cn = _normalize_for_compare(cor_note.rstrip("。"))
         if cn and (cn == opt_n or cn in opt_n or opt_n in cn):
             cor_note = ""
+        elif cor_note:
+            expanded = _expand_cor_note_to_sentence(
+                cor_idx, norm(opts[cor_idx - 1]), cor_note
+            )
+            if _keyword_overlap_ratio(expanded, lead) >= 0.55:
+                cor_note = ""
+            elif not _sentence_is_redundant(expanded, lead):
+                cor_note = expanded
+            else:
+                cor_note = ""
 
     for block in (
         lead,
         cor_note,
-        norm(row.get("explanation_point")),
         _o4_tagged_block(exp, "試験ポイント"),
     ):
         _append_unique_sentences(parts, block)
+    point_raw = norm(row.get("explanation_point"))
+    if point_raw:
+        for sent in _split_explanation_sentences(point_raw):
+            _append_unique_sentences(parts, sent)
 
     trap = _o4_tagged_block(exp, "ひっかけ")
     if trap:
         _append_unique_sentences(parts, trap)
 
-    body = "".join(parts)
-    body = _expand_correct_reason_if_short(page, row, body, notes, cor_idx)
+    exam_only = _o4_tagged_block(exp, "試験ポイント")
+    if exam_only and len("".join(parts)) < 90:
+        for sent in _split_explanation_sentences(exam_only):
+            expanded = _normalize_exam_formula_sentence(sent)
+            joined = "".join(parts)
+            if not _sentence_is_redundant(expanded, joined):
+                parts.append(expanded)
 
-    intro = ""
-    if len(body) < _CORRECT_REASON_MIN_LEN and cor_idx:
-        opts = page.get("opts") or []
-        if 1 <= cor_idx <= len(opts):
-            opt_text = norm(opts[cor_idx - 1]).rstrip("。")
-            intro = f"正答は（{cor_idx}）「{_snippet(opt_text, 44)}」です。"
-            if not _sentence_is_redundant(intro, body):
-                body = intro + body
-                body = _expand_correct_reason_if_short(page, row, body, notes, cor_idx)
-                body = _dedupe_after_intro(body, intro)
+    body = "".join(parts)
+    if len(body) < _CORRECT_REASON_MIN_LEN:
+        body = _expand_correct_reason_if_short(page, row, body, notes, cor_idx)
 
     if not body:
         body = lead or _strip_choice_verdict_prefix(notes.get(cor_idx or 0, ""))
 
+    stem = norm(page.get("stem_plain") or page.get("stem"))
+    if (
+        question_ask_mode(stem) == "least_appropriate"
+        and cor_idx
+        and 1 <= cor_idx <= len(opts)
+    ):
+        cor_sn = _snippet(norm(opts[cor_idx - 1]).rstrip("。"), 44)
+        least = f"（{cor_idx}）「{cor_sn}」は、他肢と比べて最も適切でない記述である。"
+        if not _sentence_is_redundant(least, body):
+            body += least
+
+    body = _trim_redundant_correct_closer(body, page, cor_idx)
+    body = _dedupe_body_sentences(body)
+    if len(body) > _CORRECT_REASON_MAX_LEN:
+        body = _truncate_prose_at_sentence(body, _CORRECT_REASON_MAX_LEN)
+    elif len(body) < _CORRECT_REASON_MIN_LEN:
+        body = _pad_correct_reason_body(page, row, body, notes, cor_idx)
+        body = _dedupe_body_sentences(body)
     if len(body) > _CORRECT_REASON_MAX_LEN:
         body = _truncate_prose_at_sentence(body, _CORRECT_REASON_MAX_LEN)
     return body
+
+
+def _trim_redundant_correct_closer(body: str, page: dict, cor_idx: int | None) -> str:
+    """正答引用が本文に既にあるとき、重複する文を除く。"""
+    if not cor_idx or not body:
+        return body
+    opts = page.get("opts") or []
+    if not (1 <= cor_idx <= len(opts)):
+        return body
+    opt_text = norm(opts[cor_idx - 1]).rstrip("。．")
+    opt_core = _normalize_for_compare(opt_text)
+    body_before = body
+
+    def _drop_choice_sentence(text: str) -> str:
+        pattern = rf"選択肢（{cor_idx}）「[^」]+」は、(.+。)"
+        while True:
+            m = re.search(pattern, text)
+            if not m:
+                break
+            if _keyword_overlap_ratio(m.group(1), text.replace(m.group(0), "")) >= 0.55:
+                text = text.replace(m.group(0), "", 1)
+            else:
+                break
+        return text
+
+    body = _drop_choice_sentence(body)
+
+    body_core = _normalize_for_compare(body)
+    stem = norm(page.get("stem_plain") or page.get("stem"))
+    if question_ask_mode(stem) != "least_appropriate":
+        if opt_core in body_core or len(body) >= 80:
+            body = re.sub(
+                rf"正答（{cor_idx}）「[^」]+」が、設問が求める内容と一致する。",
+                "",
+                body,
+            )
+
+    return body.rstrip() if body.rstrip() else body_before.rstrip()
 
 
 def text_to_html(text: str) -> str:
@@ -660,12 +990,7 @@ def parse_inline_paren_choice_reasons(text: str) -> dict[int, str]:
 
 
 def _inline_wrong_notes(row: dict) -> dict[int, str]:
-    merged = " ".join(
-        norm(row.get(k))
-        for k in ("explanation", "explanation_correct", "explanation_summary")
-        if norm(row.get(k))
-    )
-    return parse_all_inline_choice_notes(merged)
+    return parse_all_inline_choice_notes(norm(row.get("explanation")))
 
 
 def _is_thin_enrich_summary(text: str) -> bool:
@@ -1051,52 +1376,46 @@ def resolve_wrong_choice_note(
     row: dict,
     *,
     csv_note: str = "",
+    correct_body: str = "",
 ) -> str:
-    """CSV 優先。薄い解説は推論で置き換え、未記入は推論で補完。"""
+    """CSV / O4 原文優先。約200字の非重複解説に整える。"""
     stem = norm(page.get("stem_plain") or page.get("stem") or "")
     mode = question_ask_mode(stem)
     context = _wrong_note_context(page, row)
     inline = _inline_wrong_notes(row)
-    if choice_num in inline and len(inline[choice_num]) >= 8:
-        return dedupe_prose(
-            _compact_wrong_note_vs_choice(choice_text, inline[choice_num])
-        )
     brief = _brief_wrong_note_from_choice(choice_text)
-    note = norm(csv_note)
-    if note and _is_generic_wrong_note(note):
-        note = ""
-    if note and re.search(r"が示す論点とずれています", note):
-        note = ""
-    if note and _is_substantive_choice_note(note):
-        cleaned = _strip_wrong_note_boilerplate(
-            _strip_choice_echo(note, choice_text, choice_num),
+
+    base = norm(csv_note)
+    if base and _is_generic_wrong_note(base):
+        base = ""
+    if base and re.search(r"が示す論点とずれています", base):
+        base = ""
+
+    if not base and choice_num in inline:
+        inl = _strip_choice_verdict_prefix(inline[choice_num])
+        if inl and not re.match(r"^正しい", inl):
+            base = inl
+
+    if not base:
+        inferred = infer_wrong_choice_note(page, choice_num, choice_text, row)
+        base = _strip_wrong_note_boilerplate(
+            _strip_choice_echo(inferred, choice_text, choice_num),
             context=context,
         )
-        if cleaned and not _is_thin_choice_note(cleaned, mode):
-            return dedupe_prose(_compact_wrong_note_vs_choice(choice_text, cleaned))
-    if brief and (not note or _is_thin_choice_note(note, mode) or _is_generic_wrong_note(note)):
-        return brief
-    inferred = infer_wrong_choice_note(page, choice_num, choice_text, row)
-    compact = lambda t: dedupe_prose(_compact_wrong_note_vs_choice(choice_text, t))
-    if not note:
-        return compact(
-            _strip_wrong_note_boilerplate(
+    elif _is_thin_choice_note(base, mode) or _is_enrich_boilerplate_note(base):
+        inferred = infer_wrong_choice_note(page, choice_num, choice_text, row)
+        if inferred:
+            base = _strip_wrong_note_boilerplate(
                 _strip_choice_echo(inferred, choice_text, choice_num),
                 context=context,
             )
-        )
-    if _is_thin_choice_note(note, mode) or _is_enrich_boilerplate_note(note):
-        return compact(
-            _strip_wrong_note_boilerplate(
-                _strip_choice_echo(inferred, choice_text, choice_num),
-                context=context,
-            )
-        )
-    return compact(
-        _strip_wrong_note_boilerplate(
-            _strip_choice_echo(note, choice_text, choice_num),
-            context=context,
-        )
+
+    if brief and (not base or _is_thin_choice_note(base, mode)):
+        base = brief
+
+    base = _strip_choice_echo(base, choice_text, choice_num)
+    return _compose_wrong_choice_note(
+        page, row, choice_num, choice_text, base, correct_body
     )
 
 
@@ -1517,7 +1836,9 @@ def collapse_wrong_choice_items(
     return collapsed
 
 
-def build_choice_commentary(page: dict, row: dict) -> list[tuple[int, str, str]]:
+def build_choice_commentary(
+    page: dict, row: dict, *, correct_body: str = ""
+) -> list[tuple[int, str, str]]:
     mode = _extended_question_mode(page, row)
     if mode in {"combination", "truefalse_group"}:
         return []
@@ -1533,7 +1854,7 @@ def build_choice_commentary(page: dict, row: dict) -> list[tuple[int, str, str]]
             continue
         csv_note = parsed.get(i) or numbered.get(i) or ""
         note = resolve_wrong_choice_note(
-            page, i, opt, row, csv_note=csv_note
+            page, i, opt, row, csv_note=csv_note, correct_body=correct_body
         )
         items.append((i, opt, note))
     return items
@@ -1613,7 +1934,7 @@ def build_explanation_html(page: dict, row: dict) -> str:
             parts.append("</section>")
 
         wrong_items = collapse_wrong_choice_items(
-            page, row, build_choice_commentary(page, row)
+            page, row, build_choice_commentary(page, row, correct_body=correct_body)
         )
         if wrong_items:
             lis = "".join(
