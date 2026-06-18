@@ -488,6 +488,16 @@ h2.section-label .tip-icon{width:13px;height:13px;font-size:9px}
 .exp-correct .exp-verdict{color:var(--green)}
 .exp-wrong   .exp-verdict{color:var(--red)}
 .exp-text{color:var(--text);margin-bottom:10px}
+/* 実践演習 SPA — 静的 q ページと同型の解説ブロック */
+.exp-box .q-exp{margin:0}
+.exp-box .q-exp-section{margin-top:14px;padding-top:12px;border-top:1px solid var(--border2)}
+.exp-box .q-exp-section:first-of-type{margin-top:0;padding-top:0;border-top:none}
+.exp-box .q-exp-h3{font-size:var(--fs-sub);font-weight:700;margin:0 0 8px;color:var(--ink)}
+.exp-box .q-exp-section p{margin:0 0 8px;line-height:1.75;color:var(--text)}
+.exp-box .q-exp-choice-list{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.exp-box .q-exp-choice-item{padding:10px 12px;border:1px solid var(--border2);border-radius:var(--r);background:var(--bg2);line-height:1.7}
+.exp-box .q-exp-choice-num{font-weight:700;margin-right:4px;color:var(--ink)}
+.exp-box .q-exp-choice-note{margin:0;color:var(--text)}
 .exp-time{font-size:14px;color:var(--text3);font-family:var(--mono)}
 /* ===== RICH EXPLANATION (実践演習) ===== */
 .rich-exp{display:flex;flex-direction:column;gap:10px;margin-bottom:8px}
@@ -4466,8 +4476,7 @@ function renderQScoreReplay(sr){
   });
   const diagramHTML=q.diagram?buildDiagram(q.diagram):'';
   const kaisetsuHTML=(quizState.mode==='past'||!q.kaisetsu)?'':buildKaisetsu(q.kaisetsu,q);
-  const isOrig=!!q.unit;
-  const expHTML=isOrig?buildRichExp(q.exp,q.opts,q.ans):`<div class="exp-text">${q.exp}</div>`;
+  const expHTML=buildQuestionExpHTML(q);
   const yearHistHTML=(quizState.mode!=='past'&&!isAnyOrigQuestion(q)&&q.year)?buildYearHistoryHTML(q):'';
   const feedbackLabel=correct
     ? `<div class="answer-feedback correct">正解</div>`
@@ -4557,8 +4566,7 @@ function pickOpt(i){
   });
   const diagramHTML = q.diagram ? buildDiagram(q.diagram) : '';
   const kaisetsuHTML = (quizState.mode === 'past' || !q.kaisetsu) ? '' : buildKaisetsu(q.kaisetsu, q);
-  const isOrig = !!q.unit;
-  const expHTML = isOrig ? buildRichExp(q.exp, q.opts, q.ans) : `<div class="exp-text">${q.exp}</div>`;
+  const expHTML = buildQuestionExpHTML(q);
   const yearHistHTML = (quizState.mode !== 'past' && !isAnyOrigQuestion(q) && q.year) ? buildYearHistoryHTML(q) : '';
   // Answer feedback text
   const feedbackLabel = correct
@@ -5576,6 +5584,15 @@ function toggleKsSec(i){
 }
 
 // ===== RICH EXPLANATION BUILDER (実践演習専用・API不使用) =====
+function buildQuestionExpHTML(q){
+  if(q && q.expHtml) return q.expHtml;
+  const isOrig = !!(q && q.unit);
+  if(isOrig) return buildRichExp(q.exp, q.opts, q.ans);
+  if(typeof isCsvPracticePoolQuestion === 'function' && isCsvPracticePoolQuestion(q)){
+    return `<div class="exp-text">${q.exp || '（解説は未入力です。）'}</div>`;
+  }
+  return `<div class="exp-text">${q.exp || ''}</div>`;
+}
 function buildRichExp(expText, opts, ans){
   // 1. 法令条文をバッジ化（民法○条、法令・制度○条など）
   function tagLaw(t){

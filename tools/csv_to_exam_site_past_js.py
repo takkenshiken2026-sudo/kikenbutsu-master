@@ -16,6 +16,8 @@ if str(ROOT) not in sys.path:
 
 from tools.correct_answer_format import collect_choice_texts, is_valid_correct, parse_correct_js_index
 from tools.site_config import category_to_field_map, extended_correct_answers
+from tools.build_practice_ichimon_pages import practice_page_dict
+from tools.q_explanation import _o4_explanation_lead, build_explanation_html
 
 DATA_CSV = ROOT / "data" / "past_questions.csv"
 PRACTICE_CSV = ROOT / "data" / "practice_questions.csv"
@@ -106,6 +108,19 @@ def level_from_tags(tags: str) -> int:
     return 1
 
 
+def practice_exp_fields(row: dict, line_no: int) -> tuple[str, str]:
+    """SPA 用: プレーンテキスト（短い要約）と構造化 HTML 解説。"""
+    page = practice_page_dict(row, line_no)
+    page_ext = {**page, "year": 0, "is_invalidated": False, "is_exempt": False}
+    exp_html = build_explanation_html(page_ext, row)
+    exp_plain = (
+        norm(row.get("explanation_summary"))
+        or _o4_explanation_lead(norm(row.get("explanation")))
+        or "（解説は未入力です。）"
+    )
+    return exp_plain, exp_html
+
+
 def practice_row_to_obj(row: dict, line_no: int) -> dict | None:
     """実践演習 CSV（exam_year なし）。year は常に PRACTICE_POOL_YEAR。"""
     if norm(row.get("is_invalidated", "")).upper() == "TRUE":
@@ -130,7 +145,7 @@ def practice_row_to_obj(row: dict, line_no: int) -> dict | None:
         raise ValueError(f"practice_questions.csv line {line_no}: 正答なし no={qno}")
 
     text = build_plain_text(row)
-    exp = norm(row.get("explanation")) or "（解説は未入力です。）"
+    exp, exp_html = practice_exp_fields(row, line_no)
     qid = PRACTICE_ID_BASE + qno
     return {
         "id": qid,
@@ -141,6 +156,7 @@ def practice_row_to_obj(row: dict, line_no: int) -> dict | None:
         "opts": opts,
         "ans": 0 if cor is None else cor,
         "exp": exp,
+        "expHtml": exp_html,
         "level": level_from_tags(row.get("tags", "")),
         "publicPath": f"q/practice/p{qno:03d}/index.html",
     }
