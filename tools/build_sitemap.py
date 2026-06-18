@@ -175,6 +175,10 @@ def collect_entries(base: str) -> list[SitemapEntry]:
     for rel in static_pages:
         add_file(entries, base, rel, csv_dates=csv_dates)
 
+    exam_dates = ROOT / "exam-dates" / "index.html"
+    if exam_dates.is_file():
+        add_file(entries, base, "exam-dates/index.html", csv_dates=csv_dates)
+
     articles_root = ROOT / "articles"
     if articles_root.is_dir():
         add_file(entries, base, "articles/index.html", csv_dates=csv_dates)

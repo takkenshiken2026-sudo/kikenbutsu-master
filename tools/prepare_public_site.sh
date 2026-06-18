@@ -43,6 +43,9 @@ for d in articles q terms; do
     cp -R "$ROOT/$d" "$OUT/"
   fi
 done
+if [[ -d "$ROOT/exam-dates" ]]; then
+  cp -R "$ROOT/exam-dates" "$OUT/"
+fi
 # サイト固有 SPA データ（eisei1 / eisei2 など）。無ければスキップ。
 for f in eisei1-*.js eisei2-*.js; do
   if [[ -f "$ROOT/$f" ]]; then

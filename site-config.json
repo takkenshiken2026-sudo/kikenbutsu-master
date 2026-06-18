@@ -21,6 +21,16 @@
     "navWidth": "1080px",
     "contentWidth": "1080px"
   },
+  "learningNavExtras": [
+    {
+      "id": "tnav-exam-dates",
+      "label": "試験日検索",
+      "href": "exam-dates/index.html",
+      "after": "tnav-glossary",
+      "icon": "calendar",
+      "pageCurrent": "exam-dates"
+    }
+  ],
   "navigation": {
     "header": [
       {
