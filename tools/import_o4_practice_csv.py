@@ -122,8 +122,11 @@ def build_explanation_fields(row: dict[str, str], answer: int) -> dict[str, str]
     summary = _first_sentence(main) or main
     correct_note = notes.get(answer, "")
     correct_body = main
-    if correct_note and correct_note not in main:
-        correct_body = f"{main} {correct_note}".strip() if main else correct_note
+    if exam_point and len(correct_body) < 80:
+        correct_body = f"{correct_body} {exam_point}".strip() if correct_body else exam_point
+    elif correct_note and correct_note not in main and len(correct_body) < 80:
+        note = re.sub(r"^(正しい|誤り|適切でない|適切)[。．、]\s*", "", correct_note)
+        correct_body = f"{main} {note}".strip() if main else note
 
     wrong_map = {n: note for n, note in notes.items() if n != answer}
     choices_field = ";".join(f"{n}:{wrong_map[n]}" for n in sorted(wrong_map))

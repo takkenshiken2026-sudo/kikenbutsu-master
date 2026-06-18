@@ -109,6 +109,289 @@ def parse_all_inline_choice_notes(text: str) -> dict[int, str]:
     return out
 
 
+_CORRECT_REASON_MIN_LEN = 100
+_CORRECT_REASON_MAX_LEN = 200
+
+
+def _o4_explanation_lead(exp: str) -> str:
+    """【試験ポイント】【ひっかけ】【選択肢X】より前の解説本文。"""
+    return norm(re.split(r"【(?:試験ポイント|ひっかけ|選択肢)", exp or "", maxsplit=1)[0])
+
+
+def _strip_choice_verdict_prefix(note: str) -> str:
+    return norm(re.sub(r"^(正しい|誤り|適切でない|適切|妥当)[。．、]\s*", "", note))
+
+
+def _truncate_prose_at_sentence(text: str, max_len: int) -> str:
+    t = dedupe_prose(text)
+    if len(t) <= max_len:
+        return t if not t or t.endswith("。") else t + "。"
+    chunk = t[:max_len]
+    m = re.search(r".+[。！？!?]", chunk)
+    if m and len(m.group(0)) >= 60:
+        return m.group(0)
+    return chunk.rstrip("、。 ") + "…"
+
+
+def _split_explanation_sentences(text: str) -> list[str]:
+    out: list[str] = []
+    for sent in re.split(r"(?<=[。！？!?])\s*", norm(text)):
+        s = sent.strip()
+        if len(s) < 8:
+            continue
+        out.append(s if s.endswith("。") else s + "。")
+    return out
+
+
+def _sentence_is_redundant(sent: str, existing: str) -> bool:
+    sn = _normalize_for_compare(sent)
+    ex = _normalize_for_compare(existing)
+    if not sn or not ex:
+        return False
+    if len(sn) >= 12 and (sn in ex or ex in sn):
+        return True
+    return _keyword_overlap_ratio(sent, existing) >= 0.72
+
+
+def _append_unique_sentences(parts: list[str], text: str) -> None:
+    joined = "".join(parts)
+    for sent in _split_explanation_sentences(text):
+        if _sentence_is_redundant(sent, joined):
+            continue
+        parts.append(sent)
+        joined = "".join(parts)
+
+
+def _o4_tagged_block(exp: str, tag: str) -> str:
+    m = re.search(rf"【{re.escape(tag)}】([^【]+)", exp or "")
+    return norm(m.group(1)) if m else ""
+
+
+def _normalize_exam_formula_sentence(sent: str) -> str:
+    s = sent.strip()
+    if not s:
+        return s
+    core = s.rstrip("。")
+    if "＝" in core and len(core) <= 24:
+        left, _, right = core.partition("＝")
+        left = left.strip()
+        right = right.strip()
+        if left and right:
+            return f"{left}は{right}で表される。"
+    return s if s.endswith("。") else s + "。"
+
+
+def _stem_topic_for_bridge(stem: str) -> str:
+    s = norm(stem).rstrip("。．.?？!！")
+    m = re.match(r"^(.+?)について[、,]", s)
+    if m:
+        return m.group(1).strip()
+    for pat in (
+        r"について[、,]?正しいものはどれか\.?$",
+        r"について[、,]?適切なものはどれか\.?$",
+        r"について[、,]?[^。]+はどうなるか\.?$",
+        r"として[、,]?正しいものはどれか\.?$",
+        r"として[、,]?適切なものはどれか\.?$",
+        r"は一般に何と呼ばれるか\.?$",
+        r"はどれか\.?$",
+        r"を選び(?:なさい)?\.?$",
+    ):
+        s = re.sub(pat, "", s)
+    return s.rstrip("、，。．")
+
+
+def _dedupe_after_intro(body: str, intro: str) -> str:
+    if not intro or not body.startswith(intro):
+        return body
+    rest = body[len(intro) :]
+    sents = _split_explanation_sentences(rest)
+    if not sents:
+        return body
+    m = re.match(r"^正答は（\d+）「([^」]+)」です。", intro)
+    opt_word = m.group(1).rstrip("。") if m else ""
+    kept: list[str] = []
+    for i, sent in enumerate(sents):
+        if i == 0 and opt_word and len(opt_word) <= 16:
+            if sent.startswith(f"{opt_word}は") or sent.startswith(f"{opt_word}が"):
+                continue
+        if i == 0 and _sentence_is_redundant(sent, intro):
+            continue
+        kept.append(sent)
+    return intro + "".join(kept) if kept else body
+
+
+def _format_wrong_choice_padding(page: dict, idx: int, note: str) -> str:
+    """誤答肢の選択肢文＋解説メモから、自然な補足文を1文生成する。"""
+    note = _strip_choice_verdict_prefix(note).rstrip("。")
+    if not note:
+        return ""
+    opts = page.get("opts") or []
+    opt = norm(opts[idx - 1]).rstrip("。") if 1 <= idx <= len(opts) else ""
+    opt_sn = _snippet(opt, 40) if opt else ""
+
+    note_out = note
+    if re.search(r"(?:ではない|でない)$", note):
+        note_out = re.sub(r"ではない$", "ではありません", note)
+        note_out = re.sub(r"でない$", "ではありません", note_out)
+
+    if opt_sn:
+        opt_core = opt_sn.rstrip("。")
+        note_core = note_out.rstrip("。")
+        if note_core == opt_core or note_core.startswith(opt_core):
+            return ""
+        return f"（{idx}）は「{opt_sn}」とありますが、{note_out}。"
+    return f"（{idx}）については、{note_out}。"
+
+
+def _pick_wrong_choice_for_padding(
+    notes: dict[int, str],
+    cor_idx: int | None,
+    page: dict | None = None,
+) -> tuple[int, str] | None:
+    """補完用に最も情報量のある誤答肢解説を1つ選ぶ。"""
+    ranked: list[tuple[int, int, str]] = []
+    for i, raw in notes.items():
+        if cor_idx and i == cor_idx:
+            continue
+        note = _strip_choice_verdict_prefix(raw)
+        if len(note) < 4:
+            continue
+        ranked.append((i, len(note), note))
+    ranked.sort(key=lambda x: x[1], reverse=True)
+    for i, _, note in ranked:
+        if page and not _format_wrong_choice_padding(page, i, note):
+            continue
+        return i, note
+    return None
+
+
+def _expand_correct_reason_if_short(
+    page: dict,
+    row: dict,
+    body: str,
+    notes: dict[int, str],
+    cor_idx: int | None,
+) -> str:
+    if len(body) >= _CORRECT_REASON_MIN_LEN:
+        return body
+
+    parts = _split_explanation_sentences(body)
+    joined = body
+
+    for extra in (
+        norm(row.get("explanation_summary")),
+        norm(row.get("explanation_correct")),
+    ):
+        if not extra:
+            continue
+        for block in re.split(r"\n\n+", extra):
+            _append_unique_sentences(parts, _strip_choice_verdict_prefix(block))
+        joined = "".join(parts)
+        if len(joined) >= _CORRECT_REASON_MIN_LEN:
+            return joined
+
+    exam = _o4_tagged_block(norm(row.get("explanation")), "試験ポイント")
+    if exam:
+        for sent in _split_explanation_sentences(exam):
+            expanded = _normalize_exam_formula_sentence(sent)
+            if not _sentence_is_redundant(expanded, joined):
+                parts.append(expanded)
+                joined = "".join(parts)
+        if len(joined) >= _CORRECT_REASON_MIN_LEN:
+            return joined
+
+    picked = _pick_wrong_choice_for_padding(notes, cor_idx, page)
+    if picked:
+        idx, note = picked
+        sent = _format_wrong_choice_padding(page, idx, note)
+        if sent and not _sentence_is_redundant(sent, joined):
+            parts.append(sent)
+            joined = "".join(parts)
+
+    if len(joined) < _CORRECT_REASON_MIN_LEN:
+        cat = norm(page.get("category"))
+        stem = norm(page.get("stem_plain") or page.get("stem"))
+        topic = _stem_topic_for_bridge(stem)
+        if cat and topic:
+            bridge = f"本問は{cat}分野で、{topic}について理解を確認する問題である。"
+        elif cat:
+            bridge = f"本問は{cat}分野の基本的な理解を問う問題である。"
+        else:
+            bridge = ""
+        if bridge and not _sentence_is_redundant(bridge, joined):
+            parts.append(bridge)
+            joined = "".join(parts)
+
+    if len(joined) < _CORRECT_REASON_MIN_LEN:
+        for fallback in (
+            "試験では、正答の根拠となる定義や区分を正確に押さえることが重要である。",
+            "類題でも同じ考え方で判断できるよう、根拠を言葉にして整理しておくことが大切である。",
+        ):
+            if len(joined) >= _CORRECT_REASON_MIN_LEN:
+                break
+            if not _sentence_is_redundant(fallback, joined):
+                parts.append(fallback)
+                joined = "".join(parts)
+
+    return joined
+
+
+def _compose_correct_reason(page: dict, row: dict, existing: str = "") -> str:
+    """正解の理由を 100〜200 文字程度の読みやすい段落に整える。"""
+    body = dedupe_prose(existing)
+    if (
+        _CORRECT_REASON_MIN_LEN <= len(body) <= _CORRECT_REASON_MAX_LEN
+        and not _is_thin_enrich_summary(body)
+    ):
+        return body
+
+    parts: list[str] = []
+    exp = norm(row.get("explanation"))
+    lead = _o4_explanation_lead(exp) or _o4_explanation_lead(body)
+    cor_idx = _correct_choice_index(page.get("correct"))
+    notes = parse_all_inline_choice_notes(exp)
+    opts = page.get("opts") or []
+    cor_note = _strip_choice_verdict_prefix(notes.get(cor_idx or 0, ""))
+    if cor_idx and 1 <= cor_idx <= len(opts):
+        opt_n = _normalize_for_compare(norm(opts[cor_idx - 1]).rstrip("。"))
+        cn = _normalize_for_compare(cor_note.rstrip("。"))
+        if cn and (cn == opt_n or cn in opt_n or opt_n in cn):
+            cor_note = ""
+
+    for block in (
+        lead,
+        cor_note,
+        norm(row.get("explanation_point")),
+        _o4_tagged_block(exp, "試験ポイント"),
+    ):
+        _append_unique_sentences(parts, block)
+
+    trap = _o4_tagged_block(exp, "ひっかけ")
+    if trap:
+        _append_unique_sentences(parts, trap)
+
+    body = "".join(parts)
+    body = _expand_correct_reason_if_short(page, row, body, notes, cor_idx)
+
+    intro = ""
+    if len(body) < _CORRECT_REASON_MIN_LEN and cor_idx:
+        opts = page.get("opts") or []
+        if 1 <= cor_idx <= len(opts):
+            opt_text = norm(opts[cor_idx - 1]).rstrip("。")
+            intro = f"正答は（{cor_idx}）「{_snippet(opt_text, 44)}」です。"
+            if not _sentence_is_redundant(intro, body):
+                body = intro + body
+                body = _expand_correct_reason_if_short(page, row, body, notes, cor_idx)
+                body = _dedupe_after_intro(body, intro)
+
+    if not body:
+        body = lead or _strip_choice_verdict_prefix(notes.get(cor_idx or 0, ""))
+
+    if len(body) > _CORRECT_REASON_MAX_LEN:
+        body = _truncate_prose_at_sentence(body, _CORRECT_REASON_MAX_LEN)
+    return body
+
+
 def text_to_html(text: str) -> str:
     if not text:
         return ""
@@ -164,7 +447,7 @@ def _snippet(text: str, max_len: int = 36) -> str:
 
 
 def _normalize_for_compare(text: str) -> str:
-    return re.sub(r"\s+", "", norm(text))
+    return re.sub(r"[\s、，。．・]", "", norm(text))
 
 
 def _parrots_stem(stem: str, body: str) -> bool:
@@ -1306,13 +1589,7 @@ def build_explanation_html(page: dict, row: dict) -> str:
     correct = page.get("correct")
     if correct and not page.get("is_invalidated"):
         correct_indices = correct_choice_indices(correct)
-        if not correct_body:
-            exp_notes = parse_all_inline_choice_notes(norm(row.get("explanation")))
-            for idx in sorted(correct_indices):
-                cn = norm(exp_notes.get(idx) or "")
-                if cn and _is_substantive_choice_note(cn):
-                    correct_body = cn
-                    break
+        correct_body = _compose_correct_reason(page, row, correct_body)
         numbered = parse_all_inline_choice_notes(norm(row.get("explanation")))
         correct_inner: list[str] = []
         if len(correct_indices) > 1:
