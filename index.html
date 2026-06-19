@@ -1801,7 +1801,7 @@ body.is-solving .site-footer{display:none!important}
         </ol>
       </nav>
       <h2 class="page-title">過去問</h2>
-      <div class="page-sub">年度・分野を選んで学習スタート</div>
+      <div class="page-sub">分野を選んで学習スタート</div>
 
       <div class="orig-bottom-bar" style="margin-top:0;margin-bottom:16px;padding-top:0;border-top:none;border-bottom:1px solid var(--border);padding-bottom:16px">
         <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px">
@@ -1815,13 +1815,6 @@ body.is-solving .site-footer{display:none!important}
           <button class="count-btn"    onclick="selCount(0)"  id="cb0">全問</button>
         </div>
       </div>
-
-      <h2 class="section-label">年度を選ぶ</h2>
-      <div style="display:flex;gap:5px;margin-bottom:7px" class="year-select-actions">
-        <button class="btn-ghost" onclick="selectAllYears()">すべて選択</button>
-        <button class="btn-ghost" onclick="clearAllYears()">解除</button>
-      </div>
-      <div class="year-grid" id="year-grid"></div>
 
       <h2 class="section-label">分野を選ぶ</h2>
       <div class="field-chips" id="field-chips"></div>
@@ -3163,7 +3156,7 @@ function _pageSeo(pageTitle, descTemplate, path, hash) {
 }
 const PAGE_SEO = {
   'quiz-start': _pageSeo(_cfgQuizStartTitle(), '{exam}の学習モードを選択。実践演習・過去問・一問一答から選んで学習スタート。', '/', ''),
-  'past-config': _pageSeo('過去問演習', '{exam}の過去問を年度別・分野別に絞り込んで学習。', '/#past', '#past'),
+  'past-config': _pageSeo('過去問演習', '{exam}の過去問を分野別に絞り込んで学習。', '/#past', '#past'),
   'orig': _pageSeo('実践演習', '{exam}対策の実践演習問題。分野別データで弱点克服。', '/#orig', '#orig'),
   'dash': _pageSeo('記録・学習分析', '学習日記カレンダー・獲得バッジ・レベルや分野別正答率で、学習の振り返りと弱点把握ができます。', '/#dash', '#dash'),
   'review': _pageSeo('復習', '不正解・未解答の演習問題を分野別にまとめて復習。弱点問題を集中的に解いて定着率を上げる。', '/#review', '#review'),
@@ -4170,29 +4163,13 @@ function isCsvPracticePoolQuestion(q){
 function isLegacyOrigQuestion(q){ return !!(q && q.unit); }
 function isAnyOrigQuestion(q){ return isLegacyOrigQuestion(q) || isCsvPracticePoolQuestion(q); }
 function buildYearGrid(){
-  const allYears=getPastOnlyYearsSorted();
-  const yearBtnLabel=(y)=>formatPastYearLabel(y)||(y+'年');
-  // sync quizState.years to available years
-  quizState.years=quizState.years.filter(y=>allYears.includes(y));
-  if(!quizState.years.length) quizState.years=[...allYears];
-  document.getElementById('year-grid').innerHTML=allYears.map(y=>{
-    const isOn=quizState.years.includes(y);
-    return `<button class="year-btn ${isOn?'on':''}" id="yb${y}" onclick="toggleYear(${y})">${yearBtnLabel(y)}</button>`;
-  }).join('');
+  quizState.years=[...getPastOnlyYearsSorted()];
 }
 function getPastOnlyYearsSorted(){
   const origSet=(typeof CSV_IMPORTED_PRACTICE_POOL_YEARS!=='undefined'&&Array.isArray(CSV_IMPORTED_PRACTICE_POOL_YEARS))
     ? new Set(CSV_IMPORTED_PRACTICE_POOL_YEARS):new Set();
   return [...new Set(QUESTIONS.map(q=>q.year).filter(y=>y!=null&&!origSet.has(y)))].sort((a,b)=>b-a);
 }
-function toggleYear(y){
-  const idx=quizState.years.indexOf(y);
-  const allYears=getPastOnlyYearsSorted();
-  if(idx>-1){if(quizState.years.length===1)return;quizState.years.splice(idx,1);document.getElementById('yb'+y).classList.remove('on');}
-  else{quizState.years.push(y);document.getElementById('yb'+y).classList.add('on');}
-}
-function selectAllYears(){ const allYears=getPastOnlyYearsSorted();quizState.years=[...allYears];allYears.forEach(y=>{const b=document.getElementById('yb'+y);if(b)b.classList.add('on');}); }
-function clearAllYears(){ const allYears=getPastOnlyYearsSorted();if(!allYears.length)return;quizState.years=[allYears[0]];allYears.forEach(y=>{const b=document.getElementById('yb'+y);if(b)b.classList.toggle('on',y===allYears[0]);}); }
 
 function buildIchiFieldChips(){
   const el=document.getElementById('ichi-field-chips');
