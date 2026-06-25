@@ -50,6 +50,51 @@ ARTICLES_DIR = ROOT / "articles"
 GEN_MARKER = ".generated-by-exam-site"
 GUIDE_PAGES_CSS_VER = "20260527-guide"
 
+# 試験日程に関する記事の冒頭に置く、都道府県別の試験日一覧ページへの導線。
+# 記事ごとに前置きの一文を変える（同一フレーズの使い回しはGSC対策上避ける）。
+EXAM_DATES_CALLOUT_INTRO: dict[str, str] = {
+    "exam-schedule": (
+        "受験する支部の試験日をすぐ確かめたいときは、"
+        "{link}で受験地ごとの日程と申込期間を見比べられます。"
+    ),
+    "exam-application-flow": (
+        "申込手順を読み進める前に、"
+        "{link}で受けたい回の試験日と受付期間を押さえておくとスムーズです。"
+    ),
+    "application-deadline-checklist": (
+        "締切前のチェックを始める前に、"
+        "{link}から受験地の申込期間と試験日を控えておきましょう。"
+    ),
+    "exam-venue-and-region": (
+        "会場や受験地を調べる前に、"
+        "{link}で受験地ごとの試験日をあわせて確認できます。"
+    ),
+}
+EXAM_DATES_CALLOUT_LABEL = "都道府県別の試験日一覧"
+
+
+def exam_dates_callout_html(slug: str, rel_path: Path) -> str:
+    """試験日程系の記事に限り、exam-dates ページへの導線ボックスを返す。"""
+    intro = EXAM_DATES_CALLOUT_INTRO.get(slug)
+    if not intro:
+        return ""
+    href = relative_href(rel_path, "exam-dates/index.html")
+    link = (
+        f'<a href="{html.escape(href, quote=True)}">'
+        f"{html.escape(EXAM_DATES_CALLOUT_LABEL)}</a>"
+    )
+    text = intro.format(link=link)
+    return (
+        '\n    <aside class="seo-exam-dates-callout" aria-label="試験日一覧への案内">'
+        f"<p>{text}</p></aside>"
+    )
+
+
+def relative_href(from_rel_path: Path, target: str) -> str:
+    """記事ページ（articles/<slug>/index.html）からサイト内ページへの相対パス。"""
+    depth = len(from_rel_path.parts) - 1
+    return "../" * depth + target.lstrip("/")
+
 
 def norm(value: str | None) -> str:
     return (value or "").strip()
@@ -908,6 +953,7 @@ def build_article_html(
         "本人に割り当てられた試験会場は受験票の表記が正本です。</p></blockquote></section>"
     )
     info_table = article_info_table(article)
+    exam_dates_callout = exam_dates_callout_html(slug, rel_path)
     crumb_items = [("トップ", "index.html"), ("試験ガイド", "articles/index.html"), (title, None)]
     article_schema = {
         "@type": "Article",
@@ -994,7 +1040,7 @@ def build_article_html(
       {meta_updated_html(updated)}
     </div>
     <h1 class="article-title">{html.escape(title)}</h1>
-    <p class="article-lead">{lead_html}</p>
+    <p class="article-lead">{lead_html}</p>{exam_dates_callout}
     {toc}
     {quality_panel}
     {sections}

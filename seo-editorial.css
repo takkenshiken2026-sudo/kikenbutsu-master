@@ -398,6 +398,27 @@ body.seo-editorial-preview-page .seo-editorial .seo-article-section h2 .section-
   font-size: var(--seo-fs-body);
 }
 
+/* 試験日程系記事の冒頭に置く、試験日一覧ページへの導線ボックス */
+.seo-editorial .seo-exam-dates-callout {
+  background: color-mix(in srgb, var(--accent, #c0392b) 7%, var(--seo-callout-bg));
+  border: 1px solid var(--seo-callout-border);
+  border-left: 4px solid var(--accent, #c0392b);
+  border-radius: var(--seo-callout-radius);
+  padding: 14px 18px;
+  margin: 18px 0 var(--seo-callout-margin);
+}
+
+.seo-editorial .seo-exam-dates-callout p {
+  margin: 0;
+  color: var(--seo-callout-text);
+  line-height: var(--seo-line-body);
+  font-size: var(--seo-fs-body);
+}
+
+.seo-editorial .seo-exam-dates-callout a {
+  font-weight: var(--seo-font-weight-heading);
+}
+
 .seo-editorial .seo-key-points-list {
   margin: 12px 0 0;
   padding-left: 1.2em;
