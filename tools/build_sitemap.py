@@ -27,6 +27,23 @@ COMPARE_CSV = ROOT / "data" / "comparisons.csv"
 NUMBERS_CSV = ROOT / "data" / "numbers.csv"
 MISTAKES_CSV = ROOT / "data" / "mistakes.csv"
 
+# 既存 sitemap.xml の loc→lastmod。CSV 日付を持たないページ（問題・ハブ等）は
+# ファイル mtime に依存するため、毎ビルドで全 URL の lastmod が today に化けて
+# しまう（churn）。前回値を再利用し、内容が実際に変わった時だけ日付が動くようにする。
+_PREV_LASTMODS: dict[str, str] = {}
+
+
+def load_existing_lastmods(path: Path) -> dict[str, str]:
+    import re
+
+    if not path.is_file():
+        return {}
+    text = path.read_text(encoding="utf-8")
+    out: dict[str, str] = {}
+    for m in re.finditer(r"<loc>([^<]+)</loc>\s*<lastmod>([^<]+)</lastmod>", text):
+        out[m.group(1).strip()] = m.group(2).strip()
+    return out
+
 
 def norm(value: str | None) -> str:
     return (value or "").strip()
@@ -150,9 +167,10 @@ def add_file(
     path = ROOT / rel
     if not path.is_file():
         return
-    mod = csv_dates.get(rel) or lastmod or iso_from_mtime(path)
     loc_rel = sitemap_loc_rel(rel)
-    entries.append(SitemapEntry(loc=f"{base}/{loc_rel}", lastmod=mod))
+    loc = f"{base}/{loc_rel}"
+    mod = csv_dates.get(rel) or lastmod or _PREV_LASTMODS.get(loc) or iso_from_mtime(path)
+    entries.append(SitemapEntry(loc=loc, lastmod=mod))
 
 
 def add_home(entries: list[SitemapEntry], base: str) -> None:
@@ -160,10 +178,15 @@ def add_home(entries: list[SitemapEntry], base: str) -> None:
     path = ROOT / "index.html"
     if not path.is_file() or not should_include_rel("index.html"):
         return
-    entries.append(SitemapEntry(loc=f"{base}/", lastmod=iso_from_mtime(path)))
+    home_loc = f"{base}/"
+    entries.append(
+        SitemapEntry(loc=home_loc, lastmod=_PREV_LASTMODS.get(home_loc) or iso_from_mtime(path))
+    )
 
 
 def collect_entries(base: str) -> list[SitemapEntry]:
+    global _PREV_LASTMODS
+    _PREV_LASTMODS = load_existing_lastmods(ROOT / "sitemap.xml")
     entries: list[SitemapEntry] = []
     guide_dates = guide_lastmod_by_slug()
     csv_dates = {

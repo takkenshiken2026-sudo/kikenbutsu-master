@@ -9,7 +9,7 @@ from __future__ import annotations
 
 REWRITES: dict[str, dict[str, str]] = {
     "official-info-sources": {
-        "title": "危険物乙4の情報はどこで確認する｜正本は試験研究センター",
+        "title": "危険物乙4の情報はどこで確認する｜公式は試験研究センター",
         "meta_description": (
             "危険物取扱者試験（乙4）の情報は、消防試験研究センターの公式が正本。試験日や手数料など"
             "変わりやすい数値を公式で確認すべき理由、まとめサイトを概観用に使う線引き、"
