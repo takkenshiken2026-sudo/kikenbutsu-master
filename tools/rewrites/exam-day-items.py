@@ -10,7 +10,7 @@ from __future__ import annotations
 
 REWRITES: dict[str, dict[str, str]] = {
     "exam-day-items": {
-        "title": "危険物乙4の持ち物｜受験票・鉛筆・写真の規格",
+        "title": "危険物乙4の持ち物リスト｜電卓不可・受験票写真の規格",
         "meta_description": (
             "危険物取扱者試験（乙4）の当日の持ち物を整理。受験票・HBまたはBの鉛筆・本人確認は必須で、"
             "電卓は持ち込めません。受験票に貼る写真は縦4.5×横3.5cm・6か月以内、腕時計は腕に着用など、"

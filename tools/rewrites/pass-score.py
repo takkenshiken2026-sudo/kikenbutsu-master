@@ -9,7 +9,7 @@ from __future__ import annotations
 
 REWRITES: dict[str, dict[str, str]] = {
     "pass-score": {
-        "title": "危険物乙4の合格点｜各科目60%と「1問の重み」",
+        "title": "危険物乙4の合格点は何点？各科目60%と足切りの仕組み",
         "meta_description": (
             "危険物取扱者試験（乙4）の合格点は総合点では決まりません。法令9問・物理化学6問・"
             "性質消火6問という各科目60%を同時に満たす必要があり、10問科目は1問が10%。"
