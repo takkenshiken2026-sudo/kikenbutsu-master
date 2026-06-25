@@ -9,7 +9,7 @@ from __future__ import annotations
 
 REWRITES: dict[str, dict[str, str]] = {
     "exam-schedule": {
-        "title": "危険物乙4の試験日程｜支部ごとの実施と申込締切の逆算",
+        "title": "危険物乙4の試験日はいつ？支部別の日程と申込締切の調べ方",
         "meta_description": (
             "危険物取扱者試験（乙4）の試験日は全国一律ではなく、都道府県の支部ごとに年2〜6回ほど"
             "実施されます。東京などはほぼ毎週。試験日の調べ方と、申込締切から逆算して学習計画を"

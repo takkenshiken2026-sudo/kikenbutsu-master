@@ -9,7 +9,7 @@ from __future__ import annotations
 
 REWRITES: dict[str, dict[str, str]] = {
     "time-limit-strategy": {
-        "title": "危険物乙4の時間配分｜120分は余る前提で使い切る",
+        "title": "危険物乙4の試験時間は2時間｜120分の時間配分と使い切り方",
         "meta_description": (
             "危険物取扱者試験（乙4）は35問を120分で解くため、1問あたり約3.4分と時間に余裕があります。"
             "時間切れより計算問題と見直し不足が失点の元。余った時間を計算と点検に回す"
