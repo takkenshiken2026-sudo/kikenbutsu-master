@@ -9,7 +9,7 @@ from __future__ import annotations
 
 REWRITES: dict[str, dict[str, str]] = {
     "exam-venue-and-region": {
-        "title": "危険物乙4の会場・受験地｜支部が指定する会場の確認",
+        "title": "危険物乙4の試験会場・受験地｜選び方と確認方法",
         "meta_description": (
             "危険物取扱者試験（乙4）の会場は、申し込んだ支部が指定し、大学や公共施設などが"
             "使われます。会場は受験票で確定。受験地の選び方、会場の確認方法、当日のアクセスと"

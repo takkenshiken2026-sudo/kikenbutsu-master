@@ -203,8 +203,18 @@ def question_page_title(
     question_id: str = "",
     category: str = "",
     year_label: str = "",
+    topic: str = "",
 ) -> str:
-    """各問ページの <title>。"""
+    """各問ページの <title>。
+
+    topic（各問の短い論点）がある場合は、検索意図に直結する語を前方に置く。
+    過去問は『{topic}｜乙4過去問{年}第N問〔分野〕｜{brand}』の形にして、
+    一覧では区別しにくい「第N問」より先に内容が伝わるようにする。h1は変えない。
+    """
+    topic = (topic or "").strip()
+    if topic and mode == "past":
+        yl = (year_label or "").strip() or past_year_display(year)
+        return f"{topic}｜乙4過去問{yl}第{qno}問〔{category}〕｜{brand_name()}"
     return (
         f"{question_h1(mode, year=year, qno=qno, question_id=question_id, category=category, year_label=year_label)}"
         f"｜{brand_name()}"

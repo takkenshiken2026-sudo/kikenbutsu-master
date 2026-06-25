@@ -66,6 +66,24 @@ from tools.site_config import (
 DATA_CSV = ROOT / "data" / "past_questions.csv"
 Q_ROOT = ROOT / "q"
 BASE_DEFAULT = clean_origin()
+
+_SEO_TOPICS_JSON = ROOT / "data" / "q_seo_topics.json"
+
+
+def _load_seo_topics() -> dict[str, dict[str, str]]:
+    """各問<title>用の手書きSEOトピック（無ければ空）。"""
+    try:
+        data = json.loads(_SEO_TOPICS_JSON.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+    return {k: v for k, v in data.items() if isinstance(v, dict)}
+
+
+_SEO_TOPICS = _load_seo_topics()
+
+
+def seo_topic_for(mode: str, year: int, qno: int) -> str:
+    return (_SEO_TOPICS.get(mode, {}) or {}).get(f"{year}-{qno}", "").strip()
 HEAD_FONTS = """<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">"""
@@ -168,6 +186,7 @@ def page_title_seo(page: dict) -> str:
         qno=page["qno"],
         category=page["category"],
         year_label=past_year_label(page),
+        topic=page.get("seo_topic", ""),
     )
 
 
@@ -634,6 +653,7 @@ def page_dict(row: dict, line_no: int) -> dict:
         "exp": exp,
         "id": f"past-{year}-{qno:02d}",
         "app_id": year * 100 + qno,
+        "seo_topic": seo_topic_for("past", year, qno),
         "tags": parse_tags(norm(row.get("tags"))),
         "rel_path": f"q/past/y{year}/q{qno:02d}/index.html",
     }
@@ -903,6 +923,19 @@ def build_q_index(pages: list[dict], base_url: str) -> str:
     search_placeholder = index_search_placeholder("past")
     study_modes_note = study_modes_note_html()
     index_picks_html = build_guide_index_picks_html(rel_path)
+    past_usage_guide_html = (
+        '<section class="past-index-guide" aria-labelledby="past-index-guide-h">'
+        '<h2 id="past-index-guide-h">乙4過去問35問の使い方</h2>'
+        "<p>この過去問は本試験と同じく法令15問・物理化学10問・性質消火10問の35問で構成しています。"
+        "年度別は本番形式の通し練習に、分野別は苦手科目のつぶし込みに向きます。"
+        "各問の解説ページでは正答だけでなく、誤答選択肢がなぜ違うのかまで確認できます。</p>"
+        "<p>解く順番や復習の設計は"
+        '<a href="../articles/past-question-strategy/index.html">過去問の使い方（本番形式で測り誤答を分析する）</a>、'
+        "弱点1科目の攻め方は"
+        '<a href="../articles/past-questions-by-field/index.html">分野別の過去問</a>'
+        "で詳しく解説しています。</p>"
+        "</section>"
+    )
 
     return f"""<!DOCTYPE html>
 <html lang="ja">
@@ -931,6 +964,7 @@ def build_q_index(pages: list[dict], base_url: str) -> str:
   {index_picks_html}
   {study_modes_note}
   {q_hub_links_html(rel_path, current="past")}
+  {past_usage_guide_html}
   <section class="past-index-panel" aria-labelledby="past-index-heading">
     <div class="past-index-head">
       <div>
