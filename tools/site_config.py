@@ -563,6 +563,29 @@ def guide_index_picks() -> dict[str, Any] | None:
     }
 
 
+def course_promo() -> dict[str, str] | None:
+    raw = CONFIG.get("coursePromo")
+    if not isinstance(raw, dict):
+        return None
+    url = str(raw.get("url") or "").strip()
+    if not url:
+        return None
+    out: dict[str, str] = {"url": url}
+    for key in (
+        "modeTitle",
+        "modePurpose",
+        "priceLabel",
+        "tagLabel",
+        "footnote",
+        "lpUrl",
+        "afbLeadUrl",
+    ):
+        val = raw.get(key)
+        if val is not None and str(val).strip():
+            out[key] = str(val).strip()
+    return out
+
+
 def paid_mock_exam() -> dict[str, str] | None:
     raw = CONFIG.get("paidMockExam")
     if not isinstance(raw, dict):
@@ -622,6 +645,9 @@ def write_site_config_js() -> None:
     pm = paid_mock_exam()
     if pm:
         payload["paidMockExam"] = pm
+    cp = course_promo()
+    if cp:
+        payload["coursePromo"] = cp
     (ROOT / "site-config.js").write_text(
         "window.SITE_CONFIG = "
         + json.dumps(payload, ensure_ascii=False, indent=2)

@@ -17,7 +17,7 @@ products:
     billing_type: monthly
     official_url: https://onsuku.jp/training/otu4
     image_file: https://s3.ap-northeast-1.amazonaws.com/onsuku.jp/img/parts/training/top/thumb_otu4_top.jpg
-    a8_url: https://px.a8.net/svt/ejp?a8mat=4B3TF0+DUXECI+408S+BW0YB&a8ejpredirect=https%3A%2F%2Fonsuku.jp%2Ftraining%2Fotu4
+    a8_url: https://onsuku.jp/training/otu4?a8=MISVmIytjWpCKupI2Uf3uapuoPPNfsoVSUf.yszQv.BtjsSw6sc02WKMT-Pbcbof2._WQXS72ISVGs00000018694001
     for_who: 演習量を確保したい・無料体験から始めたい・他資格も受け放題で検討している
     highlights:
       - 講義66回・約7.5時間
@@ -33,7 +33,7 @@ products:
     billing_type: lump
     official_url: https://www.joho-gakushu.or.jp/kikenbutu-otu4/
     image_file: https://www.joho-gakushu.or.jp/kikenbutu-otu4/img/newtop_img_009.jpg
-    a8_url: https://px.a8.net/svt/ejp?a8mat=4B3TF0+DUBYQQ+4LOQ+BW0YB&a8ejpredirect=https%3A%2F%2Fwww.joho-gakushu.or.jp%2Fkikenbutu-otu4%2F%3Futm_source%3DAffi%26utm_medium%3Dlist%26utm_campaign%3D01
+    a8_url: https://px.a8.net/svt/ejp?a8mat=4B3TF0+DUBYQQ+4LOQ+BW0YB&a8ejpredirect=https%3A%2F%2Fwww.joho-gakushu.jp%2Fsmartinfo%2Fsmart_lineup.php
     for_who: 一括7,700円で始めたい・3年間見直したい・初学者向けの丁寧な講義を重視
     highlights:
       - 7,700円（税込）一括・視聴3年
@@ -51,6 +51,6 @@ related_links:
   - affiliate-problem-books:おすすめ問題集3選
 operator_note: |
   ASP: A8.net
-  オンスク: a8mat=4B3TF0+DUXECI+408S+BW0YB
+  オンスク: onsuku.jp/training/otu4?a8=…（直リンク）
   情報学習院: a8mat=4B3TF0+DUBYQQ+4LOQ+BW0YB
   公開前に各LPの価格・返品・無料体験を再確認

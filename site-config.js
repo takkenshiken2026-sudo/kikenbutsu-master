@@ -153,5 +153,14 @@ window.SITE_CONFIG = {
     "modeTitle": "予想模試（PDF・2回分）",
     "modePurpose": "本番と同じ35問・2時間で実力確認したい",
     "priceLabel": "¥590"
+  },
+  "coursePromo": {
+    "url": "https://onsuku.jp/training/otu4?a8=MISVmIytjWpCKupI2Uf3uapuoPPNfsoVSUf.yszQv.BtjsSw6sc02WKMT-Pbcbof2._WQXS72ISVGs00000018694001",
+    "modeTitle": "オンスク.JP 危険物乙4オンライン通信講座",
+    "modePurpose": "スマホで演習356問・動画講義を回したい",
+    "priceLabel": "無料体験あり",
+    "tagLabel": "PR",
+    "footnote": "※ オンスク.JP公式サイトへ移動します。料金・受講条件は申込前に各ページでご確認ください。",
+    "lpUrl": "https://onsuku.jp/training/otu4"
   }
 };

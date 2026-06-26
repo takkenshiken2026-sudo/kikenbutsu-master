@@ -395,7 +395,13 @@ h2.section-label .tip-icon{width:13px;height:13px;font-size:9px}
 .mode-card-v2--paid:hover{border-color:var(--text2);box-shadow:var(--sh2);transform:translateY(-1px);background:var(--bg3)}
 .mode-num-v2--paid{color:var(--text3);font-weight:400}
 .mode-purpose-v2--paid{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.mode-purpose-v2--course{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
 .mode-paid-tag{font-size:10px;font-weight:700;background:var(--paid-mock-accent);color:var(--paid-mock-accent-text);padding:1px 7px;border-radius:999px;letter-spacing:.04em;line-height:1.5;flex-shrink:0}
+.mode-card-v2--course{text-decoration:none;color:inherit;border-color:var(--border2);background:#fff}
+.mode-card-v2--course:hover{border-color:var(--text2);background:var(--bg3);box-shadow:var(--sh2);transform:translateY(-1px)}
+.mode-course-tag{font-size:10px;font-weight:700;background:var(--accent,#333);color:var(--accent-text,#fff);padding:1px 7px;border-radius:999px;letter-spacing:.04em;line-height:1.5;flex-shrink:0}
+.mode-course-tag--muted{background:var(--bg3);color:var(--text2);border:1px solid var(--border2)}
+.mode-course-footnote{font-size:11px;color:var(--text3);margin-top:6px;padding-left:36px;line-height:1.55;max-width:720px}
 .mode-arrow-v2--ext{color:var(--text3);font-weight:400}
 .mode-card{background:#fff;border:1.5px solid var(--border2);border-radius:var(--r2);padding:18px;cursor:pointer;transition:all .18s;box-shadow:var(--sh);position:relative;display:flex;flex-direction:column}
 .mode-card:hover{box-shadow:var(--sh2);border-color:var(--text2);transform:translateY(-1px)}
@@ -7234,6 +7240,58 @@ function injectQuizStartEnhancements(){
   if(!startEl.querySelector('#paid-mock-inject')){
     injectPaidMockExamCard(modeList);
   }
+  if(!startEl.querySelector('#course-promo-inject')){
+    injectCoursePromoCard(modeList);
+  }
+}
+
+function nextModeCardNum(modeList){
+  return String(modeList.querySelectorAll('.mode-num-v2').length+1).padStart(2,'0');
+}
+
+function getCoursePromoConfig(){
+  const cfg=(window.SITE_CONFIG&&window.SITE_CONFIG.coursePromo)||{};
+  if(!cfg.url) return {url:''};
+  return {
+    url: String(cfg.url).trim(),
+    modeTitle: String(cfg.modeTitle||'オンライン講座').trim(),
+    modePurpose: String(cfg.modePurpose||'動画講座で学習計画を立てたい').trim(),
+    priceLabel: String(cfg.priceLabel||'').trim(),
+    tagLabel: String(cfg.tagLabel||'PR').trim(),
+    footnote: String(cfg.footnote||'').trim(),
+    afbLeadUrl: String(cfg.afbLeadUrl||'').trim(),
+  };
+}
+
+function injectCoursePromoCard(modeList){
+  const c=getCoursePromoConfig();
+  if(!c.url) return;
+  const num=nextModeCardNum(modeList);
+  const wrapper=document.createElement('div');
+  wrapper.id='course-promo-inject';
+  const priceTag=c.priceLabel?`<span class="mode-course-tag mode-course-tag--muted">${escapeAttr(c.priceLabel)}</span>`:'';
+  const label=`${c.modeTitle}（${c.tagLabel}）`;
+  wrapper.innerHTML=`
+    <a class="mode-card-v2 mode-card-v2--course" href="${escapeAttr(c.url)}" target="_blank" rel="nofollow sponsored noopener noreferrer" aria-label="${escapeAttr(label)}">
+      <div class="mode-num-v2">${num}</div>
+      <div class="mode-body-v2">
+        <div class="mode-purpose-v2 mode-purpose-v2--course">${escapeAttr(c.modePurpose)} <span class="mode-course-tag">${escapeAttr(c.tagLabel)}</span>${priceTag}</div>
+        <div class="mode-title-v2">${escapeAttr(c.modeTitle)}</div>
+      </div>
+      <div class="mode-arrow-v2 mode-arrow-v2--ext" aria-hidden="true">↗</div>
+    </a>
+    ${c.footnote?`<p class="mode-course-footnote">${escapeAttr(c.footnote)}</p>`:''}`;
+  if(c.afbLeadUrl){
+    const px=document.createElement('img');
+    px.src=c.afbLeadUrl;
+    px.width=1;
+    px.height=1;
+    px.alt='';
+    px.decoding='async';
+    px.style.cssText='border:none;width:1px;height:1px;position:absolute;opacity:0;pointer-events:none';
+    wrapper.appendChild(px);
+  }
+  modeList.appendChild(wrapper);
 }
 
 function getPaidMockExamConfig(){

@@ -9,13 +9,12 @@ import html
 AFFILIATE_REL = "nofollow sponsored noopener noreferrer"
 
 ONSUKU_A8 = (
-    "https://px.a8.net/svt/ejp?a8mat=4B3TF0+DUXECI+408S+BW0YB"
-    "&a8ejpredirect=https%3A%2F%2Fonsuku.jp%2Ftraining%2Fotu4"
+    "https://onsuku.jp/training/otu4"
+    "?a8=MISVmIytjWpCKupI2Uf3uapuoPPNfsoVSUf.yszQv.BtjsSw6sc02WKMT-Pbcbof2._WQXS72ISVGs00000018694001"
 )
 JOHO_A8 = (
     "https://px.a8.net/svt/ejp?a8mat=4B3TF0+DUBYQQ+4LOQ+BW0YB"
-    "&a8ejpredirect=https%3A%2F%2Fwww.joho-gakushu.or.jp%2Fkikenbutu-otu4%2F"
-    "%3Futm_source%3DAffi%26utm_medium%3Dlist%26utm_campaign%3D01"
+    "&a8ejpredirect=https%3A%2F%2Fwww.joho-gakushu.jp%2Fsmartinfo%2Fsmart_lineup.php"
 )
 
 # 各講座LP掲載の画像（公式サイトのURL）
