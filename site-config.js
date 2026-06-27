@@ -161,6 +161,8 @@ window.SITE_CONFIG = {
     "priceLabel": "無料体験あり",
     "tagLabel": "PR",
     "footnote": "※ オンスク.JP公式サイトへ移動します。料金・受講条件は申込前に各ページでご確認ください。",
+    "scoreLead": "オンスクの動画講座と演習356問",
+    "scoreMeta": "講義66回・演習356問",
     "lpUrl": "https://onsuku.jp/training/otu4"
   }
 };
