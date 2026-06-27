@@ -424,14 +424,14 @@ const PRACTICE_QUESTIONS = {
       "text": "酸化の説明として、正しいものはどれか。",
       "opts": [
         "物質が酸素と化合することは、酸化の一例である。",
-        "酸化とは、物質が必ず水に溶けることである。",
+        "酸化とは、物質が水素と化合することである。",
         "酸化とは、物質の体積が必ず小さくなることである。",
         "酸化とは、物質が必ず気体になることである。",
-        "酸化とは、燃焼とはまったく関係のない現象である。"
+        "酸化とは、物質が必ず水素を放出することである。"
       ],
       "ans": 0,
       "exp": "酸化には、物質が酸素と化合する反応が含まれる。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>酸化には、物質が酸素と化合する反応が含まれる。燃焼は急激な酸化反応として理解できる。酸化と溶解、状態変化を混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「酸化とは、物質が必ず水に溶けることである」について、水に溶けることは酸化ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「酸化とは、物質の体積が必ず小さくなることである」について、体積変化だけで酸化は判断できない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「酸化とは、物質が必ず気体になることである」について、気体になることは状態変化であり、酸化とは限らない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「酸化とは、燃焼とはまったく関係のない現象である」について、燃焼は酸化反応と関係が深い。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>酸化には、物質が酸素と化合する反応が含まれる。燃焼は急激な酸化反応として理解できる。酸化と溶解、状態変化を混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「酸化とは、物質が水素と化合することである」について、物質が水素を失うことが酸化であり、水素との化合は還元に近い反応である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「酸化とは、物質の体積が必ず小さくなることである」について、体積変化だけで酸化は判断できない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「酸化とは、物質が必ず気体になることである」について、気体になることは状態変化であり、酸化とは限らない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「酸化とは、物質が必ず水素を放出することである」について、酸化は酸素と化合する反応などをいい、必ず水素を放出するとは限らない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p024/index.html"
     },
     {
@@ -621,15 +621,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "危険物取扱者の保安講習について、正しいものはどれか。",
       "opts": [
-        "危険物取扱者免状を取得すれば、保安講習を受ける制度は存在しない。",
-        "保安講習は、危険物を運搬する一般の歩行者だけを対象とする。",
-        "保安講習は、消火器を購入した人だけを対象とする。",
-        "保安講習は、甲種危険物取扱者には一切関係しない。",
+        "危険物取扱者免状を取得すれば、その後の講習受講は永久に免除される。",
+        "保安講習は、危険物取扱者免状を持たない作業者だけが対象となる。",
+        "保安講習は、製造所等の所有者全員が一律に受講しなければならない。",
+        "保安講習は、丙種危険物取扱者だけが対象で他種には関係しない。",
         "危険物の取扱作業に従事する危険物取扱者には、保安講習の受講が必要となる場合がある。"
       ],
       "ans": 4,
       "exp": "危険物の取扱作業に従事する危険物取扱者には、法令上、保安講習の受講が必要となる場合がある。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>危険物の取扱作業に従事する危険物取扱者には、法令上、保安講習の受講が必要となる場合がある。免状取得後も保安教育は重要である。免状取得後も、取扱作業従事者には保安講習が関係する。免状取得＝以後の講習不要、ではない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「危険物取扱者免状を取得すれば、保安講習を受ける制度は存在しない」について、免状取得後も保安講習の制度がある。免状取得後も取扱作業者の安全教育が必要となる場合がある。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「保安講習は、危険物を運搬する一般の歩行者だけを対象とする」について、一般の歩行者を対象とする制度ではない。対象は危険物の取扱作業に従事する者である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「保安講習は、消火器を購入した人だけを対象とする」について、消火器購入者を対象とする制度ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「保安講習は、甲種危険物取扱者には一切関係しない」について、甲種であっても関係し得る。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>危険物の取扱作業に従事する危険物取扱者には、法令上、保安講習の受講が必要となる場合がある。免状取得後も保安教育は重要である。免状取得後も、取扱作業従事者には保安講習が関係する。免状取得＝以後の講習不要、ではない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「危険物取扱者免状を取得すれば、その後の講習受講は永久に免除される」について、取扱作業に従事する者は原則として定期的に保安講習を受ける義務がある。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「保安講習は、危険物取扱者免状を持たない作業者だけが対象となる」について、保安講習の対象は取扱作業に従事する危険物取扱者であり免状所有者である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「保安講習は、製造所等の所有者全員が一律に受講しなければならない」について、対象は取扱作業に従事する危険物取扱者であって所有者全員ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「保安講習は、丙種危険物取扱者だけが対象で他種には関係しない」について、保安講習は種別を問わず取扱作業に従事する危険物取扱者が対象となる。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p035/index.html"
     },
     {
@@ -639,15 +639,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "危険物保安監督者について、正しいものはどれか。",
       "opts": [
-        "危険物保安監督者は、運搬容器の製造だけを行う者である。",
+        "危険物保安監督者は、製造所等の設置許可を交付する者である。",
         "一定の製造所等では、法令に基づき危険物保安監督者の選任が必要となる場合がある。",
-        "危険物保安監督者は、第4類危険物には一切関係しない。",
-        "危険物保安監督者は、危険物取扱者免状と無関係に誰でもなれる。",
-        "危険物保安監督者は、すべての住宅で必ず選任しなければならない。"
+        "危険物保安監督者は、第4類危険物を扱う施設では選任できない。",
+        "危険物保安監督者は、危険物取扱者免状がなくても所定の実務経験だけで選任できる。",
+        "危険物保安監督者は、すべての製造所等で必ず選任しなければならない。"
       ],
       "ans": 1,
       "exp": "一定の製造所等では、危険物の保安管理のため危険物保安監督者の選任が必要となる場合がある。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>一定の製造所等では、危険物の保安管理のため危険物保安監督者の選任が必要となる場合がある。危険物保安監督者は施設の保安管理上重要。危険物取扱者と危険物保安監督者の役割を混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「危険物保安監督者は、運搬容器の製造だけを行う者である」について、運搬容器の製造だけを行う者ではない。施設全体の保安管理を担う役割である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「危険物保安監督者は、第4類危険物には一切関係しない」について、第4類危険物を扱う施設でも関係し得る。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「危険物保安監督者は、危険物取扱者免状と無関係に誰でもなれる」について、資格要件と無関係に誰でもなれるわけではない。法令上の資格・要件を満たした者が選任される。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「危険物保安監督者は、すべての住宅で必ず選任しなければならない」について、すべての住宅で選任が必要という制度ではない。一定規模以上の製造所等で選任が必要となる場合がある。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>一定の製造所等では、危険物の保安管理のため危険物保安監督者の選任が必要となる場合がある。危険物保安監督者は施設の保安管理上重要。危険物取扱者と危険物保安監督者の役割を混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「危険物保安監督者は、製造所等の設置許可を交付する者である」について、設置許可を行うのは市町村長等であり保安監督者の業務ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「危険物保安監督者は、第4類危険物を扱う施設では選任できない」について、第4類を扱う施設でも要件に該当すれば保安監督者の選任が必要となる。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「危険物保安監督者は、危険物取扱者免状がなくても所定の実務経験だけで選任できる」について、保安監督者は甲種または乙種の免状を有し一定の実務経験がある者から選任する。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「危険物保安監督者は、すべての製造所等で必ず選任しなければならない」について、選任が必要なのは政令で定める一定の製造所等に限られる。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p036/index.html"
     },
     {
@@ -963,15 +963,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "製造所等の用途を廃止した場合の手続きについて、正しいものはどれか。",
       "opts": [
-        "廃止届出は、危険物取扱者試験の受験申込をいう。",
-        "第4類危険物の施設は、廃止手続きの対象にならない。",
+        "廃止届出は、危険物取扱者免状の返納手続きをいう。",
+        "第4類危険物の施設だけは、廃止しても届出が不要である。",
         "法令上、廃止の届出が必要となる場合がある。",
-        "製造所等を廃止した場合でも、必ず同じ場所に新しい施設を設置しなければならない。",
-        "廃止すれば、危険物が残っていても手続きや安全措置は一切不要である。"
+        "製造所等を廃止する場合は、市町村長の許可を改めて受けなければならない。",
+        "廃止すれば残った危険物の除去などの安全措置は所有者の任意である。"
       ],
       "ans": 2,
       "exp": "製造所等を廃止した場合、法令上、廃止の届出が必要となる場合がある。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>製造所等を廃止した場合、法令上、廃止の届出が必要となる場合がある。危険物の残存や安全措置にも注意が必要である。廃止時にも届出が問題になる。施設を使わなくなれば手続き不要、とは限らない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「廃止届出は、危険物取扱者試験の受験申込をいう」について、試験申込ではない。正答肢の記述と照合して確認する。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「第4類危険物の施設は、廃止手続きの対象にならない」について、第4類危険物の施設でも対象となり得る。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「製造所等を廃止した場合でも、必ず同じ場所に新しい施設を設置しなければならない」について、新施設の設置義務ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「廃止すれば、危険物が残っていても手続きや安全措置は一切不要である」について、廃止後も安全上の注意は必要である。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>製造所等を廃止した場合、法令上、廃止の届出が必要となる場合がある。危険物の残存や安全措置にも注意が必要である。廃止時にも届出が問題になる。施設を使わなくなれば手続き不要、とは限らない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「廃止届出は、危険物取扱者免状の返納手続きをいう」について、廃止の届出は施設の用途廃止に関する手続きで免状返納とは別である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「第4類危険物の施設だけは、廃止しても届出が不要である」について、類を問わず製造所等を廃止したときは届出が必要となる。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「製造所等を廃止する場合は、市町村長の許可を改めて受けなければならない」について、廃止は許可ではなく市町村長等への届出で足りる手続きである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「廃止すれば残った危険物の除去などの安全措置は所有者の任意である」について、廃止時も残存危険物の除去等の安全措置を講じる必要がある。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p054/index.html"
     },
     {
@@ -1017,15 +1017,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "危険物施設保安員について、正しいものはどれか。",
       "opts": [
-        "危険物施設保安員は、消火器の販売員だけをいう。",
-        "危険物施設保安員は、第4類危険物とは一切関係しない。",
-        "危険物施設保安員は、危険物の分類名の一つである。",
+        "危険物施設保安員は、危険物保安監督者を指揮監督する立場の者である。",
+        "危険物施設保安員は、第4類危険物を扱う施設では選任できない。",
+        "危険物施設保安員は、危険物取扱者免状の種類の一つである。",
         "一定の危険物施設で、施設の構造や設備に関する保安業務に関与する者として選任が必要となる場合がある。",
-        "すべての危険物取扱者免状所有者は、自動的に危険物施設保安員になる。"
+        "すべての危険物取扱者免状所有者は、当然に危険物施設保安員となる。"
       ],
       "ans": 3,
       "exp": "危険物施設保安員は、一定の危険物施設において施設の保安に関する業務に関与する者として選任が必要となる場合がある。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>危険物施設保安員は、一定の危険物施設において施設の保安に関する業務に関与する者として選任が必要となる場合がある。危険物施設保安員は施設保安に関する役割。危険物取扱者、保安監督者、施設保安員を区別する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「危険物施設保安員は、消火器の販売員だけをいう」について、消火器の販売員ではない。施設保安員は施設の保安業務に関与し、販売価格決定とは無関係である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「危険物施設保安員は、第4類危険物とは一切関係しない」について、第4類危険物施設でも関係し得る。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「危険物施設保安員は、危険物の分類名の一つである」について、危険物の分類名ではない。危険物施設保安員は施設保安に関与する者の名称である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「すべての危険物取扱者免状所有者は、自動的に危険物施設保安員になる」について、免状所有者が自動的になるものではない。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>危険物施設保安員は、一定の危険物施設において施設の保安に関する業務に関与する者として選任が必要となる場合がある。危険物施設保安員は施設保安に関する役割。危険物取扱者、保安監督者、施設保安員を区別する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「危険物施設保安員は、危険物保安監督者を指揮監督する立場の者である」について、施設保安員は保安監督者の下でその指示を受けて保安業務を補助する者である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「危険物施設保安員は、第4類危険物を扱う施設では選任できない」について、第4類を扱う施設でも要件に該当すれば施設保安員の選任が必要となる。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「危険物施設保安員は、危険物取扱者免状の種類の一つである」について、施設保安員は施設で保安業務に従事する者で免状の種類ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「すべての危険物取扱者免状所有者は、当然に危険物施設保安員となる」について、施設保安員は政令で定める施設で選任されるもので自動的にはならない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p057/index.html"
     },
     {
@@ -1035,15 +1035,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "危険物施設の定期点検について、正しいものはどれか。",
       "opts": [
-        "定期点検は、運搬中の危険物だけを対象とする制度である。",
-        "危険物施設では、どのような場合でも点検は不要である。",
-        "消火設備があれば、定期点検は常に不要である。",
-        "定期点検は、危険物取扱者試験の採点作業をいう。",
+        "定期点検は、危険物の運搬車両だけを対象とする制度である。",
+        "危険物施設では、市町村長が指示したときに限り点検すればよい。",
+        "消火設備を設置した施設は、定期点検の対象から除外される。",
+        "定期点検は、必ず外部の専門業者だけが実施しなければならない。",
         "一定の製造所等では、定期に点検を行う必要がある場合がある。"
       ],
       "ans": 4,
       "exp": "一定の製造所等では、施設の安全確保のため定期点検が必要となる場合がある。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>一定の製造所等では、施設の安全確保のため定期点検が必要となる場合がある。消火設備の有無だけで常に不要になるわけではない。定期点検は危険物施設の安全管理に関係する。定期点検と完成検査を混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「定期点検は、運搬中の危険物だけを対象とする制度である」について、運搬中の危険物だけを対象とする制度ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「危険物施設では、どのような場合でも点検は不要である」について、点検が不要とはいえない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「消火設備があれば、定期点検は常に不要である」について、消火設備があっても点検が必要となる場合がある。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「定期点検は、危険物取扱者試験の採点作業をいう」について、試験の採点作業ではない。試験制度とは無関係である。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>一定の製造所等では、施設の安全確保のため定期点検が必要となる場合がある。消火設備の有無だけで常に不要になるわけではない。定期点検は危険物施設の安全管理に関係する。定期点検と完成検査を混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「定期点検は、危険物の運搬車両だけを対象とする制度である」について、定期点検は一定の製造所等の施設を対象とする制度である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「危険物施設では、市町村長が指示したときに限り点検すればよい」について、対象施設では指示の有無にかかわらず定期に点検する義務がある。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「消火設備を設置した施設は、定期点検の対象から除外される」について、消火設備の有無は定期点検の要否を左右しない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「定期点検は、必ず外部の専門業者だけが実施しなければならない」について、定期点検は危険物取扱者等が自ら実施でき外部業者に限られない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p058/index.html"
     },
     {
@@ -1053,15 +1053,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "危険物施設の点検記録について、正しいものはどれか。",
       "opts": [
-        "点検記録は、火災予防とは一切関係がない。",
-        "点検記録は、作成した直後に必ずすべて破棄しなければならない。",
+        "点検記録は、点検のたびに市町村長へ提出しなければならない。",
+        "点検記録は、作成後すぐに破棄してよい。",
         "法令上、定期点検の記録を作成し、保存することが求められる場合がある。",
-        "点検記録は、危険物の色を記録するだけのものをいう。",
-        "点検記録は、危険物取扱者試験の答案用紙をいう。"
+        "点検記録には、点検年月日を記載する必要はない。",
+        "定期点検は、すべての製造所等で実施が免除されている。"
       ],
       "ans": 2,
       "exp": "危険物施設の定期点検では、点検記録の作成・保存が求められる場合がある。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>危険物施設の定期点検では、点検記録の作成・保存が求められる場合がある。記録は施設管理や保安確認に用いられる。定期点検は記録保存まで含めて押さえる。点検の実施だけでなく、記録保存も問われる。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「点検記録は、火災予防とは一切関係がない」について、火災予防や保安管理に関係する。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「点検記録は、作成した直後に必ずすべて破棄しなければならない」について、直ちに破棄するものではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「点検記録は、危険物の色を記録するだけのものをいう」について、色だけを記録するものではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「点検記録は、危険物取扱者試験の答案用紙をいう」について、試験の答案用紙ではない。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>危険物施設の定期点検では、点検記録の作成・保存が求められる場合がある。記録は施設管理や保安確認に用いられる。定期点検は記録保存まで含めて押さえる。点検の実施だけでなく、記録保存も問われる。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「点検記録は、点検のたびに市町村長へ提出しなければならない」について、記録は保存するもので、提出が常に必要なわけではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「点検記録は、作成後すぐに破棄してよい」について、一定期間の保存が求められる。正答肢の記述と照合して確認する。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「点検記録には、点検年月日を記載する必要はない」について、点検年月日は記録すべき事項である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「定期点検は、すべての製造所等で実施が免除されている」について、定期点検が必要な製造所等がある。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p059/index.html"
     },
     {
@@ -1071,15 +1071,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "保安検査について、正しいものはどれか。",
       "opts": [
-        "保安検査は、危険物施設では一切行われない。",
-        "保安検査は、危険物取扱者免状の写真を確認するだけの手続きである。",
-        "保安検査は、危険物の味を確認する検査である。",
-        "保安検査は、すべての家庭用灯油缶だけを対象とする検査である。",
+        "保安検査は、すべての製造所等で毎年必ず行われる。",
+        "保安検査は、危険物取扱者の免状更新手続きの一部である。",
+        "保安検査は、危険物の数量にかかわらず全施設が対象となる。",
+        "保安検査は、屋外貯蔵所のすべてが一律に対象となる検査である。",
         "一定の危険物施設では、保安検査を受ける必要がある場合がある。"
       ],
       "ans": 4,
       "exp": "保安検査は、一定の危険物施設について安全性を確認するために行われる場合がある。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>保安検査は、一定の危険物施設について安全性を確認するために行われる場合がある。免状写真や危険物の味を確認する手続きではない。保安検査は施設の安全性確認に関係する。保安検査と保安講習を混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「保安検査は、危険物施設では一切行われない」について、危険物施設で行われる場合がある。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「保安検査は、危険物取扱者免状の写真を確認するだけの手続きである」について、免状写真の確認だけではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「保安検査は、危険物の味を確認する検査である」について、危険物の味を確認することは危険であり、検査内容ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「保安検査は、すべての家庭用灯油缶だけを対象とする検査である」について、家庭用灯油缶だけを対象とするものではない。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>保安検査は、一定の危険物施設について安全性を確認するために行われる場合がある。免状の更新や取扱者の教育とは別の制度である。保安検査は施設の安全性確認に関係する。保安検査と保安講習を混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「保安検査は、すべての製造所等で毎年必ず行われる」について、保安検査の対象は一定規模以上の特定屋外タンク等に限られる。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「保安検査は、危険物取扱者の免状更新手続きの一部である」について、保安検査は施設に対する検査で免状の更新とは無関係である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「保安検査は、危険物の数量にかかわらず全施設が対象となる」について、保安検査は政令で定める規模以上の施設が対象となる。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「保安検査は、屋外貯蔵所のすべてが一律に対象となる検査である」について、対象は大規模な屋外タンク貯蔵所や移送取扱所など一定の施設に限られる。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p060/index.html"
     },
     {
@@ -1090,14 +1090,14 @@ const PRACTICE_QUESTIONS = {
       "text": "自衛消防組織について、正しいものはどれか。",
       "opts": [
         "一定の事業所等では、火災等に備えた自衛消防組織が必要となる場合がある。",
-        "自衛消防組織は、消火活動や通報とは一切関係しない。",
-        "自衛消防組織は、危険物の指定数量の別名である。",
-        "自衛消防組織は、可燃性蒸気の化学式をいう。",
-        "自衛消防組織は、危険物取扱者免状の交付機関である。"
+        "自衛消防組織は、公設消防隊が常駐する組織のことをいう。",
+        "自衛消防組織は、危険物の貯蔵量の上限を示す数値である。",
+        "自衛消防組織は、可燃性蒸気の発生量を測定する装置である。",
+        "自衛消防組織は、危険物取扱者免状を交付する公的機関である。"
       ],
       "ans": 0,
       "exp": "自衛消防組織は、火災等の災害に備え、初期対応や通報、避難誘導などの体制に関係する組織である。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>自衛消防組織は、火災等の災害に備え、初期対応や通報、避難誘導などの体制に関係する組織である。選択肢（1）「一定の事業所等では、火災等に備えた自衛消防組織が必要となる場合がある」は、一定の事業所等で設置が必要となる場合がある。自衛消防組織は災害時の初動対応体制に関係する。指定数量や免状制度と混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「自衛消防組織は、消火活動や通報とは一切関係しない」について、火災時の対応に関係する。火災時の対応に関係するが、本肢の定義としては誤った表現である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「自衛消防組織は、危険物の指定数量の別名である」について、指定数量の別名ではない。指定数量は危険物の数量基準であり、組織の名称ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「自衛消防組織は、可燃性蒸気の化学式をいう」について、化学式ではない。自衛消防組織は火災等の初動対応体制に関する組織である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「自衛消防組織は、危険物取扱者免状の交付機関である」について、免状の交付機関ではない。免状の交付機関ではなく、事業所等の消防体制である。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>自衛消防組織は、火災等の災害に備え、初期対応や通報、避難誘導などの体制に関係する組織である。選択肢（1）「一定の事業所等では、火災等に備えた自衛消防組織が必要となる場合がある」は、一定の事業所等で設置が必要となる場合がある。自衛消防組織は災害時の初動対応体制に関係する。指定数量や免状制度と混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「自衛消防組織は、公設消防隊が常駐する組織のことをいう」について、自衛消防組織は事業所が自ら設ける組織で公設消防とは別である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「自衛消防組織は、危険物の貯蔵量の上限を示す数値である」について、自衛消防組織は人的な消防体制であり貯蔵量の数値ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「自衛消防組織は、可燃性蒸気の発生量を測定する装置である」について、自衛消防組織は火災等に備える組織で測定装置ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「自衛消防組織は、危険物取扱者免状を交付する公的機関である」について、免状を交付するのは都道府県知事で自衛消防組織とは無関係である。免状の交付機関ではなく、事業所等の消防体制である。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p061/index.html"
     },
     {
@@ -1125,15 +1125,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "保安距離の目的として、最も適切なものはどれか。",
       "opts": [
-        "危険物の味を確認する場所を確保するためである。",
-        "標識の文字を大きくするためだけである。",
-        "危険物の色を見やすくするためである。",
+        "危険物施設の標識を遠くから見やすくするためである。",
+        "危険物の貯蔵量を増やせるようにするためだけである。",
+        "施設内の点検作業を不要にするためである。",
         "火災や爆発時の影響を周囲の施設へ及ぼしにくくするためである。",
-        "危険物取扱者の受験番号を決めるためである。"
+        "施設の換気を良くするためである。"
       ],
       "ans": 3,
       "exp": "保安距離は、火災や爆発などの事故が周囲に及ぼす影響を抑えるため、一定の対象物との距離を確保する考え方である。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>保安距離は、火災や爆発などの事故が周囲に及ぼす影響を抑えるため、一定の対象物との距離を確保する考え方である。保安距離と保有空地を区別する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「危険物の味を確認する場所を確保するためである」について、危険物の味を確認してはならない。危険物の性質確認は試験や官能検査では行わない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「標識の文字を大きくするためだけである」について、標識文字だけの問題ではない。保安距離は周囲施設への影響を抑えるための距離である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「危険物の色を見やすくするためである」について、色を見やすくするためではない。保安距離は周囲施設への影響を抑えるための距離である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「危険物取扱者の受験番号を決めるためである」について、受験番号とは関係ない。試験制度とは無関係である。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>保安距離は、火災や爆発などの事故が周囲に及ぼす影響を抑えるため、一定の対象物との距離を確保する考え方である。保安距離と保有空地を区別する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「危険物施設の標識を遠くから見やすくするためである」について、保安距離は延焼や被害の防止が目的で標識の視認性ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「危険物の貯蔵量を増やせるようにするためだけである」について、保安距離は周囲への影響を抑えるためで貯蔵量増加が目的ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「施設内の点検作業を不要にするためである」について、保安距離の確保と点検義務とは別であり点検は不要にならない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「施設の換気を良くするためである」について、保安距離は周囲への延焼防止のためで施設の換気とは関係しない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p063/index.html"
     },
     {
@@ -1143,15 +1143,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "保有空地の目的として、最も適切なものはどれか。",
       "opts": [
-        "危険物取扱者試験を実施する会場を確保するためである。",
-        "危険物を自由に投棄するためである。",
-        "危険物のにおいを確認するためだけである。",
-        "施設の名称を自由に変更するためである。",
+        "危険物の貯蔵量を無制限に増やせるようにするためである。",
+        "施設内に従業員の駐車場を確保するためである。",
+        "危険物の標識を設置する場所を確保するためだけである。",
+        "別の用途の建物を建てられるようにするためである。",
         "火災時の延焼防止や消火活動のため、施設周囲に空地を確保するためである。"
       ],
       "ans": 4,
       "exp": "保有空地は、火災時の延焼防止や消火活動のため、危険物施設の周囲に確保する空地である。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>保有空地は、火災時の延焼防止や消火活動のため、危険物施設の周囲に確保する空地である。保有空地と保安距離を混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「危険物取扱者試験を実施する会場を確保するためである」について、試験会場ではない。保有空地は施設周囲に確保する空地である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「危険物を自由に投棄するためである」について、危険物を投棄するためではない。保有空地は延焼防止・消火活動のために確保する空地である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「危険物のにおいを確認するためだけである」について、におい確認のためではない。施設周囲の安全確保が目的である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「施設の名称を自由に変更するためである」について、施設名称変更とは関係ない。施設の名称変更とは無関係である。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>保有空地は、火災時の延焼防止や消火活動のため、危険物施設の周囲に確保する空地である。保有空地と保安距離を混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「危険物の貯蔵量を無制限に増やせるようにするためである」について、保有空地は延焼防止等が目的で貯蔵量の増加とは関係しない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「施設内に従業員の駐車場を確保するためである」について、保有空地は消火活動等のための空地で駐車場用ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「危険物の標識を設置する場所を確保するためだけである」について、保有空地は延焼防止や消火活動のための空地で標識用ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「別の用途の建物を建てられるようにするためである」について、保有空地は安全確保のための空地で建物を建てる用地ではない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p064/index.html"
     },
     {
@@ -1161,15 +1161,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "危険物施設の掲示板に表示される注意事項として、適切なものはどれか。",
       "opts": [
-        "喫煙推奨",
-        "投棄可",
+        "立入自由",
+        "危険物以外",
         "火気厳禁",
-        "飲食自由",
-        "換気禁止"
+        "取扱注意のみ",
+        "湿気厳禁"
       ],
       "ans": 2,
       "exp": "危険物施設では、取り扱う危険物の性質に応じて、火気厳禁などの注意事項を掲示することがある。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>危険物施設では、取り扱う危険物の性質に応じて、火気厳禁などの注意事項を掲示することがある。第4類では火気厳禁が重要。掲示内容は危険物の性質と結びつけて覚える。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「喫煙推奨」について、喫煙は火気となり危険である。第4類危険物施設では火気厳禁の掲示が重要である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「投棄可」について、危険物を投棄してよいわけではない。危険物は適正な方法で管理・処理しなければならない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「飲食自由」について、飲食自由は危険物施設の注意事項として不適切である。危険物施設では火気・引火源の管理が必要である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「換気禁止」について、可燃性蒸気の滞留防止には換気が重要である。換気禁止と掲示するのは、火災予防上適切ではない。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>危険物施設では、取り扱う危険物の性質に応じて、火気厳禁などの注意事項を掲示することがある。第4類では火気厳禁が重要。掲示内容は危険物の性質と結びつけて覚える。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「立入自由」について、危険物施設では関係者以外の立入りを制限し立入自由とは表示しない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「危険物以外」について、掲示板は危険物の品名や注意事項を示すもので危険物以外とは表示しない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「取扱注意のみ」について、第4類など引火性液体では火気厳禁の表示が必要である。第4類では火気厳禁が重要。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「湿気厳禁」について、引火性液体に必要なのは火気厳禁の表示で湿気厳禁ではない。第4類では火気厳禁が重要。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p065/index.html"
     },
     {
@@ -1180,14 +1180,14 @@ const PRACTICE_QUESTIONS = {
       "text": "屋内貯蔵所について、正しいものはどれか。",
       "opts": [
         "固定給油設備により自動車へ給油する取扱所である。",
-        "危険物を販売するだけの事務室をいう。",
+        "危険物を地盤面下のタンクで貯蔵する貯蔵所である。",
         "自動車に固定されたタンクで危険物を移送する施設である。",
         "危険物を建築物内で貯蔵する貯蔵所の一種である。",
-        "配管により危険物を移送する取扱所である。"
+        "屋外の場所で容器入り危険物を貯蔵する貯蔵所である。"
       ],
       "ans": 3,
       "exp": "屋内貯蔵所は、危険物を建築物内で貯蔵する貯蔵所の一種である。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>屋内貯蔵所は、危険物を建築物内で貯蔵する貯蔵所の一種である。移動タンク貯蔵所や給油取扱所とは異なる。屋内貯蔵所と給油取扱所を混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「固定給油設備により自動車へ給油する取扱所である」について、給油取扱所の説明である。給油取扱所は取扱所に分類される。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「危険物を販売するだけの事務室をいう」について、販売取扱所の説明としても不十分である。販売取扱所は取扱所に分類される。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「自動車に固定されたタンクで危険物を移送する施設である」について、移動タンク貯蔵所の説明である。移動タンク貯蔵所は貯蔵所の一種である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「配管により危険物を移送する取扱所である」について、移送取扱所の説明である。移送取扱所は取扱所に分類される。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>屋内貯蔵所は、危険物を建築物内で貯蔵する貯蔵所の一種である。移動タンク貯蔵所や給油取扱所とは異なる。屋内貯蔵所と給油取扱所を混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「固定給油設備により自動車へ給油する取扱所である」について、給油取扱所の説明である。給油取扱所は取扱所に分類される。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「危険物を地盤面下のタンクで貯蔵する貯蔵所である」について、地盤面下のタンクで貯蔵するのは地下タンク貯蔵所である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「自動車に固定されたタンクで危険物を移送する施設である」について、移動タンク貯蔵所の説明である。移動タンク貯蔵所は貯蔵所の一種である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「屋外の場所で容器入り危険物を貯蔵する貯蔵所である」について、屋外で容器等を貯蔵するのは屋外貯蔵所で屋内貯蔵所ではない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p066/index.html"
     },
     {
@@ -1197,15 +1197,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "移動タンク貯蔵所について、正しいものはどれか。",
       "opts": [
-        "店舗で容器入り危険物を販売する取扱所である。",
+        "地盤面下に埋設したタンクで危険物を貯蔵する貯蔵所である。",
         "建築物内だけで危険物を貯蔵する施設である。",
         "車両に固定されたタンクなどにより危険物を貯蔵し、移送する貯蔵所である。",
         "固定給油設備により自動車へ給油する取扱所である。",
-        "危険物の分類を記載した試験問題用紙である。"
+        "屋外のタンクに危険物を貯蔵する貯蔵所である。"
       ],
       "ans": 2,
       "exp": "移動タンク貯蔵所は、タンクローリーのように車両に固定されたタンクで危険物を移送する貯蔵所である。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>移動タンク貯蔵所は、タンクローリーのように車両に固定されたタンクで危険物を移送する貯蔵所である。『移動』とあるが取扱所ではなく貯蔵所である点に注意。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「店舗で容器入り危険物を販売する取扱所である」について、販売取扱所の説明に近い。販売取扱所は取扱所に分類される。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「建築物内だけで危険物を貯蔵する施設である」について、屋内貯蔵所の説明に近い。屋内貯蔵所は建物内で貯蔵する施設である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「固定給油設備により自動車へ給油する取扱所である」について、給油取扱所の説明である。給油取扱所は取扱所に分類される。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「危険物の分類を記載した試験問題用紙である」について、試験問題用紙ではない。移動タンク貯蔵所は貯蔵所の一種である。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>移動タンク貯蔵所は、タンクローリーのように車両に固定されたタンクで危険物を移送する貯蔵所である。『移動』とあるが取扱所ではなく貯蔵所である点に注意。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「地盤面下に埋設したタンクで危険物を貯蔵する貯蔵所である」について、地盤面下のタンクで貯蔵するのは地下タンク貯蔵所である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「建築物内だけで危険物を貯蔵する施設である」について、屋内貯蔵所の説明に近い。屋内貯蔵所は建物内で貯蔵する施設である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「固定給油設備により自動車へ給油する取扱所である」について、給油取扱所の説明である。給油取扱所は取扱所に分類される。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「屋外のタンクに危険物を貯蔵する貯蔵所である」について、屋外のタンクで貯蔵するのは屋外タンク貯蔵所で移動タンク貯蔵所ではない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p067/index.html"
     },
     {
@@ -1271,13 +1271,13 @@ const PRACTICE_QUESTIONS = {
       "opts": [
         "車両に固定されたタンクで危険物を貯蔵する貯蔵所である。",
         "配管などにより危険物を移送する取扱所である。",
-        "危険物取扱者免状の書換え窓口である。",
-        "容器入り危険物を販売するだけの貯蔵所である。",
+        "自動車へ固定給油設備で給油する取扱所である。",
+        "容器入り危険物を店舗で販売する取扱所である。",
         "建築物内で危険物を貯蔵する貯蔵所である。"
       ],
       "ans": 1,
       "exp": "移送取扱所は、配管などにより危険物を移送する取扱所である。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>移送取扱所は、配管などにより危険物を移送する取扱所である。移動タンク貯蔵所とは異なる。移送取扱所の説明である。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「車両に固定されたタンクで危険物を貯蔵する貯蔵所である」について、移動タンク貯蔵所の説明である。移動タンク貯蔵所は貯蔵所に分類される。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「危険物取扱者免状の書換え窓口である」について、免状手続き窓口ではない。移送取扱所は配管等で危険物を移送する取扱所である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「容器入り危険物を販売するだけの貯蔵所である」について、販売取扱所の説明に近い。販売取扱所は取扱所の一種である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「建築物内で危険物を貯蔵する貯蔵所である」について、屋内貯蔵所の説明である。屋内貯蔵所は貯蔵所に分類される。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>移送取扱所は、配管などにより危険物を移送する取扱所である。移動タンク貯蔵所とは異なる。移送取扱所の説明である。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「車両に固定されたタンクで危険物を貯蔵する貯蔵所である」について、移動タンク貯蔵所の説明である。移動タンク貯蔵所は貯蔵所に分類される。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「自動車へ固定給油設備で給油する取扱所である」について、固定給油設備で給油するのは給油取扱所で移送取扱所ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「容器入り危険物を店舗で販売する取扱所である」について、容器入り危険物を販売するのは販売取扱所で移送取扱所ではない。販売取扱所は取扱所の一種である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「建築物内で危険物を貯蔵する貯蔵所である」について、屋内貯蔵所の説明である。屋内貯蔵所は貯蔵所に分類される。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p071/index.html"
     },
     {
@@ -1323,15 +1323,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "危険物施設の法令違反等に対する行政上の措置として、あり得るものはどれか。",
       "opts": [
-        "違反があっても行政上の措置は一切ない。",
-        "施設名を自由に変更できるだけである。",
-        "危険物取扱者試験の問題数が増える。",
+        "違反があっても口頭での助言だけで命令は一切できない。",
+        "危険物の指定数量を行政が自由に引き上げてくれる。",
+        "次回の危険物取扱者試験が免除される。",
         "使用停止命令などの措置が行われる場合がある。",
-        "常に賞金が交付される。"
+        "違反内容を改善すれば補助金が必ず交付される。"
       ],
       "ans": 3,
       "exp": "危険物施設が法令に適合しない場合などには、使用停止命令などの行政上の措置が行われる場合がある。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>危険物施設が法令に適合しない場合などには、使用停止命令などの行政上の措置が行われる場合がある。違反時には命令・使用停止などの行政措置が問題になる。行政措置を罰則や届出と混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「違反があっても行政上の措置は一切ない」について、行政措置が行われる場合がある。本問が問う行政措置の具体例とは異なる。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「施設名を自由に変更できるだけである」について、施設名変更だけの問題ではない。法令違反に対する行政措置とは無関係である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「危険物取扱者試験の問題数が増える」について、試験問題数とは関係ない。行政措置は施設の法令遵守を確保するためのものである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「常に賞金が交付される」について、賞金が交付される制度ではない。使用停止命令などが行政措置の例である。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>危険物施設が法令に適合しない場合などには、使用停止命令などの行政上の措置が行われる場合がある。違反時には命令・使用停止などの行政措置が問題になる。行政措置を罰則や届出と混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「違反があっても口頭での助言だけで命令は一切できない」について、法令違反には使用停止命令等の措置が取られる場合がある。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「危険物の指定数量を行政が自由に引き上げてくれる」について、指定数量は政令で定まり違反を理由に引き上げられることはない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「次回の危険物取扱者試験が免除される」について、施設の違反と取扱者試験の免除とは無関係である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「違反内容を改善すれば補助金が必ず交付される」について、違反是正は当然の義務であり補助金交付の対象ではない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p074/index.html"
     },
     {
@@ -1594,14 +1594,14 @@ const PRACTICE_QUESTIONS = {
       "text": "第4類危険物の性質について、正しいものはどれか。",
       "opts": [
         "液比重と蒸気比重は別の性質である。",
-        "液比重も蒸気比重も、危険性とは一切関係がない。",
+        "蒸気比重は、液体が水に浮くか沈むかを表す値である。",
         "蒸気比重が大きいことは、液体が水に沈むことと同じ意味である。",
         "水に浮く液体は、必ず水に完全に溶ける。",
         "液比重が水より小さい物質は、蒸気も必ず空気より軽い。"
       ],
       "ans": 0,
       "exp": "液比重は水に対する液体の重さ、蒸気比重は空気に対する蒸気の重さに関係する。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>液比重は水に対する液体の重さ、蒸気比重は空気に対する蒸気の重さに関係する。両者は別の性質である。液比重・蒸気比重・水溶性を区別する。水に浮く＝水に溶ける、ではない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「液比重も蒸気比重も、危険性とは一切関係がない」について、低所滞留や流出時の危険性に関係する。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「蒸気比重が大きいことは、液体が水に沈むことと同じ意味である」について、蒸気比重と液体の浮沈は別である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「水に浮く液体は、必ず水に完全に溶ける」について、浮くことと溶けることは別である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「液比重が水より小さい物質は、蒸気も必ず空気より軽い」について、液比重と蒸気比重は連動するとは限らない。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>液比重は水に対する液体の重さ、蒸気比重は空気に対する蒸気の重さに関係する。両者は別の性質である。液比重・蒸気比重・水溶性を区別する。水に浮く＝水に溶ける、ではない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「蒸気比重は、液体が水に浮くか沈むかを表す値である」について、蒸気比重は空気を基準にした蒸気の重さで、液体の浮沈とは別である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「蒸気比重が大きいことは、液体が水に沈むことと同じ意味である」について、蒸気比重と液体の浮沈は別である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「水に浮く液体は、必ず水に完全に溶ける」について、浮くことと溶けることは別である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「液比重が水より小さい物質は、蒸気も必ず空気より軽い」について、液比重と蒸気比重は連動するとは限らない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p089/index.html"
     },
     {
@@ -1917,15 +1917,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "完成検査前検査について、正しいものはどれか。",
       "opts": [
-        "施設の掲示板の色だけを確認する検査である。",
-        "危険物取扱者試験の採点前に行う検査である。",
-        "すべての危険物容器を購入時に行う検査である。",
+        "施設の保有空地の広さだけを確認する検査である。",
+        "危険物取扱者の保安講習の前に行う検査である。",
+        "すべての危険物の運搬容器について出荷前に行う検査である。",
         "一定の液体危険物タンクなどについて、完成検査の前に行われる検査である。",
-        "危険物の味を確認する検査である。"
+        "危険物の品質を成分分析する検査である。"
       ],
       "ans": 3,
       "exp": "完成検査前検査は、一定のタンクなどについて完成検査の前に行われる検査である。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>完成検査前検査は、一定のタンクなどについて完成検査の前に行われる検査である。試験採点や危険物の味の確認ではない。完成検査と完成検査前検査を区別する。名称が似た検査を混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「施設の掲示板の色だけを確認する検査である」について、掲示板の色だけを確認するものではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「危険物取扱者試験の採点前に行う検査である」について、試験採点前の検査ではない。完成検査は施設が法令基準に適合するか確認する検査である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「すべての危険物容器を購入時に行う検査である」について、すべての容器購入時の検査ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「危険物の味を確認する検査である」について、危険物の味を確認してはならない。完成検査前検査はタンク等の設備確認に関係する。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>完成検査前検査は、一定のタンクなどについて完成検査の前に行われる検査である。保安講習や成分分析とは別の検査である。完成検査と完成検査前検査を区別する。名称が似た検査を混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「施設の保有空地の広さだけを確認する検査である」について、完成検査前検査はタンクの水張検査等であり保有空地の確認ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「危険物取扱者の保安講習の前に行う検査である」について、完成検査前検査は施設に対する検査で保安講習とは無関係である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「すべての危険物の運搬容器について出荷前に行う検査である」について、対象は一定の液体危険物タンク等であり運搬容器ではない。製造所等の設置・変更後の施設が対象である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「危険物の品質を成分分析する検査である」について、完成検査前検査はタンクの漏れや基礎等を確認し成分分析ではない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p107/index.html"
     },
     {
@@ -1957,11 +1957,11 @@ const PRACTICE_QUESTIONS = {
         "第4類危険物では、このような届出は存在しない。",
         "法令上、変更の届出が必要となる場合がある。",
         "変更しても、施設に掲示板があれば届出は常に不要である。",
-        "危険物取扱者免状の写真を変えるだけで足りる。"
+        "危険物保安監督者を選任すれば品名変更の届出は不要となる。"
       ],
       "ans": 2,
       "exp": "製造所等で貯蔵または取り扱う危険物の品名、数量、指定数量の倍数を変更する場合、届出が必要となる場合がある。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>製造所等で貯蔵または取り扱う危険物の品名、数量、指定数量の倍数を変更する場合、届出が必要となる場合がある。品名・数量・指定数量倍数の変更は届出論点である。変更許可と変更届出を混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「数量を増やす場合だけでなく、どのような変更でも絶対に届出不要である」について、届出が必要となる場合がある。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「第4類危険物では、このような届出は存在しない」について、第4類危険物でも関係する。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「変更しても、施設に掲示板があれば届出は常に不要である」について、掲示板があれば常に届出不要とはならない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「危険物取扱者免状の写真を変えるだけで足りる」について、免状写真の変更ではない。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>製造所等で貯蔵または取り扱う危険物の品名、数量、指定数量の倍数を変更する場合、届出が必要となる場合がある。品名・数量・指定数量倍数の変更は届出論点である。変更許可と変更届出を混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「数量を増やす場合だけでなく、どのような変更でも絶対に届出不要である」について、届出が必要となる場合がある。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「第4類危険物では、このような届出は存在しない」について、第4類危険物でも関係する。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「変更しても、施設に掲示板があれば届出は常に不要である」について、掲示板があれば常に届出不要とはならない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「危険物保安監督者を選任すれば品名変更の届出は不要となる」について、品名等の変更は法令上の届出が必要で監督者選任とは別である。指定数量の倍数の算定方法として誤りである。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p109/index.html"
     },
     {
@@ -1989,15 +1989,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "危険物保安監督者の業務として、最も関係が深いものはどれか。",
       "opts": [
-        "危険物の味見による品質確認",
-        "危険物の価格決定",
-        "危険物施設の広告制作",
-        "危険物取扱者試験の問題作成",
+        "危険物施設の設置許可の交付",
+        "危険物の販売数量の決定",
+        "危険物施設の保有空地の購入交渉",
+        "危険物取扱者免状の更新手続き",
         "危険物の取扱作業に関する保安の監督"
       ],
       "ans": 4,
       "exp": "危険物保安監督者は、危険物の取扱作業に関する保安の監督に関係する。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>危険物保安監督者は、危険物の取扱作業に関する保安の監督に関係する。試験問題作成や価格決定を行う者ではない。保安監督者は取扱作業の保安監督に関係する。名称から何でも管理する責任者と広げすぎない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「危険物の味見による品質確認」について、危険物を味見してはならない。危険物の官能検査は行ってはならない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「危険物の価格決定」について、価格決定者ではない。保安監督者は取扱作業の保安監督が主な役割である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「危険物施設の広告制作」について、広告制作とは関係ない。施設の保安管理と広告制作は無関係である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「危険物取扱者試験の問題作成」について、試験問題作成者ではない。試験問題作成者ではなく、現場の保安監督に関係する。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>危険物保安監督者は、危険物の取扱作業に関する保安の監督に関係する。試験問題作成や価格決定を行う者ではない。保安監督者は取扱作業の保安監督に関係する。名称から何でも管理する責任者と広げすぎない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「危険物施設の設置許可の交付」について、設置許可を行うのは市町村長等で保安監督者の業務ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「危険物の販売数量の決定」について、販売数量の決定は保安監督者の保安業務とは関係しない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「危険物施設の保有空地の購入交渉」について、保有空地の取得交渉は保安監督者の業務には含まれない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「危険物取扱者免状の更新手続き」について、免状の更新手続きは個人の手続きで保安監督者の業務ではない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p111/index.html"
     },
     {
@@ -2152,14 +2152,14 @@ const PRACTICE_QUESTIONS = {
       "text": "危険物施設に関する説明として、正しいものはどれか。",
       "opts": [
         "製造所等には、製造所、貯蔵所、取扱所が含まれる。",
-        "製造所等とは、危険物取扱者試験の問題用紙だけをいう。",
+        "製造所等とは、屋外貯蔵所だけを指す総称である。",
         "取扱所には、屋外タンク貯蔵所だけが含まれる。",
         "貯蔵所には、給油取扱所だけが含まれる。",
-        "製造所等は、第4類危険物とは一切関係しない。"
+        "製造所等の区分は、第4類危険物には適用されない。"
       ],
       "ans": 0,
       "exp": "製造所等は、製造所、貯蔵所、取扱所の総称である。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>製造所等は、製造所、貯蔵所、取扱所の総称である。給油取扱所は取扱所、屋外タンク貯蔵所は貯蔵所である。貯蔵所と取扱所の代表例を混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「製造所等とは、危険物取扱者試験の問題用紙だけをいう」について、試験問題用紙ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「取扱所には、屋外タンク貯蔵所だけが含まれる」について、屋外タンク貯蔵所は貯蔵所である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「貯蔵所には、給油取扱所だけが含まれる」について、給油取扱所は取扱所である。正答肢の記述と照合して確認する。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「製造所等は、第4類危険物とは一切関係しない」について、第4類危険物でも関係する。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>製造所等は、製造所、貯蔵所、取扱所の総称である。給油取扱所は取扱所、屋外タンク貯蔵所は貯蔵所である。貯蔵所と取扱所の代表例を混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「製造所等とは、屋外貯蔵所だけを指す総称である」について、製造所等は製造所・貯蔵所・取扱所の総称で、屋外貯蔵所はその一部にすぎない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「取扱所には、屋外タンク貯蔵所だけが含まれる」について、屋外タンク貯蔵所は貯蔵所である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「貯蔵所には、給油取扱所だけが含まれる」について、給油取扱所は取扱所である。正答肢の記述と照合して確認する。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「製造所等の区分は、第4類危険物には適用されない」について、製造所等の区分は危険物の類を問わず適用され、第4類も当然対象となる。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p120/index.html"
     },
     {
@@ -2403,15 +2403,15 @@ const PRACTICE_QUESTIONS = {
       "field": "rights",
       "text": "圧力と沸点の関係について、一般に正しいものはどれか。",
       "opts": [
-        "圧力は沸点と一切関係しない。",
-        "圧力が変わると、液体は必ず固体になる。",
-        "外圧が高くなると、沸点は必ず0 ℃になる。",
+        "圧力が変化しても、純物質の沸点は常に一定である。",
+        "圧力が変わると、液体は必ず昇華して気体になる。",
+        "外圧が高くなると、沸点は必ず常温と同じになる。",
         "外圧が低くなると、液体の沸点は下がる傾向がある。",
-        "外圧が低くなると、沸点は必ず無限大になる。"
+        "外圧が低くなると、沸点はかえって上昇する。"
       ],
       "ans": 3,
       "exp": "一般に、外圧が低くなると液体の沸点は下がる傾向がある。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>一般に、外圧が低くなると液体の沸点は下がる傾向がある。沸騰は蒸気圧と外圧の関係で起こる。沸点は圧力の影響を受ける。沸点を常に固定値と考えない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「圧力は沸点と一切関係しない」について、圧力と沸点は関係する。外圧が低いと沸点は下がる傾向があり、圧力と沸点は関係する。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「圧力が変わると、液体は必ず固体になる」について、必ず固体になるわけではない。発火点は火源なしで自然発火する温度に近い概念である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「外圧が高くなると、沸点は必ず0 ℃になる」について、必ず0 ℃になるわけではない。沸点は物質・外圧により異なり、必ず0 ℃ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「外圧が低くなると、沸点は必ず無限大になる」について、無限大にはならない。沸点が無限大になるわけではない。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>一般に、外圧が低くなると液体の沸点は下がる傾向がある。沸騰は蒸気圧と外圧の関係で起こる。沸点は圧力の影響を受ける。沸点を常に固定値と考えない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「圧力が変化しても、純物質の沸点は常に一定である」について、沸点は外圧で変化し、外圧が高いほど高く低いほど低くなる。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「圧力が変わると、液体は必ず昇華して気体になる」について、昇華は固体が直接気体になる現象で、圧力変化で液体が必ず昇華するわけではない。発火点は火源なしで自然発火する温度に近い概念である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「外圧が高くなると、沸点は必ず常温と同じになる」について、外圧が高いと沸点は高くなり、常温で一定値になるわけではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「外圧が低くなると、沸点はかえって上昇する」について、外圧が低くなると沸点は下がり、上昇することはない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p134/index.html"
     },
     {
@@ -2746,14 +2746,14 @@ const PRACTICE_QUESTIONS = {
       "text": "危険物施設保安員の説明として、正しいものはどれか。",
       "opts": [
         "一定の危険物施設で、施設の保安に関する業務に関与する者である。",
-        "危険物の分類名の一つである。",
-        "すべての家庭に必ず置く消防器具である。",
-        "危険物の指定数量を表す単位である。",
-        "危険物取扱者試験の受験票である。"
+        "危険物保安監督者と全く同じ職務を指す呼称である。",
+        "危険物の運搬容器に表示する注意事項の名称である。",
+        "危険物取扱者免状の交付を受けるための要件である。",
+        "製造所等に置く消火設備の一種である。"
       ],
       "ans": 0,
       "exp": "危険物施設保安員は、一定の危険物施設で施設の保安に関する業務に関与する者である。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>危険物施設保安員は、一定の危険物施設で施設の保安に関する業務に関与する者である。危険物施設保安員は施設保安の役割。保安監督者や保安統括管理者との違いに注意する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「危険物の分類名の一つである」について、危険物の分類名ではない。危険物施設保安員は施設保安に関与する者の名称である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「すべての家庭に必ず置く消防器具である」について、家庭用消防器具ではない。施設の保安業務に関与する者の名称である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「危険物の指定数量を表す単位である」について、指定数量の単位ではない。指定数量は危険物の数量基準である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「危険物取扱者試験の受験票である」について、受験票ではない。試験の受験票ではなく、施設保安の役割である。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>危険物施設保安員は、一定の危険物施設で施設の保安に関する業務に関与する者である。危険物施設保安員は施設保安の役割。保安監督者や保安統括管理者との違いに注意する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「危険物保安監督者と全く同じ職務を指す呼称である」について、保安監督者とは別の役割で、保安員は監督者を補佐する立場にある。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「危険物の運搬容器に表示する注意事項の名称である」について、保安員は人を指す呼称で、運搬容器の表示事項ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「危険物取扱者免状の交付を受けるための要件である」について、施設保安員は免状の交付要件ではなく、施設に置く保安体制上の者である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「製造所等に置く消火設備の一種である」について、保安員は人であり、消火設備の名称ではない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p153/index.html"
     },
     {
@@ -2763,15 +2763,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "予防規程の内容として、関係が深いものはどれか。",
       "opts": [
-        "危険物容器の装飾デザインだけ",
-        "危険物の味見方法",
-        "危険物取扱者試験の受験番号",
+        "危険物の運搬容器の材質規格だけ",
+        "危険物の発火点の測定手順",
+        "危険物取扱者免状の更新時期",
         "危険物施設における災害予防や保安管理に関する事項",
-        "危険物の販売価格表"
+        "危険物の指定数量の一覧"
       ],
       "ans": 3,
       "exp": "予防規程は、一定の製造所等における火災予防や保安管理に関する規程である。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>予防規程は、一定の製造所等における火災予防や保安管理に関する規程である。選択肢（4）「危険物施設における災害予防や保安管理に関する事項」は、災害予防や保安管理に関係する。価格表や試験制度と混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「危険物容器の装飾デザインだけ」について、装飾デザインだけではない。予防規程は火災予防・保安管理の運用ルールである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「危険物の味見方法」について、味見方法ではない。危険物の官能検査は行ってはならない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「危険物取扱者試験の受験番号」について、受験番号ではない。試験制度とは無関係である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「危険物の販売価格表」について、販売価格表ではない。予防規程は施設の保安管理に関する規程である。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>予防規程は、一定の製造所等における火災予防や保安管理に関する規程である。選択肢（4）「危険物施設における災害予防や保安管理に関する事項」は、災害予防や保安管理に関係する。事務手続や試験制度と混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「危険物の運搬容器の材質規格だけ」について、予防規程は災害予防と保安管理の事項を定めるもので、容器材質規格ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「危険物の発火点の測定手順」について、予防規程は施設の保安体制を定めるもので、発火点の測定手順ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「危険物取扱者免状の更新時期」について、予防規程は施設の保安に関する自主基準で、免状更新時期とは別の制度である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「危険物の指定数量の一覧」について、予防規程は保安管理の事項を定めるもので、指定数量の一覧ではない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p154/index.html"
     },
     {
@@ -2781,15 +2781,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "保安距離が問題となる主な理由として、最も適切なものはどれか。",
       "opts": [
-        "消火器の製造会社を決めるため",
+        "消火器の設置個数を決めるため",
         "周囲の保安対象物への延焼・爆発影響を小さくするため",
-        "危険物の販売価格を決めるため",
-        "危険物の色を統一するため",
-        "危険物取扱者の年齢を確認するため"
+        "危険物の指定数量を増やすため",
+        "危険物の引火点を下げるため",
+        "危険物取扱者の人数を決めるため"
       ],
       "ans": 1,
       "exp": "保安距離は、危険物施設で火災や爆発が起きた場合に周囲への影響を小さくするための位置基準である。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>保安距離は、危険物施設で火災や爆発が起きた場合に周囲への影響を小さくするための位置基準である。保有空地と混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「消火器の製造会社を決めるため」について、製造会社の指定ではない。保安距離は火災・爆発時の周囲影響を抑える位置基準である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「危険物の販売価格を決めるため」について、価格決定とは関係ない。販売店までの距離と保安距離は別である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「危険物の色を統一するため」について、色の統一ではない。保安距離は周囲施設への影響を抑えるための距離である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「危険物取扱者の年齢を確認するため」について、年齢確認ではない。取扱者の年齢確認とは無関係である。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>保安距離は、危険物施設で火災や爆発が起きた場合に周囲への影響を小さくするための位置基準である。保有空地と混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「消火器の設置個数を決めるため」について、保安距離は周囲の保安対象物を守るための距離で、消火器の個数とは別の基準である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「危険物の指定数量を増やすため」について、保安距離は延焼防止のための距離で、指定数量を増やす制度ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「危険物の引火点を下げるため」について、保安距離は施設配置上の距離で、危険物の引火点を変えるものではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「危険物取扱者の人数を決めるため」について、保安距離は保安対象物への影響を抑える距離で、取扱者の人数とは無関係である。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p155/index.html"
     },
     {
@@ -2799,15 +2799,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "保有空地について、正しい説明はどれか。",
       "opts": [
-        "危険物を自由に捨てる場所である。",
+        "危険物を一時的に保管する屋内の倉庫である。",
         "危険物施設の周囲に確保する空地で、延焼防止や消火活動に関係する。",
-        "危険物の発火点を測る器具である。",
-        "危険物の指定数量の別名である。",
-        "危険物取扱者試験の受付場所である。"
+        "危険物の発火点を測定するための区画である。",
+        "指定数量と同じ意味を表す用語である。",
+        "危険物を販売するための事務所である。"
       ],
       "ans": 1,
       "exp": "保有空地は、危険物施設の周囲に確保する空地で、延焼防止や消火活動のために重要である。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>保有空地は、危険物施設の周囲に確保する空地で、延焼防止や消火活動のために重要である。保有空地は施設周囲の空地。保有空地と保安距離を区別する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「危険物を自由に捨てる場所である」について、危険物を捨てる場所ではない。保有空地は延焼防止・消火活動のために確保する空地である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「危険物の発火点を測る器具である」について、器具ではない。発火点を測る器具の名称ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「危険物の指定数量の別名である」について、指定数量ではない。指定数量は危険物の数量基準である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「危険物取扱者試験の受付場所である」について、試験受付場所ではない。保有空地は施設周囲に確保する空地である。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>保有空地は、危険物施設の周囲に確保する空地で、延焼防止や消火活動のために重要である。保有空地は施設周囲の空地。保有空地と保安距離を区別する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「危険物を一時的に保管する屋内の倉庫である」について、保有空地は施設周囲に何も置かない空地で、屋内の保管倉庫ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「危険物の発火点を測定するための区画である」について、保有空地は延焼防止のための空地で、発火点の測定区画ではない。発火点を測る器具の名称ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「指定数量と同じ意味を表す用語である」について、保有空地は施設周囲の空地で、数量を表す指定数量とは別概念である。指定数量は危険物の数量基準である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「危険物を販売するための事務所である」について、保有空地は物を置かない空地で、販売用の事務所ではない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p156/index.html"
     },
     {
@@ -2853,15 +2853,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "警報設備の役割として、最も適切なものはどれか。",
       "opts": [
-        "危険物の価格を自動で決める。",
+        "危険物の指定数量を自動で計算する。",
         "火災などの異常を知らせ、避難や初期対応につなげる。",
-        "指定数量を自動で変更する。",
-        "危険物を飲用可能にする。",
-        "危険物取扱者免状を印刷する。"
+        "危険物の引火点を常温まで下げる。",
+        "危険物を不燃性に変える。",
+        "危険物取扱者免状を交付する。"
       ],
       "ans": 1,
       "exp": "警報設備は、火災などの異常を知らせ、避難や初期対応につなげるための設備である。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>警報設備は、火災などの異常を知らせ、避難や初期対応につなげるための設備である。消火設備や避難設備との役割の違いを押さえる。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「危険物の価格を自動で決める」について、価格決定ではない。警報設備は火災等の異常を知らせる設備である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「指定数量を自動で変更する」について、指定数量変更ではない。指定数量は数量基準であり、火災を知らせる設備の名称ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「危険物を飲用可能にする」について、飲用可能にするものではない。危険物を飲用可能にする設備ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「危険物取扱者免状を印刷する」について、免状印刷ではない。免状の交付・印刷とは無関係である。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>警報設備は、火災などの異常を知らせ、避難や初期対応につなげるための設備である。消火設備や避難設備との役割の違いを押さえる。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「危険物の指定数量を自動で計算する」について、警報設備は異常を知らせる設備で、指定数量を計算するものではない。指定数量は数量基準であり、火災を知らせる設備の名称ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「危険物の引火点を常温まで下げる」について、警報設備は通報のための設備で、危険物の引火点を変えることはできない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「危険物を不燃性に変える」について、警報設備は異常を知らせる設備で、危険物の性質を変えるものではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「危険物取扱者免状を交付する」について、警報設備は通報設備で、免状の交付とは無関係である。免状の交付・印刷とは無関係である。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p159/index.html"
     },
     {
@@ -2907,15 +2907,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "移動タンク貯蔵所で危険物を移送する場合の注意として、適切なものはどれか。",
       "opts": [
-        "蒸気を確認するため火を近づける。",
-        "タンクから少量ずつ漏らしながら移送する。",
-        "移送中は標識や書類は一切関係しない。",
+        "蒸気の発生を確かめるため容器を加熱する。",
+        "通気のためタンクの注入口を常に開放しておく。",
+        "移送中は標識や書類の備付けは不要である。",
         "移送中の漏えい、火気、静電気に注意する。",
-        "移動タンク貯蔵所は常に屋内貯蔵所である。"
+        "移動タンク貯蔵所は危険物を屋内でのみ貯蔵する施設である。"
       ],
       "ans": 3,
       "exp": "移動タンク貯蔵所で危険物を移送する場合、漏えい、火気、静電気などに注意して安全に移送する必要がある。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>移動タンク貯蔵所で危険物を移送する場合、漏えい、火気、静電気などに注意して安全に移送する必要がある。選択肢（4）「移送中の漏えい、火気、静電気に注意する」は、移送時の基本的注意である。移動タンク貯蔵所と屋内貯蔵所を混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「蒸気を確認するため火を近づける」について、火気を近づけるのは危険である。移送時の火気使用は引火の危険がある。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「タンクから少量ずつ漏らしながら移送する」について、漏えいは危険である。移送中の漏えいは火災・環境汚染の危険がある。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「移送中は標識や書類は一切関係しない」について、表示や書類等が関係する場合がある。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「移動タンク貯蔵所は常に屋内貯蔵所である」について、移動タンク貯蔵所は屋内貯蔵所ではない。屋内貯蔵所は建物内で貯蔵する施設である。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>移動タンク貯蔵所で危険物を移送する場合、漏えい、火気、静電気などに注意して安全に移送する必要がある。選択肢（4）「移送中の漏えい、火気、静電気に注意する」は、移送時の基本的注意である。移動タンク貯蔵所と屋内貯蔵所を混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「蒸気の発生を確かめるため容器を加熱する」について、可燃性蒸気の発生する危険物を加熱すれば引火の危険が高まり厳禁である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「通気のためタンクの注入口を常に開放しておく」について、注入口の開放は蒸気漏えいや引火の危険があり、常時開放してはならない。移送中の漏えいは火災・環境汚染の危険がある。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「移送中は標識や書類の備付けは不要である」について、移動タンク貯蔵所では標識の掲示や書類の備付けが義務づけられている。移送には表示や書類等が関係する場合がある。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「移動タンク貯蔵所は危険物を屋内でのみ貯蔵する施設である」について、移動タンク貯蔵所は車両に固定したタンクで移送する施設で、屋内専用ではない。屋内貯蔵所は建物内で貯蔵する施設である。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p162/index.html"
     },
     {
@@ -3304,14 +3304,14 @@ const PRACTICE_QUESTIONS = {
       "text": "燃焼と酸素濃度について、正しいものはどれか。",
       "opts": [
         "酸素濃度が低いほど、必ず燃焼が激しくなる。",
-        "酸素は燃焼と一切関係がない。",
-        "酸素は第4類危険物の指定数量を表す単位である。",
+        "酸素濃度を高めても、燃焼の激しさは変わらない。",
+        "空気中の酸素濃度は、およそ60%である。",
         "酸素の供給が不足すると燃焼しにくくなる。",
         "酸素がまったくなくても、通常の燃焼は必ず続く。"
       ],
       "ans": 3,
       "exp": "燃焼には酸素供給源が必要であり、酸素の供給が不足すると燃焼しにくくなる。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>燃焼には酸素供給源が必要であり、酸素の供給が不足すると燃焼しにくくなる。酸素供給は燃焼に必要である。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「酸素濃度が低いほど、必ず燃焼が激しくなる」について、酸素不足では燃焼しにくくなる。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「酸素は燃焼と一切関係がない」について、燃焼と深く関係する。酸素供給源は燃焼三要素の一つである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「酸素は第4類危険物の指定数量を表す単位である」について、指定数量の単位ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「酸素がまったくなくても、通常の燃焼は必ず続く」について、通常の燃焼には酸素が必要である。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>燃焼には酸素供給源が必要であり、酸素の供給が不足すると燃焼しにくくなる。酸素供給は燃焼に必要である。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「酸素濃度が低いほど、必ず燃焼が激しくなる」について、酸素不足では燃焼しにくくなる。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「酸素濃度を高めても、燃焼の激しさは変わらない」について、酸素濃度が高いほど一般に燃焼は激しくなる。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「空気中の酸素濃度は、およそ60%である」について、空気中の酸素濃度はおよそ21%である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「酸素がまったくなくても、通常の燃焼は必ず続く」について、通常の燃焼には酸素が必要である。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p184/index.html"
     },
     {
@@ -3628,14 +3628,14 @@ const PRACTICE_QUESTIONS = {
       "text": "第1石油類の指定数量について、正しいものはどれか。",
       "opts": [
         "非水溶性液体と水溶性液体で指定数量が異なる。",
-        "すべての第1石油類は指定数量が10,000 Lである。",
-        "すべての第1石油類は指定数量が50 Lである。",
-        "水溶性かどうかは指定数量と一切関係しない。",
-        "第1石油類には指定数量が定められていない。"
+        "すべての第1石油類は指定数量が1,000 Lである。",
+        "第1石油類の指定数量は引火点で一律に決まる。",
+        "水溶性かどうかにかかわらず指定数量は同一である。",
+        "第1石油類の指定数量は事業者が任意に定める。"
       ],
       "ans": 0,
       "exp": "第1石油類では、非水溶性液体と水溶性液体で指定数量が異なる。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>第1石油類では、非水溶性液体と水溶性液体で指定数量が異なる。ガソリンは非水溶性液体として200 L、アセトンは水溶性液体として400 Lで整理する。第1石油類は非水溶性200 L、水溶性400 L。水溶性の違いを無視しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「すべての第1石油類は指定数量が10,000 Lである」について、10,000 Lは動植物油類である。政令で定める指定数量の値として誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「すべての第1石油類は指定数量が50 Lである」について、50 Lは特殊引火物である。政令で定める指定数量の値として誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「水溶性かどうかは指定数量と一切関係しない」について、指定数量に関係する。正答肢の記述と照合して確認する。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「第1石油類には指定数量が定められていない」について、指定数量は定められている。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>第1石油類では、非水溶性液体と水溶性液体で指定数量が異なる。ガソリンは非水溶性液体として200 L、アセトンは水溶性液体として400 Lで整理する。第1石油類は非水溶性200 L、水溶性400 L。水溶性の違いを無視しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「すべての第1石油類は指定数量が1,000 Lである」について、第1石油類は非水溶性200L・水溶性400Lで、一律1,000Lではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「第1石油類の指定数量は引火点で一律に決まる」について、指定数量は品名と水溶性の別で定まり、引火点で一律に決まるものではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「水溶性かどうかにかかわらず指定数量は同一である」について、第1石油類は非水溶性200L・水溶性400Lと水溶性で指定数量が異なる。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「第1石油類の指定数量は事業者が任意に定める」について、指定数量は法令で定められており、事業者が任意に定めるものではない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p202/index.html"
     },
     {
@@ -3753,15 +3753,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "製造所等の設置許可について、正しいものはどれか。",
       "opts": [
-        "指定数量未満なら必ず消防法令上も条例上も完全に自由である。",
-        "危険物取扱者免状の写真を変更する手続きである。",
+        "指定数量未満なら消防法令上の規制を一切受けない。",
+        "既存施設の危険物の品名を変更する手続きである。",
         "指定数量以上の危険物を扱う製造所等を設置する場合に問題となる。",
-        "乙4では設置許可制度は一切関係しない。",
-        "製造所等の設置許可は、危険物の分類名である。"
+        "乙4で扱う危険物は設置許可の対象外とされている。",
+        "設置許可は完成検査と全く同じ手続きを指す。"
       ],
       "ans": 2,
       "exp": "指定数量以上の危険物を貯蔵し、又は取り扱う製造所等を設置する場合、法令上の許可が問題となる。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>指定数量以上の危険物を貯蔵し、又は取り扱う製造所等を設置する場合、法令上の許可が問題となる。設置許可は指定数量以上の製造所等で重要。免状手続きと施設許可を混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「指定数量未満なら必ず消防法令上も条例上も完全に自由である」について、指定数量未満でも条例等が関係する場合がある。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「危険物取扱者免状の写真を変更する手続きである」について、免状写真の変更ではない。設置許可と取扱者免状の手続きは別である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「乙4では設置許可制度は一切関係しない」について、乙4でも関係する。第4類危険物を扱う施設でも設置許可が関係する場合がある。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「製造所等の設置許可は、危険物の分類名である」について、分類名ではない。製造所等は施設の総称であり、危険物の分類名ではない。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>指定数量以上の危険物を貯蔵し、又は取り扱う製造所等を設置する場合、法令上の許可が問題となる。設置許可は指定数量以上の製造所等で重要。免状手続きと施設許可を混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「指定数量未満なら消防法令上の規制を一切受けない」について、指定数量未満でも市町村条例による規制を受けるため、完全に自由ではない。指定数量未満でも市町村条例等が関係する場合がある。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「既存施設の危険物の品名を変更する手続きである」について、設置許可は施設の設置に係る許可で、品名変更の手続きとは別である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「乙4で扱う危険物は設置許可の対象外とされている」について、設置許可は扱う危険物の類を問わず適用され、乙4も当然対象となる。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「設置許可は完成検査と全く同じ手続きを指す」について、設置許可は工事前の許可、完成検査は工事後の検査で別の手続きである。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p209/index.html"
     },
     {
@@ -3789,15 +3789,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "完成検査の説明として、正しいものはどれか。",
       "opts": [
-        "指定数量を自由に変更する手続きである。",
+        "危険物の品名や数量を変更する許可申請である。",
         "設置または変更工事後、施設が基準に適合するか確認する検査である。",
-        "危険物取扱者試験の合格発表である。",
-        "免状の写真だけを確認する手続きである。",
-        "危険物の味を確認する検査である。"
+        "危険物施設の譲渡を届け出る手続きである。",
+        "設置許可の前に行う事前審査の手続きである。",
+        "危険物施設で行う定期点検と同じ検査である。"
       ],
       "ans": 1,
       "exp": "完成検査は、製造所等の設置または変更工事後、施設が法令基準に適合するかを確認する検査である。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>完成検査は、製造所等の設置または変更工事後、施設が法令基準に適合するかを確認する検査である。完成検査は施設使用前の重要手続き。完成検査と定期点検を混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「指定数量を自由に変更する手続きである」について、指定数量変更手続きではない。原則として完成検査後に使用する必要がある。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「危険物取扱者試験の合格発表である」について、試験合格発表ではない。完成検査は施設が法令基準に適合するか確認する検査である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「免状の写真だけを確認する手続きである」について、免状写真だけの確認ではない。免状写真の確認手続きではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「危険物の味を確認する検査である」について、危険物の味を確認してはならない。危険物の官能検査は行ってはならない。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>完成検査は、製造所等の設置または変更工事後、施設が法令基準に適合するかを確認する検査である。完成検査は施設使用前の重要手続き。完成検査と定期点検を混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「危険物の品名や数量を変更する許可申請である」について、完成検査は工事後の適合確認で、品名や数量の変更許可とは別である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「危険物施設の譲渡を届け出る手続きである」について、完成検査は基準適合を確認する検査で、譲渡の届出手続きではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「設置許可の前に行う事前審査の手続きである」について、完成検査は工事完了後に行う検査で、設置許可前の審査ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「危険物施設で行う定期点検と同じ検査である」について、完成検査は工事後の適合確認、定期点検は使用中の自主点検で別である。消防法上の完成検査と自主確認は別である。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p211/index.html"
     },
     {
@@ -3825,15 +3825,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "製造所等の譲渡または引渡しがあった場合について、正しいものはどれか。",
       "opts": [
-        "譲渡届出は、危険物取扱者試験の受験票である。",
-        "第4類危険物施設では譲渡や引渡しは存在しない。",
+        "譲渡届出は、施設の新規設置許可と同じ手続きである。",
+        "第4類危険物施設は譲渡や引渡しが法令で禁止されている。",
         "法令上、届出が必要となる場合がある。",
-        "譲渡届出とは、危険物の味を確認する制度である。",
-        "所有者が変わっても、危険物施設に関する手続きは常に不要である。"
+        "譲渡があっても、施設の許可は自動的に失効する。",
+        "所有者が変わると、危険物の指定数量も変更される。"
       ],
       "ans": 2,
       "exp": "製造所等の譲渡または引渡しがあった場合、法令上、届出が必要となる場合がある。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>製造所等の譲渡または引渡しがあった場合、法令上、届出が必要となる場合がある。選択肢（3）「法令上、届出が必要となる場合がある」は、譲渡・引渡し届出が問題となる。譲渡・引渡しも届出論点。施設の所有・管理変更を軽視しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「譲渡届出は、危険物取扱者試験の受験票である」について、受験票ではない。譲渡届出は施設の管理変更に関する手続きである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「第4類危険物施設では譲渡や引渡しは存在しない」について、第4類施設でも譲渡・引渡しはあり得る。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「譲渡届出とは、危険物の味を確認する制度である」について、味を確認する制度ではない。危険物の官能検査は行ってはならない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「所有者が変わっても、危険物施設に関する手続きは常に不要である」について、手続きが必要となる場合がある。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>製造所等の譲渡または引渡しがあった場合、法令上、届出が必要となる場合がある。選択肢（3）「法令上、届出が必要となる場合がある」は、譲渡・引渡し届出が問題となる。譲渡・引渡しも届出論点。施設の所有・管理変更を軽視しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「譲渡届出は、施設の新規設置許可と同じ手続きである」について、譲渡引渡しの届出は、新規設置の許可申請とは別の手続きである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「第4類危険物施設は譲渡や引渡しが法令で禁止されている」について、第4類施設でも譲渡や引渡しは可能で、その際は届出が必要となる。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「譲渡があっても、施設の許可は自動的に失効する」について、譲渡があっても許可は承継され、自動的に失効するものではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「所有者が変わると、危険物の指定数量も変更される」について、所有者の変更は届出で足り、指定数量が変わるわけではない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p213/index.html"
     },
     {
@@ -3843,15 +3843,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "定期点検の目的として、最も適切なものはどれか。",
       "opts": [
-        "危険物を飲めるか確認するため。",
-        "危険物の販売価格を決めるため。",
-        "標識の色を自由に変えるため。",
+        "危険物の引火点を測定するため。",
+        "危険物の指定数量を見直すため。",
+        "危険物の品名を変更するため。",
         "危険物施設の維持管理状態を確認し、事故を予防するため。",
-        "危険物取扱者試験の点数を決めるため。"
+        "危険物取扱者の選任を決めるため。"
       ],
       "ans": 3,
       "exp": "定期点検は、危険物施設の維持管理状態を確認し、事故を予防するために行われる。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>定期点検は、危険物施設の維持管理状態を確認し、事故を予防するために行われる。定期点検は事故予防のための管理。点検記録の保存も関連して問われる。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「危険物を飲めるか確認するため」について、危険物を飲んではならない。定期点検は施設の維持管理状態を確認するための点検である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「危険物の販売価格を決めるため」について、販売価格決定ではない。販売価格決定とは無関係である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「標識の色を自由に変えるため」について、標識色変更のためではない。標識色を自由に変えるための制度ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「危険物取扱者試験の点数を決めるため」について、試験点数とは関係ない。試験制度とは無関係である。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>定期点検は、危険物施設の維持管理状態を確認し、事故を予防するために行われる。定期点検は事故予防のための管理。点検記録の保存も関連して問われる。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「危険物の引火点を測定するため」について、定期点検は施設の維持管理状態を確認するもので、引火点の測定ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「危険物の指定数量を見直すため」について、定期点検は施設の点検で、指定数量を見直す手続きではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「危険物の品名を変更するため」について、定期点検は施設の状態確認で、危険物の品名変更とは別である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「危険物取扱者の選任を決めるため」について、定期点検は施設の点検で、取扱者の選任を決めるものではない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p214/index.html"
     },
     {
@@ -3861,15 +3861,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "定期点検記録について、正しいものはどれか。",
       "opts": [
-        "危険物の味を記録するものである。",
-        "危険物取扱者試験の答案用紙である。",
+        "点検記録は、点検の結果を記載する必要はない。",
+        "点検記録は、作成せず口頭報告だけでよい。",
         "作成し、一定期間保存することが求められる場合がある。",
-        "指定数量を自動で変更する帳票である。",
+        "点検記録は、保存期間の定めがまったくない。",
         "点検後ただちに破棄しなければならない。"
       ],
       "ans": 2,
       "exp": "定期点検を行った場合、点検記録を作成し、一定期間保存することが求められる場合がある。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>定期点検を行った場合、点検記録を作成し、一定期間保存することが求められる場合がある。定期点検は記録保存まで押さえる。点検だけで終わりではない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「危険物の味を記録するものである」について、味を記録するものではない。定期点検は施設の維持管理状態を確認するための点検である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「危険物取扱者試験の答案用紙である」について、答案用紙ではない。試験制度とは無関係である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「指定数量を自動で変更する帳票である」について、指定数量を変更する帳票ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「点検後ただちに破棄しなければならない」について、ただちに破棄するものではない。点検記録は一定期間保存することが求められる場合がある。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>定期点検を行った場合、点検記録を作成し、一定期間保存することが求められる場合がある。定期点検は記録保存まで押さえる。点検だけで終わりではない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「点検記録は、点検の結果を記載する必要はない」について、点検の方法と結果は記録すべき事項である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「点検記録は、作成せず口頭報告だけでよい」について、点検記録の作成が求められる。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「点検記録は、保存期間の定めがまったくない」について、一定期間の保存が求められる。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「点検後ただちに破棄しなければならない」について、ただちに破棄するものではない。点検記録は一定期間保存することが求められる場合がある。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p215/index.html"
     },
     {
@@ -3880,14 +3880,14 @@ const PRACTICE_QUESTIONS = {
       "text": "保安検査と定期点検の説明として、正しいものはどれか。",
       "opts": [
         "いずれも危険物施設の安全確保に関係するが、制度上は区別される。",
-        "完全に同じ制度であり、名称以外に違いはない。",
-        "どちらも危険物の味を確認する検査である。",
-        "どちらも危険物取扱者試験の採点方法である。",
-        "第4類危険物ではどちらも一切関係しない。"
+        "いずれも市町村長等が必ず実施する検査である。",
+        "どちらも危険物施設の新規設置許可と同じ手続きである。",
+        "どちらも危険物取扱者試験の一部として行われる。",
+        "第4類危険物施設では定期点検だけが免除される。"
       ],
       "ans": 0,
       "exp": "保安検査と定期点検はいずれも危険物施設の安全確保に関係するが、制度上は区別される。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>保安検査と定期点検はいずれも危険物施設の安全確保に関係するが、制度上は区別される。似た言葉を同一視しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「完全に同じ制度であり、名称以外に違いはない」について、完全に同じ制度ではない。保安検査と定期点検は別の制度として区別される。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「どちらも危険物の味を確認する検査である」について、味を確認する検査ではない。定期点検は施設の維持管理状態を確認するための点検である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「どちらも危険物取扱者試験の採点方法である」について、試験採点方法ではない。試験制度とは無関係である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「第4類危険物ではどちらも一切関係しない」について、第4類施設でも関係し得る。正答肢の記述と照合して確認する。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>保安検査と定期点検はいずれも危険物施設の安全確保に関係するが、制度上は区別される。似た言葉を同一視しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「いずれも市町村長等が必ず実施する検査である」について、定期点検は所有者等が自ら行う自主点検で、必ず行政が実施するものではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「どちらも危険物施設の新規設置許可と同じ手続きである」について、保安検査も定期点検も使用中の施設に対するもので、設置許可とは別である。保安検査と定期点検は別の制度として区別される。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「どちらも危険物取扱者試験の一部として行われる」について、両者は施設に対する検査・点検で、取扱者試験とは無関係である。試験制度とは無関係である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「第4類危険物施設では定期点検だけが免除される」について、定期点検は対象施設で原則必要で、第4類だからと免除されるものではない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p216/index.html"
     },
     {
@@ -3915,15 +3915,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "危険物施設に標識や掲示板を設ける目的として、適切なものはどれか。",
       "opts": [
-        "免状の写真を掲示するためだけ。",
-        "危険物を不燃性にするため。",
-        "危険物の味を知らせるため。",
-        "指定数量を自由に変えるため。",
+        "消火設備の点検記録を掲示するためだけ。",
+        "危険物の引火点を表示するため。",
+        "危険物の販売数量を示すため。",
+        "指定数量の規制を免除するため。",
         "施設の種類や危険物の性質、注意事項を明示するため。"
       ],
       "ans": 4,
       "exp": "標識や掲示板は、施設の種類、危険物の性質、注意事項などを明示し、安全管理に役立てるために設けられる。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>標識や掲示板は、施設の種類、危険物の性質、注意事項などを明示し、安全管理に役立てるために設けられる。選択肢（5）「施設の種類や危険物の性質、注意事項を明示するため」は、標識・掲示板の目的である。標識・掲示板は危険の明示と注意喚起。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「免状の写真を掲示するためだけ」について、免状写真だけの掲示ではない。標識は危険物の性質・注意事項を明示するためのものである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「危険物を不燃性にするため」について、不燃性にするものではない。標識は注意喚起のための表示であり、危険物を不燃性に変える効果はない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「危険物の味を知らせるため」について、味を知らせるものではない。味を知らせるための掲示ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「指定数量を自由に変えるため」について、指定数量を変えない。指定数量は政令で定められ、標識で変わるものではない。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>標識や掲示板は、施設の種類、危険物の性質、注意事項などを明示し、安全管理に役立てるために設けられる。選択肢（5）「施設の種類や危険物の性質、注意事項を明示するため」は、標識・掲示板の目的である。標識・掲示板は危険の明示と注意喚起。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「消火設備の点検記録を掲示するためだけ」について、標識や掲示板は施設や危険物の注意事項を示すもので、点検記録専用ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「危険物の引火点を表示するため」について、掲示板には注意事項等を表示するもので、引火点の数値を示すものではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「危険物の販売数量を示すため」について、標識や掲示板は安全のための表示で、販売数量を示すものではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「指定数量の規制を免除するため」について、標識や掲示板は注意喚起のためで、指定数量の規制を免除する効力はない。指定数量を変更するものではない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p218/index.html"
     },
     {
@@ -3933,15 +3933,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "避難設備の役割として、適切なものはどれか。",
       "opts": [
-        "危険物の指定数量を増やす設備である。",
-        "危険物取扱者免状を印刷する設備である。",
+        "危険物の引火点を下げる設備である。",
+        "危険物の漏えいを検知する設備である。",
         "火災等の際に安全な避難を助けるための設備である。",
-        "危険物を販売するためのレジである。",
-        "可燃性蒸気を発生させる設備である。"
+        "危険物を加圧して移送する設備である。",
+        "可燃性蒸気を回収して再利用する設備である。"
       ],
       "ans": 2,
       "exp": "避難設備は、火災等の際に安全な避難を助けるための設備である。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>避難設備は、火災等の際に安全な避難を助けるための設備である。警報設備・消火設備との違いを押さえる。避難設備の役割である。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「危険物の指定数量を増やす設備である」について、指定数量を増やさない。避難設備は火災時の安全な避難を助ける設備である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「危険物取扱者免状を印刷する設備である」について、免状印刷設備ではない。免状の交付・印刷とは無関係である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「危険物を販売するためのレジである」について、販売レジではない。危険物販売のための設備ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「可燃性蒸気を発生させる設備である」について、蒸気発生設備ではない。可燃性蒸気を発生させる設備ではない。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>避難設備は、火災等の際に安全な避難を助けるための設備である。警報設備・消火設備との違いを押さえる。避難設備の役割である。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「危険物の引火点を下げる設備である」について、避難設備は避難を助ける設備で、危険物の引火点を変えるものではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「危険物の漏えいを検知する設備である」について、漏えい検知は警報設備等の役割で、避難設備は安全な避難を助けるものである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「危険物を加圧して移送する設備である」について、避難設備は人の避難のための設備で、危険物を移送する設備ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「可燃性蒸気を回収して再利用する設備である」について、避難設備は避難誘導等のための設備で、蒸気回収設備ではない。可燃性蒸気を発生させる設備ではない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p219/index.html"
     },
     {
@@ -3987,15 +3987,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "セルフ式給油取扱所の管理について、適切なものはどれか。",
       "opts": [
-        "顧客が自由に扱うため、監視は一切不要である。",
+        "顧客が自由に給油するため、従業員の関与は禁止されている。",
         "顧客の給油状況を監視し、安全確保を行う。",
-        "火気使用を推奨する。",
-        "危険物取扱者制度とは一切関係しない。",
-        "漏えい時も営業を続けることを優先する。"
+        "危険物の引火点を確認するため火気を使用する。",
+        "顧客自らが給油するため危険物取扱者の選任は不要である。",
+        "漏えいが起きても給油を継続することが認められている。"
       ],
       "ans": 1,
       "exp": "セルフ式給油取扱所では、顧客が自ら給油するため、監視や安全確保が重要である。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>セルフ式給油取扱所では、顧客が自ら給油するため、監視や安全確保が重要である。セルフ式は監視体制が重要。セルフ式＝無管理ではない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「顧客が自由に扱うため、監視は一切不要である」について、監視不要ではない。正答肢の記述と照合して確認する。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「火気使用を推奨する」について、火気使用は危険である。給油時の火気使用は引火の危険がある。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「危険物取扱者制度とは一切関係しない」について、危険物取扱者制度と関係する。正答肢の記述と照合して確認する。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「漏えい時も営業を続けることを優先する」について、漏えい時は適切な措置が必要である。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>セルフ式給油取扱所では、顧客が自ら給油するため、監視や安全確保が重要である。セルフ式は監視体制が重要。セルフ式＝無管理ではない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「顧客が自由に給油するため、従業員の関与は禁止されている」について、セルフ式でも従業員が監視し制御卓で給油を許可するなど関与が必要である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「危険物の引火点を確認するため火気を使用する」について、給油取扱所では火気使用は厳禁で、引火点確認のための火気使用などあり得ない。給油時の火気使用は引火の危険がある。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「顧客自らが給油するため危険物取扱者の選任は不要である」について、セルフ式でも危険物取扱者を選任し監視させる必要がある。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「漏えいが起きても給油を継続することが認められている」について、漏えい時は直ちに給油を停止し安全措置をとる必要がある。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p222/index.html"
     },
     {
@@ -4005,15 +4005,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "移送取扱所と移動タンク貯蔵所の違いとして、正しいものはどれか。",
       "opts": [
-        "移送取扱所は必ず家庭内に設ける施設である。",
-        "移動タンク貯蔵所は常に給油取扱所である。",
-        "どちらも危険物取扱者免状の種類である。",
+        "移送取扱所は危険物を製造する施設である。",
+        "移動タンク貯蔵所は地下に埋設された固定タンクである。",
+        "どちらも危険物を販売するための取扱所である。",
         "移送取扱所は配管等による移送、移動タンク貯蔵所は車両に固定されたタンクによる移送に関係する。",
-        "どちらも第1類危険物だけを扱う施設である。"
+        "どちらも指定数量未満の危険物だけを扱う施設である。"
       ],
       "ans": 3,
       "exp": "移送取扱所は配管等による危険物の移送、移動タンク貯蔵所は車両に固定されたタンクによる危険物の移送に関係する。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>移送取扱所は配管等による危険物の移送、移動タンク貯蔵所は車両に固定されたタンクによる危険物の移送に関係する。両者は区別する。『移送』と『移動』の語感だけで判断しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「移送取扱所は必ず家庭内に設ける施設である」について、家庭内施設ではない。正答肢の記述と照合して確認する。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「移動タンク貯蔵所は常に給油取扱所である」について、移動タンク貯蔵所は貯蔵所である。移動タンク貯蔵所は貯蔵所に分類される。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「どちらも危険物取扱者免状の種類である」について、免状の種類ではない。移送取扱所は配管等で危険物を移送する取扱所である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「どちらも第1類危険物だけを扱う施設である」について、第1類だけを扱うわけではない。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>移送取扱所は配管等による危険物の移送、移動タンク貯蔵所は車両に固定されたタンクによる危険物の移送に関係する。両者は区別する。『移送』と『移動』の語感だけで判断しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「移送取扱所は危険物を製造する施設である」について、移送取扱所は配管等で危険物を移送する施設で、製造を行う施設ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「移動タンク貯蔵所は地下に埋設された固定タンクである」について、移動タンク貯蔵所は車両に固定したタンクで、地下埋設の固定タンクではない。移動タンク貯蔵所は貯蔵所に分類される。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「どちらも危険物を販売するための取扱所である」について、両者は移送に関する施設で、危険物を販売する取扱所ではない。販売取扱所は取扱所の一種である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「どちらも指定数量未満の危険物だけを扱う施設である」について、両者は移送に係る施設で、指定数量未満専用と定められてはいない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p223/index.html"
     },
     {
@@ -4041,15 +4041,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "危険物法令の説明として、正しいものはどれか。",
       "opts": [
-        "指定数量は、危険物の販売価格を表す。",
+        "指定数量は、危険物の重量を必ずkgで表す数値である。",
         "第4類危険物は酸化性固体である。",
         "危険物取扱者免状があれば、施設の設置許可は常に不要である。",
-        "製造所等とは、免状を持つ人の総称である。",
+        "製造所等とは、危険物取扱者免状そのものを指す。",
         "施設の許可、取扱者の資格、指定数量はそれぞれ別の論点である。"
       ],
       "ans": 4,
       "exp": "危険物法令では、施設の許可、取扱者の資格、指定数量などを別々の論点として整理する必要がある。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>危険物法令では、施設の許可、取扱者の資格、指定数量などを別々の論点として整理する必要がある。施設許可・資格・指定数量を分けて理解する。免状があれば施設許可不要、という誤解に注意。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「指定数量は、危険物の販売価格を表す」について、指定数量は販売価格ではない。指定数量は販売価格ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「第4類危険物は酸化性固体である」について、第4類は引火性液体である。第4類危険物は引火性液体であり、酸化性固体は第1類である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「危険物取扱者免状があれば、施設の設置許可は常に不要である」について、免状と施設許可は別である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「製造所等とは、免状を持つ人の総称である」について、製造所等は施設の総称である。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>危険物法令では、施設の許可、取扱者の資格、指定数量などを別々の論点として整理する必要がある。施設許可・資格・指定数量を分けて理解する。免状があれば施設許可不要、という誤解に注意。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「指定数量は、危険物の重量を必ずkgで表す数値である」について、指定数量は危険物ごとに政令で定めた数量で、容量で示すものもあり重量限定ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「第4類危険物は酸化性固体である」について、第4類は引火性液体である。第4類危険物は引火性液体であり、酸化性固体は第1類である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「危険物取扱者免状があれば、施設の設置許可は常に不要である」について、免状と施設許可は別である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「製造所等とは、危険物取扱者免状そのものを指す」について、製造所等は製造所・貯蔵所・取扱所などの施設の総称であり、免状ではない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p225/index.html"
     },
     {
@@ -4545,15 +4545,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "危険物保安監督者を選任した場合の届出について、正しいものはどれか。",
       "opts": [
-        "選任すれば届出は絶対に不要である。",
-        "乙種第4類では保安監督者制度は一切関係しない。",
-        "届出は指定数量を計算するための数式である。",
-        "届出は危険物の分類名である。",
+        "選任しても解任しても届出は一切不要である。",
+        "乙種第4類取扱者は保安監督者になれない。",
+        "届出は選任した日から30日以内に限り認められない。",
+        "届出先は都道府県知事ではなく消防庁長官である。",
         "法令上、届出が必要となる場合がある。"
       ],
       "ans": 4,
       "exp": "危険物保安監督者を選任した場合、法令上、届出が必要となる場合がある。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>危険物保安監督者を選任した場合、法令上、届出が必要となる場合がある。選択肢（5）「法令上、届出が必要となる場合がある」は、選任時の届出が問題となる。保安監督者は選任と届出をセットで押さえる。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「選任すれば届出は絶対に不要である」について、届出が必要となる場合がある。保安監督者は選任と届出をセットで押さえる。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「乙種第4類では保安監督者制度は一切関係しない」について、乙4の施設でも関係し得る。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「届出は指定数量を計算するための数式である」について、数式ではない。選任届出は法令上の手続きであり、数量計算の数式ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「届出は危険物の分類名である」について、分類名ではない。選任届出は法令上の手続きであり、危険物の分類名ではない。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>危険物保安監督者を選任した場合、法令上、届出が必要となる場合がある。選択肢（5）「法令上、届出が必要となる場合がある」は、選任時の届出が問題となる。保安監督者は選任と届出をセットで押さえる。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「選任しても解任しても届出は一切不要である」について、保安監督者を選任または解任したときは市町村長等への届出が必要である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「乙種第4類取扱者は保安監督者になれない」について、6か月以上の実務経験があれば乙4取扱者も保安監督者に選任できる。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「届出は選任した日から30日以内に限り認められない」について、保安監督者の選任・解任は遅滞なく届け出るもので30日以内禁止という規定はない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「届出先は都道府県知事ではなく消防庁長官である」について、届出先は市町村長等であり消防庁長官ではない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p253/index.html"
     },
     {
@@ -4617,15 +4617,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "危険物保安統括管理者の役割として、最も適切なものはどれか。",
       "opts": [
-        "危険物の販売価格だけを決める。",
+        "危険物取扱者の選任権限を持たず保安には関与しない。",
         "事業所全体の危険物保安に関する業務を統括管理する。",
-        "指定数量を自由に変更する。",
-        "危険物の味を確認する。",
+        "指定数量を超えても貯蔵を無条件で許可できる。",
+        "危険物保安監督者の上位資格として免状区分に含まれる。",
         "危険物取扱者試験の問題を印刷する。"
       ],
       "ans": 1,
       "exp": "危険物保安統括管理者は、一定の事業所における危険物保安に関する業務を統括管理する役割である。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>危険物保安統括管理者は、一定の事業所における危険物保安に関する業務を統括管理する役割である。保安統括管理者は事業所全体の保安管理。保安監督者との役割差に注意。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「危険物の販売価格だけを決める」について、販売価格だけを決める役割ではない。保安監督者との役割差に注意。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「指定数量を自由に変更する」について、指定数量は自由に変えられない。保安監督者との役割差に注意。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「危険物の味を確認する」について、味を確認してはならない。保安監督者との役割差に注意。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「危険物取扱者試験の問題を印刷する」について、試験問題印刷ではない。保安監督者との役割差に注意。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>危険物保安統括管理者は、一定の事業所における危険物保安に関する業務を統括管理する役割である。保安統括管理者は事業所全体の保安管理。保安監督者との役割差に注意。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「危険物取扱者の選任権限を持たず保安には関与しない」について、保安統括管理者は事業所全体の保安業務を統括する立場で保安に深く関与する。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「指定数量を超えても貯蔵を無条件で許可できる」について、指定数量を超える貯蔵には変更許可等が必要で統括管理者が独断で許可はできない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「危険物保安監督者の上位資格として免状区分に含まれる」について、保安統括管理者は職務上の選任で免状の種類ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「危険物取扱者試験の問題を印刷する」について、試験問題印刷ではない。保安監督者との役割差に注意。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p257/index.html"
     },
     {
@@ -4671,15 +4671,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "危険物施設保安員と関係が深いものはどれか。",
       "opts": [
-        "危険物の味の確認。",
-        "危険物取扱者試験の受験票。",
-        "危険物の販売価格の決定。",
-        "指定数量の自動変更。",
+        "危険物保安監督者を市町村長が直接任命する業務。",
+        "指定数量未満の危険物の販売許可業務。",
+        "危険物の運搬容器の材質を国が指定する業務。",
+        "製造所等の設置許可を取扱者が交付する業務。",
         "危険物施設の構造・設備の保安に関する業務。"
       ],
       "ans": 4,
       "exp": "危険物施設保安員は、一定の危険物施設の構造や設備に関する保安業務に関係する。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>危険物施設保安員は、一定の危険物施設の構造や設備に関する保安業務に関係する。保安監督者・施設保安員の違いに注意。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「危険物の味の確認」について、味を確認してはならない。危険物は官能で確認せず、施設の構造・設備の保安が主な業務である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「危険物取扱者試験の受験票」について、受験票ではない。試験の受験票ではなく、施設保安の役割である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「危険物の販売価格の決定」について、販売価格決定ではない。施設保安員は施設の保安業務に関与し、販売価格決定とは無関係である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「指定数量の自動変更」について、指定数量は変更できない。指定数量は危険物の数量基準である。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>危険物施設保安員は、一定の危険物施設の構造や設備に関する保安業務に関係する。保安監督者・施設保安員の違いに注意。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「危険物保安監督者を市町村長が直接任命する業務」について、保安監督者は製造所等の所有者等が選任するもので市町村長が任命するのではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「指定数量未満の危険物の販売許可業務」について、施設保安員の職務は施設の保安管理であり販売許可は業務に含まれない。施設保安員は施設の保安業務に関与し、販売価格決定とは無関係である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「危険物の運搬容器の材質を国が指定する業務」について、運搬容器の基準は法令で定められ施設保安員が材質を指定するものではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「製造所等の設置許可を取扱者が交付する業務」について、設置許可は市町村長等が行うもので取扱者や施設保安員は交付できない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p260/index.html"
     },
     {
@@ -4689,15 +4689,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "予防規程を定める目的として、最も適切なものはどれか。",
       "opts": [
-        "指定数量を自由に増減するため。",
-        "危険物の販売価格を決めるため。",
+        "危険物取扱者の選任を省略するため。",
+        "指定数量未満なら危険物を規制対象外にするため。",
         "危険物施設における火災予防や保安管理を適切に行うため。",
-        "危険物取扱者試験の合格者を決めるため。",
-        "危険物を食品として扱うため。"
+        "危険物の運搬を許可不要にするため。",
+        "完成検査を受けずに施設を使用するため。"
       ],
       "ans": 2,
       "exp": "予防規程は、危険物施設における火災予防や保安管理を適切に行うために定められる。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>予防規程は、危険物施設における火災予防や保安管理を適切に行うために定められる。価格表や試験制度と混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「指定数量を自由に増減するため」について、指定数量を自由に変えるものではない。指定数量を自由に変更する制度ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「危険物の販売価格を決めるため」について、販売価格の決定ではない。予防規程は施設の保安管理に関する規程である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「危険物取扱者試験の合格者を決めるため」について、試験合格者の決定ではない。試験合格者を決める制度ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「危険物を食品として扱うため」について、食品として扱うためではない。予防規程は火災予防・保安管理の運用ルールであり、食品取扱いのためではない。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>予防規程は、危険物施設における火災予防や保安管理を適切に行うために定められる。事務手続や試験制度と混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「危険物取扱者の選任を省略するため」について、予防規程があっても保安監督者等の選任義務は省略できない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「指定数量未満なら危険物を規制対象外にするため」について、予防規程は保安管理が目的で指定数量未満を規制対象外にする制度ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「危険物の運搬を許可不要にするため」について、予防規程は施設の保安管理が目的で運搬の許可とは別の制度である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「完成検査を受けずに施設を使用するため」について、完成検査は施設使用前に必ず必要で予防規程で免除はされない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p261/index.html"
     },
     {
@@ -4707,15 +4707,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "自衛消防組織の役割として、適切なものはどれか。",
       "opts": [
-        "危険物を不燃性に変える。",
+        "危険物を指定数量未満に自動で減量する。",
         "火災等に備えた初期対応や通報、避難誘導などに関係する。",
-        "危険物の味を調べる。",
-        "危険物の指定数量を決定する。",
-        "危険物取扱者免状を印刷する。"
+        "危険物取扱者の実務経験を認定する。",
+        "製造所等の設置許可を交付する。",
+        "危険物の指定数量を見直して告示する。"
       ],
       "ans": 1,
       "exp": "自衛消防組織は、火災等に備えた初期対応、通報、避難誘導などの体制に関係する。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>自衛消防組織は、火災等に備えた初期対応、通報、避難誘導などの体制に関係する。指定数量や免状制度と混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「危険物を不燃性に変える」について、不燃性に変えるものではない。自衛消防組織は火災等の初動対応体制であり、物質を不燃性に変えるものではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「危険物の味を調べる」について、味を調べてはならない。危険物の官能検査は行ってはならない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「危険物の指定数量を決定する」について、指定数量を決定しない。指定数量は政令で定められ、組織が決めるものではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「危険物取扱者免状を印刷する」について、免状を印刷しない。免状の印刷機関ではなく、事業所の消防体制である。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>自衛消防組織は、火災等に備えた初期対応、通報、避難誘導などの体制に関係する。指定数量や免状制度と混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「危険物を指定数量未満に自動で減量する」について、自衛消防組織は火災時の対応組織であり危険物を減量する機能はない。指定数量は危険物の数量基準であり、組織の名称ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「危険物取扱者の実務経験を認定する」について、実務経験の認定は所有者等が行うもので自衛消防組織の役割ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「製造所等の設置許可を交付する」について、設置許可は市町村長等が行うもので自衛消防組織は交付できない。免状の交付機関ではなく、事業所等の消防体制である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「危険物の指定数量を見直して告示する」について、指定数量は政令で定められ自衛消防組織が見直すものではない。指定数量は危険物の数量基準であり、組織の名称ではない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p262/index.html"
     },
     {
@@ -4743,15 +4743,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "消火設備と警報設備の違いとして、正しいものはどれか。",
       "opts": [
-        "どちらも危険物取扱者免状の種類である。",
-        "どちらも危険物を販売するレジである。",
+        "どちらも危険物取扱者の選任に関する制度である。",
+        "どちらも指定数量を超えた場合だけ設置する義務がある。",
         "消火設備は消火に、警報設備は異常の知らせに関係する。",
-        "どちらも危険物の味を確認する設備である。",
-        "どちらも危険物の指定数量を示す単位である。"
+        "どちらも完成検査の合格証の種類である。",
+        "どちらも保安距離を計算する基準である。"
       ],
       "ans": 2,
       "exp": "消火設備は火災の消火に関係し、警報設備は火災等の異常を知らせる設備である。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>消火設備は火災の消火に関係し、警報設備は火災等の異常を知らせる設備である。消火設備・警報設備・避難設備を区別する。設備名を一括りにしない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「どちらも危険物取扱者免状の種類である」について、免状の種類ではない。施設設備の名称であり、免状の種類ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「どちらも危険物を販売するレジである」について、販売レジではない。消火・警報の設備であり、販売用のレジではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「どちらも危険物の味を確認する設備である」について、味を確認する設備ではない。火災対応の設備であり、官能確認の設備ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「どちらも危険物の指定数量を示す単位である」について、指定数量の単位ではない。指定数量の数量基準と、設備の名称は別である。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>消火設備は火災の消火に関係し、警報設備は火災等の異常を知らせる設備である。消火設備・警報設備・避難設備を区別する。設備名を一括りにしない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「どちらも危険物取扱者の選任に関する制度である」について、消火設備と警報設備は施設に設ける設備で取扱者の選任制度ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「どちらも指定数量を超えた場合だけ設置する義務がある」について、これらの設備は危険物の数量や規模に応じて区分ごとに設置が義務付けられる。指定数量を変える装置ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「どちらも完成検査の合格証の種類である」について、消火設備と警報設備は施設設備であり完成検査済証の種類ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「どちらも保安距離を計算する基準である」について、保安距離は別の基準で定められ消火・警報設備はその計算基準ではない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p264/index.html"
     },
     {
@@ -4761,15 +4761,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "屋内貯蔵所と屋内タンク貯蔵所の違いとして、正しいものはどれか。",
       "opts": [
-        "どちらも危険物取扱者免状の種類である。",
-        "どちらも第6類危険物だけを扱う施設である。",
-        "どちらも指定数量を計算する式である。",
+        "どちらも危険物取扱者の選任区分である。",
+        "どちらも屋外でのみ設置が認められる施設である。",
+        "どちらも指定数量未満では設置できない施設である。",
         "屋内貯蔵所は建築物内での貯蔵、屋内タンク貯蔵所は屋内タンクによる貯蔵に関係する。",
-        "どちらも給油取扱所の別名である。"
+        "どちらも移動タンク貯蔵所の別名である。"
       ],
       "ans": 3,
       "exp": "屋内貯蔵所と屋内タンク貯蔵所は名称が似ているが、施設の形態が異なる。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>屋内貯蔵所と屋内タンク貯蔵所は名称が似ているが、施設の形態が異なる。名称の類似に注意する。違いとして妥当である。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「どちらも危険物取扱者免状の種類である」について、免状の種類ではない。免状手続きの窓口ではなく、建物内で危険物を貯蔵する施設である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「どちらも第6類危険物だけを扱う施設である」について、第6類だけではない。第4類など多くの危険物を扱う貯蔵施設もある。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「どちらも指定数量を計算する式である」について、計算式ではない。指定数量の計算式ではなく、施設の種類名である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「どちらも給油取扱所の別名である」について、給油取扱所ではない。給油取扱所は取扱所に分類される。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>屋内貯蔵所と屋内タンク貯蔵所は名称が似ているが、施設の形態が異なる。名称の類似に注意する。違いとして妥当である。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「どちらも危険物取扱者の選任区分である」について、両者は貯蔵所の区分であり取扱者の選任区分ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「どちらも屋外でのみ設置が認められる施設である」について、屋内貯蔵所も屋内タンク貯蔵所も屋内に設ける施設で屋外限定ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「どちらも指定数量未満では設置できない施設である」について、指定数量以上の貯蔵に許可が要るのであり未満で設置不可ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「どちらも移動タンク貯蔵所の別名である」について、移動タンク貯蔵所はタンクローリー等であり屋内の貯蔵所とは別の施設である。移動タンク貯蔵所は貯蔵所の一種である。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p265/index.html"
     },
     {
@@ -4851,15 +4851,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "危険物法令の学習で、特に区別すべき組合せとして適切なものはどれか。",
       "opts": [
-        "標識の大きさと食品表示",
-        "水溶性と免状番号",
+        "標識の大きさと水溶性の有無",
+        "水溶性と保安距離",
         "製造所等の許可と危険物取扱者免状",
-        "消火器の色と受験番号",
-        "危険物の味と販売価格"
+        "消火器の色と引火点",
+        "消火器の設置本数と保有空地の広さ"
       ],
       "ans": 2,
       "exp": "製造所等の許可は施設に関する制度、危険物取扱者免状は人の資格に関する制度であり、区別して理解する必要がある。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>製造所等の許可は施設に関する制度、危険物取扱者免状は人の資格に関する制度であり、区別して理解する必要がある。選択肢（3）「製造所等の許可と危険物取扱者免状」は、施設許可と免状は別の論点である。免状があれば施設許可が不要になる、とは考えない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「標識の大きさと食品表示」について、食品表示とは別である。危険物標識の表示と、食品表示は別の制度である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「水溶性と免状番号」について、水溶性と免状番号は別概念である。物質の水溶性と、免状番号は別の概念である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「消火器の色と受験番号」について、学習上の重要な区別ではない。消火器の表示色と、受験番号は別である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「危険物の味と販売価格」について、危険物の味を確認してはならない。危険物の官能確認や価格決定は、法令学習の区別点ではない。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>製造所等の許可は施設に関する制度、危険物取扱者免状は人の資格に関する制度であり、区別して理解する必要がある。選択肢（3）「製造所等の許可と危険物取扱者免状」は、施設許可と免状は別の論点である。免状があれば施設許可が不要になる、とは考えない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「標識の大きさと水溶性の有無」について、標識の大きさと水溶性は別領域の論点で区別すべき典型的な組合せではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「水溶性と保安距離」について、水溶性は危険物の性質で保安距離は施設基準であり直接対比する論点ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「消火器の色と引火点」について、消火器の色と引火点は無関係で混同しやすい組合せとは言えない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「消火器の設置本数と保有空地の広さ」について、消火器の本数と保有空地の広さは直接対比して区別する組合せではない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p270/index.html"
     },
     {
@@ -4869,15 +4869,15 @@ const PRACTICE_QUESTIONS = {
       "field": "rights",
       "text": "引火と発火の違いとして、正しいものはどれか。",
       "opts": [
-        "引火も発火も完全に同じ意味である。",
+        "引火も発火も気体が液体に変わる現象を指す。",
         "引火は水に溶けること、発火は水に浮くことをいう。",
-        "引火は指定数量、発火は免状番号をいう。",
+        "引火は液比重、発火は蒸気比重のことをいう。",
         "引火は火源により燃え始めること、発火は火源なしで燃え始めることをいう。",
-        "引火も発火も消火設備の種類である。"
+        "引火点が高いほど引火の危険性も高くなる。"
       ],
       "ans": 3,
       "exp": "引火は火源により可燃性蒸気などが燃え始めること、発火は火源がなくても燃え始めることをいう。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>引火は火源により可燃性蒸気などが燃え始めること、発火は火源がなくても燃え始めることをいう。引火点と発火点の違いを押さえる。火源の有無に注意する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「引火も発火も完全に同じ意味である」について、同じ意味ではない。引火は火源を要し、発火は火源なしで燃え始める点で区別される。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「引火は水に溶けること、発火は水に浮くことをいう」について、溶解や浮沈ではない。引火・発火は燃焼現象の概念であり、溶解や浮力ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「引火は指定数量、発火は免状番号をいう」について、指定数量や免状番号ではない。引火・発火は燃焼開始の概念であり、数量基準や免状ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「引火も発火も消火設備の種類である」について、消火設備の種類ではない。引火・発火は燃焼現象の概念であり、消火設備の種類ではない。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>引火は火源により可燃性蒸気などが燃え始めること、発火は火源がなくても燃え始めることをいう。引火点と発火点の違いを押さえる。火源の有無に注意する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「引火も発火も気体が液体に変わる現象を指す」について、引火・発火は燃焼に関する現象で気体が液体に変わる凝縮とは別である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「引火は水に溶けること、発火は水に浮くことをいう」について、引火・発火は燃え始めに関する用語で水への溶解や浮沈とは無関係である。引火・発火は燃焼現象の概念であり、溶解や浮力ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「引火は液比重、発火は蒸気比重のことをいう」について、引火・発火は燃焼現象を表す用語で液比重や蒸気比重を指すものではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「引火点が高いほど引火の危険性も高くなる」について、引火点が低いほど低温で引火しやすく危険性は高くなる。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p271/index.html"
     },
     {
@@ -4959,15 +4959,15 @@ const PRACTICE_QUESTIONS = {
       "field": "rights",
       "text": "対流による熱の伝わり方として、正しいものはどれか。",
       "opts": [
-        "免状番号が移動することをいう。",
-        "固体内部だけを通って熱が伝わることをいう。",
+        "物質を介さず光のように直進して熱が伝わることをいう。",
+        "接触した固体間を熱が直接伝わることだけをいう。",
         "真空中で電磁波により熱が伝わることだけをいう。",
         "液体や気体の移動により熱が運ばれる。",
-        "危険物の指定数量が変化することをいう。"
+        "温度が高い物体ほど熱を全く放出しないことをいう。"
       ],
       "ans": 3,
       "exp": "対流は、液体や気体などの流体の移動によって熱が運ばれる現象である。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>対流は、液体や気体などの流体の移動によって熱が運ばれる現象である。伝導・対流・放射を区別する。対流の説明である。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「免状番号が移動することをいう」について、免状番号とは関係ない。対流は液体や気体の移動による熱伝達であり、免状とは無関係である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「固体内部だけを通って熱が伝わることをいう」について、熱伝導の説明に近い。固体内部での伝達は主に熱伝導の説明に近い。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「真空中で電磁波により熱が伝わることだけをいう」について、放射の説明に近い。真空中の電磁波による伝達は放射の説明に近い。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「危険物の指定数量が変化することをいう」について、指定数量とは関係ない。対流は熱の伝わり方の概念であり、指定数量とは無関係である。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>対流は、液体や気体などの流体の移動によって熱が運ばれる現象である。伝導・対流・放射を区別する。対流の説明である。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「物質を介さず光のように直進して熱が伝わることをいう」について、物質を介さず直進で伝わるのは放射であり対流は流体の移動による。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「接触した固体間を熱が直接伝わることだけをいう」について、接触した固体間を直接伝わるのは伝導であり対流とは異なる。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「真空中で電磁波により熱が伝わることだけをいう」について、真空中で電磁波により伝わるのは放射であり対流ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「温度が高い物体ほど熱を全く放出しないことをいう」について、高温の物体ほど熱放射は大きく熱を放出しないわけではない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p276/index.html"
     },
     {
@@ -5067,15 +5067,15 @@ const PRACTICE_QUESTIONS = {
       "field": "rights",
       "text": "燃焼と酸化の関係として、正しいものはどれか。",
       "opts": [
-        "燃焼は酸化とまったく関係がない。",
-        "燃焼は免状を書き換えることである。",
+        "燃焼は、熱や光をまったく伴わない反応である。",
+        "燃焼は、酸素を必要としない反応である。",
         "燃焼は急激な酸化反応と考えられる。",
-        "燃焼は必ず水に溶けることである。",
-        "燃焼は指定数量を計算することである。"
+        "燃焼は、可燃物が酸素と結びつかずに進む反応である。",
+        "燃焼の速さは、酸化反応の速さとは無関係である。"
       ],
       "ans": 2,
       "exp": "燃焼は、熱や光を伴う急激な酸化反応として理解できる。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>燃焼は、熱や光を伴う急激な酸化反応として理解できる。燃焼と溶解を混同しない。燃焼は酸化反応と関係が深い。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「燃焼は酸化とまったく関係がない」について、酸化と関係がある。燃焼は酸素と結びつく急激な酸化反応と考えられる。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「燃焼は免状を書き換えることである」について、免状書換えではない。燃焼は化学反応の概念であり、免状書換えではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「燃焼は必ず水に溶けることである」について、溶解ではない。燃焼と溶解は別の現象である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「燃焼は指定数量を計算することである」について、指定数量計算ではない。指定数量の計算方法ではない。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>燃焼は、熱や光を伴う急激な酸化反応として理解できる。燃焼と溶解を混同しない。燃焼は酸化反応と関係が深い。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「燃焼は、熱や光をまったく伴わない反応である」について、燃焼は熱や光を伴う。燃焼は急激な酸化反応。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「燃焼は、酸素を必要としない反応である」について、燃焼には酸素供給源が必要である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「燃焼は、可燃物が酸素と結びつかずに進む反応である」について、燃焼は可燃物が酸素と結びつく反応である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「燃焼の速さは、酸化反応の速さとは無関係である」について、燃焼は急激な酸化反応である。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p282/index.html"
     },
     {
@@ -5391,15 +5391,15 @@ const PRACTICE_QUESTIONS = {
       "field": "limit",
       "text": "第4類危険物の性質・消火の学習で、特に区別すべきものはどれか。",
       "opts": [
-        "受験番号と試験会場",
-        "標識の色と会社名",
-        "免状写真と住所欄",
-        "販売価格と広告文",
+        "指定数量と保安距離",
+        "標識の色と運搬容器の材質",
+        "免状の交付者と申請者",
+        "保安講習と定期点検",
         "水溶性と非水溶性、液比重と蒸気比重、引火点と発火点"
       ],
       "ans": 4,
       "exp": "第4類危険物では、水溶性と非水溶性、液比重と蒸気比重、引火点と発火点などを区別することが重要である。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>第4類危険物では、水溶性と非水溶性、液比重と蒸気比重、引火点と発火点などを区別することが重要である。性消分野は似た概念の区別が重要。言葉の雰囲気だけで判断しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「受験番号と試験会場」について、試験運営情報である。言葉の雰囲気だけで判断しない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「標識の色と会社名」について、会社名は性消分野の中心ではない。性消分野は似た概念の区別が重要。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「免状写真と住所欄」について、免状手続きの話である。言葉の雰囲気だけで判断しない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「販売価格と広告文」について、性消分野の中心論点ではない。性消分野は似た概念の区別が重要。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>第4類危険物では、水溶性と非水溶性、液比重と蒸気比重、引火点と発火点などを区別することが重要である。性消分野は似た概念の区別が重要。言葉の雰囲気だけで判断しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「指定数量と保安距離」について、指定数量と保安距離は法令の論点で第4類の性質・消火で区別すべき項目ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「標識の色と運搬容器の材質」について、標識の色と運搬容器の材質は別領域であり性質・消火の対比項目ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「免状の交付者と申請者」について、免状の交付者と申請者は手続きの論点で性質・消火の学習項目ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「保安講習と定期点検」について、保安講習と定期点検は保安管理の制度で性質・消火の区別項目ではない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p300/index.html"
     },
     {
@@ -5481,15 +5481,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "製造所等の変更で、変更許可の対象として最も関係が深いものはどれか。",
       "opts": [
-        "危険物の販売広告の色だけの変更",
+        "取り扱う危険物の販売数量だけの変更",
         "位置、構造または設備の変更",
-        "危険物取扱者の昼食内容の変更",
-        "消火器メーカーの社名ロゴだけの変更",
-        "受験票の印刷位置の変更"
+        "危険物取扱者の選任者の氏名だけの変更",
+        "危険物の品名・数量だけの変更",
+        "従業員の作業手順だけの変更"
       ],
       "ans": 1,
       "exp": "製造所等の位置、構造または設備を変更する場合、変更許可が必要となる場合がある。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>製造所等の位置、構造または設備を変更する場合、変更許可が必要となる場合がある。変更許可は位置・構造・設備の変更で問題になる。軽微な一般変更と法令上の変更を混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「危険物の販売広告の色だけの変更」について、広告色だけの話ではない。変更許可は位置・構造・設備の変更に関する手続きである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「危険物取扱者の昼食内容の変更」について、法令上の施設変更ではない。取扱者の私的な事柄は法令上の施設変更ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「消火器メーカーの社名ロゴだけの変更」について、社名ロゴだけではない。メーカーの商標変更は施設変更許可の対象ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「受験票の印刷位置の変更」について、受験票とは関係ない。試験の受験票と施設の変更許可は無関係である。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>製造所等の位置、構造または設備を変更する場合、変更許可が必要となる場合がある。変更許可は位置・構造・設備の変更で問題になる。軽微な一般変更と法令上の変更を混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「取り扱う危険物の販売数量だけの変更」について、販売数量だけの変更は位置・構造・設備の変更にあたらず変更許可の対象ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「危険物取扱者の選任者の氏名だけの変更」について、取扱者の氏名変更は届出事項であり変更許可の対象ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「危険物の品名・数量だけの変更」について、品名・数量の変更は届出で足り変更許可は位置・構造・設備の変更が対象である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「従業員の作業手順だけの変更」について、作業手順だけの変更は位置・構造・設備の変更にあたらず変更許可の対象ではない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p305/index.html"
     },
     {
@@ -5499,15 +5499,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "完成検査を行う主な趣旨として、適切なものはどれか。",
       "opts": [
-        "危険物取扱者の年齢を確認するため。",
-        "危険物の味を確認するため。",
-        "危険物の販売価格を確認するため。",
+        "危険物取扱者の免状の有効期限を確認するため。",
+        "危険物の指定数量を確認のうえ引き下げるため。",
+        "周辺住民の同意を改めて取り直すため。",
         "工事後の製造所等が法令基準に適合するか確認するため。",
-        "指定数量を自由に変更するため。"
+        "完成検査前検査を省略してよいか判断するため。"
       ],
       "ans": 3,
       "exp": "完成検査は、製造所等の設置または変更工事後に、施設が法令基準に適合しているか確認するための検査である。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>完成検査は、製造所等の設置または変更工事後に、施設が法令基準に適合しているか確認するための検査である。完成検査は施設の基準適合確認。試験や免状手続きと混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「危険物取扱者の年齢を確認するため」について、年齢確認ではない。試験や免状手続きと混同しない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「危険物の味を確認するため」について、味を確認してはならない。危険物の官能検査は行ってはならない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「危険物の販売価格を確認するため」について、販売価格確認ではない。完成検査は施設の検査であり、販売価格の確認ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「指定数量を自由に変更するため」について、指定数量は変更できない。原則として完成検査後に使用する必要がある。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>完成検査は、製造所等の設置または変更工事後に、施設が法令基準に適合しているか確認するための検査である。完成検査は施設の基準適合確認。試験や免状手続きと混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「危険物取扱者の免状の有効期限を確認するため」について、完成検査は施設が基準に適合するかの確認で免状の有効期限を確認するものではない。免状写真の確認手続きではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「危険物の指定数量を確認のうえ引き下げるため」について、完成検査は基準適合の確認で指定数量を引き下げる手続きではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「周辺住民の同意を改めて取り直すため」について、完成検査は施設の基準適合確認で住民同意の取得を目的とするものではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「完成検査前検査を省略してよいか判断するため」について、完成検査前検査は別途必要で完成検査がその省略可否を判断するものではない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p306/index.html"
     },
     {
@@ -5517,15 +5517,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "完成検査前検査の対象として関係が深いものはどれか。",
       "opts": [
-        "危険物の味見記録",
-        "危険物取扱者の筆記試験答案",
-        "危険物の販売価格表",
+        "危険物取扱者の実務経験年数の記録",
+        "危険物保安監督者の選任届の控え",
+        "製造所等の年間の販売実績表",
         "一定の液体危険物タンク",
-        "消火器の宣伝広告"
+        "消火設備の設置位置を示す配置図のみ"
       ],
       "ans": 3,
       "exp": "完成検査前検査は、一定の液体危険物タンクなどについて問題となる検査である。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>完成検査前検査は、一定の液体危険物タンクなどについて問題となる検査である。完成検査との違いも押さえる。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「危険物の味見記録」について、味見記録ではない。完成検査前検査はタンク等の設備確認に関係する。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「危険物取扱者の筆記試験答案」について、筆記試験答案ではない。試験答案と完成検査前検査は無関係である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「危険物の販売価格表」について、価格表ではない。販売価格表と設備検査は別である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「消火器の宣伝広告」について、広告ではない。宣伝広告と完成検査前検査は無関係である。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>完成検査前検査は、一定の液体危険物タンクなどについて問題となる検査である。完成検査との違いも押さえる。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「危険物取扱者の実務経験年数の記録」について、完成検査前検査は液体危険物タンク等が対象で実務経験の記録は関係しない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「危険物保安監督者の選任届の控え」について、保安監督者の選任届は別の手続きで完成検査前検査の対象ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「製造所等の年間の販売実績表」について、完成検査前検査はタンクの水張試験等が対象で販売実績とは無関係である。完成検査は施設が法令基準に適合するか確認する検査である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「消火設備の設置位置を示す配置図のみ」について、完成検査前検査はタンク本体の検査が対象で消火設備の配置図のみではない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p307/index.html"
     },
     {
@@ -5536,14 +5536,14 @@ const PRACTICE_QUESTIONS = {
       "text": "製造所等で取り扱う危険物の数量変更について、正しいものはどれか。",
       "opts": [
         "法令上、届出が必要となる場合がある。",
-        "数量変更届は危険物取扱者試験の答案である。",
+        "数量変更には常に新たな設置許可が必要となる。",
         "数量変更は常に何の手続きも不要である。",
-        "数量を変えると危険物ではなくなる。",
+        "指定数量未満に変えれば法の規制を一切受けない。",
         "第4類では数量変更の管理は不要である。"
       ],
       "ans": 0,
       "exp": "製造所等で貯蔵し、又は取り扱う危険物の数量を変更する場合、法令上、届出が必要となる場合がある。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>製造所等で貯蔵し、又は取り扱う危険物の数量を変更する場合、法令上、届出が必要となる場合がある。選択肢（1）「法令上、届出が必要となる場合がある」は、数量変更は届出論点である。品名・数量・指定数量倍数の変更届出を押さえる。数量変更を軽視しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「数量変更届は危険物取扱者試験の答案である」について、試験答案ではない。数量変更届は施設管理の手続きであり、試験答案ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「数量変更は常に何の手続きも不要である」について、手続きが必要な場合がある。法令上、届出が必要となる場合がある。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「数量を変えると危険物ではなくなる」について、危険物でなくなるわけではない。数量を変えても危険物の性質は変わらない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「第4類では数量変更の管理は不要である」について、第4類でも関係する。第4類施設でも数量変更の管理が関係する場合がある。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>製造所等で貯蔵し、又は取り扱う危険物の数量を変更する場合、法令上、届出が必要となる場合がある。選択肢（1）「法令上、届出が必要となる場合がある」は、数量変更は届出論点である。品名・数量・指定数量倍数の変更届出を押さえる。数量変更を軽視しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「数量変更には常に新たな設置許可が必要となる」について、品名・数量の変更は届出で足り常に設置許可が必要なわけではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「数量変更は常に何の手続きも不要である」について、数量変更は法令上の届出が必要となる場合があり常に不要ではない。法令上、届出が必要となる場合がある。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「指定数量未満に変えれば法の規制を一切受けない」について、指定数量未満でも市町村条例による規制を受け一切規制外にはならない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「第4類では数量変更の管理は不要である」について、第4類でも数量変更の届出等の管理は必要で例外ではない。第4類施設でも数量変更の管理が関係する場合がある。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p308/index.html"
     },
     {
@@ -5590,14 +5590,14 @@ const PRACTICE_QUESTIONS = {
       "text": "免状取得後の保安講習について、正しいものはどれか。",
       "opts": [
         "取扱作業に従事する場合は保安講習が必要となる場合がある。",
-        "保安講習は指定数量の別名である。",
-        "保安講習は危険物の品名である。",
-        "保安講習は免状の写真撮影だけである。",
+        "保安講習は免状の更新手続きそのものである。",
+        "保安講習は受講すれば実務経験とみなされる。",
+        "保安講習は危険物取扱者試験の一部である。",
         "免状を取得すると保安講習制度は消滅する。"
       ],
       "ans": 0,
       "exp": "危険物取扱者免状を取得した後も、危険物の取扱作業に従事する場合は保安講習が必要となる場合がある。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>危険物取扱者免状を取得した後も、危険物の取扱作業に従事する場合は保安講習が必要となる場合がある。免状取得後も保安講習がある。資格取得で保安教育が終わるわけではない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「保安講習は指定数量の別名である」について、指定数量ではない。保安講習は安全教育の制度であり、指定数量とは別である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「保安講習は危険物の品名である」について、品名ではない。保安講習は安全教育制度であり、危険物の品名ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「保安講習は免状の写真撮影だけである」について、写真撮影だけではない。免状交付時の写真撮影と保安講習は別の手続きである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「免状を取得すると保安講習制度は消滅する」について、講習制度は存在する。免状取得後も取扱作業者の安全教育が必要となる場合がある。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>危険物取扱者免状を取得した後も、危険物の取扱作業に従事する場合は保安講習が必要となる場合がある。免状取得後も保安講習がある。資格取得で保安教育が終わるわけではない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「保安講習は免状の更新手続きそのものである」について、乙種免状に更新制度はなく保安講習は更新手続きではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「保安講習は受講すれば実務経験とみなされる」について、保安講習は知識更新のための受講で実務経験とみなされるものではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「保安講習は危険物取扱者試験の一部である」について、保安講習は免状取得後の受講制度で試験の一部ではない。免状取得後も取扱作業者の安全教育が必要となる場合がある。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「免状を取得すると保安講習制度は消滅する」について、免状取得後も従事者には保安講習の受講義務があり制度は消滅しない。免状取得後も取扱作業者の安全教育が必要となる場合がある。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p311/index.html"
     },
     {
@@ -5626,14 +5626,14 @@ const PRACTICE_QUESTIONS = {
       "text": "完成検査と定期点検の説明として、正しいものはどれか。",
       "opts": [
         "完成検査は工事後の確認、定期点検は使用中の維持管理確認に関係する。",
-        "どちらも消火器購入時のレシートである。",
-        "どちらも指定数量を自由に変える手続きである。",
-        "どちらも危険物取扱者試験の採点制度である。",
-        "どちらも危険物の味を確認する検査である。"
+        "どちらも完成後は二度と実施されない一回限りの手続きである。",
+        "どちらも危険物取扱者の選任手続きである。",
+        "どちらも市町村条例の制定手続きである。",
+        "どちらも指定数量を引き下げる手続きである。"
       ],
       "ans": 0,
       "exp": "完成検査は設置・変更工事後の確認、定期点検は使用中の施設の維持管理状態の確認に関係する。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>完成検査は設置・変更工事後の確認、定期点検は使用中の施設の維持管理状態の確認に関係する。完成検査と定期点検を区別する。検査・点検の目的を整理する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「どちらも消火器購入時のレシートである」について、レシートではない。完成検査・定期点検は施設の検査制度であり、購入証明ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「どちらも指定数量を自由に変える手続きである」について、指定数量は変えられない。指定数量の変更手続きと、施設検査は別である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「どちらも危険物取扱者試験の採点制度である」について、試験採点ではない。試験採点制度と施設の完成検査・定期点検は別である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「どちらも危険物の味を確認する検査である」について、味を確認する検査ではない。危険物の官能検査は行ってはならない。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>完成検査は設置・変更工事後の確認、定期点検は使用中の施設の維持管理状態の確認に関係する。完成検査と定期点検を区別する。検査・点検の目的を整理する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「どちらも完成後は二度と実施されない一回限りの手続きである」について、定期点検は使用中に繰り返し実施するもので一回限りではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「どちらも危険物取扱者の選任手続きである」について、完成検査も定期点検も施設に関する手続きで取扱者の選任ではない。消防法上の完成検査と自主確認は別である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「どちらも市町村条例の制定手続きである」について、両者は施設の検査・点検であり市町村条例の制定手続きではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「どちらも指定数量を引き下げる手続きである」について、両者は基準適合や維持の確認で指定数量を引き下げるものではない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p313/index.html"
     },
     {
@@ -5643,15 +5643,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "保安距離と保有空地の整理として、正しいものはどれか。",
       "opts": [
-        "どちらも消火剤の名称である。",
-        "どちらも指定数量の単位である。",
-        "どちらも危険物取扱者免状の種類である。",
+        "どちらも危険物の引火点を表す温度である。",
+        "どちらも危険物を貯蔵できる最大の容量である。",
+        "どちらも防火塀の高さを定めた基準である。",
         "保安距離は周囲の保安対象物との距離、保有空地は施設周囲に確保する空地である。",
-        "どちらも危険物の販売価格である。"
+        "どちらも消火設備の設置義務を免除する条件である。"
       ],
       "ans": 3,
       "exp": "保安距離は周囲の保安対象物との距離、保有空地は施設周囲に確保する空地であり、目的や位置づけが異なる。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>保安距離は周囲の保安対象物との距離、保有空地は施設周囲に確保する空地であり、目的や位置づけが異なる。保安距離と保有空地を区別する。どちらも距離・空間に関するため混同しやすい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「どちらも消火剤の名称である」について、消火剤ではない。いずれも施設配置の距離・空地に関する概念であり、消火剤ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「どちらも指定数量の単位である」について、指定数量の単位ではない。指定数量の数量基準と、距離・空地の概念は別である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「どちらも危険物取扱者免状の種類である」について、免状の種類ではない。取扱者免状の区分と、施設配置の概念は別である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「どちらも危険物の販売価格である」について、販売価格ではない。販売価格と施設配置の距離・空地は無関係である。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>保安距離は周囲の保安対象物との距離、保有空地は施設周囲に確保する空地であり、目的や位置づけが異なる。保安距離と保有空地を区別する。どちらも距離・空間に関するため混同しやすい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「どちらも危険物の引火点を表す温度である」について、保安距離も保有空地も距離や空地に関する規制であり、危険物の引火点を表す温度とは全く別の概念である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「どちらも危険物を貯蔵できる最大の容量である」について、貯蔵できる量を表すのは指定数量であって、保安距離や保有空地は容量の基準ではない。指定数量は危険物の数量基準である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「どちらも防火塀の高さを定めた基準である」について、保有空地は更地状の空地の確保を求めるもので、防火塀の高さを定める基準ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「どちらも消火設備の設置義務を免除する条件である」について、両者は延焼防止等のための規制であり、消火設備の設置義務を免除する条件ではない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p314/index.html"
     },
     {
@@ -5697,15 +5697,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "危険物運搬時の表示に関する説明として、正しいものはどれか。",
       "opts": [
-        "表示は危険物の味を示すためのものである。",
-        "表示は指定数量を自由に変えるためのものである。",
-        "表示をすれば容器から漏れても問題ない。",
-        "表示は危険物取扱者免状の代わりになる。",
+        "表示は危険物の価格を示すためのものである。",
+        "表示をすれば指定数量を超えても運搬してよい。",
+        "表示があれば容器の基準を満たさなくてもよい。",
+        "表示があれば運搬時に消火設備は不要となる。",
         "危険物の種類や数量等に応じた表示が求められる場合がある。"
       ],
       "ans": 4,
       "exp": "危険物の運搬では、危険物の種類や数量等に応じて表示が求められる場合がある。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>危険物の運搬では、危険物の種類や数量等に応じて表示が求められる場合がある。運搬では表示も重要。表示だけで安全確保が完了するわけではない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「表示は危険物の味を示すためのものである」について、味を示すものではない。危険物運搬の要件として誤った理解である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「表示は指定数量を自由に変えるためのものである」について、指定数量は変えられない。危険物運搬の要件として誤った理解である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「表示をすれば容器から漏れても問題ない」について、漏えいは防止しなければならない。危険物運搬の要件として誤った理解である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「表示は危険物取扱者免状の代わりになる」について、免状の代わりではない。危険物運搬の要件として誤った理解である。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>危険物の運搬では、危険物の種類や数量等に応じて表示が求められる場合がある。運搬では表示も重要。表示だけで安全確保が完了するわけではない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「表示は危険物の価格を示すためのものである」について、運搬時の表示は品名や数量等の危険性情報を示すためのもので、価格を示すものではない。危険物運搬の要件として誤った理解である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「表示をすれば指定数量を超えても運搬してよい」について、表示の有無にかかわらず、運搬する量に応じた基準は別に適用されるので超過は許されない。危険物運搬の要件として誤った理解である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「表示があれば容器の基準を満たさなくてもよい」について、運搬容器は所定の基準に適合する必要があり、表示があっても容器基準は省略できない。危険物運搬の要件として誤った理解である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「表示があれば運搬時に消火設備は不要となる」について、一定数量以上の運搬では消火設備の備付けが求められ、表示によって免除されることはない。危険物運搬の要件として誤った理解である。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p317/index.html"
     },
     {
@@ -5752,14 +5752,14 @@ const PRACTICE_QUESTIONS = {
       "text": "危険物法令の全体像として、最も適切なものはどれか。",
       "opts": [
         "指定数量、施設区分、免状区分、保安管理制度を分けて理解する。",
-        "免状を取得すれば施設基準はすべて不要になる。",
-        "保安管理制度は第4類危険物とは一切関係しない。",
-        "指定数量と免状区分は完全に同じものである。",
+        "免状を取得すれば施設の許可は不要になる。",
+        "危険物の指定数量は、すべての品名で同じ値である。",
+        "指定数量は危険物取扱者の人数で決まる。",
         "施設区分と危険物の類別は完全に同じものである。"
       ],
       "ans": 0,
       "exp": "危険物法令では、指定数量、製造所等の施設区分、危険物取扱者免状、保安管理制度を分けて理解することが重要である。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>危険物法令では、指定数量、製造所等の施設区分、危険物取扱者免状、保安管理制度を分けて理解することが重要である。選択肢（1）「指定数量、施設区分、免状区分、保安管理制度を分けて理解する」は、法令分野の整理として適切である。法令は制度ごとに分けて整理する。似た言葉を一つにまとめすぎない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「免状を取得すれば施設基準はすべて不要になる」について、免状と施設基準は別である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「保安管理制度は第4類危険物とは一切関係しない」について、第4類でも保安管理は関係し得る。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「指定数量と免状区分は完全に同じものである」について、指定数量と免状区分は別である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「施設区分と危険物の類別は完全に同じものである」について、施設区分と危険物類別は別である。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>危険物法令では、指定数量、製造所等の施設区分、危険物取扱者免状、保安管理制度を分けて理解することが重要である。選択肢（1）「指定数量、施設区分、免状区分、保安管理制度を分けて理解する」は、法令分野の整理として適切である。法令は制度ごとに分けて整理する。似た言葉を一つにまとめすぎない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「免状を取得すれば施設の許可は不要になる」について、免状は取扱いの資格であって、施設の設置にはこれとは別に許可を受ける必要がある。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「危険物の指定数量は、すべての品名で同じ値である」について、指定数量は危険物の品名や性状ごとに異なる値が定められている。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「指定数量は危険物取扱者の人数で決まる」について、指定数量は危険物の危険性に応じて品目ごとに定められ、取扱者の人数で決まるものではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「施設区分と危険物の類別は完全に同じものである」について、施設区分と危険物類別は別である。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p320/index.html"
     },
     {
@@ -6004,14 +6004,14 @@ const PRACTICE_QUESTIONS = {
       "text": "酸性・中性・アルカリ性の基準として使われる指標はどれか。",
       "opts": [
         "蒸気比重",
-        "免状番号",
+        "引火点",
         "pH",
-        "保有空地",
-        "指定数量"
+        "融点",
+        "発火点"
       ],
       "ans": 2,
       "exp": "pHは酸性・中性・アルカリ性の程度を示す指標である。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>pHは酸性・中性・アルカリ性の程度を示す指標である。pHと指定数量を混同しない。選択肢（3）「pH」は、pHである。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「蒸気比重」について、蒸気の重さを示す値である。蒸気比重は蒸気と空気の重さの比であり、酸性度の指標ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「免状番号」について、資格証の番号である。免状番号は資格証の番号であり、酸性度の指標ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「保有空地」について、施設周囲の空地である。保有空地は施設配置の空地であり、酸性度の指標ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「指定数量」について、危険物の基準数量である。指定数量は危険物の数量基準であり、酸性度の指標ではない。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>pHは酸性・中性・アルカリ性の程度を示す指標である。pHと指定数量を混同しない。選択肢（3）「pH」は、pHである。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「蒸気比重」について、蒸気比重は蒸気の重さを空気と比べる指標であって、酸性やアルカリ性の度合いは表さない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「引火点」について、引火点は燃えやすさを示す温度の指標であり、液性の酸塩基を表すものではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「融点」について、融点は固体が液体に変わる温度を示す指標で、酸性やアルカリ性の判定とは無関係である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「発火点」について、発火点は外部の火がなくても自然に燃え出す温度であって、液性を示す指標ではない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p334/index.html"
     },
     {
@@ -6291,15 +6291,15 @@ const PRACTICE_QUESTIONS = {
       "field": "limit",
       "text": "性質・消火分野で誤りやすい組合せとして、特に注意すべきものはどれか。",
       "opts": [
-        "会社名とロゴ",
-        "免状番号と受験番号",
+        "指定数量と保安距離",
+        "免状の種類と保安講習",
         "液比重と蒸気比重",
-        "販売価格と広告文",
-        "試験会場と座席番号"
+        "設置許可と完成検査",
+        "予防規程と保安監督者"
       ],
       "ans": 2,
       "exp": "第4類危険物では、液比重と蒸気比重の混同がよくある。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>第4類危険物では、液比重と蒸気比重の混同がよくある。液比重は水、蒸気比重は空気を基準に考える。液比重は水基準、蒸気比重は空気基準。水に浮くことと蒸気が低所にたまることを混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「会社名とロゴ」について、性消分野ではない。会社名や商標は危険物の性質・消火の論点ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「免状番号と受験番号」について、性消分野の本質的論点ではない。免状番号と受験番号は試験運営情報であり、性消の本質ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「販売価格と広告文」について、性消分野ではない。販売価格や広告文は性質・消火の論点ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「試験会場と座席番号」について、試験運営情報である。試験会場や座席番号は試験運営に関する情報である。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>第4類危険物では、液比重と蒸気比重の混同がよくある。液比重は水、蒸気比重は空気を基準に考える。液比重は水基準、蒸気比重は空気基準。水に浮くことと蒸気が低所にたまることを混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「指定数量と保安距離」について、指定数量と保安距離はいずれも法令上の用語であり、性質や消火の分野で混同しやすい組合せではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「免状の種類と保安講習」について、免状の種類と保安講習は制度上の事項であって、性質や消火分野で特に紛らわしい対ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「設置許可と完成検査」について、設置許可と完成検査は手続上の用語であり、性質や消火の分野で誤りやすい組合せとはいえない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「予防規程と保安監督者」について、予防規程と保安監督者は管理体制に関する用語で、性質や消火分野で混同する対象ではない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p350/index.html"
     },
     {
@@ -6309,15 +6309,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "指定数量の説明として最も適切なものはどれか。",
       "opts": [
-        "危険物の販売価格である。",
+        "危険物を運搬できる距離である。",
         "危険物の危険性に応じて定められる基準数量である。",
-        "危険物取扱者の年齢制限である。",
-        "消火器の重さである。",
-        "試験時間の単位である。"
+        "危険物取扱者免状の有効期間である。",
+        "消火設備の能力単位である。",
+        "保安講習の受講間隔である。"
       ],
       "ans": 1,
       "exp": "指定数量は、危険物の危険性に応じて定められる基準数量である。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>指定数量は、危険物の危険性に応じて定められる基準数量である。価格や時間と混同しない。指定数量の説明である。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「危険物の販売価格である」について、販売価格ではない。指定数量は危険物の数量基準であり、販売価格ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「危険物取扱者の年齢制限である」について、年齢制限ではない。指定数量は数量の基準であり、取扱者の年齢制限ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「消火器の重さである」について、消火器の重さではない。指定数量は危険物の数量基準であり、消火器の重さではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「試験時間の単位である」について、試験時間ではない。指定数量は数量の単位基準であり、試験時間の単位ではない。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>指定数量は、危険物の危険性に応じて定められる基準数量である。価格や時間と混同しない。指定数量の説明である。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「危険物を運搬できる距離である」について、指定数量は危険性に応じた数量の基準であって、危険物を運搬できる距離を表すものではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「危険物取扱者免状の有効期間である」について、免状そのものに有効期間の定めはなく、指定数量とは全く別の概念であるから誤りである。政令で定める指定数量の値として誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「消火設備の能力単位である」について、消火設備の能力は能力単位で表され、指定数量は危険物の数量基準であって両者は別である。政令で定める指定数量の値として誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「保安講習の受講間隔である」について、保安講習の受講間隔は別途定められており、指定数量とは関係のない事項であるから誤りである。政令で定める指定数量の値として誤りである。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p351/index.html"
     },
     {
@@ -6399,15 +6399,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "指定数量以上の危険物を貯蔵する施設を設置する場合、原則として問題となる手続きはどれか。",
       "opts": [
-        "免状の再交付",
+        "免状の書換え",
         "設置許可",
-        "販売価格の届出",
-        "受験申込",
-        "消火器の購入申請"
+        "予防規程の廃止届",
+        "保安講習の受講",
+        "消火設備の点検報告"
       ],
       "ans": 1,
       "exp": "指定数量以上の危険物を扱う製造所等の設置には、設置許可が問題となる。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>指定数量以上の危険物を扱う製造所等の設置には、設置許可が問題となる。施設設置には許可が関係する。免状と施設許可を分ける。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「免状の再交付」について、免状手続きではない。施設の設置許可と免状の再交付は別の手続きである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「販売価格の届出」について、販売価格ではない。設置許可は施設に関する手続きであり、販売価格の届出ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「受験申込」について、試験申込ではない。試験申込と施設の設置許可は無関係である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「消火器の購入申請」について、消火器購入申請ではない。消火器の購入と施設の設置許可は別の手続きである。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>指定数量以上の危険物を扱う製造所等の設置には、設置許可が問題となる。施設設置には許可が関係する。免状と施設許可を分ける。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「免状の書換え」について、免状の書換えは記載事項の変更手続きであって、施設を新たに設置する際の手続きではない。施設の設置許可と免状の再交付は別の手続きである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「予防規程の廃止届」について、施設の設置時に問題となるのは設置許可であって、予防規程の廃止届ではないから誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「保安講習の受講」について、保安講習は取扱者個人に課される義務であり、施設の設置許可とは性質の異なる手続きである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「消火設備の点検報告」について、消火設備の点検報告は運用段階で行うものであり、新設時に問題となる設置許可とは別である。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p356/index.html"
     },
     {
@@ -6418,14 +6418,14 @@ const PRACTICE_QUESTIONS = {
       "text": "製造所等の位置を変更する場合について正しいものはどれか。",
       "opts": [
         "変更許可が必要となる場合がある。",
-        "免状の写真変更だけで足りる。",
+        "市町村長等への届出だけで足りる。",
         "危険物の分類が変わる。",
         "常に届出も許可も不要である。",
         "指定数量が消滅する。"
       ],
       "ans": 0,
       "exp": "製造所等の位置、構造または設備を変更する場合、変更許可が必要となる場合がある。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>製造所等の位置、構造または設備を変更する場合、変更許可が必要となる場合がある。選択肢（1）「変更許可が必要となる場合がある」は、変更許可が問題となる。位置・構造・設備の変更は変更許可。届出と許可の違いに注意。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「免状の写真変更だけで足りる」について、免状写真とは別である。届出と許可の違いに注意。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「危険物の分類が変わる」について、分類は変わらない。届出と許可の違いに注意。正答肢の記述と照合して確認する。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「常に届出も許可も不要である」について、不要とは限らない。届出と許可の違いに注意。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「指定数量が消滅する」について、指定数量は消滅しない。届出と許可の違いに注意。正答肢の記述と照合して確認する。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>製造所等の位置、構造または設備を変更する場合、変更許可が必要となる場合がある。選択肢（1）「変更許可が必要となる場合がある」は、変更許可が問題となる。位置・構造・設備の変更は変更許可。届出と許可の違いに注意。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「市町村長等への届出だけで足りる」について、製造所等の位置の変更は単なる届出では足りず、原則として変更許可が必要となる場合がある。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「危険物の分類が変わる」について、施設の位置を変更しても、扱う危険物の類別そのものが変わることはないから誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「常に届出も許可も不要である」について、不要とは限らない。届出と許可の違いに注意。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「指定数量が消滅する」について、位置を変更しても指定数量がなくなることはなく、指定数量は危険物ごとに定まったままである。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p357/index.html"
     },
     {
@@ -6435,15 +6435,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "完成検査を受ける前に製造所等を使用することについて、正しい理解はどれか。",
       "opts": [
-        "完成検査は危険物の味を確認する。",
-        "完成検査は免状の書換えである。",
-        "完成検査とは販売価格の確認である。",
+        "完成検査は危険物の引火点を測定する。",
+        "完成検査は予防規程の認可である。",
+        "完成検査とは取扱者の選任手続きである。",
         "完成検査前でも常に自由に使用できる。",
         "原則として完成検査を受け、基準適合確認後に使用する。"
       ],
       "ans": 4,
       "exp": "製造所等は、完成検査により基準適合を確認した後に使用するのが原則である。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>製造所等は、完成検査により基準適合を確認した後に使用するのが原則である。完成検査は使用前の基準適合確認。完成検査と免状手続きを混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「完成検査は危険物の味を確認する」について、味を確認しない。危険物の官能検査は行ってはならない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「完成検査は免状の書換えである」について、免状書換えではない。完成検査は施設の基準適合確認であり、免状書換えではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「完成検査とは販売価格の確認である」について、販売価格確認ではない。完成検査は施設の検査であり、販売価格の確認ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「完成検査前でも常に自由に使用できる」について、常に自由ではない。原則として完成検査後に使用する必要がある。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>製造所等は、完成検査により基準適合を確認した後に使用するのが原則である。完成検査は使用前の基準適合確認。完成検査と免状手続きを混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「完成検査は危険物の引火点を測定する」について、完成検査は施設が基準に適合しているかを確認するものであり、引火点を測定するものではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「完成検査は予防規程の認可である」について、完成検査は施設の基準適合を確認する手続きであって、予防規程の認可とは別の制度である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「完成検査とは取扱者の選任手続きである」について、完成検査は施設に対する検査であり、危険物取扱者を選任する手続きとは全く異なるものである。消防法上の完成検査と自主確認は別である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「完成検査前でも常に自由に使用できる」について、原則として完成検査を受け、基準への適合が確認された後でなければ施設を使用してはならない。原則として完成検査後に使用する必要がある。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p358/index.html"
     },
     {
@@ -6471,15 +6471,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "製造所等を譲り受けた場合に関係する手続きとして正しいものはどれか。",
       "opts": [
-        "免状の自動甲種化",
-        "販売価格の認可",
+        "免状の自動的な甲種化",
+        "予防規程の自動失効",
         "譲渡・引渡しの届出",
-        "危険物の味見検査",
+        "危険物の類別変更",
         "指定数量の自動変更"
       ],
       "ans": 2,
       "exp": "製造所等の譲渡または引渡しがあった場合、届出が必要となる場合がある。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>製造所等の譲渡または引渡しがあった場合、届出が必要となる場合がある。選択肢（3）「譲渡・引渡しの届出」は、届出が関係する。譲渡・引渡しは届出論点。施設の権利移転を軽視しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「免状の自動甲種化」について、免状区分は変わらない。施設の権利移転を軽視しない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「販売価格の認可」について、販売価格認可ではない。施設の権利移転を軽視しない。正答肢の記述と照合して確認する。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「危険物の味見検査」について、味見検査ではない。施設の権利移転を軽視しない。正答肢の記述と照合して確認する。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「指定数量の自動変更」について、指定数量は変わらない。施設の権利移転を軽視しない。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>製造所等の譲渡または引渡しがあった場合、届出が必要となる場合がある。選択肢（3）「譲渡・引渡しの届出」は、届出が関係する。譲渡・引渡しは届出論点。施設の権利移転を軽視しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「免状の自動的な甲種化」について、施設を譲り受けても、保有する免状の種類が自動的に甲種へ変わることはないから誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「予防規程の自動失効」について、施設の譲受けによって、その施設の予防規程が自動的に失効するという制度は存在しない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「危険物の類別変更」について、施設を譲り受けても、その施設で扱う危険物の類別が変わることはないから誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「指定数量の自動変更」について、譲受けによって指定数量が自動的に変わることはなく、指定数量は危険物ごとに定まっている。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p360/index.html"
     },
     {
@@ -6511,11 +6511,11 @@ const PRACTICE_QUESTIONS = {
         "危険物を不燃性にするため。",
         "免状を自動的に甲種へ変えるため。",
         "危険物取扱作業に関する保安知識を維持・向上するため。",
-        "施設の販売価格を決めるため。"
+        "施設の保有空地を不要にするため。"
       ],
       "ans": 3,
       "exp": "保安講習は、危険物取扱作業に関する保安知識を維持・向上するための制度である。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>保安講習は、危険物取扱作業に関する保安知識を維持・向上するための制度である。保安講習は保安知識の維持。免状取得後も学習が必要な場合がある。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「指定数量をなくすため」について、指定数量はなくならない。保安講習は安全教育の制度であり、指定数量とは別である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「危険物を不燃性にするため」について、不燃性にしない。免状取得後も学習が必要な場合がある。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「免状を自動的に甲種へ変えるため」について、免状区分は変わらない。免状取得後も学習が必要な場合がある。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「施設の販売価格を決めるため」について、販売価格とは関係ない。免状取得後も学習が必要な場合がある。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>保安講習は、危険物取扱作業に関する保安知識を維持・向上するための制度である。保安講習は保安知識の維持。免状取得後も学習が必要な場合がある。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「指定数量をなくすため」について、保安講習は保安知識の維持向上を目的とするものであり、指定数量をなくすためのものではない。保安講習は安全教育の制度であり、指定数量とは別である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「危険物を不燃性にするため」について、講習を受けても危険物が不燃性になることはなく、目的はあくまで保安知識の維持向上である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「免状を自動的に甲種へ変えるため」について、保安講習を受講しても、保有する免状の種類が自動的に甲種へ変わることはないから誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「施設の保有空地を不要にするため」について、保安講習は保安知識の維持向上が目的であって、施設の保有空地の規制とは無関係である。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p362/index.html"
     },
     {
@@ -6525,15 +6525,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "予防規程に盛り込む内容として関係が深いものはどれか。",
       "opts": [
-        "広告の配色",
-        "受験者の座席番号",
-        "危険物の販売価格",
+        "危険物の仕入先の選定方法",
+        "保安講習の受講料",
+        "従業員の勤務シフトの作成方法",
         "火災予防や保安管理に関する事項",
-        "危険物の味見方法"
+        "容器のラベルの色"
       ],
       "ans": 3,
       "exp": "予防規程は、火災予防や保安管理に関する事項を定める規程である。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>予防規程は、火災予防や保安管理に関する事項を定める規程である。価格表や広告と混同しない。予防規程の内容である。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「広告の配色」について、広告配色ではない。予防規程は火災予防・保安管理の運用ルールであり、広告配色ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「受験者の座席番号」について、試験座席番号ではない。試験制度とは無関係である。正答肢の記述と照合して確認する。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「危険物の販売価格」について、販売価格ではない。予防規程は施設の保安管理に関する規程である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「危険物の味見方法」について、味見方法ではない。危険物の官能検査は行ってはならない。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>予防規程は、火災予防や保安管理に関する事項を定める規程である。事務手続や運搬基準と混同しない。予防規程の内容である。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「危険物の仕入先の選定方法」について、仕入先の選定は予防規程に盛り込む保安管理の事項ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「保安講習の受講料」について、保安講習の受講料は予防規程が定める事項ではなく、火災予防や保安管理とは関係しない事項である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「従業員の勤務シフトの作成方法」について、勤務シフトの作成は予防規程の保安管理事項にはあたらない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「容器のラベルの色」について、容器のラベルの色は運搬基準等で扱う事項であって、予防規程に盛り込む内容ではないから誤りである。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p363/index.html"
     },
     {
@@ -6562,14 +6562,14 @@ const PRACTICE_QUESTIONS = {
       "text": "保安距離の対象となる考え方として近いものはどれか。",
       "opts": [
         "周囲の保安対象物との安全上必要な距離",
-        "試験会場までの距離",
-        "危険物取扱者の通勤距離",
+        "指定数量を超えた量との差",
+        "危険物取扱者の最低人数",
         "容器の色の違い",
-        "販売店までの距離"
+        "完成検査までの日数"
       ],
       "ans": 0,
       "exp": "保安距離は、周囲の保安対象物との安全上必要な距離に関係する。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>保安距離は、周囲の保安対象物との安全上必要な距離に関係する。保有空地と区別する。保安距離は周囲対象物との距離。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「試験会場までの距離」について、試験会場までの距離ではない。保安距離は周囲の保安対象物との距離であり、試験会場までの距離ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「危険物取扱者の通勤距離」について、通勤距離ではない。取扱者の通勤距離と保安距離は別である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「容器の色の違い」について、容器色ではない。容器の色と保安距離は無関係である。正答肢の記述と照合して確認する。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「販売店までの距離」について、販売店までの距離ではない。販売店までの距離と保安距離は別である。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>保安距離は、周囲の保安対象物との安全上必要な距離に関係する。保有空地と区別する。保安距離は周囲対象物との距離。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「指定数量を超えた量との差」について、保安距離は周囲の保安対象物との距離であって、指定数量を超えた量との差を表すものではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「危険物取扱者の最低人数」について、保安距離は距離に関する規制であり、危険物取扱者の最低人数を定めるものではないから誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「容器の色の違い」について、保安距離は周囲の保安対象物との距離を意味し、容器の色の違いとは全く関係しない事項である。容器の色と保安距離は無関係である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「完成検査までの日数」について、保安距離は保安対象物との距離であって、完成検査までの日数とは無関係な概念であるから誤りである。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p365/index.html"
     },
     {
@@ -6579,15 +6579,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "保有空地を確保する目的として正しいものはどれか。",
       "opts": [
-        "受験者を並ばせるため。",
-        "販売価格を表示するため。",
+        "取扱者を待機させるため。",
+        "指定数量を表示するため。",
         "延焼防止や消火活動のため。",
-        "免状を保管するため。",
+        "危険物の容器を保管するため。",
         "危険物を廃棄するため。"
       ],
       "ans": 2,
       "exp": "保有空地は、延焼防止や消火活動のために施設周囲に確保する空地である。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>保有空地は、延焼防止や消火活動のために施設周囲に確保する空地である。空き地なら何でもよいわけではない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「受験者を並ばせるため」について、受験者用ではない。空き地なら何でもよいわけではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「販売価格を表示するため」について、価格表示用ではない。空き地なら何でもよいわけではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「免状を保管するため」について、免状保管用ではない。空き地なら何でもよいわけではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「危険物を廃棄するため」について、廃棄場所ではない。空き地なら何でもよいわけではない。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>保有空地は、延焼防止や消火活動のために施設周囲に確保する空地である。空き地なら何でもよいわけではない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「取扱者を待機させるため」について、保有空地は延焼防止や消火活動のために確保するものであり、取扱者を待機させる場所ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「指定数量を表示するため」について、保有空地は空地の確保を目的とするものであって、指定数量を表示するために設けるものではない。指定数量は危険物の数量基準である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「危険物の容器を保管するため」について、保有空地は物を置かない空地で容器の保管場所ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「危険物を廃棄するため」について、保有空地は消火活動等のために確保する空地で、危険物を廃棄するための場所ではないから誤りである。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p366/index.html"
     },
     {
@@ -6618,12 +6618,12 @@ const PRACTICE_QUESTIONS = {
         "危険物の性質に応じて混載が制限される場合がある。",
         "すべて自由に混載できる。",
         "第4類では常に無関係である。",
-        "混載制限は免状番号だけで決まる。",
-        "混載制限は販売価格だけで決まる。"
+        "混載制限は容器の大きさだけで決まる。",
+        "混載制限は指定数量の倍数だけで決まる。"
       ],
       "ans": 0,
       "exp": "危険物の運搬では、危険物の性質に応じて混載が制限される場合がある。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>危険物の運搬では、危険物の性質に応じて混載が制限される場合がある。運搬では混載制限に注意。性質を無視して混載しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「すべて自由に混載できる」について、自由とは限らない。危険物運搬の要件として誤った理解である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「第4類では常に無関係である」について、第4類でも関係し得る。危険物運搬の要件として誤った理解である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「混載制限は免状番号だけで決まる」について、免状番号では決まらない。危険物運搬の要件として誤った理解である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「混載制限は販売価格だけで決まる」について、販売価格では決まらない。危険物運搬の要件として誤った理解である。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>危険物の運搬では、危険物の性質に応じて混載が制限される場合がある。運搬では混載制限に注意。性質を無視して混載しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「すべて自由に混載できる」について、類が異なる危険物の組合せによっては混載が制限される場合があり、すべて自由ではないから誤りである。危険物運搬の要件として誤った理解である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「第4類では常に無関係である」について、第4類も他の類との組合せによって混載制限の対象となる場合があり、常に無関係とはいえない。危険物運搬の要件として誤った理解である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「混載制限は容器の大きさだけで決まる」について、混載制限は危険物の類の組合せによって決まるものであり、容器の大きさだけで決まるのではない。危険物運搬の要件として誤った理解である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「混載制限は指定数量の倍数だけで決まる」について、混載制限は危険物の類の組合せで決まるものであって、指定数量の倍数だけで決まるものではない。危険物運搬の要件として誤った理解である。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p368/index.html"
     },
     {
@@ -6670,14 +6670,14 @@ const PRACTICE_QUESTIONS = {
       "text": "燃焼の成立に必要な要素として、正しい組合せはどれか。",
       "opts": [
         "水・二酸化炭素・窒素",
-        "販売価格・広告・容器色",
-        "指定数量・保有空地・受験票",
-        "消火器・標識・免状",
+        "可燃物・水・不活性ガス",
+        "酸素供給源・冷却・希釈",
+        "点火源・除去・窒息",
         "可燃物・酸素供給源・点火源"
       ],
       "ans": 4,
       "exp": "燃焼には、可燃物、酸素供給源、点火源が必要である。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>燃焼には、可燃物、酸素供給源、点火源が必要である。燃焼の三要素を押さえる。消火の考え方と関連づける。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「水・二酸化炭素・窒素」について、消火や不活性ガスの要素である。可燃物・酸素供給源・点火源がそろった組合せではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「販売価格・広告・容器色」について、燃焼の三要素ではない。可燃物・酸素供給源・点火源がそろった組合せではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「指定数量・保有空地・受験票」について、法令や試験の語である。可燃物・酸素供給源・点火源がそろった組合せではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「消火器・標識・免状」について、燃焼の三要素ではない。可燃物・酸素供給源・点火源がそろった組合せではない。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>燃焼には、可燃物、酸素供給源、点火源が必要である。燃焼の三要素を押さえる。消火の考え方と関連づける。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「水・二酸化炭素・窒素」について、水や二酸化炭素や窒素は消火に用いられるものであり、燃焼の成立に必要な三要素ではない。可燃物・酸素供給源・点火源がそろった組合せではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「可燃物・水・不活性ガス」について、水や不活性ガスは燃焼を抑える側のものであって、燃焼の成立に必要な三要素には含まれない。可燃物・酸素供給源・点火源がそろった組合せではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「酸素供給源・冷却・希釈」について、冷却や希釈は燃焼を止めるための消火方法であって、燃焼の成立に必要な要素そのものではない。可燃物・酸素供給源・点火源がそろった組合せではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「点火源・除去・窒息」について、除去や窒息は燃焼を断つための消火方法の名称であり、燃焼の成立に必要な三要素ではない。可燃物・酸素供給源・点火源がそろった組合せではない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p371/index.html"
     },
     {
@@ -7047,15 +7047,15 @@ const PRACTICE_QUESTIONS = {
       "field": "limit",
       "text": "粉末消火剤の説明として、正しいものはどれか。",
       "opts": [
-        "酸素を大量に供給するために使う。",
-        "火花を発生させるために使う。",
+        "粉末消火剤は、もっぱら冷却作用だけで消火する。",
+        "粉末消火剤は、電気火災には使用できない。",
         "燃焼反応の抑制などにより消火に用いられる。",
-        "危険物を販売するために使う。",
-        "指定数量を変更するために使う。"
+        "粉末消火剤は、水と反応させて発熱させるために使う。",
+        "粉末消火剤は、油火災には使用できない。"
       ],
       "ans": 2,
       "exp": "粉末消火剤は、燃焼反応の抑制などにより消火に用いられる。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>粉末消火剤は、燃焼反応の抑制などにより消火に用いられる。粉末消火剤は第4類火災で重要。消火剤の作用を整理する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「酸素を大量に供給するために使う」について、酸素供給が目的ではない。酸素供給は燃焼を助けるため、消火効果とは逆である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「火花を発生させるために使う」について、火花発生用ではない。火花は着火源となり得るが、粉末消火剤の消火効果ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「危険物を販売するために使う」について、販売用ではない。消火剤の作用を整理する。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「指定数量を変更するために使う」について、指定数量は変えない。消火剤は指定数量を変えるものではない。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>粉末消火剤は、燃焼反応の抑制などにより消火に用いられる。粉末消火剤は第4類火災で重要。消火剤の作用を整理する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「粉末消火剤は、もっぱら冷却作用だけで消火する」について、粉末消火剤は抑制作用などで消火する。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「粉末消火剤は、電気火災には使用できない」について、電気火災にも使用できる。消火剤の作用を整理する。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「粉末消火剤は、水と反応させて発熱させるために使う」について、発熱させる目的の薬剤ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「粉末消火剤は、油火災には使用できない」について、油火災にも有効である。消火剤の作用を整理する。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p392/index.html"
     },
     {
@@ -7318,14 +7318,14 @@ const PRACTICE_QUESTIONS = {
       "text": "製造所等の設置許可が施設側の制度である理由として、最も適切なものはどれか。",
       "opts": [
         "危険物を扱う施設の位置・構造・設備等を規制するため。",
-        "取扱者の年齢だけを確認するため。",
-        "試験問題を採点するため。",
-        "危険物の販売価格を決めるため。",
-        "免状の写真を撮るため。"
+        "取扱者の人数だけを確認するため。",
+        "危険物の引火点を測定するため。",
+        "保安講習の日程を決めるため。",
+        "予防規程を作成するため。"
       ],
       "ans": 0,
       "exp": "製造所等の設置許可は、危険物を扱う施設の位置・構造・設備等が基準に適合するかを確認する施設側の制度である。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>製造所等の設置許可は、危険物を扱う施設の位置・構造・設備等が基準に適合するかを確認する施設側の制度である。免状制度と区別する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「取扱者の年齢だけを確認するため」について、年齢確認だけではない。設置許可は施設の位置・構造・設備の適合を確認する制度であり、年齢確認だけが目的ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「試験問題を採点するため」について、試験採点ではない。設置許可は施設に関する行政手続きであり、試験採点とは無関係である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「危険物の販売価格を決めるため」について、販売価格ではない。設置許可は施設に関する手続きであり、危険物の販売価格を決める制度ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「免状の写真を撮るため」について、免状写真ではない。設置許可と取扱者免状の手続きは別である。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>製造所等の設置許可は、危険物を扱う施設の位置・構造・設備等が基準に適合するかを確認する施設側の制度である。免状制度と区別する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「取扱者の人数だけを確認するため」について、設置許可は施設の位置や構造や設備を規制するものであり、取扱者の人数だけを確認するものではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「危険物の引火点を測定するため」について、設置許可は施設の基準を規制する制度であって、危険物の引火点を測定するためのものではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「保安講習の日程を決めるため」について、設置許可は施設側の規制制度であって、保安講習の日程を決めることとは関係しないから誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「予防規程を作成するため」について、設置許可は施設基準を審査するものであって、予防規程の作成そのものを目的とするものではない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p407/index.html"
     },
     {
@@ -7336,14 +7336,14 @@ const PRACTICE_QUESTIONS = {
       "text": "完成検査前検査と完成検査の関係について、正しいものはどれか。",
       "opts": [
         "一定の設備では、完成検査の前に完成検査前検査が問題となる場合がある。",
-        "どちらも指定数量を自由に変える。",
-        "完成検査前検査は危険物取扱者試験の予備試験である。",
-        "どちらも危険物の味を確認する。",
+        "どちらも市町村長等の許可を新たに受ける手続きである。",
+        "完成検査前検査は施設の使用を開始した後に行う検査である。",
+        "どちらも危険物の引火点を測定する。",
         "完成検査前検査を受ければ完成検査は常に不要である。"
       ],
       "ans": 0,
       "exp": "一定の液体危険物タンクなどでは、完成検査の前に完成検査前検査が問題となる場合がある。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>一定の液体危険物タンクなどでは、完成検査の前に完成検査前検査が問題となる場合がある。完成検査前検査は一定設備で完成検査前に問題になる。名称が似た検査を整理する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「どちらも指定数量を自由に変える」について、指定数量は変えない。原則として完成検査後に使用する必要がある。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「完成検査前検査は危険物取扱者試験の予備試験である」について、試験の予備試験ではない。完成検査は施設が法令基準に適合するか確認する検査である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「どちらも危険物の味を確認する」について、味は確認しない。完成検査前検査はタンク等の設備確認に関係する。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「完成検査前検査を受ければ完成検査は常に不要である」について、常に不要とは限らない。設置・変更後には完成検査が必要となる場合がある。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>一定の液体危険物タンクなどでは、完成検査の前に完成検査前検査が問題となる場合がある。完成検査前検査は一定設備で完成検査前に問題になる。名称が似た検査を整理する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「どちらも市町村長等の許可を新たに受ける手続きである」について、両者は検査であって新たな許可を受ける手続きではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「完成検査前検査は施設の使用を開始した後に行う検査である」について、完成検査前検査は工事の途中で行う検査で使用開始後ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「どちらも危険物の引火点を測定する」について、両検査は施設が基準に適合しているかを確認するものであり、危険物の引火点を測定するものではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「完成検査前検査を受ければ完成検査は常に不要である」について、完成検査前検査を受けても、完成検査はこれとは別に受ける必要があるから常に不要とはいえない。設置・変更後には完成検査が必要となる場合がある。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p408/index.html"
     },
     {
@@ -7371,15 +7371,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "危険物保安統括管理者と関係が深いものはどれか。",
       "opts": [
-        "免状写真の撮影",
-        "試験会場の座席割り",
+        "危険物取扱者試験の実施",
+        "危険物の運搬容器の製造",
         "事業所全体の危険物保安業務の統括",
-        "危険物の販売価格だけの決定",
-        "危険物の味見"
+        "危険物の小売販売の専従",
+        "消火器の定期的な詰め替え作業"
       ],
       "ans": 2,
       "exp": "危険物保安統括管理者は、一定の事業所における危険物保安業務を統括する役割である。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>危険物保安統括管理者は、一定の事業所における危険物保安業務を統括する役割である。保安統括管理者は事業所全体の保安管理。保安監督者と役割を区別する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「免状写真の撮影」について、免状写真ではない。保安監督者と役割を区別する。正答肢の記述と照合して確認する。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「試験会場の座席割り」について、試験会場運営ではない。保安監督者と役割を区別する。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「危険物の販売価格だけの決定」について、販売価格だけではない。保安監督者と役割を区別する。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「危険物の味見」について、味見してはならない。保安監督者と役割を区別する。正答肢の記述と照合して確認する。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>危険物保安統括管理者は、一定の事業所における危険物保安業務を統括する役割である。保安統括管理者は事業所全体の保安管理。保安監督者と役割を区別する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「危険物取扱者試験の実施」について、試験実施は消防試験研究センターの業務で統括管理者の職務ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「危険物の運搬容器の製造」について、運搬容器の製造は施設の保安統括業務とは無関係である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「危険物の小売販売の専従」について、統括管理者は事業所全体の保安を統括する者で小売専従ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「消火器の定期的な詰め替え作業」について、消火器の詰め替え作業は統括管理者の職務内容ではない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p410/index.html"
     },
     {
@@ -7407,15 +7407,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "予防規程の作成が求められる趣旨として、適切なものはどれか。",
       "opts": [
-        "販売価格を統一するため。",
-        "受験票を印刷するため。",
-        "免状写真を管理するため。",
-        "指定数量をなくすため。",
+        "指定数量を引き下げるため。",
+        "危険物の運搬経路を秘匿するため。",
+        "取扱者の免状を更新するため。",
+        "消防機関への届出を不要にするため。",
         "火災予防と保安管理を組織的に行うため。"
       ],
       "ans": 4,
       "exp": "予防規程は、危険物施設における火災予防と保安管理を組織的に行うための規程である。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>予防規程は、危険物施設における火災予防と保安管理を組織的に行うための規程である。予防規程は火災予防・保安管理のルール。事務的な価格表と混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「販売価格を統一するため」について、販売価格ではない。予防規程は施設の保安管理に関する規程である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「受験票を印刷するため」について、受験票ではない。試験制度とは無関係である。正答肢の記述と照合して確認する。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「免状写真を管理するため」について、免状写真ではない。免状交付手続きとは無関係であり、施設の保安管理規程である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「指定数量をなくすため」について、指定数量はなくならない。指定数量は法令上の基準であり、予防規程でなくなるわけではない。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>予防規程は、危険物施設における火災予防と保安管理を組織的に行うための規程である。予防規程は火災予防・保安管理のルール。事務的な手続と混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「指定数量を引き下げるため」について、予防規程は自主保安のルールで指定数量の引き下げが目的ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「危険物の運搬経路を秘匿するため」について、予防規程は組織的な保安管理が目的で運搬経路の秘匿ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「取扱者の免状を更新するため」について、免状更新は予防規程ではなく写真書換えの手続である。免状交付手続きとは無関係であり、施設の保安管理規程である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「消防機関への届出を不要にするため」について、予防規程の作成は届出義務を免除する制度ではない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p412/index.html"
     },
     {
@@ -7426,14 +7426,14 @@ const PRACTICE_QUESTIONS = {
       "text": "保安検査と保安講習の違いとして、正しいものはどれか。",
       "opts": [
         "保安検査は施設、保安講習は取扱者の教育に関係する。",
-        "どちらも指定数量をなくす制度である。",
-        "どちらも販売価格を決める制度である。",
-        "どちらも同じ試験科目名である。",
-        "どちらも危険物の味を確認する制度である。"
+        "どちらも市町村長等の許可を要する制度である。",
+        "どちらも危険物の運搬を許可する制度である。",
+        "どちらも消防団員の任命に関する制度である。",
+        "どちらも危険物の廃棄方法を定める制度である。"
       ],
       "ans": 0,
       "exp": "保安検査は施設の安全性確認、保安講習は危険物取扱者の保安教育に関係する制度である。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>保安検査は施設の安全性確認、保安講習は危険物取扱者の保安教育に関係する制度である。選択肢（1）「保安検査は施設、保安講習は取扱者の教育に関係する」は、違いとして適切である。保安という語だけで同一視しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「どちらも指定数量をなくす制度である」について、指定数量はなくならない。いずれも指定数量をなくす制度ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「どちらも販売価格を決める制度である」について、販売価格ではない。保安検査は施設・設備の点検、保安講習は安全教育であり、販売価格とは無関係である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「どちらも同じ試験科目名である」について、試験科目名ではない。試験科目名ではなく、保安検査と保安講習は別の制度である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「どちらも危険物の味を確認する制度である」について、味を確認しない。危険物の官能確認を行う制度ではない。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>保安検査は施設の安全性確認、保安講習は危険物取扱者の保安教育に関係する制度である。選択肢（1）「保安検査は施設、保安講習は取扱者の教育に関係する」は、違いとして適切である。保安という語だけで同一視しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「どちらも市町村長等の許可を要する制度である」について、保安検査と保安講習は許可制度ではなく検査と教育の制度である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「どちらも危険物の運搬を許可する制度である」について、両者とも運搬の許可を与える制度ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「どちらも消防団員の任命に関する制度である」について、保安講習は取扱者教育であり消防団員の任命とは無関係である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「どちらも危険物の廃棄方法を定める制度である」について、両制度とも危険物の廃棄方法を定めるものではない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p413/index.html"
     },
     {
@@ -7461,15 +7461,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "危険物施設の消火設備を考える際に重要な観点はどれか。",
       "opts": [
-        "免状番号で選ぶこと。",
+        "取扱者の人数だけで選ぶこと。",
         "容器の色だけで選ぶこと。",
         "危険物の性質や施設の規模に応じた設備を選ぶこと。",
-        "販売価格だけで選ぶこと。",
-        "受験者数で選ぶこと。"
+        "設置費用の安さだけで選ぶこと。",
+        "近隣の住宅戸数だけで選ぶこと。"
       ],
       "ans": 2,
       "exp": "消火設備は、危険物の性質や施設の規模などに応じて考える必要がある。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>消火設備は、危険物の性質や施設の規模などに応じて考える必要がある。水だけでよいとは限らない。重要な観点である。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「免状番号で選ぶこと」について、免状番号ではない。消火設備は火災時の消火のための設備である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「容器の色だけで選ぶこと」について、容器色だけではない。水だけでよいとは限らない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「販売価格だけで選ぶこと」について、価格だけではない。水だけでよいとは限らない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「受験者数で選ぶこと」について、受験者数ではない。水だけでよいとは限らない。正答肢の記述と照合して確認する。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>消火設備は、危険物の性質や施設の規模などに応じて考える必要がある。水だけでよいとは限らない。重要な観点である。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「取扱者の人数だけで選ぶこと」について、消火設備は危険物の性質や規模で選ぶもので人数だけではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「容器の色だけで選ぶこと」について、容器の色は消火設備の選定基準とは関係しない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「設置費用の安さだけで選ぶこと」について、費用の安さのみで選ぶのは適切な消火設備の選定とはいえない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「近隣の住宅戸数だけで選ぶこと」について、近隣の住宅戸数だけで消火設備を選ぶ考え方は適切でない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p415/index.html"
     },
     {
@@ -7497,15 +7497,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "移動タンク貯蔵所の代表例として、最も近いものはどれか。",
       "opts": [
-        "試験会場の机",
+        "屋外の固定式タンク",
         "タンクローリー",
         "屋内の保管棚",
-        "免状の保管ケース",
+        "地中に埋設した配管",
         "地下室の書庫"
       ],
       "ans": 1,
       "exp": "移動タンク貯蔵所は、車両に固定されたタンクで危険物を移送する施設であり、タンクローリーが代表的なイメージである。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>移動タンク貯蔵所は、車両に固定されたタンクで危険物を移送する施設であり、タンクローリーが代表的なイメージである。選択肢（2）「タンクローリー」は、代表例として適切である。移送取扱所と混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「試験会場の机」について、試験会場備品である。本問が問う移動タンク貯蔵所の代表例は移動タンク貯蔵所などであり、試験会場備品であるは該当しない。移動タンク貯蔵所は貯蔵所の一種である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「屋内の保管棚」について、屋内貯蔵所のイメージである。本問が問う移動タンク貯蔵所の代表例は移動タンク貯蔵所などであり、屋内貯蔵所のイメージであるは該当しない。屋内貯蔵所は建物内で貯蔵する施設である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「免状の保管ケース」について、免状保管具である。本問が問う移動タンク貯蔵所の代表例は移動タンク貯蔵所などであり、免状保管具であるは該当しない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「地下室の書庫」について、危険物施設の説明ではない。本問が問う移動タンク貯蔵所の代表例は移動タンク貯蔵所などであり、危険物施設の説明では該当しない。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>移動タンク貯蔵所は、車両に固定されたタンクで危険物を移送する施設であり、タンクローリーが代表的なイメージである。選択肢（2）「タンクローリー」は、代表例として適切である。移送取扱所と混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「屋外の固定式タンク」について、固定式の屋外タンクは移動タンク貯蔵所ではなく屋外タンク貯蔵所である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「屋内の保管棚」について、屋内の保管棚は移動タンク貯蔵所には該当しない。本問が問う移動タンク貯蔵所の代表例は移動タンク貯蔵所などであり、屋内の保管棚は該当しない。屋内貯蔵所は建物内で貯蔵する施設である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「地中に埋設した配管」について、埋設配管は移送取扱所等に関わり移動タンク貯蔵所ではない。本問が問う移動タンク貯蔵所の代表例は移動タンク貯蔵所などであり、埋設配管は該当しない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「地下室の書庫」について、地下室の書庫は危険物の移動タンク貯蔵所に該当しない。本問が問う移動タンク貯蔵所の代表例は移動タンク貯蔵所などであり、地下室の書庫は該当しない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p417/index.html"
     },
     {
@@ -7515,15 +7515,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "給油取扱所に該当する施設として最も近いものはどれか。",
       "opts": [
-        "免状交付窓口",
+        "灯油を量り売りする店舗だけ",
         "消火器販売店だけ",
         "ガソリンスタンド",
-        "危険物取扱者試験会場",
+        "危険物を一時的に集める集積所",
         "地下タンクだけを製造する工場"
       ],
       "ans": 2,
       "exp": "給油取扱所の代表的なイメージはガソリンスタンドである。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>給油取扱所の代表的なイメージはガソリンスタンドである。販売取扱所と区別する。選択肢（3）「ガソリンスタンド」は、給油取扱所である。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「免状交付窓口」について、免状交付窓口ではない。給油取扱所はガソリンスタンドのイメージ。免状交付窓口ではない。給油取扱所は危険物を給油する取扱所である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「消火器販売店だけ」について、販売取扱所とは別である。給油取扱所はガソリンスタンドのイメージ。販売取扱所とは別である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「危険物取扱者試験会場」について、試験会場ではない。給油取扱所はガソリンスタンドのイメージ。試験会場ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「地下タンクだけを製造する工場」について、製造所等の別論点である。給油取扱所はガソリンスタンドのイメージ。製造所等の別論点である。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>給油取扱所の代表的なイメージはガソリンスタンドである。販売取扱所と区別する。選択肢（3）「ガソリンスタンド」は、給油取扱所である。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「灯油を量り売りする店舗だけ」について、容器入りで量り売りする店は販売取扱所であり給油取扱所ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「消火器販売店だけ」について、消火器販売店は給油取扱所には該当しない。給油取扱所はガソリンスタンドのイメージ。消火器販売店は給油取扱所には該当しない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「危険物を一時的に集める集積所」について、危険物の集積所は給油取扱所ではない。給油取扱所はガソリンスタンドのイメージ。危険物の集積所は給油取扱所ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「地下タンクだけを製造する工場」について、地下タンク製造工場は給油を行う給油取扱所ではない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p418/index.html"
     },
     {
@@ -7911,15 +7911,15 @@ const PRACTICE_QUESTIONS = {
       "field": "limit",
       "text": "特殊引火物の指定数量が小さい理由として、最も近い考え方はどれか。",
       "opts": [
-        "免状が不要だから。",
+        "常温で固体だから。",
         "不燃性だから。",
         "引火危険が高いため。",
-        "販売価格が高いから。",
+        "水と激しく反応するから。",
         "水に必ず沈むから。"
       ],
       "ans": 2,
       "exp": "特殊引火物は引火危険が特に高いため、指定数量が50 Lと小さい。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>特殊引火物は引火危険が特に高いため、指定数量が50 Lと小さい。選択肢（3）「引火危険が高いため」は、危険性が高い。指定数量の大小と危険性を関連づける。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「免状が不要だから」について、免状制度とは別である。指定数量の大小と免状制度の要否は別の問題である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「不燃性だから」について、不燃性ではない。特殊引火物は引火危険が高いため、指定数量が小さい。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「販売価格が高いから」について、販売価格ではない。指定数量は数量基準であり、販売価格とは無関係である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「水に必ず沈むから」について、水への浮沈ではない。指定数量の大小は引火危険の程度に関係し、浮沈とは直接無関係である。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>特殊引火物は引火危険が特に高いため、指定数量が50 Lと小さい。選択肢（3）「引火危険が高いため」は、危険性が高い。指定数量の大小と危険性を関連づける。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「常温で固体だから」について、特殊引火物は常温で液体であり固体だからではない。特殊引火物は危険性が高く指定数量が小さい。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「不燃性だから」について、特殊引火物は引火性が高く不燃性ではない。特殊引火物は引火危険が高いため、指定数量が小さい。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「水と激しく反応するから」について、指定数量が小さいのは引火危険ゆえで水との反応性が理由ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「水に必ず沈むから」について、多くは水に浮き必ず沈むわけではなく沈むことが理由ではない。指定数量の大小は引火危険の程度に関係し、浮沈とは直接無関係である。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p440/index.html"
     },
     {
@@ -8110,14 +8110,14 @@ const PRACTICE_QUESTIONS = {
       "text": "指定数量倍数の考え方として、正しいものはどれか。",
       "opts": [
         "指定数量を貯蔵量で割って求める。",
-        "消火器本数を受験者数で割って求める。",
+        "指定数量に貯蔵量を掛けて求める。",
         "貯蔵・取扱数量を指定数量で割って求める。",
-        "販売価格を数量で割って求める。",
-        "免状番号を指定数量で割って求める。"
+        "指定数量から貯蔵量を引いて求める。",
+        "貯蔵量を保有空地の面積で割って求める。"
       ],
       "ans": 2,
       "exp": "指定数量倍数は、危険物の数量をその危険物の指定数量で割って求める。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>指定数量倍数は、危険物の数量をその危険物の指定数量で割って求める。分母・分子を逆にしない。選択肢（3）「貯蔵・取扱数量を指定数量で割って求める」は、数量÷指定数量である。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「指定数量を貯蔵量で割って求める」について、分母と分子が逆である。倍数は数量÷指定数量であり、分母と分子を逆にしない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「消火器本数を受験者数で割って求める」について、消火器本数や受験者数は関係ない。指定数量倍数は危険物の数量基準であり、消火器や受験者数とは無関係である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「販売価格を数量で割って求める」について、販売価格は関係ない。指定数量倍数は数量の基準であり、販売価格とは無関係である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「免状番号を指定数量で割って求める」について、免状番号は関係ない。指定数量倍数は数量の基準であり、免状番号とは無関係である。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>指定数量倍数は、危険物の数量をその危険物の指定数量で割って求める。分母・分子を逆にしない。選択肢（3）「貯蔵・取扱数量を指定数量で割って求める」は、数量÷指定数量である。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「指定数量を貯蔵量で割って求める」について、倍数は貯蔵量を指定数量で割るもので割る順序が逆である。政令で定める指定数量の値として誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「指定数量に貯蔵量を掛けて求める」について、倍数は割り算で求めるもので掛け算ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「指定数量から貯蔵量を引いて求める」について、倍数は除算で求めるもので引き算ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「貯蔵量を保有空地の面積で割って求める」について、倍数の計算に保有空地の面積は用いない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p451/index.html"
     },
     {
@@ -8181,15 +8181,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "製造所等の設置許可について、施設側の論点として正しいものはどれか。",
       "opts": [
-        "免状番号の語呂だけが問題となる。",
-        "受験料の支払いだけが問題となる。",
-        "危険物取扱者の顔写真だけが問題となる。",
-        "販売価格の高低だけが問題となる。",
+        "危険物取扱者の人数だけが問題となる。",
+        "貯蔵する危険物の販売先だけが問題となる。",
+        "敷地の購入価格だけが問題となる。",
+        "周辺住民の同意だけが問題となる。",
         "位置・構造・設備などが基準に適合するかが問題となる。"
       ],
       "ans": 4,
       "exp": "設置許可では、施設の位置・構造・設備などが法令基準に適合するかが問題となる。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>設置許可では、施設の位置・構造・設備などが法令基準に適合するかが問題となる。設置許可は施設側の制度。人の資格制度と混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「免状番号の語呂だけが問題となる」について、免状番号の語呂ではない。施設の設置許可と取扱者免状は別の制度である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「受験料の支払いだけが問題となる」について、受験料とは関係ない。設置許可は施設に関する行政手続きであり、試験受験料とは無関係である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「危険物取扱者の顔写真だけが問題となる」について、免状写真だけではない。設置許可と取扱者免状の手続きは別である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「販売価格の高低だけが問題となる」について、販売価格ではない。設置許可は施設に関する手続きであり、危険物の販売価格を決める制度ではない。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>設置許可では、施設の位置・構造・設備などが法令基準に適合するかが問題となる。設置許可は施設側の制度。人の資格制度と混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「危険物取扱者の人数だけが問題となる」について、設置許可は位置構造設備の基準適合が中心で人数だけではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「貯蔵する危険物の販売先だけが問題となる」について、危険物の販売先は設置許可の審査対象ではない。設置許可は施設に関する手続きであり、危険物の販売価格を決める制度ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「敷地の購入価格だけが問題となる」について、敷地の購入価格は設置許可の判断基準ではない。設置許可は施設に関する手続きであり、危険物の販売価格を決める制度ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「周辺住民の同意だけが問題となる」について、設置許可は技術基準の適合審査であり住民同意だけではない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p455/index.html"
     },
     {
@@ -8271,15 +8271,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "定期点検と最も関係が深いものはどれか。",
       "opts": [
-        "危険物の味の確認",
-        "危険物の販売価格の決定",
-        "免状写真の更新",
-        "受験票の印刷",
+        "危険物の取扱者の人事評価",
+        "危険物の出荷数量の集計",
+        "取扱者の免状の書換え",
+        "消防職員の人事異動",
         "施設の維持管理状態の確認"
       ],
       "ans": 4,
       "exp": "定期点検は、危険物施設の維持管理状態を確認するために行う。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>定期点検は、危険物施設の維持管理状態を確認するために行う。定期点検は維持管理確認。完成検査との違いを整理する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「危険物の味の確認」について、味を確認しない。定期点検は施設の維持管理状態を確認するための点検である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「危険物の販売価格の決定」について、販売価格ではない。販売価格決定とは無関係である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「免状写真の更新」について、免状写真ではない。免状交付手続きとは無関係である。完成検査との違いを整理する。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「受験票の印刷」について、受験票ではない。試験制度とは無関係である。完成検査との違いを整理する。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>定期点検は、危険物施設の維持管理状態を確認するために行う。定期点検は維持管理確認。完成検査との違いを整理する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「危険物の取扱者の人事評価」について、定期点検は施設の維持管理確認で人事評価とは無関係である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「危険物の出荷数量の集計」について、出荷数量の集計は定期点検の目的ではない。定期点検は維持管理確認。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「取扱者の免状の書換え」について、免状の書換えは定期点検とは別個の手続である。定期点検は維持管理確認。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「消防職員の人事異動」について、消防職員の人事異動は定期点検と関係しない。定期点検は維持管理確認。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p460/index.html"
     },
     {
@@ -8307,15 +8307,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "保安距離が必要となる考え方として、最も適切なものはどれか。",
       "opts": [
-        "免状の再交付を簡単にするため。",
+        "危険物の運搬を速くするため。",
         "火災・爆発時の周囲への影響を小さくするため。",
-        "危険物の味を確認するため。",
-        "受験者の移動距離を短くするため。",
-        "危険物の販売価格を高くするため。"
+        "危険物の貯蔵量を増やすため。",
+        "取扱者の通勤を便利にするため。",
+        "消火設備を不要にするため。"
       ],
       "ans": 1,
       "exp": "保安距離は、危険物施設で火災・爆発が起きた場合に周囲への影響を小さくするための基準である。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>保安距離は、危険物施設で火災・爆発が起きた場合に周囲への影響を小さくするための基準である。保安距離は周囲への影響抑制。保有空地と区別する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「免状の再交付を簡単にするため」について、免状手続きではない。保有空地と区別する。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「危険物の味を確認するため」について、味を確認しない。危険物の性質確認は試験や官能検査では行わない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「受験者の移動距離を短くするため」について、試験運営ではない。保安距離は周囲の保安対象物との距離であり、試験会場までの距離ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「危険物の販売価格を高くするため」について、販売価格ではない。販売店までの距離と保安距離は別である。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>保安距離は、危険物施設で火災・爆発が起きた場合に周囲への影響を小さくするための基準である。保安距離は周囲への影響抑制。保有空地と区別する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「危険物の運搬を速くするため」について、保安距離は周囲への被害軽減のためで運搬の迅速化ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「危険物の貯蔵量を増やすため」について、保安距離は安全確保のためで貯蔵量を増やす目的ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「取扱者の通勤を便利にするため」について、保安距離は防災上の距離であり通勤の利便とは無関係である。取扱者の通勤距離と保安距離は別である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「消火設備を不要にするため」について、保安距離を確保しても消火設備が不要になるわけではない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p462/index.html"
     },
     {
@@ -8325,15 +8325,15 @@ const PRACTICE_QUESTIONS = {
       "field": "law",
       "text": "保有空地の説明として、正しいものはどれか。",
       "opts": [
-        "危険物を捨てるための空地である。",
+        "危険物を一時的に貯蔵する空地である。",
         "施設周囲に確保する空地で、延焼防止や消火活動に関係する。",
-        "販売価格を表示する欄である。",
-        "受験者の休憩場所である。",
-        "免状を保管する棚である。"
+        "立入検査を行うための空地である。",
+        "運搬車両を駐車させる空地である。",
+        "消火用水だけを溜める空地である。"
       ],
       "ans": 1,
       "exp": "保有空地は、危険物施設の周囲に確保する空地で、延焼防止や消火活動に関係する。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>保有空地は、危険物施設の周囲に確保する空地で、延焼防止や消火活動に関係する。保有空地は施設周囲の空地。保安距離と混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「危険物を捨てるための空地である」について、廃棄場所ではない。保安距離と混同しない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「販売価格を表示する欄である」について、価格表示欄ではない。保安距離と混同しない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「受験者の休憩場所である」について、休憩場所ではない。保安距離と混同しない。正答肢の記述と照合して確認する。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「免状を保管する棚である」について、免状保管棚ではない。保安距離と混同しない。正答肢の記述と照合して確認する。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>保有空地は、危険物施設の周囲に確保する空地で、延焼防止や消火活動に関係する。保有空地は施設周囲の空地。保安距離と混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「危険物を一時的に貯蔵する空地である」について、保有空地は何も置かない空地であり貯蔵用の空地ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「立入検査を行うための空地である」について、保有空地は延焼防止や消火活動のための空地で検査専用ではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「運搬車両を駐車させる空地である」について、保有空地は障害物を置かない空地で駐車のためではない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「消火用水だけを溜める空地である」について、保有空地は消火活動用の空地で消火用水の貯水槽ではない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p463/index.html"
     },
     {
@@ -8578,14 +8578,14 @@ const PRACTICE_QUESTIONS = {
       "text": "氷が水に変わるときに出入りする熱として、関係が深いものはどれか。",
       "opts": [
         "指定数量",
-        "蒸気比重",
+        "沸点",
         "pH",
         "潜熱",
-        "免状番号"
+        "引火点"
       ],
       "ans": 3,
       "exp": "融解などの状態変化に伴って出入りする熱は潜熱である。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>融解などの状態変化に伴って出入りする熱は潜熱である。潜熱は状態変化に関係する。温度変化として現れにくい熱。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「指定数量」について、危険物の基準数量である。状態変化に伴う熱は潜熱の概念であり、指定数量とは無関係である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「蒸気比重」について、蒸気の重さの比である。融解に関わるのは潜熱であり、蒸気比重とは別の物理量である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「pH」について、酸性・アルカリ性の指標である。pHは水溶液の概念であり、融解に関する熱とは別である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「免状番号」について、資格証の番号である。氷の融解に関わる熱量の話であり、免状交付制度とは無関係である。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>融解などの状態変化に伴って出入りする熱は潜熱である。潜熱は状態変化に関係する。温度変化として現れにくい熱。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「指定数量」について、指定数量は法令上の量であり状態変化の熱とは無関係である。状態変化に伴う熱は潜熱の概念であり、指定数量とは無関係である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「沸点」について、沸点は液体が沸騰する温度で融解時の潜熱とは別概念である。潜熱は状態変化に関係する。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「pH」について、酸性・アルカリ性の指標である。pHは水溶液の概念であり、融解に関する熱とは別である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「引火点」について、引火点は引火に必要な温度であり潜熱とは関係しない。潜熱は状態変化に関係する。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p477/index.html"
     },
     {
@@ -8993,13 +8993,13 @@ const PRACTICE_QUESTIONS = {
       "opts": [
         "設置許可・完成検査・定期点検",
         "元素・化合物・混合物",
-        "免状写真・受験票・座席番号",
+        "消防計画・避難訓練・防火管理者",
         "水溶性・pH・濃度",
-        "販売価格・広告文・会社名"
+        "運搬容器・積載方法・標識表示"
       ],
       "ans": 0,
       "exp": "設置許可、完成検査、定期点検はいずれも施設の安全確保に関係する。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>設置許可、完成検査、定期点検はいずれも施設の安全確保に関係する。施設制度をまとめて整理する。人の資格制度と混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「元素・化合物・混合物」について、物質構成の語である。元素・化合物・混合物は化学分野の物質構成に関する語である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「免状写真・受験票・座席番号」について、試験や免状事務である。免状交付や試験運営の事務用語であり、施設の安全確保制度とは別である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「水溶性・pH・濃度」について、化学分野の語である。水溶性・pH・濃度は性質・消火分野の化学的概念である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「販売価格・広告文・会社名」について、販売面の語である。販売価格や広告文は取引・営業面の語であり、施設の安全確保とは無関係である。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>設置許可、完成検査、定期点検はいずれも施設の安全確保に関係する。施設制度をまとめて整理する。人の資格制度と混同しない。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「元素・化合物・混合物」について、物質構成の語である。元素・化合物・混合物は化学分野の物質構成に関する語である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「消防計画・避難訓練・防火管理者」について、これらは消防法の防火管理に属し危険物施設の安全確保とは別である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「水溶性・pH・濃度」について、化学分野の語である。水溶性・pH・濃度は性質・消火分野の化学的概念である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「運搬容器・積載方法・標識表示」について、運搬に関する事項であり施設の安全確保の組合せではない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p500/index.html"
     }
   ],
