@@ -4,3 +4,8 @@ public_site/
 visual-smoke/
 __pycache__/
 *.pyc
+
+# build/run logs (do not commit)
+_*.log
+_command_outputs.txt
+*.log
