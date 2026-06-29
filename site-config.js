@@ -155,7 +155,7 @@ window.SITE_CONFIG = {
     "priceLabel": "¥590"
   },
   "coursePromo": {
-    "url": "https://onsuku.jp/training/otu4?a8=MISVmIytjWpCKupI2Uf3uapuoPPNfsoVSUf.yszQv.BtjsSw6sc02WKMT-Pbcbof2._WQXS72ISVGs00000018694001",
+    "url": "https://px.a8.net/svt/ejp?a8mat=4B3TF0+DUXECI+408S+BW0YB&a8ejpredirect=https%3A%2F%2Fonsuku.jp%2Ftraining%2Fotu4",
     "modeTitle": "オンスク.JP 危険物乙4オンライン通信講座",
     "modePurpose": "スマホで演習356問・動画講義を回したい",
     "priceLabel": "無料体験あり",
