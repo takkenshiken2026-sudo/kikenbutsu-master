@@ -1688,6 +1688,7 @@ body.is-solving .site-footer{display:none!important}
         <div class="ichi-score-label" id="ichi-score-label"></div>
         <div id="ichi-score-goal-wrap" class="score-goal-wrap"></div>
         <div class="ichi-score-btns">
+          <button class="btn-primary" id="ichi-retry-wrong-btn" onclick="retryWrongIchi()" style="font-size:15px;padding:13px" hidden>間違えた問題を復習</button>
           <button class="btn-primary" onclick="continueIchiSession()" style="font-size:15px;padding:13px">続けて解く</button>
           <button class="btn-ghost" onclick="startIchimondou()" style="font-size:15px;padding:13px">分野・出題数を変える</button>
           <button class="btn-ghost" onclick="shareIchiResultToX()" style="font-size:15px;padding:13px">Xに投稿する</button>
@@ -1750,6 +1751,7 @@ body.is-solving .site-footer{display:none!important}
         </details>
         <div id="score-goal-wrap" class="score-goal-wrap"></div>
         <div class="score-btns">
+          <button class="btn-primary" id="score-retry-wrong-btn" onclick="retryWrongQuestions()" hidden>間違えた問題を復習</button>
           <button class="btn-primary" id="score-continue-btn" onclick="continueSession()">続けて解く</button>
           <button class="btn-ghost"   onclick="gotoPage('quiz-start')">他の問題を解く</button>
           <button class="btn-ghost" onclick="shareSessionResultToX()">Xに投稿する</button>
@@ -3273,7 +3275,8 @@ let ichiState = {
   fieldFilter: null,
   active: false,
   count: 10,
-  total: 0
+  total: 0,
+  wrong: []
 };
 
 function selIchiCount(n) {
@@ -3605,6 +3608,7 @@ function beginIchimondouSession() {
   ichiState.answered = false;
   ichiState.fieldFilter = fieldFilter;
   ichiState.total = ichiState.count > 0 ? Math.min(ichiState.count, pool.length) : 0;
+  ichiState.wrong = [];
   ichiState.active = true;
   syncIchiPageVisibility();
   document.body.classList.add('is-solving');
@@ -3805,6 +3809,7 @@ function answerIchi(userAnswer) {
   const correct = userAnswer === q.correctAnswer;
   ichiState.attempts++;
   if (correct) ichiState.score++;
+  else { (ichiState.wrong = ichiState.wrong || []).push(q); }
   const baseQ = getBaseQuestionById(q.id);
   const elapsed = ichiState.qStarted ? (Date.now() - ichiState.qStarted) / 1000 : 0;
   const pickedIdx = baseQ
@@ -3887,6 +3892,25 @@ function continueIchiSession() {
   beginIchimondouSession();
 }
 
+/** 一問一答で直前に間違えた問題だけを再出題する */
+function retryWrongIchi() {
+  const wrong = (ichiState.wrong || []).slice();
+  if (!wrong.length) return;
+  gotoPage('ichimondou');
+  ichiState.sourcePool = wrong.slice();
+  ichiState.questions = wrong.slice();
+  ichiState.idx = 0;
+  ichiState.score = 0;
+  ichiState.attempts = 0;
+  ichiState.answered = false;
+  ichiState.total = wrong.length;
+  ichiState.wrong = [];
+  ichiState.active = true;
+  syncIchiPageVisibility();
+  document.body.classList.add('is-solving');
+  showIchiQuestion();
+}
+
 function showIchiScore() {
   ichiState.active = false;
   syncIchiMobileLayout();
@@ -3909,6 +3933,12 @@ function showIchiScore() {
   }
   gotoPage('ichimondou-score');
   renderScoreGoal('ichi-score-goal-wrap');
+  const ichiRetryBtn = document.getElementById('ichi-retry-wrong-btn');
+  if (ichiRetryBtn) {
+    const wrongN = (ichiState.wrong || []).length;
+    ichiRetryBtn.hidden = wrongN <= 0;
+    if (wrongN > 0) ichiRetryBtn.textContent = `間違えた${wrongN}問を復習`;
+  }
   document.getElementById('ichi-score-num').textContent = s;
   const denom = document.getElementById('ichi-score-denom');
   if (denom) denom.textContent = '/ ' + att + '問中';
@@ -5834,6 +5864,20 @@ function continueSession(){
   else { gotoPage('quiz-start'); }
 }
 
+/** 直前セッションで間違えた問題だけを再出題する */
+function retryWrongQuestions(){
+  const wrong=(quizState.sessionResults||[]).filter(r=>!r.correct).map(r=>r.q).filter(Boolean);
+  if(!wrong.length) return;
+  syncMissionPopupBaseline();
+  showNextBtn(false, null);
+  quizState.queue=shuffleArray(wrong.slice());
+  quizState.idx=0;
+  quizState.sessionResults=[];
+  quizState.scoreReplayMode=false;
+  gotoPage('quiz');
+  renderQ();
+}
+
 function showScore(){
   const res=quizState.sessionResults, correct=res.filter(r=>r.correct).length;
   const pct=Math.round(correct/res.length*100);
@@ -5858,6 +5902,12 @@ function showScore(){
   if(contBtn){
     const cnt=quizState.mode==='orig'?origState.count:quizState.count;
     contBtn.textContent=cnt>0?`続けて${cnt}問解く`:'続けて解く';
+  }
+  const retryBtn=document.getElementById('score-retry-wrong-btn');
+  if(retryBtn){
+    const wrongN=res.length-correct;
+    retryBtn.hidden=wrongN<=0;
+    if(wrongN>0) retryBtn.textContent=`間違えた${wrongN}問を復習`;
   }
   // Session-end message
   const fb = getSessionFeedback(pct, res.length, res, u);
