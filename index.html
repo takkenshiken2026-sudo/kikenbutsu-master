@@ -626,6 +626,7 @@ details.rich-detail summary{display:none}
 .score-ring-pct{font-size:var(--fs-score-hero);font-weight:700;font-family:var(--mono);letter-spacing:-1px;line-height:1}
 .score-ring-sub{font-size:var(--fs-caption);color:var(--text3);margin-top:2px;letter-spacing:.04em}
 .score-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:18px}
+.score-detail-grid:empty{display:none}
 .score-detail-grid--single{grid-template-columns:1fr;max-width:280px}
 .score-detail-card{background:var(--bg3);border-radius:var(--r);padding:12px 14px;border:1px solid var(--border)}
 .score-detail-label{font-size:var(--fs-caption);color:var(--text3);margin-bottom:3px;text-transform:uppercase;letter-spacing:.06em;font-weight:600}
@@ -5880,8 +5881,8 @@ function showScore(){
     <div class="score-ring-label"><div class="score-ring-pct" style="color:${color}">${pct}%</div><div class="score-ring-sub">正答率</div></div></div>`;
   const det=document.getElementById('score-details');
   if(det){
-    det.className='score-detail-grid score-detail-grid--single';
-    det.innerHTML=`<div class="score-detail-card"><div class="score-detail-label">正解数</div><div class="score-detail-val" style="color:var(--green)">${correct}/${res.length}</div></div>`;
+    det.className='score-detail-grid';
+    det.innerHTML='';
   }
   // Show newly earned badges
   const earnedEl=document.getElementById('score-badges-earned');
