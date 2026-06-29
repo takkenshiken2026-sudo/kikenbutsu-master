@@ -648,6 +648,11 @@ details.rich-detail summary{display:none}
 .score-q-text{flex:1;color:var(--text2)}
 .score-q-time{font-family:var(--mono);font-size:var(--fs-sub);color:var(--text3)}
 .score-btns{display:flex;gap:9px;flex-wrap:wrap}
+.score-goal-wrap:empty{display:none}
+.score-goal-wrap{margin-bottom:12px}
+.score-goal{background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:10px 14px;font-size:13px;color:var(--text);line-height:1.6;text-align:center}
+.score-goal strong{color:var(--red);font-size:15px}
+.score-goal--done{background:var(--grn-s);border-color:var(--grn-b);color:var(--green)}
 .score-paid-mock-wrap{margin-top:24px;padding-top:20px;border-top:1px solid var(--border)}
 .score-paid-mock-lead{font-size:var(--fs-sub);color:var(--text);margin-bottom:14px;line-height:1.65;font-weight:500}
 .score-paid-mock-lead strong{color:var(--text);font-weight:700}
@@ -1622,6 +1627,7 @@ body.is-solving .site-footer{display:none!important}
             <button class="count-btn"    onclick="selIchiCount(5)"  id="icb5">5問ずつ</button>
             <button class="count-btn on" onclick="selIchiCount(10)" id="icb10">10問ずつ</button>
             <button class="count-btn"    onclick="selIchiCount(30)" id="icb30">30問ずつ</button>
+            <button class="count-btn"    onclick="selIchiCount(0)"  id="icb0">とことん</button>
           </div>
         </div>
         <h2 class="section-label">分野を選ぶ</h2>
@@ -1679,8 +1685,10 @@ body.is-solving .site-footer{display:none!important}
           <span>正答率<strong id="ichi-score-pct">—</strong></span>
         </div>
         <div class="ichi-score-label" id="ichi-score-label"></div>
+        <div id="ichi-score-goal-wrap" class="score-goal-wrap"></div>
         <div class="ichi-score-btns">
-          <button class="btn-primary" onclick="startIchimondou()" style="font-size:15px;padding:13px">もう1回</button>
+          <button class="btn-primary" onclick="continueIchiSession()" style="font-size:15px;padding:13px">続けて解く</button>
+          <button class="btn-ghost" onclick="startIchimondou()" style="font-size:15px;padding:13px">分野・出題数を変える</button>
           <button class="btn-ghost" onclick="shareIchiResultToX()" style="font-size:15px;padding:13px">Xに投稿する</button>
           <button class="btn-ghost" onclick="gotoPage('quiz-start')" style="font-size:15px;padding:13px">他の問題を解く</button>
         </div>
@@ -1739,10 +1747,11 @@ body.is-solving .site-footer{display:none!important}
           </summary>
           <div class="score-q-list" id="score-q-list"></div>
         </details>
+        <div id="score-goal-wrap" class="score-goal-wrap"></div>
         <div class="score-btns">
-          <button class="btn-ghost" onclick="shareSessionResultToX()">Xに投稿する</button>
+          <button class="btn-primary" id="score-continue-btn" onclick="continueSession()">続けて解く</button>
           <button class="btn-ghost"   onclick="gotoPage('quiz-start')">他の問題を解く</button>
-          <button class="btn-primary" onclick="beginQuiz()">もう1セット</button>
+          <button class="btn-ghost" onclick="shareSessionResultToX()">Xに投稿する</button>
         </div>
         <div id="score-paid-mock-wrap" class="score-paid-mock-wrap" hidden></div>
         <div id="score-course-wrap" class="score-course-wrap" hidden></div>
@@ -3268,7 +3277,7 @@ let ichiState = {
 
 function selIchiCount(n) {
   ichiState.count = n;
-  [5, 10, 30].forEach(v => { const el = document.getElementById('icb' + v); if (el) el.classList.toggle('on', v === n); });
+  [5, 10, 30, 0].forEach(v => { const el = document.getElementById('icb' + v); if (el) el.classList.toggle('on', v === n); });
 }
 
 function selectIchiField(el) {
@@ -3554,8 +3563,10 @@ function ensureIchiQuestionAt(idx) {
 
 function updateIchiSessionHud() {
   const n = ichiState.idx + 1;
-  const total = ichiState.total > 0 ? ichiState.total : Math.max(ichiState.sourcePool.length, 1);
-  document.getElementById('ichi-prog-label').textContent = '第 ' + n + ' / ' + total + ' 問';
+  const endless = ichiState.total <= 0;
+  document.getElementById('ichi-prog-label').textContent = endless
+    ? '第 ' + n + ' 問'
+    : '第 ' + n + ' / ' + ichiState.total + ' 問';
   const att = ichiState.attempts;
   const el = document.getElementById('ichi-rate');
   if (el) {
@@ -3565,8 +3576,14 @@ function updateIchiSessionHud() {
   }
   const fill = document.getElementById('ichi-prog-fill');
   if (fill) {
-    const done = Math.min(ichiState.idx + (ichiState.answered ? 1 : 0), total);
-    fill.style.width = (done / total * 100) + '%';
+    if (endless) {
+      const poolLen = Math.max(ichiState.sourcePool.length, 1);
+      const cycle = ((ichiState.idx % poolLen) + poolLen) % poolLen;
+      fill.style.width = (cycle / poolLen * 100) + '%';
+    } else {
+      const done = Math.min(ichiState.idx + (ichiState.answered ? 1 : 0), ichiState.total);
+      fill.style.width = (done / ichiState.total * 100) + '%';
+    }
   }
 }
 
@@ -3586,7 +3603,7 @@ function beginIchimondouSession() {
   ichiState.attempts = 0;
   ichiState.answered = false;
   ichiState.fieldFilter = fieldFilter;
-  ichiState.total = ichiState.count > 0 ? Math.min(ichiState.count, pool.length) : pool.length;
+  ichiState.total = ichiState.count > 0 ? Math.min(ichiState.count, pool.length) : 0;
   ichiState.active = true;
   syncIchiPageVisibility();
   document.body.classList.add('is-solving');
@@ -3863,6 +3880,12 @@ function endIchimondouSession() {
   showIchiScore();
 }
 
+/** 一問一答の結果から、同じ分野・出題数で続けて出題する（設定に戻らない） */
+function continueIchiSession() {
+  gotoPage('ichimondou');
+  beginIchimondouSession();
+}
+
 function showIchiScore() {
   ichiState.active = false;
   syncIchiMobileLayout();
@@ -3884,6 +3907,7 @@ function showIchiScore() {
     checkMissionAllComplete();
   }
   gotoPage('ichimondou-score');
+  renderScoreGoal('ichi-score-goal-wrap');
   document.getElementById('ichi-score-num').textContent = s;
   const denom = document.getElementById('ichi-score-denom');
   if (denom) denom.textContent = '/ ' + att + '問中';
@@ -5778,6 +5802,37 @@ function interruptQuiz(){
   showScore();
 }
 
+/** 今日の「N問解こう」ミッションを起点に、本日の解答数と残り問題数を返す */
+function getTodaySolveGoal(u){
+  if(!u) return null;
+  const solved=getEffectiveDailyAnsweredCount(u, localDateKey());
+  let target=10;
+  try{
+    const m=getTodayMissions().find(x=>x&&x.type==='solve'&&x.target);
+    if(m) target=m.target;
+  }catch(e){}
+  return {solved,target,remaining:Math.max(0,target-solved),done:solved>=target};
+}
+
+/** 結果画面に「今日の目標まであと◯問」を表示（継続を促す） */
+function renderScoreGoal(wrapId){
+  const wrap=document.getElementById(wrapId);
+  if(!wrap) return;
+  const u=getUserData();
+  const g=u?getTodaySolveGoal(u):null;
+  if(!g){ wrap.innerHTML=''; return; }
+  wrap.innerHTML = g.done
+    ? `<div class="score-goal score-goal--done">🎉 今日の目標 ${g.target}問 達成！この調子でもう少し解こう</div>`
+    : `<div class="score-goal">今日 ${g.solved}/${g.target}問 ・ あと <strong>${g.remaining}問</strong> で今日の目標達成🔥</div>`;
+}
+
+/** 結果画面から、同じ条件で新しい問題を続けて出題する（設定画面に戻らない） */
+function continueSession(){
+  if(quizState.mode==='orig'){ beginOrigQuiz(); }
+  else if(quizState.mode==='past'){ beginQuiz(); }
+  else { gotoPage('quiz-start'); }
+}
+
 function showScore(){
   const res=quizState.sessionResults, correct=res.filter(r=>r.correct).length;
   const pct=Math.round(correct/res.length*100);
@@ -5797,6 +5852,12 @@ function showScore(){
     return;
   }
   gotoPage('score');
+  renderScoreGoal('score-goal-wrap');
+  const contBtn=document.getElementById('score-continue-btn');
+  if(contBtn){
+    const cnt=quizState.mode==='orig'?origState.count:quizState.count;
+    contBtn.textContent=cnt>0?`続けて${cnt}問解く`:'続けて解く';
+  }
   // Session-end message
   const fb = getSessionFeedback(pct, res.length, res, u);
   const msgEl = document.getElementById('score-session-msg');
