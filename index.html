@@ -498,12 +498,12 @@ h2.section-label .tip-icon{width:13px;height:13px;font-size:9px}
 .exp-box .q-exp{margin:0}
 .exp-box .q-exp-section{margin-top:14px;padding-top:12px;border-top:1px solid var(--border2)}
 .exp-box .q-exp-section:first-of-type{margin-top:0;padding-top:0;border-top:none}
-.exp-box .q-exp-section[aria-labelledby="q-exp-correct-h"]{margin-top:0;padding:12px 14px;border:1px solid var(--red-b);border-radius:var(--r);background:var(--red-s)}
-.exp-correct .q-exp-section[aria-labelledby="q-exp-correct-h"]{border-color:var(--grn-b);background:var(--grn-s)}
+.exp-box .q-exp-section[aria-labelledby="q-exp-correct-h"]{margin-top:0;padding:12px 14px;border:1px solid rgba(192,57,43,0.45);border-radius:var(--r);background:#f8d4d4}
+.exp-correct .q-exp-section[aria-labelledby="q-exp-correct-h"]{border-color:rgba(26,122,64,0.45);background:#d8f0e2}
 .exp-box .q-exp-h3{font-size:var(--fs-sub);font-weight:700;margin:0 0 8px;color:var(--ink)}
 .exp-box .q-exp-section p{margin:0 0 8px;line-height:1.75;color:var(--text)}
 .exp-box .q-exp-choice-list{list-style:none;margin:0;padding:0;display:grid;gap:8px}
-.exp-box .q-exp-choice-item{padding:10px 12px;border:1px solid var(--border2);border-radius:var(--r);background:var(--bg2);line-height:1.7}
+.exp-box .q-exp-choice-item{padding:10px 12px;border:1px solid var(--border2);border-radius:var(--r);background:#fff;line-height:1.7}
 .exp-box .q-exp-choice-num{font-weight:700;margin-right:4px;color:var(--ink)}
 .exp-box .q-exp-choice-note{margin:0;color:var(--text)}
 .exp-time{font-size:14px;color:var(--text3);font-family:var(--mono)}
@@ -1613,9 +1613,20 @@ body.is-solving .site-footer{display:none!important}
         </ol>
       </nav>
       <div id="ichi-config" class="ichi-config">
-        <p class="ichi-config-lead">分野を選んで「開始」してください。記述が正しいときは○、誤りのときは×で答えます。</p>
+        <p class="ichi-config-lead">分野と出題数を選んで「開始」してください。記述が正しいときは○、誤りのときは×で答えます。</p>
+        <div class="orig-bottom-bar" style="margin-top:0;margin-bottom:16px;padding-top:0;border-top:none;border-bottom:1px solid var(--border);padding-bottom:16px">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px">
+            <h2 class="section-label" style="margin-bottom:0">出題数</h2>
+            <button type="button" class="btn-primary ichi-start-btn" onclick="beginIchimondouSession()">開始</button>
+          </div>
+          <div class="count-btns">
+            <button class="count-btn"    onclick="selIchiCount(5)"  id="icb5">5問ずつ</button>
+            <button class="count-btn on" onclick="selIchiCount(10)" id="icb10">10問ずつ</button>
+            <button class="count-btn"    onclick="selIchiCount(30)" id="icb30">30問ずつ</button>
+          </div>
+        </div>
+        <h2 class="section-label">分野を選ぶ</h2>
         <div class="field-chips" id="ichi-field-chips"></div>
-        <button type="button" class="btn-primary ichi-start-btn" onclick="beginIchimondouSession()">開始</button>
       </div>
       <div id="ichi-play-wrap" class="ichi-play-wrap" style="display:none">
       <div class="ichi-prog-wrap">
@@ -3254,8 +3265,15 @@ let ichiState = {
   attempts: 0,
   answered: false,
   fieldFilter: null,
-  active: false
+  active: false,
+  count: 10,
+  total: 0
 };
+
+function selIchiCount(n) {
+  ichiState.count = n;
+  [5, 10, 30].forEach(v => { const el = document.getElementById('icb' + v); if (el) el.classList.toggle('on', v === n); });
+}
 
 function selectIchiField(el) {
   el.parentElement.querySelectorAll('.chip').forEach(c => c.classList.remove('on'));
@@ -3540,7 +3558,8 @@ function ensureIchiQuestionAt(idx) {
 
 function updateIchiSessionHud() {
   const n = ichiState.idx + 1;
-  document.getElementById('ichi-prog-label').textContent = '第 ' + n + ' 問';
+  const total = ichiState.total > 0 ? ichiState.total : Math.max(ichiState.sourcePool.length, 1);
+  document.getElementById('ichi-prog-label').textContent = '第 ' + n + ' / ' + total + ' 問';
   const att = ichiState.attempts;
   const el = document.getElementById('ichi-rate');
   if (el) {
@@ -3548,11 +3567,10 @@ function updateIchiSessionHud() {
       ? '正答率 ' + Math.round((100 * ichiState.score) / att) + '%（' + ichiState.score + '/' + att + '）'
       : '正答率 —';
   }
-  const poolLen = Math.max(ichiState.sourcePool.length, 1);
   const fill = document.getElementById('ichi-prog-fill');
   if (fill) {
-    const cycle = ((ichiState.idx % poolLen) + poolLen) % poolLen;
-    fill.style.width = (cycle / poolLen * 100) + '%';
+    const done = Math.min(ichiState.idx + (ichiState.answered ? 1 : 0), total);
+    fill.style.width = (done / total * 100) + '%';
   }
 }
 
@@ -3572,6 +3590,7 @@ function beginIchimondouSession() {
   ichiState.attempts = 0;
   ichiState.answered = false;
   ichiState.fieldFilter = fieldFilter;
+  ichiState.total = ichiState.count > 0 ? Math.min(ichiState.count, pool.length) : pool.length;
   ichiState.active = true;
   syncIchiPageVisibility();
   document.body.classList.add('is-solving');
@@ -3834,6 +3853,10 @@ function answerIchi(userAnswer) {
 
 function nextIchi() {
   ichiState.idx++;
+  if (ichiState.total > 0 && ichiState.idx >= ichiState.total) {
+    showIchiScore();
+    return;
+  }
   window.scrollTo({ top: 0, behavior: 'instant' });
   showIchiQuestion();
 }
