@@ -1617,10 +1617,7 @@ body.is-solving .site-footer{display:none!important}
       <div id="ichi-config" class="ichi-config">
         <p class="ichi-config-lead">分野と出題数を選んで「開始」してください。記述が正しいときは○、誤りのときは×で答えます。</p>
         <div class="orig-bottom-bar" style="margin-top:0;margin-bottom:16px;padding-top:0;border-top:none;border-bottom:1px solid var(--border);padding-bottom:16px">
-          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px">
-            <h2 class="section-label" style="margin-bottom:0">出題数</h2>
-            <button type="button" class="btn-primary" onclick="beginIchimondouSession()">開始</button>
-          </div>
+          <h2 class="section-label" style="margin-bottom:12px">出題数</h2>
           <div class="count-btns">
             <button class="count-btn"    onclick="selIchiCount(5)"  id="icb5">5問ずつ</button>
             <button class="count-btn on" onclick="selIchiCount(10)" id="icb10">10問ずつ</button>
@@ -1629,6 +1626,7 @@ body.is-solving .site-footer{display:none!important}
         </div>
         <h2 class="section-label">分野を選ぶ</h2>
         <div class="field-chips" id="ichi-field-chips"></div>
+        <button type="button" class="btn-primary ichi-start-btn" onclick="beginIchimondouSession()" style="margin-top:18px">開始</button>
       </div>
       <div id="ichi-play-wrap" class="ichi-play-wrap" style="display:none">
       <div class="ichi-prog-wrap">
@@ -1839,10 +1837,7 @@ body.is-solving .site-footer{display:none!important}
       <div class="page-sub">分野を選んで学習スタート</div>
 
       <div class="orig-bottom-bar" style="margin-top:0;margin-bottom:16px;padding-top:0;border-top:none;border-bottom:1px solid var(--border);padding-bottom:16px">
-        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px">
-          <h2 class="section-label" style="margin-bottom:0">出題数</h2>
-          <button class="btn-primary" onclick="beginQuiz()">スタート</button>
-        </div>
+        <h2 class="section-label" style="margin-bottom:12px">出題数</h2>
         <div class="count-btns">
           <button class="count-btn"    onclick="selCount(5)"  id="cb5">5問</button>
           <button class="count-btn on" onclick="selCount(10)" id="cb10">10問</button>
@@ -1855,10 +1850,11 @@ body.is-solving .site-footer{display:none!important}
       <div class="field-chips" id="field-chips"></div>
 
       <h2 class="section-label">出題順</h2>
-      <div class="count-btns count-btns--stack-mobile" style="margin-bottom:22px">
+      <div class="count-btns count-btns--stack-mobile" style="margin-bottom:18px">
         <button class="count-btn"    id="order-seq" onclick="selOrder('seq')">最初から解く</button>
         <button class="count-btn on" id="order-rnd" onclick="selOrder('rnd')">ランダムに解く</button>
       </div>
+      <button class="btn-primary" onclick="beginQuiz()" style="width:100%">スタート</button>
 
       <div style="font-size:12px;color:var(--text3);background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:8px 12px;margin-top:16px;line-height:1.65">
         ※ 掲載問題は、公式過去問そのものではなく、著作権上の配慮と最新法令への対応のため問題文・選択肢を編集した「過去問形式」の演習問題です。試験本番の原文・合格基準・試験日程などは<a href="https://www.fdma.go.jp/" target="_blank" rel="noopener" style="color:var(--text2);text-decoration:underline">消防庁（公式）</a>等の公式情報を、法令・通達の原文は<a href="https://www.mlit.go.jp/" target="_blank" rel="noopener" style="color:var(--text2);text-decoration:underline">国土交通省</a>等のウェブサイトをご確認ください。
@@ -1878,10 +1874,7 @@ body.is-solving .site-footer{display:none!important}
       <div class="page-sub">分野を選び、過去問と同じ形式で演習できます。出題順は毎回ランダムです。</div>
 
       <div class="orig-bottom-bar" style="margin-top:0;margin-bottom:16px;padding-top:0;border-top:none;border-bottom:1px solid var(--border);padding-bottom:16px">
-        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px">
-          <h2 class="section-label" style="margin-bottom:0">出題数</h2>
-          <button class="btn-primary" onclick="beginOrigQuiz()">スタート</button>
-        </div>
+        <h2 class="section-label" style="margin-bottom:12px">出題数</h2>
         <div class="count-btns">
           <button class="count-btn"    onclick="selOrigCount(5)"  id="ocb5">5問</button>
           <button class="count-btn on" onclick="selOrigCount(10)" id="ocb10">10問</button>
@@ -1893,6 +1886,7 @@ body.is-solving .site-footer{display:none!important}
 
       <h2 class="section-label">分野を選ぶ</h2>
       <div class="field-chips" id="orig-field-chips"></div>
+      <button class="btn-primary" onclick="beginOrigQuiz()" style="width:100%;margin-top:18px">スタート</button>
 
     </div>
 
