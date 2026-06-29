@@ -89,6 +89,12 @@ def exam_schedule_filter_script() -> str:
   var allRows=Array.prototype.slice.call(tbody.rows);
   var activeRegion="";
   var activeOptionIndex=-1;
+  var TODAY_ISO=(function(){
+    var d=new Date();
+    var m=d.getMonth()+1;
+    var day=d.getDate();
+    return d.getFullYear()+"-"+(m<10?"0"+m:m)+"-"+(day<10?"0"+day:day);
+  })();
   function norm(s){return (s||"").toLowerCase();}
   function getPref(){return prefValue.value||"";}
   function optionLabel(opt){return (opt.textContent||"").trim();}
@@ -143,6 +149,8 @@ def exam_schedule_filter_script() -> str:
     apply();
   }
   function rowMatches(row){
+    var iso=row.getAttribute("data-exam-iso")||"";
+    if(iso&&iso<TODAY_ISO){return false;}
     var pref=getPref();
     if(pref&&row.getAttribute("data-prefecture")!==pref){return false;}
     if(activeRegion&&row.getAttribute("data-region-block")!==activeRegion){return false;}
