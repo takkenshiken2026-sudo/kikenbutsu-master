@@ -133,7 +133,7 @@ def load_o4_legal(term: str) -> list[str]:
 def build_brief(term: str) -> dict[str, object]:
     practice = load_practice_hits(term)
     ichimon = load_ichimon_hits(term)
-    past = find_past_questions_for_term(term, limit=5, require_term_in_text=True)
+    past = find_past_questions_for_term(term, limit=5)
     legal = load_o4_legal(term)
 
     exam_points: list[str] = []
