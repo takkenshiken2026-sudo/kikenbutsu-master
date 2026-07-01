@@ -13,6 +13,10 @@ def parse_related_link_token(item: str) -> tuple[str, str]:
     if not text:
         return "", ""
     if re.match(r"https?://", text, re.I):
+        # 外部 URL は「URL|ラベル」でアンカー文言を指定可（primary_sources と同じ区切り）
+        if "|" in text:
+            target, label = text.split("|", 1)
+            return target.strip(), label.strip()
         return text, text
     if ":" in text:
         target, label = text.split(":", 1)

@@ -40,6 +40,7 @@ REWRITES: dict[str, dict[str, str]] = {
                 "exam-eligibility:受験資格を確認する",
                 "subject-breakdown:出題科目の内訳",
                 "study-plan:学習計画を立てる",
+                "https://shikaku-master.jp/c/c-5206.html|危険物取扱者の試験情報（資格マスター）",
             ]
         ),
         "revision_note": "2026-06-18: 入口ハブとして全体像中心に再執筆（重複回避）",
