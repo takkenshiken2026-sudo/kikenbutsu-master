@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>危険物乙4 直前3日 総まとめ＆当日チェック｜乙4マスター</title>
+<style>
+  :root{
+    --accent:#c0392b; --ink:#1a1a1a; --muted:#5b6167; --line:#d9dce0;
+    --bg:#f4f4f5; --surface:#ffffff; --hide:#d61f26;
+    --law:#c0392b; --chem:#2c5a97; --fire:#b5791a; --day:#4a7a44;
+  }
+  *{box-sizing:border-box} html,body{margin:0;padding:0}
+  body{font-family:"Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",sans-serif;
+    color:var(--ink);background:var(--bg);line-height:1.6;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .wrap{max-width:840px;margin:0 auto;padding:0 16px 64px}
+
+  .toolbar{position:sticky;top:0;z-index:20;background:var(--surface);border-bottom:1px solid var(--line);
+    padding:10px 16px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+  .toolbar b{color:var(--accent)}
+  .btn{appearance:none;border:1px solid var(--accent);background:var(--accent);color:#fff;font-weight:700;
+    font-size:14px;padding:8px 14px;border-radius:8px;cursor:pointer}
+  .btn.ghost{background:#fff;color:var(--accent)}
+  .toolbar .hint{color:var(--muted);font-size:12.5px}
+
+  header.cover{background:linear-gradient(135deg,#b23227,#8f241b);color:#fff;border-radius:14px;padding:30px 28px;margin:22px 0 10px}
+  header.cover .kicker{font-size:13px;letter-spacing:.14em;opacity:.9;margin:0 0 8px}
+  header.cover h1{font-size:25px;margin:0 0 10px;line-height:1.4}
+  header.cover p{margin:0;font-size:14px;opacity:.95}
+  header.cover .badge{display:inline-block;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.4);
+    border-radius:999px;padding:4px 12px;font-size:12px;font-weight:700;margin-top:14px}
+
+  section{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin:16px 0}
+  .sec-head{display:flex;align-items:baseline;gap:10px;margin:0 0 6px;border-bottom:2px solid var(--accent);padding-bottom:8px}
+  .sec-no{background:var(--accent);color:#fff;font-weight:800;font-size:13px;border-radius:6px;padding:2px 9px;flex:none}
+  .sec-head h2{font-size:18px;margin:0}
+  .lead{color:var(--muted);font-size:13.5px;margin:8px 0 14px}
+
+  /* 3日プラン タイムライン */
+  .plan{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+  @media(max-width:620px){.plan{grid-template-columns:1fr 1fr}}
+  .day{border:1px solid var(--line);border-radius:10px;padding:12px;background:#f7faf6}
+  .day h3{margin:0 0 6px;font-size:14px;color:var(--day);border-bottom:2px solid var(--day);padding-bottom:4px}
+  .day ul{margin:0;padding-left:16px;font-size:12.5px;line-height:1.55}
+
+  .final{background:#fbeaea;border:1px solid #f0cdcd;border-radius:8px;padding:6px 12px;margin:8px 0;font-size:14px}
+  .final b{color:var(--accent)}
+  .h{color:var(--hide);font-weight:800}
+  body.masked .h{background:var(--hide);color:var(--hide);border-radius:3px}
+  body.masked .h::selection{background:transparent}
+
+  .band{margin:16px 0 6px;font-weight:800;font-size:14px;color:#fff;border-radius:7px;padding:5px 12px;display:inline-block;background:var(--law)}
+  .band.chem{background:var(--chem)} .band.fire{background:var(--fire)}
+
+  ul.check{list-style:none;margin:6px 0 2px;padding:0}
+  ul.check li{position:relative;padding:5px 0 5px 30px;font-size:13.5px;border-bottom:1px dashed #e3e6ea}
+  ul.check li::before{content:"";position:absolute;left:2px;top:7px;width:16px;height:16px;border:2px solid var(--accent);border-radius:4px}
+  ul.check.g li::before{border-color:var(--day)}
+  ul.check b{color:var(--accent)}
+
+  .warn{background:#fff6e5;border-left:4px solid #e0a326;border-radius:0 8px 8px 0;padding:12px 14px;margin:14px 0;font-size:13.5px}
+  .warn b{color:#b5791a}
+  .memo{background:#eef4fb;border-left:4px solid #3f78c2;border-radius:0 8px 8px 0;padding:12px 14px;margin:14px 0;font-size:13.5px}
+  .memo b{color:#2c5a97}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  @media(max-width:620px){.grid2{grid-template-columns:1fr}}
+
+  footer.src{font-size:12px;color:var(--muted);line-height:1.7;margin-top:8px}
+  footer.src h2{font-size:15px;color:var(--ink);margin:0 0 8px}
+  footer.src a{color:#2c5a97}
+  .note{font-size:11.5px;color:var(--muted)}
+
+  @media print{
+    body{background:#fff}.toolbar{display:none}.wrap{max-width:100%;padding:0}
+    section{border:1px solid #ccc;break-inside:avoid}
+    header.cover{break-after:avoid}
+    a{color:inherit;text-decoration:none}
+    @page{size:A4;margin:13mm}
+  }
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <b>直前3日 総まとめ＆当日チェック</b>
+  <button class="btn" id="mask">🟥 数字を隠す</button>
+  <button class="btn ghost" onclick="window.print()">🖨 印刷 / PDF保存</button>
+  <span class="hint">印刷して□にチェック。赤字の数字は隠して最終確認できます。</span>
+</div>
+
+<div class="wrap">
+
+<header class="cover">
+  <p class="kicker">危険物取扱者試験（乙種第4類）</p>
+  <h1>直前3日 総まとめ＆当日チェック<br><span style="font-size:16px;font-weight:500;opacity:.95">— 最後の3日で、詰めと段取りを一気に —</span></h1>
+  <p>3日前〜当日の行動プラン、絶対落とせない最終確認、直前チェックリスト、持ち物と本番戦術を1冊に。</p>
+  <span class="badge">当日ルール・数値は公式（消防試験研究センター）で確認済み</span>
+</header>
+
+<!-- 1. 3日プラン -->
+<section>
+  <div class="sec-head"><span class="sec-no">1</span><h2>直前3日の過ごし方</h2></div>
+  <p class="lead">新しいことを広げない。既にやった範囲の「取りこぼし」を潰すのが直前期の鉄則。</p>
+  <div class="plan">
+    <div class="day"><h3>3日前</h3><ul>
+      <li>過去問・模試を1回分通しで解く</li>
+      <li>間違えた問題に印</li>
+      <li>苦手科目を特定（足切り対策）</li>
+    </ul></div>
+    <div class="day"><h3>2日前</h3><ul>
+      <li>間違えた問題だけ解き直し</li>
+      <li>数字（指定数量・引火点）を暗記</li>
+      <li>頻出ひっかけを再確認</li>
+    </ul></div>
+    <div class="day"><h3>前日</h3><ul>
+      <li>本冊子の「最終確認」を通読</li>
+      <li>持ち物を準備（下のリスト）</li>
+      <li>会場までの経路・時刻を確認</li>
+      <li>早めに就寝</li>
+    </ul></div>
+    <div class="day"><h3>当日</h3><ul>
+      <li>30分前に会場着</li>
+      <li>直前は「最終確認」だけ見る</li>
+      <li>深呼吸して開始</li>
+    </ul></div>
+  </div>
+  <div class="warn"><b>直前期のNG</b>：新しい参考書に手を出す／徹夜で詰め込む／苦手科目を捨てる。1科目でも60%未満は不合格。</div>
+</section>
+
+<!-- 2. 最終確認（これだけは） -->
+<section>
+  <div class="sec-head"><span class="sec-no">2</span><h2>絶対落とせない最終確認</h2></div>
+  <p class="lead">赤字は暗記対象。上の「数字を隠す」で消して即答できるか確認。</p>
+
+  <span class="band">法令</span>
+  <div class="final"><b>指定数量</b>：特殊引火物<span class="h">50</span>／第一石油類<span class="h">200</span>・<span class="h">400</span>／アルコール類<span class="h">400</span>／第二石油類<span class="h">1,000</span>・<span class="h">2,000</span>／第三石油類<span class="h">2,000</span>・<span class="h">4,000</span>／第四石油類<span class="h">6,000</span>／動植物油類<span class="h">10,000</span>（L）</div>
+  <div class="final"><b>ガソリン200L・灯油/軽油</b><span class="h">1,000L</span>（灯油軽油＝第二石油類。200Lはガソリン）</div>
+  <div class="final"><b>保安距離</b>：住居<span class="h">10</span>／高圧ガス<span class="h">20</span>／学校病院等<span class="h">30</span>／重要文化財<span class="h">50</span>（m）。必要なのは<b>5施設</b>（給油取扱所は不要）</div>
+  <div class="final"><b>定期点検</b>：<span class="h">1年に1回</span>以上・記録は<span class="h">3年</span>保存　／　<b>移動タンク</b>容量<span class="h">30,000L</span>以下</div>
+  <div class="final"><b>手続き</b>：設置・構造変更は<b>許可</b>／予防規程は<b>認可</b>／品名数量倍数の変更は<b>届出</b></div>
+  <div class="final"><b>免状</b>：全国有効。記載変更＝書換え／亡失等＝再交付。保安監督者は<span class="h">6か月</span>実務が必要</div>
+
+  <span class="band chem">物化</span>
+  <div class="final"><b>引火点区分</b>：<span class="h">21</span>・<span class="h">70</span>・<span class="h">200</span>・<span class="h">250</span>℃。ガソリンは<b>第一石油類</b>（特殊引火物ではない）</div>
+  <div class="final"><b>発火点の逆転</b>：ガソリン<span class="h">約300℃</span>＞灯油・軽油<span class="h">約220℃</span>。最低は二硫化炭素<span class="h">約90℃</span></div>
+  <div class="final"><b>比重</b>：多くは水より軽い（例外＝二硫化炭素<span class="h">1.3</span>）。蒸気は<b>空気より重く低所に滞留</b></div>
+  <div class="final"><b>引火点と発火点</b>は別概念（外部火源の有無）。燃焼範囲は<b>広い・下限が低い</b>ほど危険</div>
+  <div class="final"><b>静電気</b>：流速が速いほど帯電。<b>接地（アース）</b>で除去。第4類は電気を通しにくく帯電しやすい</div>
+
+  <span class="band fire">性消</span>
+  <div class="final"><b>第4類の消火</b>：棒状注水は不適（浮いて拡大）。<b>泡・粉末・二酸化炭素・霧状水</b>で窒息消火</div>
+  <div class="final"><b>水溶性液体</b>（アルコール等）には<b>耐アルコール泡</b>。普通泡は消える</div>
+  <div class="final"><b>電気火災</b>＝棒状水NG（感電）。<b>金属火災・禁水性</b>＝水禁止（乾燥砂・粉末）</div>
+  <div class="final"><b>消火設備</b>：消火器は<b>第5種</b>（乾燥砂等も第5種）。消火の3要素＝除去・窒息・冷却</div>
+</section>
+
+<!-- 3. チェックリスト -->
+<section>
+  <div class="sec-head"><span class="sec-no">3</span><h2>直前チェックリスト（即答できる？）</h2></div>
+  <p class="lead">□を1つずつ潰す。すべて即答できれば合格ラインに乗っている。</p>
+  <div class="grid2">
+    <div>
+      <span class="band">法令</span>
+      <ul class="check">
+        <li>灯油・軽油の指定数量を言える（<b>1,000L</b>）</li>
+        <li>保安距離の4数値と5施設を言える</li>
+        <li>許可・認可・届出を区別できる</li>
+        <li>書換えと再交付の違いを言える</li>
+        <li>丙種の取扱範囲・立会い不可を言える</li>
+      </ul>
+    </div>
+    <div>
+      <span class="band chem">物化</span>
+      <ul class="check">
+        <li>引火点と発火点の違いを説明できる</li>
+        <li>発火点の逆転（ガソリン＞灯油）を言える</li>
+        <li>水より重い例外（二硫化炭素）を言える</li>
+        <li>燃焼範囲・下限の危険性を言える</li>
+        <li>静電気の防止（接地・流速）を言える</li>
+      </ul>
+    </div>
+  </div>
+  <span class="band fire">性消</span>
+  <ul class="check">
+    <li>第4類に棒状注水が不適な理由を言える</li>
+    <li>水溶性液体に耐アルコール泡を使う理由を言える</li>
+    <li>金属火災・電気火災の消火剤を言える</li>
+    <li>消火設備の種別（消火器＝第5種）を言える</li>
+  </ul>
+</section>
+
+<!-- 4. 当日 -->
+<section>
+  <div class="sec-head"><span class="sec-no">4</span><h2>当日の持ち物・行動</h2></div>
+  <div class="grid2">
+    <div>
+      <span class="band" style="background:var(--day)">持ち物（□で確認）</span>
+      <ul class="check g">
+        <li><b>写真を貼った受験票</b>（未貼付は受験不可）</li>
+        <li><b>鉛筆またはシャープペンシル（HB・B）</b></li>
+        <li><b>消しゴム</b></li>
+        <li>腕時計（会場に時計がない場合／通信機能なし）</li>
+        <li>飲み物・上着（温度調整）</li>
+      </ul>
+    </div>
+    <div>
+      <span class="band" style="background:#8a3f3f">使用できないもの</span>
+      <ul class="check">
+        <li><b>電卓</b>・定規／テンプレート類</li>
+        <li><b>スマートフォン・携帯電話</b></li>
+        <li><b>スマートウォッチ</b>等の電子機器</li>
+      </ul>
+    </div>
+  </div>
+  <div class="memo">
+    <b>会場での動き</b>：試験開始<b>30分前</b>に集合し係員の説明を聞く。往復は<b>公共交通機関</b>を利用（路上駐車禁止）。
+    試験開始から<b>35分間は退室不可</b>、以降は試験官の指示で退室可。
+  </div>
+</section>
+
+<!-- 5. 本番戦術 -->
+<section>
+  <div class="sec-head"><span class="sec-no">5</span><h2>本番の解き方（時間配分・見直し）</h2></div>
+  <p class="lead">35問・120分。1問あたり約3分だが、実際は解ける問題を先に取り、見直し時間を残す。</p>
+  <ul class="check">
+    <li><b>得意科目・自信のある問題から</b>解いてリズムを作る</li>
+    <li>迷う問題は<b>仮マーク＋印</b>を付けて先へ。時間を溶かさない</li>
+    <li>五肢択一は<b>消去法</b>。「すべて」「必ず」「〜のみ」など断定表現はワナが多い</li>
+    <li><b>マークのズレ</b>を数問ごとに確認（設問番号と解答欄）</li>
+    <li>残り時間で<b>印を付けた問題を見直す</b>。第一印象を変えるのは根拠があるときだけ</li>
+    <li><b>各科目60%</b>を意識。苦手科目でも最低ラインを死守する</li>
+  </ul>
+  <div class="warn"><b>足切り注意</b>：合計が高くても1科目でも60%未満なら不合格（法令9/15・物化6/10・性消6/10）。捨て科目を作らない。</div>
+</section>
+
+<footer class="src" style="border-top:1px solid var(--line);padding-top:14px">
+  <h2>正確性について（出典）</h2>
+  <p>
+    当日ルール・持ち物・数値は、一般財団法人 消防試験研究センターの公表情報および消防法・関係政令を起点に確認しています。主な参照：
+    <a href="https://www.shoubo-shiken.or.jp/kikenbutsu/annai/preparation.html">消防試験研究センター 注意事項</a>、
+    <a href="https://www.shoubo-shiken.or.jp/kikenbutsu/">危険物取扱者 試験案内</a>、
+    <a href="https://www.fdma.go.jp/">消防庁</a>。
+  </p>
+  <p class="note">
+    ※ 集合時刻・持ち物・試験ルールは会場・年度で細部が異なる場合があります。必ず受験票と公式の最新案内でご確認ください。
+    数値・法令は改定されることがあります。本冊子は学習補助資料であり、試験主催者・国の機関とは関係ありません。
+  </p>
+  <p class="note">数字・ひっかけの詳細は別冊「数字丸暗記シート」「頻出ひっかけ厳選35」と併用してください。</p>
+  <p class="note">© 2026 乙4マスター（kikenbutsu-master.jp）／無断転載・再配布を禁じます。</p>
+</footer>
+
+</div>
+<script>
+  var btn=document.getElementById('mask');
+  btn.addEventListener('click',function(){
+    var on=document.body.classList.toggle('masked');
+    btn.textContent=on?'👁 数字を表示する':'🟥 数字を隠す';
+  });
+</script>
+</body>
+</html>
