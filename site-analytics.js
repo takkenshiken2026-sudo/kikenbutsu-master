@@ -36,6 +36,77 @@
   }
   window.ga4PageView = ga4PageView;
 
+  /**
+   * アフィリエイト（sponsored）リンクのクリックを GA4 イベント affiliate_click として計測。
+   * 委譲リスナー1つで、rel に sponsored を含む / class に affiliate を含む / 既知 ASP ホストの
+   * <a> を捕捉するため、記事を再ビルドしても将来のリンクが自動で対象になる。
+   * GA4 側でレポートに link_url / link_domain / link_text を出すには「カスタム定義」で
+   * 同名のカスタムディメンションを登録する（イベント計測自体は登録不要）。
+   */
+  function initAffiliateClickTracking() {
+    if (typeof document === "undefined" || !document.addEventListener) return;
+    if (window.__GA4_AFFILIATE_CLICK_INIT__) return;
+    window.__GA4_AFFILIATE_CLICK_INIT__ = true;
+
+    // 既知の ASP / 物販ホスト（rel・class が無いリンクの保険）。
+    var ASP_HOST_RE = /(^|\.)(a8\.net|amzn\.to|amazon\.co\.jp|amazon\.com|onsuku\.jp|afi-b\.com|affiliate-b\.com|afb\.io)$/i;
+
+    function hostOf(href) {
+      try {
+        return new URL(href, location.href).hostname;
+      } catch (_e) {
+        return "";
+      }
+    }
+
+    function isAffiliateAnchor(a) {
+      if (!a || a.tagName !== "A") return false;
+      var rel = (a.getAttribute("rel") || "").toLowerCase();
+      if (/\bsponsored\b/.test(rel)) return true;
+      var cls = a.className && a.className.toString ? a.className.toString() : "";
+      if (/affiliate/.test(cls)) return true;
+      var href = a.getAttribute("href") || "";
+      if (!/^https?:/i.test(href)) return false;
+      return ASP_HOST_RE.test(hostOf(href));
+    }
+
+    function closestAnchor(node) {
+      while (node && node !== document) {
+        if (node.tagName === "A") return node;
+        node = node.parentNode;
+      }
+      return null;
+    }
+
+    function linkText(a) {
+      var t = a.getAttribute("aria-label") || a.textContent || "";
+      return t.replace(/\s+/g, " ").trim().slice(0, 100);
+    }
+
+    function onClick(ev) {
+      var a = closestAnchor(ev.target);
+      if (!a || !isAffiliateAnchor(a)) return;
+      if (typeof window.gtag !== "function") return;
+      var href = a.href || a.getAttribute("href") || "";
+      try {
+        window.gtag("event", "affiliate_click", {
+          link_url: href,
+          link_domain: hostOf(href),
+          link_text: linkText(a),
+          page_path: location.pathname + location.search,
+          page_location: location.href,
+          // 同一タブ遷移でも送信を取りこぼさない。
+          transport_type: "beacon",
+        });
+      } catch (_e) {}
+    }
+
+    // capture 段階で拾い、遷移前に確実に送る。中クリック（新規タブ）も対象。
+    document.addEventListener("click", onClick, true);
+    document.addEventListener("auxclick", onClick, true);
+  }
+  initAffiliateClickTracking();
+
   if (window.__GA4_SNIPPET_INIT__ === MID) return;
   window.__GA4_SNIPPET_INIT__ = MID;
 
