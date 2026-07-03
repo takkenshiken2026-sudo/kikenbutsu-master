@@ -3,7 +3,7 @@ window.SITE_CONFIG = {
   "brandMark": "乙4",
   "examName": "危険物取扱者試験（乙種第4類）",
   "siteOrigin": "https://kikenbutsu-master.jp",
-  "contactUrl": "https://kikenbutsu-master.jp/",
+  "contactUrl": "https://forms.gle/tS5HMmdRweZ3uTAv5",
   "ga4MeasurementId": "G-CH3RF5CKLH",
   "theme": {
     "accent": "#c0392b",
@@ -94,7 +94,7 @@ window.SITE_CONFIG = {
       },
       {
         "label": "お問い合わせ",
-        "href": "https://kikenbutsu-master.jp/",
+        "href": "https://forms.gle/tS5HMmdRweZ3uTAv5",
         "key": "contact"
       }
     ]
