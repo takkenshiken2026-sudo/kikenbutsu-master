@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>危険物乙4 合否を分ける頻出ひっかけ厳選35｜乙4マスター</title>
+<style>
+  :root{
+    --accent:#c0392b; --ink:#1a1a1a; --muted:#5b6167; --line:#d9dce0;
+    --bg:#f4f4f5; --surface:#ffffff; --hide:#d61f26;
+    --ng:#c0392b; --ok:#1f8a4c;
+    --law:#c0392b; --chem:#2c5a97; --fire:#b5791a;
+  }
+  *{box-sizing:border-box} html,body{margin:0;padding:0}
+  body{font-family:"Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",sans-serif;
+    color:var(--ink);background:var(--bg);line-height:1.6;
+    -webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .wrap{max-width:840px;margin:0 auto;padding:0 16px 64px}
+
+  .toolbar{position:sticky;top:0;z-index:20;background:var(--surface);border-bottom:1px solid var(--line);
+    padding:10px 16px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+  .toolbar b{color:var(--accent)}
+  .btn{appearance:none;border:1px solid var(--accent);background:var(--accent);color:#fff;font-weight:700;
+    font-size:14px;padding:8px 14px;border-radius:8px;cursor:pointer}
+  .btn.ghost{background:#fff;color:var(--accent)}
+  .toolbar .hint{color:var(--muted);font-size:12.5px}
+
+  header.cover{background:linear-gradient(135deg,#b23227,#8f241b);color:#fff;border-radius:14px;padding:30px 28px;margin:22px 0 10px}
+  header.cover .kicker{font-size:13px;letter-spacing:.14em;opacity:.9;margin:0 0 8px}
+  header.cover h1{font-size:25px;margin:0 0 10px;line-height:1.4}
+  header.cover p{margin:0;font-size:14px;opacity:.95}
+  header.cover .badge{display:inline-block;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.4);
+    border-radius:999px;padding:4px 12px;font-size:12px;font-weight:700;margin-top:14px}
+
+  .intro{background:#fff6e5;border-left:4px solid #e0a326;border-radius:0 8px 8px 0;padding:12px 14px;margin:14px 0;font-size:13.5px}
+  .intro b{color:#b5791a}
+
+  .subject{margin:26px 0 10px;display:flex;align-items:center;gap:10px}
+  .subject h2{font-size:19px;margin:0;padding:6px 0;border-bottom:3px solid var(--accent);flex:1}
+  .subject .cut{font-size:12px;font-weight:700;color:#fff;background:var(--accent);border-radius:999px;padding:4px 11px;white-space:nowrap}
+  .subject.chem h2{border-color:var(--chem)} .subject.chem .cut{background:var(--chem)}
+  .subject.fire h2{border-color:var(--fire)} .subject.fire .cut{background:var(--fire)}
+
+  .trap{background:var(--surface);border:1px solid var(--line);border-radius:11px;padding:14px 16px;margin:11px 0;
+    break-inside:avoid;page-break-inside:avoid}
+  .trap .no{display:inline-block;font-weight:800;font-size:12px;color:#fff;background:var(--law);border-radius:6px;padding:2px 9px;margin-bottom:7px}
+  .chem .trap .no{background:var(--chem)} .fire .trap .no{background:var(--fire)}
+  .trap .topic{font-weight:700;font-size:13px;color:var(--muted);margin-left:8px}
+  .trap p{margin:5px 0}
+  .ng{color:var(--ng);font-weight:700;font-size:14.5px}
+  .ng::before{content:"✕ ";font-weight:800}
+  .ok{font-size:14.5px}
+  .ok .lead{color:var(--ok);font-weight:800}
+  .ok .lead::before{content:"○ "}
+  .why{font-size:13px;color:#444;background:#f5f7fa;border-radius:7px;padding:7px 10px;margin-top:6px}
+  .why b{color:var(--accent)}
+
+  /* 自己テスト: 正答を隠す */
+  .ok .body{transition:background .1s}
+  body.masked .ok .body{background:var(--hide);color:var(--hide);border-radius:3px}
+  body.masked .ok .body::selection{background:transparent}
+
+  footer.src{font-size:12px;color:var(--muted);line-height:1.7;margin-top:26px;border-top:1px solid var(--line);padding-top:14px}
+  footer.src h2{font-size:15px;color:var(--ink);margin:0 0 8px}
+  footer.src a{color:#2c5a97}
+  .note{font-size:11.5px;color:var(--muted)}
+
+  @media print{
+    body{background:#fff}.toolbar{display:none}.wrap{max-width:100%;padding:0}
+    .trap{border:1px solid #ccc}
+    header.cover{break-after:avoid}
+    a{color:inherit;text-decoration:none}
+    @page{size:A4;margin:13mm}
+  }
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <b>合否を分ける 頻出ひっかけ厳選35</b>
+  <button class="btn" id="mask">🟥 答えを隠す</button>
+  <button class="btn ghost" onclick="window.print()">🖨 印刷 / PDF保存</button>
+  <span class="hint">「✕誤文」を読んで正答を思い出す → ボタンで「○正」を隠して自己テスト。</span>
+</div>
+
+<div class="wrap">
+
+<header class="cover">
+  <p class="kicker">危険物取扱者試験（乙種第4類）</p>
+  <h1>合否を分ける 頻出ひっかけ厳選35<br><span style="font-size:16px;font-weight:500;opacity:.95">— ✕の誤文を見抜けば、正誤問題は落とさない —</span></h1>
+  <p>法令・物化・性消の「ひっかけ文言」を、誤文→正しくは→見抜き方の3段で。各科目60%の足切り対策に。</p>
+  <span class="badge">全項目 一次情報・権威ソースで事実確認済み</span>
+</header>
+
+<div class="intro">
+  <b>この冊子の狙い</b>：乙4の正誤問題は、正しい知識よりも「もっともらしい誤文（ワナ）を見抜けるか」で差がつきます。
+  頻出のワナだけを厳選し、<b>なぜ誤りか</b>まで即答できる形にしました。数値の丸暗記は別冊「数字丸暗記シート」と併用を。
+</div>
+
+<!-- ================= 法令・制度 ================= -->
+<div class="subject"><h2>法令・制度</h2><span class="cut">15問中9問で合格</span></div>
+
+<div class="trap"><span class="no">法令 01</span><span class="topic">甲種・乙種・丙種</span>
+  <p class="ng">丙種でも第4類の危険物をすべて取り扱える</p>
+  <p class="ok"><span class="lead"></span><span class="body">丙種が扱えるのはガソリン・灯油・軽油・第三石油類（重油・潤滑油等）・第四石油類・動植物油類の<b>指定品目のみ</b>。第4類全般を扱えるのは乙4以上。</span></p>
+  <p class="why"><b>見抜き方</b>：丙種は「限定免許」。特殊引火物・アルコール類・ベンゼン等は丙種では扱えない。</p>
+</div>
+
+<div class="trap"><span class="no">法令 02</span><span class="topic">受験資格</span>
+  <p class="ng">甲種も乙種も、誰でも受験資格なしで受けられる</p>
+  <p class="ok"><span class="lead"></span><span class="body">受験資格が不要なのは<b>乙種・丙種</b>。甲種は大学の化学系単位・実務経験・乙種免状の複数所持など<b>要件がある</b>。</span></p>
+  <p class="why"><b>見抜き方</b>：「資格が要るのは甲種だけ」。乙4は誰でも受験できる。</p>
+</div>
+
+<div class="trap"><span class="no">法令 03</span><span class="topic">免状の有効範囲</span>
+  <p class="ng">免状は交付を受けた都道府県内でのみ有効</p>
+  <p class="ok"><span class="lead"></span><span class="body">危険物取扱者免状は都道府県知事が交付するが、<b>全国で有効</b>。他県でも使える。</span></p>
+  <p class="why"><b>見抜き方</b>：「交付は知事、効力は全国」。運転免許と同じイメージ。</p>
+</div>
+
+<div class="trap"><span class="no">法令 04</span><span class="topic">書換えと再交付</span>
+  <p class="ng">氏名や本籍が変わったときは免状の再交付を受ける</p>
+  <p class="ok"><span class="lead"></span><span class="body">記載事項（氏名・本籍等）の変更は<b>書換え</b>。<b>再交付</b>は亡失・滅失・汚損・破損のとき。両者は別手続き。</span></p>
+  <p class="why"><b>見抜き方</b>：「情報が変わる＝書換え／無くす・汚す＝再交付」。</p>
+</div>
+
+<div class="trap"><span class="no">法令 05</span><span class="topic">立会い</span>
+  <p class="ng">丙種危険物取扱者が立ち会えば、無資格者でも危険物を取り扱える</p>
+  <p class="ok"><span class="lead"></span><span class="body">無資格者の取扱いに立ち会えるのは<b>甲種または当該類の乙種</b>。<b>丙種は立会いができない</b>。</span></p>
+  <p class="why"><b>見抜き方</b>：「丙種は自分の指定品目を扱えるだけ、監督・立会いの権限はない」。</p>
+</div>
+
+<div class="trap"><span class="no">法令 06</span><span class="topic">保安監督者</span>
+  <p class="ng">乙4に合格すれば、すぐに危険物保安監督者になれる</p>
+  <p class="ok"><span class="lead"></span><span class="body">保安監督者になるには<b>6か月以上の実務経験</b>が必要。乙種は<b>免状を受けた類</b>の監督に限られる。</span></p>
+  <p class="why"><b>見抜き方</b>：「資格＝即監督者」ではない。実務経験の要件を落とさせるワナ。</p>
+</div>
+
+<div class="trap"><span class="no">法令 07</span><span class="topic">取扱者と監督者</span>
+  <p class="ng">危険物取扱者と危険物保安監督者は同じもの</p>
+  <p class="ok"><span class="lead"></span><span class="body">取扱者は<b>資格（免状保有者）</b>、保安監督者は<b>施設ごとに選任される役割</b>。取扱者の中から要件を満たす者を選任する。</span></p>
+  <p class="why"><b>見抜き方</b>：「資格」と「選任される役職」を同一視させるワナ。</p>
+</div>
+
+<div class="trap"><span class="no">法令 08</span><span class="topic">許可と届出</span>
+  <p class="ng">製造所等は届出をすれば設置できる</p>
+  <p class="ok"><span class="lead"></span><span class="body">製造所等の<b>設置・位置構造設備の変更は「許可」</b>。品名・数量・倍数の変更等は「届出」。許可が必要な行為を届出で済ませられない。</span></p>
+  <p class="why"><b>見抜き方</b>：「新設・大きな変更＝許可／小さな変更・変動＝届出」。</p>
+</div>
+
+<div class="trap"><span class="no">法令 09</span><span class="topic">予防規程</span>
+  <p class="ng">予防規程は作成して届け出れば足りる</p>
+  <p class="ok"><span class="lead"></span><span class="body">予防規程は<b>市町村長等の「認可」</b>が必要（届出では足りない）。変更のときも認可を受ける。</span></p>
+  <p class="why"><b>見抜き方</b>：「届出／認可／許可」の格を上げ下げするワナ。予防規程は認可。</p>
+</div>
+
+<div class="trap"><span class="no">法令 10</span><span class="topic">指定数量と倍数</span>
+  <p class="ng">「指定数量」と「指定数量の倍数」は同じ意味</p>
+  <p class="ok"><span class="lead"></span><span class="body">指定数量は<b>品目ごとに政令で定まる基準量</b>。倍数は<b>実際の貯蔵量÷指定数量</b>で、規制の大きさを表す。基準と算定結果は別。</span></p>
+  <p class="why"><b>見抜き方</b>：「指定数量→倍数は割り算」。掛け先・割り先を入れ替えるワナに注意。</p>
+</div>
+
+<div class="trap"><span class="no">法令 11</span><span class="topic">指定数量（灯油・軽油）</span>
+  <p class="ng">灯油・軽油の指定数量は200Lである</p>
+  <p class="ok"><span class="lead"></span><span class="body">灯油・軽油は<b>第二石油類（非水溶性）で1,000L</b>。200Lは<b>第一石油類のガソリン</b>の値。</span></p>
+  <p class="why"><b>見抜き方</b>：ガソリン（第一石油類）200Lと、灯油・軽油（第二石油類）1,000Lの取り違えは頻出。</p>
+</div>
+
+<div class="trap"><span class="no">法令 12</span><span class="topic">移動タンク貯蔵所</span>
+  <p class="ng">タンクローリーと移動タンク貯蔵所は別の施設</p>
+  <p class="ok"><span class="lead"></span><span class="body">タンクローリーは<b>移動タンク貯蔵所の通称</b>で同一。容量は<b>30,000L以下</b>、内部は4,000L以下ごとに間仕切る。</span></p>
+  <p class="why"><b>見抜き方</b>：呼び名を変えて「別物」と思わせるワナ。中身は同じ。</p>
+</div>
+
+<div class="trap"><span class="no">法令 13</span><span class="topic">保安距離</span>
+  <p class="ng">給油取扱所（ガソリンスタンド）にも保安距離が必要</p>
+  <p class="ok"><span class="lead"></span><span class="body">保安距離が必要なのは<b>製造所・屋内貯蔵所・屋外貯蔵所・屋外タンク貯蔵所・一般取扱所の5施設</b>。<b>給油取扱所は不要</b>。</span></p>
+  <p class="why"><b>見抜き方</b>：給油取扱所・屋内タンク・地下タンク・簡易タンクには保安距離なし。</p>
+</div>
+
+<div class="trap"><span class="no">法令 14</span><span class="topic">定期点検</span>
+  <p class="ng">定期点検の記録は1年間保存すればよい</p>
+  <p class="ok"><span class="lead"></span><span class="body">定期点検は<b>1年に1回以上</b>実施し、<b>記録は3年間</b>保存する。実施周期と保存期間を混同しない。</span></p>
+  <p class="why"><b>見抜き方</b>：「実施＝1年に1回／記録＝3年保存」をセットで。</p>
+</div>
+
+<div class="trap"><span class="no">法令 15</span><span class="topic">保安講習</span>
+  <p class="ng">保安講習は、受講した月から数えて3年ごとに受ければよい</p>
+  <p class="ok"><span class="lead"></span><span class="body">継続従事者は<b>前回受講日以後の最初の4月1日から3年以内</b>。新たに従事する者は原則<b>従事開始から1年以内</b>。</span></p>
+  <p class="why"><b>見抜き方</b>：起算日は「4月1日」。受講月からの単純3年ではない。</p>
+</div>
+
+<!-- ================= 物性・化学 ================= -->
+<div class="subject chem"><h2>基礎的な物理学及び基礎的な化学</h2><span class="cut">10問中6問で合格</span></div>
+
+<div class="trap"><span class="no">物化 01</span><span class="topic">引火点と発火点</span>
+  <p class="ng">引火点と発火点は同じ温度を指す</p>
+  <p class="ok"><span class="lead"></span><span class="body">引火点は<b>外部の火源で燃え出す最低温度</b>、発火点は<b>火源なしで自ら発火する最低温度</b>。別概念。</span></p>
+  <p class="why"><b>見抜き方</b>：「引火＝外の火が要る／発火＝火が要らない」。</p>
+</div>
+
+<div class="trap"><span class="no">物化 02</span><span class="topic">ガソリンの分類</span>
+  <p class="ng">ガソリンは特殊引火物として扱われる</p>
+  <p class="ok"><span class="lead"></span><span class="body">ガソリンは<b>第一石油類（引火点21℃未満）</b>。特殊引火物はジエチルエーテル・二硫化炭素など。</span></p>
+  <p class="why"><b>見抜き方</b>：引火点が低いからと「特殊引火物」に分類させるワナ。ガソリン＝第一石油類。</p>
+</div>
+
+<div class="trap"><span class="no">物化 03</span><span class="topic">引火点の高低と危険性</span>
+  <p class="ng">引火点が高い液体ほど引火の危険が大きい</p>
+  <p class="ok"><span class="lead"></span><span class="body">引火点は<b>低いほど危険</b>。ガソリン（−40℃以下）は常温で引火する。</span></p>
+  <p class="why"><b>見抜き方</b>：高低を逆にするワナ。低い＝低い温度で引火＝危険。</p>
+</div>
+
+<div class="trap"><span class="no">物化 04</span><span class="topic">発火点の逆転</span>
+  <p class="ng">引火点がガソリンより高い灯油は、発火点もガソリンより高い</p>
+  <p class="ok"><span class="lead"></span><span class="body">発火点は逆で、<b>ガソリン約300℃ ＞ 灯油・軽油 約220℃</b>。引火点の大小と発火点の大小は一致しない。</span></p>
+  <p class="why"><b>見抜き方</b>：「引火点が低い＝発火点も低い」と思わせる定番のワナ。</p>
+</div>
+
+<div class="trap"><span class="no">物化 05</span><span class="topic">液比重</span>
+  <p class="ng">第4類危険物はすべて水より重い</p>
+  <p class="ok"><span class="lead"></span><span class="body">第4類は<b>大半が水より軽い（比重1未満）</b>。水より重い例外は二硫化炭素1.3・クロロベンゼン・酢酸など少数。</span></p>
+  <p class="why"><b>見抜き方</b>：だから多くは水に浮き、注水すると火面が広がる（棒状注水は不適）。</p>
+</div>
+
+<div class="trap"><span class="no">物化 06</span><span class="topic">蒸気比重</span>
+  <p class="ng">第4類の蒸気は空気より軽く、上方に拡散する</p>
+  <p class="ok"><span class="lead"></span><span class="body">第4類の蒸気は<b>空気より重く（蒸気比重1超）、低い所に滞留</b>する。ピット・床面付近に溜まりやすい。</span></p>
+  <p class="why"><b>見抜き方</b>：換気は低所を意識。液は水より軽く、蒸気は空気より重い。</p>
+</div>
+
+<div class="trap"><span class="no">物化 07</span><span class="topic">燃焼範囲</span>
+  <p class="ng">燃焼範囲（爆発範囲）は狭いほど危険である</p>
+  <p class="ok"><span class="lead"></span><span class="body">燃焼範囲は<b>広いほど、また下限値が低いほど危険</b>。わずかな蒸気濃度でも燃える。</span></p>
+  <p class="why"><b>見抜き方</b>：下限と上限、広い・狭いの向きを入れ替えるワナ。</p>
+</div>
+
+<div class="trap"><span class="no">物化 08</span><span class="topic">静電気</span>
+  <p class="ng">流速を速くして注液すると静電気は溜まりにくい</p>
+  <p class="ok"><span class="lead"></span><span class="body">流速が速いほど<b>静電気は発生・蓄積しやすい</b>。ガソリン等の電気を通しにくい液は帯電しやすく、<b>接地（アース）</b>で除去する。</span></p>
+  <p class="why"><b>見抜き方</b>：「ゆっくり・接地」が安全側。速い＝危険。</p>
+</div>
+
+<div class="trap"><span class="no">物化 09</span><span class="topic">第4類と第6類</span>
+  <p class="ng">第4類も第6類も、それ自体がよく燃える可燃性の液体だ</p>
+  <p class="ok"><span class="lead"></span><span class="body">第4類は<b>引火性液体（可燃性）</b>。第6類は<b>酸化性液体で不燃だが、他の物の燃焼を助ける</b>。性質が逆。</span></p>
+  <p class="why"><b>見抜き方</b>：第6類は「燃えないが燃やす」。可燃物と混同させるワナ。</p>
+</div>
+
+<div class="trap"><span class="no">物化 10</span><span class="topic">自然発火性・禁水性</span>
+  <p class="ng">自然発火性物質・禁水性物質は第4類に含まれる</p>
+  <p class="ok"><span class="lead"></span><span class="body">自然発火性・禁水性物質は<b>第3類</b>。第4類は引火性液体で別区分。</span></p>
+  <p class="why"><b>見抜き方</b>：「水と反応して発火」は第3類の話。第4類の火災に持ち込むワナ。</p>
+</div>
+
+<!-- ================= 火災予防・消火 ================= -->
+<div class="subject fire"><h2>危険物の性質・火災予防・消火の方法</h2><span class="cut">10問中6問で合格</span></div>
+
+<div class="trap"><span class="no">性消 01</span><span class="topic">第4類の消火</span>
+  <p class="ng">第4類の火災には棒状の水を注ぐのが最適</p>
+  <p class="ok"><span class="lead"></span><span class="body">多くは水に浮くため<b>棒状注水は不適（火面が広がる）</b>。泡・粉末・二酸化炭素・霧状水などで<b>窒息消火</b>する。</span></p>
+  <p class="why"><b>見抜き方</b>：油＋水＝浮いて拡大。第4類は「窒息」が基本。</p>
+</div>
+
+<div class="trap"><span class="no">性消 02</span><span class="topic">水溶性液体の消火</span>
+  <p class="ng">アルコールの火災にも通常の泡消火剤が有効</p>
+  <p class="ok"><span class="lead"></span><span class="body">水溶性液体（アルコール等）は普通の泡を溶かして消してしまう。<b>耐アルコール泡（水溶性液体用泡）</b>を使う。</span></p>
+  <p class="why"><b>見抜き方</b>：水溶性かどうかで泡の種類が変わる。普通泡は不適。</p>
+</div>
+
+<div class="trap"><span class="no">性消 03</span><span class="topic">電気火災</span>
+  <p class="ng">電気設備の火災には棒状の水をかけて消す</p>
+  <p class="ok"><span class="lead"></span><span class="body">感電の恐れがあり<b>棒状注水は不適</b>。二酸化炭素・粉末・霧状水などを用いる。</span></p>
+  <p class="why"><b>見抜き方</b>：電気火災＝棒状水NG。CO2・粉末が定番。</p>
+</div>
+
+<div class="trap"><span class="no">性消 04</span><span class="topic">金属火災・禁水</span>
+  <p class="ng">マグネシウム等の金属火災にも注水が最適</p>
+  <p class="ok"><span class="lead"></span><span class="body">水と反応して可燃性ガス（水素等）を出し危険。<b>乾燥砂や金属火災用粉末</b>で消火する。</span></p>
+  <p class="why"><b>見抜き方</b>：「火災＝水」の常識を逆手に取るワナ。金属・禁水は水禁止。</p>
+</div>
+
+<div class="trap"><span class="no">性消 05</span><span class="topic">消火の三要素</span>
+  <p class="ng">消火の方法は「冷却」だけである</p>
+  <p class="ok"><span class="lead"></span><span class="body">消火は<b>除去・窒息・冷却</b>の3要素。第4類では酸素を断つ<b>窒息</b>が中心になる。</span></p>
+  <p class="why"><b>見抜き方</b>：泡・CO2・粉末はいずれも窒息作用が主体。</p>
+</div>
+
+<div class="trap"><span class="no">性消 06</span><span class="topic">泡と二酸化炭素</span>
+  <p class="ng">泡消火剤も二酸化炭素も、冷却が主な消火作用だ</p>
+  <p class="ok"><span class="lead"></span><span class="body">泡は液面を覆う<b>窒息＋冷却</b>、二酸化炭素は酸素濃度を下げる<b>窒息（希釈）</b>が主作用。作用は同一でない。</span></p>
+  <p class="why"><b>見抜き方</b>：消火剤ごとの主作用を取り違えさせるワナ。</p>
+</div>
+
+<div class="trap"><span class="no">性消 07</span><span class="topic">消火設備の区分</span>
+  <p class="ng">消火器は第1種消火設備に区分される</p>
+  <p class="ok"><span class="lead"></span><span class="body">第1種は屋内・屋外<b>消火栓</b>。<b>消火器は第5種</b>（小型）、大型消火器は第4種。乾燥砂等も第5種。</span></p>
+  <p class="why"><b>見抜き方</b>：設備の種別番号を入れ替えるワナ。消火器＝第5種。</p>
+</div>
+
+<div class="trap"><span class="no">性消 08</span><span class="topic">消火設備と消火活動</span>
+  <p class="ng">「消火設備の設置基準」と「実際の消火活動の手順」は同じ論点だ</p>
+  <p class="ok"><span class="lead"></span><span class="body">設置基準は<b>設備を備える規制</b>、消火活動は<b>現場での対応</b>。問われている観点が違う。</span></p>
+  <p class="why"><b>見抜き方</b>：設問が「基準」を聞くか「対応」を聞くかを読み分ける。</p>
+</div>
+
+<div class="trap"><span class="no">性消 09</span><span class="topic">保護具</span>
+  <p class="ng">酸欠のおそれがある場所でも防毒マスクがあれば安全</p>
+  <p class="ok"><span class="lead"></span><span class="body">防毒マスクは有毒ガスを除くだけで<b>酸素は供給しない</b>。酸欠では<b>送気マスク・空気呼吸器</b>が必要。</span></p>
+  <p class="why"><b>見抜き方</b>：「マスク＝万能」と思わせるワナ。酸欠に防毒マスクは無効。</p>
+</div>
+
+<div class="trap"><span class="no">性消 10</span><span class="topic">漏えい時の対応</span>
+  <p class="ng">危険物が漏れたら、まず低い所の窓を閉め切って密閉する</p>
+  <p class="ok"><span class="lead"></span><span class="body">まず<b>着火源を除去</b>し、拡大を防ぐ。蒸気は低所に滞留するため<b>安全に換気</b>し、土のう等で流出を止める。</span></p>
+  <p class="why"><b>見抜き方</b>：密閉＝蒸気が溜まり危険。着火源除去と換気が先。</p>
+</div>
+
+<footer class="src">
+  <h2>正確性について（出典）</h2>
+  <p>
+    本冊子の各項目は、一般財団法人 消防試験研究センターの公表情報および消防法・危険物の規制に関する政令／規則を起点に、
+    複数の権威ある解説で事実確認して作成しています。主な参照：
+    <a href="https://www.shoubo-shiken.or.jp/kikenbutsu/">消防試験研究センター 危険物取扱者</a>、
+    <a href="https://www.fdma.go.jp/">消防庁</a>、
+    保安距離・保安講習・保安監督者等の制度解説（自治体・危険物安全協会の公表資料）。
+  </p>
+  <p class="note">
+    ※ 制度・法令・数値は改定されることがあります。受験・実務の判断は必ず公式の最新情報でご確認ください。
+    引火点・発火点等の物性値は物質・出典により幅があり、試験で問われる代表値を用いています。
+    本冊子は学習補助資料であり、試験主催者・国の機関とは関係ありません。
+  </p>
+  <p class="note">© 2026 乙4マスター（kikenbutsu-master.jp）／無断転載・再配布を禁じます。</p>
+</footer>
+
+</div>
+<script>
+  var btn=document.getElementById('mask');
+  btn.addEventListener('click',function(){
+    var on=document.body.classList.toggle('masked');
+    btn.textContent=on?'👁 答えを表示する':'🟥 答えを隠す';
+  });
+</script>
+</body>
+</html>
