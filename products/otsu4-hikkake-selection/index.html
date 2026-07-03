@@ -3,101 +3,128 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>危険物乙4 合否を分ける頻出ひっかけ厳選35｜乙4マスター</title>
+<title>危険物乙4 ひっかけ読本｜乙4マスター</title>
 <style>
   :root{
-    --accent:#c0392b; --ink:#1a1a1a; --muted:#5b6167; --line:#d9dce0;
-    --bg:#f4f4f5; --surface:#ffffff; --hide:#d61f26;
-    --ng:#c0392b; --ok:#1f8a4c;
-    --law:#c0392b; --chem:#2c5a97; --fire:#b5791a;
+    --ink:#211c18; --sub:#6b625b; --paper:#faf8f4; --card:#ffffff; --line:#e7e1d8; --rule:#d8cfc2;
+    --accent:#9c2b28; --gold:#a9803f; --hide:#9c2b28;
+    --ng:#9c2b28; --ok:#1f7a48; --law:#9c2b28; --chem:#2f5f86; --fire:#a9803f;
+    --serif:"Noto Serif CJK JP","Noto Serif JP",serif;
+    --sans:"Noto Sans CJK JP","Noto Sans JP","Hiragino Kaku Gothic ProN",sans-serif;
   }
   *{box-sizing:border-box} html,body{margin:0;padding:0}
-  body{font-family:"Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",sans-serif;
-    color:var(--ink);background:var(--bg);line-height:1.6;
+  body{font-family:var(--sans);color:var(--ink);background:#eee9e1;line-height:1.9;font-size:15px;
     -webkit-print-color-adjust:exact;print-color-adjust:exact}
-  .wrap{max-width:840px;margin:0 auto;padding:0 16px 64px}
+  .book{max-width:720px;margin:0 auto;background:var(--paper);box-shadow:0 6px 40px rgba(0,0,0,.12)}
+  .pad{padding:8px 46px 20px}
+  @media(max-width:560px){.pad{padding:8px 22px 20px}}
 
-  .toolbar{position:sticky;top:0;z-index:20;background:var(--surface);border-bottom:1px solid var(--line);
-    padding:10px 16px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;box-shadow:0 1px 4px rgba(0,0,0,.06)}
-  .toolbar b{color:var(--accent)}
-  .btn{appearance:none;border:1px solid var(--accent);background:var(--accent);color:#fff;font-weight:700;
-    font-size:14px;padding:8px 14px;border-radius:8px;cursor:pointer}
+  .toolbar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);padding:9px 16px;display:flex;gap:9px;align-items:center;flex-wrap:wrap}
+  .toolbar .t{font-family:var(--serif);font-weight:700;color:var(--accent);font-size:14px;margin-right:auto}
+  .btn{appearance:none;border:1px solid var(--accent);background:var(--accent);color:#fff;font-family:var(--sans);
+    font-weight:600;font-size:13px;padding:7px 13px;border-radius:6px;cursor:pointer}
   .btn.ghost{background:#fff;color:var(--accent)}
-  .toolbar .hint{color:var(--muted);font-size:12.5px}
 
-  header.cover{background:linear-gradient(135deg,#b23227,#8f241b);color:#fff;border-radius:14px;padding:30px 28px;margin:22px 0 10px}
-  header.cover .kicker{font-size:13px;letter-spacing:.14em;opacity:.9;margin:0 0 8px}
-  header.cover h1{font-size:25px;margin:0 0 10px;line-height:1.4}
-  header.cover p{margin:0;font-size:14px;opacity:.95}
-  header.cover .badge{display:inline-block;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.4);
-    border-radius:999px;padding:4px 12px;font-size:12px;font-weight:700;margin-top:14px}
+  .cover{padding:66px 46px 50px;background:radial-gradient(120% 80% at 50% -10%, #fbf7f0 0%, var(--paper) 60%);
+    text-align:center;border-bottom:1px solid var(--line)}
+  .cover .brand{font-size:12px;letter-spacing:.34em;color:var(--gold);font-weight:600;margin-bottom:24px}
+  .cover .exam{font-size:13px;color:var(--sub);letter-spacing:.12em;margin-bottom:14px}
+  .cover h1{font-family:var(--serif);font-weight:900;font-size:40px;line-height:1.3;margin:0}
+  .cover .sub{font-family:var(--serif);font-size:16px;color:var(--accent);margin:12px 0 0;font-weight:700}
+  .cover .desc{font-size:13.5px;color:var(--sub);margin:22px auto 0;max-width:440px;line-height:1.9;text-align:left}
+  .cover .ornament{width:52px;height:2px;background:var(--gold);margin:28px auto 0}
+  .cover .ed{margin-top:24px;font-size:12px;color:var(--sub);letter-spacing:.14em}
 
-  .intro{background:#fff6e5;border-left:4px solid #e0a326;border-radius:0 8px 8px 0;padding:12px 14px;margin:14px 0;font-size:13.5px}
-  .intro b{color:#b5791a}
+  .toc{padding:38px 46px 6px}
+  .toc h2{font-family:var(--serif);font-size:15px;letter-spacing:.28em;color:var(--sub);font-weight:700;margin:0 0 16px;text-align:center}
+  .toc ol{list-style:none;counter-reset:c;margin:0;padding:0}
+  .toc li{counter-increment:c;display:flex;align-items:baseline;gap:12px;padding:9px 0;border-bottom:1px dotted var(--rule)}
+  .toc li::before{content:counter(c,decimal-leading-zero);font-family:var(--serif);color:var(--accent);font-weight:700;font-size:14px;min-width:26px}
+  .toc .tt{font-weight:600;font-size:14.5px}
+  .toc .td{color:var(--sub);font-size:12px;margin-left:auto}
 
-  .subject{margin:26px 0 10px;display:flex;align-items:center;gap:10px}
-  .subject h2{font-size:19px;margin:0;padding:6px 0;border-bottom:3px solid var(--accent);flex:1}
-  .subject .cut{font-size:12px;font-weight:700;color:#fff;background:var(--accent);border-radius:999px;padding:4px 11px;white-space:nowrap}
+  /* chapter (subject) opener */
+  .subject{margin:44px 0 4px;display:flex;align-items:baseline;gap:12px}
+  .subject h2{font-family:var(--serif);font-weight:900;font-size:23px;margin:0;flex:1;
+    border-bottom:2px solid var(--law);padding-bottom:8px}
+  .subject .cut{font-size:11.5px;font-weight:700;color:#fff;background:var(--law);border-radius:999px;padding:3px 11px;white-space:nowrap}
   .subject.chem h2{border-color:var(--chem)} .subject.chem .cut{background:var(--chem)}
   .subject.fire h2{border-color:var(--fire)} .subject.fire .cut{background:var(--fire)}
+  p.lead{font-size:14px;color:#3a332e;line-height:1.95;margin:14px 0 6px}
 
-  .trap{background:var(--surface);border:1px solid var(--line);border-radius:11px;padding:14px 16px;margin:11px 0;
-    break-inside:avoid;page-break-inside:avoid}
-  .trap .no{display:inline-block;font-weight:800;font-size:12px;color:#fff;background:var(--law);border-radius:6px;padding:2px 9px;margin-bottom:7px}
+  /* trap card */
+  .trap{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:15px 18px;margin:13px 0;
+    box-shadow:0 1px 2px rgba(0,0,0,.02);break-inside:avoid;page-break-inside:avoid}
+  .trap .no{display:inline-block;font-family:var(--serif);font-weight:700;font-size:12px;color:#fff;background:var(--law);
+    border-radius:5px;padding:2px 9px}
   .chem .trap .no{background:var(--chem)} .fire .trap .no{background:var(--fire)}
-  .trap .topic{font-weight:700;font-size:13px;color:var(--muted);margin-left:8px}
-  .trap p{margin:5px 0}
-  .ng{color:var(--ng);font-weight:700;font-size:14.5px}
+  .trap .topic{font-weight:700;font-size:12.5px;color:var(--sub);margin-left:9px}
+  .trap p{margin:8px 0 0}
+  .ng{color:var(--ng);font-weight:700;font-size:15px;line-height:1.7}
   .ng::before{content:"✕ ";font-weight:800}
-  .ok{font-size:14.5px}
-  .ok .lead{color:var(--ok);font-weight:800}
-  .ok .lead::before{content:"○ "}
-  .why{font-size:13px;color:#444;background:#f5f7fa;border-radius:7px;padding:7px 10px;margin-top:6px}
-  .why b{color:var(--accent)}
+  .ok{font-size:14.5px;line-height:1.85}
+  .ok .lead{display:none}
+  .ok .body::before{content:"○ ";color:var(--ok);font-weight:800}
+  .why{font-size:13px;color:#4a423b;background:#f4efe7;border-radius:7px;padding:9px 12px;margin-top:9px;line-height:1.8}
+  .why b{color:var(--accent);font-family:var(--serif)}
 
-  /* 自己テスト: 正答を隠す */
-  .ok .body{transition:background .1s}
-  body.masked .ok .body{background:var(--hide);color:var(--hide);border-radius:3px}
+  body.masked .ok .body{background:var(--hide);color:var(--hide);border-radius:2px}
+  body.masked .ok .body::before{color:var(--hide)}
   body.masked .ok .body::selection{background:transparent}
 
-  footer.src{font-size:12px;color:var(--muted);line-height:1.7;margin-top:26px;border-top:1px solid var(--line);padding-top:14px}
-  footer.src h2{font-size:15px;color:var(--ink);margin:0 0 8px}
-  footer.src a{color:#2c5a97}
-  .note{font-size:11.5px;color:var(--muted)}
+  footer.src{margin-top:34px;border-top:1px solid var(--line);padding:24px 0 8px;font-size:11.5px;color:var(--sub);line-height:1.85}
+  footer.src h2{font-family:var(--serif);font-size:14px;color:var(--ink);margin:0 0 10px;letter-spacing:.1em}
+  footer.src a{color:#2f5f86}
+  .note{font-size:11.5px;color:var(--sub)}
 
   @media print{
-    body{background:#fff}.toolbar{display:none}.wrap{max-width:100%;padding:0}
-    .trap{border:1px solid #ccc}
-    header.cover{break-after:avoid}
+    body{background:#fff;font-size:11.5pt}.toolbar{display:none}
+    .book{max-width:100%;box-shadow:none}
+    .cover{padding-top:36px}.toc{break-after:page}
+    .subject{break-before:page;margin-top:22px}
+    .trap{break-inside:avoid}
+    h2{break-after:avoid}
     a{color:inherit;text-decoration:none}
-    @page{size:A4;margin:13mm}
+    @page{size:A4;margin:16mm 15mm}
   }
 </style>
 </head>
 <body>
 <div class="toolbar">
-  <b>合否を分ける 頻出ひっかけ厳選35</b>
+  <span class="t">危険物乙4 ひっかけ読本</span>
   <button class="btn" id="mask">🟥 答えを隠す</button>
-  <button class="btn ghost" onclick="window.print()">🖨 印刷 / PDF保存</button>
-  <span class="hint">「✕誤文」を読んで正答を思い出す → ボタンで「○正」を隠して自己テスト。</span>
+  <button class="btn ghost" onclick="window.print()">🖨 PDFで保存</button>
 </div>
 
-<div class="wrap">
-
-<header class="cover">
-  <p class="kicker">危険物取扱者試験（乙種第4類）</p>
-  <h1>合否を分ける 頻出ひっかけ厳選35<br><span style="font-size:16px;font-weight:500;opacity:.95">— ✕の誤文を見抜けば、正誤問題は落とさない —</span></h1>
-  <p>法令・物化・性消の「ひっかけ文言」を、誤文→正しくは→見抜き方の3段で。各科目60%の足切り対策に。</p>
-  <span class="badge">全項目 一次情報・権威ソースで事実確認済み</span>
-</header>
-
-<div class="intro">
-  <b>この冊子の狙い</b>：乙4の正誤問題は、正しい知識よりも「もっともらしい誤文（ワナ）を見抜けるか」で差がつきます。
-  頻出のワナだけを厳選し、<b>なぜ誤りか</b>まで即答できる形にしました。数値の丸暗記は別冊「数字丸暗記シート」と併用を。
+<div class="book">
+<div class="cover">
+  <div class="brand">乙 4 マ ス タ ー</div>
+  <div class="exam">危険物取扱者試験（乙種第4類）</div>
+  <h1>ひっかけ読本</h1>
+  <div class="sub">合否を分ける正誤問題の見抜き方 ― 厳選35</div>
+  <div class="ornament"></div>
+  <p class="desc">
+    乙4の正誤問題は、正しい知識よりも<strong>「もっともらしい誤文（ワナ）を見抜けるか」</strong>で差がつきます。
+    本書は頻出のワナを35に厳選し、<strong>誤文 → 正しくは → 見抜き方</strong>の3段で、
+    なぜ誤りかまで即答できるように整理しました。本試験と同じ35。姉妹編「数字の読本」と併用すれば、
+    知識と判断の両輪が揃います。
+  </p>
+  <div class="ed">2026年度版 ／ 全項目 一次情報で事実確認</div>
 </div>
+<nav class="toc">
+  <h2>目 次</h2>
+  <ol>
+    <li><span class="tt">法令・制度</span><span class="td">15問 ／ ワナ15</span></li>
+    <li><span class="tt">物理・化学</span><span class="td">10問 ／ ワナ10</span></li>
+    <li><span class="tt">性質・火災予防・消火</span><span class="td">10問 ／ ワナ10</span></li>
+  </ol>
+</nav>
+<div class="pad">
 
 <!-- ================= 法令・制度 ================= -->
 <div class="subject"><h2>法令・制度</h2><span class="cut">15問中9問で合格</span></div>
+  <p class="lead">法令は15問と配点が最も大きく、問われ方がパターン化しています。資格・免状・手続き・数量など、受験者が取り違えやすい論点を集めました。誤文の「言い換えの型」に慣れれば、初見の問題でも違和感で気づけます。</p>
 
 <div class="trap"><span class="no">法令 01</span><span class="topic">甲種・乙種・丙種</span>
   <p class="ng">丙種でも第4類の危険物をすべて取り扱える</p>
@@ -191,6 +218,7 @@
 
 <!-- ================= 物性・化学 ================= -->
 <div class="subject chem"><h2>基礎的な物理学及び基礎的な化学</h2><span class="cut">10問中6問で合格</span></div>
+  <p class="lead">物化は10問。計算よりも用語の定義と大小関係が問われます。引火点と発火点、液比重と蒸気比重など、似た言葉のペアを反対向きに提示するのが常套手段。「どちらが・どの向きか」を毎回確認しましょう。</p>
 
 <div class="trap"><span class="no">物化 01</span><span class="topic">引火点と発火点</span>
   <p class="ng">引火点と発火点は同じ温度を指す</p>
@@ -254,6 +282,7 @@
 
 <!-- ================= 火災予防・消火 ================= -->
 <div class="subject fire"><h2>危険物の性質・火災予防・消火の方法</h2><span class="cut">10問中6問で合格</span></div>
+  <p class="lead">性消は10問。第4類の火災に何が有効で何が不適かを、理由とセットで押さえます。「火災＝水」の常識が通じない油・電気・金属の場面が狙われます。消火剤の主作用まで言えるようにしておきましょう。</p>
 
 <div class="trap"><span class="no">性消 01</span><span class="topic">第4類の消火</span>
   <p class="ng">第4類の火災には棒状の水を注ぐのが最適</p>
@@ -318,26 +347,25 @@
 <footer class="src">
   <h2>正確性について（出典）</h2>
   <p>
-    本冊子の各項目は、一般財団法人 消防試験研究センターの公表情報および消防法・危険物の規制に関する政令／規則を起点に、
-    複数の権威ある解説で事実確認して作成しています。主な参照：
+    本書の各項目は、一般財団法人 消防試験研究センターの公表情報および消防法・危険物の規制に関する政令／規則を起点に、
+    複数の権威ある資料で事実確認して作成しています。主な参照：
     <a href="https://www.shoubo-shiken.or.jp/kikenbutsu/">消防試験研究センター 危険物取扱者</a>、
-    <a href="https://www.fdma.go.jp/">消防庁</a>、
-    保安距離・保安講習・保安監督者等の制度解説（自治体・危険物安全協会の公表資料）。
+    <a href="https://www.fdma.go.jp/">消防庁</a>、保安距離・保安講習・保安監督者等の制度解説（自治体・危険物安全協会の公表資料）。
   </p>
   <p class="note">
     ※ 制度・法令・数値は改定されることがあります。受験・実務の判断は必ず公式の最新情報でご確認ください。
     引火点・発火点等の物性値は物質・出典により幅があり、試験で問われる代表値を用いています。
-    本冊子は学習補助資料であり、試験主催者・国の機関とは関係ありません。
+    本書は学習補助資料であり、試験主催者・国の機関とは関係ありません。
   </p>
   <p class="note">© 2026 乙4マスター（kikenbutsu-master.jp）／無断転載・再配布を禁じます。</p>
 </footer>
-
+</div>
 </div>
 <script>
   var btn=document.getElementById('mask');
   btn.addEventListener('click',function(){
     var on=document.body.classList.toggle('masked');
-    btn.textContent=on?'👁 答えを表示する':'🟥 答えを隠す';
+    btn.textContent=on?'👁 答えを表示':'🟥 答えを隠す';
   });
 </script>
 </body>
