@@ -78,6 +78,23 @@
   footer.src a{color:#2f5f86}
   .note{font-size:11.5px;color:var(--sub)}
 
+  /* まとめ図解 */
+  .tbl{margin:14px 0;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  th,td{padding:8px 11px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+  thead th{background:#efe7db;color:#5a4d3c;font-weight:700;font-size:12.5px}
+  tbody tr:last-child td{border-bottom:none}
+  td.c,th.c{text-align:center;white-space:nowrap}
+  .fig{background:#fbf9f4;border:1px solid #e9e0cb;border-radius:9px;padding:14px 16px;margin:16px 0}
+  .fig .ttl{font-family:var(--serif);font-weight:700;color:var(--accent);font-size:14px;margin:0 0 8px}
+  .fig table{margin:0}
+  .fig .cap{font-size:12px;color:var(--sub);text-align:center;margin-top:9px;line-height:1.6}
+  .flow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;justify-content:center}
+  .flow .chip{background:#fff;border:1px solid var(--line);border-radius:7px;padding:7px 11px;font-size:12px;text-align:center;line-height:1.55}
+  .flow .chip b{font-family:var(--serif);color:var(--accent);display:block;font-size:12.5px}
+  .flow .arw{color:var(--gold);font-weight:700}
+  .ok2{color:#1f7a48;font-weight:800} .no2{color:#9c2b28;font-weight:800}
+
   @media print{
     body{background:#fff;font-size:11.5pt}.toolbar{display:none}
     .book{max-width:100%;box-shadow:none}
@@ -216,6 +233,31 @@
   <p class="why"><b>見抜き方</b>：起算日は「4月1日」。受講月からの単純3年ではない。</p>
 </div>
 
+<div class="fig">
+  <p class="ttl">図で整理① 甲種・乙種・丙種の違い</p>
+  <table>
+    <thead><tr><th>種類</th><th>取り扱える範囲</th><th class="c">立会い</th><th class="c">受験資格</th></tr></thead>
+    <tbody>
+      <tr><td>甲種</td><td>全6類のすべて</td><td class="c"><span class="ok2">○</span></td><td class="c">要</td></tr>
+      <tr><td>乙種</td><td>免状を受けた類のみ</td><td class="c"><span class="ok2">○</span></td><td class="c">不要</td></tr>
+      <tr><td>丙種</td><td>第4類の指定品目（ガソリン・灯油・軽油・重油等）</td><td class="c"><span class="no2">×</span></td><td class="c">不要</td></tr>
+    </tbody>
+  </table>
+  <div class="cap">立会いができるのは甲種・乙種のみ。丙種は自分の指定品目を扱えるが、立会いはできない。</div>
+</div>
+<div class="fig">
+  <p class="ttl">図で整理② 許可・認可・届出</p>
+  <table>
+    <thead><tr><th>手続き</th><th>対象（代表例）</th></tr></thead>
+    <tbody>
+      <tr><td>許可</td><td>製造所等の設置／位置・構造・設備の変更</td></tr>
+      <tr><td>認可</td><td>予防規程の作成・変更</td></tr>
+      <tr><td>届出</td><td>品名・数量・倍数の変更／譲渡・引渡し／用途廃止</td></tr>
+    </tbody>
+  </table>
+  <div class="cap">重い順に 許可 ＞ 認可 ＞ 届出。手続きの「格」を入れ替えて誤答を作るのが定番。</div>
+</div>
+
 <!-- ================= 物性・化学 ================= -->
 <div class="subject chem"><h2>基礎的な物理学及び基礎的な化学</h2><span class="cut">10問中6問で合格</span></div>
   <p class="lead">物化は10問。計算よりも用語の定義と大小関係が問われます。引火点と発火点、液比重と蒸気比重など、似た言葉のペアを反対向きに提示するのが常套手段。「どちらが・どの向きか」を毎回確認しましょう。</p>
@@ -280,6 +322,24 @@
   <p class="why"><b>見抜き方</b>：「水と反応して発火」は第3類の話。第4類の火災に持ち込むワナ。</p>
 </div>
 
+<div class="fig">
+  <p class="ttl">図で整理③ 引火点と発火点は別もの</p>
+  <div class="flow">
+    <span class="chip"><b>引火点</b>外部の火が要る<br>低いほど危険</span>
+    <span class="arw">≠</span>
+    <span class="chip"><b>発火点</b>火が要らない<br>熱だけで発火</span>
+  </div>
+  <div class="cap">ガソリンは引火点が低い（−40℃以下）が、発火点は約300℃と灯油（約220℃）より高い。大小が逆になる。</div>
+</div>
+<div class="fig">
+  <p class="ttl">図で整理④ 液は浮く・蒸気は沈む</p>
+  <div class="flow">
+    <span class="chip">液比重＜1<br><b>水に浮く</b>（大多数）</span>
+    <span class="chip">蒸気比重＞1<br><b>低所に沈む</b></span>
+  </div>
+  <div class="cap">液体の大半は水より軽い（例外＝二硫化炭素1.3）。一方で蒸気は空気より重く、床や地下ピットに滞留する。</div>
+</div>
+
 <!-- ================= 火災予防・消火 ================= -->
 <div class="subject fire"><h2>危険物の性質・火災予防・消火の方法</h2><span class="cut">10問中6問で合格</span></div>
   <p class="lead">性消は10問。第4類の火災に何が有効で何が不適かを、理由とセットで押さえます。「火災＝水」の常識が通じない油・電気・金属の場面が狙われます。消火剤の主作用まで言えるようにしておきましょう。</p>
@@ -342,6 +402,34 @@
   <p class="ng">危険物が漏れたら、まず低い所の窓を閉め切って密閉する</p>
   <p class="ok"><span class="lead"></span><span class="body">まず<b>着火源を除去</b>し、拡大を防ぐ。蒸気は低所に滞留するため<b>安全に換気</b>し、土のう等で流出を止める。</span></p>
   <p class="why"><b>見抜き方</b>：密閉＝蒸気が溜まり危険。着火源除去と換気が先。</p>
+</div>
+
+<div class="fig">
+  <p class="ttl">図で整理⑤ 火災×消火剤（○有効／×不適）</p>
+  <table>
+    <thead><tr><th>消火剤</th><th class="c">第4類（油）</th><th class="c">電気</th></tr></thead>
+    <tbody>
+      <tr><td>棒状の水</td><td class="c"><span class="no2">×</span></td><td class="c"><span class="no2">×</span></td></tr>
+      <tr><td>霧状の水</td><td class="c"><span class="no2">×</span></td><td class="c"><span class="ok2">○</span></td></tr>
+      <tr><td>泡</td><td class="c"><span class="ok2">○</span></td><td class="c"><span class="no2">×</span></td></tr>
+      <tr><td>粉末</td><td class="c"><span class="ok2">○</span></td><td class="c"><span class="ok2">○</span></td></tr>
+      <tr><td>二酸化炭素</td><td class="c"><span class="ok2">○</span></td><td class="c"><span class="ok2">○</span></td></tr>
+    </tbody>
+  </table>
+  <div class="cap">油には泡・粉末・CO2。電気は棒状水と泡が不適（感電・導電）。水溶性液体には耐アルコール泡を使う。</div>
+</div>
+<div class="fig">
+  <p class="ttl">図で整理⑥ 消火設備の区分（第1〜5種）</p>
+  <table>
+    <tbody>
+      <tr><td>第1種</td><td>屋内・屋外消火栓</td></tr>
+      <tr><td>第2種</td><td>スプリンクラー設備</td></tr>
+      <tr><td>第3種</td><td>水噴霧・泡・不活性ガス・粉末などの固定式設備</td></tr>
+      <tr><td>第4種</td><td>大型消火器</td></tr>
+      <tr><td>第5種</td><td>小型消火器・乾燥砂・水バケツ等</td></tr>
+    </tbody>
+  </table>
+  <div class="cap">消火器＝第5種（大型は第4種）。種別の番号を入れ替える誤りに注意。</div>
 </div>
 
 <footer class="src">

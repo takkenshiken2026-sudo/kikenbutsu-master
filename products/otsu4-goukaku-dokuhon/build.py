@@ -98,6 +98,8 @@ body.masked .h::selection{background:transparent}
 /* 図解 */
 .fig{background:#fbf9f4;border:1px solid #e9e0cb;border-radius:9px;padding:16px 18px;margin:18px 0}
 .fig .cap{font-size:12px;color:var(--sub);text-align:center;margin-top:10px;line-height:1.7}
+.fig .ttl{font-family:var(--serif);font-weight:700;color:var(--accent);font-size:14px;margin:0 0 8px}
+.ok2{color:#1f7a48;font-weight:800} .no2{color:#9c2b28;font-weight:800}
 .flow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;justify-content:center}
 .flow .chip{background:#fff;border:1px solid var(--line);border-radius:7px;padding:6px 10px;font-size:12px;text-align:center;line-height:1.5}
 .flow .chip b{font-family:var(--serif);color:var(--accent);display:block;font-size:12.5px}
@@ -324,5 +326,5 @@ HEAD='<!DOCTYPE html>\n<html lang="ja">\n<head>\n<meta charset="UTF-8">\n<meta n
 out=HEAD+FRONT+partA+PART2+PART3+PART4+OKU+SCRIPT
 (ROOT/"products/otsu4-goukaku-dokuhon/index.html").write_text(out,encoding="utf-8")
 assert out.count('class="qz"')==27
-assert out.count('class="fig"')==5
+assert out.count('class="fig"')>=13   # Part1:5 + Part2:6 + Part3:2
 print("built:",len(out),"bytes / qz27 / fig",out.count('class=\"fig\"'))

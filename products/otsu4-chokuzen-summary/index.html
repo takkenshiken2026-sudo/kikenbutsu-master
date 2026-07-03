@@ -89,6 +89,21 @@
   footer.src a{color:#2f5f86}
   .note{font-size:11.5px;color:var(--sub)}
 
+  /* 図解 */
+  .fig{background:#fbf9f4;border:1px solid #e9e0cb;border-radius:9px;padding:14px 16px;margin:16px 0}
+  .fig .ttl{font-family:var(--serif);font-weight:700;color:var(--accent);font-size:14px;margin:0 0 10px}
+  .fig .cap{font-size:12px;color:var(--sub);text-align:center;margin-top:9px;line-height:1.6}
+  .bars{display:flex;flex-direction:column;gap:7px}
+  .bars .row{display:flex;align-items:center;gap:10px;font-size:12.5px}
+  .bars .lb{flex:0 0 60px;text-align:right;color:#4a423b}
+  .bars .track{flex:1;background:#efe7db;border-radius:4px;overflow:hidden;height:15px}
+  .bars .bar{display:block;height:15px;background:var(--accent);border-radius:4px}
+  .bars .v{flex:0 0 100px;font-family:var(--serif);color:var(--accent);font-weight:700;font-size:12px}
+  .flow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;justify-content:center}
+  .flow .chip{background:#fff;border:1px solid var(--line);border-radius:7px;padding:7px 11px;font-size:12px;text-align:center;line-height:1.55}
+  .flow .chip b{font-family:var(--serif);color:var(--accent);display:block;font-size:12.5px}
+  .flow .arw{color:var(--gold);font-weight:700}
+
   @media print{
     body{background:#fff;font-size:11.5pt}.toolbar{display:none}
     .book{max-width:100%;box-shadow:none}.cover{padding-top:36px}.toc{break-after:page}
@@ -245,6 +260,17 @@
 </div>
 <div class="memo"><b>会場での動き</b>：試験開始<b>30分前</b>に集合し、係員の説明を聞きます。往復は<b>公共交通機関</b>を利用（路上駐車は厳禁）。試験開始から<b>35分間は退室不可</b>、以降は試験官の指示で退室できます。</div>
 
+<div class="fig">
+  <p class="ttl">当日のタイムライン</p>
+  <div class="flow">
+    <span class="chip">開始30分前<br><b>集合・説明</b></span><span class="arw">→</span>
+    <span class="chip"><b>試験開始</b><br>120分</span><span class="arw">→</span>
+    <span class="chip">開始35分<br><b>退室可</b></span><span class="arw">→</span>
+    <span class="chip"><b>終了</b></span>
+  </div>
+  <div class="cap">電卓・スマホ・スマートウォッチは使用不可。写真を貼った受験票を忘れずに。</div>
+</div>
+
 <!-- 5 -->
 <div class="chap">
   <div class="kick"><span class="n">5</span></div>
@@ -253,6 +279,15 @@
     35問・120分。単純計算では1問あたり約3分ですが、実際は<strong>解ける問題を先に取り、見直し時間を残す</strong>のが得策です。
     五肢択一は消去法が効きます。
   </p>
+<div class="fig">
+  <p class="ttl">配点と合格ライン（各科目60%）</p>
+  <div class="bars">
+    <div class="row"><span class="lb">法令</span><span class="track"><span class="bar" style="width:60%"></span></span><span class="v">15問 → 9問</span></div>
+    <div class="row"><span class="lb">物化</span><span class="track"><span class="bar" style="width:60%"></span></span><span class="v">10問 → 6問</span></div>
+    <div class="row"><span class="lb">性消</span><span class="track"><span class="bar" style="width:60%"></span></span><span class="v">10問 → 6問</span></div>
+  </div>
+  <div class="cap">全35問・120分。色の部分が合格ライン(60%)。1科目でも届かなければ不合格＝捨て科目を作らない。</div>
+</div>
 </div>
 <ul class="check">
   <li><b>得意科目・自信のある問題から</b>解いてリズムを作る</li>
