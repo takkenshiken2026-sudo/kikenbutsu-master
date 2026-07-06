@@ -108,6 +108,7 @@
 }
 </script>
 <!--/INDEX_SEO_HEAD--><meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#c0392b">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
@@ -124,6 +125,11 @@
   --ink:   #333333;
   --sel:   #333333;
   --sel-s: #e8e8e8;
+  /* 記事・用語ページ（site-theme.css）と共通のアクセント */
+  --accent: #c0392b;
+  --accent-soft: color-mix(in srgb, #c0392b 11%, #ffffff);
+  --accent-border: color-mix(in srgb, #c0392b 26%, #ffffff);
+  --accent-emphasis: color-mix(in srgb, #c0392b 42%, #333333);
   --text2: #555555;
   --text3: #999999;
   /* blue kept as alias → mono (so var(--blue) refs still compile) */
@@ -429,13 +435,13 @@ h2.section-label .tip-icon{width:13px;height:13px;font-size:9px}
 .field-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
 .chip{padding:6px 13px;border-radius:20px;font-size:14px;border:1.5px solid var(--border2);cursor:pointer;background:var(--bg);color:var(--text2);transition:all .15s;line-height:1}
 .chip:hover{border-color:var(--text2);background:var(--bg3)}
-.chip.on{background:var(--sel-s);border-color:var(--ink);color:var(--text);font-weight:600}
+.chip.on{background:var(--accent-soft);border-color:var(--accent-emphasis);color:var(--accent-emphasis);font-weight:600}
 .count-row{display:flex;align-items:center;gap:10px;margin-bottom:22px;flex-wrap:wrap}
 .count-label{font-size:14px;color:var(--text2)}
 .count-btns{display:flex;gap:4px}
 .count-btn{min-width:64px;height:34px;border-radius:var(--r);border:1.5px solid var(--border2);background:var(--bg);color:var(--text2);font-size:14px;cursor:pointer;font-family:var(--font);transition:all .15s;padding:0 14px}
 .count-btn:hover{border-color:var(--text2);background:var(--bg3)}
-.count-btn.on{border-color:var(--ink);background:var(--sel-s);color:var(--text);font-weight:600}
+.count-btn.on{border-color:var(--accent-emphasis);background:var(--accent-soft);color:var(--accent-emphasis);font-weight:600}
 
 /* ===== QUIZ ===== */
 .quiz-progress-wrap{margin-bottom:18px}
@@ -478,13 +484,19 @@ h2.section-label .tip-icon{width:13px;height:13px;font-size:9px}
 .opts-key-hint-label{letter-spacing:.02em}
 .opts-key-cap{display:inline-flex;align-items:center;justify-content:center;min-width:24px;height:24px;padding:0 7px;border:1px solid var(--border2);border-radius:5px;background:var(--bg2);color:var(--text);font-family:var(--mono);font-size:12px;font-weight:700;box-shadow:0 1px 0 var(--border2);line-height:1}
 .opts-list{display:flex;flex-direction:column;gap:7px;margin-bottom:12px}
-.opt{display:flex;align-items:flex-start;gap:13px;padding:13px 16px;border-radius:var(--r);border:1.5px solid var(--border2);background:#ffffff;cursor:pointer;font-size:var(--fs-body);line-height:1.75;transition:all .15s;box-shadow:var(--sh)}
+.opt{display:flex;align-items:flex-start;gap:13px;padding:13px 16px;border-radius:var(--r);border:1.5px solid var(--border2);background:#ffffff;cursor:pointer;font-size:var(--fs-body);line-height:1.75;transition:all .15s;box-shadow:var(--sh);width:100%;text-align:left;font-family:var(--font);color:var(--text)}
 .opt:hover:not(.disabled){background:var(--bg3);border-color:var(--text2)}
+.opt.disabled{cursor:default}
 .opt.correct{border-color:var(--green);background:var(--grn-s)}
 .opt.wrong{border-color:var(--red);background:var(--red-s)}
+/* 正誤を色以外でも判別できるようにマークを付ける */
+.opt.correct::after{content:"✓";margin-left:auto;padding-left:8px;font-weight:700;color:var(--green);flex-shrink:0}
+.opt.wrong::after{content:"✕";margin-left:auto;padding-left:8px;font-weight:700;color:var(--red);flex-shrink:0}
 .opt-num{font-family:var(--mono);font-size:14px;color:var(--text3);flex-shrink:0;padding-top:4px;min-width:16px;font-weight:500}
 .opt.correct .opt-num{color:var(--green)}
 .opt.wrong .opt-num{color:var(--red)}
+/* キーボード操作時のフォーカス可視化 */
+.opt:focus-visible,.chip:focus-visible,.count-btn:focus-visible,.ichi-btn:focus-visible,.focus-chip:focus-visible,.topnav-link:focus-visible,.topnav-hamburger:focus-visible,.btn-next-float:focus-visible,.ichi-next-btn:focus-visible,.mission-popup-close:focus-visible,.letter-item:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
 
 /* ===== EXPLANATION BOX ===== */
 .exp-box{border-radius:var(--r);padding:14px 16px;margin-bottom:12px;font-size:var(--fs-body);line-height:1.75}
@@ -1071,7 +1083,7 @@ details.rich-detail summary{display:none}
 .orig-unit-grid.closed{display:none}
 .orig-unit-grid.open{display:flex}.orig-unit-btn{padding:9px 14px;border-radius:var(--r);font-size:14px;border:1.5px solid var(--border2);cursor:pointer;background:var(--bg);color:var(--text2);transition:all .15s;font-family:var(--font);display:flex;align-items:center;justify-content:space-between;gap:8px;line-height:1;text-align:left;width:100%}
 .orig-unit-btn:hover{border-color:var(--text2);background:var(--bg3)}
-.orig-unit-btn.on{border-color:var(--ink);background:var(--sel-s);color:var(--text);font-weight:600}
+.orig-unit-btn.on{border-color:var(--accent-emphasis);background:var(--accent-soft);color:var(--accent-emphasis);font-weight:600}
 .orig-unit-btn .orig-unit-n{font-size:11px;font-family:var(--mono);opacity:.7;flex-shrink:0}
 .orig-unit-btn.on .orig-unit-n{opacity:.7}
 .orig-cat-sel-all{font-size:12px;padding:3px 8px;border-radius:4px;border:1px solid var(--border2);background:var(--bg2);color:var(--text2);cursor:pointer;font-family:var(--font);transition:all .15s;flex-shrink:0}
@@ -1105,6 +1117,18 @@ body.is-solving .site-footer{display:none!important}
   scrollbar-width:none;
 }
 .site-footer-scroll::-webkit-scrollbar{display:none}
+/* はみ出しがあるときだけ端に影を出す（隠れ横スクロールの手掛かり） */
+.site-footer-scroll{
+  background-image:
+    linear-gradient(to right, var(--bg2) 30%, transparent),
+    linear-gradient(to left, var(--bg2) 30%, transparent),
+    radial-gradient(farthest-side at 0 50%, rgba(0,0,0,.22), transparent),
+    radial-gradient(farthest-side at 100% 50%, rgba(0,0,0,.22), transparent);
+  background-position:left center,right center,left center,right center;
+  background-size:36px 100%,36px 100%,12px 100%,12px 100%;
+  background-repeat:no-repeat;
+  background-attachment:local,local,scroll,scroll;
+}
 .site-footer-inner{
   display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;justify-content:flex-start;
   gap:10px 12px;
@@ -1124,7 +1148,7 @@ body.is-solving .site-footer{display:none!important}
 .site-footer-copy-sub{display:inline;font-size:inherit;font-weight:500;opacity:.88}
 .site-footer-copy-sub::before{content:'・'}
 
-/* ========== GAMIFICATION ==========
+/* ========== GAMIFICATION ========== */
 /* Level + Streak 横並び */
 .lv-streak-row{display:flex;gap:10px;margin-bottom:14px}
 .lv-streak-half{flex:1;margin-bottom:0}
@@ -1132,7 +1156,6 @@ body.is-solving .site-footer{display:none!important}
 @media(max-width:400px){
   .lv-streak-row{flex-direction:column;gap:8px}
 }
- */
 /* Toast notification */
 #toast-wrap{position:fixed;top:66px;right:20px;z-index:9999;pointer-events:none;display:flex;flex-direction:column;align-items:flex-end;gap:8px}
 .toast{background:rgba(255,255,255,.96);color:var(--text);border:1px solid var(--border2);box-shadow:0 8px 24px rgba(0,0,0,.12);padding:9px 13px;border-radius:8px;font-size:13px;font-weight:600;letter-spacing:0;opacity:0;transform:translateY(-6px);transition:opacity .18s ease,transform .18s ease;white-space:nowrap;backdrop-filter:blur(8px)}
@@ -1141,6 +1164,9 @@ body.is-solving .site-footer{display:none!important}
 .toast.wrong{border-color:var(--red-b);color:var(--red)}
 .toast.streak,.toast.badge{background:#2f6f5e;border-color:#2f6f5e;color:#fff}
 .toast.bookmark{border-color:var(--border2)}
+.toast.letter{pointer-events:auto;cursor:pointer;font-family:var(--font);display:flex;align-items:center;gap:8px;text-align:left}
+.toast.letter:focus-visible{outline:2px solid var(--text);outline-offset:2px}
+.toast.letter .letter-toast-cta{color:var(--text3);font-weight:400;font-size:12px}
 /* Badge */
 .badge-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:8px}
 .badge-card-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px}
@@ -4549,7 +4575,7 @@ function renderQScoreReplay(sr){
   updateBookmarkButton(q);
   document.getElementById('q-body').textContent=formatExamQuestionBodyText(q.text||'');
   document.getElementById('opts').innerHTML=q.opts.map((o,j)=>
-    `<div class="opt disabled" id="opt${j}"><span class="opt-num">${j+1}</span><span>${o}</span></div>`).join('');
+    `<button type="button" class="opt disabled" id="opt${j}" disabled><span class="opt-num">${j+1}</span><span>${o}</span></button>`).join('');
   updateOptsKeyHint(false);
   document.querySelectorAll('.opt').forEach((el,j)=>{
     if(j===q.ans) el.classList.add('correct');
@@ -4560,8 +4586,8 @@ function renderQScoreReplay(sr){
   const expHTML=buildQuestionExpHTML(q);
   const yearHistHTML=(quizState.mode!=='past'&&!isAnyOrigQuestion(q)&&q.year)?buildYearHistoryHTML(q):'';
   const feedbackLabel=correct
-    ? `<div class="answer-feedback correct">正解</div>`
-    : `<div class="answer-feedback wrong">不正解</div>`;
+    ? `<div class="answer-feedback correct">✓ 正解</div>`
+    : `<div class="answer-feedback wrong">✕ 不正解</div>`;
   document.getElementById('q-result').innerHTML=`
     <div class="exp-box ${correct?'exp-correct':'exp-wrong'}">
       ${feedbackLabel}
@@ -4609,7 +4635,7 @@ function renderQ(){ window.scrollTo({top:0,behavior:"instant"});
 	  updateBookmarkButton(q);
 	  document.getElementById('q-body').textContent=formatExamQuestionBodyText(q.text||'');
   document.getElementById('opts').innerHTML=q.opts.map((o,i)=>
-    `<div class="opt" id="opt${i}" onclick="pickOpt(${i})"><span class="opt-num">${i+1}</span><span>${o}</span></div>`).join('');
+    `<button type="button" class="opt" id="opt${i}" onclick="pickOpt(${i})"><span class="opt-num">${i+1}</span><span>${o}</span></button>`).join('');
   updateOptsKeyHint(true,q.opts.length);
   document.getElementById('q-result').innerHTML='';
   showNextBtn(false, null);
@@ -4642,6 +4668,7 @@ function pickOpt(i){
   updateOptsKeyHint(false);
   document.querySelectorAll('.opt').forEach((el,j)=>{
     el.classList.add('disabled');
+    el.disabled=true;
     if(j===q.ans)el.classList.add('correct');
     else if(j===i&&!correct)el.classList.add('wrong');
   });
@@ -4651,8 +4678,8 @@ function pickOpt(i){
   const yearHistHTML = (quizState.mode !== 'past' && !isAnyOrigQuestion(q) && q.year) ? buildYearHistoryHTML(q) : '';
   // Answer feedback text
   const feedbackLabel = correct
-    ? `<div class="answer-feedback correct">${STREAK_MSGS[u.streak||0]||'正解'}</div>`
-    : `<div class="answer-feedback wrong">不正解</div>`;
+    ? `<div class="answer-feedback correct">✓ ${STREAK_MSGS[u.streak||0]||'正解'}</div>`
+    : `<div class="answer-feedback wrong">✕ 不正解</div>`;
   document.getElementById('q-result').innerHTML=`
     <div class="exp-box ${correct?'exp-correct':'exp-wrong'}">
       ${feedbackLabel}
@@ -5143,8 +5170,28 @@ function forceShowDailyFirstVisitLetter(u, letterId){
   if(state.count >= SUPPORT_LETTER_DAILY_AUTO_LIMIT) return false;
   markSupportLetterAutoShown(u);
   saveUser(u);
-  setTimeout(()=>showSupportLetter(letterId, true), 520);
+  setTimeout(()=>notifySupportLetter(letterId), 520);
   return true;
+}
+/* 全画面モーダルを自動で被せず、タップで開ける通知トーストに留める */
+function notifySupportLetter(letterId){
+  const wrap=document.getElementById('toast-wrap');
+  if(!wrap) return;
+  const el=document.createElement('button');
+  el.type='button';
+  el.className='toast letter';
+  el.innerHTML='応援レターが届きました<span class="letter-toast-cta">タップで読む</span>';
+  el.onclick=()=>{
+    el.classList.remove('show');
+    setTimeout(()=>el.remove(), 250);
+    showSupportLetter(letterId, true);
+  };
+  wrap.appendChild(el);
+  requestAnimationFrame(()=>{ requestAnimationFrame(()=>{ el.classList.add('show'); }); });
+  setTimeout(()=>{
+    el.classList.remove('show');
+    setTimeout(()=>el.remove(), 250);
+  }, 8000);
 }
 function markSupportLetterAutoShown(u){
   const state = getSupportLetterAutoState(u);
