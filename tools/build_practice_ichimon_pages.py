@@ -39,6 +39,7 @@ from tools.build_past_question_pages import (  # noqa: E402
     HEAD_FONTS,
     Q_INDEX_CSS_VER,
     ROBOTS_INDEX_FOLLOW,
+    build_seq_pager_html,
     q_index_filter_chip_btn,
     build_stem_html,
     glossary_links_for_tags,
@@ -337,6 +338,58 @@ def build_ichimon_related_html(
     )
 
 
+def build_practice_pager_html(
+    page: dict, rel_path: Path, all_pages: list[dict]
+) -> str:
+    """実践演習の前後ページャ。末尾は一問一答へ送客。"""
+    qno = page["qno"]
+    total = len(all_pages)
+    by_no = {p["qno"]: p for p in all_pages}
+    index_href = rel_href(rel_path, "q/practice/index.html")
+
+    prev_pg = by_no.get(qno - 1)
+    if prev_pg:
+        left = (rel_href(rel_path, prev_pg["rel_path"]), "前の問題", f"第{qno - 1}問")
+    else:
+        left = (index_href, "一覧", "実践演習一覧へ")
+
+    center = (index_href, "現在", f"第{qno}問 / {total}問")
+
+    next_pg = by_no.get(qno + 1)
+    if next_pg:
+        right = (rel_href(rel_path, next_pg["rel_path"]), "次の問題", f"第{qno + 1}問")
+    else:
+        right = (rel_href(rel_path, "q/ichimon/index.html"), "次へ", "一問一答に進む")
+
+    return build_seq_pager_html(left, center, right)
+
+
+def build_ichimon_pager_html(
+    page: dict, rel_path: Path, all_pages: list[dict]
+) -> str:
+    """一問一答の前後ページャ（id 昇順）。末尾は実践演習へ送客。"""
+    ordered = sorted(all_pages, key=lambda p: p["id"])
+    total = len(ordered)
+    pos = next((i for i, p in enumerate(ordered) if p["id"] == page["id"]), 0)
+    index_href = rel_href(rel_path, "q/ichimon/index.html")
+
+    if pos > 0:
+        prev_pg = ordered[pos - 1]
+        left = (rel_href(rel_path, prev_pg["rel_path"]), "前の問題", prev_pg["id"])
+    else:
+        left = (index_href, "一覧", "一問一答一覧へ")
+
+    center = (index_href, "現在", f"{pos + 1} / {total}問")
+
+    if pos < total - 1:
+        next_pg = ordered[pos + 1]
+        right = (rel_href(rel_path, next_pg["rel_path"]), "次の問題", next_pg["id"])
+    else:
+        right = (rel_href(rel_path, "q/practice/index.html"), "次へ", "実践演習に進む")
+
+    return build_seq_pager_html(left, center, right)
+
+
 def build_practice_question_html(
     page: dict,
     row: dict,
@@ -396,6 +449,7 @@ def build_practice_question_html(
     related_html = build_practice_related_html(
         page, rel_path, all_pages, glossary_lookup, guides
     )
+    pager_html = build_practice_pager_html(page, rel_path, all_pages)
     json_ld = {
         "@context": "https://schema.org",
         "@graph": [
@@ -476,6 +530,7 @@ def build_practice_question_html(
     <h2 id="q-exp-h" class="q-h2">解説</h2>
     {exp_html}
   </section>
+  {pager_html}
   {similar_html}
   {related_html}
   <p class="q-app-link"><a href="{html.escape(rel_href(rel_path, 'index.html#orig'))}">アプリで演習する</a></p>
@@ -538,6 +593,7 @@ def build_ichimon_question_html(
     related_html = build_ichimon_related_html(
         page, rel_path, all_pages, glossary_lookup, guides
     )
+    pager_html = build_ichimon_pager_html(page, rel_path, all_pages)
     json_ld = {
         "@context": "https://schema.org",
         "@graph": [
@@ -616,6 +672,7 @@ def build_ichimon_question_html(
     <h2 id="q-exp-h" class="q-h2">解説</h2>
     {exp_html}
   </section>
+  {pager_html}
   {similar_html}
   {related_html}
   <p class="q-app-link"><a href="{html.escape(rel_href(rel_path, 'index.html#ichimondou'))}">アプリで演習する</a></p>

@@ -4815,6 +4815,76 @@ html:not(.js) .terms-idx-seo-fallback .terms-idx-seo-list a {
 .related-link-static {
   color: var(--text2);
 }
+/* 前後ページャ（続けて解く導線・PV向上） */
+.q-seq-pager {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 8px;
+  margin: 22px 0 8px;
+}
+.q-seq-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  background: var(--bg2);
+  color: var(--text);
+  text-decoration: none;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+.q-seq-btn:hover {
+  background: var(--accent-hover-surface);
+  border-color: var(--accent-hover-border);
+  color: var(--accent-emphasis);
+}
+.q-seq-kicker {
+  font-size: 0.72rem;
+  color: var(--text3);
+  letter-spacing: 0.02em;
+}
+.q-seq-btn:hover .q-seq-kicker {
+  color: var(--accent-emphasis);
+}
+.q-seq-label {
+  font-weight: 700;
+  font-size: var(--fs-sub);
+  white-space: nowrap;
+}
+.q-seq-prev {
+  align-items: flex-start;
+  text-align: left;
+}
+.q-seq-prev .q-seq-label::before {
+  content: "◀ ";
+}
+.q-seq-index {
+  align-items: center;
+  text-align: center;
+  background: transparent;
+  border-color: transparent;
+}
+.q-seq-index:hover {
+  background: var(--accent-hover-surface);
+}
+.q-seq-next {
+  align-items: flex-end;
+  text-align: right;
+  border-color: var(--accent-border);
+  background: var(--accent-soft);
+}
+.q-seq-next .q-seq-label::after {
+  content: " ▶";
+}
+@media (max-width: 480px) {
+  .q-seq-btn {
+    padding: 10px 11px;
+  }
+  .q-seq-index .q-seq-label {
+    font-size: 0.82rem;
+  }
+}
 .term-point-list,
 .term-legal-list {
   margin-left: 1.4em;
