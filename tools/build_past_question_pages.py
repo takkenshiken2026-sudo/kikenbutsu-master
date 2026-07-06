@@ -207,7 +207,7 @@ def page_meta_description(page: dict) -> str:
     )
 
 
-Q_INDEX_CSS_VER = "20260526-q-index-mobile"
+Q_INDEX_CSS_VER = "20260706-q-seq-pager"
 
 GLOSSARY_CSV = ROOT / "data" / "glossary_terms.csv"
 
@@ -603,6 +603,57 @@ def split_semicolon(s: str) -> list[str]:
     return [x.strip() for x in (s or "").split(";") if x.strip()]
 
 
+def build_seq_pager_html(
+    left: tuple[str, str, str],
+    center: tuple[str, str, str],
+    right: tuple[str, str, str],
+) -> str:
+    """連続で解き進めるための前後ページャ（各スロット = (href, kicker, label)）。"""
+
+    def slot(pos: str, item: tuple[str, str, str]) -> str:
+        href, kicker, label = item
+        return (
+            f'<a class="q-seq-btn q-seq-{pos}" href="{html.escape(href)}">'
+            f'<span class="q-seq-kicker">{html.escape(kicker)}</span>'
+            f'<span class="q-seq-label">{html.escape(label)}</span>'
+            "</a>"
+        )
+
+    return (
+        '<nav class="q-seq-pager" aria-label="問題を続けて解く">'
+        + slot("prev", left)
+        + slot("index", center)
+        + slot("next", right)
+        + "</nav>"
+    )
+
+
+def build_past_pager_html(
+    page: dict, rel_path: Path, all_pages: list[dict]
+) -> str:
+    """過去問各問の前後ページャ。前問／位置表示（一覧）／次問（末尾は実践演習へ）。"""
+    y, qn = page["year"], page["qno"]
+    by_key = {(p["year"], p["qno"]): p for p in all_pages}
+    total = sum(1 for p in all_pages if p["year"] == y)
+    index_href = rel_href(rel_path, "q/index.html")
+
+    prev_pg = by_key.get((y, qn - 1))
+    if prev_pg:
+        left = (rel_href(rel_path, prev_pg["rel_path"]), "前の問題", f"第{qn - 1}問")
+    else:
+        left = (index_href, "一覧", "過去問一覧へ")
+
+    center = (index_href, "現在", f"第{qn}問 / {total}問")
+
+    next_pg = by_key.get((y, qn + 1))
+    if next_pg:
+        right = (rel_href(rel_path, next_pg["rel_path"]), "次の問題", f"第{qn + 1}問")
+    else:
+        right = (rel_href(rel_path, "q/practice/index.html"), "次へ", "実践演習に進む")
+
+    return build_seq_pager_html(left, center, right)
+
+
 def load_rows() -> list[dict]:
     text = DATA_CSV.read_text(encoding="utf-8-sig")
     return list(csv.DictReader(text.splitlines()))
@@ -715,6 +766,7 @@ def build_question_html(
     related_html = build_related_links_html(
         page, row, rel_path, all_pages, glossary_lookup, guides
     )
+    pager_html = build_past_pager_html(page, rel_path, all_pages)
 
     json_ld = {
         "@context": "https://schema.org",
@@ -801,6 +853,7 @@ def build_question_html(
     <h2 id="q-exp-h" class="q-h2">解説</h2>
     {exp_html}
   </section>
+  {pager_html}
   {similar_html}
   {related_html}
   <p class="q-app-link"><a href="{html.escape(rel_href(rel_path, 'index.html#past'))}">アプリで演習する</a></p>
