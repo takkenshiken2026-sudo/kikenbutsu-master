@@ -66,8 +66,8 @@ def index_meta_description(mode: str, *, count: int) -> str:
     c = seo_copy()
     if mode == "past":
         base = (
-            f"{c['examShort']}（{ex}）の過去問{count}問を無料掲載·年度·分野別。"
-            f"{c['mockExam']}対策・{c['studyModes']}の学習に対応。"
+            f"危険物取扱者 乙4（{ex}）の過去問を無料掲載。本試験形式{count}問を年度別·分野別にまとめ、"
+            f"実践演習・一問一答も併設。{c['mockExam']}対策の演習に。"
             "検索・絞り込みのあと解説ページへ。"
         )
     elif mode == "practice":
@@ -145,7 +145,7 @@ def index_search_index_suffix() -> str:
 def index_h1(mode: str) -> str:
     """一覧ページの H1（試験名＋モード名を先頭に）。"""
     if mode == "past":
-        return f"{exam_short_name()} {MODE_LABEL[mode]}（無料）"
+        return f"危険物取扱者 乙4 {MODE_LABEL[mode]}（無料）"
     return f"{exam_name()} {MODE_LABEL[mode]}"
 
 
@@ -159,7 +159,7 @@ def index_page_title(mode: str) -> str:
     c = seo_copy()
     label = MODE_LABEL[mode]
     if mode == "past":
-        return f"{c['examShort']} 過去問 無料一覧｜年度別·分野別｜{brand_name()}"
+        return f"危険物取扱者 乙4 過去問 無料｜本試験形式35問＋演習1000問｜{brand_name()}"
     elif mode == "practice":
         sub = f"{c['mockExam']}前の演習"
     else:
