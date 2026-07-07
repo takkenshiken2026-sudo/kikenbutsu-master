@@ -39,7 +39,9 @@ from tools.build_past_question_pages import (  # noqa: E402
     HEAD_FONTS,
     Q_INDEX_CSS_VER,
     ROBOTS_INDEX_FOLLOW,
+    build_quiz_schema,
     build_seq_pager_html,
+    build_tf_quiz_schema,
     q_index_filter_chip_btn,
     build_stem_html,
     glossary_links_for_tags,
@@ -471,6 +473,14 @@ def build_practice_question_html(
             },
         ],
     }
+    quiz_schema = build_quiz_schema(
+        stem=stem,
+        opts=page["opts"],
+        correct_idx=page["correct"],
+        about=f"{exam_name()} {page['category']}".strip(),
+    )
+    if quiz_schema:
+        json_ld["@graph"].append(quiz_schema)
     site_header = site_page_header(rel_path, current="practice")
     site_breadcrumb = breadcrumb_html(
         rel_path,
@@ -615,6 +625,13 @@ def build_ichimon_question_html(
             },
         ],
     }
+    tf_schema = build_tf_quiz_schema(
+        statement=page.get("statement") or "",
+        correct_answer="正しい" if page.get("correct_answer") else "誤り",
+        about=f"{exam_name()} {page['category']}".strip(),
+    )
+    if tf_schema:
+        json_ld["@graph"].append(tf_schema)
     site_header = site_page_header(rel_path, current="ichimon")
     site_breadcrumb = breadcrumb_html(
         rel_path,
