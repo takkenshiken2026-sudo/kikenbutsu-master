@@ -654,6 +654,62 @@ def build_past_pager_html(
     return build_seq_pager_html(left, center, right)
 
 
+def build_quiz_schema(
+    *,
+    stem: str,
+    opts: list[str],
+    correct_idx,
+    about: str,
+) -> dict | None:
+    """五肢択一問題の Quiz/Question 構造化データ（Google Practice problems 準拠）。"""
+    stem = (stem or "").strip()
+    if not stem or not opts or not correct_idx:
+        return None
+    try:
+        accepted = opts[int(correct_idx) - 1]
+    except (ValueError, IndexError):
+        return None
+    wrong = [o for i, o in enumerate(opts, start=1) if i != int(correct_idx)]
+    question: dict = {
+        "@type": "Question",
+        "eduQuestionType": "Multiple choice",
+        "text": stem,
+        "acceptedAnswer": {"@type": "Answer", "text": accepted},
+    }
+    if wrong:
+        question["suggestedAnswer"] = [
+            {"@type": "Answer", "text": w} for w in wrong
+        ]
+    return {
+        "@type": "Quiz",
+        "about": {"@type": "Thing", "name": about},
+        "hasPart": question,
+    }
+
+
+def build_tf_quiz_schema(
+    *,
+    statement: str,
+    correct_answer: str,
+    about: str,
+) -> dict | None:
+    """〇×（正誤）問題の Quiz/Question 構造化データ。"""
+    statement = (statement or "").strip()
+    correct_answer = (correct_answer or "").strip()
+    if not statement or not correct_answer:
+        return None
+    return {
+        "@type": "Quiz",
+        "about": {"@type": "Thing", "name": about},
+        "hasPart": {
+            "@type": "Question",
+            "eduQuestionType": "True/False",
+            "text": statement,
+            "acceptedAnswer": {"@type": "Answer", "text": correct_answer},
+        },
+    }
+
+
 def load_rows() -> list[dict]:
     text = DATA_CSV.read_text(encoding="utf-8-sig")
     return list(csv.DictReader(text.splitlines()))
@@ -789,6 +845,14 @@ def build_question_html(
             },
         ],
     }
+    quiz_schema = build_quiz_schema(
+        stem=lead,
+        opts=page["opts"],
+        correct_idx=page["correct"],
+        about=f"{exam_name()} {page['category']}".strip(),
+    )
+    if quiz_schema:
+        json_ld["@graph"].append(quiz_schema)
 
     site_header = site_page_header(
         rel_path,
