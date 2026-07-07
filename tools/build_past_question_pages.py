@@ -1051,6 +1051,10 @@ def build_q_index(pages: list[dict], base_url: str) -> str:
         "弱点1科目の攻め方は"
         '<a href="../articles/past-questions-by-field/index.html">分野別の過去問</a>'
         "で詳しく解説しています。</p>"
+        "<p>そもそも乙4の過去問は公式に一部しか公開されていません。"
+        "公式サンプルの位置づけや本試験形式との違いは"
+        '<a href="../articles/past-question-availability/index.html">過去問は公開されている？</a>'
+        "で整理しています。</p>"
         "</section>"
     )
 
