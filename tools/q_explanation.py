@@ -4893,10 +4893,69 @@ def build_choice_commentary(
     return items
 
 
+def build_verbatim_explanation_html(page: dict, row: dict) -> str:
+    """explanation_mode=verbatim 用。
+
+    手書きの ``explanation_correct``（正解の理由）と ``explanation_choices``
+    （他肢解説）を、自動補完・重複削除・キーワード注入を一切かけずに
+    そのまま描画する。字数ゲート（正解の理由 50〜220字／各他肢 40〜220字）は
+    執筆側が満たす前提。単一正答（single）の問題のみを対象とし、
+    必要な素材が欠ける場合は空文字を返して従来経路へ委ねる。
+    """
+    correct = page.get("correct")
+    if correct is None or page.get("is_invalidated"):
+        return ""
+    if _extended_question_mode(page, row) != "single":
+        return ""
+    correct_body = norm(row.get("explanation_correct"))
+    if not correct_body:
+        return ""
+    correct_indices = correct_choice_indices(correct)
+    if len(correct_indices) != 1:
+        return ""
+    parsed = parse_explanation_choices(norm(row.get("explanation_choices")))
+    wrong_items: list[tuple[int, str]] = []
+    for i, _opt in enumerate(page.get("opts") or [], start=1):
+        if i in correct_indices:
+            continue
+        note = norm(parsed.get(i))
+        if not note:
+            return ""
+        wrong_items.append((i, note))
+    if not wrong_items:
+        return ""
+
+    parts: list[str] = ['<div class="q-exp">']
+    parts.append(
+        '<section class="q-exp-section" aria-labelledby="q-exp-correct-h">'
+        '<h3 id="q-exp-correct-h" class="q-exp-h3">正解の理由</h3>'
+    )
+    parts.append(f"<p>{text_to_html(correct_body)}</p>")
+    parts.append("</section>")
+    lis = "".join(
+        f'<li class="q-exp-choice-item">'
+        f'<p class="q-exp-choice-head"><span class="q-exp-choice-num">（{i}）</span></p>'
+        f'<p class="q-exp-choice-note">{text_to_html(note)}</p></li>'
+        for i, note in wrong_items
+    )
+    parts.append(
+        '<section class="q-exp-section" aria-labelledby="q-exp-wrong-h">'
+        '<h3 id="q-exp-wrong-h" class="q-exp-h3">他の選択肢</h3>'
+        f'<ul class="q-exp-choice-list">{lis}</ul></section>'
+    )
+    parts.append("</div>")
+    return "\n    ".join(parts)
+
+
 def build_explanation_html(page: dict, row: dict) -> str:
     base = norm(row.get("explanation")) or "（解説は未入力です。）"
     if page.get("is_invalidated") or page.get("correct") is None:
         return f'<div class="q-exp"><p>{text_to_html(base)}</p></div>'
+
+    if norm(row.get("explanation_mode")).lower() in {"verbatim", "manual", "手動"}:
+        verbatim = build_verbatim_explanation_html(page, row)
+        if verbatim:
+            return verbatim
 
     mode = _extended_question_mode(page, row)
     if mode == "combination":
