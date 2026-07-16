@@ -9297,15 +9297,15 @@ const PRACTICE_QUESTIONS = {
       "field": "rights",
       "text": "物質の燃焼の仕方について、正しいものはどれか。",
       "opts": [
-        "木炭やコークスは、分解燃焼である。",
-        "木材や石炭は、表面燃焼である。",
         "ガソリンや灯油などの第4類危険物は、蒸発燃焼である。",
+        "木材や石炭は、表面燃焼である。",
+        "木炭やコークスは、分解燃焼である。",
         "セルロイドやニトロセルロースは、蒸発燃焼である。",
         "蒸発燃焼とは、固体が高温で分解して燃える燃え方である。"
       ],
-      "ans": 2,
+      "ans": 0,
       "exp": "第4類は液面から蒸発した蒸気が燃える蒸発燃焼である。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>第4類危険物は液面から蒸発した可燃性蒸気が燃える蒸発燃焼である。木炭やコークスは固体表面が燃える表面燃焼、木材や石炭は熱分解で生じた気体が燃える分解燃焼、セルロイドなどは分子内の酸素で燃える自己燃焼であるため、第4類が蒸発燃焼とする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">木炭やコークスは固体表面が直接燃える表面燃焼であり、分解燃焼とするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">木材や石炭は熱分解で生じた可燃性ガスが燃える分解燃焼であり、表面燃焼とするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">セルロイドやニトロセルロースは分子内の酸素で燃える自己燃焼であり、蒸発燃焼とするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">蒸発燃焼は液体などから蒸発した蒸気が燃える燃え方であり、固体の分解による燃焼とするのは誤りである。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>第4類危険物は液面から蒸発した可燃性蒸気が燃える蒸発燃焼である。木炭やコークスは固体表面が燃える表面燃焼、木材や石炭は熱分解で生じた気体が燃える分解燃焼、セルロイドなどは分子内の酸素で燃える自己燃焼であるため、第4類が蒸発燃焼とする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">木材や石炭は熱分解で生じた可燃性ガスが燃える分解燃焼であり、表面燃焼とするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">木炭やコークスは固体表面が直接燃える表面燃焼であり、分解燃焼とするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">セルロイドやニトロセルロースは分子内の酸素で燃える自己燃焼であり、蒸発燃焼とするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">蒸発燃焼は液体などから蒸発した蒸気が燃える燃え方であり、固体の分解による燃焼とするのは誤りである。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p517/index.html"
     },
     {
@@ -9423,15 +9423,15 @@ const PRACTICE_QUESTIONS = {
       "field": "limit",
       "text": "第4類危険物の貯蔵・取扱いの一般的な注意として、適切でないものはどれか。",
       "opts": [
-        "容器は密栓して、冷暗所に貯蔵する。",
-        "火気や火花を近づけない。",
         "発生した可燃性蒸気は高い所にたまるので、上方だけを換気すればよい。",
+        "火気や火花を近づけない。",
+        "容器は密栓して、冷暗所に貯蔵する。",
         "詰め替えのときは、静電気を抑えるため流速を遅くする。",
         "みだりに可燃性蒸気を発生させない。"
       ],
-      "ans": 2,
+      "ans": 0,
       "exp": "第4類の蒸気は空気より重く低所に滞留するため、上方だけの換気は適切でない。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>第4類の蒸気は空気より重く低い所に滞留するため、換気は低所を含めて行う必要があり、高い所にたまるとして上方だけを換気するのは適切でない。容器の密栓と冷暗所での貯蔵、火気を近づけないこと、流速を遅くして静電気を抑えること、みだりに蒸気を発生させないことはいずれも適切である。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">容器を密栓して冷暗所に貯蔵するのは適切であり、本問が求める適切でないものには当たらない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">火気や火花を近づけないのは引火防止の基本で適切であり、適切でないものには当たらない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">詰め替えの流速を遅くして静電気を抑えるのは適切であり、適切でないものには当たらない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">みだりに可燃性蒸気を発生させないのは適切であり、本問が求める適切でないものには当たらない。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>第4類の蒸気は空気より重く低い所に滞留するため、換気は低所を含めて行う必要があり、高い所にたまるとして上方だけを換気するのは適切でない。容器の密栓と冷暗所での貯蔵、火気を近づけないこと、流速を遅くして静電気を抑えること、みだりに蒸気を発生させないことはいずれも適切である。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">火気や火花を近づけないのは引火防止の基本で適切であり、適切でないものには当たらない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">容器を密栓して冷暗所に貯蔵するのは適切であり、本問が求める適切でないものには当たらない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">詰め替えの流速を遅くして静電気を抑えるのは適切であり、適切でないものには当たらない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">みだりに可燃性蒸気を発生させないのは適切であり、本問が求める適切でないものには当たらない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p524/index.html"
     },
     {
@@ -9439,7 +9439,7 @@ const PRACTICE_QUESTIONS = {
       "year": "orig",
       "num": 525,
       "field": "law",
-      "text": "予防規程について、正しいものはどれか。",
+      "text": "製造所等の予防規程の認可について、正しいものはどれか。",
       "opts": [
         "予防規程を定めたときは、市町村長等の認可を受けなければならない。",
         "予防規程は、すべての製造所等に作成が義務づけられている。",
@@ -9963,15 +9963,15 @@ const PRACTICE_QUESTIONS = {
       "field": "limit",
       "text": "特殊引火物であるジエチルエーテルの性質について、正しいものはどれか。",
       "opts": [
-        "第4類の中で、引火点が最も高い。",
-        "燃焼範囲は非常に狭い。",
         "直射日光や空気にさらされると、爆発性の過酸化物を生じることがある。",
+        "燃焼範囲は非常に狭い。",
+        "第4類の中で、引火点が最も高い。",
         "蒸気は空気より軽く、危険性は低い。",
         "揮発性は低く、蒸気はほとんど発生しない。"
       ],
-      "ans": 2,
+      "ans": 0,
       "exp": "ジエチルエーテルは直射日光や空気で爆発性の過酸化物を生じることがある。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>ジエチルエーテルは特殊引火物で、引火点が−45℃と第4類の中で最も低く、燃焼範囲が非常に広い。揮発性が高く蒸気は空気より重い。直射日光や空気にさらされると爆発性の過酸化物を生じることがあるため、密栓して冷暗所に貯蔵する。よって過酸化物を生じることがあるとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">ジエチルエーテルの引火点は−45℃と第4類の中で最も低いため、引火点が最も高いとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">ジエチルエーテルの燃焼範囲は非常に広く危険性が高いため、燃焼範囲が非常に狭いとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">ジエチルエーテルの蒸気は空気より重く危険性が高いため、空気より軽く危険性が低いとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">ジエチルエーテルは揮発性が高く多量の蒸気を生じるため、揮発性が低く蒸気がほとんど発生しないとするのは誤りである。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>ジエチルエーテルは特殊引火物で、引火点が−45℃と第4類の中で最も低く、燃焼範囲が非常に広い。揮発性が高く蒸気は空気より重い。直射日光や空気にさらされると爆発性の過酸化物を生じることがあるため、密栓して冷暗所に貯蔵する。よって過酸化物を生じることがあるとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">ジエチルエーテルの燃焼範囲は非常に広く危険性が高いため、燃焼範囲が非常に狭いとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">ジエチルエーテルの引火点は−45℃と第4類の中で最も低いため、引火点が最も高いとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">ジエチルエーテルの蒸気は空気より重く危険性が高いため、空気より軽く危険性が低いとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">ジエチルエーテルは揮発性が高く多量の蒸気を生じるため、揮発性が低く蒸気がほとんど発生しないとするのは誤りである。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p554/index.html"
     },
     {
@@ -10089,15 +10089,15 @@ const PRACTICE_QUESTIONS = {
       "field": "rights",
       "text": "酸・塩基とpHについて、正しいものはどれか。",
       "opts": [
-        "pHが7より大きい水溶液は、酸性である。",
-        "酸性の水溶液は、青色リトマス紙を青色のままにする。",
         "pH7の水溶液は中性で、7より小さいと酸性、大きいと塩基性である。",
+        "酸性の水溶液は、青色リトマス紙を青色のままにする。",
+        "pHが7より大きい水溶液は、酸性である。",
         "酸と塩基が反応して塩と水を生じることを、電離という。",
         "塩基性の水溶液は、赤色リトマス紙を赤色のままにする。"
       ],
-      "ans": 2,
+      "ans": 0,
       "exp": "pH7が中性、7より小さいと酸性、7より大きいと塩基性である。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>水溶液の性質はpHで表され、pH7が中性、7より小さいと酸性、7より大きいと塩基性である。酸性は青色リトマス紙を赤変させ、塩基性は赤色リトマス紙を青変させる。酸と塩基が反応して塩と水を生じることを中和というため、pH7が中性とする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">pHが7より大きい水溶液は塩基性であり、酸性とするのは誤りである。酸性はpHが7より小さい水溶液である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">酸性の水溶液は青色リトマス紙を赤色に変えるため、青色のままにするとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">酸と塩基が反応して塩と水を生じることは中和であり、電離とするのは誤りである。電離はイオンに分かれることである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">塩基性の水溶液は赤色リトマス紙を青色に変えるため、赤色のままにするとするのは誤りである。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>水溶液の性質はpHで表され、pH7が中性、7より小さいと酸性、7より大きいと塩基性である。酸性は青色リトマス紙を赤変させ、塩基性は赤色リトマス紙を青変させる。酸と塩基が反応して塩と水を生じることを中和というため、pH7が中性とする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">酸性の水溶液は青色リトマス紙を赤色に変えるため、青色のままにするとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">pHが7より大きい水溶液は塩基性であり、酸性とするのは誤りである。酸性はpHが7より小さい水溶液である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">酸と塩基が反応して塩と水を生じることは中和であり、電離とするのは誤りである。電離はイオンに分かれることである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">塩基性の水溶液は赤色リトマス紙を青色に変えるため、赤色のままにするとするのは誤りである。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p561/index.html"
     },
     {
@@ -10197,15 +10197,15 @@ const PRACTICE_QUESTIONS = {
       "field": "rights",
       "text": "物質の燃えやすさ（燃焼のしやすさ）について、正しいものはどれか。",
       "opts": [
-        "空気（酸素）との接触面積が小さいほど、燃えやすい。",
-        "発熱量が小さいほど、燃えやすい。",
         "空気（酸素）との接触面積が大きく、発熱量が大きいほど燃えやすい。",
+        "発熱量が小さいほど、燃えやすい。",
+        "空気（酸素）との接触面積が小さいほど、燃えやすい。",
         "熱伝導率が大きいほど、燃えやすい。",
         "周囲の温度が低いほど、燃えやすい。"
       ],
-      "ans": 2,
+      "ans": 0,
       "exp": "空気との接触面積が大きく、発熱量が大きいほど燃えやすい。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>物質は空気との接触面積が大きく、発熱量が大きく、周囲の温度が高く、熱伝導率が小さいほど燃えやすい。接触面積が大きいと酸素と反応しやすく、熱伝導率が小さいと熱がこもりやすいためである。したがって接触面積が大きく発熱量が大きいほど燃えやすいとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">空気との接触面積が大きいほど酸素と反応しやすく燃えやすいため、小さいほど燃えやすいとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">発熱量が大きいほど燃焼が続きやすく燃えやすいため、発熱量が小さいほど燃えやすいとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">熱伝導率が小さいほど熱がこもって燃えやすいため、熱伝導率が大きいほど燃えやすいとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">周囲の温度が高いほど燃えやすいため、周囲の温度が低いほど燃えやすいとするのは誤りである。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>物質は空気との接触面積が大きく、発熱量が大きく、周囲の温度が高く、熱伝導率が小さいほど燃えやすい。接触面積が大きいと酸素と反応しやすく、熱伝導率が小さいと熱がこもりやすいためである。したがって接触面積が大きく発熱量が大きいほど燃えやすいとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">発熱量が大きいほど燃焼が続きやすく燃えやすいため、発熱量が小さいほど燃えやすいとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">空気との接触面積が大きいほど酸素と反応しやすく燃えやすいため、小さいほど燃えやすいとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">熱伝導率が小さいほど熱がこもって燃えやすいため、熱伝導率が大きいほど燃えやすいとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">周囲の温度が高いほど燃えやすいため、周囲の温度が低いほど燃えやすいとするのは誤りである。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p567/index.html"
     },
     {
@@ -10357,7 +10357,7 @@ const PRACTICE_QUESTIONS = {
       "year": "orig",
       "num": 576,
       "field": "law",
-      "text": "地下タンク貯蔵所について、正しいものはどれか。",
+      "text": "地下タンク貯蔵所の基準について、正しいものはどれか。",
       "opts": [
         "タンクを地盤面上に設置する。",
         "漏れを点検する必要はない。",
@@ -10519,7 +10519,7 @@ const PRACTICE_QUESTIONS = {
       "year": "orig",
       "num": 585,
       "field": "law",
-      "text": "簡易タンク貯蔵所について、正しいものはどれか。",
+      "text": "簡易タンク貯蔵所の基準について、正しいものはどれか。",
       "opts": [
         "1つの簡易貯蔵タンクの容量は、2000 L以下とする。",
         "同一品質の危険物のタンクを、10基まで設置できる。",
@@ -10537,7 +10537,7 @@ const PRACTICE_QUESTIONS = {
       "year": "orig",
       "num": 586,
       "field": "law",
-      "text": "販売取扱所について、正しいものはどれか。",
+      "text": "販売取扱所の区分について、正しいものはどれか。",
       "opts": [
         "第一種販売取扱所は、指定数量の倍数が15以下のものである。",
         "販売取扱所では、危険物を容器から出して量り売りする。",
@@ -10558,14 +10558,14 @@ const PRACTICE_QUESTIONS = {
       "text": "温度について、正しいものはどれか。",
       "opts": [
         "セ氏0℃は、絶対温度で0 Kである。",
-        "絶対温度の単位は、℃である。",
         "セ氏温度t℃を絶対温度で表すと、（t＋273）Kになる。",
+        "絶対温度の単位は、℃である。",
         "絶対温度0 Kは、セ氏0℃と同じである。",
         "温度が変わっても、気体の体積は変化しない。"
       ],
-      "ans": 2,
+      "ans": 1,
       "exp": "セ氏温度t℃を絶対温度で表すと（t＋273）Kになる。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>絶対温度は−273℃を0 Kとする温度で、単位はケルビン（K）である。セ氏温度t℃を絶対温度で表すと（t＋273）Kになる。したがってセ氏0℃は273 K、絶対温度0 Kは−273℃にあたるため、（t＋273）Kになるとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">セ氏0℃は絶対温度で273 Kにあたるため、0 Kであるとするのは誤りである。0 Kは−273℃である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">絶対温度の単位はケルビン（K）であるため、絶対温度の単位が℃であるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">絶対温度0 Kはセ氏−273℃にあたるため、絶対温度0 Kがセ氏0℃と同じであるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">温度が上がると気体の体積は膨張するため、温度が変わっても気体の体積は変化しないとするのは誤りである。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>絶対温度は−273℃を0 Kとする温度で、単位はケルビン（K）である。セ氏温度t℃を絶対温度で表すと（t＋273）Kになる。したがってセ氏0℃は273 K、絶対温度0 Kは−273℃にあたるため、（t＋273）Kになるとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">セ氏0℃は絶対温度で273 Kにあたるため、0 Kであるとするのは誤りである。0 Kは−273℃である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">絶対温度の単位はケルビン（K）であるため、絶対温度の単位が℃であるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">絶対温度0 Kはセ氏−273℃にあたるため、絶対温度0 Kがセ氏0℃と同じであるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">温度が上がると気体の体積は膨張するため、温度が変わっても気体の体積は変化しないとするのは誤りである。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p587/index.html"
     },
     {
@@ -10666,14 +10666,14 @@ const PRACTICE_QUESTIONS = {
       "text": "物質の状態変化にともなう熱について、正しいものはどれか。",
       "opts": [
         "固体が液体になるときに吸収する熱を、蒸発熱という。",
-        "状態変化の間は、加熱しても温度は上がり続ける。",
         "蒸発するとき、まわりから熱を吸収する。",
+        "状態変化の間は、加熱しても温度は上がり続ける。",
         "液体が固体になるときは、熱を吸収する。",
         "潜熱は、温度計で直接測ることができる。"
       ],
-      "ans": 2,
+      "ans": 1,
       "exp": "蒸発するときはまわりから熱を吸収し、まわりの温度を下げる。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>状態変化にともなって出入りする熱を潜熱といい、蒸発するときはまわりから蒸発熱を吸収してまわりの温度を下げる。固体が液体になるときに吸収する熱は融解熱で、状態変化の間は熱を加えても温度が一定に保たれる。したがって蒸発時にまわりから熱を吸収するとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">固体が液体になるときに吸収する熱は融解熱であるため、これを蒸発熱とするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">状態変化の間は加えた熱が状態変化に使われ温度は一定に保たれるため、温度が上がり続けるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">液体が固体になるときは熱を放出するため、熱を吸収するとするのは誤りである。凝固では熱が放出される。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">潜熱は状態変化に使われ温度変化として現れないため、温度計で直接測ることができるとするのは誤りである。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>状態変化にともなって出入りする熱を潜熱といい、蒸発するときはまわりから蒸発熱を吸収してまわりの温度を下げる。固体が液体になるときに吸収する熱は融解熱で、状態変化の間は熱を加えても温度が一定に保たれる。したがって蒸発時にまわりから熱を吸収するとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">固体が液体になるときに吸収する熱は融解熱であるため、これを蒸発熱とするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">状態変化の間は加えた熱が状態変化に使われ温度は一定に保たれるため、温度が上がり続けるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">液体が固体になるときは熱を放出するため、熱を吸収するとするのは誤りである。凝固では熱が放出される。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">潜熱は状態変化に使われ温度変化として現れないため、温度計で直接測ることができるとするのは誤りである。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p593/index.html"
     },
     {
@@ -10699,7 +10699,7 @@ const PRACTICE_QUESTIONS = {
       "year": "orig",
       "num": 595,
       "field": "law",
-      "text": "屋内貯蔵所について、正しいものはどれか。",
+      "text": "危険物の屋内貯蔵所の基準について、正しいものはどれか。",
       "opts": [
         "危険物を屋外のタンクに貯蔵する施設である。",
         "床面積や軒高に関する基準はない。",
@@ -10738,14 +10738,14 @@ const PRACTICE_QUESTIONS = {
       "text": "触媒について、正しいものはどれか。",
       "opts": [
         "触媒は、反応の前後でそれ自身が別の物質に変化する。",
-        "触媒は、反応の速さを変えることはできない。",
         "反応の速さを変えるが、それ自身は反応の前後で変化しない。",
+        "触媒は、反応の速さを変えることはできない。",
         "触媒を加えると、必ず反応が遅くなる。",
         "触媒は、反応で生成する熱の量を増やす。"
       ],
-      "ans": 2,
+      "ans": 1,
       "exp": "触媒は反応の速さを変えるが、それ自身は反応の前後で変化しない。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>触媒は化学反応の速さを変えるが、それ自身は反応の前後で変化せず、繰り返し働く。反応を速くする触媒が多いが、生成する熱の総量そのものは変えない。したがって反応の速さを変えるが自身は変化しないとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">触媒は反応の前後でそれ自身は変化しないため、別の物質に変化するとするのは誤りである。触媒は繰り返し働く。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">触媒は反応の速さを変える働きがあるため、反応の速さを変えることはできないとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">触媒は反応を速くするものが多いため、加えると必ず反応が遅くなるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">触媒は反応の速さを変えるが生成する熱の総量は変えないため、熱の量を増やすとするのは誤りである。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>触媒は化学反応の速さを変えるが、それ自身は反応の前後で変化せず、繰り返し働く。反応を速くする触媒が多いが、生成する熱の総量そのものは変えない。したがって反応の速さを変えるが自身は変化しないとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">触媒は反応の前後でそれ自身は変化しないため、別の物質に変化するとするのは誤りである。触媒は繰り返し働く。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">触媒は反応の速さを変える働きがあるため、反応の速さを変えることはできないとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">触媒は反応を速くするものが多いため、加えると必ず反応が遅くなるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">触媒は反応の速さを変えるが生成する熱の総量は変えないため、熱の量を増やすとするのは誤りである。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p597/index.html"
     },
     {
@@ -10828,14 +10828,14 @@ const PRACTICE_QUESTIONS = {
       "text": "液比重と蒸気比重について、正しいものはどれか。",
       "opts": [
         "液比重は空気を基準にした重さの割合である。",
-        "蒸気比重は水を基準にした重さの割合である。",
         "液比重は水を、蒸気比重は空気を基準にした重さの割合である。",
+        "蒸気比重は水を基準にした重さの割合である。",
         "液比重が1より小さい液体は、水に沈む。",
         "蒸気比重が1より大きい蒸気は、上方へ拡散する。"
       ],
-      "ans": 2,
+      "ans": 1,
       "exp": "液比重は水を、蒸気比重は空気を基準にした重さの割合である。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>液比重はその液体と同体積の水の重さの比、蒸気比重はその蒸気と同体積の空気の重さの比である。液比重が1より小さい液体は水に浮き、蒸気比重が1より大きい蒸気は空気より重く低所に滞留する。したがって液比重は水を、蒸気比重は空気を基準とするとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">液比重は水を基準にした重さの割合であるため、空気を基準にした割合とするのは誤りである。空気基準は蒸気比重である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">蒸気比重は空気を基準にした重さの割合であるため、水を基準にした割合とするのは誤りである。水基準は液比重である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">液比重が1より小さい液体は水に浮くため、水に沈むとするのは誤りである。水に沈むのは液比重が1より大きい液体である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">蒸気比重が1より大きい蒸気は空気より重く低所に滞留するため、上方へ拡散するとするのは誤りである。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>液比重はその液体と同体積の水の重さの比、蒸気比重はその蒸気と同体積の空気の重さの比である。液比重が1より小さい液体は水に浮き、蒸気比重が1より大きい蒸気は空気より重く低所に滞留する。したがって液比重は水を、蒸気比重は空気を基準とするとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">液比重は水を基準にした重さの割合であるため、空気を基準にした割合とするのは誤りである。空気基準は蒸気比重である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">蒸気比重は空気を基準にした重さの割合であるため、水を基準にした割合とするのは誤りである。水基準は液比重である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">液比重が1より小さい液体は水に浮くため、水に沈むとするのは誤りである。水に沈むのは液比重が1より大きい液体である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">蒸気比重が1より大きい蒸気は空気より重く低所に滞留するため、上方へ拡散するとするのは誤りである。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p602/index.html"
     },
     {
@@ -10861,7 +10861,7 @@ const PRACTICE_QUESTIONS = {
       "year": "orig",
       "num": 604,
       "field": "law",
-      "text": "移送取扱所について、正しいものはどれか。",
+      "text": "配管で危険物を送る移送取扱所について、正しいものはどれか。",
       "opts": [
         "自動車に給油する施設である。",
         "店舗で容器入りの危険物を販売する施設である。",
@@ -10882,14 +10882,14 @@ const PRACTICE_QUESTIONS = {
       "text": "重油などの火災で起こるボイルオーバーについて、正しいものはどれか。",
       "opts": [
         "水を大量に注げば、必ず防ぐことができる。",
-        "タンク底部に水がなくても、必ず起こる現象である。",
         "タンク底部の水が加熱されて沸騰し、油を吹き上げてタンク外へ噴出させる現象である。",
+        "タンク底部に水がなくても、必ず起こる現象である。",
         "引火点の低いガソリンだけで起こる現象である。",
         "火災の初期にすぐ起こる、危険の小さい現象である。"
       ],
-      "ans": 2,
+      "ans": 1,
       "exp": "ボイルオーバーはタンク底部の水が沸騰し、油を吹き上げて噴出させる現象である。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>ボイルオーバーは、重質油のタンク火災が長時間続いたのち、高温の油層がタンク底部に達したとき、底部にたまった水が加熱されて急激に沸騰し、油を吹き上げて多量の油をタンク外へ噴出させる現象である。極めて危険なため、重油などの火災で注意が必要であるとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">油に大量の水を注ぐと水が沸騰して油を噴出させる危険があるため、水を注げば必ず防げるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">ボイルオーバーはタンク底部の水が沸騰して起こる現象であるため、水がなくても必ず起こるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">ボイルオーバーは重質油のタンク火災で起こる現象であるため、ガソリンだけで起こるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">ボイルオーバーは長時間の燃焼後に起こる極めて危険な現象であるため、初期に起こる危険の小さい現象とするのは誤りである。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>ボイルオーバーは、重質油のタンク火災が長時間続いたのち、高温の油層がタンク底部に達したとき、底部にたまった水が加熱されて急激に沸騰し、油を吹き上げて多量の油をタンク外へ噴出させる現象である。極めて危険なため、重油などの火災で注意が必要であるとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">油に大量の水を注ぐと水が沸騰して油を噴出させる危険があるため、水を注げば必ず防げるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">ボイルオーバーはタンク底部の水が沸騰して起こる現象であるため、水がなくても必ず起こるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">ボイルオーバーは重質油のタンク火災で起こる現象であるため、ガソリンだけで起こるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">ボイルオーバーは長時間の燃焼後に起こる極めて危険な現象であるため、初期に起こる危険の小さい現象とするのは誤りである。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p605/index.html"
     },
     {
@@ -10969,7 +10969,7 @@ const PRACTICE_QUESTIONS = {
       "year": "orig",
       "num": 610,
       "field": "law",
-      "text": "消防法上の危険物について、正しいものはどれか。",
+      "text": "消防法別表第一に基づく危険物の定義について、正しいものはどれか。",
       "opts": [
         "消防法別表第一の品名欄に掲げる物品で、同表の性状を有するものをいう。",
         "常温で気体のものも、第4類危険物に含まれる。",
@@ -11062,14 +11062,14 @@ const PRACTICE_QUESTIONS = {
       "text": "特殊引火物の一般的な性質について、正しいものはどれか。",
       "opts": [
         "引火点が高く、常温では引火しない。",
-        "発火点は高く、燃えにくい。",
         "引火点が非常に低く、発火点も低いものがあり、極めて引火・発火しやすい。",
+        "発火点は高く、燃えにくい。",
         "蒸気は空気より軽く、危険性は低い。",
         "水によく溶けるため、危険性はない。"
       ],
-      "ans": 2,
+      "ans": 1,
       "exp": "特殊引火物は引火点が非常に低く、極めて引火・発火しやすい。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>特殊引火物はジエチルエーテルや二硫化炭素などで、引火点が非常に低く、発火点が低いものもあり、極めて引火・発火しやすい。沸点も低く揮発性が高く、蒸気は空気より重い。第4類の中で最も危険性が高い品名であるため、引火・発火しやすいとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">特殊引火物は引火点が非常に低く常温でも引火するため、引火点が高く常温では引火しないとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">特殊引火物には発火点が低いものもあり燃えやすいため、発火点が高く燃えにくいとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">特殊引火物の蒸気は空気より重く危険性が高いため、蒸気は空気より軽く危険性が低いとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">特殊引火物は引火・発火しやすく極めて危険なため、水に溶けるものがあっても危険性はないとするのは誤りである。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>特殊引火物はジエチルエーテルや二硫化炭素などで、引火点が非常に低く、発火点が低いものもあり、極めて引火・発火しやすい。沸点も低く揮発性が高く、蒸気は空気より重い。第4類の中で最も危険性が高い品名であるため、引火・発火しやすいとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">特殊引火物は引火点が非常に低く常温でも引火するため、引火点が高く常温では引火しないとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">特殊引火物には発火点が低いものもあり燃えやすいため、発火点が高く燃えにくいとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">特殊引火物の蒸気は空気より重く危険性が高いため、蒸気は空気より軽く危険性が低いとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">特殊引火物は引火・発火しやすく極めて危険なため、水に溶けるものがあっても危険性はないとするのは誤りである。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p615/index.html"
     },
     {
@@ -11080,14 +11080,14 @@ const PRACTICE_QUESTIONS = {
       "text": "蒸発と沸騰について、正しいものはどれか。",
       "opts": [
         "蒸発は、液体内部からも激しく気泡を生じて起こる。",
-        "沸騰は、液体の表面だけで静かに起こる。",
         "蒸発は液体の表面から、沸騰は液体内部からも気泡を生じて起こる。",
+        "沸騰は、液体の表面だけで静かに起こる。",
         "沸騰は、沸点に達しなくても常に起こっている。",
         "蒸発は、沸点に達したときだけ起こる。"
       ],
-      "ans": 2,
+      "ans": 1,
       "exp": "蒸発は液体の表面から、沸騰は液体内部からも気泡を生じて起こる。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>蒸発は液体の表面から気体になる現象で、沸点に達しなくても常に起こっている。沸騰は液温が沸点に達したとき、液体の内部からも気泡を生じて激しく気体になる現象である。したがって蒸発は表面から、沸騰は内部からも起こるとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">蒸発は液体の表面から静かに起こる現象であるため、液体内部から激しく気泡を生じて起こるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">沸騰は液体内部からも気泡を生じて起こる現象であるため、表面だけで静かに起こるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">沸騰は液温が沸点に達したときに起こるため、沸点に達しなくても常に起こっているとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">蒸発は沸点に達しなくても表面から常に起こるため、沸点に達したときだけ起こるとするのは誤りである。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>蒸発は液体の表面から気体になる現象で、沸点に達しなくても常に起こっている。沸騰は液温が沸点に達したとき、液体の内部からも気泡を生じて激しく気体になる現象である。したがって蒸発は表面から、沸騰は内部からも起こるとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">蒸発は液体の表面から静かに起こる現象であるため、液体内部から激しく気泡を生じて起こるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">沸騰は液体内部からも気泡を生じて起こる現象であるため、表面だけで静かに起こるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">沸騰は液温が沸点に達したときに起こるため、沸点に達しなくても常に起こっているとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">蒸発は沸点に達しなくても表面から常に起こるため、沸点に達したときだけ起こるとするのは誤りである。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p616/index.html"
     },
     {
@@ -11152,14 +11152,14 @@ const PRACTICE_QUESTIONS = {
       "text": "危険物取扱者免状の効力について、正しいものはどれか。",
       "opts": [
         "免状は、交付を受けた都道府県の中だけで有効である。",
-        "免状は、5年ごとに更新しないと失効する。",
         "免状は、全国どこでも有効である。",
+        "免状は、5年ごとに更新しないと失効する。",
         "乙種第4類の免状で、第1類から第6類までを取り扱える。",
         "免状は、他人に貸すことができる。"
       ],
-      "ans": 2,
+      "ans": 1,
       "exp": "危険物取扱者免状は、全国どこでも有効である。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>危険物取扱者免状は、いずれの都道府県で交付を受けても全国で有効である。定期的な更新で失効するものではないが、取扱作業に従事する者は保安講習を受ける必要がある。乙種第4類で扱えるのは第4類のみで、免状は他人に貸与できないため、全国で有効とする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">免状はどの都道府県で交付を受けても全国で有効であるため、交付を受けた都道府県だけで有効とするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">免状は更新によって失効するものではないため、5年ごとに更新しないと失効するとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">乙種第4類の免状で扱えるのは第4類のみであるため、第1類から第6類までを取り扱えるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">免状は本人が使用するもので他人に貸与できないため、他人に貸すことができるとするのは誤りである。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>危険物取扱者免状は、いずれの都道府県で交付を受けても全国で有効である。定期的な更新で失効するものではないが、取扱作業に従事する者は保安講習を受ける必要がある。乙種第4類で扱えるのは第4類のみで、免状は他人に貸与できないため、全国で有効とする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">免状はどの都道府県で交付を受けても全国で有効であるため、交付を受けた都道府県だけで有効とするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">免状は更新によって失効するものではないため、5年ごとに更新しないと失効するとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">乙種第4類の免状で扱えるのは第4類のみであるため、第1類から第6類までを取り扱えるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">免状は本人が使用するもので他人に貸与できないため、他人に貸すことができるとするのは誤りである。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p620/index.html"
     },
     {
@@ -11221,7 +11221,7 @@ const PRACTICE_QUESTIONS = {
       "year": "orig",
       "num": 624,
       "field": "law",
-      "text": "屋内タンク貯蔵所について、正しいものはどれか。",
+      "text": "屋内タンク貯蔵所の基準について、正しいものはどれか。",
       "opts": [
         "危険物を屋外のタンクに貯蔵する施設である。",
         "タンクを地盤面下に埋設して貯蔵する施設である。",
@@ -11242,14 +11242,14 @@ const PRACTICE_QUESTIONS = {
       "text": "二硫化炭素の貯蔵・取扱いについて、正しいものはどれか。",
       "opts": [
         "水より軽いため、水に浮かべて貯蔵する。",
-        "発火点が高いので、加熱しても発火しない。",
         "水より重く水に溶けにくいので、水を張って蒸気の発生を抑えて貯蔵する。",
+        "発火点が高いので、加熱しても発火しない。",
         "蒸気は無害なので、換気は不要である。",
         "引火点が高く、常温では引火しない。"
       ],
-      "ans": 2,
+      "ans": 1,
       "exp": "二硫化炭素は水より重く水に溶けにくいため、水を張って蒸気を抑えて貯蔵する。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>二硫化炭素は液比重が1より大きく水に沈み、水に溶けにくいため、水を張って液面を覆い可燃性蒸気の発生を抑えて貯蔵する。発火点が約90℃と低く、引火点も−30℃以下と低いため極めて引火・発火しやすい。したがって水を張って蒸気を抑えるとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">二硫化炭素は水より重く水に沈むため、水より軽く水に浮かべて貯蔵するとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">二硫化炭素の発火点は約90℃と低く加熱で発火しやすいため、発火点が高く発火しないとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">二硫化炭素の蒸気は有毒で引火しやすいため、蒸気は無害で換気は不要とするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">二硫化炭素の引火点は−30℃以下と低く常温でも引火するため、引火点が高く常温では引火しないとするのは誤りである。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>二硫化炭素は液比重が1より大きく水に沈み、水に溶けにくいため、水を張って液面を覆い可燃性蒸気の発生を抑えて貯蔵する。発火点が約90℃と低く、引火点も−30℃以下と低いため極めて引火・発火しやすい。したがって水を張って蒸気を抑えるとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">二硫化炭素は水より重く水に沈むため、水より軽く水に浮かべて貯蔵するとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">二硫化炭素の発火点は約90℃と低く加熱で発火しやすいため、発火点が高く発火しないとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">二硫化炭素の蒸気は有毒で引火しやすいため、蒸気は無害で換気は不要とするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">二硫化炭素の引火点は−30℃以下と低く常温でも引火するため、引火点が高く常温では引火しないとするのは誤りである。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p625/index.html"
     },
     {
@@ -11260,14 +11260,14 @@ const PRACTICE_QUESTIONS = {
       "text": "温度による液体の体積や密度の変化について、正しいものはどれか。",
       "opts": [
         "液体は、温度が上がると体積が小さくなる。",
-        "液体の密度は、温度が変わっても一定である。",
         "液体は、温度が上がると体積が増え、密度は小さくなる。",
+        "液体の密度は、温度が変わっても一定である。",
         "液体は、温度が上がると密度が大きくなる。",
         "液体の体積は、温度と無関係である。"
       ],
-      "ans": 2,
+      "ans": 1,
       "exp": "液体は温度が上がると体積が増え、密度は小さくなる。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>液体は温度が上がると膨張して体積が増え、同じ質量でも体積が大きくなるため密度は小さくなる。逆に温度が下がると体積が減り密度は大きくなる。タンクに空間を確保するのはこの膨張に備えるためである。したがって温度上昇で体積が増え密度が小さくなるとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">液体は温度が上がると膨張して体積が増えるため、体積が小さくなるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">液体の密度は温度によって変化するため、温度が変わっても一定であるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">液体は温度が上がると体積が増えて密度は小さくなるため、密度が大きくなるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">液体の体積は温度によって変化して膨張や収縮が起こるため、温度と無関係であるとするのは誤りである。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>液体は温度が上がると膨張して体積が増え、同じ質量でも体積が大きくなるため密度は小さくなる。逆に温度が下がると体積が減り密度は大きくなる。タンクに空間を確保するのはこの膨張に備えるためである。したがって温度上昇で体積が増え密度が小さくなるとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">液体は温度が上がると膨張して体積が増えるため、体積が小さくなるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">液体の密度は温度によって変化するため、温度が変わっても一定であるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">液体は温度が上がると体積が増えて密度は小さくなるため、密度が大きくなるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">液体の体積は温度によって変化して膨張や収縮が起こるため、温度と無関係であるとするのは誤りである。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p626/index.html"
     },
     {
@@ -11314,14 +11314,14 @@ const PRACTICE_QUESTIONS = {
       "text": "酸化剤・還元剤について、正しいものはどれか。",
       "opts": [
         "酸化剤は、相手の物質を還元し自らは酸化される。",
-        "第4類危険物は、強い酸化剤である。",
         "酸化剤は、相手の物質を酸化し自らは還元される。",
+        "第4類危険物は、強い酸化剤である。",
         "酸化剤と可燃物を混ぜても、発火の危険はない。",
         "還元剤は、相手を酸化する物質である。"
       ],
-      "ans": 2,
+      "ans": 1,
       "exp": "酸化剤は相手の物質を酸化し、自らは還元される物質である。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>酸化剤は相手の物質を酸化して自らは還元される物質、還元剤は相手を還元して自らは酸化される物質である。第4類の可燃物と強い酸化剤を混ぜると発火や爆発の危険があるため混触に注意する。したがって酸化剤は相手を酸化し自らは還元されるとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">酸化剤は相手を酸化し自らは還元されるため、相手を還元し自らは酸化されるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">第4類危険物は燃える可燃物であり酸化剤ではないため、強い酸化剤であるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">酸化剤と可燃物を混ぜると発火や爆発の危険があるため、発火の危険はないとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">還元剤は相手を還元し自らは酸化される物質であるため、相手を酸化する物質であるとするのは誤りである。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>酸化剤は相手の物質を酸化して自らは還元される物質、還元剤は相手を還元して自らは酸化される物質である。第4類の可燃物と強い酸化剤を混ぜると発火や爆発の危険があるため混触に注意する。したがって酸化剤は相手を酸化し自らは還元されるとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">酸化剤は相手を酸化し自らは還元されるため、相手を還元し自らは酸化されるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">第4類危険物は燃える可燃物であり酸化剤ではないため、強い酸化剤であるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">酸化剤と可燃物を混ぜると発火や爆発の危険があるため、発火の危険はないとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">還元剤は相手を還元し自らは酸化される物質であるため、相手を酸化する物質であるとするのは誤りである。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p629/index.html"
     },
     {
@@ -11350,14 +11350,14 @@ const PRACTICE_QUESTIONS = {
       "text": "危険物の混触による危険について、正しいものはどれか。",
       "opts": [
         "第4類危険物は、どんな物質と混ぜても危険はない。",
-        "第4類の可燃物と酸化性の物質を混ぜても、発火の危険はない。",
         "第4類の可燃物と第1類などの酸化性物質を混ぜると、発火や爆発の危険がある。",
+        "第4類の可燃物と酸化性の物質を混ぜても、発火の危険はない。",
         "混触の危険は、同じ類の危険物どうしでのみ起こる。",
         "酸化性物質は、可燃物の燃焼を妨げる。"
       ],
-      "ans": 2,
+      "ans": 1,
       "exp": "第4類の可燃物と酸化性物質を混ぜると、発火や爆発の危険がある。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>第4類は燃える可燃物であり、第1類や第6類などの酸化性物質と混ぜると、酸化性物質が酸素を供給して発火や爆発を起こす危険がある。このため異なる性質の危険物を接触させないよう混触に注意する。したがって可燃物と酸化性物質の混触に危険があるとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">第4類は酸化性物質などと混ぜると発火の危険があるため、どんな物質と混ぜても危険はないとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">第4類の可燃物と酸化性物質を混ぜると発火の危険があるため、発火の危険はないとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">混触の危険は性質の異なる危険物どうしで起こるため、同じ類どうしでのみ起こるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">酸化性物質は酸素を供給して可燃物の燃焼を助けるため、燃焼を妨げるとするのは誤りである。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>第4類は燃える可燃物であり、第1類や第6類などの酸化性物質と混ぜると、酸化性物質が酸素を供給して発火や爆発を起こす危険がある。このため異なる性質の危険物を接触させないよう混触に注意する。したがって可燃物と酸化性物質の混触に危険があるとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">第4類は酸化性物質などと混ぜると発火の危険があるため、どんな物質と混ぜても危険はないとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">第4類の可燃物と酸化性物質を混ぜると発火の危険があるため、発火の危険はないとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">混触の危険は性質の異なる危険物どうしで起こるため、同じ類どうしでのみ起こるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">酸化性物質は酸素を供給して可燃物の燃焼を助けるため、燃焼を妨げるとするのは誤りである。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p631/index.html"
     },
     {
@@ -11368,14 +11368,14 @@ const PRACTICE_QUESTIONS = {
       "text": "物質の熱膨張について、正しいものはどれか。",
       "opts": [
         "固体は、加熱しても膨張しない。",
-        "液体は、温度が上がると収縮する。",
         "気体・液体・固体のうち、温度による体積変化が最も大きいのは気体である。",
+        "液体は、温度が上がると収縮する。",
         "気体は、温度を変えても体積が変わらない。",
         "熱膨張は、液体だけに起こる現象である。"
       ],
-      "ans": 2,
+      "ans": 1,
       "exp": "温度による体積変化が最も大きいのは気体である。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>物質は温度が上がると膨張し、体積が増える。同じ温度変化に対する体積変化は、一般に気体が最も大きく、次いで液体、固体の順に小さくなる。したがって温度による体積変化が最も大きいのは気体であるとする記述が正しい。膨張に備えて容器には空間を確保する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">固体も加熱すると膨張するため、加熱しても膨張しないとするのは誤りである。膨張の程度は気体や液体より小さい。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">液体は温度が上がると膨張して体積が増えるため、温度が上がると収縮するとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">気体は温度を変えると体積が大きく変化するため、温度を変えても体積が変わらないとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">熱膨張は固体・液体・気体のいずれにも起こるため、液体だけに起こる現象であるとするのは誤りである。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>物質は温度が上がると膨張し、体積が増える。同じ温度変化に対する体積変化は、一般に気体が最も大きく、次いで液体、固体の順に小さくなる。したがって温度による体積変化が最も大きいのは気体であるとする記述が正しい。膨張に備えて容器には空間を確保する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">固体も加熱すると膨張するため、加熱しても膨張しないとするのは誤りである。膨張の程度は気体や液体より小さい。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">液体は温度が上がると膨張して体積が増えるため、温度が上がると収縮するとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">気体は温度を変えると体積が大きく変化するため、温度を変えても体積が変わらないとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">熱膨張は固体・液体・気体のいずれにも起こるため、液体だけに起こる現象であるとするのは誤りである。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p632/index.html"
     },
     {
@@ -11404,14 +11404,14 @@ const PRACTICE_QUESTIONS = {
       "text": "製造所の位置・構造・設備の基準について、正しいものはどれか。",
       "opts": [
         "保安距離や保有空地は、まったく必要ない。",
-        "建物の窓や出入口には、防火の措置をしなくてよい。",
         "可燃性蒸気が滞留するおそれのある場所には、蒸気を屋外の高所に排出する設備を設ける。",
+        "建物の窓や出入口には、防火の措置をしなくてよい。",
         "採光や換気は、考慮しなくてよい。",
         "避雷設備は、いかなる場合も設けてはならない。"
       ],
-      "ans": 2,
+      "ans": 1,
       "exp": "可燃性蒸気が滞留する場所には、蒸気を屋外の高所に排出する設備を設ける。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>製造所では、可燃性の蒸気や微粉が滞留するおそれのある場所に、その蒸気などを屋外の高所へ排出する設備を設ける。また保安距離や保有空地を確保し、採光・換気を行い、窓や出入口に防火の措置を講じ、必要に応じて避雷設備を設ける。したがって蒸気を屋外の高所に排出する設備を設けるとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">製造所には保安距離や保有空地が必要であるため、まったく必要ないとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">建物の窓や出入口には防火戸などの防火措置を講じるため、防火の措置をしなくてよいとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">製造所では採光や換気を行う必要があるため、採光や換気を考慮しなくてよいとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">指定数量の倍数が大きい製造所などには避雷設備を設けるため、いかなる場合も設けてはならないとするのは誤りである。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>製造所では、可燃性の蒸気や微粉が滞留するおそれのある場所に、その蒸気などを屋外の高所へ排出する設備を設ける。また保安距離や保有空地を確保し、採光・換気を行い、窓や出入口に防火の措置を講じ、必要に応じて避雷設備を設ける。したがって蒸気を屋外の高所に排出する設備を設けるとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">製造所には保安距離や保有空地が必要であるため、まったく必要ないとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">建物の窓や出入口には防火戸などの防火措置を講じるため、防火の措置をしなくてよいとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">製造所では採光や換気を行う必要があるため、採光や換気を考慮しなくてよいとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">指定数量の倍数が大きい製造所などには避雷設備を設けるため、いかなる場合も設けてはならないとするのは誤りである。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p634/index.html"
     },
     {
@@ -11422,14 +11422,14 @@ const PRACTICE_QUESTIONS = {
       "text": "引火と発火について、正しいものはどれか。",
       "opts": [
         "引火とは、火源がなくても物質が自ら燃え出すことである。",
-        "発火とは、火源を近づけたときに燃え出すことである。",
         "引火は火源によって、発火は火源がなくても物質が燃え出す現象である。",
+        "発火とは、火源を近づけたときに燃え出すことである。",
         "発火点は、引火点より低いのが普通である。",
         "引火点の高い物質ほど、引火しやすい。"
       ],
-      "ans": 2,
+      "ans": 1,
       "exp": "引火は火源によって、発火は火源がなくても燃え出す現象である。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>引火は、可燃性の蒸気に火源を近づけたときに燃え出す現象で、その最低温度が引火点である。発火は、火源がなくても物質が加熱などによって自ら燃え出す現象で、その最低温度が発火点である。発火点は引火点より高いのが普通であるため、引火は火源により発火は火源なしで燃え出すとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">火源がなくても自ら燃え出すのは発火であるため、これを引火とするのは誤りである。引火は火源による現象である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">火源を近づけて燃え出すのは引火であるため、これを発火とするのは誤りである。発火は火源のない現象である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">発火点は引火点より高いのが普通であるため、発火点が引火点より低いとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">引火点が低い物質ほど引火しやすいため、引火点が高い物質ほど引火しやすいとするのは誤りである。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>引火は、可燃性の蒸気に火源を近づけたときに燃え出す現象で、その最低温度が引火点である。発火は、火源がなくても物質が加熱などによって自ら燃え出す現象で、その最低温度が発火点である。発火点は引火点より高いのが普通であるため、引火は火源により発火は火源なしで燃え出すとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">火源がなくても自ら燃え出すのは発火であるため、これを引火とするのは誤りである。引火は火源による現象である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">火源を近づけて燃え出すのは引火であるため、これを発火とするのは誤りである。発火は火源のない現象である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">発火点は引火点より高いのが普通であるため、発火点が引火点より低いとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">引火点が低い物質ほど引火しやすいため、引火点が高い物質ほど引火しやすいとするのは誤りである。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p635/index.html"
     },
     {
@@ -11440,14 +11440,14 @@ const PRACTICE_QUESTIONS = {
       "text": "可燃物と不燃物について、正しいものはどれか。",
       "opts": [
         "二酸化炭素は、よく燃える可燃物である。",
-        "窒素は、燃焼を助ける支燃物である。",
         "すでに酸化された二酸化炭素や水は、それ以上燃えない不燃物である。",
+        "窒素は、燃焼を助ける支燃物である。",
         "金属は、いかなる場合も燃えない不燃物である。",
         "可燃物とは、燃焼を助けるが自らは燃えない物質である。"
       ],
-      "ans": 2,
+      "ans": 1,
       "exp": "二酸化炭素や水は、それ以上燃えない不燃物である。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>可燃物は酸素と結びついて燃える物質で、すでに酸化された二酸化炭素や水はそれ以上燃えない不燃物である。窒素は燃えず燃焼も助けない。自らは燃えず燃焼を助けるのは支燃物であり、可燃物は自ら燃える物質である。したがって二酸化炭素や水は不燃物であるとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">二酸化炭素はすでに酸化されそれ以上燃えない不燃物であるため、よく燃える可燃物であるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">窒素は燃焼を助けず可燃物とも支燃物ともいえないため、燃焼を助ける支燃物であるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">金属も粉末状などでは燃えることがあるため、いかなる場合も燃えない不燃物であるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">燃焼を助けるが自らは燃えないのは支燃物であるため、これを可燃物とするのは誤りである。可燃物は自ら燃える。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>可燃物は酸素と結びついて燃える物質で、すでに酸化された二酸化炭素や水はそれ以上燃えない不燃物である。窒素は燃えず燃焼も助けない。自らは燃えず燃焼を助けるのは支燃物であり、可燃物は自ら燃える物質である。したがって二酸化炭素や水は不燃物であるとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">二酸化炭素はすでに酸化されそれ以上燃えない不燃物であるため、よく燃える可燃物であるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">窒素は燃焼を助けず可燃物とも支燃物ともいえないため、燃焼を助ける支燃物であるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">金属も粉末状などでは燃えることがあるため、いかなる場合も燃えない不燃物であるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">燃焼を助けるが自らは燃えないのは支燃物であるため、これを可燃物とするのは誤りである。可燃物は自ら燃える。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p636/index.html"
     },
     {
@@ -11473,7 +11473,7 @@ const PRACTICE_QUESTIONS = {
       "year": "orig",
       "num": 638,
       "field": "limit",
-      "text": "危険物の品名と物質に関する次のア〜エのうち、正しいものの組合せはどれか。\n\nア　ガソリンは、第一石油類である。イ　灯油は、特殊引火物である。ウ　重油は、第三石油類である。エ　二硫化炭素は、第二石油類である。",
+      "text": "危険物の品名と代表的な物質に関する次のア〜エのうち、正しいものの組合せはどれか。\n\nア　ガソリンは、第一石油類である。イ　灯油は、特殊引火物である。ウ　重油は、第三石油類である。エ　二硫化炭素は、第二石油類である。",
       "opts": [
         "アとイ",
         "イとエ",
@@ -11494,14 +11494,14 @@ const PRACTICE_QUESTIONS = {
       "text": "酸と塩基の中和について、正しいものはどれか。",
       "opts": [
         "中和では、酸と塩基が反応して気体だけが生じる。",
-        "中和すると、必ず酸性の水溶液になる。",
         "酸と塩基が反応して、塩と水を生じる反応を中和という。",
+        "中和すると、必ず酸性の水溶液になる。",
         "中和は、熱を吸収する吸熱反応である。",
         "塩酸と水酸化ナトリウムを混ぜても、中和は起こらない。"
       ],
-      "ans": 2,
+      "ans": 1,
       "exp": "酸と塩基が反応して塩と水を生じる反応を中和という。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>酸と塩基が反応して塩と水を生じる反応を中和という。中和は熱を発生する発熱反応で、過不足なく中和すると中性になる。塩酸と水酸化ナトリウムを混ぜると中和して塩化ナトリウムと水を生じる。したがって酸と塩基が反応して塩と水を生じるのが中和であるとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">中和では塩と水が生じるため、酸と塩基が反応して気体だけが生じるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">過不足なく中和すると中性になるため、中和すると必ず酸性の水溶液になるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">中和は熱を発生する発熱反応であるため、熱を吸収する吸熱反応であるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">塩酸と水酸化ナトリウムは中和して塩と水を生じるため、中和は起こらないとするのは誤りである。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>酸と塩基が反応して塩と水を生じる反応を中和という。中和は熱を発生する発熱反応で、過不足なく中和すると中性になる。塩酸と水酸化ナトリウムを混ぜると中和して塩化ナトリウムと水を生じる。したがって酸と塩基が反応して塩と水を生じるのが中和であるとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">中和では塩と水が生じるため、酸と塩基が反応して気体だけが生じるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">過不足なく中和すると中性になるため、中和すると必ず酸性の水溶液になるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">中和は熱を発生する発熱反応であるため、熱を吸収する吸熱反応であるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">塩酸と水酸化ナトリウムは中和して塩と水を生じるため、中和は起こらないとするのは誤りである。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p639/index.html"
     },
     {
@@ -11530,14 +11530,14 @@ const PRACTICE_QUESTIONS = {
       "text": "消防法上の製造所等について、正しいものはどれか。",
       "opts": [
         "指定数量未満の危険物を扱う一般の家庭も、製造所等に含まれる。",
-        "製造所等とは、危険物取扱者試験の会場のことである。",
         "製造所等とは、製造所・貯蔵所・取扱所の三つを総称したものである。",
+        "製造所等とは、危険物取扱者試験の会場のことである。",
         "製造所等には、貯蔵所は含まれない。",
         "製造所等は、危険物とは無関係の施設である。"
       ],
-      "ans": 2,
+      "ans": 1,
       "exp": "製造所等とは、製造所・貯蔵所・取扱所を総称したものである。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>製造所等とは、指定数量以上の危険物を製造・貯蔵・取扱いするために許可を受けた施設で、製造所・貯蔵所・取扱所の三つを総称したものである。指定数量未満を扱う一般家庭や試験会場は含まれない。したがって製造所・貯蔵所・取扱所の総称であるとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">製造所等は指定数量以上を扱う許可施設であるため、指定数量未満を扱う一般家庭が含まれるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">製造所等は危険物を扱う施設の総称であるため、危険物取扱者試験の会場のことであるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">製造所等には製造所・貯蔵所・取扱所が含まれるため、貯蔵所は含まれないとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">製造所等は危険物を製造・貯蔵・取扱いする施設であるため、危険物とは無関係の施設であるとするのは誤りである。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>製造所等とは、指定数量以上の危険物を製造・貯蔵・取扱いするために許可を受けた施設で、製造所・貯蔵所・取扱所の三つを総称したものである。指定数量未満を扱う一般家庭や試験会場は含まれない。したがって製造所・貯蔵所・取扱所の総称であるとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">製造所等は指定数量以上を扱う許可施設であるため、指定数量未満を扱う一般家庭が含まれるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">製造所等は危険物を扱う施設の総称であるため、危険物取扱者試験の会場のことであるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">製造所等には製造所・貯蔵所・取扱所が含まれるため、貯蔵所は含まれないとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">製造所等は危険物を製造・貯蔵・取扱いする施設であるため、危険物とは無関係の施設であるとするのは誤りである。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p641/index.html"
     },
     {
@@ -11621,13 +11621,13 @@ const PRACTICE_QUESTIONS = {
       "opts": [
         "第4類危険物は、すべて水より重く水に沈む。",
         "液比重が1より小さい危険物に注水すると、必ず消火できる。",
-        "液比重が1より小さい危険物は水に浮くため、注水すると火面が広がるおそれがある。",
         "液比重は、消火の方法とは無関係である。",
+        "液比重が1より小さい危険物は水に浮くため、注水すると火面が広がるおそれがある。",
         "水より重い危険物は、存在しない。"
       ],
-      "ans": 2,
+      "ans": 3,
       "exp": "液比重が1より小さい危険物は水に浮き、注水で火面が広がるおそれがある。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>第4類の多くは液比重が1より小さく水に浮くため、火災時に注水すると燃えている油が水面に広がって火面が拡大するおそれがある。このため泡などの窒息消火を用いる。二硫化炭素のように水より重いものもあるため、液比重が小さいと注水で火面が広がるとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">二硫化炭素のように水より重い第4類もあるため、第4類がすべて水より重く水に沈むとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">液比重が1より小さい危険物に注水すると火面が広がるおそれがあるため、必ず消火できるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">液比重は水に浮くか沈むかに関わり消火方法の選択に影響するため、消火の方法とは無関係であるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">二硫化炭素など水より重い危険物も存在するため、水より重い危険物は存在しないとするのは誤りである。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>第4類の多くは液比重が1より小さく水に浮くため、火災時に注水すると燃えている油が水面に広がって火面が拡大するおそれがある。このため泡などの窒息消火を用いる。二硫化炭素のように水より重いものもあるため、液比重が小さいと注水で火面が広がるとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">二硫化炭素のように水より重い第4類もあるため、第4類がすべて水より重く水に沈むとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">液比重が1より小さい危険物に注水すると火面が広がるおそれがあるため、必ず消火できるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">液比重は水に浮くか沈むかに関わり消火方法の選択に影響するため、消火の方法とは無関係であるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">二硫化炭素など水より重い危険物も存在するため、水より重い危険物は存在しないとするのは誤りである。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p646/index.html"
     },
     {
@@ -11639,13 +11639,13 @@ const PRACTICE_QUESTIONS = {
       "opts": [
         "イオン化傾向の大きい金属ほど、酸化されにくい。",
         "金は、鉄よりもイオン化傾向が大きい。",
-        "イオン化傾向の大きい金属ほど、酸化されやすく反応しやすい。",
         "イオン化傾向は、金属の腐食とは無関係である。",
+        "イオン化傾向の大きい金属ほど、酸化されやすく反応しやすい。",
         "すべての金属は、イオン化傾向が同じである。"
       ],
-      "ans": 2,
+      "ans": 3,
       "exp": "イオン化傾向の大きい金属ほど酸化されやすく反応しやすい。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>金属のイオン化傾向は、金属が陽イオンになりやすさの順で、大きいものほど酸化されやすく反応しやすい。鉄は金よりイオン化傾向が大きく腐食しやすい。イオン化傾向は金属の腐食のしやすさに関わるため、大きい金属ほど酸化されやすく反応しやすいとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">イオン化傾向の大きい金属ほど酸化されやすいため、酸化されにくいとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">金は鉄よりイオン化傾向が小さく反応しにくいため、金が鉄よりイオン化傾向が大きいとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">イオン化傾向は金属の腐食のしやすさに関わるため、金属の腐食とは無関係であるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">金属によってイオン化傾向は異なるため、すべての金属が同じイオン化傾向であるとするのは誤りである。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>金属のイオン化傾向は、金属が陽イオンになりやすさの順で、大きいものほど酸化されやすく反応しやすい。鉄は金よりイオン化傾向が大きく腐食しやすい。イオン化傾向は金属の腐食のしやすさに関わるため、大きい金属ほど酸化されやすく反応しやすいとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">イオン化傾向の大きい金属ほど酸化されやすいため、酸化されにくいとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">金は鉄よりイオン化傾向が小さく反応しにくいため、金が鉄よりイオン化傾向が大きいとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">イオン化傾向は金属の腐食のしやすさに関わるため、金属の腐食とは無関係であるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">金属によってイオン化傾向は異なるため、すべての金属が同じイオン化傾向であるとするのは誤りである。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p647/index.html"
     },
     {
@@ -11693,13 +11693,13 @@ const PRACTICE_QUESTIONS = {
       "opts": [
         "水の化学式は、CO2である。",
         "酸素分子の化学式は、H2である。",
-        "水の化学式はH2O、二酸化炭素の化学式はCO2である。",
         "鉄の元素記号は、Cである。",
+        "水の化学式はH2O、二酸化炭素の化学式はCO2である。",
         "化学式は、物質の値段を表す記号である。"
       ],
-      "ans": 2,
+      "ans": 3,
       "exp": "水の化学式はH2O、二酸化炭素の化学式はCO2である。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>化学式は物質を元素記号と数字で表したもので、水はH2O、二酸化炭素はCO2、酸素分子はO2と表す。鉄の元素記号はFe、炭素はCである。化学式は物質の成分と数を表すものであるため、水がH2O、二酸化炭素がCO2であるとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">水の化学式はH2Oであるため、水の化学式をCO2とするのは誤りである。CO2は二酸化炭素の化学式である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">酸素分子の化学式はO2であるため、H2とするのは誤りである。H2は水素分子の化学式である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">鉄の元素記号はFeであるため、鉄の元素記号をCとするのは誤りである。Cは炭素の元素記号である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">化学式は物質の成分元素と数を表す記号であるため、物質の値段を表す記号であるとするのは誤りである。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>化学式は物質を元素記号と数字で表したもので、水はH2O、二酸化炭素はCO2、酸素分子はO2と表す。鉄の元素記号はFe、炭素はCである。化学式は物質の成分と数を表すものであるため、水がH2O、二酸化炭素がCO2であるとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">水の化学式はH2Oであるため、水の化学式をCO2とするのは誤りである。CO2は二酸化炭素の化学式である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">酸素分子の化学式はO2であるため、H2とするのは誤りである。H2は水素分子の化学式である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">鉄の元素記号はFeであるため、鉄の元素記号をCとするのは誤りである。Cは炭素の元素記号である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">化学式は物質の成分元素と数を表す記号であるため、物質の値段を表す記号であるとするのは誤りである。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p650/index.html"
     },
     {
@@ -11711,13 +11711,13 @@ const PRACTICE_QUESTIONS = {
       "opts": [
         "第4類危険物は、可燃性の固体である。",
         "第4類危険物は、酸化性の液体である。",
-        "第4類危険物は、引火性の液体である。",
         "危険物は、第1類から第4類までに分類される。",
+        "第4類危険物は、引火性の液体である。",
         "第4類危険物は、自然発火性の物質だけをいう。"
       ],
-      "ans": 2,
+      "ans": 3,
       "exp": "第4類危険物は引火性の液体である。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>消防法上の危険物は第1類から第6類まであり、第4類は引火性液体である。第1類は酸化性固体、第2類は可燃性固体、第5類は自己反応性物質などで、それぞれ性状が異なる。第4類は引火性液体でガソリンや灯油などが該当するため、引火性の液体であるとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">第4類危険物は引火性の液体であるため、可燃性の固体であるとするのは誤りである。可燃性固体は第2類である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">第4類危険物は引火性の液体であるため、酸化性の液体であるとするのは誤りである。酸化性液体は第6類である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">危険物は第1類から第6類まで分類されるため、第1類から第4類までに分類されるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">第4類は引火性液体全般をいうため、自然発火性の物質だけをいうとするのは誤りである。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>消防法上の危険物は第1類から第6類まであり、第4類は引火性液体である。第1類は酸化性固体、第2類は可燃性固体、第5類は自己反応性物質などで、それぞれ性状が異なる。第4類は引火性液体でガソリンや灯油などが該当するため、引火性の液体であるとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">第4類危険物は引火性の液体であるため、可燃性の固体であるとするのは誤りである。可燃性固体は第2類である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">第4類危険物は引火性の液体であるため、酸化性の液体であるとするのは誤りである。酸化性液体は第6類である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">危険物は第1類から第6類まで分類されるため、第1類から第4類までに分類されるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">第4類は引火性液体全般をいうため、自然発火性の物質だけをいうとするのは誤りである。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p651/index.html"
     },
     {
@@ -11765,13 +11765,13 @@ const PRACTICE_QUESTIONS = {
       "opts": [
         "濃度が下限値より低くても、蒸気は燃える。",
         "濃度が上限値より高くても、蒸気はよく燃える。",
-        "濃度が下限値と上限値の間にあるとき、混合気は燃える。",
         "下限値が高い物質ほど、少量の蒸気で引火する。",
+        "濃度が下限値と上限値の間にあるとき、混合気は燃える。",
         "燃焼範囲は、可燃性蒸気の温度を表す範囲である。"
       ],
-      "ans": 2,
+      "ans": 3,
       "exp": "濃度が下限値と上限値の間にあるとき、混合気は燃える。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>燃焼範囲は可燃性蒸気と空気の混合気が燃える濃度の範囲で、濃度が下限値と上限値の間にあるとき燃える。下限値より薄いと蒸気が足りず、上限値より濃いと酸素が足りず燃えない。下限値が低い物質ほど少量で引火するため、下限値と上限値の間で燃えるとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">濃度が下限値より低いと蒸気が薄すぎて燃えないため、下限値より低くても燃えるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">濃度が上限値より高いと酸素が不足して燃えないため、上限値より高くてもよく燃えるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">下限値が低い物質ほど少量の蒸気で引火するため、下限値が高い物質ほど引火するとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">燃焼範囲は蒸気と空気の混合濃度の範囲であるため、可燃性蒸気の温度を表す範囲であるとするのは誤りである。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>燃焼範囲は可燃性蒸気と空気の混合気が燃える濃度の範囲で、濃度が下限値と上限値の間にあるとき燃える。下限値より薄いと蒸気が足りず、上限値より濃いと酸素が足りず燃えない。下限値が低い物質ほど少量で引火するため、下限値と上限値の間で燃えるとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">濃度が下限値より低いと蒸気が薄すぎて燃えないため、下限値より低くても燃えるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">濃度が上限値より高いと酸素が不足して燃えないため、上限値より高くてもよく燃えるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">下限値が低い物質ほど少量の蒸気で引火するため、下限値が高い物質ほど引火するとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">燃焼範囲は蒸気と空気の混合濃度の範囲であるため、可燃性蒸気の温度を表す範囲であるとするのは誤りである。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p654/index.html"
     },
     {
@@ -11783,13 +11783,13 @@ const PRACTICE_QUESTIONS = {
       "opts": [
         "引火点が高い物質ほど、引火の危険性が高い。",
         "引火点が低いほど、高い温度にしないと引火しない。",
-        "引火点が低い物質ほど、低い温度でも引火し危険性が高い。",
         "引火点は、引火の危険性とは関係がない。",
+        "引火点が低い物質ほど、低い温度でも引火し危険性が高い。",
         "ガソリンは灯油より引火点が高いので、灯油より危険性が低い。"
       ],
-      "ans": 2,
+      "ans": 3,
       "exp": "引火点が低い物質ほど、低い温度でも引火し危険性が高い。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>引火点は火源があれば引火する最低の液温で、引火点が低い物質ほど低い温度でも引火するため危険性が高い。ガソリンは引火点が−40℃以下と灯油より低く、より危険性が高い。したがって引火点が低いほど低い温度で引火し危険性が高いとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">引火点が低い物質ほど引火の危険性が高いため、引火点が高い物質ほど危険性が高いとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">引火点が低いほど低い温度でも引火するため、高い温度にしないと引火しないとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">引火点は引火のしやすさを示し危険性に関わるため、引火の危険性とは関係がないとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">ガソリンは灯油より引火点が低く危険性が高いため、引火点が高く危険性が低いとするのは誤りである。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>引火点は火源があれば引火する最低の液温で、引火点が低い物質ほど低い温度でも引火するため危険性が高い。ガソリンは引火点が−40℃以下と灯油より低く、より危険性が高い。したがって引火点が低いほど低い温度で引火し危険性が高いとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">引火点が低い物質ほど引火の危険性が高いため、引火点が高い物質ほど危険性が高いとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">引火点が低いほど低い温度でも引火するため、高い温度にしないと引火しないとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">引火点は引火のしやすさを示し危険性に関わるため、引火の危険性とは関係がないとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">ガソリンは灯油より引火点が低く危険性が高いため、引火点が高く危険性が低いとするのは誤りである。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p655/index.html"
     },
     {
@@ -11869,17 +11869,17 @@ const PRACTICE_QUESTIONS = {
       "year": "orig",
       "num": 660,
       "field": "law",
-      "text": "危険物施設保安員について、正しいものはどれか。",
+      "text": "危険物施設保安員の業務について、正しいものはどれか。",
       "opts": [
         "危険物取扱者の免状がなければ、施設保安員になれない。",
         "製造所等の設置許可を、自ら与える。",
-        "危険物保安監督者の補佐を行い、施設を点検するなどの業務を行う。",
         "立入検査を、自ら行う権限をもつ。",
+        "危険物保安監督者の補佐を行い、施設を点検するなどの業務を行う。",
         "施設保安員の選任には、市町村長等への届出が必要である。"
       ],
-      "ans": 2,
+      "ans": 3,
       "exp": "施設保安員は保安監督者を補佐し、施設の点検などの業務を行う。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>危険物施設保安員は、危険物保安監督者の下でその補佐を行い、施設や設備を点検して異常があれば連絡するなどの業務を行う。選任に危険物取扱者の資格や届出は必要ない。設置許可や立入検査は市町村長等の権限であるため、保安監督者を補佐し点検などを行うとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">施設保安員の選任に危険物取扱者の資格は不要であるため、免状がなければなれないとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">製造所等の設置許可は市町村長等が与えるため、施設保安員が自ら与えるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">立入検査は市町村長等が行う権限であるため、施設保安員が自ら行う権限をもつとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">施設保安員の選任には届出は不要であるため、市町村長等への届出が必要であるとするのは誤りである。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>危険物施設保安員は、危険物保安監督者の下でその補佐を行い、施設や設備を点検して異常があれば連絡するなどの業務を行う。選任に危険物取扱者の資格や届出は必要ない。設置許可や立入検査は市町村長等の権限であるため、保安監督者を補佐し点検などを行うとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">施設保安員の選任に危険物取扱者の資格は不要であるため、免状がなければなれないとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">製造所等の設置許可は市町村長等が与えるため、施設保安員が自ら与えるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">立入検査は市町村長等が行う権限であるため、施設保安員が自ら行う権限をもつとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">施設保安員の選任には届出は不要であるため、市町村長等への届出が必要であるとするのは誤りである。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p660/index.html"
     },
     {
@@ -11891,13 +11891,13 @@ const PRACTICE_QUESTIONS = {
       "opts": [
         "温度を高くすると、一般に反応は遅くなる。",
         "反応物の濃度を高くしても、反応の速さは変わらない。",
-        "一般に温度を高くすると、反応は速くなる。",
         "触媒を加えても、反応の速さは変わらない。",
+        "一般に温度を高くすると、反応は速くなる。",
         "固体は、表面積を小さくするほど反応が速くなる。"
       ],
-      "ans": 2,
+      "ans": 3,
       "exp": "一般に温度を高くすると、化学反応は速くなる。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>化学反応の速さは、温度が高いほど速くなり、反応物の濃度が高いほど速くなる。触媒を加えると反応が速くなり、固体は表面積が大きいほど反応しやすい。したがって温度を高くすると反応が速くなるとする記述が正しい。これらは燃焼の起こりやすさにも関わる。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">温度を高くすると一般に反応は速くなるため、反応が遅くなるとするのは誤りである。分子の運動が活発になるためである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">反応物の濃度を高くすると反応は速くなるため、反応の速さは変わらないとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">触媒を加えると反応の速さが変わるため、反応の速さは変わらないとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">固体は表面積が大きいほど反応が速くなるため、表面積を小さくするほど速くなるとするのは誤りである。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>化学反応の速さは、温度が高いほど速くなり、反応物の濃度が高いほど速くなる。触媒を加えると反応が速くなり、固体は表面積が大きいほど反応しやすい。したがって温度を高くすると反応が速くなるとする記述が正しい。これらは燃焼の起こりやすさにも関わる。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">温度を高くすると一般に反応は速くなるため、反応が遅くなるとするのは誤りである。分子の運動が活発になるためである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">反応物の濃度を高くすると反応は速くなるため、反応の速さは変わらないとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">触媒を加えると反応の速さが変わるため、反応の速さは変わらないとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">固体は表面積が大きいほど反応が速くなるため、表面積を小さくするほど速くなるとするのは誤りである。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p661/index.html"
     },
     {
@@ -11945,13 +11945,13 @@ const PRACTICE_QUESTIONS = {
       "opts": [
         "溶けている物質を溶媒、溶かしている液体を溶質という。",
         "食塩水では、食塩が溶媒で水が溶質である。",
-        "溶けている物質を溶質、溶かしている液体を溶媒という。",
         "溶質と溶媒を合わせたものを、溶質という。",
+        "溶けている物質を溶質、溶かしている液体を溶媒という。",
         "溶液の質量は、溶質だけの質量と等しい。"
       ],
-      "ans": 2,
+      "ans": 3,
       "exp": "溶けている物質を溶質、溶かしている液体を溶媒という。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>溶液は、物質が液体に溶けて均一に混じり合ったもので、溶けている物質を溶質、溶かしている液体を溶媒、両者を合わせたものを溶液という。食塩水では食塩が溶質、水が溶媒である。したがって溶けている物質が溶質、溶かしている液体が溶媒であるとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">溶けている物質は溶質、溶かしている液体は溶媒であるため、溶けている物質を溶媒とするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">食塩水では食塩が溶質で水が溶媒であるため、食塩が溶媒で水が溶質であるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">溶質と溶媒を合わせたものは溶液であるため、これを溶質とするのは誤りである。溶質は溶けている物質を指す。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">溶液の質量は溶質と溶媒の合計であるため、溶質だけの質量と等しいとするのは誤りである。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>溶液は、物質が液体に溶けて均一に混じり合ったもので、溶けている物質を溶質、溶かしている液体を溶媒、両者を合わせたものを溶液という。食塩水では食塩が溶質、水が溶媒である。したがって溶けている物質が溶質、溶かしている液体が溶媒であるとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">溶けている物質は溶質、溶かしている液体は溶媒であるため、溶けている物質を溶媒とするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">食塩水では食塩が溶質で水が溶媒であるため、食塩が溶媒で水が溶質であるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">溶質と溶媒を合わせたものは溶液であるため、これを溶質とするのは誤りである。溶質は溶けている物質を指す。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">溶液の質量は溶質と溶媒の合計であるため、溶質だけの質量と等しいとするのは誤りである。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p664/index.html"
     },
     {
@@ -11963,13 +11963,13 @@ const PRACTICE_QUESTIONS = {
       "opts": [
         "表示は、まったく必要ない。",
         "品名と数量だけを表示すればよく、注意事項は不要である。",
-        "危険物の品名・数量のほか、「火気厳禁」などの注意事項を表示する。",
         "容器には、運搬する人の氏名だけを表示する。",
+        "危険物の品名・数量のほか、「火気厳禁」などの注意事項を表示する。",
         "表示は、容器の内側に貼ればよい。"
       ],
-      "ans": 2,
+      "ans": 3,
       "exp": "運搬容器には品名・数量のほか、「火気厳禁」などの注意事項を表示する。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>危険物を運搬する容器の外部には、危険物の品名・危険等級・化学名、数量、および第4類では「火気厳禁」などの注意事項を見やすいように表示する。これにより取扱者が危険性を把握できる。したがって品名・数量のほか注意事項を表示するとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">運搬容器には品名や注意事項などを表示する必要があるため、表示はまったく必要ないとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">運搬容器には品名や数量のほか注意事項も表示するため、注意事項は不要であるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">運搬容器には品名や数量、注意事項を表示するため、運搬する人の氏名だけを表示するとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">表示は容器の外部の見やすい位置に行うため、容器の内側に貼ればよいとするのは誤りである。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>危険物を運搬する容器の外部には、危険物の品名・危険等級・化学名、数量、および第4類では「火気厳禁」などの注意事項を見やすいように表示する。これにより取扱者が危険性を把握できる。したがって品名・数量のほか注意事項を表示するとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">運搬容器には品名や注意事項などを表示する必要があるため、表示はまったく必要ないとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">運搬容器には品名や数量のほか注意事項も表示するため、注意事項は不要であるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">運搬容器には品名や数量、注意事項を表示するため、運搬する人の氏名だけを表示するとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">表示は容器の外部の見やすい位置に行うため、容器の内側に貼ればよいとするのは誤りである。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p665/index.html"
     },
     {
@@ -11981,13 +11981,13 @@ const PRACTICE_QUESTIONS = {
       "opts": [
         "第4類の蒸気は空気より軽いので、低い所の換気は不要である。",
         "蒸気は天井付近にたまるので、高い所だけを換気すればよい。",
-        "第4類の蒸気は空気より重く低所にたまるので、低い所も含めて換気する。",
         "換気をすると、かえって引火しやすくなる。",
+        "第4類の蒸気は空気より重く低所にたまるので、低い所も含めて換気する。",
         "蒸気の滞留は、火災とは無関係である。"
       ],
-      "ans": 2,
+      "ans": 3,
       "exp": "第4類の蒸気は低所にたまるので、低い所も含めて換気する。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>第4類危険物の蒸気は空気より重く、低い所や床付近、ピットなどにたまりやすい。滞留した蒸気は引火・爆発の原因になるため、低い所も含めて十分に換気し、蒸気を屋外へ排出する。したがって低い所も含めて換気するとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">第4類の蒸気は空気より重く低所にたまるため、低い所の換気は不要であるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">第4類の蒸気は低い所にたまるため、高い所だけを換気すればよいとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">換気は滞留した蒸気を排出して引火を防ぐため、換気をするとかえって引火しやすくなるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">滞留した蒸気は引火・爆発の原因になるため、蒸気の滞留は火災とは無関係であるとするのは誤りである。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>第4類危険物の蒸気は空気より重く、低い所や床付近、ピットなどにたまりやすい。滞留した蒸気は引火・爆発の原因になるため、低い所も含めて十分に換気し、蒸気を屋外へ排出する。したがって低い所も含めて換気するとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">第4類の蒸気は空気より重く低所にたまるため、低い所の換気は不要であるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">第4類の蒸気は低い所にたまるため、高い所だけを換気すればよいとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">換気は滞留した蒸気を排出して引火を防ぐため、換気をするとかえって引火しやすくなるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">滞留した蒸気は引火・爆発の原因になるため、蒸気の滞留は火災とは無関係であるとするのは誤りである。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p666/index.html"
     },
     {
@@ -11995,17 +11995,17 @@ const PRACTICE_QUESTIONS = {
       "year": "orig",
       "num": 667,
       "field": "rights",
-      "text": "比熱について、正しいものはどれか。",
+      "text": "物質の比熱の意味について、正しいものはどれか。",
       "opts": [
         "比熱とは、物質1 gの体積を1 cm3増やすのに必要な熱量である。",
         "比熱が大きい物質ほど、温まりやすく冷めやすい。",
-        "比熱とは、物質1 gの温度を1 K上げるのに必要な熱量である。",
         "比熱は、物質の種類によらず一定である。",
+        "比熱とは、物質1 gの温度を1 K上げるのに必要な熱量である。",
         "水の比熱は、他の物質に比べて非常に小さい。"
       ],
-      "ans": 2,
+      "ans": 3,
       "exp": "比熱とは、物質1 gの温度を1 K上げるのに必要な熱量である。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>比熱は、物質1 gの温度を1 K（1℃）上げるのに必要な熱量で、物質の種類によって異なる値をもつ。比熱が大きい物質ほど温まりにくく冷めにくい。水の比熱は他の物質に比べて大きい。したがって物質1 gを1 K上げるのに必要な熱量であるとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">比熱は物質1 gの温度を1 K上げるのに必要な熱量であるため、体積を1 cm3増やす熱量とするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">比熱が大きい物質ほど温まりにくく冷めにくいため、温まりやすく冷めやすいとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">比熱は物質の種類によって異なるため、物質の種類によらず一定であるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">水の比熱は他の物質に比べて大きいため、非常に小さいとするのは誤りである。水は温まりにくく冷めにくい。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>比熱は、物質1 gの温度を1 K（1℃）上げるのに必要な熱量で、物質の種類によって異なる値をもつ。比熱が大きい物質ほど温まりにくく冷めにくい。水の比熱は他の物質に比べて大きい。したがって物質1 gを1 K上げるのに必要な熱量であるとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">比熱は物質1 gの温度を1 K上げるのに必要な熱量であるため、体積を1 cm3増やす熱量とするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">比熱が大きい物質ほど温まりにくく冷めにくいため、温まりやすく冷めやすいとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">比熱は物質の種類によって異なるため、物質の種類によらず一定であるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">水の比熱は他の物質に比べて大きいため、非常に小さいとするのは誤りである。水は温まりにくく冷めにくい。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p667/index.html"
     },
     {
@@ -12071,13 +12071,13 @@ const PRACTICE_QUESTIONS = {
       "opts": [
         "ガソリンの発火点は、常温以下である。",
         "発火点が高い物質ほど、加熱により発火しやすい。",
-        "二硫化炭素の発火点は約90℃と低く、加熱面でも発火しやすい。",
+        "発火点は、すべての物質で同じである。",
         "発火点は、火源を近づけて引火する温度である。",
-        "発火点は、すべての物質で同じである。"
+        "二硫化炭素の発火点は約90℃と低く、加熱面でも発火しやすい。"
       ],
-      "ans": 2,
+      "ans": 4,
       "exp": "二硫化炭素の発火点は約90℃と低く、加熱面でも発火しやすい。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>発火点は火源がなくても物質が自ら燃え出す最低温度で、低い物質ほど加熱により発火しやすい。二硫化炭素の発火点は約90℃と第4類の中で低く、加熱された配管などに触れても発火する危険がある。したがって二硫化炭素の発火点は約90℃と低いとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">ガソリンの発火点は約300℃であり常温以下ではないため、常温以下であるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">発火点が低い物質ほど加熱により発火しやすいため、発火点が高い物質ほど発火しやすいとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">火源を近づけて引火する温度は引火点であるため、発火点を火源で引火する温度とするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">発火点は物質の種類によって異なるため、すべての物質で同じであるとするのは誤りである。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>発火点は火源がなくても物質が自ら燃え出す最低温度で、低い物質ほど加熱により発火しやすい。二硫化炭素の発火点は約90℃と第4類の中で低く、加熱された配管などに触れても発火する危険がある。したがって二硫化炭素の発火点は約90℃と低いとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">ガソリンの発火点は約300℃であり常温以下ではないため、常温以下であるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">発火点が低い物質ほど加熱により発火しやすいため、発火点が高い物質ほど発火しやすいとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">発火点は物質の種類によって異なるため、すべての物質で同じであるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">火源を近づけて引火する温度は引火点であるため、発火点を火源で引火する温度とするのは誤りである。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p671/index.html"
     },
     {
@@ -12107,13 +12107,13 @@ const PRACTICE_QUESTIONS = {
       "opts": [
         "第4類は、酸化性の固体である。",
         "第4類は、自己反応性の物質である。",
-        "第4類は、引火性の液体であり、ガソリンや灯油などが含まれる。",
+        "第4類は、気体の危険物である。",
         "第4類は、可燃性の固体である。",
-        "第4類は、気体の危険物である。"
+        "第4類は、引火性の液体であり、ガソリンや灯油などが含まれる。"
       ],
-      "ans": 2,
+      "ans": 4,
       "exp": "第4類は引火性の液体で、ガソリンや灯油などが含まれる。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>消防法上の危険物は第1類から第6類まであり、第4類は引火性液体で、特殊引火物・石油類・アルコール類・動植物油類などに分けられガソリンや灯油が含まれる。第1類は酸化性固体、第5類は自己反応性物質である。したがって第4類は引火性の液体であるとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">酸化性の固体は第1類であるため、第4類を酸化性の固体とするのは誤りである。第4類は引火性液体である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">自己反応性の物質は第5類であるため、第4類を自己反応性の物質とするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">可燃性の固体は第2類であるため、第4類を可燃性の固体とするのは誤りである。第4類は引火性の液体である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">第4類は引火性の液体であるため、気体の危険物であるとするのは誤りである。消防法上の危険物に気体は含まれない。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>消防法上の危険物は第1類から第6類まであり、第4類は引火性液体で、特殊引火物・石油類・アルコール類・動植物油類などに分けられガソリンや灯油が含まれる。第1類は酸化性固体、第5類は自己反応性物質である。したがって第4類は引火性の液体であるとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">酸化性の固体は第1類であるため、第4類を酸化性の固体とするのは誤りである。第4類は引火性液体である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">自己反応性の物質は第5類であるため、第4類を自己反応性の物質とするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">第4類は引火性の液体であるため、気体の危険物であるとするのは誤りである。消防法上の危険物に気体は含まれない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">可燃性の固体は第2類であるため、第4類を可燃性の固体とするのは誤りである。第4類は引火性の液体である。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p673/index.html"
     },
     {
@@ -12125,13 +12125,13 @@ const PRACTICE_QUESTIONS = {
       "opts": [
         "温度と熱量は、まったく同じものである。",
         "熱量の単位は、℃やKである。",
-        "温度は物質の熱さの程度を、熱量は移動する熱の量を表す。",
+        "熱は、温度の低いほうから高いほうへ移動する。",
         "温度が同じなら、物質がもつ熱量も必ず同じである。",
-        "熱は、温度の低いほうから高いほうへ移動する。"
+        "温度は物質の熱さの程度を、熱量は移動する熱の量を表す。"
       ],
-      "ans": 2,
+      "ans": 4,
       "exp": "温度は熱さの程度を、熱量は移動する熱の量を表す。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>温度は物質の熱さの程度を表す量で単位は℃やK、熱量は移動したりもっていたりする熱の量を表す量で単位はJである。温度が同じでも質量や物質が違えば熱量は異なる。熱は温度の高いほうから低いほうへ移動する。したがって温度は熱さの程度、熱量は熱の量であるとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">温度は熱さの程度、熱量は熱の量であり別の量であるため、まったく同じものであるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">熱量の単位はJであるため、熱量の単位を℃やKとするのは誤りである。℃やKは温度の単位である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">温度が同じでも質量や物質が違えば熱量は異なるため、必ず同じ熱量であるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">熱は温度の高いほうから低いほうへ移動するため、低いほうから高いほうへ移動するとするのは誤りである。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>温度は物質の熱さの程度を表す量で単位は℃やK、熱量は移動したりもっていたりする熱の量を表す量で単位はJである。温度が同じでも質量や物質が違えば熱量は異なる。熱は温度の高いほうから低いほうへ移動する。したがって温度は熱さの程度、熱量は熱の量であるとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">温度は熱さの程度、熱量は熱の量であり別の量であるため、まったく同じものであるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">熱量の単位はJであるため、熱量の単位を℃やKとするのは誤りである。℃やKは温度の単位である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">熱は温度の高いほうから低いほうへ移動するため、低いほうから高いほうへ移動するとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">温度が同じでも質量や物質が違えば熱量は異なるため、必ず同じ熱量であるとするのは誤りである。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p674/index.html"
     },
     {
@@ -12143,13 +12143,13 @@ const PRACTICE_QUESTIONS = {
       "opts": [
         "泡消火剤は、燃焼物を冷却する冷却効果だけをもつ。",
         "水溶性の液体の火災にも、一般の泡が最も適している。",
-        "泡は油面を覆って窒息消火し、水溶性液体には耐アルコール泡を用いる。",
+        "泡消火剤は、油を吸い込んで除去消火する。",
         "泡消火剤は、電気火災に最も適している。",
-        "泡消火剤は、油を吸い込んで除去消火する。"
+        "泡は油面を覆って窒息消火し、水溶性液体には耐アルコール泡を用いる。"
       ],
-      "ans": 2,
+      "ans": 4,
       "exp": "泡は油面を覆って窒息消火し、水溶性液体には耐アルコール泡を用いる。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>泡消火剤は油面を泡の層で覆い、空気を遮断して窒息消火する。一般の泡は水溶性液体に触れると溶けて消えやすいため、アルコール類などには耐アルコール泡を用いる。感電のおそれから電気火災には適さない。したがって油面を覆って窒息消火するとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">泡消火剤は油面を覆う窒息効果が主であるため、冷却効果だけをもつとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">水溶性液体には耐アルコール泡が適するため、一般の泡が最も適しているとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">泡消火剤は感電のおそれから電気火災には適さないため、電気火災に最も適しているとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">泡消火剤は油面を覆う窒息消火であるため、油を吸い込んで除去消火するとするのは誤りである。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>泡消火剤は油面を泡の層で覆い、空気を遮断して窒息消火する。一般の泡は水溶性液体に触れると溶けて消えやすいため、アルコール類などには耐アルコール泡を用いる。感電のおそれから電気火災には適さない。したがって油面を覆って窒息消火するとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">泡消火剤は油面を覆う窒息効果が主であるため、冷却効果だけをもつとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">水溶性液体には耐アルコール泡が適するため、一般の泡が最も適しているとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">泡消火剤は油面を覆う窒息消火であるため、油を吸い込んで除去消火するとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">泡消火剤は感電のおそれから電気火災には適さないため、電気火災に最も適しているとするのは誤りである。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p675/index.html"
     },
     {
@@ -12161,13 +12161,13 @@ const PRACTICE_QUESTIONS = {
       "opts": [
         "変更は、市町村長等への届出で足りる。",
         "変更は、完成検査を受ける前でも使用できる。",
-        "変更は市町村長等の許可を受け、完成検査に適合してから使用する。",
+        "変更の許可は、危険物取扱者が与える。",
         "変更には、いかなる手続きも必要ない。",
-        "変更の許可は、危険物取扱者が与える。"
+        "変更は市町村長等の許可を受け、完成検査に適合してから使用する。"
       ],
-      "ans": 2,
+      "ans": 4,
       "exp": "変更は市町村長等の許可を受け、完成検査に適合してから使用する。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>製造所等の位置・構造・設備を変更するときは、あらかじめ市町村長等の許可を受け、工事完了後に完成検査を受けて基準に適合してから使用する。無許可の変更や完成検査前の使用は許可取消しや使用停止の対象になる。したがって許可を受け完成検査に適合してから使用するとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">位置・構造・設備の変更は許可が必要であるため、届出で足りるとするのは誤りである。設置と同様に許可制である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">変更工事後は完成検査に適合してから使用するため、完成検査を受ける前でも使用できるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">変更には市町村長等の許可などの手続きが必要であるため、いかなる手続きも必要ないとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">変更の許可は市町村長等が与えるものであるため、危険物取扱者が与えるとするのは誤りである。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>製造所等の位置・構造・設備を変更するときは、あらかじめ市町村長等の許可を受け、工事完了後に完成検査を受けて基準に適合してから使用する。無許可の変更や完成検査前の使用は許可取消しや使用停止の対象になる。したがって許可を受け完成検査に適合してから使用するとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">位置・構造・設備の変更は許可が必要であるため、届出で足りるとするのは誤りである。設置と同様に許可制である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">変更工事後は完成検査に適合してから使用するため、完成検査を受ける前でも使用できるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">変更の許可は市町村長等が与えるものであるため、危険物取扱者が与えるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">変更には市町村長等の許可などの手続きが必要であるため、いかなる手続きも必要ないとするのは誤りである。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p676/index.html"
     },
     {
@@ -12179,13 +12179,13 @@ const PRACTICE_QUESTIONS = {
       "opts": [
         "湿度が高いほど、静電気は発生・蓄積しやすい。",
         "電気の良導体ほど、静電気が蓄積しやすい。",
-        "乾燥していて、液体の流速が速いほど静電気が発生・蓄積しやすい。",
+        "静電気は、金属だけに発生する。",
         "液体をゆっくり流すほど、静電気が発生しやすい。",
-        "静電気は、金属だけに発生する。"
+        "乾燥していて、液体の流速が速いほど静電気が発生・蓄積しやすい。"
       ],
-      "ans": 2,
+      "ans": 4,
       "exp": "乾燥していて液体の流速が速いほど、静電気が発生・蓄積しやすい。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>静電気は、湿度が低く乾燥している状態や、液体を速い流速で流すときに発生・蓄積しやすい。第4類などの不導体では電荷が逃げにくくたまりやすい。したがって乾燥していて流速が速いほど発生・蓄積しやすいとする記述が正しい。対策は加湿や流速を遅くすることである。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">湿度が高いと静電気は逃げやすく蓄積しにくいため、湿度が高いほど発生・蓄積しやすいとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">良導体は電荷が逃げやすく蓄積しにくいため、良導体ほど静電気が蓄積しやすいとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">液体をゆっくり流すと帯電が抑えられるため、ゆっくり流すほど静電気が発生しやすいとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">静電気は不導体でも発生し蓄積しやすいため、金属だけに発生するとするのは誤りである。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>静電気は、湿度が低く乾燥している状態や、液体を速い流速で流すときに発生・蓄積しやすい。第4類などの不導体では電荷が逃げにくくたまりやすい。したがって乾燥していて流速が速いほど発生・蓄積しやすいとする記述が正しい。対策は加湿や流速を遅くすることである。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">湿度が高いと静電気は逃げやすく蓄積しにくいため、湿度が高いほど発生・蓄積しやすいとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">良導体は電荷が逃げやすく蓄積しにくいため、良導体ほど静電気が蓄積しやすいとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">静電気は不導体でも発生し蓄積しやすいため、金属だけに発生するとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">液体をゆっくり流すと帯電が抑えられるため、ゆっくり流すほど静電気が発生しやすいとするのは誤りである。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p677/index.html"
     },
     {
@@ -12211,7 +12211,7 @@ const PRACTICE_QUESTIONS = {
       "year": "orig",
       "num": 679,
       "field": "limit",
-      "text": "品名と指定数量に関する次のア〜エのうち、正しいものの組合せはどれか。\n\nア　特殊引火物の指定数量は、50 Lである。イ　アルコール類の指定数量は、200 Lである。ウ　第二石油類（非水溶性）の指定数量は、1000 Lである。エ　第四石油類の指定数量は、2000 Lである。",
+      "text": "危険物の品名ごとの指定数量に関する次のア〜エのうち、正しいものの組合せはどれか。\n\nア　特殊引火物の指定数量は、50 Lである。イ　アルコール類の指定数量は、200 Lである。ウ　第二石油類（非水溶性）の指定数量は、1000 Lである。エ　第四石油類の指定数量は、2000 Lである。",
       "opts": [
         "アとイ",
         "イとエ",
@@ -12233,13 +12233,13 @@ const PRACTICE_QUESTIONS = {
       "opts": [
         "温度を上げていくと、固体→気体→液体の順に変化する。",
         "沸点では、液体が固体に変化する。",
-        "温度を上げると、固体→液体→気体の順に変化する。",
+        "三態の変化では、物質が別の物質に変わる。",
         "融点では、液体が気体に変化する。",
-        "三態の変化では、物質が別の物質に変わる。"
+        "温度を上げると、固体→液体→気体の順に変化する。"
       ],
-      "ans": 2,
+      "ans": 4,
       "exp": "温度を上げると、固体→液体→気体の順に変化する。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>物質は温度を上げていくと、固体から液体へ（融点で融解）、さらに液体から気体へ（沸点で沸騰）と変化する。これらは物質の種類が変わらない状態変化である。融点では固体が液体に、沸点では液体が気体になる。したがって固体→液体→気体の順に変化するとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">温度を上げると固体→液体→気体の順に変化するため、固体→気体→液体の順とするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">沸点では液体が気体に変化するため、沸点で液体が固体に変化するとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">融点では固体が液体に変化するため、融点で液体が気体に変化するとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">三態の変化は物質の種類が変わらない物理変化であるため、別の物質に変わるとするのは誤りである。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>物質は温度を上げていくと、固体から液体へ（融点で融解）、さらに液体から気体へ（沸点で沸騰）と変化する。これらは物質の種類が変わらない状態変化である。融点では固体が液体に、沸点では液体が気体になる。したがって固体→液体→気体の順に変化するとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">温度を上げると固体→液体→気体の順に変化するため、固体→気体→液体の順とするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">沸点では液体が気体に変化するため、沸点で液体が固体に変化するとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">三態の変化は物質の種類が変わらない物理変化であるため、別の物質に変わるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">融点では固体が液体に変化するため、融点で液体が気体に変化するとするのは誤りである。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p680/index.html"
     },
     {
@@ -12251,13 +12251,13 @@ const PRACTICE_QUESTIONS = {
       "opts": [
         "温度を上げると、圧力は下がる。",
         "温度を変えても、圧力は変わらない。",
-        "温度を上げると、圧力は高くなる。",
+        "圧力は、温度とは無関係である。",
         "温度を下げると、圧力は高くなる。",
-        "圧力は、温度とは無関係である。"
+        "温度を上げると、圧力は高くなる。"
       ],
-      "ans": 2,
+      "ans": 4,
       "exp": "体積一定の気体は、温度を上げると圧力が高くなる。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>一定量の気体を体積を変えずに加熱すると、気体の分子の運動が激しくなり容器の壁を押す力が増すため、圧力は高くなる。逆に温度を下げると圧力は低くなる。密閉容器を加熱すると内圧が上がり破裂の危険があるため、温度を上げると圧力が高くなるとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">体積一定では温度を上げると圧力は高くなるため、圧力が下がるとするのは誤りである。分子の運動が激しくなる。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">体積一定では温度によって圧力が変化するため、温度を変えても圧力は変わらないとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">体積一定では温度を下げると圧力は低くなるため、温度を下げると圧力が高くなるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">体積一定の気体の圧力は温度に応じて変化するため、圧力は温度とは無関係であるとするのは誤りである。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>一定量の気体を体積を変えずに加熱すると、気体の分子の運動が激しくなり容器の壁を押す力が増すため、圧力は高くなる。逆に温度を下げると圧力は低くなる。密閉容器を加熱すると内圧が上がり破裂の危険があるため、温度を上げると圧力が高くなるとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">体積一定では温度を上げると圧力は高くなるため、圧力が下がるとするのは誤りである。分子の運動が激しくなる。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">体積一定では温度によって圧力が変化するため、温度を変えても圧力は変わらないとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">体積一定の気体の圧力は温度に応じて変化するため、圧力は温度とは無関係であるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">体積一定では温度を下げると圧力は低くなるため、温度を下げると圧力が高くなるとするのは誤りである。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p681/index.html"
     },
     {
@@ -12287,13 +12287,13 @@ const PRACTICE_QUESTIONS = {
       "opts": [
         "氏名が変わっても、書換えの必要はない。",
         "書換えは、勤務先の会社に申請する。",
-        "氏名や本籍地など記載事項に変更があったときは、書換えを申請する。",
+        "書換えを申請すると、免状の効力が失われる。",
         "免状を汚したり破ったりしたときは、書換えを申請する。",
-        "書換えを申請すると、免状の効力が失われる。"
+        "氏名や本籍地など記載事項に変更があったときは、書換えを申請する。"
       ],
-      "ans": 2,
+      "ans": 4,
       "exp": "記載事項に変更があったときは、免状の書換えを申請する。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>危険物取扱者免状は、氏名や本籍地など記載事項に変更があったときに書換えを申請する。また写真は一定期間ごとに書き換える。免状を汚損・亡失したときは書換えではなく再交付を申請する。書換えは知事に申請するため、記載事項の変更時に書換えを申請するとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">氏名が変わったときは書換えの申請が必要であるため、書換えの必要はないとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">書換えは免状を交付した知事などに申請するため、勤務先の会社に申請するとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">免状を汚したり破ったりしたときは再交付を申請するため、書換えを申請するとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">書換えは記載事項を正しくする手続きであるため、書換えを申請すると免状の効力が失われるとするのは誤りである。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>危険物取扱者免状は、氏名や本籍地など記載事項に変更があったときに書換えを申請する。また写真は一定期間ごとに書き換える。免状を汚損・亡失したときは書換えではなく再交付を申請する。書換えは知事に申請するため、記載事項の変更時に書換えを申請するとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">氏名が変わったときは書換えの申請が必要であるため、書換えの必要はないとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">書換えは免状を交付した知事などに申請するため、勤務先の会社に申請するとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">書換えは記載事項を正しくする手続きであるため、書換えを申請すると免状の効力が失われるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">免状を汚したり破ったりしたときは再交付を申請するため、書換えを申請するとするのは誤りである。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p683/index.html"
     },
     {
@@ -12323,13 +12323,13 @@ const PRACTICE_QUESTIONS = {
       "opts": [
         "免状を亡失しても、再交付は受けられない。",
         "再交付は、勤務先の消防署に申請する。",
-        "免状を汚損・破損・亡失したときは、再交付を申請できる。",
+        "再交付を受けると、危険物を取り扱えなくなる。",
         "亡失した免状を見つけても、提出する必要はない。",
-        "再交付を受けると、危険物を取り扱えなくなる。"
+        "免状を汚損・破損・亡失したときは、再交付を申請できる。"
       ],
-      "ans": 2,
+      "ans": 4,
       "exp": "免状を汚損・破損・亡失したときは、再交付を申請できる。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>危険物取扱者免状を汚損・破損・亡失したときは、免状を交付または書換えをした都道府県知事に再交付を申請できる。亡失した免状を後で発見したときは、10日以内に再交付を受けた知事に提出する。したがって汚損・破損・亡失時に再交付を申請できるとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">免状を亡失したときは再交付を申請できるため、亡失しても再交付は受けられないとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">再交付は免状を交付した知事などに申請するため、勤務先の消防署に申請するとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">亡失した免状を発見したときは10日以内に提出するため、提出する必要はないとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">再交付を受けると免状を持つ状態に戻るため、危険物を取り扱えなくなるとするのは誤りである。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>危険物取扱者免状を汚損・破損・亡失したときは、免状を交付または書換えをした都道府県知事に再交付を申請できる。亡失した免状を後で発見したときは、10日以内に再交付を受けた知事に提出する。したがって汚損・破損・亡失時に再交付を申請できるとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">免状を亡失したときは再交付を申請できるため、亡失しても再交付は受けられないとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">再交付は免状を交付した知事などに申請するため、勤務先の消防署に申請するとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">再交付を受けると免状を持つ状態に戻るため、危険物を取り扱えなくなるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">亡失した免状を発見したときは10日以内に提出するため、提出する必要はないとするのは誤りである。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p685/index.html"
     },
     {
@@ -12341,13 +12341,13 @@ const PRACTICE_QUESTIONS = {
       "opts": [
         "ガソリンは、水によく溶ける。",
         "灯油や軽油は、水によく溶ける。",
-        "ガソリンや灯油、軽油は水に溶けにくく、アセトンやアルコール類は水によく溶ける。",
+        "第4類危険物は、すべて水によく溶ける。",
         "重油は、水によく溶ける。",
-        "第4類危険物は、すべて水によく溶ける。"
+        "ガソリンや灯油、軽油は水に溶けにくく、アセトンやアルコール類は水によく溶ける。"
       ],
-      "ans": 2,
+      "ans": 4,
       "exp": "ガソリンや灯油は水に溶けにくく、アセトンやアルコール類は水によく溶ける。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>ガソリンや灯油、軽油、重油などは水に溶けにくい非水溶性で、アセトンやメタノール、エタノールなどのアルコール類は水によく溶ける水溶性である。水溶性の火災には耐アルコール泡を用いる。したがって非水溶性と水溶性を区別するこの記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">ガソリンは水に溶けにくい非水溶性であるため、水によく溶けるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">灯油や軽油は水に溶けにくい非水溶性であるため、水によく溶けるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">重油は水に溶けにくい非水溶性であるため、水によく溶けるとするのは誤りである。石油類の多くは非水溶性である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">第4類にはガソリンなど非水溶性のものが多いため、すべて水によく溶けるとするのは誤りである。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>ガソリンや灯油、軽油、重油などは水に溶けにくい非水溶性で、アセトンやメタノール、エタノールなどのアルコール類は水によく溶ける水溶性である。水溶性の火災には耐アルコール泡を用いる。したがって非水溶性と水溶性を区別するこの記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">ガソリンは水に溶けにくい非水溶性であるため、水によく溶けるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">灯油や軽油は水に溶けにくい非水溶性であるため、水によく溶けるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">第4類にはガソリンなど非水溶性のものが多いため、すべて水によく溶けるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">重油は水に溶けにくい非水溶性であるため、水によく溶けるとするのは誤りである。石油類の多くは非水溶性である。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p686/index.html"
     },
     {
@@ -12359,13 +12359,13 @@ const PRACTICE_QUESTIONS = {
       "opts": [
         "酸素濃度を下げても、燃焼はまったく変わらない。",
         "酸素濃度が低いほど、燃焼は激しくなる。",
-        "酸素濃度がある限界より低くなると、燃焼は続かなくなる。",
+        "空気中の酸素濃度は、およそ80%である。",
         "酸素は、燃焼を妨げる気体である。",
-        "空気中の酸素濃度は、およそ80%である。"
+        "酸素濃度がある限界より低くなると、燃焼は続かなくなる。"
       ],
-      "ans": 2,
+      "ans": 4,
       "exp": "酸素濃度がある限界より低くなると、燃焼は続かない。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>燃焼には酸素が必要で、酸素濃度が高いほど激しく燃え、ある限界より低くなると燃焼は続かなくなる。窒息消火は酸素の供給を断って濃度を下げ消火する方法である。空気中の酸素濃度はおよそ21%である。したがって酸素濃度が限界より低くなると燃焼が続かないとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">酸素濃度を下げると燃焼は弱まり限界以下では続かないため、燃焼はまったく変わらないとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">酸素濃度が高いほど燃焼は激しくなるため、酸素濃度が低いほど激しくなるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">酸素は燃焼を助ける支燃性の気体であるため、燃焼を妨げる気体であるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">空気中の酸素濃度はおよそ21%であるため、およそ80%であるとするのは誤りである。約78%は窒素である。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>燃焼には酸素が必要で、酸素濃度が高いほど激しく燃え、ある限界より低くなると燃焼は続かなくなる。窒息消火は酸素の供給を断って濃度を下げ消火する方法である。空気中の酸素濃度はおよそ21%である。したがって酸素濃度が限界より低くなると燃焼が続かないとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">酸素濃度を下げると燃焼は弱まり限界以下では続かないため、燃焼はまったく変わらないとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">酸素濃度が高いほど燃焼は激しくなるため、酸素濃度が低いほど激しくなるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">空気中の酸素濃度はおよそ21%であるため、およそ80%であるとするのは誤りである。約78%は窒素である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">酸素は燃焼を助ける支燃性の気体であるため、燃焼を妨げる気体であるとするのは誤りである。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p687/index.html"
     },
     {
@@ -12391,7 +12391,7 @@ const PRACTICE_QUESTIONS = {
       "year": "orig",
       "num": 689,
       "field": "limit",
-      "text": "次のア〜エの引火点の高低に関する記述のうち、正しいものの組合せはどれか。\n\nア　ガソリンの引火点は、灯油の引火点より低い。イ　灯油の引火点は、ガソリンの引火点より低い。ウ　重油の引火点は、軽油の引火点より高い。エ　二硫化炭素の引火点は、ガソリンの引火点より高い。",
+      "text": "次のア〜エの引火点の高低に関する記述のうち、正しいものの組合せはどれか。\n\nア　ガソリンの引火点は、灯油の引火点より低い。イ　灯油の引火点は、ガソリンの引火点より低い。ウ　重油の引火点は、軽油の引火点より高い。エ　二硫化炭素の引火点は、ガソリンの引火点より低い。",
       "opts": [
         "アとイ",
         "イとエ",
@@ -12401,7 +12401,7 @@ const PRACTICE_QUESTIONS = {
       ],
       "ans": 4,
       "exp": "ガソリンは灯油より、重油は軽油より引火点が高い関係が正しく、組合せはアとウである。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>ガソリンの引火点は灯油より低く、重油の引火点は軽油より高いため、アとウは正しい。灯油の引火点はガソリンより高く、二硫化炭素の引火点はガソリンより低いため、灯油をガソリンより低い、二硫化炭素をガソリンより高いとするイとエは誤りである。したがって正しい組合せはアとウである。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">イを含むため誤りである。灯油の引火点はガソリンより高いため、灯油をガソリンより低いとするイは成立しない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">イもエも誤りを含むため成立しない。灯油はガソリンより高く、二硫化炭素はガソリンより低い引火点である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">イを含むため誤りである。ウは正しいが、灯油をガソリンより低いとするイとは組み合わせられない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">エを含むため誤りである。二硫化炭素の引火点はガソリンより低いため、ガソリンより高いとするエは成立しない。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>ガソリンの引火点は灯油より低く、重油の引火点は軽油より高いため、アとウは正しい。灯油の引火点はガソリンより高く、二硫化炭素の引火点は約−30℃でガソリンの約−40℃以下より高いため、灯油をガソリンより低いとするイや、二硫化炭素をガソリンより低いとするエは誤りである。したがって正しい組合せはアとウである。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">イを含むため誤りである。灯油の引火点はガソリンより高いため、灯油をガソリンより低いとするイは成立しない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">イもエも誤りを含むため成立しない。灯油はガソリンより引火点が高く、二硫化炭素もガソリンより引火点が高い。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">イを含むため誤りである。ウは正しいが、灯油をガソリンより低いとするイとは組み合わせられない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">エを含むため誤りである。二硫化炭素の引火点はガソリンより高いため、二硫化炭素をガソリンより低いとするエは成立しない。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p689/index.html"
     },
     {
@@ -12431,13 +12431,13 @@ const PRACTICE_QUESTIONS = {
       "opts": [
         "燃焼点は、引火点より低い温度である。",
         "発火点は、引火点より低いのが普通である。",
-        "燃焼点は引火後も燃焼が続く最低温度で、一般に引火点よりやや高い。",
+        "発火点は、火源がないと燃え出す温度である。",
         "引火点と発火点は、同じ意味である。",
-        "発火点は、火源がないと燃え出す温度である。"
+        "燃焼点は引火後も燃焼が続く最低温度で、一般に引火点よりやや高い。"
       ],
-      "ans": 2,
+      "ans": 4,
       "exp": "燃焼点は引火後も燃焼が続く最低温度で、一般に引火点よりやや高い。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>引火点は火源があれば引火する最低の液温、燃焼点は引火したあとも燃焼が続く最低温度で一般に引火点よりやや高い。発火点は火源がなくても自ら燃え出す最低温度で、引火点より高い。したがって燃焼点は引火点よりやや高いとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">燃焼点は引火点よりやや高いのが普通であるため、引火点より低い温度であるとするのは誤りである。燃焼が続く温度である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">発火点は引火点より高いのが普通であるため、引火点より低いとするのは誤りである。発火点は自ら燃え出す温度である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">引火点は火源による最低液温、発火点は火源なしで燃え出す温度で意味が異なるため、同じ意味であるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">発火点は火源がなくても自ら燃え出す温度であるため、火源がないと燃え出す温度とするのは正確でなく誤りである。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>引火点は火源があれば引火する最低の液温、燃焼点は引火したあとも燃焼が続く最低温度で一般に引火点よりやや高い。発火点は火源がなくても自ら燃え出す最低温度で、引火点より高い。したがって燃焼点は引火点よりやや高いとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">燃焼点は引火点よりやや高いのが普通であるため、引火点より低い温度であるとするのは誤りである。燃焼が続く温度である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">発火点は引火点より高いのが普通であるため、引火点より低いとするのは誤りである。発火点は自ら燃え出す温度である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">発火点は火源がなくても自ら燃え出す温度であるため、火源がないと燃え出す温度とするのは正確でなく誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">引火点は火源による最低液温、発火点は火源なしで燃え出す温度で意味が異なるため、同じ意味であるとするのは誤りである。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p691/index.html"
     },
     {
@@ -12467,13 +12467,13 @@ const PRACTICE_QUESTIONS = {
       "opts": [
         "免状の種類に関係なく、すべての類の危険物を取り扱える。",
         "丙種は、無資格者の取扱いに立ち会える。",
-        "免状を取得した類の危険物を取り扱い、無資格者の取扱いに立ち会える（丙種を除く）。",
+        "免状がなくても、立会いがあれば取扱者になれる。",
         "危険物取扱者でなくても、単独で危険物を取り扱える。",
-        "免状がなくても、立会いがあれば取扱者になれる。"
+        "免状を取得した類の危険物を取り扱い、無資格者の取扱いに立ち会える（丙種を除く）。"
       ],
-      "ans": 2,
+      "ans": 4,
       "exp": "取扱者は取得した類を取り扱い、丙種を除いて立会いもできる。",
-      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>危険物取扱者は、免状を取得した類の危険物を取り扱えるとともに、甲種と乙種は無資格者の取扱いに立ち会える。丙種は取扱いはできるが立会いはできない。無資格者は取扱者の立会いがなければ扱えない。したがって取得した類を取り扱い、丙種を除き立会いもできるとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">乙種は取得した類のみ取り扱えるため、免状の種類に関係なくすべての類を取り扱えるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">丙種は無資格者の取扱いに立ち会えないため、丙種が立ち会えるとするのは誤りである。丙種は取扱いのみできる。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">無資格者は取扱者の立会いがなければ取り扱えないため、単独で危険物を取り扱えるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">取扱者になるには免状の交付が必要であるため、免状がなくても立会いがあれば取扱者になれるとするのは誤りである。</p></li></ul></section>\n    </div>",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>危険物取扱者は、免状を取得した類の危険物を取り扱えるとともに、甲種と乙種は無資格者の取扱いに立ち会える。丙種は取扱いはできるが立会いはできない。無資格者は取扱者の立会いがなければ扱えない。したがって取得した類を取り扱い、丙種を除き立会いもできるとする記述が正しい。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">乙種は取得した類のみ取り扱えるため、免状の種類に関係なくすべての類を取り扱えるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">丙種は無資格者の取扱いに立ち会えないため、丙種が立ち会えるとするのは誤りである。丙種は取扱いのみできる。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">取扱者になるには免状の交付が必要であるため、免状がなくても立会いがあれば取扱者になれるとするのは誤りである。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">無資格者は取扱者の立会いがなければ取り扱えないため、単独で危険物を取り扱えるとするのは誤りである。</p></li></ul></section>\n    </div>",
       "publicPath": "q/practice/p693/index.html"
     },
     {
@@ -12769,7 +12769,7 @@ const PRACTICE_QUESTIONS = {
       "year": "orig",
       "num": 710,
       "field": "rights",
-      "text": "化学反応式について、正しいものはどれか。",
+      "text": "化学反応式の表し方について、正しいものはどれか。",
       "opts": [
         "化学反応式では、反応の前後で原子の種類や数が変わる。",
         "化学反応式は、物質の値段を表す式である。",
