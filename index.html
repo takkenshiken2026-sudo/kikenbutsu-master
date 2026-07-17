@@ -1099,6 +1099,16 @@ details.rich-detail summary{display:none}
 /* ===== ORIG TOP BAR ===== */
 .orig-top-bar{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r2);padding:16px 18px;margin-bottom:16px;box-shadow:var(--sh)}
 
+/* ===== PAGE NOTICE (お知らせ) ===== */
+.page-notice{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 10px;background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--accent-emphasis);border-radius:var(--r2);padding:12px 14px;margin:0 0 18px}
+.page-notice-badge{font-size:11px;font-weight:700;color:#fff;background:var(--accent-emphasis);border-radius:6px;padding:2px 8px;line-height:1.4;letter-spacing:.02em}
+.page-notice-date{font-size:12px;color:var(--text3);font-family:var(--mono)}
+.page-notice-text{flex:1 1 100%;font-size:13px;color:var(--text2);line-height:1.7;margin:2px 0 0}
+.pn-t{font-weight:700;border-radius:6px;padding:0 5px;font-size:12px;white-space:nowrap}
+.pn-t-標準{color:#1f6f43;background:rgba(46,160,94,.14)}
+.pn-t-応用{color:#9a5b00;background:rgba(214,143,0,.15)}
+.pn-t-難関{color:#a01f2e;background:rgba(200,45,60,.14)}
+
 /* ===== EXAM COUNTDOWN BANNER ===== */
 .exam-banner{background:var(--ink);color:var(--bg2);text-align:center;font-size:var(--fs-sub);padding:6px 20px;letter-spacing:.03em;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
 .exam-banner-days{font-size:var(--fs-title);font-weight:700;font-family:var(--mono);line-height:1}
@@ -1922,6 +1932,12 @@ body.is-solving .site-footer{display:none!important}
       </nav>
       <h2 class="page-title">実践演習</h2>
       <div class="page-sub">分野を選び、過去問と同じ形式で演習できます。出題順は毎回ランダムです。</div>
+
+      <div class="page-notice" role="note">
+        <span class="page-notice-badge">お知らせ</span>
+        <span class="page-notice-date">2026-07-17</span>
+        <p class="page-notice-text">実践演習を1,000問に拡充しました。各問に難易度（<span class="pn-t pn-t-標準">標準</span>・<span class="pn-t pn-t-応用">応用</span>・<span class="pn-t pn-t-難関">難関</span>）を付与し、難易度での絞り込みにも対応しています。</p>
+      </div>
 
       <div class="orig-bottom-bar" style="margin-top:0;margin-bottom:16px;padding-top:0;border-top:none;border-bottom:1px solid var(--border);padding-bottom:16px">
         <h2 class="section-label" style="margin-bottom:12px">出題数</h2>
