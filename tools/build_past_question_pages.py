@@ -1057,6 +1057,22 @@ def build_q_index(pages: list[dict], base_url: str) -> str:
         "で整理しています。</p>"
         "</section>"
     )
+    # 過去問ハブから受験制度の基本ページへ文脈リンク（内部リンクの薄い実記事を補強）。
+    exam_basics_links_html = (
+        '<section class="past-index-guide" aria-labelledby="exam-basics-links-h">'
+        '<h2 id="exam-basics-links-h">過去問と一緒に確認したい受験の基本</h2>'
+        "<p>演習と並行して本番の制度も押さえておくと直前で慌てません。"
+        "よく調べられる基本情報のページをまとめました。</p>"
+        '<ul class="related-links-list">'
+        '<li><a href="../articles/exam-schedule/">試験日はいつ？支部別の日程と申込締切の調べ方</a></li>'
+        '<li><a href="../articles/exam-day-items/">当日の持ち物｜必須3点・電卓不可・受験票の写真規格</a></li>'
+        '<li><a href="../articles/pass-score/">合格点は何点？各科目60%と足切りの仕組み</a></li>'
+        '<li><a href="../articles/exam-difficulty/">乙4の難易度｜合格率・勉強時間と種類別の難易度順</a></li>'
+        '<li><a href="../articles/exam-format-overview/">試験形式｜五肢択一35問・マークシートとCBTの有無</a></li>'
+        '<li><a href="../articles/exam-eligibility/">受験資格｜乙種は誰でも、甲種だけ要件あり</a></li>'
+        "</ul>"
+        "</section>"
+    )
 
     return f"""<!DOCTYPE html>
 <html lang="ja">
@@ -1082,7 +1098,6 @@ def build_q_index(pages: list[dict], base_url: str) -> str:
   {q_index_breadcrumb}
   <h1>{html.escape(index_h1_text)}</h1>
   <p class="site-page-lead">{html.escape(page_lead)}</p>
-  {index_picks_html}
   {study_modes_note}
   {q_hub_links_html(rel_path, current="past")}
   {past_usage_guide_html}
@@ -1129,6 +1144,8 @@ def build_q_index(pages: list[dict], base_url: str) -> str:
       </div>
     </div>
   </section>
+  {exam_basics_links_html}
+  {index_picks_html}
 </main>
 {q_index_footer}
 {site_page_wrap_close()}
