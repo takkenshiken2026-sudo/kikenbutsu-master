@@ -428,7 +428,7 @@ def guide_links_for_page(category: str, guides: list[dict[str, str]], *, limit: 
             slug = g["slug"]
             if slug not in seen:
                 seen.add(slug)
-                picked.append((f"articles/{slug}/index.html", g["title"]))
+                picked.append((f"articles/{slug}/", g["title"]))
         if len(picked) >= limit:
             return picked
     by_slug = {g["slug"]: g for g in guides}
@@ -442,7 +442,7 @@ def guide_links_for_page(category: str, guides: list[dict[str, str]], *, limit: 
         if not g:
             continue
         seen.add(resolved)
-        picked.append((f"articles/{resolved}/index.html", g["title"]))
+        picked.append((f"articles/{resolved}/", g["title"]))
     return picked
 
 
@@ -482,7 +482,7 @@ def parse_related_link_tokens(
             slug = target
             g = next((x for x in guides if x["slug"] == slug), None)
             add(
-                rel_href(rel_path, f"articles/{slug}/index.html"),
+                rel_href(rel_path, f"articles/{slug}/"),
                 label or (g["title"] if g else slug),
             )
         elif kind == "term":
@@ -1047,13 +1047,13 @@ def build_q_index(pages: list[dict], base_url: str) -> str:
         "年度別は本番形式の通し練習に、分野別は苦手科目のつぶし込みに向きます。"
         "各問の解説ページでは正答だけでなく、誤答選択肢がなぜ違うのかまで確認できます。</p>"
         "<p>解く順番や復習の設計は"
-        '<a href="../articles/past-question-strategy/index.html">過去問の使い方（本番形式で測り誤答を分析する）</a>、'
+        '<a href="../articles/past-question-strategy/">過去問の使い方（本番形式で測り誤答を分析する）</a>、'
         "弱点1科目の攻め方は"
-        '<a href="../articles/past-questions-by-field/index.html">分野別の過去問</a>'
+        '<a href="../articles/past-questions-by-field/">分野別の過去問</a>'
         "で詳しく解説しています。</p>"
         "<p>そもそも乙4の過去問は公式に一部しか公開されていません。"
         "公式サンプルの位置づけや本試験形式との違いは"
-        '<a href="../articles/past-question-availability/index.html">過去問は公開されている？</a>'
+        '<a href="../articles/past-question-availability/">過去問は公開されている？</a>'
         "で整理しています。</p>"
         "</section>"
     )
