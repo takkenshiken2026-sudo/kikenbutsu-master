@@ -112,6 +112,17 @@ def level_from_tags(tags: str) -> int:
     return 1
 
 
+# tags 5列目に入る難易度ラベル（標準/応用/難関）。UI の★段階へも対応させる。
+DIFF_TIERS = ("標準", "応用", "難関")
+
+
+def diff_tier_from_tags(tags: str) -> str:
+    parts = [p.strip() for p in norm(tags).split(";")]
+    if len(parts) >= 5 and parts[4] in DIFF_TIERS:
+        return parts[4]
+    return ""
+
+
 def practice_exp_fields(row: dict, line_no: int) -> tuple[str, str]:
     """SPA 用: プレーンテキスト（短い要約）と構造化 HTML 解説。"""
     page = practice_page_dict(row, line_no)
@@ -162,6 +173,7 @@ def practice_row_to_obj(row: dict, line_no: int) -> dict | None:
         "exp": exp,
         "expHtml": exp_html,
         "level": level_from_tags(row.get("tags", "")),
+        "diff": diff_tier_from_tags(row.get("tags", "")),
         "publicPath": f"q/practice/p{qno:03d}/index.html",
     }
 
