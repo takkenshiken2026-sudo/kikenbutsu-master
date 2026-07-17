@@ -369,6 +369,14 @@ def social_image_meta_tags(*, site_root: Path | None = None) -> str:
 <meta name="twitter:image:alt" content="{alt}">"""
 
 
+# Google AdSense（全ページ共通・<head> 内で読み込む）
+ADSENSE_HEAD_SNIPPET = (
+    "<!-- Google AdSense -->\n"
+    '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7927260139193410"\n'
+    '     crossorigin="anonymous"></script>'
+)
+
+
 def brand_head_markup(rel_path: Path, *, site_root: Path | None = None, include_social_image: bool = True) -> str:
     block = favicons_head_markup(rel_path, site_root=site_root)
     if not block:
@@ -377,6 +385,7 @@ def brand_head_markup(rel_path: Path, *, site_root: Path | None = None, include_
         social = social_image_meta_tags(site_root=site_root)
         if social:
             block += "\n" + social
+    block += "\n" + ADSENSE_HEAD_SNIPPET
     return block
 
 
