@@ -675,8 +675,11 @@ details.rich-detail summary{display:none}
 .score-paid-mock-wrap{margin-top:24px;padding-top:20px;border-top:1px solid var(--border)}
 .score-paid-mock-lead{font-size:var(--fs-sub);color:var(--text);margin-bottom:14px;line-height:1.65;font-weight:500}
 .score-paid-mock-lead strong{color:var(--text);font-weight:700}
-.score-paid-mock-strip{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:14px 18px;border:1px solid var(--paid-mock-accent-border);border-radius:var(--r2);background:var(--paid-mock-accent-soft);text-decoration:none;color:inherit;box-shadow:0 2px 10px var(--paid-mock-accent-shadow);transition:border-color .15s,box-shadow .15s,transform .15s}
+.score-paid-mock-strip{display:flex;flex-direction:column;align-items:stretch;gap:12px;padding:14px 18px;border:1px solid var(--paid-mock-accent-border);border-radius:var(--r2);background:var(--paid-mock-accent-soft);text-decoration:none;color:inherit;box-shadow:0 2px 10px var(--paid-mock-accent-shadow);transition:border-color .15s,box-shadow .15s,transform .15s}
 .score-paid-mock-strip:hover{border-color:var(--paid-mock-accent);box-shadow:0 4px 14px var(--paid-mock-accent-shadow);transform:translateY(-1px)}
+.score-paid-mock-strip-lead{font-size:var(--fs-sub);color:var(--text);line-height:1.6;font-weight:500}
+.score-paid-mock-strip-lead strong{color:var(--text);font-weight:700}
+.score-paid-mock-strip-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .score-paid-mock-strip-tag{font-size:var(--fs-tiny);font-weight:700;background:var(--paid-mock-accent);color:var(--paid-mock-accent-text);padding:3px 8px;border-radius:4px;flex-shrink:0;letter-spacing:.04em}
 .score-paid-mock-strip-body{flex:1;min-width:180px}
 .score-paid-mock-strip-title{display:block;font-size:var(--fs-body);font-weight:700;color:var(--text);margin-bottom:2px;line-height:1.35}
@@ -686,8 +689,11 @@ details.rich-detail summary{display:none}
 .score-course-wrap:first-child{margin-top:24px}
 .score-course-lead{font-size:var(--fs-sub);color:var(--text);margin-bottom:14px;line-height:1.65;font-weight:500}
 .score-course-lead strong{color:var(--text);font-weight:700}
-.score-course-strip{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:14px 18px;border:1px solid var(--accent-border,rgba(0,0,0,.12));border-radius:var(--r2);background:var(--accent-soft,#f4f4f5);text-decoration:none;color:inherit;box-shadow:0 2px 10px var(--accent-shadow,rgba(0,0,0,.06));transition:border-color .15s,box-shadow .15s,transform .15s}
+.score-course-strip{display:flex;flex-direction:column;align-items:stretch;gap:12px;padding:14px 18px;border:1px solid var(--accent-border,rgba(0,0,0,.12));border-radius:var(--r2);background:var(--accent-soft,#f4f4f5);text-decoration:none;color:inherit;box-shadow:0 2px 10px var(--accent-shadow,rgba(0,0,0,.06));transition:border-color .15s,box-shadow .15s,transform .15s}
 .score-course-strip:hover{border-color:var(--accent,#333);box-shadow:0 4px 14px var(--accent-shadow,rgba(0,0,0,.1));transform:translateY(-1px)}
+.score-course-strip-lead{font-size:var(--fs-sub);color:var(--text);line-height:1.6;font-weight:500}
+.score-course-strip-lead strong{color:var(--text);font-weight:700}
+.score-course-strip-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .score-course-strip-tag{font-size:var(--fs-tiny);font-weight:700;background:var(--accent,#333);color:var(--accent-text,#fff);padding:3px 8px;border-radius:4px;flex-shrink:0;letter-spacing:.04em}
 .score-course-strip-body{flex:1;min-width:180px}
 .score-course-strip-title{display:block;font-size:var(--fs-body);font-weight:700;color:var(--text);margin-bottom:2px;line-height:1.35}
@@ -1789,14 +1795,6 @@ body.is-solving .site-footer{display:none!important}
         <div id="score-session-msg" style="margin-bottom:16px"></div>
         <div class="score-ring-wrap" id="score-ring-wrap"></div>
         <div class="score-detail-grid" id="score-details"></div><div id="score-badges-earned" style="margin-bottom:8px"></div>
-        <details class="score-q-accordion" id="score-q-accordion">
-          <summary class="score-q-accordion-summary">
-            <span class="score-q-accordion-title">問題別結果</span>
-            <span class="score-q-accordion-meta" id="score-q-accordion-meta"></span>
-            <span class="score-q-accordion-chevron" aria-hidden="true">▼</span>
-          </summary>
-          <div class="score-q-list" id="score-q-list"></div>
-        </details>
         <div id="score-goal-wrap" class="score-goal-wrap"></div>
         <div class="score-btns">
           <button class="btn-primary" id="score-retry-wrong-btn" onclick="retryWrongQuestions()" hidden>間違えた問題を復習</button>
@@ -5968,14 +5966,10 @@ function getTodaySolveGoal(u){
 
 /** 結果画面に「今日の目標まであと◯問」を表示（継続を促す） */
 function renderScoreGoal(wrapId){
+  // 結果画面のCTA整理のため、今日の目標バナーは非表示（欄は空にする）
   const wrap=document.getElementById(wrapId);
   if(!wrap) return;
-  const u=getUserData();
-  const g=u?getTodaySolveGoal(u):null;
-  if(!g){ wrap.innerHTML=''; return; }
-  wrap.innerHTML = g.done
-    ? `<div class="score-goal score-goal--done">🎉 今日の目標 ${g.target}問 達成！この調子でもう少し解こう</div>`
-    : `<div class="score-goal">今日 ${g.solved}/${g.target}問 ・ あと <strong>${g.remaining}問</strong> で今日の目標達成🔥</div>`;
+  wrap.innerHTML='';
 }
 
 /** 結果画面から、同じ条件で新しい問題を続けて出題する（設定画面に戻らない） */
@@ -6061,16 +6055,19 @@ function showScore(){
     earnedEl.innerHTML='<div class="section-label" style="margin-bottom:8px">バッジ獲得</div><div class="score-badges-row">'
       +sessionNewBadges.map(b=>`<div class="score-earned-badge"><span class="badge-icon" style="width:24px;height:24px;border-radius:6px">${badgeIconHTML(b.icon)}</span>${b.name}</div>`).join('')+'</div>';
   }else if(earnedEl){ earnedEl.innerHTML=''; }
-  const scoreAccordion=document.getElementById('score-q-accordion');
-  if(scoreAccordion) scoreAccordion.open=false;
-  const scoreAccordionMeta=document.getElementById('score-q-accordion-meta');
-  if(scoreAccordionMeta) scoreAccordionMeta.textContent='全'+res.length+'問';
-  document.getElementById('score-q-list').innerHTML=res.map((r,idx)=>`
+  const scoreQList=document.getElementById('score-q-list');
+  if(scoreQList){
+    const scoreAccordion=document.getElementById('score-q-accordion');
+    if(scoreAccordion) scoreAccordion.open=false;
+    const scoreAccordionMeta=document.getElementById('score-q-accordion-meta');
+    if(scoreAccordionMeta) scoreAccordionMeta.textContent='全'+res.length+'問';
+    scoreQList.innerHTML=res.map((r,idx)=>`
     <div class="score-q-item score-q-click" role="button" tabindex="0" onclick="openScoreQuestion(${idx})" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openScoreQuestion(${idx});}">
       <div class="score-q-icon">${r.correct?'○':'×'}</div>
       <div class="score-q-text">${r.q.text.slice(0,40)}…</div>
       <div class="score-q-time">${r.time.toFixed(1)}s</div>
     </div>`).join('');
+  }
   if(fb.levelUp){
     setTimeout(()=>openLevelUpShare(fb.levelUp), 380);
   } else if(sessionNewBadges.length){
@@ -7618,14 +7615,16 @@ function renderScorePaidMockPromo(opts){
   const leadHtml=opts.leadHtml!=null?opts.leadHtml:scorePaidMockLeadHtml(m,opts.variant);
   wrap.hidden=false;
   wrap.innerHTML=`
-    <p class="score-paid-mock-lead">${leadHtml}</p>
     <a class="score-paid-mock-strip" href="${escapeAttr(m.url)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeAttr(label)}">
-      <span class="score-paid-mock-strip-tag">有料</span>
-      <span class="score-paid-mock-strip-body">
-        <span class="score-paid-mock-strip-title">${escapeAttr(m.modeTitle)}</span>
-        <span class="score-paid-mock-strip-meta">${escapeAttr(m.scoreMeta)} · ${escapeAttr(m.priceLabel)} · note</span>
+      <span class="score-paid-mock-strip-lead">${leadHtml}</span>
+      <span class="score-paid-mock-strip-row">
+        <span class="score-paid-mock-strip-tag">有料</span>
+        <span class="score-paid-mock-strip-body">
+          <span class="score-paid-mock-strip-title">${escapeAttr(m.modeTitle)}</span>
+          <span class="score-paid-mock-strip-meta">${escapeAttr(m.scoreMeta)} · ${escapeAttr(m.priceLabel)} · note</span>
+        </span>
+        <span class="score-paid-mock-strip-cta">詳細 ↗</span>
       </span>
-      <span class="score-paid-mock-strip-cta">詳細 ↗</span>
     </a>`;
 }
 window.renderScorePaidMockPromo=renderScorePaidMockPromo;
@@ -7654,14 +7653,16 @@ function renderScoreCoursePromo(opts){
   const metaHtml=metaParts.length?`<span class="score-course-strip-meta">${escapeAttr(metaParts.join(' · '))}</span>`:'';
   wrap.hidden=false;
   wrap.innerHTML=`
-    <p class="score-course-lead">${leadHtml}</p>
     <a class="score-course-strip" href="${escapeAttr(c.url)}" target="_blank" rel="nofollow sponsored noopener noreferrer" aria-label="${escapeAttr(label)}">
-      <span class="score-course-strip-tag">${escapeAttr(c.tagLabel)}</span>
-      <span class="score-course-strip-body">
-        <span class="score-course-strip-title">${escapeAttr(c.modeTitle)}</span>
-        ${metaHtml}
+      <span class="score-course-strip-lead">${leadHtml}</span>
+      <span class="score-course-strip-row">
+        <span class="score-course-strip-tag">${escapeAttr(c.tagLabel)}</span>
+        <span class="score-course-strip-body">
+          <span class="score-course-strip-title">${escapeAttr(c.modeTitle)}</span>
+          ${metaHtml}
+        </span>
+        <span class="score-course-strip-cta">詳細 ↗</span>
       </span>
-      <span class="score-course-strip-cta">詳細 ↗</span>
     </a>
     ${c.footnote?`<p class="score-course-footnote">${escapeAttr(c.footnote)}</p>`:''}`;
 }
