@@ -7,6 +7,7 @@ from __future__ import annotations
 import csv
 import html
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -18,6 +19,12 @@ from tools.editorial_quality import norm  # noqa: E402
 
 RETIRED_JSON = ROOT / "data" / "guide_retired.json"
 
+# 統合先の実タイトルが取れないときのフォールバック（プレースホルダは使わない）。
+FALLBACK_TITLE = "乙4マスター｜危険物取扱者乙4試験ガイド"
+
+# noindex リダイレクトでも、削除反映までは検索結果に旧 URL が残る。
+# その間のスニペットが「記事移動中…」だと CTR を落とすため、
+# 統合先ページの実タイトル・説明文を埋め込んでおく。
 REDIRECT_HTML = """<!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -25,14 +32,44 @@ REDIRECT_HTML = """<!DOCTYPE html>
 <meta http-equiv="refresh" content="0;url={url}">
 <link rel="canonical" href="{url}">
 <meta name="robots" content="noindex, follow">
-<title>記事移動中…</title>
+<title>{title}</title>{desc_meta}
 <script>location.replace({url_js});</script>
 </head>
 <body>
-<p>新しい記事へ移動します。<a href="{url}">こちら</a></p>
+<p>この記事は<a href="{url}">{link_text}</a>に統合されました。自動で移動します。</p>
 </body>
 </html>
 """
+
+_TITLE_RE = re.compile(r"<title>(.*?)</title>", re.S)
+_DESC_RE = re.compile(r'<meta\s+name="description"\s+content="(.*?)"', re.S)
+_PLACEHOLDER_TITLES = {"記事移動中…", "用語解説へ移動中…"}
+
+
+def read_target_meta(stub_dir: Path, rel: str) -> tuple[str, str]:
+    """統合先 HTML から title と description を読む。取れなければ空文字。"""
+    if rel.startswith(("http://", "https://")):
+        return "", ""
+    target = (stub_dir / rel).resolve()
+    if target.is_dir():
+        target = target / "index.html"
+    if not target.is_file():
+        return "", ""
+    try:
+        text = target.read_text(encoding="utf-8")
+    except OSError:
+        return "", ""
+    title = ""
+    m = _TITLE_RE.search(text)
+    if m:
+        title = html.unescape(m.group(1)).strip()
+    if title in _PLACEHOLDER_TITLES:  # 統合先自体がリダイレクト stub の場合は使わない
+        title = ""
+    desc = ""
+    m = _DESC_RE.search(text)
+    if m:
+        desc = html.unescape(m.group(1)).strip()
+    return title, desc
 
 
 def load_retired_map() -> dict[str, str]:
@@ -78,8 +115,23 @@ def write_redirect(articles_dir: Path, slug: str, target_slug: str) -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
     rel = article_redirect_href(target_slug)
     esc = html.escape(rel, quote=True)
+
+    title, desc = read_target_meta(out_dir, rel)
+    title_out = html.escape(title or FALLBACK_TITLE, quote=True)
+    # リンク文言は統合先タイトルのサイト名を除いた見出し部分を使う。
+    link_text = html.escape((title.split("｜")[0].strip() if title else "統合先の記事"), quote=True)
+    desc_meta = ""
+    if desc:
+        desc_meta = f'\n<meta name="description" content="{html.escape(desc, quote=True)}">'
+
     (out_dir / "index.html").write_text(
-        REDIRECT_HTML.format(url=esc, url_js=repr(rel)),
+        REDIRECT_HTML.format(
+            url=esc,
+            url_js=repr(rel),
+            title=title_out,
+            desc_meta=desc_meta,
+            link_text=link_text,
+        ),
         encoding="utf-8",
     )
     marker = out_dir / ".generated-by-exam-site"
