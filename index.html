@@ -968,7 +968,7 @@ details.rich-detail summary{display:none}
   .q-meta-value{white-space:normal;line-height:1.3;font-weight:600}
   .q-meta-field .q-meta-label{display:block;white-space:normal;line-height:1.3}
   .diff-wrap,.freq-wrap{gap:2px;margin-left:0}
-  .q-meta-item.diff-wrap{flex:0 0 112px}
+  .q-meta-item.diff-wrap{flex:0 0 auto}
   .q-meta-item.freq-item{flex:0 0 98px}
   .q-meta .diff-label{font-size:12px;line-height:1.2;width:42px;flex-basis:42px}
   .q-meta .freq-wrap .q-meta-label{font-size:12px;line-height:1.2;width:42px;flex-basis:42px}
@@ -1285,7 +1285,12 @@ body.is-solving .site-footer{display:none!important}
 .mission-card-share:hover{opacity:.82}
 .mission-card-share svg{width:15px;height:15px;fill:currentColor;flex-shrink:0}
 /* Difficulty stars in q-meta */
-.q-meta-item.diff-wrap{flex:0 0 114px}
+.q-meta-item.diff-wrap{flex:0 0 auto}
+/* 難易度3段階ラベル（標準/応用/難関） */
+.diff-tier{font-size:11px;font-weight:700;line-height:16px;padding:0 6px;border-radius:9px;white-space:nowrap;border:1px solid transparent;letter-spacing:.02em}
+.diff-tier-標準{color:#1f6f43;background:rgba(46,160,94,.14);border-color:rgba(46,160,94,.35)}
+.diff-tier-応用{color:#9a5b00;background:rgba(214,143,0,.15);border-color:rgba(214,143,0,.38)}
+.diff-tier-難関{color:#a01f2e;background:rgba(200,45,60,.14);border-color:rgba(200,45,60,.38)}
 .q-meta-item.freq-item{flex:0 0 108px}
 .diff-wrap{display:inline-flex;align-items:center;gap:3px;margin-left:0;vertical-align:middle;flex-shrink:0;height:18px}
 .q-meta .diff-label,.q-meta .freq-wrap .q-meta-label{font-size:12px;color:var(--text3);font-weight:500;white-space:nowrap;line-height:18px;width:42px;flex:0 0 42px}
@@ -2710,7 +2715,19 @@ function getFrequencyEvidence(q){
     title
   };
 }
+const DIFF_TIER_STARS={ '標準':3, '応用':4, '難関':5 };
 function getDifficultyEvidence(q){
+  // 実践演習は内容に即した3段階ラベル（標準/応用/難関）を優先し、★段階へ対応させる。
+  if(q&&q.diff&&DIFF_TIER_STARS[q.diff]!=null){
+    const tier=q.diff;
+    const stars=DIFF_TIER_STARS[tier];
+    return {
+      label:'難易度',
+      tier,
+      stars,
+      title:`難易度「${tier}」（問題内容に即した3段階判定）。★は5段階換算で${stars}個です（標準＝★3・応用＝★4・難関＝★5）。`
+    };
+  }
   let stars=3;
   let title='問題データに level がないため、5段階のうち標準の★3として表示しています（編集で level を入れると★1〜5に連動します）。';
   if(q.level!=null&&q.level!==''){
@@ -2750,7 +2767,8 @@ function diffStarsHTML(ev){
     return `<span class="diff-inner" title=""><span class="diff-label">難易度</span><span class="diff-stars">${starIconsHTML(ev,5,'diff')}</span></span>`;
   }
   const n=clampStarRating(ev.stars);
-  return `<span class="diff-inner" title="${escapeAttr(ev.title||'')}"><span class="diff-label">難易度</span><span class="diff-stars">${starIconsHTML(n,5,'diff')}</span></span>`;
+  const tierHTML=ev.tier?`<span class="diff-tier diff-tier-${ev.tier}">${ev.tier}</span>`:'';
+  return `<span class="diff-inner" title="${escapeAttr(ev.title||'')}"><span class="diff-label">難易度</span>${tierHTML}<span class="diff-stars">${starIconsHTML(n,5,'diff')}</span></span>`;
 }
 
 // --- Past-question year history in exp ---

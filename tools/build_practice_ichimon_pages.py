@@ -177,6 +177,17 @@ def load_ichimon_rows() -> list[dict]:
     return list(csv.DictReader(ICHIMON_CSV.read_text(encoding="utf-8-sig").splitlines()))
 
 
+_DIFF_TIERS = ("標準", "応用", "難関")
+
+
+def difficulty_from_tags(tags: str) -> str:
+    """tags 5列目の難易度ラベル（標準/応用/難関）。該当なしは空文字。"""
+    parts = [p.strip() for p in (tags or "").split(";")]
+    if len(parts) >= 5 and parts[4] in _DIFF_TIERS:
+        return parts[4]
+    return ""
+
+
 def practice_page_dict(row: dict, line_no: int) -> dict:
     if norm(row.get("is_invalidated", "")).upper() == "TRUE":
         raise ValueError(f"practice line {line_no}: 無効行はスキップ対象")
@@ -203,6 +214,7 @@ def practice_page_dict(row: dict, line_no: int) -> dict:
         "correct": cor,
         "exp": norm(row.get("explanation")) or "（解説は未入力です。）",
         "tags": parse_tags(norm(row.get("tags"))),
+        "difficulty": difficulty_from_tags(norm(row.get("tags"))),
         "rel_path": practice_rel_path(qno),
         "href_rel": f"p{qno:03d}/index.html",
     }
@@ -521,7 +533,7 @@ def build_practice_question_html(
   {site_breadcrumb}
   {study_modes_note}
   {q_hub_links_html(rel_path, current="practice")}
-  <p class="q-meta-line">実践演習 · {html.escape(page["category"])}</p>
+  <p class="q-meta-line">実践演習 · {html.escape(page["category"])}{(" · 難易度：" + html.escape(page["difficulty"])) if page.get("difficulty") else ""}</p>
   <h1 class="q-h1">{html.escape(heading)}</h1>
   {lead_html}
   <section class="q-block" aria-labelledby="q-stem-h">
