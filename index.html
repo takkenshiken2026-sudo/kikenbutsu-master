@@ -4586,10 +4586,12 @@ function renderQScoreReplay(sr){
   document.getElementById('qp-fill').style.width=Math.round(idx/total*100)+'%';
   const f=FIELDS.find(f=>f.id===q.field)||{name:'—'};
   const sourceLabel=(q.year!=null&&q.year!=='')?formatPastYearLabel(q.year):'実践演習';
-  const showStars=!['past','orig'].includes(quizState.mode);
-  const starsHTML=showStars?`
-    <span class="q-meta-item diff-wrap">${diffStarsHTML(getDifficultyEvidence(q))}</span>
-    <span class="q-meta-item freq-item">${freqStarsHTML(getFrequencyEvidence(q))}</span>`:'';
+  // 難易度は問題に3段階ラベル(q.diff)があれば実践演習でも表示。頻出度は過去問データがある場合のみ。
+  const hasDiff=!!(q&&q.diff&&DIFF_TIER_STARS[q.diff]!=null);
+  const showFreq=!['past','orig'].includes(quizState.mode);
+  const diffHTML=(hasDiff||showFreq)?`<span class="q-meta-item diff-wrap">${diffStarsHTML(getDifficultyEvidence(q))}</span>`:'';
+  const freqHTML=showFreq?`<span class="q-meta-item freq-item">${freqStarsHTML(getFrequencyEvidence(q))}</span>`:'';
+  const starsHTML=diffHTML+freqHTML;
   document.getElementById('q-meta').innerHTML=`
     <span class="q-meta-item q-meta-field"><span class="q-meta-label">${f.name}</span></span>
     <span class="q-meta-item q-meta-year"><span class="q-meta-value">${sourceLabel}</span></span>${starsHTML}`;
@@ -4646,10 +4648,12 @@ function renderQ(){ window.scrollTo({top:0,behavior:"instant"});
   document.getElementById('qp-fill').style.width=Math.round(idx/total*100)+'%';
   const f=FIELDS.find(f=>f.id===q.field)||{name:'—'};
   const sourceLabel=(q.year!=null&&q.year!=='')?formatPastYearLabel(q.year):'実践演習';
-  const showStars=!['past','orig'].includes(quizState.mode);
-  const starsHTML=showStars?`
-	    <span class="q-meta-item diff-wrap">${diffStarsHTML(getDifficultyEvidence(q))}</span>
-	    <span class="q-meta-item freq-item">${freqStarsHTML(getFrequencyEvidence(q))}</span>`:'';
+  // 難易度は問題に3段階ラベル(q.diff)があれば実践演習でも表示。頻出度は過去問データがある場合のみ。
+  const hasDiff=!!(q&&q.diff&&DIFF_TIER_STARS[q.diff]!=null);
+  const showFreq=!['past','orig'].includes(quizState.mode);
+  const diffHTML=(hasDiff||showFreq)?`<span class="q-meta-item diff-wrap">${diffStarsHTML(getDifficultyEvidence(q))}</span>`:'';
+  const freqHTML=showFreq?`<span class="q-meta-item freq-item">${freqStarsHTML(getFrequencyEvidence(q))}</span>`:'';
+  const starsHTML=diffHTML+freqHTML;
 	  document.getElementById('q-meta').innerHTML=`
 	    <span class="q-meta-item q-meta-field"><span class="q-meta-label">${f.name}</span></span>
 	    <span class="q-meta-item q-meta-year"><span class="q-meta-value">${sourceLabel}</span></span>${starsHTML}`;
