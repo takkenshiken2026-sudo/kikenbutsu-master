@@ -39,6 +39,8 @@ REWRITES: dict[str, dict[str, str]] = {
                 "past-questions-by-field:分野別の進め方",
                 "pass-score:合格点の考え方",
                 "study-plan:学習計画を立てる",
+                "affiliate-problem-books:問題集の選び方",
+                "affiliate-mock-exam-materials:模試・予想問題を選ぶ",
             ]
         ),
         "revision_note": "2026-06-18: 本番形式の測定と誤答分析の角度で再執筆",
@@ -86,7 +88,8 @@ REWRITES: dict[str, dict[str, str]] = {
             "答えを覚えるのではなく、なぜその選択肢が正しいのかを理解しておくことが大切です。\n\n"
             "一方で、引火点・発火点・静電気のように繰り返し問われるテーマもあります。"
             "こうした頻出分野は、理由まで押さえておけば得点源になります。"
-            "過去問で傾向をつかみつつ、間違えた問題はテキストに戻って理解を補うと安定します。"
+            "過去問で傾向をつかみつつ、間違えた問題はテキストに戻って理解を補うと安定します。\n\n"
+            "解説の量を増やしたいときは、[市販の問題集の選び方](../affiliate-problem-books/index.html)も参考になります。"
         ),
         "faq_1_question": "過去問は何問の形式で解くべきですか？",
         "faq_1_answer": (

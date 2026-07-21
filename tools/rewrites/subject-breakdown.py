@@ -39,6 +39,7 @@ REWRITES: dict[str, dict[str, str]] = {
                 "pass-score:合格点の考え方",
                 "study-plan:学習計画を立てる",
                 "exam-scope-overview:出題範囲の地図",
+                "affiliate-textbooks-recommend:テキストの選び方",
             ]
         ),
         "revision_note": "2026-06-18: 得点設計の角度で再執筆（時間/範囲記事と差別化）",

@@ -41,6 +41,7 @@ REWRITES: dict[str, dict[str, str]] = {
                 "exam-schedule:試験日程を確認する",
                 "exam-day-items:持ち物を確認する",
                 "time-limit-strategy:時間配分を確認する",
+                "affiliate-textbooks-recommend:テキストの選び方",
             ]
         ),
         "revision_note": "2026-06-18: CBT記述の誤りを訂正し紙のマークシート前提で再執筆",

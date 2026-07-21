@@ -39,6 +39,8 @@ REWRITES: dict[str, dict[str, str]] = {
                 "subject-breakdown:出題科目の内訳",
                 "pass-score:合格点の考え方",
                 "past-question-strategy:過去問の使い方",
+                "affiliate-online-course-compare:通信講座を比較する",
+                "affiliate-textbooks-recommend:テキストの選び方",
             ]
         ),
         "revision_note": "2026-06-18: 勉強時間目安と科目別逆算で再執筆",
