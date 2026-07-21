@@ -39,6 +39,7 @@ REWRITES: dict[str, dict[str, str]] = {
                 "subject-breakdown:出題科目の内訳",
                 "pass-rate:合格率の見方",
                 "weak-field-recovery:苦手分野の立て直し",
+                "affiliate-problem-books:問題集の選び方",
             ]
         ),
         "revision_note": "2026-06-18: 「1問の重み」を軸に足切りを具体化し再執筆",

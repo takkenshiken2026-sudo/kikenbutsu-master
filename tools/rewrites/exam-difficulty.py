@@ -43,6 +43,8 @@ REWRITES: dict[str, dict[str, str]] = {
                 "pass-rate:合格率が低い理由",
                 "study-plan:勉強計画の立て方",
                 "pass-score:合格点の仕組み",
+                "affiliate-online-course-compare:通信講座を比較する",
+                "affiliate-textbooks-recommend:テキストの選び方",
             ]
         ),
         "revision_note": "2026-07-04: 種類別（甲乙丙）の難易度順を追加し合格率を令和7年度31.9%に更新",
@@ -108,7 +110,8 @@ REWRITES: dict[str, dict[str, str]] = {
             "| 物理化学だけ伸び悩む | 動画や講座で部分補強 |\n"
             "| 学習時間を確保しにくい | 講座で効率を優先 |\n\n"
             "合格率の低さは受験者層の広さが背景で、しっかり準備した人には不利な試験ではありません。"
-            "物理化学がどうしても伸びないときだけ、講座や動画でその科目を補えば十分です。"
+            "物理化学がどうしても伸びないときだけ、講座や動画でその科目を補えば十分です。\n\n"
+            "講座を検討するなら、[通信講座の比較](../affiliate-online-course-compare/index.html)で費用と内容を確かめてください。"
         ),
         "faq_1_question": "危険物乙4の難易度はどのくらいですか？",
         "faq_1_answer": (
