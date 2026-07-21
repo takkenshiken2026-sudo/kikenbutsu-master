@@ -58,3 +58,5 @@
 - 2026-07-20: レバー1着手。`exam-schedule` ハブに「申し込み後に受けられなくなったら」節を追加（欠席＝振替・返金不可を公式facts で明記）。統合で吸収した reschedule-and-absence の検索意図をハブ本体でカバー。
 - 2026-07-20: レバー1継続。カバレッジ監査で `exam-eligibility` に併願の記述が0件と判明（concurrent-exam-rules 532表示/8.7位を吸収済み）。「複数の乙種を一度にまとめて受けられるか」節を追加（免状保有者は他の乙種を最大3類まで同時受験・法令と物化が免除・電子申請は併願不可で書面申請、を公式facts で明記）。
 - 2026-07-21: レバー1継続。`past-question-strategy` に過去問だけ・丸暗記で受かるかのmyth観点が0件と判明（pass-only-past-questions-myth 413表示/7.1位を吸収済み）。「過去問だけ・丸暗記で受かるか」節を追加（本試験問題は持ち帰り禁止・大半非公開で市販過去問は再現/予想問題が主流、丸暗記より理解、を公式facts で明記）。
+- 2026-07-21: 「過去問」アンカー集約。記事の「過去問演習」リンクがトップSPA `/index.html#past` を指し、過去問ハブ `/q/index.html` と評価が約50/50に分散していた。生成元（`tools/internal_links.py` の GUIDE_HUB_LINKS と `tools/affiliate_links.py` の関連ボックス）を修正し、記事の過去問アンカー計76本すべてを過去問ハブ `/q/index.html` に集約。`build_all.py`（deploy と同じ経路）で成果物を検証し、38記事すべてがハブを指すことを確認（exit 0）。
+  - 補足: canonical/sitemap の URL 形（`/q/index.html`）はサイト全体で一貫しており、当初挙げた「canonical形の是正」は不要と判断（過剰診断）。デプロイは source から再ビルドされるため、集約は generator 側で実施し committed HTML も同期。
