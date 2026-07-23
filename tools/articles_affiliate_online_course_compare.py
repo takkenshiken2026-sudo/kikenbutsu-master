@@ -12,7 +12,7 @@ ONSUKU_A8 = (
     "https://onsuku.jp/training/otu4"
     "?a8=MISVmIytjWpCKupI2Uf3uapuoPPNfsoVSUf.yszQv.BtjsSw6sc02WKMT-Pbcbof2._WQXS72ISVGs00000018694001"
 )
-STUDYING_AFB = "https://t.afi-b.com/visit.php?a=y7404W-O2449818&p=P984775K"
+STUDYING_AFB = "https://t.afi-b.com/visit.php?a=y7404W-M7354874_f&p=P984775K"
 JOHO_A8 = (
     "https://px.a8.net/svt/ejp?a8mat=4B3TF0+DUBYQQ+4LOQ+BW0YB"
     "&a8ejpredirect=https%3A%2F%2Fwww.joho-gakushu.jp%2Fsmartinfo%2Fsmart_lineup.php"

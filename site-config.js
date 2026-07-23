@@ -155,7 +155,7 @@ window.SITE_CONFIG = {
     "priceLabel": "¥590"
   },
   "coursePromo": {
-    "url": "https://t.afi-b.com/visit.php?a=y7404W-O2449818&p=P984775K",
+    "url": "https://t.afi-b.com/visit.php?a=y7404W-M7354874_f&p=P984775K",
     "modeTitle": "スタディング 危険物取扱者 乙種4類合格コース",
     "modePurpose": "一括5,940円で動画・問題集・模試まで揃えたい",
     "priceLabel": "¥5,940（一括）",
@@ -163,6 +163,6 @@ window.SITE_CONFIG = {
     "footnote": "※ スタディング公式サイトへ移動します。料金・受講条件は申込前に各ページでご確認ください。",
     "scoreLead": "スタディングの動画講座と模試",
     "scoreMeta": "約8時間・模試10回",
-    "lpUrl": "https://studying.jp/kikenbutsu/itempage/course4-2026.html"
+    "lpUrl": "https://studying.jp/kikenbutsu/"
   }
 };
