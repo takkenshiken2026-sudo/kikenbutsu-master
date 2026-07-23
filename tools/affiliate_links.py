@@ -60,6 +60,9 @@ def is_trackable_asp_url(url: str) -> bool:
         return True
     if "onsuku.jp" in lower and re.search(r"[?&]a8=", lower):
         return True
+    # afb: t.afi-b.com / *.afi-b.com / afb.io / affiliate-b.com
+    if "afi-b.com" in lower or "afb.io" in lower or "affiliate-b.com" in lower:
+        return True
     if "afb" in lower and (".afb." in lower or "afb.io" in lower or "affiliate-b" in lower):
         return True
     return False
