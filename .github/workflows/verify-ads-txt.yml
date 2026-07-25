@@ -1,0 +1,110 @@
+name: Verify ads.txt (AdSense)
+
+# ads.txt が本番ドメインで正しく配信され続けているかを監視する。
+# AdSense の「ads.txt が不明」は、ファイル自体が正しくてもクローラが本番 URL に
+# 到達できない（CDN/WAF が 403、未デプロイ、リダイレクト崩れ等）と発生する。
+# GitHub ランナーは本番ドメインへ到達できるため、実際に配信されている中身を検証する。
+#
+# 判定を切り分けるため、
+#   1) カスタムドメイン https://kikenbutsu-master.jp/ads.txt
+#   2) Pages 既定オリジン https://takkenshiken2026-sudo.github.io/kikenbutsu-master/ads.txt
+# の両方を確認する。オリジンだけ正常＝前段（Cloudflare 等）が犯人、と特定できる。
+
+on:
+  schedule:
+    - cron: "17 0 * * *" # 毎日 1 回（UTC）
+  workflow_dispatch: {}
+  push:
+    branches: [main, master]
+    paths:
+      - "ads.txt"
+      - ".github/workflows/verify-ads-txt.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify ads.txt is served correctly
+        shell: bash
+        run: |
+          set -uo pipefail
+
+          CUSTOM="https://kikenbutsu-master.jp/ads.txt"
+          ORIGIN="https://takkenshiken2026-sudo.github.io/kikenbutsu-master/ads.txt"
+
+          if [[ ! -f ads.txt ]]; then
+            echo "::error::リポジトリに ads.txt がありません。"
+            exit 1
+          fi
+
+          # リポジトリの ads.txt から期待する Publisher ID を取り出す（ドリフト防止）。
+          PUB="$(grep -oE 'pub-[0-9]+' ads.txt | head -n1 || true)"
+          if [[ -z "$PUB" ]]; then
+            echo "::error::ads.txt から Publisher ID (pub-...) を検出できません。"
+            cat ads.txt
+            exit 1
+          fi
+          echo "期待する Publisher ID: $PUB"
+
+          # $1=URL, $2=ラベル。成功したら 0、失敗したら 1 を返す。
+          # 伝播・キャッシュ揺れに備えリトライ（指数バックオフ）。
+          check() {
+            local url="$1" label="$2"
+            local attempt delay=5 code ctype body
+            for attempt in 1 2 3 4 5; do
+              body="$(mktemp)"
+              code="$(curl -sS -L --max-time 30 \
+                       -A 'Mozilla/5.0 (compatible; ads.txt-monitor/1.0)' \
+                       -o "$body" -w '%{http_code}' "$url" || echo 000)"
+              ctype="$(curl -sSI -L --max-time 30 \
+                        -A 'Mozilla/5.0 (compatible; ads.txt-monitor/1.0)' \
+                        "$url" 2>/dev/null \
+                        | tr -d '\r' | awk -F': ' 'tolower($1)=="content-type"{print tolower($2)}' | tail -n1)"
+
+              echo "--- [$label] 試行 $attempt: HTTP $code / Content-Type: ${ctype:-(不明)}"
+
+              if [[ "$code" == "200" ]] \
+                 && grep -qi "$PUB" "$body" \
+                 && grep -qi 'google\.com' "$body" \
+                 && grep -qi 'DIRECT' "$body"; then
+                if printf '%s' "$ctype" | grep -qi 'text/html'; then
+                  echo "::warning::[$label] 中身は一致しますが Content-Type が text/html です（SPA フォールバックの可能性）。"
+                fi
+                echo "[$label] OK: 期待する ads.txt 行を配信しています。"
+                echo "----- 配信内容 -----"; cat "$body"; echo "--------------------"
+                rm -f "$body"; return 0
+              fi
+
+              echo "[$label] 未一致（先頭のみ表示）:"; head -c 300 "$body"; echo
+              rm -f "$body"
+              if [[ $attempt -lt 5 ]]; then sleep "$delay"; delay=$((delay*2)); fi
+            done
+            return 1
+          }
+
+          origin_ok=0
+          custom_ok=0
+          check "$ORIGIN" "origin(github.io)" && origin_ok=1 || true
+          check "$CUSTOM" "custom(kikenbutsu-master.jp)" && custom_ok=1 || true
+
+          echo
+          echo "===== 判定 ====="
+          if [[ $custom_ok -eq 1 ]]; then
+            echo "本番ドメインで ads.txt を正しく配信しています。AdSense 側は再クロール待ちの可能性があります。"
+            exit 0
+          fi
+
+          if [[ $origin_ok -eq 1 ]]; then
+            echo "::error::オリジン(github.io)は正常だが、カスタムドメインが ads.txt を正しく返しません。"
+            echo "→ 前段（Cloudflare 等の CDN/WAF/リダイレクト）が /ads.txt をブロック・改変している可能性が高いです。"
+            echo "  docs/adsense-ads-txt.md の『Cloudflare を経由している場合』を確認してください。"
+          else
+            echo "::error::オリジン・カスタムドメインの双方で ads.txt を確認できません。"
+            echo "→ デプロイが本番へ反映されていない可能性があります。Pages のデプロイ結果を確認してください。"
+          fi
+          exit 1
