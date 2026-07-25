@@ -22,8 +22,8 @@ Scaled content abuse（スケール生成の乱用）」のリスクを、当サ
 - **良好**: 必須ページ（運営者情報 `about.html`・プライバシー `privacy.html`・
   連絡先＝問い合わせフォーム）が揃い、記事・用語・過去問は十分な文字量がある。
   極端に薄いページはほぼ無い。
-- **要対応**: 一問一答・実践演習の一部（計 **127 ページ**）で、本文の半分以上が
-  他ページと共通の「定型文」。ここがスケール生成・低付加価値と見なされる主リスク。
+- **対応済み**: 一問一答の定型文は下記のとおり解消し、監査の「定型文率≥50%」は
+  **0 ページ**になった（`reports/adsense_content/summary.json`）。
 
 ## 対応済み（このリポジトリで実施）
 
@@ -33,9 +33,25 @@ Scaled content abuse（スケール生成の乱用）」のリスクを、当サ
    リンクを含めた。広告タグを出しながらポリシー未記載、という不整合を解消。
 
 2. **監査ツール `tools/audit_adsense_content.py` を追加**。広告掲載ページの
-   本文量と定型文率を測り、是正対象を CSV で出力する。
+   本文量と定型文率を測り、是正対象を CSV で出力する。ナビ・ヘッダ・フッタなどの
+   サイト共通チラシは全ページに出る構造要素で低価値判定の対象外のため、
+   本文抽出時に `<nav>/<header>/<footer>/<aside>` を除外し、さらに全体の 60% 超に
+   出る文（＝サイト共通の導入・注意書き）は「コンテンツ定型」から除いて測る。
+   これにより指標は本文の使い回しだけを捉える。
 
-## 是正手順：定型文率が高い 127 ページ
+3. **一問一答 107 問に設問固有の解説を付与**（`tools/enrich_ichimon_adsense.py`
+   → `data/ichimon_questions.csv` の `explanation_correct` /
+   `explanation_opposite`）。従来これらが空の設問は生成器の汎用フォールバック文で
+   埋められていた。各設問の指定数量・性質・制度に即した内容へ置き換え、
+   `validate_question_explanations.py` は 0 error / 0 warning。
+   本文の使い回し（チラシ除外後の指標）は **11 ページ → 0 ページ**に低下。
+   （当初「127」としていたのはサイト共通チラシを含む旧指標での値。純粋な本文定型は
+   11 ページで、107 問の是正がこれを完全に覆う。実践演習 `q_practice` の
+   フラグはチラシ由来で、本文定型は元々 0 だった。）
+
+## 追加で定型文が出た場合の是正手順
+
+（今回の 107 問は対応済み。将来 `boilerplate_pages.csv` に載った設問はこの手順で直す。）
 
 ### 原因
 
@@ -57,20 +73,21 @@ Scaled content abuse（スケール生成の乱用）」のリスクを、当サ
 
 1. 対象を確認: `reports/adsense_content/boilerplate_pages.csv`
    （`path` の末尾が設問 ID。例 `q/ichimon/s/TF-L-008/` → ID `TF-L-008`）。
-2. 元データを充実させる:
-   - 一問一答: `data/ichimon_questions.csv` の該当 ID 行。
-     `explanation_correct`（正解の理由）と `explanation_opposite`
-     （もう一方を選びやすい理由）を、その設問固有の内容で記述する。
-     フォールバックの汎用文が発火しない厚み（正解理由は概ね 50 字以上）にする。
-   - 実践演習: 対応する CSV（`data/imported/o4_practice_500_source.csv` 系）の該当設問。
+2. 元データを充実させる（一問一答）: `tools/enrich_ichimon_adsense.py` の
+   `ENRICH` 辞書に `ID: (explanation_correct, explanation_opposite)` を追記し、
+   `python3 tools/enrich_ichimon_adsense.py` で `data/ichimon_questions.csv` に反映する。
+   - `explanation_correct`（正解の理由）は概ね 50〜220 字、設問固有の内容にする。
+   - `explanation_opposite`（もう一方を選びやすい理由）は概ね 40〜220 字にする。
    - 執筆は CLAUDE.md 絶対ルール#1（定型文・使い回し禁止）に従い、設問ごとに変える。
 3. 再生成と検証:
    ```bash
-   python3 tools/csv_to_exam_site_ichimondou_js.py
-   python3 tools/build_practice_ichimon_pages.py   # 一問一答ページ再生成
-   python3 tools/audit_adsense_content.py          # 定型文率≥50% が減ったか確認
+   python3 tools/csv_to_exam_site_ichimondou_js.py       # SPA データ＋expHtml 再生成
+   python3 tools/build_practice_ichimon_pages.py         # 静的ページ再生成
+   python3 tools/validate_question_explanations.py       # 0 error 必須（長さ・極性）
+   python3 tools/audit_adsense_content.py                # 定型文率≥50% が 0 か確認
    ```
-4. `boilerplate_pages.csv` が空に近づくまで、優先度の高い分野から数十件ずつ進める。
+   静的 HTML（`q/`）はビルド副産物なので、`main` への反映時に CI（`build_all.py`）が
+   CSV から再生成する。コミットは CSV と `exam-site-data-ichimondou.js` を対象にする。
 
 ### 目安（合格ライン）
 

@@ -47,6 +47,10 @@ _MAIN_RE = re.compile(r"<main\b.*?</main>", re.S)
 _TAG_RE = re.compile(r"<[^>]+>")
 _WS_RE = re.compile(r"\s+")
 
+# サイト共通のナビ・ヘッダ・フッタは全ページに出る構造要素で「定型文」ではない。
+# 低価値判定の対象は本文コンテンツなので、これらを除いてから測る。
+_CHROME_RE = re.compile(r"<(nav|header|footer|aside)\b.*?</\1>", re.S)
+
 
 def has_ads(text: str) -> bool:
     return "adsbygoogle" in text
@@ -59,6 +63,7 @@ def main_text(raw: str) -> str:
     m = _MAIN_RE.search(body)
     if m:
         body = m.group(0)
+    body = _CHROME_RE.sub(" ", body)
     body = _TAG_RE.sub(" ", body)
     return _WS_RE.sub(" ", html.unescape(body)).strip()
 
@@ -104,11 +109,19 @@ def run(min_chars: int, boiler: float, repeat_min: int) -> int:
         print("対象ページが見つかりません。")
         return 0
 
-    # 定型文＝repeat_min ページ以上に出現する文。
+    # 定型文＝repeat_min ページ以上に出現する文。ただし全ページの 60% 超に出る文は
+    # サイト共通の定型導入・注意書き等（＝構造チラシ）とみなし、コンテンツ定型からは除く。
+    total_pages = len(pages)
+    ubiquity_cap = int(total_pages * 0.6)
+
+    def is_content_boiler(s: str) -> bool:
+        c = sent_doc_count[s]
+        return repeat_min <= c <= ubiquity_cap
+
     def boiler_ratio(sents: list[str]) -> float:
         if not sents:
             return 0.0
-        boiler_hits = sum(1 for s in sents if sent_doc_count[s] >= repeat_min)
+        boiler_hits = sum(1 for s in sents if is_content_boiler(s))
         return boiler_hits / len(sents)
 
     thin = []
@@ -146,8 +159,8 @@ def run(min_chars: int, boiler: float, repeat_min: int) -> int:
     with (OUT / "repeated_sentences.csv").open("w", newline="", encoding="utf-8") as fh:
         w = csv.writer(fh)
         w.writerow(["doc_count", "sentence"])
-        for s, c in sent_doc_count.most_common(200):
-            if c >= repeat_min:
+        for s, c in sent_doc_count.most_common(400):
+            if is_content_boiler(s):
                 w.writerow([c, s])
 
     summary = {
