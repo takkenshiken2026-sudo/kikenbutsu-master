@@ -1,0 +1,42 @@
+{
+  "params": {
+    "min_chars": 600,
+    "boiler_ratio_threshold": 0.5,
+    "repeat_min_docs": 20
+  },
+  "total_monetized_pages": 2008,
+  "thin_pages": 2,
+  "boilerplate_pages": 0,
+  "by_area": {
+    "articles": {
+      "pages": 39,
+      "avg_main_chars": 2090,
+      "thin_pages": 0,
+      "boilerplate_pages": 0
+    },
+    "q_ichimon": {
+      "pages": 501,
+      "avg_main_chars": 894,
+      "thin_pages": 0,
+      "boilerplate_pages": 0
+    },
+    "q_past": {
+      "pages": 35,
+      "avg_main_chars": 1359,
+      "thin_pages": 0,
+      "boilerplate_pages": 0
+    },
+    "q_practice": {
+      "pages": 1001,
+      "avg_main_chars": 1036,
+      "thin_pages": 0,
+      "boilerplate_pages": 0
+    },
+    "terms": {
+      "pages": 432,
+      "avg_main_chars": 3066,
+      "thin_pages": 2,
+      "boilerplate_pages": 0
+    }
+  }
+}
