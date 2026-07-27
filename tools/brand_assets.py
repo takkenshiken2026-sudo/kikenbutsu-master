@@ -370,8 +370,10 @@ def social_image_meta_tags(*, site_root: Path | None = None) -> str:
 
 
 # Google AdSense（全ページ共通・<head> 内で読み込む）
+# meta タグはサイト確認用、script は広告配信用。両方 <head> に置く。
 ADSENSE_HEAD_SNIPPET = (
     "<!-- Google AdSense -->\n"
+    '<meta name="google-adsense-account" content="ca-pub-7927260139193410">\n'
     '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7927260139193410"\n'
     '     crossorigin="anonymous"></script>'
 )
