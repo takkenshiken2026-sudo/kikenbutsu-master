@@ -166,6 +166,8 @@ window.SITE_CONFIG = {
     "scoreMeta": "約8時間・模試10回",
     "image": "images/affiliate/kikenbutsu-course-studying-otu4.webp",
     "imageAlt": "スタディング（STUDYing）ロゴ",
+    "bannerImage": "images/affiliate/kikenbutsu-course-studying-banner.webp",
+    "bannerAlt": "スタディング 危険物取扱者試験 乙種第4類｜スマホで最短合格を目指す｜無料で講座を見る",
     "lpUrl": "https://studying.jp/kikenbutsu/"
   }
 };
