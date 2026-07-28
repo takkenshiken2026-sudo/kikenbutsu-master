@@ -165,7 +165,7 @@ window.SITE_CONFIG = {
     "scoreLead": "スタディングの動画講座と模試",
     "scoreMeta": "約8時間・模試10回",
     "image": "images/affiliate/kikenbutsu-course-studying-otu4.webp",
-    "imageAlt": "スタディング 危険物取扱者 乙種4類合格コース",
+    "imageAlt": "スタディング（STUDYing）ロゴ",
     "lpUrl": "https://studying.jp/kikenbutsu/"
   }
 };
