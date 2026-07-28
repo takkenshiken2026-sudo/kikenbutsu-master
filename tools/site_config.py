@@ -576,6 +576,7 @@ def course_promo() -> dict[str, str] | None:
         "modePurpose",
         "priceLabel",
         "tagLabel",
+        "ctaLabel",
         "footnote",
         "scoreLead",
         "scoreMeta",
