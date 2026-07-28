@@ -707,6 +707,8 @@ details.rich-detail summary{display:none}
 .score-course-strip-lead{font-size:var(--fs-sub);color:var(--text);line-height:1.6;font-weight:500}
 .score-course-strip-lead strong{color:var(--text);font-weight:700}
 .score-course-strip-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.score-course-strip-thumb{flex-shrink:0;width:64px;height:64px;border-radius:8px;overflow:hidden;background:var(--bg3);border:1px solid var(--accent-border,rgba(0,0,0,.08))}
+.score-course-strip-thumb img{display:block;width:100%;height:100%;object-fit:cover}
 .score-course-strip-tag{font-size:var(--fs-tiny);font-weight:700;background:var(--accent,#333);color:var(--accent-text,#fff);padding:3px 8px;border-radius:4px;flex-shrink:0;letter-spacing:.04em}
 .score-course-strip-body{flex:1;min-width:180px}
 .score-course-strip-title{display:block;font-size:var(--fs-body);font-weight:700;color:var(--text);margin-bottom:2px;line-height:1.35}
@@ -7541,6 +7543,8 @@ function getCoursePromoConfig(){
     footnote: String(cfg.footnote||'').trim(),
     scoreLead: String(cfg.scoreLead||'オンライン通信講座').trim(),
     scoreMeta: String(cfg.scoreMeta||'').trim(),
+    image: String(cfg.image||'').trim(),
+    imageAlt: String(cfg.imageAlt||'').trim(),
     afbLeadUrl: String(cfg.afbLeadUrl||'').trim(),
   };
 }
@@ -7667,11 +7671,15 @@ function renderScoreCoursePromo(opts){
   const metaParts=[c.scoreMeta,c.priceLabel].filter(Boolean);
   const metaHtml=metaParts.length?`<span class="score-course-strip-meta">${escapeAttr(metaParts.join(' · '))}</span>`:'';
   const tagHtml=c.tagLabel?`<span class="score-course-strip-tag">${escapeAttr(c.tagLabel)}</span>`:'';
+  const thumbHtml=c.image
+    ?`<span class="score-course-strip-thumb" aria-hidden="true"><img src="${escapeAttr(c.image)}" alt="" width="64" height="64" loading="lazy" decoding="async"></span>`
+    :'';
   wrap.hidden=false;
   wrap.innerHTML=`
     <a class="score-course-strip" href="${escapeAttr(c.url)}" target="_blank" rel="nofollow sponsored noopener noreferrer" aria-label="${escapeAttr(label)}">
       <span class="score-course-strip-lead">${leadHtml}</span>
       <span class="score-course-strip-row">
+        ${thumbHtml}
         ${tagHtml}
         <span class="score-course-strip-body">
           <span class="score-course-strip-title">${escapeAttr(c.modeTitle)}</span>

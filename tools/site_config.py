@@ -580,6 +580,8 @@ def course_promo() -> dict[str, str] | None:
         "footnote",
         "scoreLead",
         "scoreMeta",
+        "image",
+        "imageAlt",
         "lpUrl",
         "afbLeadUrl",
     ):
