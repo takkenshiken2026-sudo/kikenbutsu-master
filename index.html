@@ -1665,10 +1665,10 @@ body.is-solving .site-footer{display:none!important}
       <nav class="breadcrumb" aria-label="パンくずリスト">
         <ol class="breadcrumb-list">
           <li class="breadcrumb-item"><a href="/" onclick="event.preventDefault();gotoPage('quiz-start')" title="トップ">トップ</a></li>
-          <li class="breadcrumb-item breadcrumb-current" aria-current="page">「危険物取扱者試験（乙種第4類）」の問題を解く</li>
+          <li class="breadcrumb-item breadcrumb-current" aria-current="page">「危険物取扱者試験（乙種第4類）」</li>
         </ol>
       </nav>
-      <h2 class="page-title">「危険物取扱者試験（乙種第4類）」の問題を解く</h2>
+      <h2 class="page-title">「危険物取扱者試験（乙種第4類）」</h2>
       <div class="page-sub">学習目的に合わせてモードを選んでください</div>
 
       <div class="mode-list-v2">
@@ -1781,7 +1781,6 @@ body.is-solving .site-footer{display:none!important}
           <button class="btn-primary" onclick="continueIchiSession()" style="font-size:15px;padding:13px">続けて解く</button>
           <button class="btn-ghost" onclick="startIchimondou()" style="font-size:15px;padding:13px">分野・出題数を変える</button>
           <button class="btn-ghost" onclick="shareIchiResultToX()" style="font-size:15px;padding:13px">Xに投稿する</button>
-          <button class="btn-ghost" onclick="gotoPage('quiz-start')" style="font-size:15px;padding:13px">他の問題を解く</button>
         </div>
         <div class="score-promo-row" id="ichi-score-promo-row">
           <div id="ichi-score-paid-mock-wrap" class="score-paid-mock-wrap ichi-score-paid-mock-wrap" hidden></div>
@@ -1836,7 +1835,6 @@ body.is-solving .site-footer{display:none!important}
         <div class="score-btns">
           <button class="btn-primary" id="score-retry-wrong-btn" onclick="retryWrongQuestions()" hidden>間違えた問題を復習</button>
           <button class="btn-primary" id="score-continue-btn" onclick="continueSession()">続けて解く</button>
-          <button class="btn-ghost"   onclick="gotoPage('quiz-start')">他の問題を解く</button>
           <button class="btn-ghost" onclick="shareSessionResultToX()">Xに投稿する</button>
         </div>
         <div class="score-promo-row" id="score-promo-row">
@@ -3290,7 +3288,7 @@ const NAV_PAGE_MAP = {'orig':'orig','quiz-start':'quiz-start','dash':'dash','rev
 // ページごとのSEOメタ情報（SITE_CONFIG から組み立て）
 function _cfgBrand(){ return (window.SITE_CONFIG && SITE_CONFIG.brandName) || '乙4マスター'; }
 function _cfgExam(){ return (window.SITE_CONFIG && SITE_CONFIG.examName) || '危険物取扱者試験（乙種第4類）'; }
-function _cfgQuizStartTitle(){ return '「' + _cfgExam() + '」の問題を解く'; }
+function _cfgQuizStartTitle(){ return '「' + _cfgExam() + '」'; }
 function _cfgSiteLabel(){ return _cfgBrand() + '（' + _cfgExam() + '）'; }
 function _pageTitleFor(id){ return id === 'quiz-start' ? _cfgQuizStartTitle() : (PAGE_TITLES[id] || ''); }
 function _pageSeo(pageTitle, descTemplate, path, hash) {
