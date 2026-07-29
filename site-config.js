@@ -155,7 +155,7 @@ window.SITE_CONFIG = {
     "priceLabel": "¥590",
     "scoreMeta": "PDF・2回分",
     "scoreLead": "本番形式の予想模試",
-    "bannerImage": "images/affiliate/kikenbutsu-paid-mock-note-banner.webp",
+    "bannerImage": "images/affiliate/kikenbutsuotsu4-moshi2026.webp",
     "bannerAlt": "危険物取扱者試験（乙種第4類）本番想定模試 2026年版｜590円｜PDF・2回分｜noteで購入する",
     "footnote": "※ note で販売する有料コンテンツ（¥590・2回分）です。サイト内の無料演習とは別商品です。"
   },
