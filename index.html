@@ -718,15 +718,13 @@ details.rich-detail summary{display:none}
 .course-promo-banner,.paid-mock-banner{margin:0;display:block;max-width:none;width:100%;min-width:0}
 .course-promo-banner__link,.paid-mock-banner__link{display:block;border-radius:var(--r2);overflow:hidden;border:1px solid var(--border);box-shadow:var(--sh);text-decoration:none;transition:box-shadow .15s,transform .15s,border-color .15s}
 .course-promo-banner__link:hover,.paid-mock-banner__link:hover{box-shadow:var(--sh2);border-color:var(--text2);transform:translateY(-1px)}
-.course-promo-banner__link img{display:block;width:100%;height:auto;aspect-ratio:1024/682;object-fit:contain;background:#fff}
-.paid-mock-banner__link img{display:block;width:100%;height:auto;aspect-ratio:1024/576;object-fit:contain;background:#fff}
+.course-promo-banner__link img,.paid-mock-banner__link img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;object-position:center;background:#fff}
 .course-promo-banner__foot,.paid-mock-banner__foot{margin:8px 0 0;font-size:11px;color:var(--text3);line-height:1.55;text-align:center}
 .score-course-banner,.score-paid-mock-banner{display:block;max-width:none;width:100%;margin:0;border-radius:var(--r2);overflow:hidden;border:1px solid var(--accent-border,rgba(0,0,0,.12));box-shadow:0 2px 10px var(--accent-shadow,rgba(0,0,0,.06));text-decoration:none;transition:border-color .15s,box-shadow .15s,transform .15s}
 .score-course-banner:hover{border-color:var(--accent,#333);box-shadow:0 4px 14px var(--accent-shadow,rgba(0,0,0,.1));transform:translateY(-1px)}
 .score-paid-mock-banner{border-color:var(--paid-mock-accent-border);box-shadow:0 2px 10px var(--paid-mock-accent-shadow)}
 .score-paid-mock-banner:hover{border-color:var(--paid-mock-accent);box-shadow:0 4px 14px var(--paid-mock-accent-shadow);transform:translateY(-1px)}
-.score-course-banner img{display:block;width:100%;height:auto;aspect-ratio:1024/682;object-fit:contain;background:#fff}
-.score-paid-mock-banner img{display:block;width:100%;height:auto;aspect-ratio:1024/576;object-fit:contain;background:#fff}
+.score-course-banner img,.score-paid-mock-banner img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;object-position:center;background:#fff}
 .score-course-strip-tag{font-size:var(--fs-tiny);font-weight:700;background:var(--accent,#333);color:var(--accent-text,#fff);padding:3px 8px;border-radius:4px;flex-shrink:0;letter-spacing:.04em}
 .score-course-strip-body{flex:1;min-width:180px}
 .score-course-strip-title{display:block;font-size:var(--fs-body);font-weight:700;color:var(--text);margin-bottom:2px;line-height:1.35}
@@ -7600,7 +7598,7 @@ function buildCoursePromoBannerEl(){
   wrapper.className='course-promo-banner';
   wrapper.innerHTML=`
     <a class="course-promo-banner__link" href="${escapeAttr(c.url)}" target="_blank" rel="nofollow sponsored noopener noreferrer" aria-label="${escapeAttr(label)}">
-      <img src="${escapeAttr(c.bannerImage)}" alt="${escapeAttr(c.bannerAlt||c.modeTitle)}" width="1024" height="682" loading="lazy" decoding="async">
+      <img src="${escapeAttr(c.bannerImage)}" alt="${escapeAttr(c.bannerAlt||c.modeTitle)}" width="1024" height="576" loading="lazy" decoding="async">
     </a>
     ${c.footnote?`<p class="course-promo-banner__foot">${escapeAttr(c.footnote)}</p>`:''}`;
   if(c.afbLeadUrl){
@@ -7788,7 +7786,7 @@ function renderScoreCoursePromo(opts){
     wrap.innerHTML=`
       <p class="score-course-lead">${leadHtml}</p>
       <a class="score-course-banner" href="${escapeAttr(c.url)}" target="_blank" rel="nofollow sponsored noopener noreferrer" aria-label="${escapeAttr(label)}">
-        <img src="${escapeAttr(bannerSrc)}" alt="${escapeAttr(bannerAlt)}" width="1024" height="682" loading="lazy" decoding="async">
+        <img src="${escapeAttr(bannerSrc)}" alt="${escapeAttr(bannerAlt)}" width="1024" height="576" loading="lazy" decoding="async">
       </a>
       ${c.footnote?`<p class="score-course-footnote">${escapeAttr(c.footnote)}</p>`:''}`;
     return;
