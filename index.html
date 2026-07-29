@@ -404,7 +404,7 @@ h2.section-label .tip-icon{width:13px;height:13px;font-size:9px}
 .ichi-score-summary{display:flex;justify-content:center;gap:28px;margin-bottom:24px;flex-wrap:wrap;font-size:14px;color:var(--text2)}
 .ichi-score-summary strong{font-family:var(--mono);font-size:18px;color:var(--text);margin-left:6px}
 .ichi-score-btns{display:flex;flex-direction:column;gap:10px}
-.ichi-score-paid-mock-wrap{text-align:left;max-width:480px;margin:24px auto 0}
+.ichi-score-paid-mock-wrap{text-align:left;max-width:none;margin:0}
 .mode-card-v2{background:#fff;border:1.5px solid var(--border2);border-radius:var(--r2);padding:16px 20px;cursor:pointer;display:flex;align-items:center;gap:16px;box-shadow:var(--sh);transition:all .18s}
 .mode-card-v2:hover{box-shadow:var(--sh2);border-color:var(--text2);transform:translateY(-1px);background:var(--bg3)}
 .mode-num-v2{font-size:12px;font-family:var(--mono);color:var(--text3);flex-shrink:0;width:20px;text-align:center}
@@ -685,8 +685,12 @@ details.rich-detail summary{display:none}
 .score-goal{background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:10px 14px;font-size:13px;color:var(--text);line-height:1.6;text-align:center}
 .score-goal strong{color:var(--red);font-size:15px}
 .score-goal--done{background:var(--grn-s);border-color:var(--grn-b);color:var(--green)}
-.score-paid-mock-wrap{margin-top:24px;padding-top:20px;border-top:1px solid var(--border)}
-.score-paid-mock-lead{font-size:var(--fs-sub);color:var(--text);margin-bottom:14px;line-height:1.65;font-weight:500}
+.score-promo-row{display:grid;grid-template-columns:1fr 1fr;gap:14px 16px;align-items:start;margin:24px auto 0;padding-top:20px;border-top:1px solid var(--border);max-width:720px;text-align:left}
+.score-promo-row > [hidden]{display:none!important}
+.score-promo-row:not(:has(> :not([hidden]))){display:none}
+.score-promo-row:not(:has(> :not([hidden]) + :not([hidden]))){grid-template-columns:minmax(0,360px);justify-content:center}
+.score-paid-mock-wrap{margin-top:0;padding-top:0;border-top:none}
+.score-paid-mock-lead{font-size:var(--fs-sub);color:var(--text);margin-bottom:10px;line-height:1.55;font-weight:500}
 .score-paid-mock-lead strong{color:var(--text);font-weight:700}
 .score-paid-mock-strip{display:flex;flex-direction:column;align-items:stretch;gap:12px;padding:14px 18px;border:1px solid var(--paid-mock-accent-border);border-radius:var(--r2);background:var(--paid-mock-accent-soft);text-decoration:none;color:inherit;box-shadow:0 2px 10px var(--paid-mock-accent-shadow);transition:border-color .15s,box-shadow .15s,transform .15s}
 .score-paid-mock-strip:hover{border-color:var(--paid-mock-accent);box-shadow:0 4px 14px var(--paid-mock-accent-shadow);transform:translateY(-1px)}
@@ -698,9 +702,8 @@ details.rich-detail summary{display:none}
 .score-paid-mock-strip-title{display:block;font-size:var(--fs-body);font-weight:700;color:var(--text);margin-bottom:2px;line-height:1.35}
 .score-paid-mock-strip-meta{font-size:var(--fs-caption);color:var(--text2)}
 .score-paid-mock-strip-cta{font-size:var(--fs-sub);font-weight:700;color:var(--paid-mock-accent);flex-shrink:0;white-space:nowrap}
-.score-course-wrap{margin-top:20px;padding-top:20px;border-top:1px solid var(--border)}
-.score-course-wrap:first-child{margin-top:24px}
-.score-course-lead{font-size:var(--fs-sub);color:var(--text);margin-bottom:14px;line-height:1.65;font-weight:500}
+.score-course-wrap{margin-top:0;padding-top:0;border-top:none}
+.score-course-lead{font-size:var(--fs-sub);color:var(--text);margin-bottom:10px;line-height:1.55;font-weight:500}
 .score-course-lead strong{color:var(--text);font-weight:700}
 .score-course-strip{display:flex;flex-direction:column;align-items:stretch;gap:12px;padding:14px 18px;border:1px solid var(--accent-border,rgba(0,0,0,.12));border-radius:var(--r2);background:var(--accent-soft,#f4f4f5);text-decoration:none;color:inherit;box-shadow:0 2px 10px var(--accent-shadow,rgba(0,0,0,.06));transition:border-color .15s,box-shadow .15s,transform .15s}
 .score-course-strip:hover{border-color:var(--accent,#333);box-shadow:0 4px 14px var(--accent-shadow,rgba(0,0,0,.1));transform:translateY(-1px)}
@@ -709,13 +712,16 @@ details.rich-detail summary{display:none}
 .score-course-strip-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .score-course-strip-thumb{flex-shrink:0;width:64px;height:64px;border-radius:8px;overflow:hidden;background:var(--bg3);border:1px solid var(--accent-border,rgba(0,0,0,.08))}
 .score-course-strip-thumb img{display:block;width:100%;height:100%;object-fit:cover}
-.course-promo-banner,.paid-mock-banner{margin:8px auto 14px;display:block;max-width:360px}
+.promo-banners-row{display:grid;grid-template-columns:1fr 1fr;gap:12px 16px;align-items:start;margin:8px 0 14px}
+.promo-banners-row:not(:has(> :not([hidden]) + :not([hidden]))){grid-template-columns:minmax(0,360px);justify-content:center}
+.promo-banners-row > [hidden]{display:none!important}
+.course-promo-banner,.paid-mock-banner{margin:0;display:block;max-width:none;width:100%;min-width:0}
 .course-promo-banner__link,.paid-mock-banner__link{display:block;border-radius:var(--r2);overflow:hidden;border:1px solid var(--border);box-shadow:var(--sh);text-decoration:none;transition:box-shadow .15s,transform .15s,border-color .15s}
 .course-promo-banner__link:hover,.paid-mock-banner__link:hover{box-shadow:var(--sh2);border-color:var(--text2);transform:translateY(-1px)}
 .course-promo-banner__link img{display:block;width:100%;height:auto;aspect-ratio:1024/682;object-fit:contain;background:#fff}
 .paid-mock-banner__link img{display:block;width:100%;height:auto;aspect-ratio:1024/576;object-fit:contain;background:#fff}
 .course-promo-banner__foot,.paid-mock-banner__foot{margin:8px 0 0;font-size:11px;color:var(--text3);line-height:1.55;text-align:center}
-.score-course-banner,.score-paid-mock-banner{display:block;max-width:360px;margin:0 auto;border-radius:var(--r2);overflow:hidden;border:1px solid var(--accent-border,rgba(0,0,0,.12));box-shadow:0 2px 10px var(--accent-shadow,rgba(0,0,0,.06));text-decoration:none;transition:border-color .15s,box-shadow .15s,transform .15s}
+.score-course-banner,.score-paid-mock-banner{display:block;max-width:none;width:100%;margin:0;border-radius:var(--r2);overflow:hidden;border:1px solid var(--accent-border,rgba(0,0,0,.12));box-shadow:0 2px 10px var(--accent-shadow,rgba(0,0,0,.06));text-decoration:none;transition:border-color .15s,box-shadow .15s,transform .15s}
 .score-course-banner:hover{border-color:var(--accent,#333);box-shadow:0 4px 14px var(--accent-shadow,rgba(0,0,0,.1));transform:translateY(-1px)}
 .score-paid-mock-banner{border-color:var(--paid-mock-accent-border);box-shadow:0 2px 10px var(--paid-mock-accent-shadow)}
 .score-paid-mock-banner:hover{border-color:var(--paid-mock-accent);box-shadow:0 4px 14px var(--paid-mock-accent-shadow);transform:translateY(-1px)}
@@ -957,7 +963,10 @@ details.rich-detail summary{display:none}
   .page-title{font-size:var(--fs-title);font-weight:var(--fw-strong)}
   #page-quiz-start .page-title{font-size:16px}
   #page-quiz-start .page-sub{font-size:12px;margin-bottom:16px}
-  .course-promo-banner,.paid-mock-banner,.score-course-banner,.score-paid-mock-banner{max-width:280px}
+  .promo-banners-row,.score-promo-row{grid-template-columns:1fr;max-width:none}
+  .promo-banners-row:not(:has(> :not([hidden]) + :not([hidden]))),
+  .score-promo-row:not(:has(> :not([hidden]) + :not([hidden]))){grid-template-columns:1fr;justify-content:stretch}
+  .course-promo-banner,.paid-mock-banner,.score-course-banner,.score-paid-mock-banner{max-width:360px;margin-left:auto;margin-right:auto}
   .page-sub{font-size:var(--fs-sub);line-height:1.6;margin-bottom:18px}
   .section-label,h2.section-label{font-size:13px;letter-spacing:.04em}
   .dash-title-row{align-items:flex-start;flex-direction:column;gap:8px;margin-bottom:6px}
@@ -1776,8 +1785,10 @@ body.is-solving .site-footer{display:none!important}
           <button class="btn-ghost" onclick="shareIchiResultToX()" style="font-size:15px;padding:13px">Xに投稿する</button>
           <button class="btn-ghost" onclick="gotoPage('quiz-start')" style="font-size:15px;padding:13px">他の問題を解く</button>
         </div>
-        <div id="ichi-score-paid-mock-wrap" class="score-paid-mock-wrap ichi-score-paid-mock-wrap" hidden></div>
-        <div id="ichi-score-course-wrap" class="score-course-wrap ichi-score-paid-mock-wrap" hidden></div>
+        <div class="score-promo-row" id="ichi-score-promo-row">
+          <div id="ichi-score-paid-mock-wrap" class="score-paid-mock-wrap ichi-score-paid-mock-wrap" hidden></div>
+          <div id="ichi-score-course-wrap" class="score-course-wrap ichi-score-paid-mock-wrap" hidden></div>
+        </div>
       </div>
     </div>
 
@@ -1830,8 +1841,10 @@ body.is-solving .site-footer{display:none!important}
           <button class="btn-ghost"   onclick="gotoPage('quiz-start')">他の問題を解く</button>
           <button class="btn-ghost" onclick="shareSessionResultToX()">Xに投稿する</button>
         </div>
-        <div id="score-paid-mock-wrap" class="score-paid-mock-wrap" hidden></div>
-        <div id="score-course-wrap" class="score-course-wrap" hidden></div>
+        <div class="score-promo-row" id="score-promo-row">
+          <div id="score-paid-mock-wrap" class="score-paid-mock-wrap" hidden></div>
+          <div id="score-course-wrap" class="score-course-wrap" hidden></div>
+        </div>
       </div>
     </div>
 
@@ -7531,11 +7544,8 @@ function injectQuizStartEnhancements(){
   }
   modeList.appendChild(weakCard);
 
-  if(!startEl.querySelector('#paid-mock-inject')){
-    injectPaidMockExamCard(modeList);
-  }
-  if(!startEl.querySelector('#course-promo-banner')){
-    injectCoursePromoBanner(startEl, modeList);
+  if(!startEl.querySelector('#promo-banners-row')){
+    injectPromoBannersRow(startEl, modeList);
   }
 }
 
@@ -7564,9 +7574,26 @@ function getCoursePromoConfig(){
   };
 }
 
-function injectCoursePromoBanner(startEl, modeList){
+function ensurePromoBannersRow(startEl, modeList){
+  let row=startEl.querySelector('#promo-banners-row');
+  if(row) return row;
+  row=document.createElement('div');
+  row.id='promo-banners-row';
+  row.className='promo-banners-row';
+  const daily=startEl.querySelector('#daily-status-wrap');
+  if(daily){
+    startEl.insertBefore(row, daily);
+  }else if(modeList&&modeList.parentNode){
+    modeList.parentNode.insertBefore(row, modeList.nextSibling);
+  }else{
+    startEl.appendChild(row);
+  }
+  return row;
+}
+
+function buildCoursePromoBannerEl(){
   const c=getCoursePromoConfig();
-  if(!c.url||!c.bannerImage) return;
+  if(!c.url||!c.bannerImage) return null;
   const label=c.bannerAlt||`${c.modeTitle} — ${c.ctaLabel}`;
   const wrapper=document.createElement('div');
   wrapper.id='course-promo-banner';
@@ -7586,14 +7613,41 @@ function injectCoursePromoBanner(startEl, modeList){
     px.style.cssText='border:none;width:1px;height:1px;position:absolute;opacity:0;pointer-events:none';
     wrapper.appendChild(px);
   }
-  const daily=startEl.querySelector('#daily-status-wrap');
-  if(daily){
-    startEl.insertBefore(wrapper, daily);
-  }else if(modeList&&modeList.parentNode){
-    modeList.parentNode.insertBefore(wrapper, modeList.nextSibling);
-  }else{
-    startEl.appendChild(wrapper);
+  return wrapper;
+}
+
+function buildPaidMockBannerEl(){
+  const m=getPaidMockExamConfig();
+  if(!m.url||!m.bannerImage) return null;
+  const label=m.bannerAlt||`${m.modeTitle}（有料・note・${m.priceLabel}）`;
+  const wrapper=document.createElement('div');
+  wrapper.id='paid-mock-inject';
+  wrapper.className='paid-mock-banner';
+  wrapper.innerHTML=`
+    <a class="paid-mock-banner__link" href="${escapeAttr(m.url)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeAttr(label)}">
+      <img src="${escapeAttr(m.bannerImage)}" alt="${escapeAttr(m.bannerAlt||m.modeTitle)}" width="1024" height="576" loading="lazy" decoding="async">
+    </a>
+    ${m.footnote?`<p class="paid-mock-banner__foot">${escapeAttr(m.footnote)}</p>`:''}`;
+  return wrapper;
+}
+
+function injectPromoBannersRow(startEl, modeList){
+  const paid=buildPaidMockBannerEl();
+  const course=buildCoursePromoBannerEl();
+  if(!paid&&!course){
+    injectPaidMockExamCard(modeList);
+    return;
   }
+  const row=ensurePromoBannersRow(startEl, modeList);
+  row.replaceChildren();
+  if(paid) row.appendChild(paid);
+  else injectPaidMockExamCard(modeList);
+  if(course) row.appendChild(course);
+  if(!row.childElementCount) row.remove();
+}
+
+function injectCoursePromoBanner(startEl, modeList){
+  injectPromoBannersRow(startEl, modeList);
 }
 
 function injectCoursePromoCard(modeList){
@@ -7646,20 +7700,10 @@ function getPaidMockExamConfig(){
 
 function injectPaidMockExamCard(modeList){
   const m=getPaidMockExamConfig();
-  if(!m.url) return;
+  if(!m.url||m.bannerImage) return;
   const wrapper=document.createElement('div');
   wrapper.id='paid-mock-inject';
-  const label=m.bannerAlt||`${m.modeTitle}（有料・note・${m.priceLabel}）`;
-  if(m.bannerImage){
-    wrapper.className='paid-mock-banner';
-    wrapper.innerHTML=`
-      <a class="paid-mock-banner__link" href="${escapeAttr(m.url)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeAttr(label)}">
-        <img src="${escapeAttr(m.bannerImage)}" alt="${escapeAttr(m.bannerAlt||m.modeTitle)}" width="1024" height="576" loading="lazy" decoding="async">
-      </a>
-      ${m.footnote?`<p class="paid-mock-banner__foot">${escapeAttr(m.footnote)}</p>`:''}`;
-    modeList.appendChild(wrapper);
-    return;
-  }
+  const label=`${m.modeTitle}（有料・note・${m.priceLabel}）`;
   wrapper.innerHTML=`
     <a class="mode-card-v2 mode-card-v2--paid" href="${escapeAttr(m.url)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeAttr(label)}">
       <div class="mode-num-v2 mode-num-v2--paid">05</div>
@@ -7802,6 +7846,8 @@ window.gotoPage=function(id){
       // 弱点カードが既にある場合は解放状態が変わっていれば再描画
       const existingWeak=document.getElementById('weak-mode-inject');
       if(existingWeak) existingWeak.remove();
+      const existingPromoRow=document.getElementById('promo-banners-row');
+      if(existingPromoRow) existingPromoRow.remove();
       const existingPaid=document.getElementById('paid-mock-inject');
       if(existingPaid) existingPaid.remove();
       const existingCourse=document.getElementById('course-promo-inject');
