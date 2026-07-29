@@ -244,10 +244,14 @@
   ],
   "paidMockExam": {
     "url": "https://note.com/shikaku_master/n/naae31abe01ed",
-    "modeTitle": "予想模試（PDF・2回分）",
+    "modeTitle": "予想模試（PDF・3回分）",
     "modePurpose": "本番と同じ35問・2時間で実力確認したい",
     "priceLabel": "¥590",
-    "footnote": "※ note で販売する有料コンテンツ（¥590）です。サイト内の無料演習とは別商品です。"
+    "scoreLead": "本番形式の予想模試",
+    "scoreMeta": "PDF・3回分",
+    "bannerImage": "images/affiliate/kikenbutsu-paid-mock-note-banner.webp",
+    "bannerAlt": "危険物取扱者試験 乙種第4類 有料模試 2026年版｜590円｜PDF・3回分｜noteで購入する",
+    "footnote": "※ note で販売する有料コンテンツ（¥590・3回分）です。サイト内の無料演習とは別商品です。"
   },
   "coursePromo": {
     "url": "https://t.afi-b.com/visit.php?a=y7404W-M7354874_f&p=P984775K",

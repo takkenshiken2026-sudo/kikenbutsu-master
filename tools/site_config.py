@@ -607,6 +607,9 @@ def paid_mock_exam() -> dict[str, str] | None:
         "priceLabel",
         "scoreMeta",
         "scoreLead",
+        "bannerImage",
+        "bannerAlt",
+        "footnote",
     ):
         val = raw.get(key)
         if val is not None and str(val).strip():

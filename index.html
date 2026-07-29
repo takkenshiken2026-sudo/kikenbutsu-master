@@ -709,14 +709,18 @@ details.rich-detail summary{display:none}
 .score-course-strip-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .score-course-strip-thumb{flex-shrink:0;width:64px;height:64px;border-radius:8px;overflow:hidden;background:var(--bg3);border:1px solid var(--accent-border,rgba(0,0,0,.08))}
 .score-course-strip-thumb img{display:block;width:100%;height:100%;object-fit:cover}
-.course-promo-banner{margin:8px auto 14px;display:block;max-width:360px}
-.course-promo-banner__link{display:block;border-radius:var(--r2);overflow:hidden;border:1px solid var(--border);box-shadow:var(--sh);text-decoration:none;transition:box-shadow .15s,transform .15s,border-color .15s}
-.course-promo-banner__link:hover{box-shadow:var(--sh2);border-color:var(--text2);transform:translateY(-1px)}
+.course-promo-banner,.paid-mock-banner{margin:8px auto 14px;display:block;max-width:360px}
+.course-promo-banner__link,.paid-mock-banner__link{display:block;border-radius:var(--r2);overflow:hidden;border:1px solid var(--border);box-shadow:var(--sh);text-decoration:none;transition:box-shadow .15s,transform .15s,border-color .15s}
+.course-promo-banner__link:hover,.paid-mock-banner__link:hover{box-shadow:var(--sh2);border-color:var(--text2);transform:translateY(-1px)}
 .course-promo-banner__link img{display:block;width:100%;height:auto;aspect-ratio:1024/682;object-fit:contain;background:#fff}
-.course-promo-banner__foot{margin:8px 0 0;font-size:11px;color:var(--text3);line-height:1.55;text-align:center}
-.score-course-banner{display:block;max-width:360px;margin:0 auto;border-radius:var(--r2);overflow:hidden;border:1px solid var(--accent-border,rgba(0,0,0,.12));box-shadow:0 2px 10px var(--accent-shadow,rgba(0,0,0,.06));text-decoration:none;transition:border-color .15s,box-shadow .15s,transform .15s}
+.paid-mock-banner__link img{display:block;width:100%;height:auto;aspect-ratio:1024/576;object-fit:contain;background:#fff}
+.course-promo-banner__foot,.paid-mock-banner__foot{margin:8px 0 0;font-size:11px;color:var(--text3);line-height:1.55;text-align:center}
+.score-course-banner,.score-paid-mock-banner{display:block;max-width:360px;margin:0 auto;border-radius:var(--r2);overflow:hidden;border:1px solid var(--accent-border,rgba(0,0,0,.12));box-shadow:0 2px 10px var(--accent-shadow,rgba(0,0,0,.06));text-decoration:none;transition:border-color .15s,box-shadow .15s,transform .15s}
 .score-course-banner:hover{border-color:var(--accent,#333);box-shadow:0 4px 14px var(--accent-shadow,rgba(0,0,0,.1));transform:translateY(-1px)}
+.score-paid-mock-banner{border-color:var(--paid-mock-accent-border);box-shadow:0 2px 10px var(--paid-mock-accent-shadow)}
+.score-paid-mock-banner:hover{border-color:var(--paid-mock-accent);box-shadow:0 4px 14px var(--paid-mock-accent-shadow);transform:translateY(-1px)}
 .score-course-banner img{display:block;width:100%;height:auto;aspect-ratio:1024/682;object-fit:contain;background:#fff}
+.score-paid-mock-banner img{display:block;width:100%;height:auto;aspect-ratio:1024/576;object-fit:contain;background:#fff}
 .score-course-strip-tag{font-size:var(--fs-tiny);font-weight:700;background:var(--accent,#333);color:var(--accent-text,#fff);padding:3px 8px;border-radius:4px;flex-shrink:0;letter-spacing:.04em}
 .score-course-strip-body{flex:1;min-width:180px}
 .score-course-strip-title{display:block;font-size:var(--fs-body);font-weight:700;color:var(--text);margin-bottom:2px;line-height:1.35}
@@ -953,7 +957,7 @@ details.rich-detail summary{display:none}
   .page-title{font-size:var(--fs-title);font-weight:var(--fw-strong)}
   #page-quiz-start .page-title{font-size:16px}
   #page-quiz-start .page-sub{font-size:12px;margin-bottom:16px}
-  .course-promo-banner,.score-course-banner{max-width:280px}
+  .course-promo-banner,.paid-mock-banner,.score-course-banner,.score-paid-mock-banner{max-width:280px}
   .page-sub{font-size:var(--fs-sub);line-height:1.6;margin-bottom:18px}
   .section-label,h2.section-label{font-size:13px;letter-spacing:.04em}
   .dash-title-row{align-items:flex-start;flex-direction:column;gap:8px;margin-bottom:6px}
@@ -7634,6 +7638,9 @@ function getPaidMockExamConfig(){
     priceLabel: String(cfg.priceLabel||'¥590').trim(),
     scoreMeta: String(cfg.scoreMeta||'PDF').trim(),
     scoreLead: String(cfg.scoreLead||'本番形式の予想模試').trim(),
+    bannerImage: String(cfg.bannerImage||'').trim(),
+    bannerAlt: String(cfg.bannerAlt||cfg.modeTitle||'').trim(),
+    footnote: String(cfg.footnote||'').trim(),
   };
 }
 
@@ -7642,7 +7649,17 @@ function injectPaidMockExamCard(modeList){
   if(!m.url) return;
   const wrapper=document.createElement('div');
   wrapper.id='paid-mock-inject';
-  const label=`${m.modeTitle}（有料・note・${m.priceLabel}）`;
+  const label=m.bannerAlt||`${m.modeTitle}（有料・note・${m.priceLabel}）`;
+  if(m.bannerImage){
+    wrapper.className='paid-mock-banner';
+    wrapper.innerHTML=`
+      <a class="paid-mock-banner__link" href="${escapeAttr(m.url)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeAttr(label)}">
+        <img src="${escapeAttr(m.bannerImage)}" alt="${escapeAttr(m.bannerAlt||m.modeTitle)}" width="1024" height="576" loading="lazy" decoding="async">
+      </a>
+      ${m.footnote?`<p class="paid-mock-banner__foot">${escapeAttr(m.footnote)}</p>`:''}`;
+    modeList.appendChild(wrapper);
+    return;
+  }
   wrapper.innerHTML=`
     <a class="mode-card-v2 mode-card-v2--paid" href="${escapeAttr(m.url)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeAttr(label)}">
       <div class="mode-num-v2 mode-num-v2--paid">05</div>
@@ -7673,9 +7690,18 @@ function renderScorePaidMockPromo(opts){
     wrap.innerHTML='';
     return;
   }
-  const label=`${m.modeTitle}（有料・note・${m.priceLabel}）`;
+  const label=m.bannerAlt||`${m.modeTitle}（有料・note・${m.priceLabel}）`;
   const leadHtml=opts.leadHtml!=null?opts.leadHtml:scorePaidMockLeadHtml(m,opts.variant);
   wrap.hidden=false;
+  if(m.bannerImage){
+    wrap.innerHTML=`
+      <p class="score-paid-mock-lead">${leadHtml}</p>
+      <a class="score-paid-mock-banner" href="${escapeAttr(m.url)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeAttr(label)}">
+        <img src="${escapeAttr(m.bannerImage)}" alt="${escapeAttr(m.bannerAlt||m.modeTitle)}" width="1024" height="576" loading="lazy" decoding="async">
+      </a>
+      ${m.footnote?`<p class="mode-course-footnote">${escapeAttr(m.footnote)}</p>`:''}`;
+    return;
+  }
   wrap.innerHTML=`
     <a class="score-paid-mock-strip" href="${escapeAttr(m.url)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeAttr(label)}">
       <span class="score-paid-mock-strip-lead">${leadHtml}</span>
