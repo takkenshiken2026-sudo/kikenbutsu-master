@@ -379,6 +379,30 @@ ADSENSE_HEAD_SNIPPET = (
 )
 
 
+def is_thin_question_page(rel_path: Path) -> bool:
+    """1問=1ページの薄い量産ページか判定する（広告掲載の対象外）。
+
+    実践演習・一問一答・過去問の「単問ページ」は本文の固有量が数文と少なく、
+    骨格が全ページ共通のため、AdSense の低価値/Scaled content 判定の主因になる。
+    これらには広告スニペットを載せず、広告掲載を中身の濃いページ
+    （記事・用語・ハブ・一覧）に集約する。ハブ/一覧（q/index.html,
+    q/practice/index.html 等）は対象外＝広告を残す。
+    """
+    parts = Path(rel_path).parts
+    if not parts or parts[0] != "q":
+        return False
+    # 実践演習の単問: q/practice/p<NNN>/index.html
+    if len(parts) >= 3 and parts[1] == "practice" and re.fullmatch(r"p\d+", parts[2]):
+        return True
+    # 一問一答の単問: q/ichimon/s/<slug>/index.html
+    if len(parts) >= 4 and parts[1] == "ichimon" and parts[2] == "s":
+        return True
+    # 過去問の単問: q/past/y<年>/q<NN>/index.html
+    if len(parts) >= 4 and parts[1] == "past" and re.fullmatch(r"q\d+", parts[3]):
+        return True
+    return False
+
+
 def brand_head_markup(rel_path: Path, *, site_root: Path | None = None, include_social_image: bool = True) -> str:
     block = favicons_head_markup(rel_path, site_root=site_root)
     if not block:
@@ -387,7 +411,8 @@ def brand_head_markup(rel_path: Path, *, site_root: Path | None = None, include_
         social = social_image_meta_tags(site_root=site_root)
         if social:
             block += "\n" + social
-    block += "\n" + ADSENSE_HEAD_SNIPPET
+    if not is_thin_question_page(rel_path):
+        block += "\n" + ADSENSE_HEAD_SNIPPET
     return block
 
 
