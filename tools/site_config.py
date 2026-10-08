@@ -570,7 +570,7 @@ def course_promo() -> dict[str, str] | None:
     url = str(raw.get("url") or "").strip()
     if not url:
         return None
-    out: dict[str, str] = {"url": url}
+    out: dict = {"url": url}
     for key in (
         "modeTitle",
         "modePurpose",
@@ -586,10 +586,19 @@ def course_promo() -> dict[str, str] | None:
         "bannerAlt",
         "lpUrl",
         "afbLeadUrl",
+        "cardTitle",
+        "cardDesc",
+        "stepLabel",
+        "badgeLabel",
     ):
         val = raw.get(key)
         if val is not None and str(val).strip():
             out[key] = str(val).strip()
+    chips = raw.get("cardChips")
+    if isinstance(chips, list):
+        cleaned = [str(c).strip() for c in chips if str(c).strip()]
+        if cleaned:
+            out["cardChips"] = cleaned
     return out
 
 
@@ -600,7 +609,7 @@ def paid_mock_exam() -> dict[str, str] | None:
     url = str(raw.get("url") or "").strip()
     if not url:
         return None
-    out: dict[str, str] = {"url": url}
+    out: dict = {"url": url}
     for key in (
         "modeTitle",
         "modePurpose",
@@ -610,10 +619,20 @@ def paid_mock_exam() -> dict[str, str] | None:
         "bannerImage",
         "bannerAlt",
         "footnote",
+        "ctaLabel",
+        "cardTitle",
+        "cardDesc",
+        "stepLabel",
+        "badgeLabel",
     ):
         val = raw.get(key)
         if val is not None and str(val).strip():
             out[key] = str(val).strip()
+    chips = raw.get("cardChips")
+    if isinstance(chips, list):
+        cleaned = [str(c).strip() for c in chips if str(c).strip()]
+        if cleaned:
+            out["cardChips"] = cleaned
     return out
 
 

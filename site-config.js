@@ -157,7 +157,16 @@ window.SITE_CONFIG = {
     "scoreLead": "本番形式の予想模試",
     "bannerImage": "images/affiliate/kikenbutsuotsu4-moshi2026.webp",
     "bannerAlt": "危険物取扱者試験（乙種第4類）本番想定模試 2026年版｜590円｜PDF・2回分｜noteで購入する",
-    "footnote": "※ note で販売する有料コンテンツ（¥590・2回分）です。サイト内の無料演習とは別商品です。"
+    "footnote": "※ note で販売する有料コンテンツ（¥590・2回分）です。サイト内の無料演習とは別商品です。",
+    "ctaLabel": "模試を購入する",
+    "cardTitle": "本番形式の予想模試",
+    "cardDesc": "本番と同じ35問・2時間の予想模試です。2回分で時間配分と弱点を事前に確認できます。",
+    "stepLabel": "STEP 1・実力確認",
+    "cardChips": [
+      "PDF・2回分",
+      "note販売",
+      "三科目対応"
+    ]
   },
   "coursePromo": {
     "url": "https://t.afi-b.com/visit.php?a=y7404W-M7354874_f&p=P984775K",
@@ -173,6 +182,15 @@ window.SITE_CONFIG = {
     "imageAlt": "スタディング（STUDYing）ロゴ",
     "bannerImage": "images/affiliate/kikenbutsu-course-studying-banner.webp",
     "bannerAlt": "スタディング 危険物取扱者試験 乙種第4類｜スマホで最短合格を目指す｜無料で講座を見る",
-    "lpUrl": "https://studying.jp/kikenbutsu/"
+    "lpUrl": "https://studying.jp/kikenbutsu/",
+    "cardTitle": "スタディング 乙4合格コース",
+    "cardDesc": "動画と問題集に模試10回まで揃った通信講座です。苦手科目を動画でまとめて補強できます。",
+    "stepLabel": "STEP 2・動画で補強",
+    "badgeLabel": "無料お試し",
+    "cardChips": [
+      "¥5,940（一括）",
+      "約8時間",
+      "模試10回"
+    ]
   }
 };

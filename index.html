@@ -712,14 +712,29 @@ details.rich-detail summary{display:none}
 .score-course-strip-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .score-course-strip-thumb{flex-shrink:0;width:64px;height:64px;border-radius:8px;overflow:hidden;background:var(--bg3);border:1px solid var(--accent-border,rgba(0,0,0,.08))}
 .score-course-strip-thumb img{display:block;width:100%;height:100%;object-fit:cover}
-.promo-banners-row{display:grid;grid-template-columns:1fr 1fr;gap:12px 16px;align-items:start;margin:8px 0 14px}
-.promo-banners-row:not(:has(> :not([hidden]) + :not([hidden]))){grid-template-columns:minmax(0,360px);justify-content:center}
+.promo-banners-row{display:grid;grid-template-columns:1fr 1fr;gap:12px 16px;align-items:stretch;margin:8px 0 14px}
+.promo-banners-row:not(:has(> :not([hidden]) + :not([hidden]))){grid-template-columns:minmax(0,420px);justify-content:center}
 .promo-banners-row > [hidden]{display:none!important}
-.course-promo-banner,.paid-mock-banner{margin:0;display:block;max-width:none;width:100%;min-width:0}
-.course-promo-banner__link,.paid-mock-banner__link{display:block;border-radius:var(--r2);overflow:hidden;border:1px solid var(--border);box-shadow:var(--sh);text-decoration:none;transition:box-shadow .15s,transform .15s,border-color .15s}
-.course-promo-banner__link:hover,.paid-mock-banner__link:hover{box-shadow:var(--sh2);border-color:var(--text2);transform:translateY(-1px)}
-.course-promo-banner__link img,.paid-mock-banner__link img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;object-position:center;background:#fff}
-.course-promo-banner__foot,.paid-mock-banner__foot{margin:8px 0 0;font-size:11px;color:var(--text3);line-height:1.55;text-align:center}
+.promo-card-wrap{margin:0;display:flex;flex-direction:column;max-width:none;width:100%;min-width:0}
+.promo-card{position:relative;display:flex;flex-direction:column;height:100%;background:#fff;border:1px solid var(--border);border-radius:var(--r2);padding:18px 18px 16px;box-shadow:var(--sh);text-decoration:none;color:inherit;overflow:hidden;transition:box-shadow .15s,transform .15s,border-color .15s}
+.promo-card:hover{box-shadow:var(--sh2);transform:translateY(-2px);border-color:var(--accent-border)}
+.promo-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--accent)}
+.promo-card--course::before{background:var(--accent);opacity:.38}
+.promo-card__head{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.promo-card__badge{font-size:var(--fs-tiny);font-weight:700;padding:3px 10px;border-radius:999px;letter-spacing:.03em;white-space:nowrap;line-height:1.5}
+.promo-card__badge--paid{background:var(--accent);color:var(--accent-text)}
+.promo-card__badge--free{background:var(--accent-soft);color:var(--accent-emphasis);border:1px solid var(--accent-border)}
+.promo-card__step{font-size:var(--fs-tiny);font-weight:700;color:var(--text3);letter-spacing:.06em}
+.promo-card__title{font-size:var(--fs-body);font-weight:700;line-height:1.4;margin:0 0 6px;color:var(--text)}
+.promo-card__desc{font-size:var(--fs-sub);color:var(--text2);line-height:1.6;margin:0 0 12px;flex:1}
+.promo-card__meta{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 14px}
+.promo-card__chip{font-size:var(--fs-tiny);font-weight:600;color:var(--text2);background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:3px 8px;line-height:1.5}
+.promo-card__cta{display:inline-flex;align-items:center;justify-content:center;gap:6px;font-size:var(--fs-sub);font-weight:700;border-radius:8px;padding:11px 16px;margin-top:auto;transition:filter .15s,background .15s}
+.promo-card__cta--fill{background:var(--accent);color:var(--accent-text)}
+.promo-card:hover .promo-card__cta--fill{filter:brightness(1.08)}
+.promo-card__cta--outline{background:#fff;color:var(--accent);border:1.5px solid var(--accent)}
+.promo-card:hover .promo-card__cta--outline{background:var(--accent-soft)}
+.promo-card__foot{margin:8px 2px 0;font-size:11px;color:var(--text3);line-height:1.55}
 .score-course-banner,.score-paid-mock-banner{display:block;max-width:none;width:100%;margin:0;border-radius:var(--r2);overflow:hidden;border:1px solid var(--accent-border,rgba(0,0,0,.12));box-shadow:0 2px 10px var(--accent-shadow,rgba(0,0,0,.06));text-decoration:none;transition:border-color .15s,box-shadow .15s,transform .15s}
 .score-course-banner:hover{border-color:var(--accent,#333);box-shadow:0 4px 14px var(--accent-shadow,rgba(0,0,0,.1));transform:translateY(-1px)}
 .score-paid-mock-banner{border-color:var(--paid-mock-accent-border);box-shadow:0 2px 10px var(--paid-mock-accent-shadow)}
@@ -964,7 +979,7 @@ details.rich-detail summary{display:none}
   .promo-banners-row,.score-promo-row{grid-template-columns:1fr;max-width:none}
   .promo-banners-row:not(:has(> :not([hidden]) + :not([hidden]))),
   .score-promo-row:not(:has(> :not([hidden]) + :not([hidden]))){grid-template-columns:1fr;justify-content:stretch}
-  .course-promo-banner,.paid-mock-banner,.score-course-banner,.score-paid-mock-banner{max-width:360px;margin-left:auto;margin-right:auto}
+  .promo-card-wrap,.score-course-banner,.score-paid-mock-banner{max-width:420px;margin-left:auto;margin-right:auto;width:100%}
   .page-sub{font-size:var(--fs-sub);line-height:1.6;margin-bottom:18px}
   .section-label,h2.section-label{font-size:13px;letter-spacing:.04em}
   .dash-title-row{align-items:flex-start;flex-direction:column;gap:8px;margin-bottom:6px}
@@ -7567,6 +7582,11 @@ function getCoursePromoConfig(){
     bannerImage: String(cfg.bannerImage||cfg.image||'').trim(),
     bannerAlt: String(cfg.bannerAlt||cfg.imageAlt||cfg.modeTitle||'').trim(),
     afbLeadUrl: String(cfg.afbLeadUrl||'').trim(),
+    cardTitle: String(cfg.cardTitle||cfg.modeTitle||'オンライン講座').trim(),
+    cardDesc: String(cfg.cardDesc||cfg.modePurpose||'').trim(),
+    cardChips: Array.isArray(cfg.cardChips)?cfg.cardChips.map(function(x){return String(x).trim();}).filter(Boolean):[],
+    stepLabel: String(cfg.stepLabel||'').trim(),
+    badgeLabel: String(cfg.badgeLabel||cfg.tagLabel||'').trim(),
   };
 }
 
@@ -7587,18 +7607,35 @@ function ensurePromoBannersRow(startEl, modeList){
   return row;
 }
 
+function promoCardChipsHtml(chips){
+  if(!chips||!chips.length) return '';
+  const items=chips.map(function(c){return `<span class="promo-card__chip">${escapeAttr(c)}</span>`;}).join('');
+  return `<div class="promo-card__meta">${items}</div>`;
+}
+
+function promoCardHeadHtml(badgeLabel, badgeKind, stepLabel){
+  const badge=badgeLabel?`<span class="promo-card__badge promo-card__badge--${badgeKind}">${escapeAttr(badgeLabel)}</span>`:'';
+  const step=stepLabel?`<span class="promo-card__step">${escapeAttr(stepLabel)}</span>`:'';
+  if(!badge&&!step) return '';
+  return `<div class="promo-card__head">${badge}${step}</div>`;
+}
+
 function buildCoursePromoBannerEl(){
   const c=getCoursePromoConfig();
-  if(!c.url||!c.bannerImage) return null;
-  const label=c.bannerAlt||`${c.modeTitle} — ${c.ctaLabel}`;
+  if(!c.url) return null;
+  const label=`${c.cardTitle} — ${c.ctaLabel}`;
   const wrapper=document.createElement('div');
   wrapper.id='course-promo-banner';
-  wrapper.className='course-promo-banner';
+  wrapper.className='promo-card-wrap';
   wrapper.innerHTML=`
-    <a class="course-promo-banner__link" href="${escapeAttr(c.url)}" target="_blank" rel="nofollow sponsored noopener noreferrer" aria-label="${escapeAttr(label)}">
-      <img src="${escapeAttr(c.bannerImage)}" alt="${escapeAttr(c.bannerAlt||c.modeTitle)}" width="1024" height="576" loading="lazy" decoding="async">
+    <a class="promo-card promo-card--course" href="${escapeAttr(c.url)}" target="_blank" rel="nofollow sponsored noopener noreferrer" aria-label="${escapeAttr(label)}">
+      ${promoCardHeadHtml(c.badgeLabel,'free',c.stepLabel)}
+      <div class="promo-card__title">${escapeAttr(c.cardTitle)}</div>
+      ${c.cardDesc?`<div class="promo-card__desc">${escapeAttr(c.cardDesc)}</div>`:''}
+      ${promoCardChipsHtml(c.cardChips)}
+      <span class="promo-card__cta promo-card__cta--outline">${escapeAttr(c.ctaLabel)} ↗</span>
     </a>
-    ${c.footnote?`<p class="course-promo-banner__foot">${escapeAttr(c.footnote)}</p>`:''}`;
+    ${c.footnote?`<p class="promo-card__foot">${escapeAttr(c.footnote)}</p>`:''}`;
   if(c.afbLeadUrl){
     const px=document.createElement('img');
     px.src=c.afbLeadUrl;
@@ -7614,16 +7651,20 @@ function buildCoursePromoBannerEl(){
 
 function buildPaidMockBannerEl(){
   const m=getPaidMockExamConfig();
-  if(!m.url||!m.bannerImage) return null;
-  const label=m.bannerAlt||`${m.modeTitle}（有料・note・${m.priceLabel}）`;
+  if(!m.url) return null;
+  const label=`${m.cardTitle}（有料・note・${m.priceLabel}）`;
   const wrapper=document.createElement('div');
   wrapper.id='paid-mock-inject';
-  wrapper.className='paid-mock-banner';
+  wrapper.className='promo-card-wrap';
   wrapper.innerHTML=`
-    <a class="paid-mock-banner__link" href="${escapeAttr(m.url)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeAttr(label)}">
-      <img src="${escapeAttr(m.bannerImage)}" alt="${escapeAttr(m.bannerAlt||m.modeTitle)}" width="1024" height="576" loading="lazy" decoding="async">
+    <a class="promo-card promo-card--paid" href="${escapeAttr(m.url)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeAttr(label)}">
+      ${promoCardHeadHtml(m.badgeLabel,'paid',m.stepLabel)}
+      <div class="promo-card__title">${escapeAttr(m.cardTitle)}</div>
+      ${m.cardDesc?`<div class="promo-card__desc">${escapeAttr(m.cardDesc)}</div>`:''}
+      ${promoCardChipsHtml(m.cardChips)}
+      <span class="promo-card__cta promo-card__cta--fill">${escapeAttr(m.ctaLabel)} ↗</span>
     </a>
-    ${m.footnote?`<p class="paid-mock-banner__foot">${escapeAttr(m.footnote)}</p>`:''}`;
+    ${m.footnote?`<p class="promo-card__foot">${escapeAttr(m.footnote)}</p>`:''}`;
   return wrapper;
 }
 
@@ -7691,6 +7732,12 @@ function getPaidMockExamConfig(){
     bannerImage: String(cfg.bannerImage||'').trim(),
     bannerAlt: String(cfg.bannerAlt||cfg.modeTitle||'').trim(),
     footnote: String(cfg.footnote||'').trim(),
+    ctaLabel: String(cfg.ctaLabel||'模試を購入する').trim(),
+    cardTitle: String(cfg.cardTitle||cfg.scoreLead||cfg.modeTitle||'予想模試').trim(),
+    cardDesc: String(cfg.cardDesc||cfg.modePurpose||'').trim(),
+    cardChips: Array.isArray(cfg.cardChips)?cfg.cardChips.map(function(x){return String(x).trim();}).filter(Boolean):[],
+    stepLabel: String(cfg.stepLabel||'').trim(),
+    badgeLabel: String(cfg.badgeLabel||('有料 '+String(cfg.priceLabel||'¥590').trim())).trim(),
   };
 }
 
