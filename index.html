@@ -7726,7 +7726,7 @@ function getPaidMockExamConfig(){
     url: String(cfg.url).trim(),
     modeTitle: String(cfg.modeTitle||'予想模試').trim(),
     modePurpose: String(cfg.modePurpose||'本番形式で実力確認したい').trim(),
-    priceLabel: String(cfg.priceLabel||'¥590').trim(),
+    priceLabel: String(cfg.priceLabel||'¥780').trim(),
     scoreMeta: String(cfg.scoreMeta||'PDF').trim(),
     scoreLead: String(cfg.scoreLead||'本番形式の予想模試').trim(),
     bannerImage: String(cfg.bannerImage||'').trim(),
@@ -7737,7 +7737,7 @@ function getPaidMockExamConfig(){
     cardDesc: String(cfg.cardDesc||cfg.modePurpose||'').trim(),
     cardChips: Array.isArray(cfg.cardChips)?cfg.cardChips.map(function(x){return String(x).trim();}).filter(Boolean):[],
     stepLabel: String(cfg.stepLabel||'').trim(),
-    badgeLabel: String(cfg.badgeLabel||('有料 '+String(cfg.priceLabel||'¥590').trim())).trim(),
+    badgeLabel: String(cfg.badgeLabel||('有料 '+String(cfg.priceLabel||'¥780').trim())).trim(),
   };
 }
 
