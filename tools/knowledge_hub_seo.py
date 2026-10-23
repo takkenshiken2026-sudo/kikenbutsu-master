@@ -1320,7 +1320,11 @@ def _legal_explain_sentence(law: str, entry: dict) -> str:
                 extras.append(extra)
                 break
 
-    if main_core:
+    # main_core が law 自身や定型の埋め草（「〜の範囲で」「〜の基礎」）を含む場合は
+    # 「別表第1は、別表第1の範囲で…の基礎について定めた条文です」のような循環・
+    # 冗長文になるため採用しない。クリーンな汎用文へフォールバックする。
+    _circular = law and (law in main_core or "の範囲で" in main_core or main_core.endswith("の基礎"))
+    if main_core and not _circular:
         if main_core.endswith("について"):
             text = f"{law}は、{main_core}定めた条文です"
         else:
@@ -1331,6 +1335,11 @@ def _legal_explain_sentence(law: str, entry: dict) -> str:
 
     core = _definition_core_from_sentence(short_def, term)
     if core and not any(skip in core for skip in _DEFINITION_SKIP_SENTENCE):
+        # core が「{用語}は／とは」で始まると「{法令}は、{用語}は、…」と二重主語に
+        # なるため、先頭の用語＋助詞を取り除く。
+        _label = term.split("（")[0].strip()
+        if _label:
+            core = re.sub(rf"^{re.escape(_label)}(?:とは|は)、?", "", core).strip()
         return f"{law}は、{core}に関する根拠法令です。"
 
     label = term.split("（")[0].strip() if term else "この用語"
