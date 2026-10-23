@@ -390,6 +390,28 @@ def rel_href(rel_file: Path, target: str) -> str:
     return f"{prefix}/{target}" if prefix else target
 
 
+def past_redirect_stub_html(url: str) -> str:
+    """過去問単問 URL を廃止し、アプリ該当問題へ noindex リダイレクトする stub。"""
+    url_attr = html.escape(url, quote=True)
+    url_js = json.dumps(url)
+    return (
+        "<!DOCTYPE html>\n"
+        '<html lang="ja">\n'
+        "<head>\n"
+        '<meta charset="UTF-8">\n'
+        f'<meta http-equiv="refresh" content="0;url={url_attr}">\n'
+        f'<link rel="canonical" href="{url_attr}">\n'
+        '<meta name="robots" content="noindex, follow">\n'
+        "<title>アプリで演習する｜乙4マスター</title>\n"
+        "</head>\n"
+        "<body>\n"
+        f'<p>この問題はアプリの演習に統合されました。<a href="{url_attr}">移動しない場合はこちら</a></p>\n'
+        f"<script>location.replace({url_js});</script>\n"
+        "</body>\n"
+        "</html>\n"
+    )
+
+
 def text_to_html(text: str) -> str:
     if not text:
         return ""
@@ -931,12 +953,12 @@ def build_question_html(
 
 
 def build_q_index(pages: list[dict], base_url: str) -> str:
+    # 単問静的ページは廃止したため、一覧の各問リンクはアプリ（ルート index.html）の
+    # 該当問題への深リンク #past-play-{app_id} へ直接向ける（ハブは q/index.html）。
     index_pages: list[dict] = []
     for page in pages:
         pg = dict(page)
-        pg["href_rel"] = (
-            page["rel_path"][2:] if page["rel_path"].startswith("q/") else page["rel_path"]
-        )
+        pg["href_rel"] = f"../index.html#past-play-{page['app_id']}"
         index_pages.append(pg)
 
     by_year = {}
@@ -1185,21 +1207,17 @@ def main() -> int:
     past_root = Q_ROOT / "past"
     if past_root.is_dir():
         shutil.rmtree(past_root)
+    # 過去問の単問静的ページ（公式問題文の再録）は廃止し、アプリ（ルート index.html）の
+    # 該当問題への深リンク #past-play-{app_id} へ noindex リダイレクトする stub に置き換える。
+    # stub にすることで、ハブ・用語・比較/数値/間違い・既存のブックマークや検索インデックス
+    # など経路を問わず全インバウンドリンクが自動でアプリへ解決し、リンク切れも出ない。
+    # build_question_html は将来の再開に備えて残す。
     for p, row in zip(pages, rows):
         rel = Path(p["rel_path"])
         out_file = ROOT / rel
         out_file.parent.mkdir(parents=True, exist_ok=True)
-        html_out = build_question_html(
-            p,
-            row,
-            out_file.relative_to(ROOT),
-            base,
-            all_pages=pages,
-            glossary_lookup=glossary_lookup,
-            guides=guides,
-            question_catalog=question_catalog,
-        )
-        out_file.write_text(html_out, encoding="utf-8")
+        app_url = rel_href(out_file.relative_to(ROOT), "index.html") + f"#past-play-{p['app_id']}"
+        out_file.write_text(past_redirect_stub_html(app_url), encoding="utf-8")
 
     q_index = ROOT / "q" / "index.html"
     q_index.parent.mkdir(parents=True, exist_ok=True)

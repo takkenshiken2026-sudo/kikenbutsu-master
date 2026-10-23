@@ -743,6 +743,10 @@ def _static_chrome(root: Path) -> list[Issue]:
         for html in sorted(q_past.glob("**/index.html"))[:3]:
             text = html.read_text(encoding="utf-8")
             rel = html.relative_to(root)
+            # 単問ページはアプリ深リンクへの noindex リダイレクト stub に廃止したため、
+            # サイト共通ヘッダは不要（ハブ q/index.html は別途検証済み）。
+            if _is_redirect_stub(html):
+                continue
             if "topnav site-shell-header" not in text:
                 issues.append(
                     Issue(f"{rel}: topnav site-shell-header がありません（build_past_question_pages / site-chrome.md）")
