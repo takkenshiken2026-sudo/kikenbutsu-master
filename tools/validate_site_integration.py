@@ -115,12 +115,8 @@ def _q_index(q_index: Path) -> list[Issue]:
         issues.append(Issue("q/index.html: q_hub_links_html（3モードタブ）がありません"))
     if 'aria-current="page">過去問</span>' not in text and "is-current" not in text:
         issues.append(Issue("q/index.html: 過去問タブの current 表示がありません"))
-    if (
-        "/q/orig/index.html" not in text
-        and "/q/practice/index.html" not in text
-        and 'href="practice/index.html"' not in text
-    ):
-        issues.append(Issue("q/index.html: 実践演習タブへのリンクがありません"))
+    # 問題ページは過去問ハブに一本化したため、モードタブは過去問のみ。
+    # 実践演習・一問一答タブ（別ハブへのリンク）は不要になった。
     return issues
 
 
@@ -284,7 +280,9 @@ def _mode_index_counts(root: Path) -> list[Issue]:
         json_n = _q_index_data_count(index_path)
         if csv_n == 0:
             continue
-        if mode == "ichimon" and _is_redirect_stub(index_path):
+        # 実践演習・一問一答のハブは過去問ハブへ一本化し、アプリへの noindex
+        # リダイレクト stub に廃止したため、一覧データ・タブの検証対象から外す。
+        if _is_redirect_stub(index_path):
             continue
         if mode == "practice" and _orig_practice_index_ok(index_path):
             continue

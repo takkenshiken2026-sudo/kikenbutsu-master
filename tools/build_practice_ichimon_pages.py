@@ -1075,6 +1075,34 @@ def _patch_index_rows_for_practice(pages: list[dict]) -> None:
         pg["app_id"] = PRACTICE_ID_BASE + pg["qno"]
 
 
+def q_hub_redirect_stub_html(url: str) -> str:
+    """実践演習・一問一答のハブを廃止し、アプリ該当モードへ noindex リダイレクトする stub。
+
+    問題ページは過去問ハブ（q/index.html）に一本化する。実践演習・一問一答は
+    アプリ（ルート index.html）のモード選択で到達するため、ハブページは不要。
+    stub にすることで既存の内部リンク・ブックマーク・検索インデックスが
+    すべてアプリへ解決し、リンク切れが出ない。
+    """
+    url_attr = html.escape(url, quote=True)
+    url_js = json.dumps(url)
+    return (
+        "<!DOCTYPE html>\n"
+        '<html lang="ja">\n'
+        "<head>\n"
+        '<meta charset="UTF-8">\n'
+        f'<meta http-equiv="refresh" content="0;url={url_attr}">\n'
+        f'<link rel="canonical" href="{url_attr}">\n'
+        '<meta name="robots" content="noindex, follow">\n'
+        "<title>アプリで演習する｜乙4マスター</title>\n"
+        "</head>\n"
+        "<body>\n"
+        f'<p>この演習はアプリに統合されました。<a href="{url_attr}">移動しない場合はこちら</a></p>\n'
+        f"<script>location.replace({url_js});</script>\n"
+        "</body>\n"
+        "</html>\n"
+    )
+
+
 def main() -> int:
     import argparse
 
@@ -1107,20 +1135,15 @@ def main() -> int:
     # 実践演習の単問静的ページ（q/practice/p*/）は生成しない。
     # AdSense の低価値/Scaled content 対策で既に noindex・広告なしだったが、演習機能は
     # SPA（ルート index.html）が担うため静的単問ページ自体を廃止する。一覧（ハブ）は
-    # 残し、各問リンクは SPA の実践演習モードへ向ける（build_mode_index で href を差し替え）。
-    # build_practice_question_html は将来の再開に備えて残す。
+    # 問題ページは過去問ハブ（q/index.html）に一本化する。実践演習のハブ自体も
+    # アプリ（#orig）への noindex リダイレクト stub に廃止する。
+    # build_practice_question_html / build_mode_index は将来の再開に備えて残す。
 
     if practice_pages:
         idx = Q_ROOT / "practice" / "index.html"
         idx.parent.mkdir(parents=True, exist_ok=True)
         idx.write_text(
-            build_mode_index(
-                mode="practice",
-                pages=practice_pages,
-                base_url=base,
-                rel_path=Path("q/practice/index.html"),
-            ),
-            encoding="utf-8",
+            q_hub_redirect_stub_html("../../index.html#orig"), encoding="utf-8"
         )
 
     ichimon_rows = load_ichimon_rows()
@@ -1133,20 +1156,14 @@ def main() -> int:
     ichimon_rows = [r for _, r in ichimon_pairs]
     _patch_index_rows_for_ichimon(ichimon_pages)
 
-    # 一問一答の単問静的ページも実践演習と同じ理由で生成しない。一覧（ハブ）は残し、
-    # 各問リンクは SPA の一問一答モードへ向ける。
+    # 一問一答のハブも実践演習と同じく、アプリ（#ichimondou）への noindex
+    # リダイレクト stub に廃止する。
 
     if ichimon_pages:
         idx = Q_ROOT / "ichimon" / "index.html"
         idx.parent.mkdir(parents=True, exist_ok=True)
         idx.write_text(
-            build_mode_index(
-                mode="ichimon",
-                pages=ichimon_pages,
-                base_url=base,
-                rel_path=Path("q/ichimon/index.html"),
-            ),
-            encoding="utf-8",
+            q_hub_redirect_stub_html("../../index.html#ichimondou"), encoding="utf-8"
         )
 
     print(
