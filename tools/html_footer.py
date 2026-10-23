@@ -575,12 +575,12 @@ def q_index_filters_details_html(
 
 def q_hub_links_html(rel_path: Path, *, current: str) -> str:
     """過去問・実践演習・（任意で）一問一答のモード切替タブ（一覧・個別ページ共通）。"""
+    # 問題ページは過去問ハブ（q/index.html）に一本化したため、モードタブは過去問のみ。
+    # 実践演習・一問一答はアプリ（index.html の #orig / #ichimondou）で提供し、
+    # それぞれのハブは noindex リダイレクト stub に廃止済み。
     items: list[tuple[str, str, str]] = []
     if past_enabled():
         items.append(("past", "過去問", "q/index.html"))
-    items.append(("practice", "実践演習", "q/practice/index.html"))
-    if ichimon_enabled():
-        items.append(("ichimon", "一問一答", "q/ichimon/index.html"))
     lis: list[str] = []
     for key, label, target in items:
         if key == current:
