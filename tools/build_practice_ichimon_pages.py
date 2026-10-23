@@ -794,6 +794,14 @@ def build_mode_index(
 ) -> str:
     """実践演習 / 一問一答の一覧（過去問 q/index.html と同型 UI）。"""
     cfg = {**INDEX_CONFIG[mode], "categoryOrder": category_order()}
+    # 単問の静的ページは廃止したため、一覧の各問リンクは SPA（ルート index.html）の
+    # 該当モードへ向ける。SPA は practice/ichimon の個別問題への深リンクを持たないので
+    # モード起点（#orig / #ichimondou）に統一する。href_rel を差し替えると静的ブロック・
+    # JSON データ・JS 行描画の全経路が同じ宛先になる。
+    app_href = rel_href(rel_path, "index.html") + ("#orig" if mode == "practice" else "#ichimondou")
+    cfg["appLinkTemplate"] = app_href
+    for _pg in pages:
+        _pg["href_rel"] = app_href
     study_modes_note = study_modes_note_html()
     search_placeholder = index_search_placeholder(mode)
 
@@ -1096,23 +1104,11 @@ def main() -> int:
         practice_rows_valid.append(row)
     _patch_index_rows_for_practice(practice_pages)
 
-    for p, row in zip(practice_pages, practice_rows_valid):
-        rel = Path(p["rel_path"])
-        out = ROOT / rel
-        out.parent.mkdir(parents=True, exist_ok=True)
-        out.write_text(
-            build_practice_question_html(
-                p,
-                row,
-                out.relative_to(ROOT),
-                base,
-                all_pages=practice_pages,
-                glossary_lookup=glossary_lookup,
-                guides=guides,
-                question_catalog=question_catalog,
-            ),
-            encoding="utf-8",
-        )
+    # 実践演習の単問静的ページ（q/practice/p*/）は生成しない。
+    # AdSense の低価値/Scaled content 対策で既に noindex・広告なしだったが、演習機能は
+    # SPA（ルート index.html）が担うため静的単問ページ自体を廃止する。一覧（ハブ）は
+    # 残し、各問リンクは SPA の実践演習モードへ向ける（build_mode_index で href を差し替え）。
+    # build_practice_question_html は将来の再開に備えて残す。
 
     if practice_pages:
         idx = Q_ROOT / "practice" / "index.html"
@@ -1137,23 +1133,8 @@ def main() -> int:
     ichimon_rows = [r for _, r in ichimon_pairs]
     _patch_index_rows_for_ichimon(ichimon_pages)
 
-    for p, row in zip(ichimon_pages, ichimon_rows):
-        rel = Path(p["rel_path"])
-        out = ROOT / rel
-        out.parent.mkdir(parents=True, exist_ok=True)
-        out.write_text(
-            build_ichimon_question_html(
-                p,
-                row,
-                out.relative_to(ROOT),
-                base,
-                all_pages=ichimon_pages,
-                glossary_lookup=glossary_lookup,
-                guides=guides,
-                question_catalog=question_catalog,
-            ),
-            encoding="utf-8",
-        )
+    # 一問一答の単問静的ページも実践演習と同じ理由で生成しない。一覧（ハブ）は残し、
+    # 各問リンクは SPA の一問一答モードへ向ける。
 
     if ichimon_pages:
         idx = Q_ROOT / "ichimon" / "index.html"
@@ -1169,12 +1150,12 @@ def main() -> int:
         )
 
     print(
-        f"Wrote practice: {len(practice_pages)} pages"
-        + (", index" if practice_pages else "")
+        "Wrote practice: index only "
+        f"(単問静的ページ廃止 / 対象 {len(practice_pages)} 問は SPA で提供)"
     )
     print(
-        f"Wrote ichimon: {len(ichimon_pages)} pages"
-        + (", index" if ichimon_pages else "")
+        "Wrote ichimon: index only "
+        f"(単問静的ページ廃止 / 対象 {len(ichimon_pages)} 問は SPA で提供)"
     )
     return 0
 

@@ -265,9 +265,15 @@ def build_similar_questions_html(
     if not similar:
         return ""
 
+    # 実践演習・一問一答の単問静的ページは廃止したため、それらへの類題リンクは
+    # SPA（ルート index.html）の該当モード起点に向ける。過去問は静的ページが残る。
+    _spa_hash = {"practice": "#orig", "ichimon": "#ichimondou"}
     items: list[str] = []
     for ref in similar:
-        href = rel_href(rel_path, ref["rel_path"])
+        if ref["mode"] in _spa_hash:
+            href = rel_href(rel_path, "index.html") + _spa_hash[ref["mode"]]
+        else:
+            href = rel_href(rel_path, ref["rel_path"])
         mode_label = MODE_LABEL.get(ref["mode"], ref["mode"])
         cat = html.escape(ref["category"] or "")
         title = html.escape(ref["title"])

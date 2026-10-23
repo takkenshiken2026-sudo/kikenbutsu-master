@@ -55,6 +55,7 @@ from tools.html_footer import (
     static_site_header,
 )
 from tools.seo_editorial_chrome import seo_brand_asset_tags
+from tools.seo_utils import NOINDEX_ROBOTS_META
 from tools.site_config import (
     brand_name,
     clean_origin,
@@ -875,7 +876,7 @@ def build_question_html(
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{html.escape(title)}</title>
 <meta name="description" content="{html.escape(desc)}">
-{ROBOTS_INDEX_FOLLOW}
+{NOINDEX_ROBOTS_META}
 <link rel="canonical" href="{html.escape(canonical)}">
 <meta property="og:type" content="article">
 <meta property="og:title" content="{html.escape(title)}">
