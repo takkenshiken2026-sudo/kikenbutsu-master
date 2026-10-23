@@ -1300,6 +1300,10 @@ def _legal_explain_sentence(law: str, entry: dict) -> str:
     """根拠条文を、定義文から平易な解説1文（＋必要なら補足1文）に整える。"""
     term = _norm(entry.get("term"))
     short_def = _norm(entry.get("short_def"))
+    # 法令名でない根拠（例: 試験科目「基礎的な物理学及び基礎的な化学」）に
+    # 「根拠法令です」と付けると不正確なので、出題範囲を示す中立な文にする。
+    if law and not re.search(r"(法|政令|条例|規則|別表|告示|第\d+条)", law):
+        return f"これは{law}で扱われる基礎知識です。"
     sentences = _definition_sentences(_legal_source_text(entry))
 
     main_core = ""
