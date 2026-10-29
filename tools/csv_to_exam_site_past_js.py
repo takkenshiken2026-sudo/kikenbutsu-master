@@ -15,7 +15,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from tools.correct_answer_format import collect_choice_texts, is_valid_correct, parse_correct_js_index
-from tools.site_config import category_to_field_map, extended_correct_answers
+from tools.site_config import category_to_field_map, default_exam_id, extended_correct_answers
 from tools.build_past_question_pages import page_dict as past_page_dict
 from tools.build_practice_ichimon_pages import practice_page_dict
 from tools.q_explanation import _o4_explanation_lead, build_explanation_html
@@ -34,9 +34,25 @@ LABELS = [("ア", "statement_a"), ("イ", "statement_b"), ("ウ", "statement_c")
 # site-config.json の fields[].aliases / name に対応
 CATEGORY_TO_FIELD: dict[str, str] = category_to_field_map()
 
+# 試験軸。CSV の任意列 exam（空＝既定試験）。既定試験の問題には exam キーを出力しない
+# （乙4 の生成物を不変に保つため）。関連試験の問題だけ "exam" を付与する。
+DEFAULT_EXAM: str = default_exam_id()
+
 
 def norm(s: str | None) -> str:
     return (s or "").strip()
+
+
+def row_exam(row: dict) -> str:
+    """行の試験 id。未指定・空は既定試験に正規化。"""
+    return norm(row.get("exam")) or DEFAULT_EXAM
+
+
+def with_exam(obj: dict, exam: str) -> dict:
+    """既定以外の試験のみ exam キーを付与（既定試験は出力不変）。"""
+    if exam and exam != DEFAULT_EXAM:
+        obj["exam"] = exam
+    return obj
 
 
 def build_plain_text(row: dict) -> str:
@@ -90,7 +106,7 @@ def row_to_obj(row: dict, line_no: int) -> dict | None:
     exp_html = build_explanation_html(page, row)
 
     qid = year * 100 + qno
-    return {
+    return with_exam({
         "id": qid,
         "year": year,
         "num": qno,
@@ -100,7 +116,7 @@ def row_to_obj(row: dict, line_no: int) -> dict | None:
         "ans": 0 if cor is None else cor,
         "exp": exp,
         "expHtml": exp_html,
-    }
+    }, row_exam(row))
 
 
 def level_from_tags(tags: str) -> int:
@@ -162,7 +178,7 @@ def practice_row_to_obj(row: dict, line_no: int) -> dict | None:
     text = build_plain_text(row)
     exp, exp_html = practice_exp_fields(row, line_no)
     qid = PRACTICE_ID_BASE + qno
-    return {
+    return with_exam({
         "id": qid,
         "year": PRACTICE_POOL_YEAR,
         "num": qno,
@@ -175,7 +191,7 @@ def practice_row_to_obj(row: dict, line_no: int) -> dict | None:
         "level": level_from_tags(row.get("tags", "")),
         "diff": diff_tier_from_tags(row.get("tags", "")),
         "publicPath": f"q/practice/p{qno:03d}/index.html",
-    }
+    }, row_exam(row))
 
 
 def load_practice_questions() -> list[dict]:

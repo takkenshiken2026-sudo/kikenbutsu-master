@@ -92,6 +92,15 @@
 
 ---
 
+## 実装ログ
+
+- **2026-10-29 増分①（基盤）完了**
+  - `site-config.json` に `exams` レジストリ追加（otsu4=published／heishu・kou=planned。形式・選択肢数・試験時間・科目別問題数を定義）。
+  - `tools/site_config.py` に `exams()` / `default_exam_id()` を追加し、`site-config.js`（`window.SITE_CONFIG`）へ `exams`・`defaultExam` を払い出し。
+  - 問題生成器 `tools/csv_to_exam_site_past_js.py` に任意列 `exam` を導入。既定試験（otsu4）は `exam` キーを出力せず、関連試験のみ付与 → **乙4の生成データ（exam-site-data-*.js）は不変**。
+  - 検証: `build_all.py` exit 0。exam-site-data-past/practice/ichimondou.js に差分なしを確認。
+  - 画面表示は未変化（次の増分②でSPA試験セレクタを追加して初めて表示される）。
+
 ## 6. 不変条件（全フェーズ共通）
 
 1. 乙4のURL・SEO評価・出力を壊さない。
