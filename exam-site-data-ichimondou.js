@@ -4769,5 +4769,1085 @@ window.ICHIMONDOU_ROWS = [
     "correctAnswer": true,
     "exp": "給油中はエンジンを止める。",
     "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>給油中はエンジンを止め、火気を避けます。静電気対策も重要です。「給油作業中は、自動車のエンジンを止める。」が正しい記述か、定義と照合して判断する。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「給油作業中は、自動車のエンジンを止める。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n給油中はエンジンを止め、火気を避けます。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-031",
+    "exam": "heishu",
+    "field": "law",
+    "statement": "灯油の指定数量は1000Lである。",
+    "correctAnswer": true,
+    "exp": "灯油の指定数量は1000L。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>灯油は第二石油類（非水溶性）で指定数量は1000Lです。「灯油の指定数量は1000Lである。」が正しい記述か、定義と照合して判断する。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「灯油の指定数量は1000Lである。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n灯油は第二石油類（非水溶性）で指定数量は1000Lです。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-032",
+    "exam": "heishu",
+    "field": "law",
+    "statement": "ガソリンの指定数量は1000Lである。",
+    "correctAnswer": false,
+    "exp": "ガソリンの指定数量は200L。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>ガソリンは第一石油類で指定数量は200Lです。1000Lは灯油・軽油の値です。「ガソリンの指定数量は1000Lである。」が誤った記述か、定義と照合して判断する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「ガソリンの指定数量は1000Lである。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\nガソリンは第一石油類で指定数量は200Lです。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-033",
+    "exam": "heishu",
+    "field": "law",
+    "statement": "特殊引火物の指定数量は50Lである。",
+    "correctAnswer": true,
+    "exp": "特殊引火物は50L。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>特殊引火物の指定数量は50Lで、第4類で最も小さい値です。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「特殊引火物の指定数量は50Lである。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n特殊引火物の指定数量は50Lで、第4類で最も小さい値です。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-034",
+    "exam": "heishu",
+    "field": "law",
+    "statement": "動植物油類の指定数量は1000Lである。",
+    "correctAnswer": false,
+    "exp": "動植物油類は10000L。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>動植物油類の指定数量は10000Lです。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>誤っている</strong>記述のため、答えは <strong class=\"q-marubatsu\">×</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「動植物油類の指定数量は1000Lである。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n動植物油類の指定数量は10000Lです。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-035",
+    "exam": "heishu",
+    "field": "law",
+    "statement": "指定数量の5分の1以上で指定数量未満のものは、市町村条例で規制される。",
+    "correctAnswer": true,
+    "exp": "1/5以上は市町村条例で規制。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>少量危険物として市町村の火災予防条例で規制されます。「指定数量の5分の1以上で指定数量未満のものは、市町村条例で規制される。」が正しい記述か、定義と照合して判断する。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「指定数量の5分の1以上で指定数量未満のものは、市町村条例で規制される。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n少量危険物として市町村の火災予防条例で規制されます。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-036",
+    "exam": "heishu",
+    "field": "law",
+    "statement": "丙種危険物取扱者は、すべての第4類危険物を取り扱える。",
+    "correctAnswer": false,
+    "exp": "丙種は第4類の一部のみ。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>丙種が扱えるのはガソリン・灯油・軽油など第4類の一部に限られます。「丙種危険物取扱者は、すべての第4類危険物を取り扱える。」が誤った記述か、定義と照合して判断する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「丙種危険物取扱者は、すべての第4類危険物を取り扱える。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n丙種が扱えるのはガソリン・灯油・軽油など第4類の一部に限られます。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-037",
+    "exam": "heishu",
+    "field": "law",
+    "statement": "丙種危険物取扱者は、ガソリン・灯油・軽油を取り扱える。",
+    "correctAnswer": true,
+    "exp": "丙種はガソリン等を扱える。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>丙種はガソリン・灯油・軽油・第三/第四石油類・動植物油類を扱えます。「丙種危険物取扱者は、ガソリン・灯油・軽油を取り扱える。」が正しい記述か、定義と照合して判断する。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「丙種危険物取扱者は、ガソリン・灯油・軽油を取り扱える。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n丙種はガソリン・灯油・軽油・第三/第四石油類・動植物油類を扱えます。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-038",
+    "exam": "heishu",
+    "field": "law",
+    "statement": "丙種危険物取扱者は、アルコール類を取り扱える。",
+    "correctAnswer": false,
+    "exp": "丙種はアルコール類を扱えない。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>丙種はアルコール類を取り扱えません。「丙種危険物取扱者は、アルコール類を取り扱える。」が誤った記述か、定義と照合して判断する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「丙種危険物取扱者は、アルコール類を取り扱える。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-039",
+    "exam": "heishu",
+    "field": "law",
+    "statement": "危険物取扱者免状は、甲種・乙種・丙種の3種類である。",
+    "correctAnswer": true,
+    "exp": "免状は甲・乙・丙の3種類。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>免状は甲種・乙種・丙種の3種類です。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「危険物取扱者免状は、甲種・乙種・丙種の3種類である。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-040",
+    "exam": "heishu",
+    "field": "law",
+    "statement": "丙種危険物取扱者の試験には、受験資格が必要である。",
+    "correctAnswer": false,
+    "exp": "丙種に受験資格は不要。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>丙種は乙種と同様、受験資格は不要で誰でも受けられます。「丙種危険物取扱者の試験には、受験資格が必要である。」が誤った記述か、定義と照合して判断する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「丙種危険物取扱者の試験には、受験資格が必要である。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n丙種は乙種と同様、受験資格は不要で誰でも受けられます。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-041",
+    "exam": "heishu",
+    "field": "law",
+    "statement": "危険物の取扱作業に従事している者は、原則3年以内ごとに保安講習を受ける。",
+    "correctAnswer": true,
+    "exp": "従事者は3年以内ごとに受講。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>従事している危険物取扱者は原則3年以内ごとに受講します。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「危険物の取扱作業に従事している者は、原則3年以内ごとに保安講習を受ける。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n従事している危険物取扱者は原則3年以内ごとに受講します。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-042",
+    "exam": "heishu",
+    "field": "law",
+    "statement": "取扱作業に従事している丙種は、保安講習の対象にならない。",
+    "correctAnswer": false,
+    "exp": "従事中の丙種も対象。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>従事している丙種も保安講習の対象になります。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>誤っている</strong>記述のため、答えは <strong class=\"q-marubatsu\">×</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「取扱作業に従事している丙種は、保安講習の対象にならない。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n従事している丙種も保安講習の対象になります。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-043",
+    "exam": "heishu",
+    "field": "law",
+    "statement": "移動タンク貯蔵所で危険物を移送するときは、危険物取扱者が乗車する必要がある。",
+    "correctAnswer": true,
+    "exp": "移送は有資格者が乗車。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>移送はその危険物を扱える危険物取扱者が乗車して行います。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「移動タンク貯蔵所で危険物を移送するときは、危険物取扱者が乗車する必要がある。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n移送はその危険物を扱える危険物取扱者が乗車して行います。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-044",
+    "exam": "heishu",
+    "field": "law",
+    "statement": "危険物の運搬は、指定数量未満なら技術上の基準がない。",
+    "correctAnswer": false,
+    "exp": "運搬は指定数量未満でも基準あり。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>運搬は指定数量未満でも基準があり、容器に品名等を表示します。「危険物の運搬は、指定数量未満なら技術上の基準がない。」が誤った記述か、定義と照合して判断する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「危険物の運搬は、指定数量未満なら技術上の基準がない。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n運搬は指定数量未満でも基準があり、容器に品名等を表示します。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-045",
+    "exam": "heishu",
+    "field": "law",
+    "statement": "セルフ式の給油取扱所でも、従業員による監視が必要である。",
+    "correctAnswer": true,
+    "exp": "セルフでも監視が必要。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>セルフ式でも従業員が給油を監視・制御する必要があります。「セルフ式の給油取扱所でも、従業員による監視が必要である。」が正しい記述か、定義と照合して判断する。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「セルフ式の給油取扱所でも、従業員による監視が必要である。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\nセルフ式でも従業員が給油を監視・制御する必要があります。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-046",
+    "exam": "heishu",
+    "field": "law",
+    "statement": "危険物保安監督者は、丙種からも選任できる。",
+    "correctAnswer": false,
+    "exp": "丙種は監督者になれない。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>保安監督者は実務6か月以上の甲種または乙種から選任し、丙種は選任できません。「危険物保安監督者は、丙種からも選任できる。」が誤った記述か、定義と照合して判断する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「危険物保安監督者は、丙種からも選任できる。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n保安監督者は実務6か月以上の甲種または乙種から選任し、丙種は選任できません。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-047",
+    "exam": "heishu",
+    "field": "law",
+    "statement": "危険物保安監督者を選任・解任したときは、遅滞なく届け出る。",
+    "correctAnswer": true,
+    "exp": "選任・解任は遅滞なく届出。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>選任・解任したときは遅滞なく市町村長等に届け出ます。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「危険物保安監督者を選任・解任したときは、遅滞なく届け出る。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n選任・解任したときは遅滞なく市町村長等に届け出ます。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-048",
+    "exam": "heishu",
+    "field": "law",
+    "statement": "製造所等の定期点検では、点検の記録を作成しなくてよい。",
+    "correctAnswer": false,
+    "exp": "定期点検は記録を保存。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>定期点検では記録を作成し保存する必要があります。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>誤っている</strong>記述のため、答えは <strong class=\"q-marubatsu\">×</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「製造所等の定期点検では、点検の記録を作成しなくてよい。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n定期点検では記録を作成し保存する必要があります。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-049",
+    "exam": "heishu",
+    "field": "law",
+    "statement": "製造所等の位置・構造・設備には、技術上の基準がある。",
+    "correctAnswer": true,
+    "exp": "位置・構造・設備に技術基準。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>製造所等には位置・構造・設備の技術上の基準があります。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「製造所等の位置・構造・設備には、技術上の基準がある。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n製造所等には位置・構造・設備の技術上の基準があります。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-050",
+    "exam": "heishu",
+    "field": "law",
+    "statement": "製造所等を廃止したときは、届出は不要である。",
+    "correctAnswer": false,
+    "exp": "廃止は遅滞なく届出。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>廃止したときは遅滞なく市町村長等に届け出ます。「製造所等を廃止したときは、届出は不要である。」が誤った記述か、定義と照合して判断する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「製造所等を廃止したときは、届出は不要である。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n廃止したときは遅滞なく市町村長等に届け出ます。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-051",
+    "exam": "heishu",
+    "field": "law",
+    "statement": "製造所等は設置許可後、完成検査に合格してから使用する。",
+    "correctAnswer": true,
+    "exp": "許可後は完成検査合格で使用。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>設置許可後に完成検査を受け、合格してから使用します。「製造所等は設置許可後、完成検査に合格してから使用する。」が正しい記述か、定義と照合して判断する。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「製造所等は設置許可後、完成検査に合格してから使用する。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n設置許可後に完成検査を受け、合格してから使用します。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-052",
+    "exam": "heishu",
+    "field": "law",
+    "statement": "無資格者は、立会いなしで危険物を取り扱える。",
+    "correctAnswer": false,
+    "exp": "無資格者は甲・乙の立会いが必要。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>無資格者が扱うには甲種または乙種の立会いが必要です。「無資格者は、立会いなしで危険物を取り扱える。」が誤った記述か、定義と照合して判断する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「無資格者は、立会いなしで危険物を取り扱える。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n無資格者が扱うには甲種または乙種の立会いが必要です。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-053",
+    "exam": "heishu",
+    "field": "law",
+    "statement": "製造所等には、見やすい場所に標識や掲示板を設ける。",
+    "correctAnswer": true,
+    "exp": "標識・掲示板を設ける。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>製造所等には見やすい場所に標識や防火の掲示板を設けます。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「製造所等には、見やすい場所に標識や掲示板を設ける。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n製造所等には見やすい場所に標識や防火の掲示板を設けます。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-054",
+    "exam": "heishu",
+    "field": "law",
+    "statement": "消防法上、第4類は酸化性液体の類である。",
+    "correctAnswer": false,
+    "exp": "第4類は引火性液体。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>第4類は引火性液体の類です。酸化性液体は第6類です。「消防法上、第4類は酸化性液体の類である。」が誤った記述か、定義と照合して判断する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「消防法上、第4類は酸化性液体の類である。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-055",
+    "exam": "heishu",
+    "field": "law",
+    "statement": "危険物施設は、製造所・貯蔵所・取扱所に大きく分けられる。",
+    "correctAnswer": true,
+    "exp": "施設は3区分。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>危険物施設は製造所・貯蔵所・取扱所に区分されます。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「危険物施設は、製造所・貯蔵所・取扱所に大きく分けられる。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n危険物施設は製造所・貯蔵所・取扱所に区分されます。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-056",
+    "exam": "heishu",
+    "field": "law",
+    "statement": "給油取扱所は、貯蔵所の一種である。",
+    "correctAnswer": false,
+    "exp": "給油取扱所は取扱所。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>給油取扱所は取扱所の一種です。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>誤っている</strong>記述のため、答えは <strong class=\"q-marubatsu\">×</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「給油取扱所は、貯蔵所の一種である。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-057",
+    "exam": "heishu",
+    "field": "law",
+    "statement": "貯蔵所には、屋内貯蔵所や屋外タンク貯蔵所などの種類がある。",
+    "correctAnswer": true,
+    "exp": "貯蔵所に複数の種類。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>貯蔵所には屋内・屋外タンク・地下タンク・移動タンクなどがあります。「貯蔵所には、屋内貯蔵所や屋外タンク貯蔵所などの種類がある。」が正しい記述か、定義と照合して判断する。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「貯蔵所には、屋内貯蔵所や屋外タンク貯蔵所などの種類がある。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n貯蔵所には屋内・屋外タンク・地下タンク・移動タンクなどがあります。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-058",
+    "exam": "heishu",
+    "field": "law",
+    "statement": "複数の危険物を扱うときは、最も多い1種類だけで指定数量以上かを判断する。",
+    "correctAnswer": false,
+    "exp": "倍数を合算して判断。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>各倍数を合計して1以上かで判断します。「複数の危険物を扱うときは、最も多い1種類だけで指定数量以上かを判断する。」が誤った記述か、定義と照合して判断する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「複数の危険物を扱うときは、最も多い1種類だけで指定数量以上かを判断する。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-059",
+    "exam": "heishu",
+    "field": "law",
+    "statement": "免状を汚損・亡失したときは、再交付を申請できる。",
+    "correctAnswer": true,
+    "exp": "汚損・亡失は再交付。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>汚損・亡失したときは再交付を申請できます。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「免状を汚損・亡失したときは、再交付を申請できる。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n汚損・亡失したときは再交付を申請できます。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-060",
+    "exam": "heishu",
+    "field": "law",
+    "statement": "保安講習の受講義務者が受講しなくても、不利益はない。",
+    "correctAnswer": false,
+    "exp": "未受講は返納命令のおそれ。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>受講しないと免状の返納を命じられることがあります。「保安講習の受講義務者が受講しなくても、不利益はない。」が誤った記述か、定義と照合して判断する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「保安講習の受講義務者が受講しなくても、不利益はない。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n受講しないと免状の返納を命じられることがあります。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-061",
+    "exam": "heishu",
+    "field": "law",
+    "statement": "予防規程は、市町村長等の認可を受ける。",
+    "correctAnswer": true,
+    "exp": "予防規程は認可が必要。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>一定の施設で予防規程を定め、市町村長等の認可を受けます。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「予防規程は、市町村長等の認可を受ける。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n一定の施設で予防規程を定め、市町村長等の認可を受けます。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-062",
+    "exam": "heishu",
+    "field": "law",
+    "statement": "市町村長等は、立入検査を行うことができない。",
+    "correctAnswer": false,
+    "exp": "立入検査ができる。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>市町村長等は立入検査を行い、違反には措置命令を出せます。「市町村長等は、立入検査を行うことができない。」が誤った記述か、定義と照合して判断する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「市町村長等は、立入検査を行うことができない。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n市町村長等は立入検査を行い、違反には措置命令を出せます。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-063",
+    "exam": "heishu",
+    "field": "law",
+    "statement": "危険物の運搬では、混載が禁止される組合せがある。",
+    "correctAnswer": true,
+    "exp": "運搬に混載制限がある。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>性質の異なる類どうしで混載が禁止される組合せがあります。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「危険物の運搬では、混載が禁止される組合せがある。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n性質の異なる類どうしで混載が禁止される組合せがあります。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-064",
+    "exam": "heishu",
+    "field": "law",
+    "statement": "消火器は、第1種消火設備である。",
+    "correctAnswer": false,
+    "exp": "消火器は第5種。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>消火器は第5種消火設備にあたります。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>誤っている</strong>記述のため、答えは <strong class=\"q-marubatsu\">×</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「消火器は、第1種消火設備である。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-065",
+    "exam": "heishu",
+    "field": "law",
+    "statement": "一定の製造所等には、自動火災報知設備などの警報設備が必要である。",
+    "correctAnswer": true,
+    "exp": "一定施設に警報設備。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>一定規模以上の施設には警報設備が必要です。「一定の製造所等には、自動火災報知設備などの警報設備が必要である。」が正しい記述か、定義と照合して判断する。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「一定の製造所等には、自動火災報知設備などの警報設備が必要である。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n一定規模以上の施設には警報設備が必要です。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-066",
+    "exam": "heishu",
+    "field": "law",
+    "statement": "危険物は、下水に流して廃棄してよい。",
+    "correctAnswer": false,
+    "exp": "下水への廃棄は不可。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>廃棄は定められた方法で安全に行い、下水へは流しません。「危険物は、下水に流して廃棄してよい。」が誤った記述か、定義と照合して判断する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「危険物は、下水に流して廃棄してよい。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n廃棄は定められた方法で安全に行い、下水へは流しません。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-067",
+    "exam": "heishu",
+    "field": "law",
+    "statement": "製造所等の所有者等には、技術上の基準を守る義務がある。",
+    "correctAnswer": true,
+    "exp": "所有者等は基準を守る義務。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>所有者・管理者・占有者は技術上の基準を守る義務があります。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「製造所等の所有者等には、技術上の基準を守る義務がある。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n所有者・管理者・占有者は技術上の基準を守る義務があります。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-068",
+    "exam": "heishu",
+    "field": "law",
+    "statement": "危険物施設保安員は、危険物保安監督者より上位の立場である。",
+    "correctAnswer": false,
+    "exp": "施設保安員は監督者を補佐。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>施設保安員は保安監督者を補佐する立場です。「危険物施設保安員は、危険物保安監督者より上位の立場である。」が誤った記述か、定義と照合して判断する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「危険物施設保安員は、危険物保安監督者より上位の立場である。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n施設保安員は保安監督者を補佐する立場です。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-069",
+    "exam": "heishu",
+    "field": "law",
+    "statement": "危険物取扱者免状は、都道府県知事が交付する。",
+    "correctAnswer": true,
+    "exp": "免状は都道府県知事が交付。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>免状の交付や保安講習の実施は都道府県知事が行います。「危険物取扱者免状は、都道府県知事が交付する。」が正しい記述か、定義と照合して判断する。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「危険物取扱者免状は、都道府県知事が交付する。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n免状の交付や保安講習の実施は都道府県知事が行います。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-070",
+    "exam": "heishu",
+    "field": "law",
+    "statement": "製造所等の設備を変更するときは、許可が不要である。",
+    "correctAnswer": false,
+    "exp": "変更も許可が必要。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>位置・構造・設備の変更にも許可が必要です。「製造所等の設備を変更するときは、許可が不要である。」が誤った記述か、定義と照合して判断する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「製造所等の設備を変更するときは、許可が不要である。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n位置・構造・設備の変更にも許可が必要です。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-071",
+    "exam": "heishu",
+    "field": "rights",
+    "statement": "燃焼範囲とは、可燃性蒸気と空気の混合比のうち燃える濃度の範囲である。",
+    "correctAnswer": true,
+    "exp": "燃焼範囲は燃える濃度の幅。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>燃焼範囲は燃える混合濃度の幅で、広いほど危険です。「燃焼範囲とは、可燃性蒸気と空気の混合比のうち燃える濃度の範囲である。」が正しい記述か、定義と照合して判断する。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「燃焼範囲とは、可燃性蒸気と空気の混合比のうち燃える濃度の範囲である。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n燃焼範囲は燃える混合濃度の幅で、広いほど危険です。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-072",
+    "exam": "heishu",
+    "field": "rights",
+    "statement": "消火の基本は、加熱・加圧・冷却である。",
+    "correctAnswer": false,
+    "exp": "消火は除去・窒息・冷却。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>消火の基本は除去・窒息・冷却（＋抑制）です。「消火の基本は、加熱・加圧・冷却である。」が誤った記述か、定義と照合して判断する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「消火の基本は、加熱・加圧・冷却である。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n消火の基本は除去・窒息・冷却（＋抑制）です。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-073",
+    "exam": "heishu",
+    "field": "rights",
+    "statement": "引火性液体は、蒸発した蒸気が燃える蒸発燃焼である。",
+    "correctAnswer": true,
+    "exp": "引火性液体は蒸発燃焼。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>引火性液体は液面から出た蒸気が燃える蒸発燃焼です。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「引火性液体は、蒸発した蒸気が燃える蒸発燃焼である。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n引火性液体は液面から出た蒸気が燃える蒸発燃焼です。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-074",
+    "exam": "heishu",
+    "field": "rights",
+    "statement": "可燃性液体は、液体そのものが直接燃える。",
+    "correctAnswer": false,
+    "exp": "燃えるのは液体から出た蒸気。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>液体から蒸発した蒸気が空気と混ざって燃えます。「可燃性液体は、液体そのものが直接燃える。」が誤った記述か、定義と照合して判断する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「可燃性液体は、液体そのものが直接燃える。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n液体から蒸発した蒸気が空気と混ざって燃えます。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-075",
+    "exam": "heishu",
+    "field": "rights",
+    "statement": "湿度が低いほど、静電気はたまりやすい。",
+    "correctAnswer": true,
+    "exp": "低湿度は静電気がたまりやすい。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>乾燥（低湿度）ほど静電気がたまりやすく危険です。「湿度が低いほど、静電気はたまりやすい。」が正しい記述か、定義と照合して判断する。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「湿度が低いほど、静電気はたまりやすい。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n乾燥（低湿度）ほど静電気がたまりやすく危険です。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-076",
+    "exam": "heishu",
+    "field": "rights",
+    "statement": "熱の移動は、溶解・凝固・昇華の3つである。",
+    "correctAnswer": false,
+    "exp": "熱の移動は伝導・対流・放射。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>熱の移動は伝導・対流・放射の3つです。「熱の移動は、溶解・凝固・昇華の3つである。」が誤った記述か、定義と照合して判断する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「熱の移動は、溶解・凝固・昇華の3つである。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-077",
+    "exam": "heishu",
+    "field": "rights",
+    "statement": "燃焼は、熱と光を伴う酸化反応である。",
+    "correctAnswer": true,
+    "exp": "燃焼は熱と光を伴う酸化反応。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>燃焼は熱と光を伴う激しい酸化反応です。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「燃焼は、熱と光を伴う酸化反応である。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-078",
+    "exam": "heishu",
+    "field": "rights",
+    "statement": "発熱量が小さい物質ほど、燃えやすい。",
+    "correctAnswer": false,
+    "exp": "発熱量が大きいほど燃えやすい。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>発熱量が大きいほど燃えやすくなります。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>誤っている</strong>記述のため、答えは <strong class=\"q-marubatsu\">×</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「発熱量が小さい物質ほど、燃えやすい。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-079",
+    "exam": "heishu",
+    "field": "rights",
+    "statement": "二酸化炭素は、燃えない気体である。",
+    "correctAnswer": true,
+    "exp": "二酸化炭素は不燃性。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>二酸化炭素は不燃性で、窒息消火にも使われます。「二酸化炭素は、燃えない気体である。」が正しい記述か、定義と照合して判断する。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「二酸化炭素は、燃えない気体である。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n二酸化炭素は不燃性で、窒息消火にも使われます。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-080",
+    "exam": "heishu",
+    "field": "rights",
+    "statement": "除去消火とは、酸素の供給を断つ消火方法である。",
+    "correctAnswer": false,
+    "exp": "除去消火は可燃物を断つ。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>除去消火は可燃物を取り除く方法です。酸素を断つのは窒息消火です。「除去消火とは、酸素の供給を断つ消火方法である。」が誤った記述か、定義と照合して判断する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「除去消火とは、酸素の供給を断つ消火方法である。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-081",
+    "exam": "heishu",
+    "field": "rights",
+    "statement": "水による消火は、冷却作用が主である。",
+    "correctAnswer": true,
+    "exp": "水は冷却作用。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>水は比熱・蒸発熱が大きく、冷却作用で消火します。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「水による消火は、冷却作用が主である。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n水は比熱・蒸発熱が大きく、冷却作用で消火します。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-082",
+    "exam": "heishu",
+    "field": "rights",
+    "statement": "二酸化炭素消火剤は、狭い密閉空間でも酸欠の心配はない。",
+    "correctAnswer": false,
+    "exp": "CO2は狭所で酸欠注意。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>狭い密閉空間では酸欠の危険があるため注意が必要です。「二酸化炭素消火剤は、狭い密閉空間でも酸欠の心配はない。」が誤った記述か、定義と照合して判断する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「二酸化炭素消火剤は、狭い密閉空間でも酸欠の心配はない。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n狭い密閉空間では酸欠の危険があるため注意が必要です。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-083",
+    "exam": "heishu",
+    "field": "rights",
+    "statement": "粉末消火剤は、速効性がある。",
+    "correctAnswer": true,
+    "exp": "粉末は速効性がある。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>粉末消火剤は速効性があり、抑制と窒息の効果をもちます。「粉末消火剤は、速効性がある。」が正しい記述か、定義と照合して判断する。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「粉末消火剤は、速効性がある。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n粉末消火剤は速効性があり、抑制と窒息の効果をもちます。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-084",
+    "exam": "heishu",
+    "field": "rights",
+    "statement": "第一石油類の引火点は、70℃以上である。",
+    "correctAnswer": false,
+    "exp": "第一石油類は21℃未満。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>第一石油類の引火点は21℃未満です。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>誤っている</strong>記述のため、答えは <strong class=\"q-marubatsu\">×</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「第一石油類の引火点は、70℃以上である。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n第一石油類の引火点は21℃未満です。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-085",
+    "exam": "heishu",
+    "field": "rights",
+    "statement": "第三石油類の引火点は、70℃以上200℃未満である。",
+    "correctAnswer": true,
+    "exp": "第三石油類は70〜200℃未満。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>第三石油類は引火点70℃以上200℃未満で、重油などが該当します。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「第三石油類の引火点は、70℃以上200℃未満である。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n第三石油類は引火点70℃以上200℃未満で、重油などが該当します。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-086",
+    "exam": "heishu",
+    "field": "rights",
+    "statement": "第四石油類の引火点は、21℃未満である。",
+    "correctAnswer": false,
+    "exp": "第四石油類は200〜250℃未満。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>第四石油類の引火点は200℃以上250℃未満です。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>誤っている</strong>記述のため、答えは <strong class=\"q-marubatsu\">×</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「第四石油類の引火点は、21℃未満である。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n第四石油類の引火点は200℃以上250℃未満です。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-087",
+    "exam": "heishu",
+    "field": "rights",
+    "statement": "燃焼の酸素供給源は、ふつう空気中の酸素や酸化剤である。",
+    "correctAnswer": true,
+    "exp": "酸素供給源は空気・酸化剤。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>酸素供給源は空気中の酸素や酸化剤です。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「燃焼の酸素供給源は、ふつう空気中の酸素や酸化剤である。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-088",
+    "exam": "heishu",
+    "field": "rights",
+    "statement": "燃焼の連鎖反応は、消火とは無関係である。",
+    "correctAnswer": false,
+    "exp": "連鎖反応を断つと消火できる。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>連鎖反応を断つ抑制作用で消火できます。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>誤っている</strong>記述のため、答えは <strong class=\"q-marubatsu\">×</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「燃焼の連鎖反応は、消火とは無関係である。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-089",
+    "exam": "heishu",
+    "field": "rights",
+    "statement": "ガソリンの火災は、油火災（B火災）に分類される。",
+    "correctAnswer": true,
+    "exp": "ガソリンは油火災(B)。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>引火性液体の火災は油火災（B火災）です。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「ガソリンの火災は、油火災（B火災）に分類される。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n引火性液体の火災は油火災（B火災）です。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-090",
+    "exam": "heishu",
+    "field": "rights",
+    "statement": "ABC粉末消火器は、油火災には使えない。",
+    "correctAnswer": false,
+    "exp": "ABC粉末は油火災にも使える。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>ABC粉末消火器は普通・油・電気のいずれにも使えます。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>誤っている</strong>記述のため、答えは <strong class=\"q-marubatsu\">×</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「ABC粉末消火器は、油火災には使えない。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\nABC粉末消火器は普通・油・電気のいずれにも使えます。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-091",
+    "exam": "heishu",
+    "field": "rights",
+    "statement": "泡消火剤は、窒息作用と冷却作用で消火する。",
+    "correctAnswer": true,
+    "exp": "泡は窒息＋冷却。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>泡は油面を覆い窒息と冷却で消火します。「泡消火剤は、窒息作用と冷却作用で消火する。」が正しい記述か、定義と照合して判断する。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「泡消火剤は、窒息作用と冷却作用で消火する。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-092",
+    "exam": "heishu",
+    "field": "rights",
+    "statement": "ハロゲン化物消火剤の主な作用は、冷却である。",
+    "correctAnswer": false,
+    "exp": "ハロゲン化物は抑制作用。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>主な作用は連鎖反応を断つ抑制（負触媒）です。「ハロゲン化物消火剤の主な作用は、冷却である。」が誤った記述か、定義と照合して判断する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「ハロゲン化物消火剤の主な作用は、冷却である。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n主な作用は連鎖反応を断つ抑制（負触媒）です。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-093",
+    "exam": "heishu",
+    "field": "rights",
+    "statement": "乾燥砂は、覆って酸素を断つ窒息作用で消火に使える。",
+    "correctAnswer": true,
+    "exp": "乾燥砂は窒息消火。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>乾燥砂は窒息作用で消火し、少量の危険物火災に有効です。「乾燥砂は、覆って酸素を断つ窒息作用で消火に使える。」が正しい記述か、定義と照合して判断する。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「乾燥砂は、覆って酸素を断つ窒息作用で消火に使える。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n乾燥砂は窒息作用で消火し、少量の危険物火災に有効です。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-094",
+    "exam": "heishu",
+    "field": "rights",
+    "statement": "粉じん爆発は、液体でのみ起こる。",
+    "correctAnswer": false,
+    "exp": "粉じん爆発は浮遊粉じん。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>粉じん爆発は空気中に浮遊した可燃性の粉じんに着火して起こります。「粉じん爆発は、液体でのみ起こる。」が誤った記述か、定義と照合して判断する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「粉じん爆発は、液体でのみ起こる。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n粉じん爆発は空気中に浮遊した可燃性の粉じんに着火して起こります。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-095",
+    "exam": "heishu",
+    "field": "rights",
+    "statement": "一般に、気体は液体や固体より燃えやすい。",
+    "correctAnswer": true,
+    "exp": "気体は燃えやすい。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>空気とよく混ざる気体は一般に燃えやすい傾向があります。「一般に、気体は液体や固体より燃えやすい。」が正しい記述か、定義と照合して判断する。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「一般に、気体は液体や固体より燃えやすい。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n空気とよく混ざる気体は一般に燃えやすい傾向があります。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-096",
+    "exam": "heishu",
+    "field": "rights",
+    "statement": "液体をろ過しても、静電気は発生しない。",
+    "correctAnswer": false,
+    "exp": "ろ過でも静電気が発生。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>流動・ろ過・噴出などで静電気が発生しやすくなります。「液体をろ過しても、静電気は発生しない。」が誤った記述か、定義と照合して判断する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「液体をろ過しても、静電気は発生しない。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n流動・ろ過・噴出などで静電気が発生しやすくなります。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-097",
+    "exam": "heishu",
+    "field": "rights",
+    "statement": "消火器には、適応する火災が絵表示などで示されている。",
+    "correctAnswer": true,
+    "exp": "消火器に適応火災の表示。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>消火器には適応火災（普通・油・電気）が表示されています。「消火器には、適応する火災が絵表示などで示されている。」が正しい記述か、定義と照合して判断する。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「消火器には、適応する火災が絵表示などで示されている。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n消火器には適応火災（普通・油・電気）が表示されています。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-098",
+    "exam": "heishu",
+    "field": "rights",
+    "statement": "液体は、温度が上がると収縮する。",
+    "correctAnswer": false,
+    "exp": "液体は温めると膨張する。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>液体は温度が上がると膨張します。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>誤っている</strong>記述のため、答えは <strong class=\"q-marubatsu\">×</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「液体は、温度が上がると収縮する。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-099",
+    "exam": "heishu",
+    "field": "rights",
+    "statement": "蒸気比重は、空気を基準にした蒸気の重さである。",
+    "correctAnswer": true,
+    "exp": "蒸気比重は空気が基準。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>蒸気比重は空気（＝1）を基準にした相対的な重さです。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「蒸気比重は、空気を基準にした蒸気の重さである。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n蒸気比重は空気（＝1）を基準にした相対的な重さです。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-100",
+    "exam": "heishu",
+    "field": "rights",
+    "statement": "沸点が高い液体ほど、蒸発しやすい。",
+    "correctAnswer": false,
+    "exp": "沸点が低いほど蒸発しやすい。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>沸点が低い液体ほど蒸発しやすくなります。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>誤っている</strong>記述のため、答えは <strong class=\"q-marubatsu\">×</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「沸点が高い液体ほど、蒸発しやすい。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n沸点が低い液体ほど蒸発しやすくなります。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-101",
+    "exam": "heishu",
+    "field": "rights",
+    "statement": "加熱は、消火の要素ではない。",
+    "correctAnswer": true,
+    "exp": "加熱は消火の要素でない。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>消火の要素は除去・窒息・冷却（＋抑制）で、加熱は含まれません。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「加熱は、消火の要素ではない。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n消火の要素は除去・窒息・冷却（＋抑制）で、加熱は含まれません。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-102",
+    "exam": "heishu",
+    "field": "rights",
+    "statement": "可燃性蒸気は、燃焼範囲の下限より薄くても燃える。",
+    "correctAnswer": false,
+    "exp": "下限より薄いと燃えない。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>下限より薄くても上限より濃くても燃えません。「可燃性蒸気は、燃焼範囲の下限より薄くても燃える。」が誤った記述か、定義と照合して判断する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「可燃性蒸気は、燃焼範囲の下限より薄くても燃える。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n下限より薄くても上限より濃くても燃えません。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-103",
+    "exam": "heishu",
+    "field": "rights",
+    "statement": "電気火災に棒状の水を使うと、感電のおそれがある。",
+    "correctAnswer": true,
+    "exp": "電気火災に棒状水は不適。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>棒状の水は感電のおそれがあり、電気火災には二酸化炭素や粉末が適します。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「電気火災に棒状の水を使うと、感電のおそれがある。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n棒状の水は感電のおそれがあり、電気火災には二酸化炭素や粉末が適します。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-104",
+    "exam": "heishu",
+    "field": "rights",
+    "statement": "強化液消火剤は、燃焼を助ける。",
+    "correctAnswer": false,
+    "exp": "強化液は冷却で消火。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>強化液は冷却効果で消火し、霧状にすると油・電気火災にも使えます。「強化液消火剤は、燃焼を助ける。」が誤った記述か、定義と照合して判断する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「強化液消火剤は、燃焼を助ける。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n強化液は冷却効果で消火し、霧状にすると油・電気火災にも使えます。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-105",
+    "exam": "heishu",
+    "field": "rights",
+    "statement": "自然発火は、火源がなくても熱の蓄積によって起こることがある。",
+    "correctAnswer": true,
+    "exp": "自然発火は熱の蓄積で起こる。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>酸化熱などが蓄積して発火点に達すると自然発火します。「自然発火は、火源がなくても熱の蓄積によって起こることがある。」が正しい記述か、定義と照合して判断する。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「自然発火は、火源がなくても熱の蓄積によって起こることがある。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n酸化熱などが蓄積して発火点に達すると自然発火します。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-106",
+    "exam": "heishu",
+    "field": "rights",
+    "statement": "酸化剤と可燃物を混ぜても、危険はない。",
+    "correctAnswer": false,
+    "exp": "酸化剤＋可燃物は危険。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>酸化剤と可燃物の混合は発火・爆発の危険が高まります。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>誤っている</strong>記述のため、答えは <strong class=\"q-marubatsu\">×</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「酸化剤と可燃物を混ぜても、危険はない。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n酸化剤と可燃物の混合は発火・爆発の危険が高まります。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-107",
+    "exam": "heishu",
+    "field": "rights",
+    "statement": "静電気の放電火花は、点火源になることがある。",
+    "correctAnswer": true,
+    "exp": "静電気火花は点火源。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>静電気の火花、電気火花、摩擦熱などは点火源になります。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「静電気の放電火花は、点火源になることがある。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n静電気の火花、電気火花、摩擦熱などは点火源になります。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-108",
+    "exam": "heishu",
+    "field": "rights",
+    "statement": "気体は、液体や固体より燃えにくい。",
+    "correctAnswer": false,
+    "exp": "気体は燃えやすい。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>一般に気体は空気とよく混ざるため燃えやすい傾向があります。「気体は、液体や固体より燃えにくい。」が誤った記述か、定義と照合して判断する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「気体は、液体や固体より燃えにくい。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n一般に気体は空気とよく混ざるため燃えやすい傾向があります。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-109",
+    "exam": "heishu",
+    "field": "rights",
+    "statement": "消火の方法には、抑制（負触媒）を利用するものもある。",
+    "correctAnswer": true,
+    "exp": "抑制を利用する消火もある。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>除去・窒息・冷却に加え、連鎖反応を断つ抑制を利用する消火もあります。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「消火の方法には、抑制（負触媒）を利用するものもある。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n除去・窒息・冷却に加え、連鎖反応を断つ抑制を利用する消火もあります。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-110",
+    "exam": "heishu",
+    "field": "rights",
+    "statement": "燃焼には、可燃物と酸素だけあればよく、点火源は不要である。",
+    "correctAnswer": false,
+    "exp": "三要素が必要。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>燃焼には可燃物・酸素供給源・点火源の三要素が必要です。「燃焼には、可燃物と酸素だけあればよく、点火源は不要である。」が誤った記述か、定義と照合して判断する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「燃焼には、可燃物と酸素だけあればよく、点火源は不要である。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n燃焼には可燃物・酸素供給源・点火源の三要素が必要です。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-111",
+    "exam": "heishu",
+    "field": "limit",
+    "statement": "ガソリンの引火点は、約-40℃以下である。",
+    "correctAnswer": true,
+    "exp": "ガソリンの引火点は約-40℃以下。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>ガソリンの引火点は約-40℃以下で、常温でも引火しやすい液体です。「ガソリンの引火点は、約-40℃以下である。」が正しい記述か、定義と照合して判断する。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「ガソリンの引火点は、約-40℃以下である。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\nガソリンの引火点は約-40℃以下で、常温でも引火しやすい液体です。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-112",
+    "exam": "heishu",
+    "field": "limit",
+    "statement": "灯油の引火点は、-40℃以下である。",
+    "correctAnswer": false,
+    "exp": "灯油の引火点は約40℃以上。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>灯油の引火点はおよそ40℃以上です。-40℃以下はガソリンの値です。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>誤っている</strong>記述のため、答えは <strong class=\"q-marubatsu\">×</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「灯油の引火点は、-40℃以下である。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-113",
+    "exam": "heishu",
+    "field": "limit",
+    "statement": "軽油の引火点は、およそ45℃以上である。",
+    "correctAnswer": true,
+    "exp": "軽油の引火点は約45℃以上。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>軽油の引火点はおよそ45℃以上です。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「軽油の引火点は、およそ45℃以上である。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-114",
+    "exam": "heishu",
+    "field": "limit",
+    "statement": "軽油は、ガソリンより引火しやすい。",
+    "correctAnswer": false,
+    "exp": "ガソリンの方が引火しやすい。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>軽油はガソリンより引火点が高く、ガソリンの方が引火しやすい液体です。「軽油は、ガソリンより引火しやすい。」が誤った記述か、定義と照合して判断する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「軽油は、ガソリンより引火しやすい。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n軽油はガソリンより引火点が高く、ガソリンの方が引火しやすい液体です。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-115",
+    "exam": "heishu",
+    "field": "limit",
+    "statement": "自動車用ガソリンは、オレンジ色に着色されている。",
+    "correctAnswer": true,
+    "exp": "ガソリンはオレンジ着色。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>自動車用ガソリンはオレンジ色に着色され、特有の臭気があります。「自動車用ガソリンは、オレンジ色に着色されている。」が正しい記述か、定義と照合して判断する。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「自動車用ガソリンは、オレンジ色に着色されている。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n自動車用ガソリンはオレンジ色に着色され、特有の臭気があります。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-116",
+    "exam": "heishu",
+    "field": "limit",
+    "statement": "灯油は、濃い赤色に着色されている。",
+    "correctAnswer": false,
+    "exp": "灯油は無色〜淡黄色。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>灯油は無色または淡い黄色です。「灯油は、濃い赤色に着色されている。」が誤った記述か、定義と照合して判断する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「灯油は、濃い赤色に着色されている。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-117",
+    "exam": "heishu",
+    "field": "limit",
+    "statement": "第4類危険物の多くは、水より軽い。",
+    "correctAnswer": true,
+    "exp": "第4類は多く水より軽い。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>第4類の多くは水より軽く、非水溶性のものは水面に浮きます。「第4類危険物の多くは、水より軽い。」が正しい記述か、定義と照合して判断する。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「第4類危険物の多くは、水より軽い。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n第4類の多くは水より軽く、非水溶性のものは水面に浮きます。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-118",
+    "exam": "heishu",
+    "field": "limit",
+    "statement": "第4類危険物は、すべて水によく溶ける。",
+    "correctAnswer": false,
+    "exp": "第4類は多く非水溶性。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>第4類の多くは水に溶けません。水溶性のものもありますが一部です。「第4類危険物は、すべて水によく溶ける。」が誤った記述か、定義と照合して判断する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「第4類危険物は、すべて水によく溶ける。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-119",
+    "exam": "heishu",
+    "field": "limit",
+    "statement": "揮発性が高い液体ほど、蒸気が多く出て危険である。",
+    "correctAnswer": true,
+    "exp": "揮発性が高いほど危険。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>揮発性が高い液体は蒸気を多く発生し、引火の危険が高まります。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「揮発性が高い液体ほど、蒸気が多く出て危険である。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n揮発性が高い液体は蒸気を多く発生し、引火の危険が高まります。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-120",
+    "exam": "heishu",
+    "field": "limit",
+    "statement": "引火点が高い液体ほど、引火しやすい。",
+    "correctAnswer": false,
+    "exp": "引火点が低いほど引火しやすい。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>引火点が低い液体ほど低温でも引火し、危険です。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>誤っている</strong>記述のため、答えは <strong class=\"q-marubatsu\">×</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「引火点が高い液体ほど、引火しやすい。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n引火点が低い液体ほど低温でも引火し、危険です。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-121",
+    "exam": "heishu",
+    "field": "limit",
+    "statement": "引火性液体を容器に入れるときは、膨張に備え空間容積を残す。",
+    "correctAnswer": true,
+    "exp": "膨張に備え空間を残す。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>液温が上がると膨張するため、収納時に空間容積を残します。「引火性液体を容器に入れるときは、膨張に備え空間容積を残す。」が正しい記述か、定義と照合して判断する。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「引火性液体を容器に入れるときは、膨張に備え空間容積を残す。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n液温が上がると膨張するため、収納時に空間容積を残します。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-122",
+    "exam": "heishu",
+    "field": "limit",
+    "statement": "蒸気がたまる低い所で火気を使っても、特に問題はない。",
+    "correctAnswer": false,
+    "exp": "低所での火気使用は危険。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>蒸気は低所にたまるため、そこで火気を使うのは危険です。「蒸気がたまる低い所で火気を使っても、特に問題はない。」が誤った記述か、定義と照合して判断する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「蒸気がたまる低い所で火気を使っても、特に問題はない。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n蒸気は低所にたまるため、そこで火気を使うのは危険です。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-123",
+    "exam": "heishu",
+    "field": "limit",
+    "statement": "水に溶けない第4類危険物は、水で薄めて安全にすることはできない。",
+    "correctAnswer": true,
+    "exp": "非水溶性は水で希釈できない。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>非水溶性の第4類は水に浮き、水で薄めることはできません。「水に溶けない第4類危険物は、水で薄めて安全にすることはできない。」が正しい記述か、定義と照合して判断する。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「水に溶けない第4類危険物は、水で薄めて安全にすることはできない。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n非水溶性の第4類は水に浮き、水で薄めることはできません。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-124",
+    "exam": "heishu",
+    "field": "limit",
+    "statement": "漏えいした引火性液体は、水で下水へ流してよい。",
+    "correctAnswer": false,
+    "exp": "漏えいを下水へ流すのは不可。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>下水へ流すと危険が広がり環境汚染にもなります。砂などで囲い処理します。「漏えいした引火性液体は、水で下水へ流してよい。」が誤った記述か、定義と照合して判断する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「漏えいした引火性液体は、水で下水へ流してよい。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n下水へ流すと危険が広がり環境汚染にもなります。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-125",
+    "exam": "heishu",
+    "field": "limit",
+    "statement": "油のしみ込んだ布は、ふた付きの不燃性容器に入れて処理する。",
+    "correctAnswer": true,
+    "exp": "油布はふた付き不燃容器へ。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>油のしみた布は自然発火のおそれがあるため、ふた付き不燃容器で処理します。「油のしみ込んだ布は、ふた付きの不燃性容器に入れて処理する。」が正しい記述か、定義と照合して判断する。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「油のしみ込んだ布は、ふた付きの不燃性容器に入れて処理する。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n油のしみた布は自然発火のおそれがあるため、ふた付き不燃容器で処理します。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-126",
+    "exam": "heishu",
+    "field": "limit",
+    "statement": "引火性液体の貯蔵タンクには、通気管を設けてはならない。",
+    "correctAnswer": false,
+    "exp": "タンクに通気管を設ける。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>温度変化による内圧を逃がすため、タンクには通気管などが設けられます。「引火性液体の貯蔵タンクには、通気管を設けてはならない。」が誤った記述か、定義と照合して判断する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「引火性液体の貯蔵タンクには、通気管を設けてはならない。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n温度変化による内圧を逃がすため、タンクには通気管などが設けられます。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-127",
+    "exam": "heishu",
+    "field": "limit",
+    "statement": "可燃性蒸気がある場所の電気設備は、防爆構造などの配慮が必要である。",
+    "correctAnswer": true,
+    "exp": "蒸気のある所は防爆配慮。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>蒸気のある場所では電気火花が点火源になるため防爆構造などが必要です。「可燃性蒸気がある場所の電気設備は、防爆構造などの配慮が必要である。」が正しい記述か、定義と照合して判断する。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「可燃性蒸気がある場所の電気設備は、防爆構造などの配慮が必要である。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n蒸気のある場所では電気火花が点火源になるため防爆構造などが必要です。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-128",
+    "exam": "heishu",
+    "field": "limit",
+    "statement": "非水溶性の油火災に棒状の水をかけると、速やかに鎮火する。",
+    "correctAnswer": false,
+    "exp": "油火災に棒状水は火面を広げる。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>油は水に浮くため、棒状の水では火のついた油が広がり危険です。「非水溶性の油火災に棒状の水をかけると、速やかに鎮火する。」が誤った記述か、定義と照合して判断する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「非水溶性の油火災に棒状の水をかけると、速やかに鎮火する。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n油は水に浮くため、棒状の水では火のついた油が広がり危険です。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-129",
+    "exam": "heishu",
+    "field": "limit",
+    "statement": "危険物の容器には、品名や数量などを表示する。",
+    "correctAnswer": true,
+    "exp": "容器に品名・数量を表示。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>危険物の容器には品名・数量・注意事項などを表示します。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「危険物の容器には、品名や数量などを表示する。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n危険物の容器には品名・数量・注意事項などを表示します。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-130",
+    "exam": "heishu",
+    "field": "limit",
+    "statement": "引火性液体の火災は、液面を伝って広がることはない。",
+    "correctAnswer": false,
+    "exp": "油火災は液面を伝い広がる。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>引火性液体の火災は液面を伝って広がり、流出すると延焼が拡大します。「引火性液体の火災は、液面を伝って広がることはない。」が誤った記述か、定義と照合して判断する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「引火性液体の火災は、液面を伝って広がることはない。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n引火性液体の火災は液面を伝って広がり、流出すると延焼が拡大します。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-131",
+    "exam": "heishu",
+    "field": "limit",
+    "statement": "取扱所では、ためますなどで流出の拡散を防ぐ。",
+    "correctAnswer": true,
+    "exp": "流出はためます等で防ぐ。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>こぼれた危険物が拡散しないよう、ためますや傾斜で集める工夫がされます。「取扱所では、ためますなどで流出の拡散を防ぐ。」が正しい記述か、定義と照合して判断する。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「取扱所では、ためますなどで流出の拡散を防ぐ。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\nこぼれた危険物が拡散しないよう、ためますや傾斜で集める工夫がされます。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-132",
+    "exam": "heishu",
+    "field": "limit",
+    "statement": "給油作業では、人体の静電気を気にする必要はない。",
+    "correctAnswer": false,
+    "exp": "静電気を逃がしてから給油。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>人体や器具の静電気を逃がしてから給油します。放電火花が点火源になります。「給油作業では、人体の静電気を気にする必要はない。」が誤った記述か、定義と照合して判断する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「給油作業では、人体の静電気を気にする必要はない。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n人体や器具の静電気を逃がしてから給油します。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-133",
+    "exam": "heishu",
+    "field": "limit",
+    "statement": "第4類危険物には、有機化合物であるものが多い。",
+    "correctAnswer": true,
+    "exp": "第4類は有機化合物が多い。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>第4類はガソリンや灯油など有機化合物が多いのが特徴です。「第4類危険物には、有機化合物であるものが多い。」が正しい記述か、定義と照合して判断する。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「第4類危険物には、有機化合物であるものが多い。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n第4類はガソリンや灯油など有機化合物が多いのが特徴です。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-134",
+    "exam": "heishu",
+    "field": "limit",
+    "statement": "指定数量以上の危険物は、どこでも自由に貯蔵できる。",
+    "correctAnswer": false,
+    "exp": "許可施設で貯蔵・取扱い。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>指定数量以上は原則として許可を受けた施設で貯蔵・取り扱います。「指定数量以上の危険物は、どこでも自由に貯蔵できる。」が誤った記述か、定義と照合して判断する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「指定数量以上の危険物は、どこでも自由に貯蔵できる。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n指定数量以上は原則として許可を受けた施設で貯蔵・取り扱います。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-135",
+    "exam": "heishu",
+    "field": "limit",
+    "statement": "第4類危険物を扱う場所は、低い所も含めて換気する。",
+    "correctAnswer": true,
+    "exp": "低所も含め換気する。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>蒸気は低所にたまるため、低所も含めて十分に換気します。「第4類危険物を扱う場所は、低い所も含めて換気する。」が正しい記述か、定義と照合して判断する。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「第4類危険物を扱う場所は、低い所も含めて換気する。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n蒸気は低所にたまるため、低所も含めて十分に換気します。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-136",
+    "exam": "heishu",
+    "field": "limit",
+    "statement": "ガソリンの蒸気は、空気より軽く上昇する。",
+    "correctAnswer": false,
+    "exp": "ガソリン蒸気は空気より重い。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>ガソリンの蒸気は空気より重く、低い所にたまりやすい性質があります。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>誤っている</strong>記述のため、答えは <strong class=\"q-marubatsu\">×</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「ガソリンの蒸気は、空気より軽く上昇する。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\nガソリンの蒸気は空気より重く、低い所にたまりやすい性質があります。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-137",
+    "exam": "heishu",
+    "field": "limit",
+    "statement": "ガソリンは、水に溶けない。",
+    "correctAnswer": true,
+    "exp": "ガソリンは水に溶けない。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>ガソリンは水に溶けず、水より軽い液体です。「ガソリンは、水に溶けない。」が正しい記述か、定義と照合して判断する。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「ガソリンは、水に溶けない。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\nガソリンは水に溶けず、水より軽い液体です。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-138",
+    "exam": "heishu",
+    "field": "limit",
+    "statement": "ガソリンは、水より重く水に沈む。",
+    "correctAnswer": false,
+    "exp": "ガソリンは水より軽い。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>ガソリンは水より軽く、水に浮きます。「ガソリンは、水より重く水に沈む。」が誤った記述か、定義と照合して判断する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「ガソリンは、水より重く水に沈む。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-139",
+    "exam": "heishu",
+    "field": "limit",
+    "statement": "灯油は、常温ではガソリンほど引火しやすくない。",
+    "correctAnswer": true,
+    "exp": "灯油は常温で引火しにくい。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>灯油は引火点が常温より高く、ガソリンほど容易には引火しません。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「灯油は、常温ではガソリンほど引火しやすくない。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n灯油は引火点が常温より高く、ガソリンほど容易には引火しません。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-140",
+    "exam": "heishu",
+    "field": "limit",
+    "statement": "重油は、1種類しかない。",
+    "correctAnswer": false,
+    "exp": "重油はA・B・C。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>重油は性状により、おおむねA・B・C（1〜3種）に分けられます。「重油は、1種類しかない。」が誤った記述か、定義と照合して判断する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「重油は、1種類しかない。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n重油は性状により、おおむねA・B・C（1〜3種）に分けられます。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-141",
+    "exam": "heishu",
+    "field": "limit",
+    "statement": "第4類危険物を貯蔵・取り扱う場所の掲示は「火気厳禁」である。",
+    "correctAnswer": true,
+    "exp": "第4類は火気厳禁。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>引火性液体の第4類では「火気厳禁」の掲示が必要です。「火気厳禁」が正しい記述か、定義と照合して判断する。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「火気厳禁」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n引火性液体の第4類では「火気厳禁」の掲示が必要です。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-142",
+    "exam": "heishu",
+    "field": "limit",
+    "statement": "静電気の火花は、引火の原因にならない。",
+    "correctAnswer": false,
+    "exp": "静電気の火花で引火し得る。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>たまった静電気の放電火花が点火源になり、引火の原因になります。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>誤っている</strong>記述のため、答えは <strong class=\"q-marubatsu\">×</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「静電気の火花は、引火の原因にならない。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\nたまった静電気の放電火花が点火源になり、引火の原因になります。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-143",
+    "exam": "heishu",
+    "field": "limit",
+    "statement": "性質の異なる危険物は、むやみに混ぜないようにする。",
+    "correctAnswer": true,
+    "exp": "むやみに混ぜない。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>混触により発火・発熱する危険があるため、むやみに混ぜません。「性質の異なる危険物は、むやみに混ぜないようにする。」が正しい記述か、定義と照合して判断する。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「性質の異なる危険物は、むやみに混ぜないようにする。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n混触により発火・発熱する危険があるため、むやみに混ぜません。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-144",
+    "exam": "heishu",
+    "field": "limit",
+    "statement": "引火性液体は、直射日光の当たる高温の場所に置くとよい。",
+    "correctAnswer": false,
+    "exp": "高温の場所は避ける。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>高温は危険なので、直射日光を避け冷暗所で保管します。「引火性液体は、直射日光の当たる高温の場所に置くとよい。」が誤った記述か、定義と照合して判断する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「引火性液体は、直射日光の当たる高温の場所に置くとよい。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n高温は危険なので、直射日光を避け冷暗所で保管します。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-145",
+    "exam": "heishu",
+    "field": "limit",
+    "statement": "液体を詰め替えるときは、流速を抑えると静電気が発生しにくい。",
+    "correctAnswer": true,
+    "exp": "流速を抑えると静電気を抑制。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>流速を抑えると静電気の発生を抑えられます。接地も有効です。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「液体を詰め替えるときは、流速を抑えると静電気が発生しにくい。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n流速を抑えると静電気の発生を抑えられます。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-146",
+    "exam": "heishu",
+    "field": "limit",
+    "statement": "容器や配管を接地すると、静電気がたまりやすくなる。",
+    "correctAnswer": false,
+    "exp": "接地で静電気を逃がす。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>接地すると、たまった静電気を大地へ逃がすことができます。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>誤っている</strong>記述のため、答えは <strong class=\"q-marubatsu\">×</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「容器や配管を接地すると、静電気がたまりやすくなる。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n接地すると、たまった静電気を大地へ逃がすことができます。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-147",
+    "exam": "heishu",
+    "field": "limit",
+    "statement": "引火性液体の蒸気は、空気と混ざって燃える。",
+    "correctAnswer": true,
+    "exp": "蒸気は空気と混ざって燃える。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>液面から出た蒸気が空気と混ざり、火源によって燃えます。「引火性液体の蒸気は、空気と混ざって燃える。」が正しい記述か、定義と照合して判断する。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「引火性液体の蒸気は、空気と混ざって燃える。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n液面から出た蒸気が空気と混ざり、火源によって燃えます。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-148",
+    "exam": "heishu",
+    "field": "limit",
+    "statement": "丙種は、第三石油類である重油を取り扱えない。",
+    "correctAnswer": false,
+    "exp": "丙種は重油を扱える。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>丙種は第三石油類（重油など）を取り扱えます。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>誤っている</strong>記述のため、答えは <strong class=\"q-marubatsu\">×</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「丙種は、第三石油類である重油を取り扱えない。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n丙種は第三石油類（重油など）を取り扱えます。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-149",
+    "exam": "heishu",
+    "field": "limit",
+    "statement": "第4類危険物の蒸気は、発生してもその場にとどまり流れない。",
+    "correctAnswer": false,
+    "exp": "蒸気は流れて遠くの火源へ。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>蒸気は空気より重く、低い所を流れて離れた火源まで達することがあります。「第4類危険物の蒸気は、発生してもその場にとどまり流れない。」が誤った記述か、定義と照合して判断する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「第4類危険物の蒸気は、発生してもその場にとどまり流れない。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n蒸気は空気より重く、低い所を流れて離れた火源まで達することがあります。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+  },
+  {
+    "id": "HS-TF-150",
+    "exam": "heishu",
+    "field": "limit",
+    "statement": "こぼれた危険物は、乾燥砂や吸着材で囲って拡散を防ぐとよい。",
+    "correctAnswer": true,
+    "exp": "漏えいは砂・吸着材で拡散防止。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>火気を断ち、乾燥砂や吸着材で囲い・吸い取って拡散を防ぎます。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「こぼれた危険物は、乾燥砂や吸着材で囲って拡散を防ぐとよい。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n火気を断ち、乾燥砂や吸着材で囲い・吸い取って拡散を防ぎます。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
   }
 ];
