@@ -101,6 +101,14 @@
   - 検証: `build_all.py` exit 0。exam-site-data-past/practice/ichimondou.js に差分なしを確認。
   - 画面表示は未変化（次の増分②でSPA試験セレクタを追加して初めて表示される）。
 
+- **2026-10-29 増分②（SPA試験セレクタの骨組み）完了**
+  - `index.html` に試験軸のプラミングを追加：`CURRENT_EXAM`（`?exam=`で切替、既定=乙4）・`questionExam()`・`isCurrentExamQuestion()`。
+  - 3つの問題プール（過去問 `applyCsvImportedQuestions`／実践演習 `collectPracticeQuestionsFlat`／一問一答 `buildIchiSourcePool`）に試験フィルタを適用。
+  - 試験切替UI `#exam-switcher` を `renderExamSwitcher()` で描画。**公開済み（status:published）が2つ以上のときだけ表示**。現状は乙4のみ＝非表示で画面不変。切替は `?exam=` 更新＋リロード方式（状態の多いSPAを安全に切替）。
+  - 未公開試験は `?exam=` でも到達不可（乙4へフォールバック）＝空プールを露出しない。
+  - 検証（Playwright）: 既定で switcher非表示・`QUESTIONS=35/実践=1000/一問一答=500` 不変、フィルタ双方向OK、未公開URLはフォールバック、JSエラーなし。`build_all.py` exit 0・exam-site-data-*.js 差分なし。
+  - 次（増分③）: 丙種の問題CSV（四肢）と制度ページを投入し、heishu を published にして切替を実地確認する。
+
 ## 6. 不変条件（全フェーズ共通）
 
 1. 乙4のURL・SEO評価・出力を壊さない。
