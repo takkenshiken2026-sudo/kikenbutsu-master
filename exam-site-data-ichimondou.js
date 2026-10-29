@@ -4759,7 +4759,7 @@ window.ICHIMONDOU_ROWS = [
     "statement": "重油は、常温で容易に引火する。",
     "correctAnswer": false,
     "exp": "重油は常温では引火しにくい。",
-    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>重油は引火点が高め（おおむね60℃以上）で、常温では引火しにくい液体です。加熱に注意します。「重油は、常温で容易に引火する。」が誤った記述か、定義と照合して判断する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「重油は、常温で容易に引火する。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n重油は引火点が高め（おおむね60℃以上）で、常温では引火しにくい液体です。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>重油は引火点が高めで、常温では引火しにくい液体です。加熱に注意します。「重油は、常温で容易に引火する。」が誤った記述か、定義と照合して判断する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「重油は、常温で容易に引火する。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n重油は引火点が高めで、常温では引火しにくい液体です。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
   },
   {
     "id": "HS-TF-030",
@@ -5044,10 +5044,10 @@ window.ICHIMONDOU_ROWS = [
     "id": "HS-TF-061",
     "exam": "heishu",
     "field": "law",
-    "statement": "予防規程は、市町村長等の認可を受ける。",
+    "statement": "危険物の取扱いでは、みだりに火気を使用しない。",
     "correctAnswer": true,
-    "exp": "予防規程は認可が必要。",
-    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>一定の施設で予防規程を定め、市町村長等の認可を受けます。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「予防規程は、市町村長等の認可を受ける。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n一定の施設で予防規程を定め、市町村長等の認可を受けます。</p></section>\n    </div>"
+    "exp": "みだりに火気を使わない。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>危険物の取扱いでは、みだりに火気を使用せず、換気や整理整頓に努めます。</p>\n    <p class=\"q-exp-correct-opt\">設問文は<strong>正しい</strong>記述のため、答えは <strong class=\"q-marubatsu\">○</strong> です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">× を選びやすい考え方</h3><p>「危険物の取扱いでは、みだりに火気を使用しない。」は正しい記述です。それでも × を選ぶ場合は、一般論と設問の限定語（必要・毎年・常に・しなくてもよい等）を取り違えている可能性があります。<br>\n<br>\n危険物の取扱いでは、みだりに火気を使用せず、換気や整理整頓に努めます。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
   },
   {
     "id": "HS-TF-062",
@@ -5107,10 +5107,10 @@ window.ICHIMONDOU_ROWS = [
     "id": "HS-TF-068",
     "exam": "heishu",
     "field": "law",
-    "statement": "危険物施設保安員は、危険物保安監督者より上位の立場である。",
+    "statement": "ガソリンは、紙袋に入れて持ち運んでよい。",
     "correctAnswer": false,
-    "exp": "施設保安員は監督者を補佐。",
-    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>施設保安員は保安監督者を補佐する立場です。「危険物施設保安員は、危険物保安監督者より上位の立場である。」が誤った記述か、定義と照合して判断する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「危険物施設保安員は、危険物保安監督者より上位の立場である。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\n施設保安員は保安監督者を補佐する立場です。<br>\n<br>\n危険物の類別・性質は、政令別表と用語定義の組み合わせで判断します。類似名称（動植物油類・石油類・特殊引火物など）の違いを用語解説で確認してください。</p></section>\n    </div>"
+    "exp": "ガソリンは定められた容器で扱う。",
+    "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>ガソリンは金属製など定められた容器で扱います。紙袋などでの持ち運びはできません。「ガソリンは、紙袋に入れて持ち運んでよい。」が誤った記述か、定義と照合して判断する。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-opposite-h\"><h3 id=\"q-exp-opposite-h\" class=\"q-exp-h3\">○ を選びやすい考え方</h3><p>「ガソリンは、紙袋に入れて持ち運んでよい。」は誤った記述です。それでも ○ を選ぶ場合は、一見もっともらしい表現に引っ張られ、判断対象の一文だけを精査していない可能性があります。<br>\n<br>\nガソリンは金属製など定められた容器で扱います。</p></section>\n    </div>"
   },
   {
     "id": "HS-TF-069",
