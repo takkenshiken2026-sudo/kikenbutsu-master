@@ -15,28 +15,49 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from tools.correct_answer_format import collect_choice_texts, is_valid_correct, parse_correct_js_index
-from tools.site_config import category_to_field_map, extended_correct_answers
+from tools.site_config import category_to_field_map, default_exam_id, extended_correct_answers
 from tools.build_past_question_pages import page_dict as past_page_dict
 from tools.build_practice_ichimon_pages import practice_page_dict
 from tools.q_explanation import _o4_explanation_lead, build_explanation_html
 
 DATA_CSV = ROOT / "data" / "past_questions.csv"
 PRACTICE_CSV = ROOT / "data" / "practice_questions.csv"
+# 関連試験（丙種・甲種…）の問題。SPA 専用（乙4 の静的ページ生成器には読ませない）。
+RELATED_CSV = ROOT / "data" / "related_exam_questions.csv"
 OUT_JS = ROOT / "exam-site-data-past.js"
 OUT_PRACTICE_JS = ROOT / "exam-site-data-practice.js"
 
 # 実践演習プール（index.html の isCsvPracticePoolQuestion / applyCsvImportedQuestions と対応）
 PRACTICE_POOL_YEAR = "orig"
 PRACTICE_ID_BASE = 900_000
+# 関連試験の id 基点（乙4 の過去問 ≤~999999・実践演習 900000台 と衝突しないよう十分離す）。
+RELATED_ID_BASE = 13_000_000
+RELATED_EXAM_ORDER = ["heishu", "kou"]
 
 LABELS = [("ア", "statement_a"), ("イ", "statement_b"), ("ウ", "statement_c"), ("エ", "statement_d")]
 
 # site-config.json の fields[].aliases / name に対応
 CATEGORY_TO_FIELD: dict[str, str] = category_to_field_map()
 
+# 試験軸。CSV の任意列 exam（空＝既定試験）。既定試験の問題には exam キーを出力しない
+# （乙4 の生成物を不変に保つため）。関連試験の問題だけ "exam" を付与する。
+DEFAULT_EXAM: str = default_exam_id()
+
 
 def norm(s: str | None) -> str:
     return (s or "").strip()
+
+
+def row_exam(row: dict) -> str:
+    """行の試験 id。未指定・空は既定試験に正規化。"""
+    return norm(row.get("exam")) or DEFAULT_EXAM
+
+
+def with_exam(obj: dict, exam: str) -> dict:
+    """既定以外の試験のみ exam キーを付与（既定試験は出力不変）。"""
+    if exam and exam != DEFAULT_EXAM:
+        obj["exam"] = exam
+    return obj
 
 
 def build_plain_text(row: dict) -> str:
@@ -90,7 +111,7 @@ def row_to_obj(row: dict, line_no: int) -> dict | None:
     exp_html = build_explanation_html(page, row)
 
     qid = year * 100 + qno
-    return {
+    return with_exam({
         "id": qid,
         "year": year,
         "num": qno,
@@ -100,7 +121,7 @@ def row_to_obj(row: dict, line_no: int) -> dict | None:
         "ans": 0 if cor is None else cor,
         "exp": exp,
         "expHtml": exp_html,
-    }
+    }, row_exam(row))
 
 
 def level_from_tags(tags: str) -> int:
@@ -162,7 +183,7 @@ def practice_row_to_obj(row: dict, line_no: int) -> dict | None:
     text = build_plain_text(row)
     exp, exp_html = practice_exp_fields(row, line_no)
     qid = PRACTICE_ID_BASE + qno
-    return {
+    return with_exam({
         "id": qid,
         "year": PRACTICE_POOL_YEAR,
         "num": qno,
@@ -175,7 +196,7 @@ def practice_row_to_obj(row: dict, line_no: int) -> dict | None:
         "level": level_from_tags(row.get("tags", "")),
         "diff": diff_tier_from_tags(row.get("tags", "")),
         "publicPath": f"q/practice/p{qno:03d}/index.html",
-    }
+    }, row_exam(row))
 
 
 def load_practice_questions() -> list[dict]:
@@ -192,17 +213,53 @@ def load_practice_questions() -> list[dict]:
     return out
 
 
-def write_practice_js(practice_objs: list[dict]) -> None:
-    """index.html の実践演習 UI 用データを出力する。"""
+def load_related_questions() -> list[dict]:
+    """関連試験（exam 列で丙種/甲種…）の問題を実践演習形式で読み込む。
+    乙4 の静的ページは生成せず、SPA のプールにだけ載せる（id は衝突回避のため基点でずらす）。"""
+    if not RELATED_CSV.is_file():
+        return []
+    text = RELATED_CSV.read_text(encoding="utf-8-sig")
+    rows = list(csv.DictReader(text.splitlines()))
+    out: list[dict] = []
+    seen_ids: set[int] = set()
+    for i, row in enumerate(rows, start=2):
+        exam = row_exam(row)
+        if exam == DEFAULT_EXAM:
+            raise ValueError(
+                f"related_exam_questions.csv line {i}: exam 列は関連試験（既定={DEFAULT_EXAM!r} 以外）にしてください"
+            )
+        obj = practice_row_to_obj(row, i)
+        if obj is None:
+            continue
+        # 実践演習の静的ページには載せないので publicPath は付けない。
+        obj.pop("publicPath", None)
+        # id を関連試験用の基点でずらし、乙4 プールと絶対に衝突させない。
+        base = RELATED_ID_BASE + RELATED_EXAM_ORDER.index(exam) * 1_000_000 \
+            if exam in RELATED_EXAM_ORDER else RELATED_ID_BASE + 900_000
+        qno = int(row["question_no"])
+        qid = base + qno
+        if qid in seen_ids:
+            raise ValueError(f"related_exam_questions.csv line {i}: id 衝突 exam={exam} no={qno}")
+        seen_ids.add(qid)
+        obj["id"] = qid
+        obj["exam"] = exam
+        out.append(obj)
+    return out
+
+
+def write_practice_js(practice_objs: list[dict], related_objs: list[dict] | None = None) -> None:
+    """index.html の実践演習 UI 用データを出力する。
+    related_objs（関連試験）はプールには載せるが、乙4 向けの掲載数カウントには含めない。"""
+    related_objs = related_objs or []
     by_level: dict[int, list[dict]] = {1: [], 2: [], 3: []}
-    for obj in practice_objs:
+    for obj in list(practice_objs) + list(related_objs):
         q = dict(obj)
         lv = int(q.pop("level", 1))
         if lv not in by_level:
             lv = 1
         by_level[lv].append(q)
     lines = [
-        "/* AUTO-GENERATED by tools/csv_to_exam_site_past_js.py — data/practice_questions.csv を編集し再生成 */",
+        "/* AUTO-GENERATED by tools/csv_to_exam_site_past_js.py — data/practice_questions.csv / data/related_exam_questions.csv を編集し再生成 */",
         f"const CSV_IMPORTED_PRACTICE_QUESTION_COUNT = {len(practice_objs)};",
         "const PRACTICE_QUESTIONS = " + json.dumps(by_level, ensure_ascii=False, indent=2) + ";",
     ]
@@ -229,7 +286,8 @@ def main() -> int:
             year_labels[y] = f"{y}年"
 
     practice_objs = load_practice_questions()
-    write_practice_js(practice_objs)
+    related_objs = load_related_questions()
+    write_practice_js(practice_objs, related_objs)
     practice_years = [PRACTICE_POOL_YEAR] if practice_objs else []
 
     lines = [
@@ -252,7 +310,8 @@ def main() -> int:
     payload = "\n".join(lines)
     OUT_JS.write_text(payload, encoding="utf-8")
     print(
-        f"Wrote {OUT_JS} (過去問 {len(objs)} 問, 実践演習 {len(practice_objs)} 問, 年度ラベル {len(year_labels)})"
+        f"Wrote {OUT_JS} (過去問 {len(objs)} 問, 実践演習 {len(practice_objs)} 問, "
+        f"関連試験 {len(related_objs)} 問, 年度ラベル {len(year_labels)})"
     )
     return 0
 

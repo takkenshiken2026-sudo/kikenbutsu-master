@@ -349,6 +349,16 @@ h2.section-label .tip-icon{width:13px;height:13px;font-size:9px}
 /* ===== QUIZ START ===== */
 .mode-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:24px}
 /* ===== QUIZ START V2 ===== */
+.exam-switcher{margin:0 0 22px}
+.exam-switcher[hidden]{display:none}
+.exam-switcher-label{display:flex;align-items:center;gap:6px;font-size:var(--fs-caption);font-weight:700;color:var(--text2);margin:0 0 8px;letter-spacing:.03em}
+.exam-switcher-label::before{content:"";width:3px;height:14px;background:var(--accent);border-radius:2px}
+.exam-switcher-seg{display:inline-flex;flex-wrap:wrap;gap:4px;padding:5px;background:var(--bg2);border:1px solid var(--border2);border-radius:13px;max-width:100%}
+.exam-switcher-btn{appearance:none;border:1px solid transparent;background:transparent;color:var(--text2);border-radius:9px;padding:10px 22px;font-size:var(--fs-body);font-weight:700;cursor:pointer;transition:all .15s;min-width:72px;line-height:1.2}
+.exam-switcher-btn:hover{color:var(--accent);background:var(--surface)}
+.exam-switcher-btn.is-active{background:var(--accent);color:#fff;box-shadow:0 1px 4px rgba(0,0,0,.2)}
+.exam-switcher-btn.is-active:hover{background:var(--accent);color:#fff}
+@media (max-width:600px){.exam-switcher-seg{display:flex;width:100%}.exam-switcher-btn{flex:1 1 0;min-width:0;padding:10px 8px}}
 .mode-list-v2{display:flex;flex-direction:column;gap:8px;margin-bottom:16px}
 /* ===== 一問一答 ===== */
 .ichi-config{padding:4px 0 20px;margin-bottom:8px}
@@ -1686,6 +1696,9 @@ body.is-solving .site-footer{display:none!important}
       <h2 class="page-title">「危険物取扱者試験（乙種第4類）」</h2>
       <div class="page-sub">学習目的に合わせてモードを選んでください</div>
 
+      <!-- 試験切替（公開済みの試験が2つ以上のときだけ表示。既定は乙4） -->
+      <div class="exam-switcher" id="exam-switcher" role="group" aria-label="試験を選ぶ" hidden></div>
+
       <div class="mode-list-v2">
         <div class="mode-card-v2" onclick="startIchimondou()">
           <div class="mode-num-v2">01</div>
@@ -2091,9 +2104,32 @@ function buildEvenFieldDistribution(total){
   ids.forEach(function(id, idx){ dist[id] = Math.floor(total / ids.length) + (idx < (total % ids.length) ? 1 : 0); });
   return dist;
 }
+// ===== 試験軸（乙4=既定。関連試験は status:published になると選択可能に） =====
+// 設計方針: CURRENT_EXAM が既定（乙4）で、かつどの問題にも exam が無い現状では
+// すべてのフィルタは no-op（＝乙4の挙動は一切変わらない）。
+var EXAM_REGISTRY = (SITE_CONFIG && Array.isArray(SITE_CONFIG.exams)) ? SITE_CONFIG.exams : [];
+var DEFAULT_EXAM = (SITE_CONFIG && SITE_CONFIG.defaultExam)
+  || (EXAM_REGISTRY.find(function(e){ return e && e.default; }) || {}).id
+  || 'otsu4';
+function getExamDef(id){ return EXAM_REGISTRY.find(function(e){ return e && e.id === id; }) || null; }
+// 公開済み（status:published）の試験だけ切替対象にする。関連試験は準備中は非表示。
+function selectableExams(){ return EXAM_REGISTRY.filter(function(e){ return e && e.status === 'published'; }); }
+function examIsSelectable(id){ var e = getExamDef(id); return !!(e && e.status === 'published'); }
+function resolveCurrentExam(){
+  try {
+    var p = new URLSearchParams(location.search).get('exam');
+    if (p && examIsSelectable(p)) return p;
+  } catch (e) {}
+  return DEFAULT_EXAM;
+}
+var CURRENT_EXAM = resolveCurrentExam();
+function questionExam(q){ return (q && q.exam) ? q.exam : DEFAULT_EXAM; }
+function isCurrentExamQuestion(q){ return questionExam(q) === CURRENT_EXAM; }
+function examLabel(id){ var e = getExamDef(id); return e ? (e.label || e.short || e.id) : id; }
+
 function applyCsvImportedQuestions() {
   if (typeof CSV_IMPORTED_QUESTIONS === 'undefined' || !Array.isArray(CSV_IMPORTED_QUESTIONS)) return;
-  var rows = CSV_IMPORTED_QUESTIONS;
+  var rows = CSV_IMPORTED_QUESTIONS.filter(isCurrentExamQuestion);
   var practiceSet = (typeof CSV_IMPORTED_PRACTICE_POOL_YEARS !== 'undefined' && Array.isArray(CSV_IMPORTED_PRACTICE_POOL_YEARS))
     ? new Set(CSV_IMPORTED_PRACTICE_POOL_YEARS) : new Set();
   BASE_QUESTIONS = rows.filter(function (q) {
@@ -3430,7 +3466,7 @@ function shuffleArray(arr) {
 function collectPracticeQuestionsFlat() {
   if (typeof PRACTICE_QUESTIONS === 'undefined') return [];
   const o = PRACTICE_QUESTIONS;
-  return [].concat(o[1] || [], o[2] || [], o[3] || []);
+  return [].concat(o[1] || [], o[2] || [], o[3] || []).filter(isCurrentExamQuestion);
 }
 
 /** 問題を解くトップ：目的文に掲載数を括弧で付与（CSV 再生成で更新） */
@@ -3467,6 +3503,54 @@ function updateQuizStartModeStats() {
 }
 window.updateQuizStartModeStats = updateQuizStartModeStats;
 
+/** 試験切替UI。公開済み（status:published）の試験が2つ以上のときだけ表示する。
+ *  1つ（＝現状の乙4のみ）のときは hidden のままで、画面は一切変わらない。 */
+function renderExamSwitcher() {
+  var host = document.getElementById('exam-switcher');
+  if (!host) return;
+  var list = (typeof selectableExams === 'function') ? selectableExams() : [];
+  if (!Array.isArray(list) || list.length < 2) {
+    host.hidden = true;
+    host.innerHTML = '';
+    return;
+  }
+  host.hidden = false;
+  host.innerHTML = '';
+  var label = document.createElement('span');
+  label.className = 'exam-switcher-label';
+  label.textContent = '試験を選ぶ';
+  host.appendChild(label);
+  var seg = document.createElement('div');
+  seg.className = 'exam-switcher-seg';
+  list.forEach(function (e) {
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'exam-switcher-btn' + (e.id === CURRENT_EXAM ? ' is-active' : '');
+    btn.textContent = e.short || e.label || e.id;
+    btn.title = e.label || e.short || e.id;
+    btn.setAttribute('aria-pressed', e.id === CURRENT_EXAM ? 'true' : 'false');
+    btn.addEventListener('click', function () { switchExam(e.id); });
+    seg.appendChild(btn);
+  });
+  host.appendChild(seg);
+}
+window.renderExamSwitcher = renderExamSwitcher;
+
+/** 試験を切り替える。URL の ?exam= を更新して再読込し、各問題プールを選び直す。
+ *  （状態の多い SPA を安全に切り替えるため、ライブ再構築ではなくリロード方式を採る） */
+function switchExam(id) {
+  if (!examIsSelectable(id) || id === CURRENT_EXAM) return;
+  try {
+    var url = new URL(location.href);
+    if (id === DEFAULT_EXAM) url.searchParams.delete('exam');
+    else url.searchParams.set('exam', id);
+    location.href = url.toString();
+  } catch (e) {
+    location.search = (id === DEFAULT_EXAM) ? '' : ('?exam=' + encodeURIComponent(id));
+  }
+}
+window.switchExam = switchExam;
+
 /** 過去問（BASE_QUESTIONS / QUESTIONS）と実践演習を id で重複除去して合体（一問一答・ブックマーク等で共通利用） */
 function collectAllBaseQuestions() {
   const seen = new Set();
@@ -3502,7 +3586,7 @@ function isIchiConvertibleQuestion(q) {
 
 function buildIchiSourcePool(fieldFilter) {
   if (typeof ICHIMONDOU_ROWS !== 'undefined' && Array.isArray(ICHIMONDOU_ROWS) && ICHIMONDOU_ROWS.length) {
-    let rows = ICHIMONDOU_ROWS;
+    let rows = ICHIMONDOU_ROWS.filter(isCurrentExamQuestion);
     if (fieldFilter) rows = rows.filter(function (r) { return r.field === fieldFilter; });
     const items = rows.map(function (r) {
       return {
@@ -4124,7 +4208,7 @@ function gotoPage(id, opts){
   if(id==='dash')        { renderDash(); renderDashLevel(); setTimeout(()=>renderAnalytics(),50); }
   if(id==='review')      renderReview();
   if(id==='orig')        renderOrigPage();
-  if(id==='quiz-start')  { renderDailyStatus(); updateQuizStartModeStats(); }
+  if(id==='quiz-start')  { renderDailyStatus(); updateQuizStartModeStats(); renderExamSwitcher(); }
   if(id==='past-config') buildYearGrid();
   try {
     if (typeof window.ga4PageView === "function") {

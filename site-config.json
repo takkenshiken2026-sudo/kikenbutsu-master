@@ -242,6 +242,59 @@
       "legacyGlossaryCat": "limit"
     }
   ],
+  "exams": [
+    {
+      "id": "otsu4",
+      "label": "乙種第4類",
+      "short": "乙4",
+      "default": true,
+      "status": "published",
+      "format": "五肢択一",
+      "choiceCount": 5,
+      "durationMinutes": 120,
+      "totalQuestions": 35,
+      "passRule": "3科目それぞれ60%以上",
+      "subjects": [
+        { "field": "law", "count": 15 },
+        { "field": "rights", "count": 10 },
+        { "field": "limit", "count": 10 }
+      ]
+    },
+    {
+      "id": "heishu",
+      "label": "丙種",
+      "short": "丙種",
+      "status": "planned",
+      "format": "四肢択一",
+      "choiceCount": 4,
+      "durationMinutes": 75,
+      "totalQuestions": 25,
+      "passRule": "3科目それぞれ60%以上",
+      "subjects": [
+        { "field": "law", "count": 10 },
+        { "field": "rights", "count": 5, "label": "燃焼及び消火に関する基礎知識" },
+        { "field": "limit", "count": 10 }
+      ],
+      "note": "科目別の問題数は一次情報（消防試験研究センター）で要確定。四肢択一・第4類の一部に限定。"
+    },
+    {
+      "id": "kou",
+      "label": "甲種",
+      "short": "甲種",
+      "status": "planned",
+      "format": "五肢択一",
+      "choiceCount": 5,
+      "durationMinutes": 150,
+      "totalQuestions": 45,
+      "passRule": "3科目それぞれ60%以上",
+      "subjects": [
+        { "field": "law", "count": 15 },
+        { "field": "rights", "count": 10 },
+        { "field": "limit", "count": 20, "label": "危険物の性質・火災予防・消火（全類）" }
+      ],
+      "note": "受験資格あり。性質消火は全6類20問。受験資格は記事化時に一次情報で裏取り。"
+    }
+  ],
   "paidMockExam": {
     "url": "https://note.com/shikaku_master/n/naae31abe01ed",
     "modeTitle": "予想模試（PDF・2回分）",

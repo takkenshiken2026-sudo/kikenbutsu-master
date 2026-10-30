@@ -444,6 +444,25 @@ def field_ids() -> list[str]:
     return [str(f["id"]) for f in fields()]
 
 
+def exams() -> list[dict[str, Any]]:
+    """関連試験レジストリ（乙4/丙種/甲種…）。未設定なら空配列。"""
+    out = CONFIG.get("exams") or []
+    if not isinstance(out, list):
+        raise ValueError("site-config.json の exams は配列にしてください")
+    return out
+
+
+def default_exam_id() -> str:
+    """既定の試験 id。exams の default:true、なければ先頭、どちらも無ければ 'otsu4'。"""
+    reg = exams()
+    for e in reg:
+        if e.get("default"):
+            return str(e["id"])
+    if reg:
+        return str(reg[0]["id"])
+    return "otsu4"
+
+
 def field_labels() -> dict[str, str]:
     return {str(f["id"]): str(f.get("name") or f["id"]) for f in fields()}
 
@@ -671,6 +690,10 @@ def write_site_config_js() -> None:
             "practiceTiers": practice_tiers(),
         },
     }
+    ex = exams()
+    if ex:
+        payload["exams"] = ex
+        payload["defaultExam"] = default_exam_id()
     pm = paid_mock_exam()
     if pm:
         payload["paidMockExam"] = pm
