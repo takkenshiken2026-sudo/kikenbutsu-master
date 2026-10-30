@@ -24,6 +24,8 @@ DATA_CSV = ROOT / "data" / "past_questions.csv"
 PRACTICE_CSV = ROOT / "data" / "practice_questions.csv"
 # 関連試験（丙種・甲種…）の問題。SPA 専用（乙4 の静的ページ生成器には読ませない）。
 RELATED_CSV = ROOT / "data" / "related_exam_questions.csv"
+# 関連試験の「過去問」モード用（本番形式セット）。SPA 専用・年度あり。
+RELATED_PAST_CSV = ROOT / "data" / "related_exam_past.csv"
 OUT_JS = ROOT / "exam-site-data-past.js"
 OUT_PRACTICE_JS = ROOT / "exam-site-data-practice.js"
 
@@ -32,6 +34,8 @@ PRACTICE_POOL_YEAR = "orig"
 PRACTICE_ID_BASE = 900_000
 # 関連試験の id 基点（乙4 の過去問 ≤~999999・実践演習 900000台 と衝突しないよう十分離す）。
 RELATED_ID_BASE = 13_000_000
+# 関連試験の過去問の id 基点（実践演習 13M/14M 台と衝突しないよう別基点）。
+RELATED_PAST_ID_BASE = 15_000_000
 RELATED_EXAM_ORDER = ["heishu", "kou"]
 
 LABELS = [("ア", "statement_a"), ("イ", "statement_b"), ("ウ", "statement_c"), ("エ", "statement_d")]
@@ -247,6 +251,46 @@ def load_related_questions() -> list[dict]:
     return out
 
 
+def load_related_past() -> list[dict]:
+    """関連試験（丙種/甲種…）の『過去問』モード用の本番形式セット。
+    実践演習の生成ロジックを再利用しつつ、年度（数値）を持たせ id は別基点でずらす。
+    SPA の CSV_IMPORTED_QUESTIONS（過去問プール）に載せる（静的ページは作らない）。"""
+    if not RELATED_PAST_CSV.is_file():
+        return []
+    text = RELATED_PAST_CSV.read_text(encoding="utf-8-sig")
+    rows = list(csv.DictReader(text.splitlines()))
+    out: list[dict] = []
+    seen_ids: set[int] = set()
+    for i, row in enumerate(rows, start=2):
+        exam = row_exam(row)
+        if exam == DEFAULT_EXAM:
+            raise ValueError(
+                f"related_exam_past.csv line {i}: exam 列は関連試験（既定={DEFAULT_EXAM!r} 以外）にしてください"
+            )
+        obj = practice_row_to_obj(row, i)  # 解説HTML等を実践演習パイプラインで生成
+        if obj is None:
+            continue
+        year = int(row["exam_year"])
+        qno = int(row["question_no"])
+        base = RELATED_PAST_ID_BASE + (
+            RELATED_EXAM_ORDER.index(exam) if exam in RELATED_EXAM_ORDER else 9
+        ) * 1_000_000
+        qid = base + qno
+        if qid in seen_ids:
+            raise ValueError(f"related_exam_past.csv line {i}: id 衝突 exam={exam} no={qno}")
+        seen_ids.add(qid)
+        obj["id"] = qid
+        obj["year"] = year  # 数値年度（過去問グリッド用）
+        obj["num"] = qno
+        obj["exam"] = exam
+        # 過去問プールでは不要なキーを落とす
+        obj.pop("publicPath", None)
+        obj.pop("level", None)
+        obj.pop("diff", None)
+        out.append(obj)
+    return out
+
+
 def write_practice_js(practice_objs: list[dict], related_objs: list[dict] | None = None) -> None:
     """index.html の実践演習 UI 用データを出力する。
     related_objs（関連試験）はプールには載せるが、乙4 向けの掲載数カウントには含めない。"""
@@ -284,6 +328,10 @@ def main() -> int:
         wl = norm(row.get("exam_wareki"))
         if y not in year_labels:
             year_labels[y] = f"{y}年"
+
+    # 関連試験の過去問（本番形式）を CSV_IMPORTED_QUESTIONS（過去問プール）へ追加
+    related_past = load_related_past()
+    objs.extend(related_past)
 
     practice_objs = load_practice_questions()
     related_objs = load_related_questions()

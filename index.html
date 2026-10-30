@@ -726,19 +726,16 @@ details.rich-detail summary{display:none}
 .promo-banners-row:not(:has(> :not([hidden]) + :not([hidden]))){grid-template-columns:minmax(0,420px);justify-content:center}
 .promo-banners-row > [hidden]{display:none!important}
 .promo-card-wrap{margin:0;display:flex;flex-direction:column;max-width:none;width:100%;min-width:0}
-.promo-card{position:relative;display:flex;flex-direction:column;height:100%;background:#fff;border:1px solid var(--border);border-radius:var(--r2);padding:18px 18px 16px;box-shadow:var(--sh);text-decoration:none;color:inherit;overflow:hidden;transition:box-shadow .15s,transform .15s,border-color .15s}
+.promo-card{position:relative;display:flex;flex-direction:column;height:100%;background:#fff;border:1px solid var(--border);border-radius:var(--r2);padding:15px 18px 14px;box-shadow:var(--sh);text-decoration:none;color:inherit;overflow:hidden;transition:box-shadow .15s,transform .15s,border-color .15s}
 .promo-card:hover{box-shadow:var(--sh2);transform:translateY(-2px);border-color:var(--accent-border)}
-.promo-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--accent)}
-.promo-card--course::before{background:var(--accent);opacity:.38}
 .promo-card__head{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px}
 .promo-card__badge{font-size:var(--fs-tiny);font-weight:700;padding:3px 10px;border-radius:999px;letter-spacing:.03em;white-space:nowrap;line-height:1.5}
 .promo-card__badge--paid{background:var(--accent);color:var(--accent-text)}
 .promo-card__badge--free{background:var(--accent-soft);color:var(--accent-emphasis);border:1px solid var(--accent-border)}
 .promo-card__step{font-size:var(--fs-tiny);font-weight:700;color:var(--text3);letter-spacing:.06em}
 .promo-card__title{font-size:var(--fs-body);font-weight:700;line-height:1.4;margin:0 0 6px;color:var(--text)}
-.promo-card__desc{font-size:var(--fs-sub);color:var(--text2);line-height:1.6;margin:0 0 12px;flex:1}
-.promo-card__meta{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 14px}
-.promo-card__chip{font-size:var(--fs-tiny);font-weight:600;color:var(--text2);background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:3px 8px;line-height:1.5}
+.promo-card__desc{font-size:var(--fs-sub);color:var(--text2);line-height:1.6;margin:0 0 5px;flex:1}
+.promo-card__note{font-size:var(--fs-caption);color:var(--text3);line-height:1.55;margin:0 0 12px}
 .promo-card__cta{display:inline-flex;align-items:center;justify-content:center;gap:6px;font-size:var(--fs-sub);font-weight:700;border-radius:8px;padding:11px 16px;margin-top:auto;transition:filter .15s,background .15s}
 .promo-card__cta--fill{background:var(--accent);color:var(--accent-text)}
 .promo-card:hover .promo-card__cta--fill{filter:brightness(1.08)}
@@ -2126,6 +2123,26 @@ var CURRENT_EXAM = resolveCurrentExam();
 function questionExam(q){ return (q && q.exam) ? q.exam : DEFAULT_EXAM; }
 function isCurrentExamQuestion(q){ return questionExam(q) === CURRENT_EXAM; }
 function examLabel(id){ var e = getExamDef(id); return e ? (e.label || e.short || e.id) : id; }
+// 試験のフルネーム（画面見出し用）。乙4は従来表記と同一。
+function examFullName(id){
+  var e = getExamDef(id);
+  var lab = e ? (e.label || e.short || id) : id;
+  return '危険物取扱者試験（' + lab + '）';
+}
+// 画面に見える試験名（ヘッダー副題・クイズ開始の見出し/パンくず）を現在の試験に合わせる。
+// SEO メタと常設 h1 は乙4 のまま（本番の検索インデックスは乙4）。
+function applyExamName(){
+  try {
+    var full = examFullName(CURRENT_EXAM);
+    var sub = document.querySelector('.topnav-logo-sub');
+    if (sub) sub.textContent = full;
+    var t = document.querySelector('#page-quiz-start .page-title');
+    if (t) t.textContent = '「' + full + '」';
+    var bc = document.querySelector('#page-quiz-start .breadcrumb-current');
+    if (bc) bc.textContent = '「' + full + '」';
+  } catch (e) {}
+}
+applyExamName();
 
 function applyCsvImportedQuestions() {
   if (typeof CSV_IMPORTED_QUESTIONS === 'undefined' || !Array.isArray(CSV_IMPORTED_QUESTIONS)) return;
@@ -3506,6 +3523,7 @@ window.updateQuizStartModeStats = updateQuizStartModeStats;
 /** 試験切替UI。公開済み（status:published）の試験が2つ以上のときだけ表示する。
  *  1つ（＝現状の乙4のみ）のときは hidden のままで、画面は一切変わらない。 */
 function renderExamSwitcher() {
+  if (typeof applyExamName === 'function') applyExamName();
   var host = document.getElementById('exam-switcher');
   if (!host) return;
   var list = (typeof selectableExams === 'function') ? selectableExams() : [];
@@ -7693,8 +7711,8 @@ function ensurePromoBannersRow(startEl, modeList){
 
 function promoCardChipsHtml(chips){
   if(!chips||!chips.length) return '';
-  const items=chips.map(function(c){return `<span class="promo-card__chip">${escapeAttr(c)}</span>`;}).join('');
-  return `<div class="promo-card__meta">${items}</div>`;
+  const text=chips.map(function(c){return escapeAttr(String(c));}).join(' ・ ');
+  return `<div class="promo-card__note">${text}</div>`;
 }
 
 function promoCardHeadHtml(badgeLabel, badgeKind, stepLabel){
