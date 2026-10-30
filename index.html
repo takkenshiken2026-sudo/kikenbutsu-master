@@ -1993,7 +1993,7 @@ body.is-solving .site-footer{display:none!important}
       <h2 class="page-title">実践演習</h2>
       <div class="page-sub">分野を選び、過去問と同じ形式で演習できます。出題順は毎回ランダムです。</div>
 
-      <div class="page-notice" role="note">
+      <div class="page-notice" role="note" id="orig-notice-otsu4" data-exam-only="otsu4">
         <span class="page-notice-badge">お知らせ</span>
         <span class="page-notice-date">2026-07-17</span>
         <p class="page-notice-text">実践演習を1,000問に拡充しました。各問に難易度（<span class="pn-t pn-t-標準">標準</span>・<span class="pn-t pn-t-応用">応用</span>・<span class="pn-t pn-t-難関">難関</span>）を付与し、難易度での絞り込みにも対応しています。</p>
@@ -2140,6 +2140,13 @@ function applyExamName(){
     if (t) t.textContent = '「' + full + '」';
     var bc = document.querySelector('#page-quiz-start .breadcrumb-current');
     if (bc) bc.textContent = '「' + full + '」';
+    // data-exam-only で特定試験専用の要素は、該当試験以外では隠す。
+    // 例: 乙4 専用のお知らせ（「1,000問に拡充」等）は丙種・甲種では表示しない。
+    var only = document.querySelectorAll('[data-exam-only]');
+    for (var i = 0; i < only.length; i++) {
+      var want = (only[i].getAttribute('data-exam-only') || '').split(/[,\s]+/).filter(Boolean);
+      only[i].style.display = (want.indexOf(CURRENT_EXAM) === -1) ? 'none' : '';
+    }
   } catch (e) {}
 }
 applyExamName();
@@ -3493,16 +3500,27 @@ function formatQuizCountJa(n) {
 function updateQuizStartModeStats() {
   const pastPurpose = document.getElementById('mode-past-purpose');
   const origPurpose = document.getElementById('mode-orig-purpose');
+  // 既定（乙4）はグローバル定数＝従来表示のまま。関連試験（丙種・甲種）は
+  // 現在の試験に属する問題だけを数えて実数を表示する（1000問等の乙4値の流用を防ぐ）。
+  const isDefaultExam = (typeof CURRENT_EXAM === 'undefined')
+    || (typeof DEFAULT_EXAM === 'undefined')
+    || (CURRENT_EXAM === DEFAULT_EXAM);
   let years = 0;
-  if (typeof CSV_IMPORTED_PAST_YEAR_COUNT === 'number') {
+  if (isDefaultExam && typeof CSV_IMPORTED_PAST_YEAR_COUNT === 'number') {
     years = CSV_IMPORTED_PAST_YEAR_COUNT;
+  } else if (typeof CSV_IMPORTED_QUESTIONS !== 'undefined' && Array.isArray(CSV_IMPORTED_QUESTIONS)) {
+    const ys = {};
+    CSV_IMPORTED_QUESTIONS.filter(isCurrentExamQuestion).forEach(function (q) {
+      if (q && q.year != null) ys[q.year] = true;
+    });
+    years = Object.keys(ys).length;
   } else if (typeof YEARS !== 'undefined' && Array.isArray(YEARS)) {
     years = YEARS.length;
   } else if (typeof CSV_IMPORTED_YEAR_LABELS === 'object' && CSV_IMPORTED_YEAR_LABELS) {
     years = Object.keys(CSV_IMPORTED_YEAR_LABELS).length;
   }
   let practiceN = 0;
-  if (typeof CSV_IMPORTED_PRACTICE_QUESTION_COUNT === 'number') {
+  if (isDefaultExam && typeof CSV_IMPORTED_PRACTICE_QUESTION_COUNT === 'number') {
     practiceN = CSV_IMPORTED_PRACTICE_QUESTION_COUNT;
   } else {
     practiceN = collectPracticeQuestionsFlat().length;
@@ -3513,9 +3531,14 @@ function updateQuizStartModeStats() {
       : '本番の出題傾向を押さえたい';
   }
   if (origPurpose) {
-    origPurpose.textContent = practiceN > 0
-      ? '本格的に実力をつけたい（' + formatQuizCountJa(practiceN) + '問以上掲載）'
-      : '本格的に実力をつけたい';
+    if (practiceN > 0) {
+      // 乙4は従来どおり「○問以上掲載」。関連試験は実数なので「全○問掲載」。
+      origPurpose.textContent = isDefaultExam
+        ? '本格的に実力をつけたい（' + formatQuizCountJa(practiceN) + '問以上掲載）'
+        : '本格的に実力をつけたい（全' + formatQuizCountJa(practiceN) + '問掲載）';
+    } else {
+      origPurpose.textContent = '本格的に実力をつけたい';
+    }
   }
 }
 window.updateQuizStartModeStats = updateQuizStartModeStats;
