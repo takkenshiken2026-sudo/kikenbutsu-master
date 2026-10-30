@@ -7794,6 +7794,18 @@ function buildPaidMockBannerEl(){
 }
 
 function injectPromoBannersRow(startEl, modeList){
+  // 乙4専用の有料導線（模試PDF・通信講座）は既定（乙4）でのみ表示する。
+  // 丙種・甲種では「本番と同じ35問・2時間」等が実際の試験と合わないため出さない。
+  const isDefaultExam=(typeof CURRENT_EXAM==='undefined')
+    ||(typeof DEFAULT_EXAM==='undefined')
+    ||(CURRENT_EXAM===DEFAULT_EXAM);
+  if(!isDefaultExam){
+    const existingRow=startEl&&startEl.querySelector('#promo-banners-row');
+    if(existingRow) existingRow.remove();
+    const inlinePaid=modeList&&modeList.querySelector('#paid-mock-inject');
+    if(inlinePaid) inlinePaid.remove();
+    return;
+  }
   const paid=buildPaidMockBannerEl();
   const course=buildCoursePromoBannerEl();
   if(!paid&&!course){
