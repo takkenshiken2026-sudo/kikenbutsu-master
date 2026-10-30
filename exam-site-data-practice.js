@@ -21575,6 +21575,576 @@ const PRACTICE_QUESTIONS = {
       "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>第4類の蒸気は低い所にたまるため、低所も含めて十分に換気し、蒸気を滞留させないことが重要です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「換気は不要」について、正答（1）「蒸気がたまらないよう低い所も含めて換気する」とは異なる内容です。本問で選ぶべき正答は（1）「蒸気がたまらないよう低い所も含めて換気する」です。この肢の記述は、その論点とは一致しません。否定や「不要」「できない」の言い切りが、正答が示す要件・リスク・手続と矛盾していないか確認してください。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「天井だけ換気する」について、正答（1）「蒸気がたまらないよう低い所も含めて換気する」とは異なる内容です。本問で選ぶべき正答は（1）「蒸気がたまらないよう低い所も含めて換気する」です。この肢の記述は、その論点とは一致しません。「必ず」「常に」「全く」などの断定は、例外や条件付きの整理と食い違うことが多いです。設問が問う論点と照らして、言い過ぎ・取り違えがないか確認してください。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「密閉する」について、正答（1）「蒸気がたまらないよう低い所も含めて換気する」とは異なる内容です。本問で選ぶべき正答は（1）「蒸気がたまらないよう低い所も含めて換気する」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li></ul></section>\n    </div>",
       "diff": "",
       "exam": "heishu"
+    },
+    {
+      "id": 14000001,
+      "year": "orig",
+      "num": 1,
+      "field": "law",
+      "text": "甲種危険物取扱者が取り扱える危険物の範囲として、正しいものはどれか。",
+      "opts": [
+        "第1類から第6類までのすべての危険物",
+        "第4類のみ",
+        "ガソリン・灯油・軽油のみ",
+        "指定された一部の類のみ",
+        "乙種で取得した類のみ"
+      ],
+      "ans": 0,
+      "exp": "甲種は全6類を扱える。",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>甲種はすべての類（第1〜6類）の危険物を取り扱うことができ、立会いもできます。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「第4類のみ」について、正答（1）「第1類から第6類までのすべての危険物」とは異なる内容です。本問で選ぶべき正答は（1）「第1類から第6類までのすべての危険物」です。この肢の記述は、その論点とは一致しません。「必ず」「常に」「全く」などの断定は、例外や条件付きの整理と食い違うことが多いです。設問が問う論点と照らして、言い過ぎ・取り違えがないか確認してください。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「ガソリン・灯油・軽油のみ」について、正答（1）「第1類から第6類までのすべての危険物」とは異なる内容です。本問で選ぶべき正答は（1）「第1類から第6類までのすべての危険物」です。この肢の記述は、その論点とは一致しません。「必ず」「常に」「全く」などの断定は、例外や条件付きの整理と食い違うことが多いです。設問が問う論点と照らして、言い過ぎ・取り違えがないか確認してください。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「指定された一部の類のみ」について、正答（1）「第1類から第6類までのすべての危険物」とは異なる内容です。本問で選ぶべき正答は（1）「第1類から第6類までのすべての危険物」です。この肢の記述は、その論点とは一致しません。「必ず」「常に」「全く」などの断定は、例外や条件付きの整理と食い違うことが多いです。設問が問う論点と照らして、言い過ぎ・取り違えがないか確認してください。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「乙種で取得した類のみ」について、正答（1）「第1類から第6類までのすべての危険物」とは異なる内容です。本問で選ぶべき正答は（1）「第1類から第6類までのすべての危険物」です。この肢の記述は、その論点とは一致しません。「必ず」「常に」「全く」などの断定は、例外や条件付きの整理と食い違うことが多いです。設問が問う論点と照らして、言い過ぎ・取り違えがないか確認してください。誤答肢との差分を一行メモに残してください。</p></li></ul></section>\n    </div>",
+      "diff": "",
+      "exam": "kou"
+    },
+    {
+      "id": 14000002,
+      "year": "orig",
+      "num": 2,
+      "field": "law",
+      "text": "甲種危険物取扱者試験の受験資格に当てはまらないものはどれか。",
+      "opts": [
+        "大学等で化学に関する授業科目を15単位以上修得した者",
+        "乙種免状を有し実務経験が2年以上ある者",
+        "第1類又は第6類、第2類又は第4類、第3類、第5類の4種類以上の乙種免状をもつ者",
+        "化学に関する修士・博士の学位をもつ者",
+        "受験資格はなく誰でも受けられる"
+      ],
+      "ans": 4,
+      "exp": "甲種には受験資格がある。",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>甲種には受験資格があり、化学の学歴・15単位、乙種＋実務2年、乙種4種類以上、化学系の学位などが必要です。「誰でも」は誤りです。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1、3）</span></p><p class=\"q-exp-choice-note\">「大学等で化学に関する授業科目を15単位以上修得した者」について、設問の求め方と照らすと正答になりません。設問文の「正しいもの／誤っているもの／最も適切でないもの」を先に確認してから、各肢を読み直してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「乙種免状を有し実務経験が2年以上ある者」について、設問の求め方と照らすと正答になりません。設問文の「正しいもの／誤っているもの／最も適切でないもの」を先に確認してから、各肢を読み直してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「化学に関する修士・博士の学位をもつ者」について、設問の求め方と照らすと正答になりません。設問文の「正しいもの／誤っているもの／最も適切でないもの」を先に確認してから、各肢を読み直してください。</p></li></ul></section>\n    </div>",
+      "diff": "",
+      "exam": "kou"
+    },
+    {
+      "id": 14000003,
+      "year": "orig",
+      "num": 3,
+      "field": "law",
+      "text": "危険物保安監督者について、正しいものはどれか。",
+      "opts": [
+        "丙種から選任できる",
+        "甲種又は乙種で実務6か月以上の者から選任する",
+        "資格は不要である",
+        "都道府県知事が任命する",
+        "選任の届出は不要である"
+      ],
+      "ans": 1,
+      "exp": "監督者は実務6か月以上の甲・乙。",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>保安監督者は、実務6か月以上の甲種又は乙種から選任し、選任・解任は遅滞なく届け出ます。丙種は選任できません。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「丙種から選任できる」について、正答（2）「甲種又は乙種で実務6か月以上の者から選任する」とは異なる内容です。本問で選ぶべき正答は（2）「甲種又は乙種で実務6か月以上の者から選任する」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「資格は不要である」について、正答（2）「甲種又は乙種で実務6か月以上の者から選任する」とは異なる内容です。本問で選ぶべき正答は（2）「甲種又は乙種で実務6か月以上の者から選任する」です。この肢の記述は、その論点とは一致しません。否定や「不要」「できない」の言い切りが、正答が示す要件・リスク・手続と矛盾していないか確認してください。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「都道府県知事が任命する」について、正答（2）「甲種又は乙種で実務6か月以上の者から選任する」とは異なる内容です。本問で選ぶべき正答は（2）「甲種又は乙種で実務6か月以上の者から選任する」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「選任の届出は不要である」について、正答（2）「甲種又は乙種で実務6か月以上の者から選任する」とは異なる内容です。本問で選ぶべき正答は（2）「甲種又は乙種で実務6か月以上の者から選任する」です。この肢の記述は、その論点とは一致しません。否定や「不要」「できない」の言い切りが、正答が示す要件・リスク・手続と矛盾していないか確認してください。誤答肢との差分を一行メモに残してください。</p></li></ul></section>\n    </div>",
+      "diff": "",
+      "exam": "kou"
+    },
+    {
+      "id": 14000004,
+      "year": "orig",
+      "num": 4,
+      "field": "law",
+      "text": "ガソリンの指定数量として、正しいものはどれか。",
+      "opts": [
+        "50L",
+        "200L",
+        "400L",
+        "1000L",
+        "2000L"
+      ],
+      "ans": 1,
+      "exp": "ガソリンの指定数量は200L。",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>ガソリンは第一石油類（非水溶性）で指定数量は200Lです。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「50L」について、正答（2）「200L」とは異なる内容です。本問で選ぶべき正答は（2）「200L」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。50 Lは特殊引火物などの指定数量である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「400L」について、正答（2）「200L」とは異なる内容です。本問で選ぶべき正答は（2）「200L」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「1000L」について、正答（2）「200L」とは異なる内容です。本問で選ぶべき正答は（2）「200L」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。ガソリン（第一石油類）は200 Lが指定数量である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「2000L」について、正答（2）「200L」とは異なる内容です。本問で選ぶべき正答は（2）「200L」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。2,000 Lは第3石油類水溶性等の指定数量であり、ガソリンの整理ではない。</p></li></ul></section>\n    </div>",
+      "diff": "",
+      "exam": "kou"
+    },
+    {
+      "id": 14000005,
+      "year": "orig",
+      "num": 5,
+      "field": "law",
+      "text": "製造所等の設置について、正しいものはどれか。",
+      "opts": [
+        "届出だけでよい",
+        "許可だけで検査は不要",
+        "市町村長等の許可を受け、完成検査に合格してから使用する",
+        "国の許可が必要",
+        "使用を始めてから許可を受ける"
+      ],
+      "ans": 2,
+      "exp": "設置は許可＋完成検査。",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>製造所等の設置は市町村長等の許可を受け、完成検査に合格してから使用します。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「届出だけでよい」について、正答（3）「市町村長等の許可を受け、完成検査に合格してから使用する」とは異なる内容です。本問で選ぶべき正答は（3）「市町村長等の許可を受け、完成検査に合格してから使用する」です。この肢の記述は、その論点とは一致しません。「必ず」「常に」「全く」などの断定は、例外や条件付きの整理と食い違うことが多いです。設問が問う論点と照らして、言い過ぎ・取り違えがないか確認してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「許可だけで検査は不要」について、正答（3）「市町村長等の許可を受け、完成検査に合格してから使用する」とは異なる内容です。本問で選ぶべき正答は（3）「市町村長等の許可を受け、完成検査に合格してから使用する」です。この肢の記述は、その論点とは一致しません。「必ず」「常に」「全く」などの断定は、例外や条件付きの整理と食い違うことが多いです。設問が問う論点と照らして、言い過ぎ・取り違えがないか確認してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「国の許可が必要」について、正答（3）「市町村長等の許可を受け、完成検査に合格してから使用する」とは異なる内容です。本問で選ぶべき正答は（3）「市町村長等の許可を受け、完成検査に合格してから使用する」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「使用を始めてから許可を受ける」について、正答（3）「市町村長等の許可を受け、完成検査に合格してから使用する」とは異なる内容です。本問で選ぶべき正答は（3）「市町村長等の許可を受け、完成検査に合格してから使用する」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li></ul></section>\n    </div>",
+      "diff": "",
+      "exam": "kou"
+    },
+    {
+      "id": 14000006,
+      "year": "orig",
+      "num": 6,
+      "field": "law",
+      "text": "危険物取扱者免状について、正しいものはどれか。",
+      "opts": [
+        "交付を受けた都道府県内でのみ有効",
+        "5年で失効する",
+        "他人に貸与できる",
+        "全国で有効で、写真は10年以内ごとに書き換える",
+        "書換えは不要"
+      ],
+      "ans": 3,
+      "exp": "免状は全国有効・写真10年。",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>免状は全国で有効で、写真は10年以内ごとに書き換えます。免状は全国有効・写真10年。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「交付を受けた都道府県内でのみ有効」について、正答（4）「全国で有効で、写真は10年以内ごとに書き換える」とは異なる内容です。本問で選ぶべき正答は（4）「全国で有効で、写真は10年以内ごとに書き換える」です。この肢の記述は、その論点とは一致しません。「必ず」「常に」「全く」などの断定は、例外や条件付きの整理と食い違うことが多いです。設問が問う論点と照らして、言い過ぎ・取り違えがないか確認してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「5年で失効する」について、正答（4）「全国で有効で、写真は10年以内ごとに書き換える」とは異なる内容です。本問で選ぶべき正答は（4）「全国で有効で、写真は10年以内ごとに書き換える」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「他人に貸与できる」について、正答（4）「全国で有効で、写真は10年以内ごとに書き換える」とは異なる内容です。本問で選ぶべき正答は（4）「全国で有効で、写真は10年以内ごとに書き換える」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「書換えは不要」について、正答（4）「全国で有効で、写真は10年以内ごとに書き換える」とは異なる内容です。本問で選ぶべき正答は（4）「全国で有効で、写真は10年以内ごとに書き換える」です。この肢の記述は、その論点とは一致しません。否定や「不要」「できない」の言い切りが、正答が示す要件・リスク・手続と矛盾していないか確認してください。誤答肢との差分を一行メモに残してください。</p></li></ul></section>\n    </div>",
+      "diff": "",
+      "exam": "kou"
+    },
+    {
+      "id": 14000007,
+      "year": "orig",
+      "num": 7,
+      "field": "law",
+      "text": "保安講習について、正しいものはどれか。",
+      "opts": [
+        "一度受ければ再受講は不要",
+        "甲種は対象外",
+        "受けなくても不利益はない",
+        "年1回必ず受ける",
+        "取扱作業に従事する者は原則3年以内ごとに受講する"
+      ],
+      "ans": 4,
+      "exp": "従事者は3年以内ごとに受講。",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>取扱作業に従事する危険物取扱者は、原則3年以内ごとに保安講習を受けます。従事者は3年以内ごとに受講。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「一度受ければ再受講は不要」について、正答（5）「取扱作業に従事する者は原則3年以内ごとに受講する」とは異なる内容です。本問で選ぶべき正答は（5）「取扱作業に従事する者は原則3年以内ごとに受講する」です。この肢の記述は、その論点とは一致しません。否定や「不要」「できない」の言い切りが、正答が示す要件・リスク・手続と矛盾していないか確認してください。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「甲種は対象外」について、正答（5）「取扱作業に従事する者は原則3年以内ごとに受講する」とは異なる内容です。本問で選ぶべき正答は（5）「取扱作業に従事する者は原則3年以内ごとに受講する」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「受けなくても不利益はない」について、正答（5）「取扱作業に従事する者は原則3年以内ごとに受講する」とは異なる内容です。本問で選ぶべき正答は（5）「取扱作業に従事する者は原則3年以内ごとに受講する」です。この肢の記述は、その論点とは一致しません。否定や「不要」「できない」の言い切りが、正答が示す要件・リスク・手続と矛盾していないか確認してください。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「年1回必ず受ける」について、正答（5）「取扱作業に従事する者は原則3年以内ごとに受講する」とは異なる内容です。本問で選ぶべき正答は（5）「取扱作業に従事する者は原則3年以内ごとに受講する」です。この肢の記述は、その論点とは一致しません。「必ず」「常に」「全く」などの断定は、例外や条件付きの整理と食い違うことが多いです。設問が問う論点と照らして、言い過ぎ・取り違えがないか確認してください。誤答肢との差分を一行メモに残してください。</p></li></ul></section>\n    </div>",
+      "diff": "",
+      "exam": "kou"
+    },
+    {
+      "id": 14000008,
+      "year": "orig",
+      "num": 8,
+      "field": "law",
+      "text": "危険物の運搬・混載について、正しいものはどれか。",
+      "opts": [
+        "類によっては混載が禁止される組合せがある",
+        "どの類も自由に混載できる",
+        "混載の規定はない",
+        "第4類は何とでも混載できる",
+        "容器への表示は不要"
+      ],
+      "ans": 0,
+      "exp": "混載が禁止される組合せがある。",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>運搬では、性質の異なる類どうしで混載が禁止される組合せがあり、容器には品名等を表示します。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「どの類も自由に混載できる」について、正答（1）「類によっては混載が禁止される組合せがある」とは異なる内容です。本問で選ぶべき正答は（1）「類によっては混載が禁止される組合せがある」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。危険物運搬の要件として誤った理解である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「混載の規定はない」について、正答（1）「類によっては混載が禁止される組合せがある」とは異なる内容です。本問で選ぶべき正答は（1）「類によっては混載が禁止される組合せがある」です。この肢の記述は、その論点とは一致しません。否定や「不要」「できない」の言い切りが、正答が示す要件・リスク・手続と矛盾していないか確認してください。誤答肢との差分を一行メモに残してください。危険物運搬の要件として誤った理解である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「第4類は何とでも混載できる」について、正答（1）「類によっては混載が禁止される組合せがある」とは異なる内容です。本問で選ぶべき正答は（1）「類によっては混載が禁止される組合せがある」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。危険物運搬の要件として誤った理解である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「容器への表示は不要」について、正答（1）「類によっては混載が禁止される組合せがある」とは異なる内容です。本問で選ぶべき正答は（1）「類によっては混載が禁止される組合せがある」です。この肢の記述は、その論点とは一致しません。否定や「不要」「できない」の言い切りが、正答が示す要件・リスク・手続と矛盾していないか確認してください。誤答肢との差分を一行メモに残してください。危険物運搬の要件として誤った理解である。</p></li></ul></section>\n    </div>",
+      "diff": "",
+      "exam": "kou"
+    },
+    {
+      "id": 14000009,
+      "year": "orig",
+      "num": 9,
+      "field": "law",
+      "text": "予防規程について、正しいものはどれか。",
+      "opts": [
+        "任意で届出も不要",
+        "国が定める",
+        "一定の製造所等で定め、市町村長等の認可を受ける",
+        "住宅にも必要",
+        "認可は不要"
+      ],
+      "ans": 2,
+      "exp": "予防規程は認可が必要。",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>予防規程は一定の製造所等で火災予防のために定め、市町村長等の認可を受けます。予防規程は認可が必要。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「任意で届出も不要」について、正答（3）「一定の製造所等で定め、市町村長等の認可を受ける」とは異なる内容です。本問で選ぶべき正答は（3）「一定の製造所等で定め、市町村長等の認可を受ける」です。この肢の記述は、その論点とは一致しません。否定や「不要」「できない」の言い切りが、正答が示す要件・リスク・手続と矛盾していないか確認してください。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「国が定める」について、正答（3）「一定の製造所等で定め、市町村長等の認可を受ける」とは異なる内容です。本問で選ぶべき正答は（3）「一定の製造所等で定め、市町村長等の認可を受ける」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「住宅にも必要」について、正答（3）「一定の製造所等で定め、市町村長等の認可を受ける」とは異なる内容です。本問で選ぶべき正答は（3）「一定の製造所等で定め、市町村長等の認可を受ける」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「認可は不要」について、正答（3）「一定の製造所等で定め、市町村長等の認可を受ける」とは異なる内容です。本問で選ぶべき正答は（3）「一定の製造所等で定め、市町村長等の認可を受ける」です。この肢の記述は、その論点とは一致しません。否定や「不要」「できない」の言い切りが、正答が示す要件・リスク・手続と矛盾していないか確認してください。誤答肢との差分を一行メモに残してください。</p></li></ul></section>\n    </div>",
+      "diff": "",
+      "exam": "kou"
+    },
+    {
+      "id": 14000010,
+      "year": "orig",
+      "num": 10,
+      "field": "law",
+      "text": "消防法上の危険物について、正しいものはどれか。",
+      "opts": [
+        "すべての可燃物をいう",
+        "別表第一に品名が定められ、第1類から第6類に分類される",
+        "気体を含む",
+        "都道府県ごとに分類が異なる",
+        "危険物に分類はない"
+      ],
+      "ans": 1,
+      "exp": "危険物は別表一・第1〜6類。",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>消防法上の危険物は別表第一に品名が定められ、第1類から第6類に分類されます。危険物は別表一・第1〜6類。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「すべての可燃物をいう」について、正答（2）「別表第一に品名が定められ、第1類から第6類に分類される」とは異なる内容です。本問で選ぶべき正答は（2）「別表第一に品名が定められ、第1類から第6類に分類される」です。この肢の記述は、その論点とは一致しません。「必ず」「常に」「全く」などの断定は、例外や条件付きの整理と食い違うことが多いです。設問が問う論点と照らして、言い過ぎ・取り違えがないか確認してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「気体を含む」について、正答（2）「別表第一に品名が定められ、第1類から第6類に分類される」とは異なる内容です。本問で選ぶべき正答は（2）「別表第一に品名が定められ、第1類から第6類に分類される」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。消防法別表第一に基づく危険物の定義とは異なる。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「都道府県ごとに分類が異なる」について、正答（2）「別表第一に品名が定められ、第1類から第6類に分類される」とは異なる内容です。本問で選ぶべき正答は（2）「別表第一に品名が定められ、第1類から第6類に分類される」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。消防法別表第一に基づく危険物の定義とは異なる。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「危険物に分類はない」について、正答（2）「別表第一に品名が定められ、第1類から第6類に分類される」とは異なる内容です。本問で選ぶべき正答は（2）「別表第一に品名が定められ、第1類から第6類に分類される」です。この肢の記述は、その論点とは一致しません。否定や「不要」「できない」の言い切りが、正答が示す要件・リスク・手続と矛盾していないか確認してください。誤答肢との差分を一行メモに残してください。</p></li></ul></section>\n    </div>",
+      "diff": "",
+      "exam": "kou"
+    },
+    {
+      "id": 14000011,
+      "year": "orig",
+      "num": 11,
+      "field": "rights",
+      "text": "燃焼についての説明として、正しいものはどれか。",
+      "opts": [
+        "熱を吸収する反応である",
+        "酸素がなくても進む",
+        "光だけを伴う",
+        "可燃物・酸素供給源・点火源がそろって起こる熱と光を伴う酸化反応である",
+        "還元反応である"
+      ],
+      "ans": 3,
+      "exp": "燃焼は三要素による酸化反応。",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>燃焼は可燃物・酸素供給源・点火源がそろって起こる、熱と光を伴う酸化反応です。燃焼は三要素による酸化反応。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「熱を吸収する反応である」について、正答（4）「可燃物・酸素供給源・点火源がそろって起こる熱と光を伴う酸化反応である」とは異なる内容です。本問で選ぶべき正答は（4）「可燃物・酸素供給源・点火源がそろって起こる熱と光を伴う酸化反応である」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「酸素がなくても進む」について、正答（4）「可燃物・酸素供給源・点火源がそろって起こる熱と光を伴う酸化反応である」とは異なる内容です。本問で選ぶべき正答は（4）「可燃物・酸素供給源・点火源がそろって起こる熱と光を伴う酸化反応である」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「光だけを伴う」について、正答（4）「可燃物・酸素供給源・点火源がそろって起こる熱と光を伴う酸化反応である」とは異なる内容です。本問で選ぶべき正答は（4）「可燃物・酸素供給源・点火源がそろって起こる熱と光を伴う酸化反応である」です。この肢の記述は、その論点とは一致しません。「必ず」「常に」「全く」などの断定は、例外や条件付きの整理と食い違うことが多いです。設問が問う論点と照らして、言い過ぎ・取り違えがないか確認してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「還元反応である」について、正答（4）「可燃物・酸素供給源・点火源がそろって起こる熱と光を伴う酸化反応である」とは異なる内容です。本問で選ぶべき正答は（4）「可燃物・酸素供給源・点火源がそろって起こる熱と光を伴う酸化反応である」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li></ul></section>\n    </div>",
+      "diff": "",
+      "exam": "kou"
+    },
+    {
+      "id": 14000012,
+      "year": "orig",
+      "num": 12,
+      "field": "rights",
+      "text": "引火点と発火点について、正しいものはどれか。",
+      "opts": [
+        "引火点は火源が必要、発火点は火源がなくても発火する温度である",
+        "両方とも火源が不要",
+        "両方とも火源が必要",
+        "両者は同じ意味",
+        "発火点は引火点より低いのが普通"
+      ],
+      "ans": 0,
+      "exp": "引火点は火源要・発火点は火源不要。",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>引火点は火源があって燃え出す最低温度、発火点は火源なしで発火する最低温度で、発火点の方が高くなります。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「両方とも火源が不要」について、正答（1）「引火点は火源が必要、発火点は火源がなくても発火する温度である」とは異なる内容です。本問で選ぶべき正答は（1）「引火点は火源が必要、発火点は火源がなくても発火する温度である」です。この肢の記述は、その論点とは一致しません。否定や「不要」「できない」の言い切りが、正答が示す要件・リスク・手続と矛盾していないか確認してください。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「両方とも火源が必要」について、正答（1）「引火点は火源が必要、発火点は火源がなくても発火する温度である」とは異なる内容です。本問で選ぶべき正答は（1）「引火点は火源が必要、発火点は火源がなくても発火する温度である」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。火源なしで燃え始める温度は発火点の概念である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「両者は同じ意味」について、正答（1）「引火点は火源が必要、発火点は火源がなくても発火する温度である」とは異なる内容です。本問で選ぶべき正答は（1）「引火点は火源が必要、発火点は火源がなくても発火する温度である」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。火源なしで燃え始める温度は発火点の概念である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「発火点は引火点より低いのが普通」について、正答（1）「引火点は火源が必要、発火点は火源がなくても発火する温度である」とは異なる内容です。本問で選ぶべき正答は（1）「引火点は火源が必要、発火点は火源がなくても発火する温度である」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li></ul></section>\n    </div>",
+      "diff": "",
+      "exam": "kou"
+    },
+    {
+      "id": 14000013,
+      "year": "orig",
+      "num": 13,
+      "field": "rights",
+      "text": "酸化と還元について、正しいものはどれか。",
+      "opts": [
+        "酸化は電子を得る変化である",
+        "還元は酸素と化合する変化である",
+        "酸化と還元は無関係に起こる",
+        "燃焼は還元反応である",
+        "物質が酸素と化合する、または電子を失う変化を酸化という"
+      ],
+      "ans": 4,
+      "exp": "酸化は酸素と化合/電子を失う。",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>酸化は酸素と化合する、または電子を失う変化で、燃焼は激しい酸化反応です。還元はその逆です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「酸化は電子を得る変化である」について、正答（5）「物質が酸素と化合する、または電子を失う変化を酸化という」とは異なる内容です。本問で選ぶべき正答は（5）「物質が酸素と化合する、または電子を失う変化を酸化という」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「還元は酸素と化合する変化である」について、正答（5）「物質が酸素と化合する、または電子を失う変化を酸化という」とは異なる内容です。本問で選ぶべき正答は（5）「物質が酸素と化合する、または電子を失う変化を酸化という」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「酸化と還元は無関係に起こる」について、正答（5）「物質が酸素と化合する、または電子を失う変化を酸化という」とは異なる内容です。本問で選ぶべき正答は（5）「物質が酸素と化合する、または電子を失う変化を酸化という」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「燃焼は還元反応である」について、正答（5）「物質が酸素と化合する、または電子を失う変化を酸化という」とは異なる内容です。本問で選ぶべき正答は（5）「物質が酸素と化合する、または電子を失う変化を酸化という」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li></ul></section>\n    </div>",
+      "diff": "",
+      "exam": "kou"
+    },
+    {
+      "id": 14000014,
+      "year": "orig",
+      "num": 14,
+      "field": "rights",
+      "text": "物質の状態変化について、正しいものはどれか。",
+      "opts": [
+        "気体が液体になる変化を蒸発という",
+        "液体が気体になる変化を蒸発（気化）という",
+        "固体が液体になる変化を昇華という",
+        "液体が固体になる変化を融解という",
+        "固体が気体になる変化を凝固という"
+      ],
+      "ans": 1,
+      "exp": "液体→気体が蒸発。",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>液体が気体になる変化を蒸発（気化）といいます。引火性液体は蒸発した蒸気が燃えます。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「気体が液体になる変化を蒸発という」について、正答（2）「液体が気体になる変化を蒸発（気化）という」とは異なる内容です。本問で選ぶべき正答は（2）「液体が気体になる変化を蒸発（気化）という」です。この肢の記述は、その論点とは一致しません。正答の根拠は「液体が気体になる変化を蒸発（気化）といいます」です。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「固体が液体になる変化を昇華という」について、正答（2）「液体が気体になる変化を蒸発（気化）という」とは異なる内容です。本問で選ぶべき正答は（2）「液体が気体になる変化を蒸発（気化）という」です。この肢の記述は、その論点とは一致しません。正答の根拠は「液体が気体になる変化を蒸発（気化）といいます」です。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「液体が固体になる変化を融解という」について、正答（2）「液体が気体になる変化を蒸発（気化）という」とは異なる内容です。本問で選ぶべき正答は（2）「液体が気体になる変化を蒸発（気化）という」です。この肢の記述は、その論点とは一致しません。正答の根拠は「液体が気体になる変化を蒸発（気化）といいます」です。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「固体が気体になる変化を凝固という」について、正答（2）「液体が気体になる変化を蒸発（気化）という」とは異なる内容です。本問で選ぶべき正答は（2）「液体が気体になる変化を蒸発（気化）という」です。この肢の記述は、その論点とは一致しません。正答の根拠は「液体が気体になる変化を蒸発（気化）といいます」です。誤答肢との差分を一行メモに残してください。</p></li></ul></section>\n    </div>",
+      "diff": "",
+      "exam": "kou"
+    },
+    {
+      "id": 14000015,
+      "year": "orig",
+      "num": 15,
+      "field": "rights",
+      "text": "熱の移動について、正しいものはどれか。",
+      "opts": [
+        "伝導のみである",
+        "対流は固体の中で起こる",
+        "伝導・対流・放射の3つがある",
+        "放射には必ず媒体が必要",
+        "熱は移動しない"
+      ],
+      "ans": 2,
+      "exp": "熱の移動は伝導・対流・放射。",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>熱の移動は伝導・対流・放射の3つに分けられ、火災の延焼にも関わります。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「伝導のみである」について、正答（3）「伝導・対流・放射の3つがある」とは異なる内容です。本問で選ぶべき正答は（3）「伝導・対流・放射の3つがある」です。この肢の記述は、その論点とは一致しません。「必ず」「常に」「全く」などの断定は、例外や条件付きの整理と食い違うことが多いです。設問が問う論点と照らして、言い過ぎ・取り違えがないか確認してください。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「対流は固体の中で起こる」について、正答（3）「伝導・対流・放射の3つがある」とは異なる内容です。本問で選ぶべき正答は（3）「伝導・対流・放射の3つがある」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「放射には必ず媒体が必要」について、正答（3）「伝導・対流・放射の3つがある」とは異なる内容です。本問で選ぶべき正答は（3）「伝導・対流・放射の3つがある」です。この肢の記述は、その論点とは一致しません。「必ず」「常に」「全く」などの断定は、例外や条件付きの整理と食い違うことが多いです。設問が問う論点と照らして、言い過ぎ・取り違えがないか確認してください。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「熱は移動しない」について、正答（3）「伝導・対流・放射の3つがある」とは異なる内容です。本問で選ぶべき正答は（3）「伝導・対流・放射の3つがある」です。この肢の記述は、その論点とは一致しません。否定や「不要」「できない」の言い切りが、正答が示す要件・リスク・手続と矛盾していないか確認してください。誤答肢との差分を一行メモに残してください。</p></li></ul></section>\n    </div>",
+      "diff": "",
+      "exam": "kou"
+    },
+    {
+      "id": 14000016,
+      "year": "orig",
+      "num": 16,
+      "field": "rights",
+      "text": "比熱についての説明として、正しいものはどれか。",
+      "opts": [
+        "物質1gの温度を1K（1℃）上げるのに必要な熱量",
+        "物質が燃え出す温度",
+        "物質の融点のこと",
+        "1molあたりの体積",
+        "圧力の単位"
+      ],
+      "ans": 0,
+      "exp": "比熱は1gを1K上げる熱量。",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>比熱は物質1gの温度を1K上げるのに必要な熱量です。水は比熱が大きく冷却消火に向きます。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「物質が燃え出す温度」について、正答（1）「物質1gの温度を1K（1℃）上げるのに必要な熱量」とは異なる内容です。本問で選ぶべき正答は（1）「物質1gの温度を1K（1℃）上げるのに必要な熱量」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「物質の融点のこと」について、正答（1）「物質1gの温度を1K（1℃）上げるのに必要な熱量」とは異なる内容です。本問で選ぶべき正答は（1）「物質1gの温度を1K（1℃）上げるのに必要な熱量」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「1molあたりの体積」について、正答（1）「物質1gの温度を1K（1℃）上げるのに必要な熱量」とは異なる内容です。本問で選ぶべき正答は（1）「物質1gの温度を1K（1℃）上げるのに必要な熱量」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「圧力の単位」について、正答（1）「物質1gの温度を1K（1℃）上げるのに必要な熱量」とは異なる内容です。本問で選ぶべき正答は（1）「物質1gの温度を1K（1℃）上げるのに必要な熱量」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li></ul></section>\n    </div>",
+      "diff": "",
+      "exam": "kou"
+    },
+    {
+      "id": 14000017,
+      "year": "orig",
+      "num": 17,
+      "field": "rights",
+      "text": "一定量・一定温度の気体の性質について、正しいものはどれか。",
+      "opts": [
+        "圧力と体積は比例する",
+        "温度を上げると体積が減る",
+        "気体は圧縮できない",
+        "圧力を高めると体積は小さくなる",
+        "体積は圧力に無関係"
+      ],
+      "ans": 3,
+      "exp": "圧力を上げると体積は減る。",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>一定温度では、圧力を高めると気体の体積は小さくなります（ボイルの法則）。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「圧力と体積は比例する」について、正答（4）「圧力を高めると体積は小さくなる」とは異なる内容です。本問で選ぶべき正答は（4）「圧力を高めると体積は小さくなる」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「温度を上げると体積が減る」について、正答（4）「圧力を高めると体積は小さくなる」とは異なる内容です。本問で選ぶべき正答は（4）「圧力を高めると体積は小さくなる」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「気体は圧縮できない」について、正答（4）「圧力を高めると体積は小さくなる」とは異なる内容です。本問で選ぶべき正答は（4）「圧力を高めると体積は小さくなる」です。この肢の記述は、その論点とは一致しません。否定や「不要」「できない」の言い切りが、正答が示す要件・リスク・手続と矛盾していないか確認してください。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「体積は圧力に無関係」について、正答（4）「圧力を高めると体積は小さくなる」とは異なる内容です。本問で選ぶべき正答は（4）「圧力を高めると体積は小さくなる」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li></ul></section>\n    </div>",
+      "diff": "",
+      "exam": "kou"
+    },
+    {
+      "id": 14000018,
+      "year": "orig",
+      "num": 18,
+      "field": "rights",
+      "text": "消火の方法について、正しいものはどれか。",
+      "opts": [
+        "加熱消火が基本である",
+        "窒息消火は酸素を供給する",
+        "冷却消火は温度を上げる",
+        "除去消火は酸素を断つ",
+        "除去・窒息・冷却があり、抑制（負触媒）を加えることもある"
+      ],
+      "ans": 4,
+      "exp": "消火は除去・窒息・冷却＋抑制。",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>消火は除去・窒息・冷却が基本で、連鎖反応を断つ抑制（負触媒）を加えて説明することもあります。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「加熱消火が基本である」について、正答（5）「除去・窒息・冷却があり、抑制（負触媒）を加えることもある」とは異なる内容です。本問で選ぶべき正答は（5）「除去・窒息・冷却があり、抑制（負触媒）を加えることもある」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。冷却消火の説明であり、設問の消火方法としては該当しない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「窒息消火は酸素を供給する」について、正答（5）「除去・窒息・冷却があり、抑制（負触媒）を加えることもある」とは異なる内容です。本問で選ぶべき正答は（5）「除去・窒息・冷却があり、抑制（負触媒）を加えることもある」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。冷却消火の説明であり、設問の消火方法としては該当しない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「冷却消火は温度を上げる」について、正答（5）「除去・窒息・冷却があり、抑制（負触媒）を加えることもある」とは異なる内容です。本問で選ぶべき正答は（5）「除去・窒息・冷却があり、抑制（負触媒）を加えることもある」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。冷却消火の説明であり、設問の消火方法としては該当しない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「除去消火は酸素を断つ」について、正答（5）「除去・窒息・冷却があり、抑制（負触媒）を加えることもある」とは異なる内容です。本問で選ぶべき正答は（5）「除去・窒息・冷却があり、抑制（負触媒）を加えることもある」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。冷却消火の説明であり、設問の消火方法としては該当しない。</p></li></ul></section>\n    </div>",
+      "diff": "",
+      "exam": "kou"
+    },
+    {
+      "id": 14000019,
+      "year": "orig",
+      "num": 19,
+      "field": "rights",
+      "text": "静電気について、正しいものはどれか。",
+      "opts": [
+        "湿度が高いほどたまりやすい",
+        "流速が速いほど発生しやすく、接地で逃がせる",
+        "導体にのみ生じる",
+        "放電しても火花にならない",
+        "接地すると静電気が増える"
+      ],
+      "ans": 1,
+      "exp": "流速で発生・接地で逃がす。",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>静電気は流速が速いほど発生しやすく、接地で大地に逃がせます。湿度が高いとたまりにくくなります。流速で発生・接地で逃がす。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「湿度が高いほどたまりやすい」について、正答（2）「流速が速いほど発生しやすく、接地で逃がせる」とは異なる内容です。本問で選ぶべき正答は（2）「流速が速いほど発生しやすく、接地で逃がせる」です。この肢の記述は、その論点とは一致しません。正答の根拠は「静電気は流速が速いほど発生しやすく、接地で大地に逃がせます」です。誤答肢との差分を一行メモに残してください。高速流動は帯電の原因となり得るため、抑制する対策が必要である。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「導体にのみ生じる」について、正答（2）「流速が速いほど発生しやすく、接地で逃がせる」とは異なる内容です。本問で選ぶべき正答は（2）「流速が速いほど発生しやすく、接地で逃がせる」です。この肢の記述は、その論点とは一致しません。「必ず」「常に」「全く」などの断定は、例外や条件付きの整理と食い違うことが多いです。設問が問う論点と照らして、言い過ぎ・取り違えがないか確認してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「放電しても火花にならない」について、正答（2）「流速が速いほど発生しやすく、接地で逃がせる」とは異なる内容です。本問で選ぶべき正答は（2）「流速が速いほど発生しやすく、接地で逃がせる」です。この肢の記述は、その論点とは一致しません。否定や「不要」「できない」の言い切りが、正答が示す要件・リスク・手続と矛盾していないか確認してください。正答の根拠は「静電気は流速が速いほど発生しやすく、接地で大地に逃がせます」です。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「接地すると静電気が増える」について、正答（2）「流速が速いほど発生しやすく、接地で逃がせる」とは異なる内容です。本問で選ぶべき正答は（2）「流速が速いほど発生しやすく、接地で逃がせる」です。この肢の記述は、その論点とは一致しません。正答の根拠は「静電気は流速が速いほど発生しやすく、接地で大地に逃がせます」です。誤答肢との差分を一行メモに残してください。高速流動は帯電の原因となり得るため、抑制する対策が必要である。</p></li></ul></section>\n    </div>",
+      "diff": "",
+      "exam": "kou"
+    },
+    {
+      "id": 14000020,
+      "year": "orig",
+      "num": 20,
+      "field": "rights",
+      "text": "金属のイオン化傾向と腐食について、正しいものはどれか。",
+      "opts": [
+        "金はイオン化傾向が大きい",
+        "イオン化傾向は腐食と無関係",
+        "イオン化傾向の大きい金属ほど酸化されやすく腐食しやすい",
+        "すべての金属は腐食しない",
+        "鉄は腐食しない"
+      ],
+      "ans": 2,
+      "exp": "イオン化傾向が大きいほど腐食しやすい。",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>イオン化傾向の大きい金属ほど酸化されやすく腐食しやすい傾向があります。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「金はイオン化傾向が大きい」について、この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「イオン化傾向は腐食と無関係」について、この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「すべての金属は腐食しない」について、この肢の記述は、その論点とは一致しません。「必ず」「常に」「全く」などの断定は、例外や条件付きの整理と食い違うことが多いです。設問が問う論点と照らして、言い過ぎ・取り違えがないか確認してください。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「鉄は腐食しない」について、この肢の記述は、その論点とは一致しません。否定や「不要」「できない」の言い切りが、正答が示す要件・リスク・手続と矛盾していないか確認してください。誤答肢との差分を一行メモに残してください。</p></li></ul></section>\n    </div>",
+      "diff": "",
+      "exam": "kou"
+    },
+    {
+      "id": 14000021,
+      "year": "orig",
+      "num": 21,
+      "field": "limit",
+      "text": "第1類危険物（酸化性固体）の性質として、正しいものはどれか。",
+      "opts": [
+        "それ自体は燃えにくいが、可燃物と混ざり加熱・衝撃等で激しい燃焼を起こさせる",
+        "引火性の液体である",
+        "空気中で自然発火する",
+        "水と反応して発火する",
+        "可燃性の気体である"
+      ],
+      "ans": 0,
+      "exp": "第1類は酸化性固体。",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>第1類は酸化性固体で、それ自体は燃えにくいものの、可燃物と混ざると分解して激しい燃焼を起こさせます。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「引火性の液体である」について、正答（1）「それ自体は燃えにくいが、可燃物と混ざり加熱・衝撃等で激しい燃焼を起こさせる」とは異なる内容です。本問で選ぶべき正答は（1）「それ自体は燃えにくいが、可燃物と混ざり加熱・衝撃等で激しい燃焼を起こさせる」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「空気中で自然発火する」について、正答（1）「それ自体は燃えにくいが、可燃物と混ざり加熱・衝撃等で激しい燃焼を起こさせる」とは異なる内容です。本問で選ぶべき正答は（1）「それ自体は燃えにくいが、可燃物と混ざり加熱・衝撃等で激しい燃焼を起こさせる」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「水と反応して発火する」について、正答（1）「それ自体は燃えにくいが、可燃物と混ざり加熱・衝撃等で激しい燃焼を起こさせる」とは異なる内容です。本問で選ぶべき正答は（1）「それ自体は燃えにくいが、可燃物と混ざり加熱・衝撃等で激しい燃焼を起こさせる」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「可燃性の気体である」について、正答（1）「それ自体は燃えにくいが、可燃物と混ざり加熱・衝撃等で激しい燃焼を起こさせる」とは異なる内容です。本問で選ぶべき正答は（1）「それ自体は燃えにくいが、可燃物と混ざり加熱・衝撃等で激しい燃焼を起こさせる」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li></ul></section>\n    </div>",
+      "diff": "",
+      "exam": "kou"
+    },
+    {
+      "id": 14000022,
+      "year": "orig",
+      "num": 22,
+      "field": "limit",
+      "text": "第2類危険物（可燃性固体）に該当するものはどれか。",
+      "opts": [
+        "ガソリン",
+        "硝酸",
+        "カリウム",
+        "赤りん・硫黄・鉄粉など",
+        "過酸化水素"
+      ],
+      "ans": 3,
+      "exp": "第2類は赤りん・硫黄等。",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>第2類は可燃性固体で、赤りん・硫黄・鉄粉・マグネシウムなどが該当します。第2類は赤りん・硫黄等。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「ガソリン」について、設問の求め方と照らすと正答になりません。設問文の「正しいもの／誤っているもの／最も適切でないもの」を先に確認してから、各肢を読み直してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「硝酸」について、設問の求め方と照らすと正答になりません。設問文の「正しいもの／誤っているもの／最も適切でないもの」を先に確認してから、各肢を読み直してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「カリウム」について、設問の求め方と照らすと正答になりません。設問文の「正しいもの／誤っているもの／最も適切でないもの」を先に確認してから、各肢を読み直してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「過酸化水素」について、設問の求め方と照らすと正答になりません。設問文の「正しいもの／誤っているもの／最も適切でないもの」を先に確認してから、各肢を読み直してください。</p></li></ul></section>\n    </div>",
+      "diff": "",
+      "exam": "kou"
+    },
+    {
+      "id": 14000023,
+      "year": "orig",
+      "num": 23,
+      "field": "limit",
+      "text": "第3類危険物の性質として、正しいものはどれか。",
+      "opts": [
+        "酸化性の液体である",
+        "空気中で自然発火し、または水と接触して発火・可燃性ガスを発生する",
+        "引火性の液体である",
+        "まったく燃えない固体である",
+        "自己反応性物質である"
+      ],
+      "ans": 1,
+      "exp": "第3類は自然発火性・禁水性。",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>第3類は自然発火性・禁水性物質で、空気中で自然発火したり水と接触して発火・可燃性ガスを発生します。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「酸化性の液体である」について、この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「引火性の液体である」について、この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「まったく燃えない固体である」について、この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「自己反応性物質である」について、この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li></ul></section>\n    </div>",
+      "diff": "",
+      "exam": "kou"
+    },
+    {
+      "id": 14000024,
+      "year": "orig",
+      "num": 24,
+      "field": "limit",
+      "text": "第4類危険物（引火性液体）の火災の消火として、適切なものはどれか。",
+      "opts": [
+        "棒状の水をかける",
+        "酸素を送り込む",
+        "放置して鎮火を待つ",
+        "かくはんする",
+        "泡・粉末・二酸化炭素などで窒息消火する"
+      ],
+      "ans": 4,
+      "exp": "第4類は窒息消火。",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>第4類は窒息消火が基本で、泡・粉末・二酸化炭素などが有効です。非水溶性に棒状の水は不適です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「棒状の水をかける」について、正答（5）「泡・粉末・二酸化炭素などで窒息消火する」とは異なる内容です。本問で選ぶべき正答は（5）「泡・粉末・二酸化炭素などで窒息消火する」です。この肢の記述は、その論点とは一致しません。正答の根拠は「第4類は窒息消火が基本で、泡・粉末・二酸化炭素などが有効です」です。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「酸素を送り込む」について、正答（5）「泡・粉末・二酸化炭素などで窒息消火する」とは異なる内容です。本問で選ぶべき正答は（5）「泡・粉末・二酸化炭素などで窒息消火する」です。この肢の記述は、その論点とは一致しません。正答の根拠は「第4類は窒息消火が基本で、泡・粉末・二酸化炭素などが有効です」です。誤答肢との差分を一行メモに残してください。酸素を供給すると燃焼が助長され、消火の考え方に反する。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「放置して鎮火を待つ」について、正答（5）「泡・粉末・二酸化炭素などで窒息消火する」とは異なる内容です。本問で選ぶべき正答は（5）「泡・粉末・二酸化炭素などで窒息消火する」です。この肢の記述は、その論点とは一致しません。正答の根拠は「第4類は窒息消火が基本で、泡・粉末・二酸化炭素などが有効です」です。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「かくはんする」について、正答（5）「泡・粉末・二酸化炭素などで窒息消火する」とは異なる内容です。本問で選ぶべき正答は（5）「泡・粉末・二酸化炭素などで窒息消火する」です。この肢の記述は、その論点とは一致しません。正答の根拠は「第4類は窒息消火が基本で、泡・粉末・二酸化炭素などが有効です」です。誤答肢との差分を一行メモに残してください。かき混ぜは燃焼面積を増やし、火災拡大のおそれがある。</p></li></ul></section>\n    </div>",
+      "diff": "",
+      "exam": "kou"
+    },
+    {
+      "id": 14000025,
+      "year": "orig",
+      "num": 25,
+      "field": "limit",
+      "text": "第5類危険物（自己反応性物質）の性質・消火として、正しいものはどれか。",
+      "opts": [
+        "窒息消火が最も有効である",
+        "まったく燃えない",
+        "分子内に酸素を含むものが多く、大量の水で冷却する消火が基本である",
+        "水と接触すると発火する",
+        "酸化性の液体である"
+      ],
+      "ans": 2,
+      "exp": "第5類は大量注水で冷却。",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>第5類は自己反応性物質で分子内に酸素を含むものが多く、窒息消火は効きにくいため大量の水で冷却するのが基本です。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「窒息消火が最も有効である」について、正答（3）「分子内に酸素を含むものが多く、大量の水で冷却する消火が基本である」とは異なる内容です。本問で選ぶべき正答は（3）「分子内に酸素を含むものが多く、大量の水で冷却する消火が基本である」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。冷却消火の説明であり、設問の消火方法としては該当しない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「まったく燃えない」について、正答（3）「分子内に酸素を含むものが多く、大量の水で冷却する消火が基本である」とは異なる内容です。本問で選ぶべき正答は（3）「分子内に酸素を含むものが多く、大量の水で冷却する消火が基本である」です。この肢の記述は、その論点とは一致しません。否定や「不要」「できない」の言い切りが、正答が示す要件・リスク・手続と矛盾していないか確認してください。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「水と接触すると発火する」について、正答（3）「分子内に酸素を含むものが多く、大量の水で冷却する消火が基本である」とは異なる内容です。本問で選ぶべき正答は（3）「分子内に酸素を含むものが多く、大量の水で冷却する消火が基本である」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。冷却消火の説明であり、設問の消火方法としては該当しない。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「酸化性の液体である」について、正答（3）「分子内に酸素を含むものが多く、大量の水で冷却する消火が基本である」とは異なる内容です。本問で選ぶべき正答は（3）「分子内に酸素を含むものが多く、大量の水で冷却する消火が基本である」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。冷却消火の説明であり、設問の消火方法としては該当しない。</p></li></ul></section>\n    </div>",
+      "diff": "",
+      "exam": "kou"
+    },
+    {
+      "id": 14000026,
+      "year": "orig",
+      "num": 26,
+      "field": "limit",
+      "text": "第6類危険物（酸化性液体）として、正しいものはどれか。",
+      "opts": [
+        "硝酸・過酸化水素・過塩素酸など、それ自体は不燃だが燃焼を促進する",
+        "ガソリン",
+        "ナトリウム",
+        "赤りん",
+        "硫黄"
+      ],
+      "ans": 0,
+      "exp": "第6類は酸化性液体。",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>第6類は酸化性液体で、硝酸・過酸化水素・過塩素酸などがあり、それ自体は燃えませんが可燃物の燃焼を促進します。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「ガソリン」について、正答（1）「硝酸・過酸化水素・過塩素酸など、それ自体は不燃だが燃焼を促進する」とは異なる内容です。本問で選ぶべき正答は（1）「硝酸・過酸化水素・過塩素酸など、それ自体は不燃だが燃焼を促進する」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「ナトリウム」について、正答（1）「硝酸・過酸化水素・過塩素酸など、それ自体は不燃だが燃焼を促進する」とは異なる内容です。本問で選ぶべき正答は（1）「硝酸・過酸化水素・過塩素酸など、それ自体は不燃だが燃焼を促進する」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「赤りん」について、正答（1）「硝酸・過酸化水素・過塩素酸など、それ自体は不燃だが燃焼を促進する」とは異なる内容です。本問で選ぶべき正答は（1）「硝酸・過酸化水素・過塩素酸など、それ自体は不燃だが燃焼を促進する」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「硫黄」について、正答（1）「硝酸・過酸化水素・過塩素酸など、それ自体は不燃だが燃焼を促進する」とは異なる内容です。本問で選ぶべき正答は（1）「硝酸・過酸化水素・過塩素酸など、それ自体は不燃だが燃焼を促進する」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li></ul></section>\n    </div>",
+      "diff": "",
+      "exam": "kou"
+    },
+    {
+      "id": 14000027,
+      "year": "orig",
+      "num": 27,
+      "field": "limit",
+      "text": "第3類のうち禁水性物質の火災の消火として、正しいものはどれか。",
+      "opts": [
+        "大量の水で冷却する",
+        "泡消火剤を用いる",
+        "水と反応するため水は使わず、乾燥砂や膨張ひる石などで覆う",
+        "水をかけて洗い流す",
+        "放置する"
+      ],
+      "ans": 2,
+      "exp": "禁水性に水は不可、乾燥砂等。",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>禁水性物質は水と反応して発火・ガス発生の危険があるため、水や泡は使わず乾燥砂や膨張ひる石などで覆います。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「大量の水で冷却する」について、正答（3）「水と反応するため水は使わず、乾燥砂や膨張ひる石などで覆う」とは異なる内容です。本問で選ぶべき正答は（3）「水と反応するため水は使わず、乾燥砂や膨張ひる石などで覆う」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「泡消火剤を用いる」について、正答（3）「水と反応するため水は使わず、乾燥砂や膨張ひる石などで覆う」とは異なる内容です。本問で選ぶべき正答は（3）「水と反応するため水は使わず、乾燥砂や膨張ひる石などで覆う」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「水をかけて洗い流す」について、正答（3）「水と反応するため水は使わず、乾燥砂や膨張ひる石などで覆う」とは異なる内容です。本問で選ぶべき正答は（3）「水と反応するため水は使わず、乾燥砂や膨張ひる石などで覆う」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「放置する」について、正答（3）「水と反応するため水は使わず、乾燥砂や膨張ひる石などで覆う」とは異なる内容です。本問で選ぶべき正答は（3）「水と反応するため水は使わず、乾燥砂や膨張ひる石などで覆う」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li></ul></section>\n    </div>",
+      "diff": "",
+      "exam": "kou"
+    },
+    {
+      "id": 14000028,
+      "year": "orig",
+      "num": 28,
+      "field": "limit",
+      "text": "酸化性の危険物（第1類・第6類）の貯蔵・取扱いとして、正しいものはどれか。",
+      "opts": [
+        "可燃物と混ぜて保管する",
+        "可燃物との接触や加熱・衝撃を避ける",
+        "加熱して保管する",
+        "火気のそばに置く",
+        "取扱いに注意は不要である"
+      ],
+      "ans": 1,
+      "exp": "酸化性は可燃物接触を避ける。",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>酸化性の第1類・第6類は、可燃物と接触すると激しい燃焼を助けるため、接触や加熱・衝撃を避けます。酸化性は可燃物接触を避ける。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「可燃物と混ぜて保管する」について、正答（2）「可燃物との接触や加熱・衝撃を避ける」とは異なる内容です。本問で選ぶべき正答は（2）「可燃物との接触や加熱・衝撃を避ける」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「加熱して保管する」について、正答（2）「可燃物との接触や加熱・衝撃を避ける」とは異なる内容です。本問で選ぶべき正答は（2）「可燃物との接触や加熱・衝撃を避ける」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「火気のそばに置く」について、正答（2）「可燃物との接触や加熱・衝撃を避ける」とは異なる内容です。本問で選ぶべき正答は（2）「可燃物との接触や加熱・衝撃を避ける」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「取扱いに注意は不要である」について、正答（2）「可燃物との接触や加熱・衝撃を避ける」とは異なる内容です。本問で選ぶべき正答は（2）「可燃物との接触や加熱・衝撃を避ける」です。この肢の記述は、その論点とは一致しません。否定や「不要」「できない」の言い切りが、正答が示す要件・リスク・手続と矛盾していないか確認してください。誤答肢との差分を一行メモに残してください。</p></li></ul></section>\n    </div>",
+      "diff": "",
+      "exam": "kou"
+    },
+    {
+      "id": 14000029,
+      "year": "orig",
+      "num": 29,
+      "field": "limit",
+      "text": "危険物とその類の組合せとして、正しいものはどれか。",
+      "opts": [
+        "ガソリンは第1類",
+        "硫黄は第4類",
+        "硝酸は第2類",
+        "赤りんは第5類",
+        "ナトリウムは第3類、過酸化水素は第6類"
+      ],
+      "ans": 4,
+      "exp": "ナトリウム＝第3類、過酸化水素＝第6類。",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>ナトリウムは第3類（自然発火性・禁水性）、過酸化水素は第6類（酸化性液体）です。ナトリウム＝第3類、過酸化水素＝第6類。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「ガソリンは第1類」について、正答（5）「ナトリウムは第3類、過酸化水素は第6類」とは異なる内容です。本問で選ぶべき正答は（5）「ナトリウムは第3類、過酸化水素は第6類」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「硫黄は第4類」について、正答（5）「ナトリウムは第3類、過酸化水素は第6類」とは異なる内容です。本問で選ぶべき正答は（5）「ナトリウムは第3類、過酸化水素は第6類」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「硝酸は第2類」について、正答（5）「ナトリウムは第3類、過酸化水素は第6類」とは異なる内容です。本問で選ぶべき正答は（5）「ナトリウムは第3類、過酸化水素は第6類」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（4）</span></p><p class=\"q-exp-choice-note\">「赤りんは第5類」について、正答（5）「ナトリウムは第3類、過酸化水素は第6類」とは異なる内容です。本問で選ぶべき正答は（5）「ナトリウムは第3類、過酸化水素は第6類」です。この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li></ul></section>\n    </div>",
+      "diff": "",
+      "exam": "kou"
+    },
+    {
+      "id": 14000030,
+      "year": "orig",
+      "num": 30,
+      "field": "limit",
+      "text": "危険物に共通する貯蔵・取扱いの原則として、正しいものはどれか。",
+      "opts": [
+        "すべて水中で保管する",
+        "すべて密閉して加熱する",
+        "類によらず同じ方法で消火する",
+        "みだりに火気を近づけず、性質に応じた方法で貯蔵・取り扱う",
+        "容器への表示は不要である"
+      ],
+      "ans": 3,
+      "exp": "性質に応じて貯蔵・取扱う。",
+      "expHtml": "<div class=\"q-exp\">\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-correct-h\"><h3 id=\"q-exp-correct-h\" class=\"q-exp-h3\">正解の理由</h3>\n    <p>危険物は類ごとに性質が異なるため、みだりに火気を近づけず、それぞれの性質に応じた方法で貯蔵・取り扱います。</p>\n    </section>\n    <section class=\"q-exp-section\" aria-labelledby=\"q-exp-wrong-h\"><h3 id=\"q-exp-wrong-h\" class=\"q-exp-h3\">他の選択肢</h3><ul class=\"q-exp-choice-list\"><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（1）</span></p><p class=\"q-exp-choice-note\">「すべて水中で保管する」について、この肢の記述は、その論点とは一致しません。「必ず」「常に」「全く」などの断定は、例外や条件付きの整理と食い違うことが多いです。設問が問う論点と照らして、言い過ぎ・取り違えがないか確認してください。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（2）</span></p><p class=\"q-exp-choice-note\">「すべて密閉して加熱する」について、この肢の記述は、その論点とは一致しません。「必ず」「常に」「全く」などの断定は、例外や条件付きの整理と食い違うことが多いです。設問が問う論点と照らして、言い過ぎ・取り違えがないか確認してください。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（3）</span></p><p class=\"q-exp-choice-note\">「類によらず同じ方法で消火する」について、この肢の記述は、その論点とは一致しません。誤答肢との差分を一行メモに残してください。</p></li><li class=\"q-exp-choice-item\"><p class=\"q-exp-choice-head\"><span class=\"q-exp-choice-num\">（5）</span></p><p class=\"q-exp-choice-note\">「容器への表示は不要である」について、この肢の記述は、その論点とは一致しません。否定や「不要」「できない」の言い切りが、正答が示す要件・リスク・手続と矛盾していないか確認してください。誤答肢との差分を一行メモに残してください。</p></li></ul></section>\n    </div>",
+      "diff": "",
+      "exam": "kou"
     }
   ],
   "2": [],
