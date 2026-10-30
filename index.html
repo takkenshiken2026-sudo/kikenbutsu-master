@@ -349,11 +349,16 @@ h2.section-label .tip-icon{width:13px;height:13px;font-size:9px}
 /* ===== QUIZ START ===== */
 .mode-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:24px}
 /* ===== QUIZ START V2 ===== */
-.exam-switcher{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}
+.exam-switcher{margin:0 0 22px}
 .exam-switcher[hidden]{display:none}
-.exam-switcher-btn{appearance:none;border:1.5px solid var(--border2);background:#fff;color:var(--text2);border-radius:999px;padding:7px 16px;font-size:var(--fs-sub);font-weight:700;cursor:pointer;transition:all .16s}
-.exam-switcher-btn:hover{border-color:var(--accent);color:var(--accent)}
-.exam-switcher-btn.is-active{background:var(--accent);border-color:var(--accent);color:#fff}
+.exam-switcher-label{display:flex;align-items:center;gap:6px;font-size:var(--fs-caption);font-weight:700;color:var(--text2);margin:0 0 8px;letter-spacing:.03em}
+.exam-switcher-label::before{content:"";width:3px;height:14px;background:var(--accent);border-radius:2px}
+.exam-switcher-seg{display:inline-flex;flex-wrap:wrap;gap:4px;padding:5px;background:var(--bg2);border:1px solid var(--border2);border-radius:13px;max-width:100%}
+.exam-switcher-btn{appearance:none;border:1px solid transparent;background:transparent;color:var(--text2);border-radius:9px;padding:10px 22px;font-size:var(--fs-body);font-weight:700;cursor:pointer;transition:all .15s;min-width:72px;line-height:1.2}
+.exam-switcher-btn:hover{color:var(--accent);background:var(--surface)}
+.exam-switcher-btn.is-active{background:var(--accent);color:#fff;box-shadow:0 1px 4px rgba(0,0,0,.2)}
+.exam-switcher-btn.is-active:hover{background:var(--accent);color:#fff}
+@media (max-width:600px){.exam-switcher-seg{display:flex;width:100%}.exam-switcher-btn{flex:1 1 0;min-width:0;padding:10px 8px}}
 .mode-list-v2{display:flex;flex-direction:column;gap:8px;margin-bottom:16px}
 /* ===== 一問一答 ===== */
 .ichi-config{padding:4px 0 20px;margin-bottom:8px}
@@ -3511,15 +3516,23 @@ function renderExamSwitcher() {
   }
   host.hidden = false;
   host.innerHTML = '';
+  var label = document.createElement('span');
+  label.className = 'exam-switcher-label';
+  label.textContent = '試験を選ぶ';
+  host.appendChild(label);
+  var seg = document.createElement('div');
+  seg.className = 'exam-switcher-seg';
   list.forEach(function (e) {
     var btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'exam-switcher-btn' + (e.id === CURRENT_EXAM ? ' is-active' : '');
     btn.textContent = e.short || e.label || e.id;
+    btn.title = e.label || e.short || e.id;
     btn.setAttribute('aria-pressed', e.id === CURRENT_EXAM ? 'true' : 'false');
     btn.addEventListener('click', function () { switchExam(e.id); });
-    host.appendChild(btn);
+    seg.appendChild(btn);
   });
+  host.appendChild(seg);
 }
 window.renderExamSwitcher = renderExamSwitcher;
 
