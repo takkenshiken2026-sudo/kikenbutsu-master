@@ -77,6 +77,11 @@ fi
 if [[ -f "$ROOT/favicon.ico" ]]; then
   cp "$ROOT/favicon.ico" "$OUT/favicon.ico"
 fi
+# データ/設定JS・テーマCSS にキャッシュ無効化用の版(?v=内容ハッシュ)を付与する。
+# 付与対象は public_site の index.html だけ（ソースの index.html は不変）。
+# 内容が変わったファイルの版だけが変わるので、更新が即座に反映される。
+"${PYTHON:-python3}" "$ROOT/tools/stamp_asset_versions.py" "$OUT"
+
 n="$(find "$OUT" -type f | wc -l | tr -d ' ')"
 if grep -q 'site-spa.css' "$OUT/index.html" 2>/dev/null && [[ ! -f "$OUT/site-spa.css" ]]; then
   echo "prepare_public_site.sh: index.html が site-spa.css を参照していますが public_site にありません。" >&2
