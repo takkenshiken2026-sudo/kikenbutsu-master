@@ -419,6 +419,30 @@ body.seo-editorial-preview-page .seo-editorial .seo-article-section h2 .section-
   font-weight: var(--seo-font-weight-heading);
 }
 
+.seo-editorial .affiliate-disclosure {
+  background: color-mix(in srgb, #b7791f 8%, var(--seo-callout-bg));
+  border: 1px solid var(--seo-callout-border);
+  border-left: 4px solid #b7791f;
+  border-radius: var(--seo-callout-radius);
+  padding: 12px 16px;
+  margin: 14px 0 var(--seo-callout-margin);
+  color: var(--seo-callout-text);
+  line-height: var(--seo-line-body);
+  font-size: var(--seo-fs-caption, 0.9em);
+}
+
+.seo-editorial .affiliate-disclosure strong {
+  display: inline-block;
+  margin-right: 8px;
+  padding: 1px 8px;
+  border-radius: 4px;
+  background: #b7791f;
+  color: #fff;
+  font-weight: var(--seo-font-weight-strong);
+  font-size: 0.85em;
+  letter-spacing: 0.04em;
+}
+
 .seo-editorial .seo-key-points-list {
   margin: 12px 0 0;
   padding-left: 1.2em;

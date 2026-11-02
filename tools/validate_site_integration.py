@@ -653,9 +653,16 @@ _GA4_SKIP_PREFIXES = (
 
 
 def _is_guide_retire_redirect(text: str) -> bool:
-    """build_guide_retire_redirects が書く noindex スタブ（GA4 不要）。"""
+    """noindex リダイレクト stub（GA4 不要）。
+
+    build_guide_retire_redirects / build_question_retire_redirects / ハブ stub など、
+    meta refresh + noindex + location.replace で即時転送する専用 URL を広く判定する。
+    計測しても意味がないページなので GA4 設置を免除する。
+    """
+    low = text.lower()
+    is_meta_refresh = 'http-equiv="refresh"' in low and "0;url=" in low
     return (
-        "記事移動中" in text
+        is_meta_refresh
         and 'content="noindex, follow"' in text
         and "location.replace" in text
     )

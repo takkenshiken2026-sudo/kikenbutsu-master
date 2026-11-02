@@ -26,6 +26,7 @@ for f in \
   robots.txt \
   ads.txt \
   sitemap.xml \
+  404.html \
   .nojekyll \
   favicon.ico \
   exam-site-data-past.js \
