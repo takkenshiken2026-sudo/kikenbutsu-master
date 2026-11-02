@@ -105,7 +105,6 @@ def validate_guide_index_picks(root: Path) -> list[Issue]:
 
     for hub, label in (
         ("articles", "試験ガイド一覧"),
-        ("terms", "用語一覧"),
         ("q", "過去問一覧"),
     ):
         index_path = root / hub / "index.html"

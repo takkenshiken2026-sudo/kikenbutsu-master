@@ -254,6 +254,9 @@ def parse_tags(raw: str) -> list[str]:
 
 
 def load_glossary_lookup() -> dict[str, str]:
+    # 用語解説ページは廃止したため、用語オートリンクは生成しない。
+    return {}
+
     from tools.build_glossary_pages import lookup_key, make_term_lookup, term_slug
 
     if not GLOSSARY_CSV.is_file():
@@ -527,7 +530,8 @@ def parse_related_link_tokens(
         elif kind == "qindex":
             add(rel_href(rel_path, "q/index.html"), label or "過去問一覧")
         elif kind == "terms":
-            add(rel_href(rel_path, "terms/index.html"), label or "用語解説一覧")
+            # 用語解説ページは廃止したためリンクを生成しない。
+            pass
         elif kind == "review":
             add(rel_href(rel_path, "index.html#review"), label or "復習リスト")
         elif kind == "practice":

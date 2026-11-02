@@ -49,7 +49,6 @@ GUIDE_SLUG_ALTERNATES: dict[str, tuple[str, ...]] = {
 }
 
 GUIDE_HUB_LINKS: tuple[tuple[str, str], ...] = (
-    ("../../terms/index.html", "用語解説一覧"),
     ("../../q/index.html", "過去問演習"),
 )
 

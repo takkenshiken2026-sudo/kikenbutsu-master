@@ -420,7 +420,6 @@ def _header_learning_nav(root: Path) -> list[Issue]:
         article_sample = root / "articles" / "exam-overview" / "index.html"
     samples: list[tuple[str, Path]] = [
         ("articles sample", article_sample),
-        ("terms/index.html", root / "terms" / "index.html"),
         ("about.html", root / "about.html"),
         ("q/index.html", root / "q" / "index.html"),
     ]
@@ -513,7 +512,6 @@ def _viewport_and_static_css(root: Path) -> list[Issue]:
     samples = [
         "about.html",
         "articles/index.html",
-        "terms/index.html",
         "q/index.html",
     ]
     issues: list[Issue] = []
@@ -714,7 +712,7 @@ def _ga4_tracking(root: Path) -> list[Issue]:
         issues.extend(_ga4_page_issues(root, rel))
 
     samples: list[str] = []
-    for pattern in ("articles/*/index.html", "terms/g-*.html", "q/practice/*/index.html"):
+    for pattern in ("articles/*/index.html", "q/practice/*/index.html"):
         for path in sorted(root.glob(pattern))[:1]:
             samples.append(str(path.relative_to(root)))
     for rel in samples:
@@ -730,7 +728,6 @@ def _static_chrome(root: Path) -> list[Issue]:
         ("about.html", root / "about.html", True),
         ("privacy.html", root / "privacy.html", True),
         ("q/index.html", root / "q" / "index.html", True),
-        ("terms/index.html", root / "terms" / "index.html", True),
     ]
     for label, path, require_topnav in samples:
         if not path.is_file():
@@ -821,10 +818,7 @@ def main() -> int:
 
     issues.extend(_index_footer(root / "index.html"))
     issues.extend(_q_index(root / "q" / "index.html"))
-    issues.extend(_terms_index(root / "terms" / "index.html"))
-    err = _terms_js(root / "site-terms-index.js")
-    if err:
-        issues.append(err)
+    # 用語解説（terms/index.html・site-terms-index.js）は廃止したため検証しない。
     err = _build_all_includes_practice(root / "tools" / "build_all.py")
     if err:
         issues.append(err)

@@ -95,12 +95,6 @@
           "position": 3,
           "name": "実践演習",
           "item": "https://kikenbutsu-master.jp/#orig"
-        },
-        {
-          "@type": "ListItem",
-          "position": 4,
-          "name": "用語解説",
-          "item": "https://kikenbutsu-master.jp/terms/"
         }
       ]
     }
@@ -1580,9 +1574,6 @@ body.is-solving .site-footer{display:none!important}
         <a class="topnav-link" id="tnav-review" href="/#review" onclick="event.preventDefault();gotoPage('review')">
           <svg viewBox="0 0 16 16"><path d="M2 4h12M2 8h8M2 12h10"/></svg>復習
         </a>
-        <a class="topnav-link" id="tnav-glossary" href="terms/index.html">
-          <svg viewBox="0 0 16 16"><rect x="2.5" y="2" width="11" height="12" rx="1.5"/><path d="M5 6h6M5 9h4"/></svg>用語解説
-        </a>
         <a class="topnav-link" id="tnav-exam-dates" href="exam-dates/index.html">
           <svg viewBox="0 0 16 16"><rect x="2.5" y="3" width="11" height="11" rx="1.5"/><path d="M2.5 6.5h11M5.5 1.5v3M10.5 1.5v3"/></svg>試験日検索
         </a>
@@ -1653,9 +1644,6 @@ body.is-solving .site-footer{display:none!important}
       </a>
       <a class="mobile-nav-item" id="mnav-review" href="/#review" onclick="event.preventDefault();gotoPage('review');closeMobileDrawer()">
         <svg viewBox="0 0 16 16"><path d="M2 4h12M2 8h8M2 12h10"/></svg>復習
-      </a>
-      <a class="mobile-nav-item" id="mnav-glossary" href="terms/index.html" onclick="closeMobileDrawer()">
-        <svg viewBox="0 0 16 16"><rect x="2.5" y="2" width="11" height="12" rx="1.5"/><path d="M5 6h6M5 9h4"/></svg>用語解説
       </a>
       <a class="mobile-nav-item" id="mnav-exam-dates" href="exam-dates/index.html" onclick="closeMobileDrawer()">
         <svg viewBox="0 0 16 16"><rect x="2.5" y="3" width="11" height="11" rx="1.5"/><path d="M2.5 6.5h11M5.5 1.5v3M10.5 1.5v3"/></svg>試験日検索
@@ -2029,7 +2017,6 @@ body.is-solving .site-footer{display:none!important}
         <ul>
           <li><strong>過去問演習</strong>：年度別・科目別に絞り込んで効率的に学習</li>
           <li><strong>実践演習</strong>：法令・制度・物性・化学・火災・消火・漏えいの分野別練習（独自問題集）</li>
-          <li><strong>用語解説</strong>：重要用語をわかりやすく解説（静的ページ）</li>
           <li><strong>記録・学習分析</strong>：学習日記・バッジ・レベルに加え、正答率や科目別成績で進捗を可視化</li>
         </ul>
         <h2>対応科目</h2>
@@ -2038,7 +2025,7 @@ body.is-solving .site-footer{display:none!important}
           <li>物性・化学（物性・化学・基礎的な物理学及び基礎的な化学・危険物の性質など）</li>
           <li>火災・消火・漏えい（火災・消火・漏えい・危険物の性質並びにその火災予防及び消火の方法・消火方法など）</li>
         </ul>
-        <p style="margin-top:24px;font-size:14px;line-height:2"><a href="about.html">このサイトについて</a> ・ <a href="q/index.html">過去問一覧</a> ・ <a href="q/practice/index.html">実践演習一覧</a> ・ <a href="q/ichimon/index.html">一問一答一覧</a> ・ <a href="terms/index.html">用語集</a> ・ <a href="articles/index.html">試験ガイド</a> ・ <a href="related-sites.html">関連リンク</a> ・ <a href="privacy.html">プライバシー</a> ・ <a href="https://forms.gle/tS5HMmdRweZ3uTAv5" target="_blank" rel="noopener noreferrer">お問い合わせ</a></p>
+        <p style="margin-top:24px;font-size:14px;line-height:2"><a href="about.html">このサイトについて</a> ・ <a href="q/index.html">過去問一覧</a> ・ <a href="q/practice/index.html">実践演習一覧</a> ・ <a href="q/ichimon/index.html">一問一答一覧</a> ・ <a href="articles/index.html">試験ガイド</a> ・ <a href="related-sites.html">関連リンク</a> ・ <a href="privacy.html">プライバシー</a> ・ <a href="https://forms.gle/tS5HMmdRweZ3uTAv5" target="_blank" rel="noopener noreferrer">お問い合わせ</a></p>
       </div>
     </noscript>
     <!--/INDEX_NOSCRIPT-->
@@ -2057,7 +2044,6 @@ body.is-solving .site-footer{display:none!important}
             <a href="index.html">トップ</a>
             <a href="about.html">このサイトについて</a>
             <a href="q/index.html">過去問一覧</a>
-            <a href="terms/index.html">用語解説</a>
             <a href="articles/index.html">試験ガイド</a>
             <a href="related-sites.html">関連リンク</a>
             <a href="privacy.html">プライバシー</a>
@@ -4273,10 +4259,6 @@ window.addEventListener('popstate', function(e) {
 function _resolveInitialPage() {
   const hash = location.hash || '';
   const path = location.pathname || '';
-  if (hash === '#glossary' || /\/glossary\/?$/.test(path)) {
-    location.replace(new URL('terms/index.html', location.href).href);
-    return 'quiz-start';
-  }
   const pathMap = {
     '/quiz/past/':   'past-config',
     '/quiz/orig/':   'orig',

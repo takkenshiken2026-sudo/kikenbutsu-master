@@ -1196,7 +1196,7 @@ def build_index_html(articles: list[dict[str, str]]) -> str:
 <main class="site-page-main">
   {breadcrumb_html(rel_path, [("トップ", "index.html"), ("試験ガイド", None)])}
   <h1>試験ガイド</h1>
-  <p class="site-page-lead">{html.escape(exam_name())}の制度理解から学習計画・演習・直前対策まで、受験フェーズ別の<strong>進め方</strong>をまとめています。用語の意味・比較・数値は<a href="../terms/index.html">用語解説（知識ハブ）</a>、<a href="../q/index.html">{html.escape(exam_short_name())} 過去問（無料）</a>から演習できます。</p>
+  <p class="site-page-lead">{html.escape(exam_name())}の制度理解から学習計画・演習・直前対策まで、受験フェーズ別の<strong>進め方</strong>をまとめています。実際の演習は<a href="../q/index.html">{html.escape(exam_short_name())} 過去問（無料）</a>からどうぞ。</p>
   {build_guide_index_picks_html(rel_path)}
   <section class="article-index-panel" aria-labelledby="article-index-heading">
     <div class="article-index-head">
@@ -1254,20 +1254,9 @@ def main() -> int:
     ]
     skipped_affiliate = len(articles) - len(buildable)
     by_slug = {norm(a.get("slug")): a for a in buildable if norm(a.get("slug"))}
+    # 用語解説ページは廃止したため、本文の用語オートリンクは生成しない。
     term_hrefs: dict[str, str] | None = None
     glossary_categories: list[str] = []
-    try:
-        from tools.build_glossary_pages import load_glossary_entries, make_term_lookup  # noqa: E402
-        from tools.internal_links import term_hrefs_for_auto_link  # noqa: E402
-
-        glossary_entries = load_glossary_entries()
-        if glossary_entries:
-            term_hrefs = term_hrefs_for_auto_link(make_term_lookup(glossary_entries))
-            glossary_categories = sorted(
-                {norm(e.get("category")) for e in glossary_entries if norm(e.get("category"))}
-            )
-    except Exception as exc:
-        print(f"Warning: glossary auto-link disabled: {exc}", file=sys.stderr)
     ARTICLES_DIR.mkdir(parents=True, exist_ok=True)
     clean_generated_dirs()
     for article in buildable:

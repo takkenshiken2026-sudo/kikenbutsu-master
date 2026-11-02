@@ -64,35 +64,6 @@ def guide_lastmod_by_slug() -> dict[str, str]:
     return out
 
 
-def _glossary_slug_file(row: dict[str, str], used: dict[str, str]) -> str:
-    from tools.build_glossary_pages import term_slug
-
-    term = norm(row.get("term"))
-    legacy_slug = norm(row.get("slug")) or norm(row.get("url_slug"))
-    if legacy_slug:
-        slug_file = f"{legacy_slug}.html"
-        used[slug_file] = term
-        return slug_file
-    slug_file = term_slug(term, used) + ".html"
-    return slug_file
-
-
-def glossary_lastmod_by_rel() -> dict[str, str]:
-    out: dict[str, str] = {}
-    if not GLOSSARY_CSV.is_file():
-        return out
-    text = GLOSSARY_CSV.read_text(encoding="utf-8-sig")
-    used: dict[str, str] = {}
-    for row in csv.DictReader(text.splitlines()):
-        if not norm(row.get("term")):
-            continue
-        slug_file = _glossary_slug_file(row, used)
-        d = content_date_from_row(row)
-        if d:
-            out[f"terms/{slug_file}"] = d
-    return out
-
-
 def _compare_slug_file(row: dict[str, str], used: dict[str, str], line: int) -> str:
     from tools.build_compare_pages import compare_slug
 
@@ -189,9 +160,7 @@ def collect_entries(base: str) -> list[SitemapEntry]:
     _PREV_LASTMODS = load_existing_lastmods(ROOT / "sitemap.xml")
     entries: list[SitemapEntry] = []
     guide_dates = guide_lastmod_by_slug()
-    csv_dates = {
-        **glossary_lastmod_by_rel(),
-    }
+    csv_dates: dict[str, str] = {}
 
     add_home(entries, base)
     static_pages = ["about.html", "privacy.html", "related-sites.html"]
@@ -220,13 +189,13 @@ def collect_entries(base: str) -> list[SitemapEntry]:
                 continue
             add_file(entries, base, path.relative_to(ROOT).as_posix(), csv_dates=csv_dates)
 
+    # 用語解説（terms/index.html・g-*.html・分野別一覧）は廃止。知識ハブのみ残す。
     terms_root = ROOT / "terms"
     if terms_root.is_dir():
-        add_file(entries, base, "terms/index.html", csv_dates=csv_dates)
-        for path in sorted(terms_root.glob("*/index.html")):
-            add_file(entries, base, path.relative_to(ROOT).as_posix(), csv_dates=csv_dates)
-        for path in sorted(terms_root.glob("g-*.html")):
-            add_file(entries, base, path.relative_to(ROOT).as_posix(), csv_dates=csv_dates)
+        for hub in ("compare", "numbers", "mistakes"):
+            hub_index = terms_root / hub / "index.html"
+            if hub_index.is_file():
+                add_file(entries, base, f"terms/{hub}/index.html", csv_dates=csv_dates)
 
     return entries
 
