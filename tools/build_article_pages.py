@@ -1008,6 +1008,16 @@ def build_article_html(
                 ],
             }
         )
+    affiliate_disclosure = ""
+    if is_affiliate_article(article):
+        affiliate_disclosure = (
+            '\n    <aside class="affiliate-disclosure" role="note">'
+            "<strong>広告・PR</strong>"
+            "本記事はアフィリエイト広告を含みます。商品・サービスのリンク経由で"
+            "お申し込みやご購入があった場合、当サイトが広告主から収益を得ることがあります。"
+            "掲載順位や紹介内容は編集部が独自に整理したものです。料金や内容は各公式サイトで最新をご確認ください。"
+            "</aside>"
+        )
     return f"""<!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -1040,7 +1050,7 @@ def build_article_html(
       {meta_updated_html(updated)}
     </div>
     <h1 class="article-title">{html.escape(title)}</h1>
-    <p class="article-lead">{lead_html}</p>{exam_dates_callout}
+    <p class="article-lead">{lead_html}</p>{affiliate_disclosure}{exam_dates_callout}
     {toc}
     {quality_panel}
     {sections}
