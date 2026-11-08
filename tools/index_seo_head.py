@@ -127,7 +127,6 @@ def index_json_ld_graph() -> list[dict]:
                 {"@type": "ListItem", "position": 1, "name": "トップ", "item": home_url},
                 {"@type": "ListItem", "position": 2, "name": "過去問", "item": index_spa_hash_url("#past")},
                 {"@type": "ListItem", "position": 3, "name": "実践演習", "item": index_spa_hash_url("#orig")},
-                {"@type": "ListItem", "position": 4, "name": "用語解説", "item": public_url("terms/")},
             ],
         },
     ]
