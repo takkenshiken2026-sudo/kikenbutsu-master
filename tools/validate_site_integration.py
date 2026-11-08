@@ -412,17 +412,32 @@ def _spa_home_url() -> str:
     return f"{origin}{bp}" if bp else origin
 
 
+def _pick_real_article(root: Path) -> Path | None:
+    """学習ナビ検証用に、リダイレクト stub でない実記事の index.html を選ぶ。
+
+    廃止記事（301 リダイレクト stub）は meta refresh のみで tnav を持たないため、
+    サンプルに選ぶと誤検知する。実記事を優先順＋走査で動的に特定する。
+    """
+    preferred = ["exam-overview", "field-law-basics", "pass-rate", "study-plan"]
+    adir = root / "articles"
+    candidates = [adir / slug / "index.html" for slug in preferred]
+    candidates += sorted(adir.glob("*/index.html")) if adir.is_dir() else []
+    for path in candidates:
+        if path.is_file() and 'http-equiv="refresh"' not in path.read_text(encoding="utf-8"):
+            return path
+    return None
+
+
 def _header_learning_nav(root: Path) -> list[Issue]:
     """静的ページの学習ナビ href / q/index の active 状態（site-chrome.md §3, §7）。"""
     spa_hash = _spa_nav_hash_hrefs()
-    article_sample = root / "articles" / "field-law-basics" / "index.html"
-    if not article_sample.is_file():
-        article_sample = root / "articles" / "exam-overview" / "index.html"
+    article_sample = _pick_real_article(root)
     samples: list[tuple[str, Path]] = [
-        ("articles sample", article_sample),
         ("about.html", root / "about.html"),
         ("q/index.html", root / "q" / "index.html"),
     ]
+    if article_sample is not None:
+        samples.insert(0, ("articles sample", article_sample))
     issues: list[Issue] = []
     for label, path in samples:
         if not path.is_file():
