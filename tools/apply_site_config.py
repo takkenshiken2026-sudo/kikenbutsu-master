@@ -391,7 +391,7 @@ def sync_index_learning_nav_extras(text: str) -> str:
     if not extras:
         return text
     for extra in extras:
-        after = extra.get("after") or "tnav-glossary"
+        after = extra.get("after") or "tnav-review"
         desktop = index_learning_nav_extra_desktop_html(extra)
         text = re.sub(
             rf'(id="{re.escape(after)}"[^>]*>.*?</a>)',

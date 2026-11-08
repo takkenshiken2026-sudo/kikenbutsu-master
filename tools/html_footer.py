@@ -62,7 +62,7 @@ def shell_body_class(*parts: str) -> str:
     return " ".join(merged)
 
 
-# index.html topnav と同じ学習ナビ（用語解説のみ静的一覧、他は SPA ハッシュへ）
+# index.html topnav と同じ学習ナビ（すべて SPA ハッシュへ。用語解説は撤去済み）
 LEARNING_NAV_ITEMS: list[tuple[str, str, str, str]] = [
     (
         "tnav-ichimondou",
@@ -94,18 +94,11 @@ LEARNING_NAV_ITEMS: list[tuple[str, str, str, str]] = [
         "#review",
         '<svg viewBox="0 0 16 16"><path d="M2 4h12M2 8h8M2 12h10"/></svg>',
     ),
-    (
-        "tnav-glossary",
-        "用語解説",
-        "terms/index.html",
-        '<svg viewBox="0 0 16 16"><rect x="2.5" y="2" width="11" height="12" rx="1.5"/><path d="M5 6h6M5 9h4"/></svg>',
-    ),
 ]
 
 # site_page_header(current=...) で学習ナビの active を付ける。
 # ヘッダー「過去問」は SPA 演習（#past）。フッター「過去問一覧」（q/index.html）とは別コンテンツのため q は含めない。
 LEARNING_NAV_ACTIVE_BY_PAGE: dict[str, str] = {
-    "terms": "tnav-glossary",
     "practice": "tnav-orig",
     "ichimon": "tnav-ichimondou",
 }
@@ -142,7 +135,7 @@ def merged_learning_nav_items() -> list[tuple[str, str, str, str]]:
     items = _base_learning_nav_items()
     for extra in learning_nav_extras():
         nav_id = extra["id"]
-        after = extra.get("after") or "tnav-glossary"
+        after = extra.get("after") or "tnav-review"
         entry = (nav_id, extra["label"], extra["href"], _learning_nav_icon_for(extra))
         insert_at = None
         for i, (existing_id, *_rest) in enumerate(items):

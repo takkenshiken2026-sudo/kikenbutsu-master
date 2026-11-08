@@ -105,10 +105,9 @@ def section_html(heading: str, body: str, section_num: int, section_id: str) -> 
 def related_links_html() -> str:
     links = [
         ("../articles/exam-schedule/", "試験日程·逆算12週"),
-        ("../articles/exam-application-flow/", "申込みの流れ"),
-        ("../articles/exam-venue-and-region/", "会場·受験地確認"),
+        ("../articles/exam-eligibility/", "受験資格の確認"),
+        ("../articles/exam-fees/", "受験手数料"),
         ("../articles/study-plan/", "学習計画の立て方"),
-        ("../terms/index.html", "用語解説一覧"),
     ]
     items = "".join(
         f'<a class="related-link" href="{html.escape(href, quote=True)}">{html.escape(label)}</a>'
