@@ -4129,6 +4129,67 @@ html:not(.js) .terms-idx-seo-fallback .terms-idx-seo-list a {
   box-shadow: none;
   background: var(--bg);
 }
+/* 過去問一覧ページの補足セクション（使い方／受験の基本リンク集） */
+.past-index-guide {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--r2);
+  box-shadow: var(--sh);
+  padding: 22px 22px 20px;
+  margin-bottom: 18px;
+}
+.past-index-guide > h2 {
+  font-size: var(--fs-h2);
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 0 0 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+}
+.past-index-guide > p {
+  margin: 0 0 12px;
+  color: var(--ink);
+  font-size: var(--fs-body);
+  line-height: 1.75;
+}
+.past-index-guide > p:last-child {
+  margin-bottom: 0;
+}
+.past-index-guide a {
+  color: var(--accent-emphasis);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+/* 受験の基本リンク集：ブラウザ既定の黒丸リストをやめてカード状の導線に */
+.related-links-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.related-links-list li {
+  margin: 0;
+}
+.related-links-list > li > a {
+  display: block;
+  padding: 12px 14px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  color: var(--text);
+  font-size: var(--fs-sub);
+  line-height: 1.55;
+  text-decoration: none;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+.related-links-list > li > a:hover {
+  background: var(--accent-hover-surface);
+  border-color: var(--accent-hover-border);
+  color: var(--accent-emphasis);
+  opacity: 1;
+}
 
 /* 用語SEO記事（articles / terms 型） */
 .seo-article-main {
@@ -5235,6 +5296,14 @@ html:not(.js) .terms-idx-seo-fallback .terms-idx-seo-list a {
   .past-index-panel {
     margin: 0;
     padding: 16px;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    box-shadow: none;
+  }
+  .q-index-page .site-page-main > .past-index-guide {
+    margin-bottom: 14px;
+    padding: 18px 16px;
     border-radius: 0;
     border-left: none;
     border-right: none;
