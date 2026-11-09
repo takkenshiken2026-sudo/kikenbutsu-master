@@ -24,7 +24,7 @@ INDEX_SEO_MARKER_END = "<!--/INDEX_SEO_HEAD-->"
 
 
 def index_home_title() -> str:
-    return f"{brand_name()}｜{exam_name()} 過去問・一問一答・用語解説で合格を目指す無料学習サイト"
+    return f"{brand_name()}｜{exam_name()} 過去問・一問一答・実践演習で合格を目指す無料学習サイト"
 
 
 def index_og_title() -> str:
@@ -54,7 +54,7 @@ def index_spa_hash_url(hash_frag: str) -> str:
 def index_description() -> str:
     return (
         f"{exam_name()}の合格を目指す無料学習プラットフォーム。"
-        "過去問演習・実践演習・一問一答・重要用語解説を網羅。"
+        "過去問演習・実践演習・一問一答を網羅。"
         "年度別・分野別に絞った効率学習で合格を目指す。"
     )
 
@@ -67,13 +67,13 @@ def index_description_long() -> str:
     short = exam_short_name()
     return (
         f"{short}（{exam_name()}）の合格を目指す無料学習プラットフォーム。"
-        f"過去問演習·実践演習·一問一答·重要用語解説を網羅。"
+        f"過去問演習·実践演習·一問一答を網羅。"
         f"年度別·科目別（{subjects}）に絞った効率的な学習が可能です。"
     )
 
 
 def index_keywords() -> str:
-    parts = [exam_name(), "過去問", "一問一答", "用語集", "資格学習", "合格"]
+    parts = [exam_name(), "過去問", "一問一答", "実践演習", "資格学習", "合格"]
     for f in fields()[:3]:
         name = str(f.get("name") or "").strip()
         if name:
@@ -86,7 +86,7 @@ def index_json_ld_graph() -> list[dict]:
     home_id = home_url.rstrip("/")
     alt = f"{exam_name()}対策サイト"
     platform_desc = (
-        f"{exam_name()}の過去問・実践演習・一問一答・用語解説を"
+        f"{exam_name()}の過去問・実践演習・一問一答を"
         "網羅した無料学習プラットフォーム"
     )
     return [
