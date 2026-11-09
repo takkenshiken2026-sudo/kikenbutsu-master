@@ -1073,14 +1073,12 @@ def build_q_index(pages: list[dict], base_url: str) -> str:
         "<p>この過去問は本試験と同じく法令15問・物理化学10問・性質消火10問の35問で構成しています。"
         "年度別は本番形式の通し練習に、分野別は苦手科目のつぶし込みに向きます。"
         "各問の解説ページでは正答だけでなく、誤答選択肢がなぜ違うのかまで確認できます。</p>"
-        "<p>解く順番や復習の設計は"
-        '<a href="../articles/past-question-strategy/">過去問の使い方（本番形式で測り誤答を分析する）</a>、'
-        "弱点1科目の攻め方は"
-        '<a href="../articles/past-questions-by-field/">分野別の過去問</a>'
+        "<p>解く順番や復習の設計、弱点科目のつぶし方は"
+        '<a href="../articles/past-question-strategy/">過去問の使い方（本番形式で測り誤答を分析する）</a>'
         "で詳しく解説しています。</p>"
         "<p>そもそも乙4の過去問は公式に一部しか公開されていません。"
         "公式サンプルの位置づけや本試験形式との違いは"
-        '<a href="../articles/past-question-availability/">過去問は公開されている？</a>'
+        '<a href="../articles/exam-overview/">危険物乙4とは（試験の全体像）</a>'
         "で整理しています。</p>"
         "</section>"
     )
@@ -1092,10 +1090,10 @@ def build_q_index(pages: list[dict], base_url: str) -> str:
         "よく調べられる基本情報のページをまとめました。</p>"
         '<ul class="related-links-list">'
         '<li><a href="../articles/exam-schedule/">試験日はいつ？支部別の日程と申込締切の調べ方</a></li>'
-        '<li><a href="../articles/exam-day-items/">当日の持ち物｜必須3点・電卓不可・受験票の写真規格</a></li>'
+        '<li><a href="../articles/final-day-checklist/">前日チェックリスト｜持ち物・ルート・睡眠</a></li>'
         '<li><a href="../articles/pass-score/">合格点は何点？各科目60%と足切りの仕組み</a></li>'
         '<li><a href="../articles/exam-difficulty/">乙4の難易度｜合格率・勉強時間と種類別の難易度順</a></li>'
-        '<li><a href="../articles/exam-format-overview/">試験形式｜五肢択一35問・マークシートとCBTの有無</a></li>'
+        '<li><a href="../articles/exam-overview/">危険物乙4とは｜試験の全体像と出題構成</a></li>'
         '<li><a href="../articles/exam-eligibility/">受験資格｜乙種は誰でも、甲種だけ要件あり</a></li>'
         "</ul>"
         "</section>"
