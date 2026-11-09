@@ -208,7 +208,7 @@ def page_meta_description(page: dict) -> str:
     )
 
 
-Q_INDEX_CSS_VER = "20260706-q-seq-pager"
+Q_INDEX_CSS_VER = "20261109-guide-ui"
 
 GLOSSARY_CSV = ROOT / "data" / "glossary_terms.csv"
 
