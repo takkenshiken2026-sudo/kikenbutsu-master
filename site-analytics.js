@@ -1,3 +1,29 @@
+// Microsoft Clarity — window.__CLARITY_PROJECT_ID__ / SITE_CONFIG.clarityProjectId で上書き可（未設定なら下記の既定ID）
+// GA4 と同じく site-analytics.js を読む全ページで自動的に有効になる（defer 読み込み）。
+(function () {
+  var DEFAULT_PID = "zgay9oxou3";
+  var raw = "";
+  try {
+    if (typeof window !== "undefined" && window.__CLARITY_PROJECT_ID__ != null) {
+      raw = String(window.__CLARITY_PROJECT_ID__).trim();
+    }
+    if (!raw && typeof window !== "undefined" && window.SITE_CONFIG && window.SITE_CONFIG.clarityProjectId != null) {
+      raw = String(window.SITE_CONFIG.clarityProjectId).trim();
+    }
+  } catch (_e) {}
+  if (!raw) raw = DEFAULT_PID;
+  var PID = /^[A-Za-z0-9]+$/.test(raw) ? raw : "";
+  if (!PID) return;
+  if (typeof document === "undefined" || typeof window === "undefined") return;
+  if (window.__CLARITY_INIT__) return;
+  window.__CLARITY_INIT__ = true;
+  (function (c, l, a, r, i, t, y) {
+    c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
+    t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+    y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+  })(window, document, "clarity", "script", PID);
+})();
+
 // Google Analytics 4 — window.__GA4_MEASUREMENT_ID__ で上書き可（未設定・空なら下記の既定ID）
 // 測定IDの正: tools/html_footer.GA4_MEASUREMENT_ID と揃えること
 (function () {

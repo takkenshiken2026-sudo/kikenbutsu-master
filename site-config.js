@@ -5,6 +5,7 @@ window.SITE_CONFIG = {
   "siteOrigin": "https://kikenbutsu-master.jp",
   "contactUrl": "https://forms.gle/tS5HMmdRweZ3uTAv5",
   "ga4MeasurementId": "G-CH3RF5CKLH",
+  "clarityProjectId": "zgay9oxou3",
   "theme": {
     "accent": "#c0392b",
     "accentText": "#ffffff",

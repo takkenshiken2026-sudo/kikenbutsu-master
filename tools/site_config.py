@@ -134,6 +134,10 @@ def ga4_measurement_id() -> str:
     return str(CONFIG.get("ga4MeasurementId") or "").strip()
 
 
+def clarity_project_id() -> str:
+    return str(CONFIG.get("clarityProjectId") or "").strip()
+
+
 def copyright_text() -> str:
     configured = str(CONFIG.get("copyright") or "").strip()
     if configured:
@@ -662,6 +666,7 @@ def write_site_config_js() -> None:
         "siteOrigin": clean_origin(),
         "contactUrl": contact_url(),
         "ga4MeasurementId": ga4_measurement_id(),
+        "clarityProjectId": clarity_project_id(),
         "theme": theme(),
         "navigation": {
             "header": [
