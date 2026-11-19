@@ -1,0 +1,100 @@
+/* 乙4マスター ユーザー投稿ウィジェット スタイル（サイトのテーマ色に合わせた最小構成） */
+.uc-root {
+  margin: 2.4rem 0 1rem;
+  padding: 1.4rem 1.2rem;
+  border: 1px solid rgba(0, 0, 0, 0.09);
+  border-radius: 10px;
+  background: #ffffff;
+}
+.uc-title {
+  font-size: 1.15rem;
+  margin: 0 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #c0392b;
+  color: #121212;
+}
+.uc-note {
+  color: #555555;
+  font-size: 0.9rem;
+}
+.uc-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-bottom: 1.6rem;
+}
+.uc-input,
+.uc-textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.6rem 0.7rem;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: #121212;
+  background: #ffffff;
+}
+.uc-textarea { resize: vertical; min-height: 5.5rem; }
+.uc-input:focus,
+.uc-textarea:focus {
+  outline: none;
+  border-color: #c0392b;
+  box-shadow: 0 0 0 2px rgba(192, 57, 43, 0.15);
+}
+.uc-turnstile { min-height: 65px; }
+.uc-form-row {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+}
+.uc-submit {
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  background: #c0392b;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 0.6rem 1.4rem;
+  border-radius: 8px;
+}
+.uc-submit:hover { background: #a93226; }
+.uc-submit:disabled { opacity: 0.6; cursor: default; }
+.uc-msg { margin: 0; font-size: 0.9rem; color: #555555; }
+.uc-msg-ok { color: #1e7e34; }
+.uc-msg-err { color: #c0392b; }
+.uc-count {
+  font-size: 0.9rem;
+  color: #555555;
+  margin: 0 0 0.8rem;
+}
+.uc-list { list-style: none; margin: 0; padding: 0; }
+.uc-item {
+  padding: 0.9rem 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.09);
+}
+.uc-item-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+  margin-bottom: 0.35rem;
+}
+.uc-item-name { font-weight: 700; color: #121212; font-size: 0.95rem; }
+.uc-item-date { font-size: 0.8rem; color: #888888; }
+.uc-item-body {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #222222;
+  white-space: normal;
+  word-break: break-word;
+}
+@media (prefers-color-scheme: dark) {
+  .uc-root { background: #1c1c1e; border-color: rgba(255, 255, 255, 0.12); }
+  .uc-title { color: #f4f4f5; }
+  .uc-input, .uc-textarea { background: #2a2a2c; color: #f4f4f5; border-color: rgba(255,255,255,0.18); }
+  .uc-item { border-color: rgba(255, 255, 255, 0.12); }
+  .uc-item-name { color: #f4f4f5; }
+  .uc-item-body { color: #e4e4e6; }
+}
