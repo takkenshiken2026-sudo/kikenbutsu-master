@@ -381,6 +381,24 @@ body {{
   border-color: var(--accent-border);
   color: var(--accent-emphasis);
 }}
+#tnav-board {{
+  position: relative;
+}}
+#tnav-board::after {{
+  content: "NEW";
+  display: inline-block;
+  margin-left: 4px;
+  transform: translateY(-0.45em);
+  background: #e8453c;
+  color: #ffffff;
+  font-size: 8px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 1px 3px;
+  border-radius: 4px;
+  letter-spacing: 0.02em;
+  vertical-align: middle;
+}}
 """
     (ROOT / "site-theme.css").write_text(css, encoding="utf-8")
 
