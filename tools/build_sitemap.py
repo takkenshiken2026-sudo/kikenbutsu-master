@@ -163,7 +163,7 @@ def collect_entries(base: str) -> list[SitemapEntry]:
     csv_dates: dict[str, str] = {}
 
     add_home(entries, base)
-    static_pages = ["about.html", "privacy.html", "related-sites.html"]
+    static_pages = ["about.html", "privacy.html", "related-sites.html", "qa.html", "taikenki.html"]
     for rel in static_pages:
         add_file(entries, base, rel, csv_dates=csv_dates)
 

@@ -71,6 +71,8 @@ TEXT_TARGETS = [
     ROOT / "about.html",
     ROOT / "privacy.html",
     ROOT / "related-sites.html",
+    ROOT / "qa.html",
+    ROOT / "taikenki.html",
     ROOT / "articles" / "index.html",
     ROOT / "site-analytics.js",
 ]
@@ -79,6 +81,8 @@ STATIC_PAGE_CURRENTS = {
     ROOT / "about.html": "about",
     ROOT / "privacy.html": "privacy",
     ROOT / "related-sites.html": "related",
+    ROOT / "qa.html": "qa",
+    ROOT / "taikenki.html": "taikenki",
     ROOT / "articles" / "index.html": "articles",
 }
 
@@ -86,6 +90,8 @@ STATIC_PAGE_CANONICAL = {
     ROOT / "about.html": "about.html",
     ROOT / "privacy.html": "privacy.html",
     ROOT / "related-sites.html": "related-sites.html",
+    ROOT / "qa.html": "qa.html",
+    ROOT / "taikenki.html": "taikenki.html",
 }
 
 _STATIC_CANONICAL_RE = re.compile(r'<link rel="canonical" href="[^"]*">', re.I)
