@@ -88,6 +88,15 @@
     return e;
   }
 
+  function personIcon() {
+    var s = document.createElement("span");
+    s.className = "uc-avatar";
+    s.setAttribute("aria-hidden", "true");
+    // 固定のSVG（ユーザー入力は含まないので innerHTML でも安全）
+    s.innerHTML = '<svg viewBox="0 0 16 16"><circle cx="8" cy="5" r="2.6"/><path d="M3 13.5a5 5 0 0 1 10 0"/></svg>';
+    return s;
+  }
+
   function bodyEl(text) {
     var b = el("div", "uc-item-body");
     (text || "").split("\n").forEach(function (line, i) {
@@ -247,6 +256,7 @@
 
     function headRow(c) {
       var head = el("div", "uc-item-head");
+      head.appendChild(personIcon());
       head.appendChild(el("span", "uc-item-name", c.author_name || "匿名"));
       if (c.author_id) head.appendChild(el("span", "uc-item-id", maskedId(c.author_id)));
       head.appendChild(el("span", "uc-item-date", formatDate(c.created_at)));
