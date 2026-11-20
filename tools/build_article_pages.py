@@ -1059,6 +1059,10 @@ def build_article_html(
     {official_box}
     {related}
   </article>
+  <section class="seo-article-comments" aria-label="コメント">
+    <div data-comments data-page-id="articles/{slug}" data-category="comment"></div>
+  </section>
+  <script defer src="/site-comments.js"></script>
 </main>
 {site_page_footer(rel_path, current="articles")}
 {site_page_wrap_close()}
