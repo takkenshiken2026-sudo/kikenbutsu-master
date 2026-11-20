@@ -35,7 +35,7 @@
       "id": "tnav-board",
       "label": "掲示板",
       "href": "board.html",
-      "after": "tnav-exam-dates",
+      "after": "tnav-ichimondou",
       "icon": "board",
       "pageCurrent": "board"
     }
