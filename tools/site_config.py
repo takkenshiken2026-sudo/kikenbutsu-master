@@ -382,22 +382,31 @@ body {{
   color: var(--accent-emphasis);
 }}
 #tnav-board {{
-  position: relative;
+  background: color-mix(in srgb, #e8453c 12%, #ffffff);
+  border-radius: 8px;
+  font-weight: 700;
 }}
 #tnav-board::after {{
   content: "NEW";
   display: inline-block;
-  margin-left: 4px;
-  transform: translateY(-0.45em);
+  margin-left: 5px;
   background: #e8453c;
   color: #ffffff;
-  font-size: 8px;
-  font-weight: 700;
-  line-height: 1;
-  padding: 1px 3px;
-  border-radius: 4px;
-  letter-spacing: 0.02em;
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1.5;
+  padding: 0 5px;
+  border-radius: 999px;
+  letter-spacing: 0.03em;
   vertical-align: middle;
+  animation: ucNewBlink 1.6s ease-in-out infinite;
+}}
+@keyframes ucNewBlink {{
+  0%, 100% {{ opacity: 1; }}
+  50% {{ opacity: 0.5; }}
+}}
+@media (prefers-reduced-motion: reduce) {{
+  #tnav-board::after {{ animation: none; }}
 }}
 """
     (ROOT / "site-theme.css").write_text(css, encoding="utf-8")
