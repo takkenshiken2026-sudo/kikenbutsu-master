@@ -75,6 +75,21 @@
     return "#" + head + "…";
   }
 
+  // uid を SHA-256 した先頭16桁（サーバーの author_id と同じ計算）
+  function sha256hex(str) {
+    var c = window.crypto || window.msCrypto;
+    if (!c || !c.subtle || typeof TextEncoder === "undefined") return Promise.resolve("");
+    var data = new TextEncoder().encode(str);
+    return c.subtle.digest("SHA-256", data).then(function (buf) {
+      return Array.prototype.map.call(new Uint8Array(buf), function (b) {
+        return ("0" + b.toString(16)).slice(-2);
+      }).join("");
+    }).catch(function () { return ""; });
+  }
+  function myAuthorId() {
+    return sha256hex(getUid()).then(function (h) { return h ? h.slice(0, 16) : ""; });
+  }
+
   function el(tag, cls, text) {
     var e = document.createElement(tag);
     if (cls) e.className = cls;
@@ -212,7 +227,13 @@
     row.appendChild(submit);
     row.appendChild(msg);
 
+    var idHint = el("p", "uc-id-hint", "あなたの投稿者ID：（計算中…）");
+    myAuthorId().then(function (id) {
+      idHint.textContent = "あなたの投稿者ID：" + (id ? maskedId(id) : "（この端末では利用できません）");
+    });
+
     form.appendChild(nameInput);
+    form.appendChild(idHint);
     form.appendChild(bodyInput);
     form.appendChild(widgetBox);
     form.appendChild(row);

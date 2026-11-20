@@ -11,6 +11,7 @@ for f in \
   about.html \
   privacy.html \
   related-sites.html \
+  board.html \
   qa.html \
   taikenki.html \
   site-config.json \

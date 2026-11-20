@@ -121,10 +121,16 @@ LEARNING_NAV_ICON_TROPHY = (
     '<path d="M6 10h4M5 14h6M8 10v4"/></svg>'
 )
 
+LEARNING_NAV_ICON_BOARD = (
+    '<svg viewBox="0 0 16 16"><rect x="3" y="2.5" width="10" height="11" rx="1.5"/>'
+    '<path d="M6 2v2h4V2M6 7.5h4M6 10.5h3"/></svg>'
+)
+
 LEARNING_NAV_ICON_BY_NAME: dict[str, str] = {
     "calendar": LEARNING_NAV_ICON_CALENDAR,
     "chat": LEARNING_NAV_ICON_CHAT,
     "trophy": LEARNING_NAV_ICON_TROPHY,
+    "board": LEARNING_NAV_ICON_BOARD,
 }
 
 
