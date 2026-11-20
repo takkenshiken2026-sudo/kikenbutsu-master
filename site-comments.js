@@ -11,9 +11,9 @@
 
   // ▼▼▼ ここだけ書き換える（すべて公開OKの値）▼▼▼
   var COMMENTS_CONFIG = {
-    supabaseUrl: "https://PROJECT_REF.supabase.co", // Supabase: Project Settings → Data API → URL
-    supabaseAnonKey: "PUT_SUPABASE_ANON_KEY_HERE", // Supabase: Project Settings → API Keys → anon public
-    turnstileSiteKey: "PUT_TURNSTILE_SITE_KEY_HERE", // Cloudflare: Turnstile → Site Key
+    supabaseUrl: "https://dzyxoaehdylibvpwfyui.supabase.co", // Supabase: Project Settings → Data API → URL
+    supabaseAnonKey: "sb_publishable_OvB3nXIDF6UG3mbyyh46fg_mkZ9NIqY", // Supabase: API Keys → publishable (anon)
+    turnstileSiteKey: "0x4AAAAAAGJfzqZL5Xk0QQWV", // Cloudflare: Turnstile → Site Key
     functionName: "swift-responder", // Supabase Edge Function 名（デプロイ時の関数名に合わせる）
   };
   // ▲▲▲ ここまで ▲▲▲
