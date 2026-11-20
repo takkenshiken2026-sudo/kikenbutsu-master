@@ -6819,3 +6819,24 @@ html:not(.js) .terms-idx-seo-fallback .terms-idx-seo-list a {
   font-size: var(--fs-sub);
   font-weight: 700;
 }
+
+/* 掲示板ナビの NEW バッジ */
+#tnav-board {
+  position: relative;
+  overflow: visible;
+}
+#tnav-board::after {
+  content: "NEW";
+  position: absolute;
+  top: -7px;
+  right: -9px;
+  background: #e8453c;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 2px 4px;
+  border-radius: 6px;
+  letter-spacing: 0.02em;
+  pointer-events: none;
+}
