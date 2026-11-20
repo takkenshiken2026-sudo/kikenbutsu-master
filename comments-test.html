@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>投稿機能テスト（公開前の動作確認用）</title>
+  <link rel="stylesheet" href="./site-comments.css">
+  <style>
+    body { max-width: 760px; margin: 0 auto; padding: 1.5rem; font-family: system-ui, "Hiragino Kaku Gothic ProN", sans-serif; }
+    h1 { font-size: 1.3rem; }
+    .hint { background: #fff8e1; border: 1px solid #ffe082; border-radius: 8px; padding: 0.8rem 1rem; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <h1>投稿機能テスト</h1>
+  <p class="hint">
+    これは公開前の動作確認用ページです（検索エンジンには出ません）。<br>
+    site-comments.js の COMMENTS_CONFIG に3つのキーを入れてから、
+    <code>python3 -m http.server 8000</code> で開いて試してください
+    （URL: http://localhost:8000/comments-test.html ）。
+  </p>
+
+  <!-- コメント -->
+  <div data-comments data-page-id="test/demo" data-category="comment"></div>
+
+  <!-- Q&A -->
+  <div data-comments data-page-id="test/demo" data-category="qa"></div>
+
+  <!-- 合格体験記 -->
+  <div data-comments data-page-id="test/demo" data-category="taikenki"></div>
+
+  <script defer src="./site-comments.js"></script>
+</body>
+</html>

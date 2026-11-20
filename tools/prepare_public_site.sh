@@ -22,6 +22,8 @@ for f in \
   site-knowledge-hub-index.js \
   site-priority-index.js \
   site-analytics.js \
+  site-comments.js \
+  site-comments.css \
   CNAME \
   robots.txt \
   ads.txt \
