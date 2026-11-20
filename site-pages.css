@@ -6819,3 +6819,10 @@ html:not(.js) .terms-idx-seo-fallback .terms-idx-seo-list a {
   font-size: var(--fs-sub);
   font-weight: 700;
 }
+
+/* 端末のダークモードでも配色を崩さない（静的ページはライト固定） */
+.site-static-page {
+  color-scheme: light;
+  background: var(--page-bg, #f4f4f5);
+  color: var(--text, #121212);
+}
