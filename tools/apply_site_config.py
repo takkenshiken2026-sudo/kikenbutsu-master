@@ -71,6 +71,7 @@ TEXT_TARGETS = [
     ROOT / "about.html",
     ROOT / "privacy.html",
     ROOT / "related-sites.html",
+    ROOT / "board.html",
     ROOT / "qa.html",
     ROOT / "taikenki.html",
     ROOT / "articles" / "index.html",
@@ -81,8 +82,9 @@ STATIC_PAGE_CURRENTS = {
     ROOT / "about.html": "about",
     ROOT / "privacy.html": "privacy",
     ROOT / "related-sites.html": "related",
-    ROOT / "qa.html": "qa",
-    ROOT / "taikenki.html": "taikenki",
+    ROOT / "board.html": "board",
+    ROOT / "qa.html": "board",       # Q&A は「掲示板」カテゴリ配下
+    ROOT / "taikenki.html": "board", # 合格体験記 も「掲示板」カテゴリ配下
     ROOT / "articles" / "index.html": "articles",
 }
 
@@ -90,6 +92,7 @@ STATIC_PAGE_CANONICAL = {
     ROOT / "about.html": "about.html",
     ROOT / "privacy.html": "privacy.html",
     ROOT / "related-sites.html": "related-sites.html",
+    ROOT / "board.html": "board.html",
     ROOT / "qa.html": "qa.html",
     ROOT / "taikenki.html": "taikenki.html",
 }

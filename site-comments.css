@@ -42,6 +42,11 @@
   border-color: #c0392b;
   box-shadow: 0 0 0 2px rgba(192, 57, 43, 0.15);
 }
+.uc-id-hint {
+  margin: -0.2rem 0 0;
+  font-size: 0.8rem;
+  color: #777777;
+}
 .uc-turnstile { min-height: 65px; }
 .uc-form-row {
   display: flex;

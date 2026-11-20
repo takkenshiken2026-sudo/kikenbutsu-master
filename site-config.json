@@ -32,20 +32,12 @@
       "pageCurrent": "exam-dates"
     },
     {
-      "id": "tnav-qa",
-      "label": "Q&A",
-      "href": "qa.html",
+      "id": "tnav-board",
+      "label": "掲示板",
+      "href": "board.html",
       "after": "tnav-exam-dates",
-      "icon": "chat",
-      "pageCurrent": "qa"
-    },
-    {
-      "id": "tnav-taikenki",
-      "label": "合格体験記",
-      "href": "taikenki.html",
-      "after": "tnav-qa",
-      "icon": "trophy",
-      "pageCurrent": "taikenki"
+      "icon": "board",
+      "pageCurrent": "board"
     }
   ],
   "navigation": {
@@ -71,14 +63,9 @@
         "key": "articles"
       },
       {
-        "label": "Q&A",
-        "href": "qa.html",
-        "key": "qa"
-      },
-      {
-        "label": "合格体験記",
-        "href": "taikenki.html",
-        "key": "taikenki"
+        "label": "掲示板",
+        "href": "board.html",
+        "key": "board"
       },
       {
         "label": "関連リンク",
@@ -113,14 +100,9 @@
         "key": "articles"
       },
       {
-        "label": "Q&A",
-        "href": "qa.html",
-        "key": "qa"
-      },
-      {
-        "label": "合格体験記",
-        "href": "taikenki.html",
-        "key": "taikenki"
+        "label": "掲示板",
+        "href": "board.html",
+        "key": "board"
       },
       {
         "label": "関連リンク",
