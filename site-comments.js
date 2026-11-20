@@ -235,8 +235,19 @@
     reload();
   }
 
+  function ensureCss() {
+    if (document.querySelector("link[data-uc-css]")) return;
+    var l = document.createElement("link");
+    l.rel = "stylesheet";
+    l.href = "/site-comments.css"; // サイトはドメイン直下配信なので絶対パスでOK
+    l.setAttribute("data-uc-css", "1");
+    document.head.appendChild(l);
+  }
+
   function init() {
     var roots = document.querySelectorAll("[data-comments]");
+    if (!roots.length) return;
+    ensureCss();
     Array.prototype.forEach.call(roots, buildWidget);
   }
 
