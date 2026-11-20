@@ -116,8 +116,9 @@
   }
 
   function fetchComments(pageId) {
+    // select=* とすることで author_id 列が未追加でも読み込みが壊れないようにする
     var url = COMMENTS_CONFIG.supabaseUrl +
-      "/rest/v1/comments?select=id,created_at,author_name,author_id,body,category" +
+      "/rest/v1/comments?select=*" +
       "&page_id=eq." + encodeURIComponent(pageId) +
       "&is_visible=eq.true&order=created_at.desc&limit=200";
     return fetch(url, { headers: restHeaders() }).then(function (r) {
