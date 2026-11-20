@@ -232,11 +232,27 @@
       }).catch(function () { btn.disabled = false; btn.textContent = "削除"; window.alert("通信エラーが発生しました。"); });
     }
 
+    function handleReport(c, btn) {
+      if (!window.confirm("この投稿を通報しますか？（不適切・スパム・個人情報など）")) return;
+      btn.disabled = true; btn.textContent = "通報中…";
+      callFunction({ action: "report", comment_id: c.id, uid: getUid() }).then(function (res) {
+        if (res.ok && res.data && res.data.ok) {
+          btn.textContent = res.data.already ? "通報済み" : "通報しました";
+        } else {
+          btn.disabled = false; btn.textContent = "通報";
+          window.alert((res.data && res.data.error) || "通報に失敗しました。");
+        }
+      }).catch(function () { btn.disabled = false; btn.textContent = "通報"; window.alert("通信エラーが発生しました。"); });
+    }
+
     function headRow(c) {
       var head = el("div", "uc-item-head");
       head.appendChild(el("span", "uc-item-name", c.author_name || "匿名"));
       if (c.author_id) head.appendChild(el("span", "uc-item-id", maskedId(c.author_id)));
       head.appendChild(el("span", "uc-item-date", formatDate(c.created_at)));
+      var report = el("button", "uc-report", "通報"); report.type = "button";
+      report.addEventListener("click", function () { handleReport(c, report); });
+      head.appendChild(report);
       if (isAdmin()) {
         var del = el("button", "uc-del", "削除"); del.type = "button";
         del.addEventListener("click", function () { handleDelete(c, del); });

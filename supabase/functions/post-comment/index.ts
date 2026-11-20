@@ -16,6 +16,10 @@ const SUPABASE_URL = Deno.env.get("SUPABASE_URL")!;
 const SERVICE_ROLE = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
 const TURNSTILE_SECRET = Deno.env.get("TURNSTILE_SECRET_KEY")!;
 const ADMIN_SECRET = Deno.env.get("ADMIN_SECRET") ?? "";
+const SLACK_WEBHOOK_URL = Deno.env.get("SLACK_WEBHOOK_URL") ?? "";
+
+// 通報がこの件数に達したら自動で非表示にする
+const REPORT_THRESHOLD = 3;
 
 const ALLOWED_ORIGINS = [
   "https://kikenbutsu-master.jp",
@@ -72,6 +76,34 @@ function restHeaders() {
     "Content-Type": "application/json",
     "Prefer": "return=representation",
   };
+}
+
+// Slack 通知（SLACK_WEBHOOK_URL 未設定なら何もしない）
+async function notifySlack(comment_id: string, count: number, hidden: boolean, reason: string): Promise<void> {
+  if (!SLACK_WEBHOOK_URL) return;
+  let info = "";
+  try {
+    const r = await fetch(
+      `${SUPABASE_URL}/rest/v1/comments?select=page_id,author_name,author_id,body&id=eq.${encodeURIComponent(comment_id)}`,
+      { headers: restHeaders() },
+    );
+    const rows = await r.json();
+    if (Array.isArray(rows) && rows[0]) {
+      const c = rows[0];
+      info = `ページ: ${c.page_id}\n投稿者: ${c.author_name}（#${String(c.author_id ?? "").slice(0, 8)}）\n本文: ${String(c.body ?? "").slice(0, 120)}`;
+    }
+  } catch { /* noop */ }
+  const head = hidden
+    ? `🚨 通報が${count}件に達したため自動で非表示にしました`
+    : `🚩 投稿が通報されました（${count}件）`;
+  const text = `${head}\n${info}${reason ? `\n理由: ${reason}` : ""}\nID: ${comment_id}`;
+  try {
+    await fetch(SLACK_WEBHOOK_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ text }),
+    });
+  } catch { /* noop */ }
 }
 
 // 全角数字→半角（電話番号検出用）
@@ -172,6 +204,46 @@ Deno.serve(async (req: Request) => {
       return json({ error: "削除に失敗しました。", detail: await res.text() }, 500, origin);
     }
     return json({ ok: true }, 200, origin);
+  }
+
+  // ============ 通報 ============
+  if (action === "report") {
+    const comment_id = String(payload.comment_id ?? "").trim();
+    const uidr = String(payload.uid ?? "").trim().slice(0, 128);
+    const reason = String(payload.reason ?? "").trim().slice(0, 200);
+    if (!/^[0-9a-fA-F-]{32,40}$/.test(comment_id)) return json({ error: "id required" }, 400, origin);
+    if (!uidr) return json({ error: "uid required" }, 400, origin);
+    const reporter_id = (await sha256hex(uidr)).slice(0, 16);
+
+    // 1) 通報を記録（二重通報は unique 制約で 409 → 既報として扱う）
+    const insRes = await fetch(`${SUPABASE_URL}/rest/v1/reports`, {
+      method: "POST",
+      headers: { ...restHeaders(), "Prefer": "return=minimal" },
+      body: JSON.stringify({ comment_id, reporter_id, reason: reason || null }),
+    });
+    if (insRes.status === 409) return json({ ok: true, already: true }, 200, origin);
+    if (!insRes.ok) return json({ error: "通報に失敗しました。", detail: await insRes.text() }, 500, origin);
+
+    // 2) 件数を数える
+    const cntRes = await fetch(
+      `${SUPABASE_URL}/rest/v1/reports?select=id&comment_id=eq.${encodeURIComponent(comment_id)}`,
+      { headers: restHeaders() },
+    );
+    const reps = cntRes.ok ? await cntRes.json() : [];
+    const count = Array.isArray(reps) ? reps.length : 0;
+
+    // 3) comments を更新（件数、閾値で自動非表示）
+    const hide = count >= REPORT_THRESHOLD;
+    const patch: Record<string, unknown> = { report_count: count };
+    if (hide) patch.is_visible = false;
+    await fetch(`${SUPABASE_URL}/rest/v1/comments?id=eq.${encodeURIComponent(comment_id)}`, {
+      method: "PATCH", headers: restHeaders(), body: JSON.stringify(patch),
+    });
+
+    // 4) 管理者に通知
+    await notifySlack(comment_id, count, hide, reason);
+
+    return json({ ok: true, hidden: hide }, 200, origin);
   }
 
   // ============ 投稿 ============
