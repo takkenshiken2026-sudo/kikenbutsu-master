@@ -31,6 +31,26 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./site-pages.css">
   <link rel="stylesheet" href="./site-theme.css">
+  <style>
+    .board-cards { display: grid; gap: 1rem; margin-top: 1.4rem; }
+    .board-card {
+      display: block; text-decoration: none; color: inherit;
+      border: 1px solid rgba(0,0,0,0.1); border-radius: 10px;
+      padding: 1.2rem 1.3rem; background: #fff;
+      transition: box-shadow .15s, border-color .15s, transform .05s;
+    }
+    .board-card:hover { border-color: #c0392b; box-shadow: 0 3px 14px rgba(0,0,0,.08); }
+    .board-card:active { transform: translateY(1px); }
+    .board-card:focus-visible { outline: 2px solid #c0392b; outline-offset: 2px; }
+    .board-card-title { display: block; font-weight: 700; font-size: 1.1rem; color: #121212; margin-bottom: .45rem; }
+    .board-card-desc { display: block; color: #444; line-height: 1.7; font-size: .95rem; }
+    .board-card-go { display: inline-block; margin-top: .85rem; color: #c0392b; font-weight: 600; font-size: .9rem; }
+    @media (prefers-color-scheme: dark) {
+      .board-card { background: #1c1c1e; border-color: rgba(255,255,255,0.12); }
+      .board-card-title { color: #f4f4f5; }
+      .board-card-desc { color: #d4d4d6; }
+    }
+  </style>
 </head>
 <body class="site-static-page site-shell-column-page">
   <div class="site-page-wrap">
@@ -67,17 +87,19 @@
         危険物取扱者試験（乙種第4類）の受験者どうしで交流できる掲示板です。目的に合わせて選んでください。いずれも<strong>ログイン不要</strong>で投稿・閲覧できます。
       </p>
 
-      <section class="site-page-section" aria-labelledby="board-qa">
-        <h2 id="board-qa"><a href="qa.html">Q&A・質問掲示板</a></h2>
-        <p>学習でわからない点や、勉強法の相談を気軽に投稿・閲覧できます。受験者どうしで情報を交換しましょう。</p>
-        <p><a href="qa.html">→ Q&amp;Aを開く</a></p>
-      </section>
+      <div class="board-cards">
+        <a class="board-card" href="qa.html">
+          <span class="board-card-title">Q&A・質問掲示板</span>
+          <span class="board-card-desc">学習でわからない点や、勉強法の相談を気軽に投稿・閲覧できます。受験者どうしで情報を交換しましょう。</span>
+          <span class="board-card-go">Q&amp;Aを開く →</span>
+        </a>
 
-      <section class="site-page-section" aria-labelledby="board-taikenki">
-        <h2 id="board-taikenki"><a href="taikenki.html">合格体験記・受験レポート</a></h2>
-        <p>受験した感想・勉強法・結果を共有できます。あなたの体験が、これから受験する人の参考になります。</p>
-        <p><a href="taikenki.html">→ 合格体験記を開く</a></p>
-      </section>
+        <a class="board-card" href="taikenki.html">
+          <span class="board-card-title">合格体験記・受験レポート</span>
+          <span class="board-card-desc">受験した感想・勉強法・結果を共有できます。あなたの体験が、これから受験する人の参考になります。</span>
+          <span class="board-card-go">合格体験記を開く →</span>
+        </a>
+      </div>
     </main>
 <footer class="site-footer" role="contentinfo">
     <div class="site-footer-scroll">
