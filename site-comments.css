@@ -82,7 +82,37 @@
   margin-bottom: 0.35rem;
 }
 .uc-item-name { font-weight: 700; color: #121212; font-size: 0.95rem; }
+.uc-item-id {
+  font-size: 0.72rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  color: #8a8a8a;
+  background: #f2f2f3;
+  border-radius: 4px;
+  padding: 0.05rem 0.35rem;
+}
 .uc-item-date { font-size: 0.8rem; color: #888888; }
+.uc-del {
+  margin-left: auto;
+  appearance: none;
+  border: 1px solid #c0392b;
+  background: transparent;
+  color: #c0392b;
+  font-size: 0.78rem;
+  padding: 0.1rem 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.uc-del:hover { background: #c0392b; color: #fff; }
+.uc-del:disabled { opacity: 0.5; cursor: default; }
+.uc-admin-badge {
+  margin: 0 0 0.8rem;
+  font-size: 0.8rem;
+  color: #a93226;
+  background: #fdecea;
+  border: 1px solid #f5c6c0;
+  border-radius: 6px;
+  padding: 0.35rem 0.6rem;
+}
 .uc-item-body {
   font-size: 0.95rem;
   line-height: 1.7;
@@ -97,4 +127,6 @@
   .uc-item { border-color: rgba(255, 255, 255, 0.12); }
   .uc-item-name { color: #f4f4f5; }
   .uc-item-body { color: #e4e4e6; }
+  .uc-item-id { background: #333335; color: #a8a8ac; }
+  .uc-admin-badge { background: #3a2321; border-color: #5a2f2b; color: #f3b5ae; }
 }
