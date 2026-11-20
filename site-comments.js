@@ -14,6 +14,7 @@
     supabaseUrl: "https://PROJECT_REF.supabase.co", // Supabase: Project Settings → Data API → URL
     supabaseAnonKey: "PUT_SUPABASE_ANON_KEY_HERE", // Supabase: Project Settings → API Keys → anon public
     turnstileSiteKey: "PUT_TURNSTILE_SITE_KEY_HERE", // Cloudflare: Turnstile → Site Key
+    functionName: "swift-responder", // Supabase Edge Function 名（デプロイ時の関数名に合わせる）
   };
   // ▲▲▲ ここまで ▲▲▲
 
@@ -85,7 +86,8 @@
   }
 
   function postComment(data) {
-    var url = COMMENTS_CONFIG.supabaseUrl + "/functions/v1/post-comment";
+    var fn = COMMENTS_CONFIG.functionName || "post-comment";
+    var url = COMMENTS_CONFIG.supabaseUrl + "/functions/v1/" + fn;
     return fetch(url, {
       method: "POST",
       headers: {
