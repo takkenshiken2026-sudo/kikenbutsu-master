@@ -183,6 +183,8 @@ Deno.serve(async (req: Request) => {
   let author_name = String(payload.author_name ?? "").trim().slice(0, 40);
   const body = String(payload.body ?? "").trim().slice(0, 2000);
   const uid = String(payload.uid ?? "").trim().slice(0, 128);
+  const parentRaw = String(payload.parent_id ?? "").trim();
+  const parent_id = /^[0-9a-fA-F-]{32,40}$/.test(parentRaw) ? parentRaw : null; // 返信先（UUID）
 
   if (!author_name) author_name = "匿名";
   if (!page_id) return json({ error: "page_id required" }, 400, origin);
@@ -229,7 +231,7 @@ Deno.serve(async (req: Request) => {
   const insertRes = await fetch(`${SUPABASE_URL}/rest/v1/comments`, {
     method: "POST",
     headers: restHeaders(),
-    body: JSON.stringify({ page_id, category, author_name, body, author_id }),
+    body: JSON.stringify({ page_id, category, author_name, body, author_id, parent_id }),
   });
 
   if (!insertRes.ok) {

@@ -14,6 +14,7 @@ create table if not exists public.comments (
   author_name text not null default '匿名'
                 check (char_length(author_name) between 1 and 40),
   author_id   text,                                 -- 投稿者の識別ID（uidのSHA-256先頭16桁。なりすまし対策）
+  parent_id   uuid,                                  -- 返信先の投稿ID（返信=スレッド用。トップ投稿は NULL）
   body        text not null
                 check (char_length(body) between 1 and 2000),
   is_visible  boolean not null default true        -- false にすると公開画面から消える（＝管理削除）
@@ -21,9 +22,12 @@ create table if not exists public.comments (
 
 -- 既存テーブル向けのマイグレーション（新しい列を後から追加）
 alter table public.comments add column if not exists author_id text;
+alter table public.comments add column if not exists parent_id uuid;
 
 create index if not exists comments_page_idx
   on public.comments (page_id, created_at desc);
+create index if not exists comments_parent_idx
+  on public.comments (parent_id);
 
 -- 行レベルセキュリティ（RLS）を有効化
 alter table public.comments enable row level security;

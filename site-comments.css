@@ -125,6 +125,47 @@
   white-space: normal;
   word-break: break-word;
 }
+.uc-item-actions { margin-top: 0.5rem; }
+.uc-reply-btn {
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: #c0392b;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.1rem 0;
+  cursor: pointer;
+}
+.uc-reply-btn:hover { text-decoration: underline; }
+.uc-reply-slot:empty { display: none; }
+.uc-reply-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin: 0.7rem 0 0.3rem;
+  padding: 0.9rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background: #fafafa;
+}
+.uc-cancel {
+  appearance: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background: transparent;
+  color: #555;
+  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.uc-replies {
+  list-style: none;
+  margin: 0.7rem 0 0;
+  padding: 0 0 0 1rem;
+  border-left: 2px solid rgba(192, 57, 43, 0.25);
+}
+.uc-reply { padding: 0.6rem 0; }
+.uc-reply + .uc-reply { border-top: 1px dashed rgba(0, 0, 0, 0.08); }
 @media (prefers-color-scheme: dark) {
   .uc-root { background: #1c1c1e; border-color: rgba(255, 255, 255, 0.12); }
   .uc-title { color: #f4f4f5; }
@@ -134,4 +175,6 @@
   .uc-item-body { color: #e4e4e6; }
   .uc-item-id { background: #333335; color: #a8a8ac; }
   .uc-admin-badge { background: #3a2321; border-color: #5a2f2b; color: #f3b5ae; }
+  .uc-reply-form { background: #242426; border-color: rgba(255,255,255,0.12); }
+  .uc-reply + .uc-reply { border-color: rgba(255,255,255,0.1); }
 }

@@ -50,6 +50,7 @@
           <a class="topnav-link" id="tnav-dash" href="/#dash"><svg viewBox="0 0 16 16"><path d="M2 13L5 8l3 2 3-5 3 2"/></svg>記録・分析</a>
           <a class="topnav-link" id="tnav-review" href="/#review"><svg viewBox="0 0 16 16"><path d="M2 4h12M2 8h8M2 12h10"/></svg>復習</a>
           <a class="topnav-link" id="tnav-exam-dates" href="exam-dates/index.html"><svg viewBox="0 0 16 16"><rect x="2.5" y="3" width="11" height="11" rx="1.5"/><path d="M2.5 6.5h11M5.5 1.5v3M10.5 1.5v3"/></svg>試験日検索</a>
+          <a class="topnav-link" id="tnav-board" href="board.html"><svg viewBox="0 0 16 16"><rect x="3" y="2.5" width="10" height="11" rx="1.5"/><path d="M6 2v2h4V2M6 7.5h4M6 10.5h3"/></svg>掲示板</a>
         </nav>
       </div>
     </header>
@@ -95,7 +96,34 @@
           本サイトおよび本ページに関するご質問・ご意見は、<a href="https://forms.gle/XazAUQxqgngAdnwb7" target="_blank" rel="noopener noreferrer">お問い合わせフォーム</a>からご連絡ください。
         </p>
         <p class="site-page-note">
-          本稿は現状の実装に合わせた一般的な表現です。ログイン機能や外部API連携を追加する場合は、本ページを改訂し、必要に応じて法務レビューを行ってください。
+          本稿は現状の実装に合わせた一般的な表現です。機能追加の際は本ページを改訂し、必要に応じて法務レビューを行ってください。
+        </p>
+      </section>
+
+      <section class="site-page-section" aria-labelledby="sec-ugc">
+        <h2 id="sec-ugc">ユーザー投稿（コメント・掲示板）について</h2>
+        <p>
+          本サイトでは、記事のコメント欄および掲示板（Q&amp;A・合格体験記）に、どなたでもログインなしで投稿できます。投稿にあたっては、以下の内容にご同意のうえご利用ください。
+        </p>
+        <p><strong>1. 投稿内容の公開</strong></p>
+        <p>
+          投稿されたニックネーム・本文・投稿日時・投稿者IDは、本サイト上に公開されます。氏名・住所・電話番号・メールアドレスなどの個人情報は入力しないでください。
+        </p>
+        <p><strong>2. 外部サービスでの処理・保存</strong></p>
+        <p>
+          投稿データは、データベースサービス「<strong>Supabase</strong>」（Supabase, Inc.）に保存されます。また、ボットやスパムによる不正投稿を防ぐため「<strong>Cloudflare Turnstile</strong>」（Cloudflare, Inc.）を利用しており、これらのサービスでIPアドレスやブラウザ情報等が処理されることがあります。各社の取り扱いは、<a href="https://supabase.com/privacy" target="_blank" rel="noopener noreferrer">Supabase のプライバシーポリシー</a>および<a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">Cloudflare のプライバシーポリシー</a>をご確認ください。
+        </p>
+        <p><strong>3. 投稿者ID</strong></p>
+        <p>
+          なりすまし防止のため、端末ごとに生成した値をハッシュ化した<strong>投稿者ID</strong>を各投稿に付与します。これは個人を特定する情報ではなく、同一端末からの投稿を見分ける目的でのみ使用します。
+        </p>
+        <p><strong>4. 禁止事項・自動削除</strong></p>
+        <p>
+          法令・公序良俗に反する投稿、第三者の権利を侵害する投稿、宣伝・スパム、URLや個人情報を含む投稿は禁止します。これらは自動的に拒否されるほか、運営者の判断で予告なく削除（非表示）する場合があります。
+        </p>
+        <p><strong>5. 投稿内容の利用</strong></p>
+        <p>
+          投稿された内容について、運営者が本サイトの運営・改善および掲載の目的で利用することに同意いただいたものとみなします。
         </p>
       </section>
 
@@ -133,6 +161,7 @@
           <a href="about.html">このサイトについて</a>
           <a href="q/index.html">過去問一覧</a>
           <a href="articles/index.html">試験ガイド</a>
+          <a href="board.html">掲示板</a>
           <a href="related-sites.html">関連リンク</a>
           <a href="privacy.html" aria-current="page">プライバシー</a>
           <a href="https://forms.gle/tS5HMmdRweZ3uTAv5" target="_blank" rel="noopener noreferrer">お問い合わせ</a>
