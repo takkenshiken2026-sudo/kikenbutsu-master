@@ -1,10 +1,12 @@
 /* 乙4マスター ユーザー投稿ウィジェット スタイル（サイトのテーマ色に合わせた最小構成） */
 .uc-root {
+  color-scheme: light; /* 端末のダークモードでも配色を崩さない */
   margin: 2.4rem 0 1rem;
   padding: 1.4rem 1.2rem;
   border: 1px solid rgba(0, 0, 0, 0.09);
   border-radius: 10px;
   background: #ffffff;
+  color: #222222;
 }
 .uc-title {
   font-size: 1.15rem;
@@ -196,17 +198,4 @@
 }
 .uc-reply { padding: 0.6rem 0; }
 .uc-reply + .uc-reply { border-top: 1px dashed rgba(0, 0, 0, 0.08); }
-@media (prefers-color-scheme: dark) {
-  .uc-root { background: #1c1c1e; border-color: rgba(255, 255, 255, 0.12); }
-  .uc-title { color: #f4f4f5; }
-  .uc-input, .uc-textarea { background: #2a2a2c; color: #f4f4f5; border-color: rgba(255,255,255,0.18); }
-  .uc-item { border-color: rgba(255, 255, 255, 0.12); }
-  .uc-item-name { color: #f4f4f5; }
-  .uc-item-body { color: #e4e4e6; }
-  .uc-item-id { background: #333335; color: #a8a8ac; }
-  .uc-avatar { background: #333335; }
-  .uc-avatar svg { stroke: #b0b0b4; }
-  .uc-admin-badge { background: #3a2321; border-color: #5a2f2b; color: #f3b5ae; }
-  .uc-reply-form { background: #242426; border-color: rgba(255,255,255,0.12); }
-  .uc-reply + .uc-reply { border-color: rgba(255,255,255,0.1); }
-}
+/* ダークモード対応はサイト本体が未対応のため廃止（ライト固定で統一） */
