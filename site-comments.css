@@ -96,8 +96,20 @@
   padding: 0.05rem 0.35rem;
 }
 .uc-item-date { font-size: 0.8rem; color: #888888; }
-.uc-del {
+.uc-report {
   margin-left: auto;
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: #999;
+  font-size: 0.75rem;
+  padding: 0.1rem 0.3rem;
+  cursor: pointer;
+}
+.uc-report:hover { color: #c0392b; text-decoration: underline; }
+.uc-report:disabled { color: #bbb; cursor: default; text-decoration: none; }
+.uc-del {
+  margin-left: 0.4rem;
   appearance: none;
   border: 1px solid #c0392b;
   background: transparent;
