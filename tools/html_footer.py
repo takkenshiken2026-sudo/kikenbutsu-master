@@ -111,8 +111,20 @@ LEARNING_NAV_ICON_CALENDAR = (
     '<path d="M2.5 6.5h11M5.5 1.5v3M10.5 1.5v3"/></svg>'
 )
 
+LEARNING_NAV_ICON_CHAT = (
+    '<svg viewBox="0 0 16 16"><path d="M2 3h12v8H6l-3 3v-3H2z"/>'
+    '<path d="M5 6h6M5 8.5h4"/></svg>'
+)
+
+LEARNING_NAV_ICON_TROPHY = (
+    '<svg viewBox="0 0 16 16"><path d="M4 2h8v3a4 4 0 0 1-8 0z"/>'
+    '<path d="M6 10h4M5 14h6M8 10v4"/></svg>'
+)
+
 LEARNING_NAV_ICON_BY_NAME: dict[str, str] = {
     "calendar": LEARNING_NAV_ICON_CALENDAR,
+    "chat": LEARNING_NAV_ICON_CHAT,
+    "trophy": LEARNING_NAV_ICON_TROPHY,
 }
 
 
