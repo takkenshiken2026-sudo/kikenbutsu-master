@@ -11,6 +11,11 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://kikenbutsu-master.jp/articles/designated-quantity-calc/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
     <loc>https://kikenbutsu-master.jp/articles/exam-difficulty/</loc>
     <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
@@ -46,6 +51,26 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://kikenbutsu-master.jp/articles/jobs-and-allowance/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://kikenbutsu-master.jp/articles/law-study-method/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://kikenbutsu-master.jp/articles/license-application/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://kikenbutsu-master.jp/articles/license-renewal/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
     <loc>https://kikenbutsu-master.jp/articles/pass-rate/</loc>
     <lastmod>2026-06-18</lastmod>
     <changefreq>monthly</changefreq>
@@ -61,8 +86,38 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://kikenbutsu-master.jp/articles/physchem-study-method/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://kikenbutsu-master.jp/articles/prep-course/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://kikenbutsu-master.jp/articles/properties-study-method/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://kikenbutsu-master.jp/articles/safety-supervisor/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://kikenbutsu-master.jp/articles/safety-training/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
     <loc>https://kikenbutsu-master.jp/articles/study-plan/</loc>
     <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://kikenbutsu-master.jp/board.html</loc>
+    <lastmod>2026-11-24</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   <url>
@@ -81,8 +136,18 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://kikenbutsu-master.jp/qa.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
     <loc>https://kikenbutsu-master.jp/related-sites.html</loc>
     <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://kikenbutsu-master.jp/taikenki.html</loc>
+    <lastmod>2026-11-24</lastmod>
     <changefreq>monthly</changefreq>
   </url>
 </urlset>
