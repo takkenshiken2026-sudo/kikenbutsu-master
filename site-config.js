@@ -37,14 +37,14 @@ window.SITE_CONFIG = {
         "key": "q"
       },
       {
-        "label": "用語解説",
-        "href": "terms/index.html",
-        "key": "terms"
-      },
-      {
         "label": "試験ガイド",
         "href": "articles/index.html",
         "key": "articles"
+      },
+      {
+        "label": "掲示板",
+        "href": "board.html",
+        "key": "board"
       },
       {
         "label": "関連リンク",
@@ -74,14 +74,14 @@ window.SITE_CONFIG = {
         "key": "q"
       },
       {
-        "label": "用語解説",
-        "href": "terms/index.html",
-        "key": "terms"
-      },
-      {
         "label": "試験ガイド",
         "href": "articles/index.html",
         "key": "articles"
+      },
+      {
+        "label": "掲示板",
+        "href": "board.html",
+        "key": "board"
       },
       {
         "label": "関連リンク",
@@ -245,36 +245,11 @@ window.SITE_CONFIG = {
     "ctaLabel": "模試を購入する",
     "cardTitle": "本番形式の予想模試",
     "cardDesc": "本番と同じ35問・2時間の予想模試です。2回分で時間配分と弱点を事前に確認できます。",
-    "stepLabel": "STEP 1・実力確認",
+    "stepLabel": "実力確認",
     "cardChips": [
       "PDF・2回分",
       "note販売",
       "三科目対応"
-    ]
-  },
-  "coursePromo": {
-    "url": "https://t.afi-b.com/visit.php?a=y7404W-M7354874_f&p=P984775K",
-    "modeTitle": "スタディング 危険物取扱者 乙種4類合格コース",
-    "modePurpose": "一括5,940円で動画・問題集・模試まで揃えたい",
-    "priceLabel": "¥5,940（一括）",
-    "tagLabel": "無料お試し",
-    "ctaLabel": "無料で試す",
-    "footnote": "※ スタディング公式サイトへ移動します。料金・受講条件は申込前に各ページでご確認ください。",
-    "scoreLead": "スタディングの動画講座と模試",
-    "scoreMeta": "約8時間・模試10回",
-    "image": "images/affiliate/kikenbutsu-course-studying-otu4.webp",
-    "imageAlt": "スタディング（STUDYing）ロゴ",
-    "bannerImage": "images/affiliate/kikenbutsu-course-studying-banner.webp",
-    "bannerAlt": "スタディング 危険物取扱者試験 乙種第4類｜スマホで最短合格を目指す｜無料で講座を見る",
-    "lpUrl": "https://studying.jp/kikenbutsu/",
-    "cardTitle": "スタディング 乙4合格コース",
-    "cardDesc": "動画と問題集に模試10回まで揃った通信講座です。苦手科目を動画でまとめて補強できます。",
-    "stepLabel": "STEP 2・動画で補強",
-    "badgeLabel": "無料お試し",
-    "cardChips": [
-      "¥5,940（一括）",
-      "約8時間",
-      "模試10回"
     ]
   }
 };
