@@ -1162,6 +1162,13 @@ details.rich-detail summary{display:none}
 .page-notice-date{font-size:12px;color:var(--text3);font-family:var(--mono);margin-left:8px}
 .page-notice-text{font-size:13px;color:var(--text2);line-height:1.7;margin:4px 0 0}
 .pn-t{font-weight:700}
+.free-limit-note{margin:0 0 18px;padding:12px 14px;border:1px dashed var(--border2);border-radius:var(--r2);background:var(--bg3)}
+.free-limit-note[hidden]{display:none!important}
+.free-limit-note__head{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--text)}
+.free-limit-note__head svg{flex-shrink:0;color:var(--text3)}
+.free-limit-note__text{font-size:13px;color:var(--text2);line-height:1.7;margin:4px 0 0}
+.free-limit-note__link{display:inline-block;margin-top:6px;font-size:13px;font-weight:700;color:var(--accent-emphasis);text-decoration:none}
+.free-limit-note__link:hover{text-decoration:underline}
 .pn-t-標準{color:#1f6f43}
 .pn-t-応用{color:#9a5b00}
 .pn-t-難関{color:#a01f2e}
@@ -1724,6 +1731,7 @@ body.is-solving .site-footer{display:none!important}
       </nav>
       <div id="ichi-config" class="ichi-config">
         <p class="ichi-config-lead">分野と出題数を選んで「開始」してください。記述が正しいときは○、誤りのときは×で答えます。</p>
+        <div class="free-limit-note" id="ichi-free-limit" data-exam-only="otsu4" hidden></div>
         <div class="orig-bottom-bar" style="margin-top:0;margin-bottom:16px;padding-top:0;border-top:none;border-bottom:1px solid var(--border);padding-bottom:16px">
           <h2 class="section-label" style="margin-bottom:12px">出題数</h2>
           <div class="count-btns">
@@ -1983,9 +1991,10 @@ body.is-solving .site-footer{display:none!important}
 
       <div class="page-notice" role="note" id="orig-notice-otsu4" data-exam-only="otsu4">
         <span class="page-notice-badge">お知らせ</span>
-        <span class="page-notice-date">2026-07-17</span>
-        <p class="page-notice-text">実践演習を1,000問に拡充しました。各問に難易度（<span class="pn-t pn-t-標準">標準</span>・<span class="pn-t pn-t-応用">応用</span>・<span class="pn-t pn-t-難関">難関</span>）を付与し、難易度での絞り込みにも対応しています。</p>
+        <span class="page-notice-date">2026-11-26</span>
+        <p class="page-notice-text">無料で解ける実践演習を300問に絞りました。法令・物理化学・性質消火の比率と難易度（<span class="pn-t pn-t-標準">標準</span>・<span class="pn-t pn-t-応用">応用</span>・<span class="pn-t pn-t-難関">難関</span>）の配分は保っています。難易度での絞り込みもこれまでどおり使えます。</p>
       </div>
+      <div class="free-limit-note" id="orig-free-limit" data-exam-only="otsu4" hidden></div>
 
       <div class="orig-bottom-bar" style="margin-top:0;margin-bottom:16px;padding-top:0;border-top:none;border-bottom:1px solid var(--border);padding-bottom:16px">
         <h2 class="section-label" style="margin-bottom:12px">出題数</h2>
@@ -2156,6 +2165,39 @@ function applyCsvImportedQuestions() {
 <script src="exam-site-data-practice.js"></script>
 <script src="exam-site-data-past.js"></script>
 <script src="exam-site-data-ichimondou.js"></script>
+<script>
+/* 無料公開の範囲（乙4の実践演習・一問一答）。残りは公開データに含めていない。
+   tools/select_free_questions.py → data/free_questions.json で選定。 */
+(function(){
+  function fmt(n){ return Number(n).toLocaleString('ja-JP'); }
+  function esc(s){ return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];}); }
+  function mockLinkHtml(){
+    var m=(window.SITE_CONFIG&&window.SITE_CONFIG.paidMockExam)||{};
+    if(!m.url) return '';
+    var spec=[m.scoreMeta,m.priceLabel].filter(Boolean).join('・');
+    return '<p class="free-limit-note__text">本番形式で実力を確かめたい人向けに、35問×2回の予想模試（有料'+(spec?'・'+esc(spec):'')+'）を note で販売しています。</p>'
+      +'<a class="free-limit-note__link" data-mock-url target="_blank" rel="noopener noreferrer">予想模試を見る ↗</a>';
+  }
+  var LOCK='<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="7" width="10" height="8" rx="2"/><path d="M5 7V5a3 3 0 016 0v2"/></svg>';
+  function fill(id, label, free, total){
+    var el=document.getElementById(id);
+    if(!el||!(total>free)) return;
+    el.innerHTML='<div class="free-limit-note__head">'+LOCK+'<span>'+label+'は全'+fmt(total)+'問のうち'+fmt(free)+'問を無料公開しています</span></div>'
+      +'<p class="free-limit-note__text">残りの'+fmt(total-free)+'問は無料公開の対象外です。</p>'
+      +mockLinkHtml();
+    var a=el.querySelector('[data-mock-url]');
+    var m=(window.SITE_CONFIG&&window.SITE_CONFIG.paidMockExam)||{};
+    if(a&&m.url) a.setAttribute('href', m.url);
+    el.hidden=false;
+  }
+  if(typeof CSV_PRACTICE_TOTAL_QUESTION_COUNT==='number'&&typeof CSV_IMPORTED_PRACTICE_QUESTION_COUNT==='number'){
+    fill('orig-free-limit','実践演習',CSV_IMPORTED_PRACTICE_QUESTION_COUNT,CSV_PRACTICE_TOTAL_QUESTION_COUNT);
+  }
+  if(typeof window.ICHIMONDOU_TOTAL_COUNT==='number'&&typeof window.ICHIMONDOU_FREE_COUNT==='number'){
+    fill('ichi-free-limit','一問一答',window.ICHIMONDOU_FREE_COUNT,window.ICHIMONDOU_TOTAL_COUNT);
+  }
+})();
+</script>
 <script>
 
 // ===== GAMIFICATION ENGINE =====
@@ -3520,7 +3562,7 @@ function updateQuizStartModeStats() {
     if (practiceN > 0) {
       // 乙4は従来どおり「○問以上掲載」。関連試験は実数なので「全○問掲載」。
       origPurpose.textContent = isDefaultExam
-        ? '本格的に実力をつけたい（' + formatQuizCountJa(practiceN) + '問以上掲載）'
+        ? '本格的に実力をつけたい（無料' + formatQuizCountJa(practiceN) + '問）'
         : '本格的に実力をつけたい（全' + formatQuizCountJa(practiceN) + '問掲載）';
     } else {
       origPurpose.textContent = '本格的に実力をつけたい';

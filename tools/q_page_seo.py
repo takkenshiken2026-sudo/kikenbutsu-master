@@ -159,7 +159,11 @@ def index_page_title(mode: str) -> str:
     c = seo_copy()
     label = MODE_LABEL[mode]
     if mode == "past":
-        return f"危険物取扱者 乙4 過去問 無料｜本試験形式35問＋演習1000問｜{brand_name()}"
+        from tools.free_questions import free_practice_nos
+
+        free = free_practice_nos()
+        practice_n = len(free) if free else 1000
+        return f"危険物取扱者 乙4 過去問 無料｜本試験形式35問＋演習{practice_n}問｜{brand_name()}"
     elif mode == "practice":
         sub = f"{c['mockExam']}前の演習"
     else:
