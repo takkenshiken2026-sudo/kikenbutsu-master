@@ -35,6 +35,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from tools.guide_index_picks_ui import build_guide_index_picks_html
+from tools.paid_mock_promo_ui import q_index_paid_mock_callout_html
 from tools.q_explanation import build_explanation_html
 from tools.q_content_quality import is_demo_past_question_row
 from tools.q_similar_questions import build_similar_questions_html, load_question_catalog
@@ -208,7 +209,7 @@ def page_meta_description(page: dict) -> str:
     )
 
 
-Q_INDEX_CSS_VER = "20261109-guide-ui"
+Q_INDEX_CSS_VER = "20261126-paid-mock"
 
 GLOSSARY_CSV = ROOT / "data" / "glossary_terms.csv"
 
@@ -1067,6 +1068,7 @@ def build_q_index(pages: list[dict], base_url: str) -> str:
     search_placeholder = index_search_placeholder("past")
     study_modes_note = study_modes_note_html()
     index_picks_html = build_guide_index_picks_html(rel_path)
+    paid_mock_html = q_index_paid_mock_callout_html(rel_path)
     past_usage_guide_html = (
         '<section class="past-index-guide" aria-labelledby="past-index-guide-h">'
         '<h2 id="past-index-guide-h">乙4過去問35問の使い方</h2>'
@@ -1169,6 +1171,7 @@ def build_q_index(pages: list[dict], base_url: str) -> str:
       </div>
     </div>
   </section>
+  {paid_mock_html}
   {exam_basics_links_html}
   {index_picks_html}
 </main>

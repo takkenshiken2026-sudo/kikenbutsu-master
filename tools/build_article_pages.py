@@ -26,6 +26,7 @@ from tools.html_footer import (  # noqa: E402
     site_page_wrap_open,
 )
 from tools.guide_index_picks_ui import build_guide_index_picks_html  # noqa: E402
+from tools.paid_mock_promo_ui import article_paid_mock_callout_html  # noqa: E402
 from tools.seo_utils import content_date_from_row, json_ld_date_modified, meta_updated_html  # noqa: E402
 from tools.site_config import (  # noqa: E402
     brand_name,
@@ -48,7 +49,7 @@ from tools.seo_editorial_chrome import (  # noqa: E402
 ARTICLES_CSV = ROOT / "data" / "guide_articles.csv"
 ARTICLES_DIR = ROOT / "articles"
 GEN_MARKER = ".generated-by-exam-site"
-GUIDE_PAGES_CSS_VER = "20260527-guide"
+GUIDE_PAGES_CSS_VER = "20261126-paid-mock"
 
 # 試験日程に関する記事の冒頭に置く、都道府県別の試験日一覧ページへの導線。
 # 記事ごとに前置きの一文を変える（同一フレーズの使い回しはGSC対策上避ける）。
@@ -954,6 +955,7 @@ def build_article_html(
     )
     info_table = article_info_table(article)
     exam_dates_callout = exam_dates_callout_html(slug, rel_path)
+    paid_mock_callout = article_paid_mock_callout_html(slug, rel_path)
     crumb_items = [("トップ", "index.html"), ("試験ガイド", "articles/index.html"), (title, None)]
     article_schema = {
         "@type": "Article",
@@ -1054,6 +1056,7 @@ def build_article_html(
     {toc}
     {quality_panel}
     {sections}
+    {paid_mock_callout}
     {faq_section}
     {info_table}
     {official_box}

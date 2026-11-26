@@ -34,6 +34,7 @@ from tools.html_footer import (  # noqa: E402
     site_scroll_top_html,
 )
 from tools.knowledge_hub_seo import faq_section_html  # noqa: E402
+from tools.paid_mock_promo_ui import exam_dates_paid_mock_callout_html  # noqa: E402
 from tools.seo_body_markup import seo_section_body_html  # noqa: E402
 from tools.seo_editorial_chrome import (  # noqa: E402
     seo_brand_asset_tags,
@@ -45,7 +46,7 @@ from tools.site_config import brand_name, exam_name, public_url  # noqa: E402
 
 OUTPUT_DIR = ROOT / PAGE_SLUG
 REL_PATH = Path(PAGE_SLUG) / "index.html"
-EXAM_DATES_CSS_VER = "20260618-exam-schedule-filter"
+EXAM_DATES_CSS_VER = "20261126-paid-mock"
 
 AUTHOR_NAME = "乙4マスター編集部"
 AUTHOR_PROFILE = (
@@ -130,6 +131,7 @@ def build_page_html() -> str:
     body_parts: list[str] = [
         exam_schedule_table_html(schedule_rows, section_num=None, show_heading=False, show_note=False),
         quality_panel_html(fact_checked),
+        exam_dates_paid_mock_callout_html(REL_PATH),
     ]
     section_num = 1
     for idx, (heading, body) in enumerate(page_sections()):
