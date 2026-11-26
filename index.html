@@ -1991,8 +1991,8 @@ body.is-solving .site-footer{display:none!important}
 
       <div class="page-notice" role="note" id="orig-notice-otsu4" data-exam-only="otsu4">
         <span class="page-notice-badge">お知らせ</span>
-        <span class="page-notice-date">2026-11-26</span>
-        <p class="page-notice-text">無料で解ける実践演習を300問に絞りました。法令・物理化学・性質消火の比率と難易度（<span class="pn-t pn-t-標準">標準</span>・<span class="pn-t pn-t-応用">応用</span>・<span class="pn-t pn-t-難関">難関</span>）の配分は保っています。難易度での絞り込みもこれまでどおり使えます。</p>
+        <span class="page-notice-date">2026-07-17</span>
+        <p class="page-notice-text">各問に難易度（<span class="pn-t pn-t-標準">標準</span>・<span class="pn-t pn-t-応用">応用</span>・<span class="pn-t pn-t-難関">難関</span>）を付けています。難易度での絞り込みにも対応しています。</p>
       </div>
       <div class="free-limit-note" id="orig-free-limit" data-exam-only="otsu4" hidden></div>
 
@@ -2167,8 +2167,12 @@ function applyCsvImportedQuestions() {
 <script src="exam-site-data-ichimondou.js"></script>
 <script>
 /* 無料公開の範囲（乙4の実践演習・一問一答）。残りは公開データに含めていない。
-   tools/select_free_questions.py → data/free_questions.json で選定。 */
+   tools/select_free_questions.py → data/free_questions.json で選定。
+   鍵付き表示（「全◯問のうち◯問を無料公開」）は有料版の解放が未実装のため停止中。
+   有料版を実装したら FREE_LIMIT_NOTE_ENABLED を true にする。 */
 (function(){
+  var FREE_LIMIT_NOTE_ENABLED=false;
+  if(!FREE_LIMIT_NOTE_ENABLED) return;
   function fmt(n){ return Number(n).toLocaleString('ja-JP'); }
   function esc(s){ return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];}); }
   function mockLinkHtml(){
@@ -3562,7 +3566,7 @@ function updateQuizStartModeStats() {
     if (practiceN > 0) {
       // 乙4は従来どおり「○問以上掲載」。関連試験は実数なので「全○問掲載」。
       origPurpose.textContent = isDefaultExam
-        ? '本格的に実力をつけたい（無料' + formatQuizCountJa(practiceN) + '問）'
+        ? '本格的に実力をつけたい（' + formatQuizCountJa(practiceN) + '問掲載）'
         : '本格的に実力をつけたい（全' + formatQuizCountJa(practiceN) + '問掲載）';
     } else {
       origPurpose.textContent = '本格的に実力をつけたい';
