@@ -6826,3 +6826,51 @@ html:not(.js) .terms-idx-seo-fallback .terms-idx-seo-list a {
   background: var(--page-bg, #f4f4f5);
   color: var(--text, #121212);
 }
+
+/* 有料予想模試の案内（過去問一覧・試験日一覧・試験ガイド記事） tools/paid_mock_promo_ui.py */
+.paid-mock-callout {
+  margin: 24px 0;
+  padding: 16px 18px;
+  background: var(--surface, #fff);
+  border: 1px solid var(--accent-border, rgba(0, 0, 0, 0.12));
+  border-radius: var(--radius, 10px);
+}
+aside.paid-mock-callout p.paid-mock-callout__label {
+  display: inline-block;
+  margin: 0 0 8px;
+  padding: 2px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.6;
+  color: var(--accent-text, #fff);
+  background: var(--accent, #c0392b);
+  border-radius: 999px;
+}
+aside.paid-mock-callout p.paid-mock-callout__lead {
+  margin: 0 0 12px;
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--text, #121212);
+}
+aside.paid-mock-callout a.paid-mock-callout__cta {
+  display: block;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 11px 14px;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  color: var(--accent-text, #fff);
+  background: var(--accent, #c0392b);
+  border-radius: 8px;
+}
+aside.paid-mock-callout a.paid-mock-callout__cta:hover {
+  filter: brightness(0.94);
+}
+aside.paid-mock-callout p.paid-mock-callout__foot {
+  margin: 10px 0 0;
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--text-muted, #555);
+}
