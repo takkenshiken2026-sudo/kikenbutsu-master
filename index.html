@@ -717,7 +717,12 @@ details.rich-detail summary{display:none}
 .score-course-strip-thumb{flex-shrink:0;width:64px;height:64px;border-radius:8px;overflow:hidden;background:var(--bg3);border:1px solid var(--accent-border,rgba(0,0,0,.08))}
 .score-course-strip-thumb img{display:block;width:100%;height:100%;object-fit:cover}
 .promo-banners-row{display:grid;grid-template-columns:1fr 1fr;gap:12px 16px;align-items:stretch;margin:8px 0 14px}
-.promo-banners-row:not(:has(> :not([hidden]) + :not([hidden]))){grid-template-columns:minmax(0,420px);justify-content:center}
+.promo-banners-row:not(:has(> :not([hidden]) + :not([hidden]))){grid-template-columns:minmax(0,1fr)}
+/* 1枚だけのときは演習モードのカードと同じ全幅・横長（左に説明、右にボタン） */
+.promo-banners-row:not(:has(> :not([hidden]) + :not([hidden]))) .promo-card{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:24px;align-items:center;padding:16px 20px}
+.promo-banners-row:not(:has(> :not([hidden]) + :not([hidden]))) .promo-card > *{grid-column:1}
+.promo-banners-row:not(:has(> :not([hidden]) + :not([hidden]))) .promo-card__note{margin-bottom:0}
+.promo-banners-row:not(:has(> :not([hidden]) + :not([hidden]))) .promo-card > .promo-card__cta{grid-column:2;grid-row:1 / span 4;margin-top:0;white-space:nowrap;padding:11px 22px}
 .promo-banners-row > [hidden]{display:none!important}
 .promo-card-wrap{margin:0;display:flex;flex-direction:column;max-width:none;width:100%;min-width:0}
 .promo-card{position:relative;display:flex;flex-direction:column;height:100%;background:#fff;border:1px solid var(--border);border-radius:var(--r2);padding:15px 18px 14px;box-shadow:var(--sh);text-decoration:none;color:inherit;overflow:hidden;transition:box-shadow .15s,transform .15s,border-color .15s}
@@ -980,7 +985,9 @@ details.rich-detail summary{display:none}
   .promo-banners-row,.score-promo-row{grid-template-columns:1fr;max-width:none}
   .promo-banners-row:not(:has(> :not([hidden]) + :not([hidden]))),
   .score-promo-row:not(:has(> :not([hidden]) + :not([hidden]))){grid-template-columns:1fr;justify-content:stretch}
-  .promo-card-wrap,.score-course-banner,.score-paid-mock-banner{max-width:420px;margin-left:auto;margin-right:auto;width:100%}
+  .score-course-banner,.score-paid-mock-banner{max-width:420px;margin-left:auto;margin-right:auto;width:100%}
+  .promo-banners-row:not(:has(> :not([hidden]) + :not([hidden]))) .promo-card{display:flex;align-items:stretch;padding:11px 13px 13px}
+  .promo-banners-row:not(:has(> :not([hidden]) + :not([hidden]))) .promo-card > .promo-card__cta{margin-top:4px;white-space:normal}
   .page-sub{font-size:var(--fs-sub);line-height:1.6;margin-bottom:18px}
   .section-label,h2.section-label{font-size:13px;letter-spacing:.04em}
   .dash-title-row{align-items:flex-start;flex-direction:column;gap:8px;margin-bottom:6px}
